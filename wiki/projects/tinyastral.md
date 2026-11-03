@@ -6,6 +6,7 @@ summary: "An RSI loop evolves a frozen 180B teacher's robot harness (RoboTwin 33
 type: project
 created: 2026-11-02
 updated: 2026-11-02
+related: [capability-locus, comparator-construction-shapes-margins, improvement-lives-in-external-state, structural-constraint-over-instruction, validation-tier-gap]
 sources:
   - url: https://arxiv.org/abs/2610.41216
     retrieved: 2026-11-02

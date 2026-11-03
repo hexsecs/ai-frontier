@@ -6,6 +6,7 @@ summary: "A scheduled PR-compliance reviewer on GitHub Agentic Workflows, built 
 type: project
 created: 2026-11-02
 updated: 2026-11-02
+related: [abstention-as-first-class-verdict, structural-constraint-over-instruction, validation-tier-gap]
 sources:
   - url: https://github.github.com/gh-aw/blog/2026-11-02-weekly-update/
     retrieved: 2026-11-02

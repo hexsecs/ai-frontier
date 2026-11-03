@@ -6,7 +6,7 @@ summary: "Training-free evolution of six typed knowledge modules for an Alibaba 
 type: project
 created: 2026-11-01
 updated: 2026-11-02
-related: [improvement-lives-in-external-state, scoped-assurance]
+related: [improvement-lives-in-external-state, scoped-assurance, validation-tier-gap]
 sources:
   - url: https://arxiv.org/abs/2610.39884
     retrieved: 2026-11-02

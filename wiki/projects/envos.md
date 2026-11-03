@@ -6,7 +6,7 @@ summary: "Framework that builds and certifies computer-use environments changing
 type: project
 created: 2026-11-01
 updated: 2026-11-02
-related: [evaluator-circularity, scoped-assurance]
+related: [evaluator-circularity, scoped-assurance, structural-constraint-over-instruction]
 sources:
   - url: https://arxiv.org/abs/2610.40246
     retrieved: 2026-11-02

@@ -6,7 +6,7 @@ summary: "One LLM-engineered reward program for a cooperative MARL task family, 
 type: project
 created: 2026-10-31
 updated: 2026-11-02
-related: [improvement-lives-in-external-state]
+related: [improvement-lives-in-external-state, capability-locus]
 sources:
   - url: https://arxiv.org/abs/2610.37926
     retrieved: 2026-11-02

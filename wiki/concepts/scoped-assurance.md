@@ -6,7 +6,7 @@ type: concept
 depth: full
 created: 2026-11-02
 updated: 2026-11-02
-related: [skillcompiler, intent-loss-in-smart-contract-synthesis, webanything, dynarev, clingex, karma, envos, pre-crime-for-agents]
+related: [skillcompiler, intent-loss-in-smart-contract-synthesis, webanything, dynarev, clingex, karma, envos, pre-crime-for-agents, aisoc-v21, prefix-executability, openbot]
 sources:
   - url: https://arxiv.org/abs/2610.39508
     retrieved: 2026-11-02

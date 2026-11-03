@@ -6,6 +6,7 @@ summary: "Repair selection must match the deployed executor's identity, not capa
 type: project
 created: 2026-10-30
 updated: 2026-11-02
+related: [comparator-construction-shapes-margins]
 sources:
   - url: https://arxiv.org/abs/2610.38610
     retrieved: 2026-11-02
