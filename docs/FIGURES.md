@@ -76,3 +76,15 @@ OpenShelf recommends a 2,500-token L2 page budget. Longer research briefings may
 ```
 
 The validation workflow acknowledges the L2 budget warning for that page and prints the justification. **All actual OpenShelf errors remain fatal**, including metadata, links, and schema errors. The override does not modify OpenShelf's own validator or exempt a page from linting. Keep the explanation specific and avoid using overrides for unnecessary repetition.
+
+## Native ChatGPT chart import
+
+The Pages build automatically converts ChatGPT's native `<Chart content={{...}}/>` JSON component or a `chatgpt-chart` fenced JSON block into Vega-Lite. Supported native types are `bar`, `line`, and `scatter`; unsupported types fail the build rather than silently losing data. Conversion retains numeric data, series labels, x-axis values, axis labels, and y-axis bounds. Additional display options may require an explicit Vega-Lite specification.
+
+Example native import (use a `chatgpt-chart` fence):
+
+```chatgpt-chart
+{"chartType":"bar","xKey":"method","series":[{"dataKey":"rate","label":"Attack success","valueSuffix":"%"}],"yAxisMin":0,"data":[{"method":"Non-adaptive","rate":15.24},{"method":"ANGLER","rate":20.36}]}
+```
+
+The converter is `scripts/chatgpt_charts.py`. The Pages workflow runs regression tests before publishing. This is a format converter, not a way to retrieve missing ChatGPT automation history.
