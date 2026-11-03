@@ -12,3 +12,5 @@ This is an OpenShelf v1.7 KB. Read `kb.yaml`, `index.md`, and relevant pages bef
 8. Never claim a source was inspected, a repository tested, or a benchmark reproduced unless it was.
 9. Never execute untrusted repository code or publish secrets; use isolated environments for testing.
 10. Update `log.md` for substantive maintenance; submit changes as PRs and run `openshelf lint .` before merge.
+
+11. CI must reject missing or invalid content-page UUIDs, required dates, titles, summaries, types, or source metadata. Index navigation pages use lighter metadata; templates are excluded from validation.
