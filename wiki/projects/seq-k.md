@@ -6,6 +6,7 @@ summary: "Evaluation protocol measuring whether a model solves a task within K s
 type: project
 created: 2026-10-31
 updated: 2026-11-02
+related: [evaluator-circularity, information-content-dominance, protocol-relative-scores]
 sources:
   - url: https://arxiv.org/abs/2610.37859
     retrieved: 2026-11-02

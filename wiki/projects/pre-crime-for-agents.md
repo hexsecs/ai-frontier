@@ -6,6 +6,7 @@ summary: "Linear probes on a pressured agent's activations flag the call about t
 type: project
 created: 2026-11-01
 updated: 2026-11-02
+related: [scoped-assurance]
 sources:
   - url: https://arxiv.org/abs/2610.40588
     retrieved: 2026-11-02

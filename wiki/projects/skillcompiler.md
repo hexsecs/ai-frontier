@@ -6,6 +6,7 @@ summary: "Self-evolving skill framework that selectively compiles well-specified
 type: project
 created: 2026-10-31
 updated: 2026-11-02
+related: [information-content-dominance, scoped-assurance]
 sources:
   - url: https://arxiv.org/abs/2610.39508
     retrieved: 2026-11-02

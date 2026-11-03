@@ -6,6 +6,7 @@ summary: "Contract-governed Planner–Engineer–Critic agent for Hugging Face t
 type: project
 created: 2026-10-31
 updated: 2026-11-02
+related: [evaluator-circularity]
 sources:
   - url: https://arxiv.org/abs/2610.39608
     retrieved: 2026-11-02

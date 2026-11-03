@@ -6,6 +6,7 @@ summary: "Fully automated framework reconstructing specified real websites into 
 type: project
 created: 2026-10-31
 updated: 2026-11-02
+related: [evaluator-circularity, protocol-relative-scores, scoped-assurance]
 sources:
   - url: https://arxiv.org/abs/2610.37786
     retrieved: 2026-11-02

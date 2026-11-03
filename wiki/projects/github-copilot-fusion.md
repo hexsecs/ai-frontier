@@ -6,6 +6,7 @@ summary: "GitHub Copilot Fusion routes each prompt to models and a single, casca
 type: project
 created: 2026-11-01
 updated: 2026-11-02
+related: [improvement-lives-in-external-state]
 sources:
   - url: https://github.blog/changelog/2026-10-28-route-and-orchestrate-models-with-github-copilot-fusion/
     retrieved: 2026-11-02

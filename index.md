@@ -6,6 +6,7 @@ A curated, source-backed guide to practical agentic AI, autonomous workflows, an
 
 - [Daily briefings](wiki/briefings/index.md) — chronological snapshots of discoveries and assessments.
 - [Projects](wiki/projects/index.md) — canonical pages for individual systems and repositories.
+- [Concepts](wiki/concepts/index.md) — cross-project phenomena and claims mined from the project pages, with their evidence for and against.
 - [Techniques](wiki/techniques/index.md) — reusable architectural patterns.
 - [Frontier signals](wiki/signals/index.md) — evidence-backed emerging trends.
 - [Experiments](wiki/experiments/index.md) — ideas, protocols, and measured outcomes.
