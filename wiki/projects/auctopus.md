@@ -6,6 +6,7 @@ summary: "Multi-agent AI laboratory that selects research questions, proved an e
 type: project
 created: 2026-10-30
 updated: 2026-11-02
+related: [evaluator-circularity]
 sources:
   - url: https://arxiv.org/abs/2610.40589
     retrieved: 2026-11-02

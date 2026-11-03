@@ -6,6 +6,7 @@ summary: "Agent composing 105 executable clinical-genomics skills; beat research
 type: project
 created: 2026-11-01
 updated: 2026-11-02
+related: [evaluator-circularity, protocol-relative-scores, scoped-assurance]
 sources:
   - url: https://arxiv.org/abs/2610.40556
     retrieved: 2026-11-02

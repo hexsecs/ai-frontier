@@ -6,6 +6,7 @@ summary: "Self-evolving experience-bank evaluator labeling SWE-bench-style datas
 type: project
 created: 2026-10-30
 updated: 2026-11-02
+related: [ground-truth-fallibility]
 sources:
   - url: https://arxiv.org/abs/2610.39417
     retrieved: 2026-11-02
