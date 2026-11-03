@@ -1,0 +1,24 @@
+# yaml-language-server: $schema=https://opennorms.github.io/openshelf/schemas/kb.schema.json
+openshelf: "1.7"
+id: ai-frontier
+uid: 8d52b99f-cac9-41e1-b7ba-68d9a7b4536c
+title: AI Frontier
+description: Curated evidence-backed agentic AI projects, techniques, research, and experiments for autonomous engineering.
+layout:
+  pages: wiki
+  index: index.md
+  sources: raw
+  schema: AGENTS.md
+  log: log.md
+profile: wiki
+visibility: public
+maintainers: [hexsecs]
+license: CC-BY-4.0
+types:
+  briefing: Immutable dated research briefing.
+  project: Canonical record for an agentic AI implementation or research project.
+  technique: Reusable agentic design pattern.
+  signal: Evidence-backed emerging pattern or hypothesis.
+  experiment: Reproducible proposed or completed experiment.
+  evaluation: Comparative evidence and benchmarking assessment.
+tags: [agentic-ai, autonomous-agents, research]

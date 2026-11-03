@@ -1,0 +1,14 @@
+name: OpenShelf validation
+on:
+  pull_request:
+  push:
+    branches: [main]
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: OpenNorms/openshelf/action@v1
+        with:
+          paths: .
+          strict: true

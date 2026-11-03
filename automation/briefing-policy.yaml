@@ -1,0 +1,33 @@
+version: 1
+selection:
+  min_items: 5
+  max_items: 10
+  preferred_age_days: 14
+  core_share_target: 0.75
+  exploration_share_target: 0.25
+  prioritize:
+    - executable implementations
+    - primary research and repository evidence
+    - reproducible benchmarks
+    - production workflows with measured outcomes
+    - coding agents, multi-agent systems, memory, recovery, tool use
+  penalize:
+    - unsupported marketing claims
+    - repeated announcements without material updates
+    - unverified metrics
+required_item_fields:
+  - title
+  - publication_date
+  - source_url
+  - demonstrated_capability
+  - key_technique
+  - novelty_assessment
+  - evidence_quality
+  - practical_takeaway
+process:
+  deduplicate_by: [canonical_repo_url, doi, arxiv_id, official_url]
+  preserve_historical_briefings: true
+  update_canonical_pages: true
+  require_source_provenance: true
+  require_human_review_before_merge: true
+  never_infer_negative_feedback_from_non_engagement: true
