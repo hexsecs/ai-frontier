@@ -1,0 +1,30 @@
+name: One-time OpenShelf 1.7 metadata migration
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/frontmatter-migration.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install 'PyYAML>=6,<7'
+      - run: python scripts/migrate_frontmatter.py
+      - name: Commit adopted metadata
+        run: |
+          if ! git diff --quiet -- wiki; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add wiki
+            git commit -m "Adopt OpenShelf 1.7 UUIDs and depth metadata across research pages"
+            git push
+          fi
