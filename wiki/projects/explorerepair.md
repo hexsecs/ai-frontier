@@ -6,7 +6,7 @@ type: project
 depth: deep
 created: 2026-10-30
 updated: 2026-11-02
-related: [ground-truth-fallibility]
+related: [ground-truth-fallibility, comparator-construction-shapes-margins]
 sources:
   - url: https://arxiv.org/abs/2610.39899
     retrieved: 2026-11-02

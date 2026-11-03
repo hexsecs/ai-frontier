@@ -6,6 +6,7 @@ summary: "AiSOC v21 adds verified serving-model attribution to an open-source AI
 type: project
 created: 2026-11-02
 updated: 2026-11-02
+related: [abstention-as-first-class-verdict, scoped-assurance]
 sources:
   - url: https://github.com/beenuar/AiSOC/releases/tag/v21.0.0
     retrieved: 2026-11-02

@@ -6,7 +6,7 @@ type: concept
 depth: full
 title: "Improvement lives in external state"
 summary: "Agents in this corpus improve by editing persistent external state (memory, knowledge modules, skills, team rules) while model weights stay frozen."
-related: [filingloop, garden, hera, karma, molrsi, evoteam, github-copilot-fusion]
+related: [filingloop, garden, hera, karma, molrsi, evoteam, github-copilot-fusion, tinyastral, bioagent, angler]
 sources:
   - url: https://arxiv.org/abs/2610.39884
     retrieved: 2026-11-02
@@ -49,6 +49,15 @@ schema-checked steps; a patch is kept only if it improves a fixed
 validation set, and the initial and final knowledge states are each
 evaluated on the untouched hold-out exactly once, at the end.
 
+**[[projects/tinyastral]]** is the purest tested instance in either
+mining pass. Its first stage evolves only a harness around a frozen
+teacher: "Only H changes. The weights of π_T stay fixed throughout,
+and M does not act in the environment." RoboTwin success rises from
+33.4% to 63.6% on harness edits alone, and the artifact's portability
+is measured rather than assumed: a planner the harness was never
+evolved around "improves by
+30.6 pp without model-specific harness changes".
+
 **[[projects/molrsi]]** improves a search policy, not a model. "The
 backbone model — Claude Sonnet 5, via the Anthropic API — is frozen
 throughout. Nothing is retrained, and the agent does not modify its own
@@ -90,6 +99,24 @@ from requirement-level grading feedback while model weights stay
 frozen"; its summary of what moves between cases is that "what
 transfers is procedure, not facts".
 
+**[[projects/bioagent]]** grows the artifact by teaching. "BioAgent is
+a concrete instance of capability growth as library curation rather
+than weight updates": after the first protocol, the robot's competence
+"lives in an inspectable artifact — 20 validated skill types with
+recorded implementations, bindings, validation evidence, and task
+packages". Teaching closes the flagged gaps, growing the library from
+20 to 25 types; the second protocol then runs against the stored
+library — external state as the asset the later task spends. The
+library is the *reuse* locus rather than the only changing component:
+offline updates to the π₀.₅ policy also occur.
+
+**[[projects/angler]]** is the within-run form: the attacker improves
+across rollouts through an experience pool and bandit state around a
+fixed mutation model. "The methods are close at small budgets
+and the gap widens as verifier feedback accumulates, which is the
+paper's evidence that cross-rollout learning, not just candidate
+volume, drives the improvement."
+
 The substrate itself is independently documented. Persistent text
 files that an agent loads and carries across sessions are a real,
 measurable channel: [[projects/security-impact-of-coding-agent-memory-files]]
@@ -113,6 +140,16 @@ steer. Stored text improves a system only when the channel actually
 moves behavior, which is the separate question owned by the sibling
 concept persistent-memory-steers-later-behavior.
 
+A second null, from mining pass 2, is cleaner.
+[[projects/context-as-infrastructure]] builds, freezes, and serves the
+external state this concept describes — compiled claim–evidence trees,
+graphs, wikis, timelines — and "No compiled structure the authors
+tested improved question-answering accuracy detectably." What the
+state bought was cost — claim–evidence substitution cut query tokens
+38% on average — not capability. The entry's claim must be read as
+*where improvement lives when it occurs*, not *external state improves
+things*.
+
 The frozen reader bounds the artifact. [[projects/evoteam]] states the
 dependence plainly: "effective use of the experience depends on the
 base model's ability to correctly interpret and apply the stored
@@ -134,6 +171,16 @@ karma's transfer results likewise read per source domain. The sign of
 travelling experience is the sibling concept
 negative-transfer-of-experience; this entry is about where improvement
 resides, that one is about whether it survives the trip.
+
+The locus can also be deliberately vacated in part. TinyAstral's
+second stage moves improvement into the weights: "Within the final
+harness, distillation adds +21.6 pp over the untrained 4B
+initialization." But the deposit does not absorb the artifact — "The
+scaffolding is not absorbed into the weights alone; the student is
+deployed within the harness that was evolved around its teacher." The
+concept survives in a two-locus form pass 1 did not have: stage 1 the
+pure instance, stage 2 a split between weights and the state carrying
+the gain at deployment.
 
 Finally, the branding bound. [[projects/molrsi]]'s "recursive
 self-improvement" names a memory-update loop around a frozen model; its
@@ -210,4 +257,8 @@ an independent replication recorded in this KB, and the one vendor
 page (github-copilot-fusion) is weighted as architectural description
 only. The bounds above — one null result, one disputed relation
 typing, one capability-locus contradiction — are part of the concept's
-record, not qualifications added later.
+record, not qualifications added later. Mining pass 2 (2026-11-02, over
+the cluster E–F pages) extended the concept with three more supporting
+pages — tinyastral, bioagent, and angler — and two further bounds:
+tinyastral's stage-2 distillation into the weights, and
+context-as-infrastructure's null result, where only cost moved.

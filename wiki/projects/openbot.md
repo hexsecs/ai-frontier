@@ -6,6 +6,7 @@ summary: "CopilotKit's self-hosted agent coworker: an audit-first policy gateway
 type: project
 created: 2026-11-02
 updated: 2026-11-02
+related: [scoped-assurance, structural-constraint-over-instruction, validation-tier-gap]
 sources:
   - url: https://github.com/CopilotKit/openbot
     retrieved: 2026-11-02

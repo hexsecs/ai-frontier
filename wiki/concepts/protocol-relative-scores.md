@@ -6,7 +6,7 @@ type: concept
 depth: full
 created: 2026-11-02
 updated: 2026-11-02
-related: [intent-loss-in-smart-contract-synthesis, seq-k, dynarev, clingex, webanything]
+related: [intent-loss-in-smart-contract-synthesis, seq-k, dynarev, clingex, webanything, prefix-executability, angler]
 sources:
   - url: https://arxiv.org/abs/2610.37830
     retrieved: 2026-11-02

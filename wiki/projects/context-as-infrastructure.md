@@ -6,6 +6,7 @@ summary: "A RAGFlow vendor paper finds precompiled context structures add no acc
 type: project
 created: 2026-11-02
 updated: 2026-11-02
+related: [comparator-construction-shapes-margins, validation-tier-gap]
 sources:
   - url: https://arxiv.org/abs/2610.41172
     retrieved: 2026-11-02

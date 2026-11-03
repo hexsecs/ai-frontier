@@ -6,7 +6,7 @@ summary: "Autonomous cryogenic transport measurements of quantum devices by an L
 type: project
 created: 2026-10-31
 updated: 2026-11-02
-related: [evaluator-circularity, improvement-lives-in-external-state]
+related: [evaluator-circularity, improvement-lives-in-external-state, capability-locus]
 sources:
   - url: https://arxiv.org/abs/2610.39074
     retrieved: 2026-11-02

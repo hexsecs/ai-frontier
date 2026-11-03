@@ -6,7 +6,7 @@ summary: "Active verification of computer-use agents by a separate post-hoc veri
 type: project
 created: 2026-10-30
 updated: 2026-11-02
-related: [ground-truth-fallibility]
+related: [ground-truth-fallibility, abstention-as-first-class-verdict, comparator-construction-shapes-margins]
 sources:
   - url: https://arxiv.org/abs/2610.40578
     retrieved: 2026-11-02

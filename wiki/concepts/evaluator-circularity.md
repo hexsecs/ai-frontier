@@ -6,7 +6,7 @@ summary: "When the evaluated system sits inside its own grading path, the score 
 type: concept
 created: 2026-11-02
 updated: 2026-11-02
-related: [filingloop, agenticds, auctopus, hera, dynarev, clingex, intent-loss-in-smart-contract-synthesis, webanything, seq-k, molrsi, envos, evoteam]
+related: [filingloop, agenticds, auctopus, hera, dynarev, clingex, intent-loss-in-smart-contract-synthesis, webanything, seq-k, molrsi, envos, evoteam, dittany]
 sources:
   - url: https://arxiv.org/abs/2610.37905
     retrieved: 2026-11-02
