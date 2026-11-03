@@ -1,5 +1,7 @@
 # AI Frontier
 
+**[Browse the AI Frontier knowledge base on GitHub Pages](https://hexsecs.github.io/ai-frontier/)**
+
 An [OpenShelf](https://github.com/OpenNorms/openshelf) v1.7 knowledge base for evidence-backed agentic AI research.
 
 ## Organization
