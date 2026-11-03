@@ -9,6 +9,7 @@ import pathlib
 import posixpath
 import re
 import sys
+from chatgpt_charts import convert as convert_chatgpt_charts
 
 try:
     import markdown
@@ -103,6 +104,7 @@ def main():
             continue
         page_id = file.relative_to(WIKI).as_posix()[:-3]
         front, body = split_frontmatter(file.read_text(encoding="utf-8"))
+        body = convert_chatgpt_charts(body)
         category = page_id.split("/", 1)[0]
         if category not in {"projects", "techniques", "briefings", "signals", "experiments", "evaluations"}:
             continue
