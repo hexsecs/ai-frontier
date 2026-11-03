@@ -1,29 +1,106 @@
 ---
 uid: a7beba4c-8fee-4cea-8f37-060781b90de7
-depth: brief
+depth: deep
 title: "AiSOC v21"
-summary: "Evidence-accountable SOC agent platform."
+summary: "AiSOC v21 adds verified serving-model attribution to an open-source AI SOC whose own verdict eval finds every measured model near chance."
 type: project
 created: 2026-11-02
 updated: 2026-11-02
 sources:
   - url: https://github.com/beenuar/AiSOC/releases/tag/v21.0.0
     retrieved: 2026-11-02
+  - url: https://github.com/beenuar/AiSOC
+    retrieved: 2026-11-02
 ---
 
 # AiSOC v21
 
-## What was demonstrated
+## What it is
 
-Evidence-accountable SOC agent platform.
+AiSOC is an open-source, self-hostable AI security operations center: it ingests security telemetry, fuses and correlates it into incidents, investigates them with LLM agents whose reasoning is written to an auditable Investigation Ledger, and proposes responses that a human approves. The project describes itself as evidence-accountable. Every copilot answer carries citations to the ledger entries behind it, and claims that cannot be cited are labeled *uncited* rather than dropped; investigations export as signed, byte-identical evidence bundles; and benchmark denominators are published alongside the scores. The code is MIT-licensed; development is funded by Cyble, which pays for the engineering time and releases the result openly. It is explicitly not a drop-in SIEM replacement — it correlates and investigates rather than providing long-term log retention and compliance search — and it is not autonomous by default: response requires explicit policy authorization and a human approver.
 
-## Key technique
+Version 21.0.0 (changelog dated 2026-10-31, release published 2026-11-01) is best read as an **evidence-integrity release**. Its headline is an uncomfortable disclosure about the project's own published numbers: every verdict-eval scorecard row published before v21 had `resolved_models: []` — 72 model calls per run were placed and answered, but none could be attributed to the model that actually served it, because serving identity was read only from the LiteLLM gateway header, and runs against a direct OpenAI-compatible endpoint recorded nothing. Rather than backfilling plausible attribution, v21 fixes the attribution machinery end to end and leaves the five historical rows labeled "unverified". The rest of the release hardens the same theme: fuller recall accounting in replay, a pinned claim-support measurement, and a dry-run mode for retro-hunts.
 
-Audit model identity, decisions, and dry-run security workflows.
+## Mechanism
+
+**Platform pipeline.** Telemetry arrives by push (an HTTP ingest API, with the tenant derived from the credential) or by pull: 91 click-and-connect data connectors (Splunk, Sentinel, Elastic, CrowdStrike, Okta, AWS and Kubernetes audit among those named), four queue/object-store collectors (CloudTrail over SQS, GCP Pub/Sub, Azure Event Hubs, and a syslog/CEF listener), each with a resumable cursor. Ingest normalizes vendor payloads onto an OCSF-shaped common envelope and stamps an activity projection — actor, action, resource, location, outcome — on every event; events are published to Kafka. Fusion then runs the compiled detection ruleset — the README counts 2,966 executable rules of 7,407 on disk, plus 76 sliding-window rules (see Limitations for a conflicting count in the architecture walkthrough) — where "executable is earned, not declared": a rule enters the compiled set only after a vendor-shaped event is replayed through the real connector and engine and the rule is watched to fire. A Redis-backed correlator groups related alerts into incidents. Investigation is a LangGraph multi-agent loop (recon, forensic, responder, and reporter agents): the agents read the alert, its correlated siblings, entity context, and prior verdicts for the same signature; they call typed tools and never write SQL; prompts are validated before sending, with raw logs, OCSF payloads, and secret-shaped values refused rather than redacted after the fact. Everything — prompts, tool calls, citations, verdict, token cost — is written to the Investigation Ledger. The auto-triage ("reflex") path emits a structured decision contract carrying named timings for nine stages. Response is governed: playbooks preview before acting behind three opt-in switches (deployment, tenant, playbook), approval is a durable pause persisted to Postgres that survives a restart, and an approver must hold the required permission tier and must not be the person who requested the action. Historical replay is time-frozen — evidence cutoffs are enforced in the retrieval queries, never by prompt — and retro-hunts re-sweep the ClickHouse event lake when new threat intelligence arrives. The bundled default model is a local ~2 GB `llama3.2:3b-instruct-q4_K_M` behind a LiteLLM gateway, so a default install runs with no API keys. Deployment profiles run from a 16-service core (~8 GB RAM) to a 22-service full stack.
+
+**What v21 changes.**
+
+- **Serving-model attribution.** The extractor now reads the LiteLLM gateway header first (*verified*) and falls back to the response body's own `model` field (*self-reported*); a requested alias is never copied into serving metadata. Every scorecard carries a five-state `provenance_status`: `verified`, `self_reported`, `unattributed`, `serving_mismatch`, or `no_calls`.
+- **Refusal of mismatched runs.** A live run whose serving identity mismatches the requested model is refused as that model's performance and preserved as a diagnostic, instead of being silently scored under the requested name.
+- **Attribution-gated closure.** A measured auto-closure precision can no longer be bound to a call whose serving model no party vouched for: a clearing measurement over an unattributed call now **blocks** auto-closure instead of authorizing it.
+- **Full-cohort recall accounting.** The replay scorer keeps abstentions and failures in the malicious denominator rather than letting them drop out of the recall figure, ships closure claims with their contamination rate, and pins `closures_executed` at zero because replay executes nothing.
+- **Claim-support measurement.** A 16-case hand-annotated set measures `score_claim_support` — whether a verdict's rationale claims are actually supported by its evidence — against an exactly pinned confusion matrix (TP 7, FP 0, FN 1, TN 8), with a recorded known miss that must stay missed until the pins move with it, and the annotation-independence limit stated where the number lives. The measurement found and drove a real detector fix: a `scheduled scan` / `scheduled_scan` claim-pattern mismatch.
+- **Retro-hunt dry run.** `RETRO_HUNT_DRY_RUN` runs a sweep exactly as live — the warehouse scan still consumes the sweep budget — but withholds every mutation at the write boundary inside `sweep_tenant`: matches come back as recorded proposals, no alert opens, no sighting row lands.
+- **Decision-contract and triage detail.** The reflex decision contract now carries verdict, operational disposition, supporting and contradictory decisive claims, groundedness, missing prerequisites, and the escalation reason — assembled from signals that already ran, with `None` for a signal that never ran rather than an empty list pretending the check happened. Tenant business-context rules that fire are named in the triage prompt with the mutation they made, and a verdict's `business_impact` sentence may cite only those rule ids; uncited or fabricated elements are dropped and counted, never rendered. Fusion also stamps asset criticality from the tenant's own inventory at fuse time, feeding a bounded factor in the confidence scorer and the investigation-queue priority order.
+
+## Evidence
+
+All numbers in this section are **author-reported results**: measured and published by the project itself, with no independent replication (see Evidence status). AiSOC is unusual in that the methodology is published in detail and the conclusions the project draws from its own numbers are self-critical.
+
+**The verdict eval.** The headline measurement grades models on `verdict_corpus_v1`: 72 items in 36 twin pairs. Each pair shares rule, severity, title, vendor, and ATT&CK technique and differs only in the evidence — severity therefore deliberately carries no signal about the correct disposition. Classes are `true_positive` 36, `benign` 18, `benign_true_positive` 10, and `false_positive` 8. All 72 items are hand-authored and synthetic; the labels are the author's own analyst judgments; the decisive-evidence field is held out from the model. Each model was graded through the same production triage path, 72 calls per model, measured 2026-10-10/11. The baselines are published with the table: with four classes, a constant answer scores 0.250 balanced accuracy and 0.500 plain accuracy.
+
+| Model | Balanced acc. | Plain acc. | Malicious recall | Malicious precision | Auto-close precision | ECE | MCC |
+|---|---|---|---|---|---|---|---|
+| llama3.1:8b (GPU) | 0.357 | 0.458 | 0.583 (21/36) | 0.724 | 0.111 (n=9) | 0.349 | 0.209 |
+| llama3.2:3b (CPU, shipped default) | 0.285 | 0.319 | 0.250 (9/36) | 0.500 | 0.571 (n=7) | 0.442 | 0.047 |
+| llama3:8b (GPU) | 0.279 | 0.417 | 0.639 (23/36) | 0.657 | 0.091 (n=11) | 0.421 | 0.113 |
+| qwen2.5:7b (GPU) | 0.260 | 0.262 | 0.083 (3/36) | 0.750 | 0.243 (n=37) | 0.594 | 0.032 |
+| mistral:7b (GPU) | 0.210 | 0.500 | 0.639 (23/36) | 0.657 | 0.143 (n=14) | 0.366 | 0.202 |
+| deterministic fallback (no model) | 0.250 | — | 0.000 (0/36) | — | — | — | 0.000 |
+| any hosted provider (GPT-4o class) | *not measured* | | | | | | |
+
+The scorecard's own conclusion, verbatim:
+
+> "Two findings outrank the ranking. First, every model measured is far closer to chance than to useful: the best balanced accuracy is 0.357 against a 0.250 floor, and three of five score below the 0.500 plain accuracy of always guessing the majority class. Second, auto-close precision is poor across the board — 0.571 on seven candidates at best, 0.091 to 0.243 elsewhere — so nothing measured here supports autonomous closure, and that is a finding about the auto-close gate rather than about which model to pick."
+
+Hallucination rate was 0.0 on all five model rows; Mistral abstained on 30.6% of items and Qwen on 9.7%. V21 added the deterministic-fallback row to the committed scorecard — balanced accuracy exactly at the 0.250 constant floor, zero of 36 malicious cases caught — as the rules floor every model row is read against. The five historical model rows are the ones whose per-decision attribution v21 disclosed as unverified (see Limitations).
+
+**The substrate harness.** A separate CI-gated suite runs 200 synthetic incidents from 55 templates, backed by 361 telemetry events across 14 sources. Its headline figures — `mitre_accuracy` 0.970 (per-template macro 0.964), `investigation_completeness` 0.942, `response_quality` per-template macro 1.000, playbook completion 50.5% overall and 100% on the high+critical mapped subset — measure substrate self-consistency, and the project's methodology document says so in terms: "Three of the four scoring suites (`mitre_accuracy`, `investigation_completeness`, `response_quality`) are **tautological by construction** — they pass as long as the substrate stays internally consistent", and anyone treating `mitre_accuracy = 0.97` as "the agent is 97% accurate at MITRE classification" is misreading the suite. A weekly wet eval runs the live LangGraph agent with real LLM calls against the same synthetic corpus, measuring latency, tokens, and USD, with a groundedness floor of 0.40 CI-asserted over a deterministic 10-incident slice.
+
+**Alert reduction, in three labeled figures.** The project publishes three numbers for three different methods, and they must not be collapsed into one: **75.3%** under a legacy four-tier grouping scheme implemented inside the test — author-labeled as retained for continuity and, per the benchmark page, it "does not describe this product"; **33.3%** grouping a noisy 1,000-alert stream with the production `RawAlert.correlation_key()` method — per the benchmark page, "the number that describes AiSOC"; and **24.5%** on a detection-shaped cohort.
+
+**Smaller measurements.** The claim-support checker is pinned at TP 7 / FP 0 / FN 1 / TN 8 over its 16 hand-annotated cases (see Mechanism). The bundled 3B model produced triage-usable output on 44 of 50 alerts before its reply was constrained to JSON, and on 50 of 50 after (author-reported). Of the 2,005 Splunk rules bundled with the migration package, 1,734 translate and 1,711 of those translations are partial.
+
+## Limitations
+
+- **No hosted or frontier model has ever been measured.** Every verdict number comes from small local open-weight models (3B–8B, several of older generations). The scorecard's hosted-provider row reads, verbatim: "not measured — no funded key exists in this repository, and no hosted provider has ever been exercised". The sources therefore support no claim — in either direction — about verdict quality in a deployment fronted by a current frontier model.
+- **Both corpora are 100% synthetic and hand-authored by the project itself.** The verdict corpus's labels are the author's analyst judgments, with no claim of independent annotators; the claim-support measurement states its own annotation-independence limit. The corpus README documents a genuine search for a real dataset — CICIDS-2017, CTU-13, AIT Log Data Set v2, MITRE Engenuity ATT&CK Evaluations, MITRE CAR — each refused on license and/or fit grounds (their labels are traffic or detection classes, not analyst dispositions, and none offers benign/malicious twin pairing). The refusal is documented, but the consequence stands: no evaluation on real or recorded production telemetry exists.
+- **No independent replication.** The methodology invites reproductions and defines a submission protocol, but no third-party reproduction result appears in the sources.
+- **No confidence intervals**, by the methodology's own stated choice: "we do not report confidence intervals because n=200 is small enough that the headline number moves visibly run-over-run". Auto-close precision rests on 7 to 37 candidates per row, and the project itself warns that the column "should be read as a warning sign, not as a ranking". Latency is not comparable across scorecard rows: the 3B model ran CPU-bound inside the stack container while the four 7–8B rows ran GPU-accelerated on the host.
+- **The v21 fix cuts both ways.** The project disclosed and repaired the attribution defect itself, and preserved the historical rows as "unverified" rather than inventing attribution — but it follows that the five model names in the verdict table rest on run configuration, not on per-decision serving evidence.
+- **Author-stated limits** (benchmark methodology, "Limitations and threats to validity"): synthetic data is not production data — real environments are dominated by 5–10 noisy rules while the eval distributes evenly; real attackers mutate while the corpus is static; org-specific context is normalized away. Substrate self-checks are tautological by design. Wet-eval outputs are non-deterministic with a single weekly run. Reported cost is rate-card cost, excluding compute, storage, engineering time, and human review. The playbook completion gate measures coverage, not quality. Connectors outside the 14 modeled log sources appear in no suite.
+- **Documentation number drift.** The README's pipeline description counts fusion at 2,966 executable detection rules and 76 sliding-window rules; the architecture walkthrough counts 2,535 executable rules (765 native and 1,770 imported Sigma) and a windowed engine of 72 compiled rules plus three built-ins. The two author documents disagree as published — the README states that CI recounts its figures, so the documents may describe different commits or counting scopes — but the discrepancy is visible in the published docs and unresolved in the sources.
+- **Release velocity and maturity.** The repository was created 2026-05-02 and v21.0.0 is its 41st release in roughly six months — a major version every four to five days. "Stable" in the project's maturity table is its own gated definition (a PR-gated check plus a negative control), not a long soak period, and package distribution is self-rated Beta: the PyPI packages resolve, but the npm packages still await a first upload.
+
+## Competing approaches
+
+AiSOC positions itself against three categories, all in the author's framing — capability-table characterizations sourced from the competitors' public documentation, with no named commercial competitor benchmarked head-to-head anywhere in the sources:
+
+- **Closed-source AI SOC products** — cloud-only, with black-box agent loops and vendor-claimed-only evaluation harnesses. AiSOC's counter-argument is reviewability: closed products "run on vendor infrastructure and do not expose the agent loop, which makes them harder to review under SOC 2, ISO 27001, or DORA controls".
+- **Commercial SIEM platforms** — positioned as having no native agent layer (a paid AI-assistant add-on) and premium-add-on ATT&CK coverage. AiSOC concedes the adjacent ground rather than contesting it: it is not a SIEM replacement and does not compete on retention or compliance search.
+- **Open-source SIEM/HIDS** — characterized as collector modules with no agent layer, against AiSOC's LangGraph agent loop and plugin SDKs.
+
+Behind all three sits a positioning against **vendor benchmark practice generally**: the methodology page opens with the observation that vendor-published AI SOC benchmarks are typically not reproducible by the buyer — "the dataset, the rubric, and the runner are private. AiSOC takes the opposite position." The most instructive competitor in the sources, though, is internal: the project's own **deterministic fallback**, rendered beside every model row as the floor each model must beat. On plain accuracy, the majority-class constant (0.500) beats three of the five measured models — the comparison the scorecard's conclusion is built on.
+
+## Implications
+
+AiSOC v21 is most significant as an evaluation-integrity artifact rather than as a SOC product result. It treats **serving-model provenance as a first-class evaluation output**: a score that cannot name the model that actually produced it, under a graded provenance status, is not allowed to authorize operational behavior — an unattributed clearing measurement blocks auto-closure rather than enabling it. That pattern, and the published-denominator discipline that accompanies it (full-cohort recall; "unmeasured reads *not measured*, never `0`"), is directly relevant to [[techniques/evaluation-and-simulation]] and [[techniques/verification-and-evidence]]. The refusal to backfill attribution for the historical rows — at the cost of labeling the project's own published table "unverified" — is a disclosure stance other agent projects could copy at low cost. Substantively, the verdict eval is evidence, of a limited kind (author-run, small local models, a synthetic hand-authored corpus), that autonomous alert closure is not currently supported even by a system built to attempt it; that aligns the project with the human-approval defaults discussed in [[techniques/secure-agent-operations]], and its dry-run machinery — playbook preview, `RETRO_HUNT_DRY_RUN`, time-frozen replay with `closures_executed` pinned at zero — is a worked example of rehearsing agent actions against real history without letting them touch it.
+
+## Reproducible experiment
+
+Nothing was run for this page (see Evidence status), but the project's claims are unusually checkable, and a reader could:
+
+1. **Re-run the verdict eval.** The corpus, the committed scorecard, and the methodology are all in the repository. Grading the same corpus digest through the production triage path with a local model — the documented install is `git clone` plus `make up`, or the no-Docker `pip install aisoc-sandbox` offline demo — should produce a scorecard row comparable to the committed ones, and under v21 the new row's `provenance_status` can be checked against the model that actually served.
+2. **Fill the empty row.** The scorecard's hosted-provider row is empty only for want of a funded key. Running the corpus with a frontier model would produce the first hosted-model measurement and test whether the near-chance verdicts are a small-model artifact or a property of the task.
+3. **Probe the attribution fix directly.** Pointing the stack at an endpoint that serves a different model than the one requested should produce a `serving_mismatch` refusal preserved as a diagnostic, rather than a scored row under the requested name — a direct negative control for v21's headline claim.
+
+The methodology document defines a submission protocol for third-party reproductions; none appears in the sources yet.
 
 ## Evidence status
 
-Imported from a retained prior briefing summary. The source URL was recorded previously; its contents and reported metrics have **not** been independently reverified in this import.
+Every result on this page is **author-reported**: author-run and author-labeled, published by the project itself, with **no independent replication**. That is a weaker position than an independently verified result — but a materially stronger one than a vendor-claims page, and the difference is the point of this release: the methodology is published, the corpus and scorecard are committed artifacts, baselines and denominators are printed beside the scores, and the conclusions the project draws from its own numbers are self-critical ("nothing measured here supports autonomous closure"). The five historical scorecard rows remain labeled "unverified" by the project's **own deliberate choice** — v21 declined to invent attribution for calls it could not bind to a serving model, and preserved the rows as unverified rather than withdrawing or quietly repairing them; that refusal is presented here as the integrity stance it is. For this page, the v21.0.0 release notes, README, committed verdict scorecard, benchmark and methodology pages, verdict-corpus README, and architecture walkthrough were **read; no project code was executed**, and no install or benchmark was run. This supersedes the stub's earlier import note, which recorded that the source's contents and reported metrics had not been reverified in the import: the contents have now been read in full, while the metrics remain author-reported and independently unreplicated.
 
 ## Historical coverage
 

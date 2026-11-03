@@ -1,29 +1,99 @@
 ---
 uid: b04eeb12-2864-4d02-88c2-f9ecb423d5f4
-depth: brief
-title: "BioAgent"
-summary: "Robotic laboratory skill-gap discovery and acquisition."
+depth: deep
+title: "BioAgent: Self-Directed Skill Acquisition and Capability Growth for Long-Horizon Laboratory Protocols"
+summary: "BioAgent: a dual-arm lab robot that detects missing skills before execution, acquires them through human teaching, and reuses them across protocols."
 type: project
 created: 2026-11-02
 updated: 2026-11-02
 sources:
   - url: https://arxiv.org/abs/2610.41383
     retrieved: 2026-11-02
+  - url: https://arxiv.org/html/2610.41383v1
+    retrieved: 2026-11-02
+  - url: https://suiuko.github.io/bioagentweb/
+    retrieved: 2026-11-02
 ---
 
 # BioAgent
 
-## What was demonstrated
+## What it is
 
-Robotic laboratory skill-gap discovery and acquisition.
+BioAgent is an embodied agent system for executing unfamiliar wet-lab protocols on a dual-arm robot, built by Gaojing Zhang, Changwen Chen, Zichen Luo, Jialiang Li, Yuhan Wang, Yifei Xie, and Wenzhao Lian (Shanghai Jiao Tong University and the University of Sussex; arXiv:2610.41383, cs.RO, submitted 30 October 2026; letter-formatted, no venue stated). All of its reported results are on a physical robot — the paper contains no simulation experiments.
 
-## Key technique
+The paper frames protocol execution as two coupled challenges: *capability sufficiency*, "whether the robot has the capabilities required by the task," and *experimental validity*, "whether the current state permits execution under the specified constraints" (§I). The motivating observation is that these interact badly over long horizons: "Even when most of the workflow is supported by existing skills or their compositions, a single missing behavior can prevent its completion." BioAgent's answer is "an embodied agent system that enables robots to execute unfamiliar laboratory protocols by closing only the capability gaps that prevent valid execution, while retaining validated capabilities for future reuse."
 
-Acquire missing physical-world skills during execution.
+The stub this page replaces described the key technique as "acquire missing physical-world skills during execution." That timing is wrong, and the correction matters for how the results should be read. Acquisition — detecting a missing skill, constructing it, teaching it, validating it — happens in a learning/development stage that precedes evaluation. During evaluation the system executes and recovers with the library it already has: if recovery would require a capability the library lacks, "During evaluation, no new recovery skills are acquired. The Monitor terminates execution when no admissible continuation exists, including when a required recovery capability is unavailable" (§III-C). BioAgent is therefore not a system that learns mid-run; it is a system that prepares — auditing a new protocol against its validated skill library, closing the gaps it finds under human supervision — and then runs autonomously with a frozen library.
+
+The test setting is two sequential protocols on one platform (a Monte 02 dual-arm robot from Corenetic AI): Task 1, plate pretreatment plus incubator loading (20 ordered skill invocations, 20 distinct skills), and Task 2, plate washing (31 ordered invocations, 24 distinct skills), where the second protocol is executed against the library built for the first, so acquisition, revision, and reuse can all be measured on the same system.
+
+## Mechanism
+
+BioAgent has three components: an **Analyzer** that derives requirements, a **Planner** that acquires and reuses skills, and a **Monitor** that checks execution (§III).
+
+**Requirement derivation.** From a laboratory request and protocol instructions P, the Analyzer forms ordered operation–object–outcome requirements Q(P) = (q₁,…,qₙ), each carrying preconditions and constraints on samples, containers, liquid states, and timing (§III-A). This derivation is not autonomous: "Human review confirms their meaning and order." A run counts as successful only if all mandatory outcomes are achieved in the specified order with all constraints maintained throughout.
+
+**Representation.** The system maintains a tool set and two persistent libraries — validated atomic skills 𝒦 and task packages ℬ — both initially empty (𝒦₀ = ℬ₀ = ∅). "An atomic skill specifies an operation, bindings, preconditions, and a verifiable outcome; its record links these to an implementation, development stage, and validation evidence." Task packages retain versioned skill references, bindings, order, endpoint requirements, and inter-operation constraints, so a validated protocol is itself a reusable, auditable artifact.
+
+**Execution backends.** A skill implementation is one of three things: (i) a vision-language-action policy — π₀.₅, fine-tuned for the platform — that predicts manipulation actions from visual observations, robot state, and task instructions; (ii) reviewed trajectory replay, optionally with visual alignment, trajectory adaptation, or object-pose-guided replay; or (iii) direct instrument command execution through a device interface (Table I). Perception tools supply 6D object pose estimation (e.g. FoundationPose) and visual point tracking (e.g. CoTracker3), the latter returning trajectories and visibility "as evidence for subsequent checks."
+
+**Gap detection.** The Planner matches each requirement to compatible skills and packages in 𝒦, ℬ. Unmatched requirements are refined to expose reusable skill compositions and genuinely missing behaviors; the residual missing behaviors are the capability gaps Δ. A matched skill whose preconditions are unmet is not a gap — it is routed to preparation or recovery instead of learning. The paper's worked example: in plate washing, "a missing tilting behavior triggers targeted teaching while pickup, aspiration, waste dispensing, and return remain assigned to existing skills" (§III-B).
+
+**Acquisition.** For each gap, the Planner chooses an implementation plan using accumulated tool-use experience E_t(u, c) — the observed performance of execution module u on skill category c. If the selected tool's experience falls below a threshold η, the Planner reassesses and requests teaching during learning. Teaching data provides demonstrations (for policy adaptation) or reviewed reference trajectories (for replay); where existing tools suffice, no teaching is requested. Acquisition is thus targeted twice over: only at gaps, and with teaching effort spent only where the tool record says the unaided tool is unreliable.
+
+**Validation gate.** A candidate skill enters sequential task-package validation only after achieving at least 60% success in learning-stage trials. Sequential validation executes the assembled package in order, "checking outcomes and compatibility with subsequent preconditions and experimental constraints." Failures are routed by type — skill revision for inadequate behavior or tool use, binding/composition revision for transition mismatches, and further acquisition for skills missing from admissible recovery plans — and the package is re-validated (Algorithm 1).
+
+**Execution monitoring and recovery.** Before each operation, the Monitor checks skill and task preconditions, safety, and experimental constraints; after it, the Monitor verifies the outcome and the next operation's applicability. It "accounts for partial effects when evaluating the resulting state and terminates the run if a safety or experimental-validity violation is confirmed"; persistent uncertainty after bounded re-observation ends the run during evaluation. Recovery has three strategies, selected from the observed state and partial effects: **R1 (retry)** — retry only if preconditions still hold, partial effects permit another attempt, and the retry budget is not exhausted; **R2 (precondition restoration)** — compose validated skills to restore unmet preconditions while preserving experimental constraints; **R3 (missing recovery capability)** — if admissible recovery needs a behavior outside the validated library, then during learning the requirement joins Δ and acquisition starts, while during evaluation (per the correction above) the run terminates. Before resuming, the Monitor re-verifies recovery outcomes, continuation preconditions, and constraints.
+
+**Consolidation.** An experiment notebook retains requirements, skill versions, implementations, observations, actions, outcomes, interventions, successor states, and exit reasons; tool experience is updated from each episode and feeds later acquisition choices. Offline, accepted demonstrations, traces, and corrections produce policy updates and new task packages, and updated policies must pass sequential validation before reuse. "Failed and unverified attempts are recorded separately in the experiment notebook for diagnosis."
+
+**Platform and training.** Demonstrations are collected by VR and 3D-mouse teleoperation. π₀.₅ is fine-tuned from pi05_base on eight NVIDIA H100 GPUs (batch size 32, 30,001 optimization steps, 16-step action horizon, nominal 15 Hz dataset rate, AdamW with gradient clipping 1.0, EMA decay 0.999, learning rate 5×10⁻⁵ after 10,000 warmup steps), with inference on a local NVIDIA RTX 5090 (32 GB).
+
+## Evidence
+
+All results below are author-reported, from the physical Monte 02 robot; the paper reports no simulation results, and states that "all evaluation runs are autonomous" (§IV-C). A complete-task run succeeds when "all mandatory outcomes are achieved in order, protocol constraints are maintained throughout execution, and the final state passes all required checks" (§IV-B).
+
+**Complete-task success (Table II; 50 runs per task per condition).** With validity-aware recovery (R1+R2) enabled, Task 1 succeeds in 33/50 runs (66%) against 27/50 (54%) with recovery disabled; Task 2 succeeds in 29/50 (58%) against 20/50 (40%). In the paper's words: "On two dual-arm laboratory tasks with 20 and 31 ordered skill invocations, BioAgent achieves complete-task success rates of 66% and 58% with autonomous recovery over 50 runs per task" (Abstract), and "Validity-aware recovery improves complete-task success by 12 and 18 percentage points on the two tasks, respectively" (§I). The paper also reports a second, finer-grained recovery analysis (Table V) run at 40 runs per condition; its absolute rates for the same conditions differ from Table II's, and the two experiments' numbers are not interchangeable — the rates cited here are Table II's, at n = 50 throughout.
+
+**Atomic-skill success against baselines (Table III; 50 real-robot trials per method per skill, recovery disabled).** Across 25 atomic skills — plate handling (9), pipetting (8), tube handling and capping machine (6), instrument access (2) — "BioAgent outperforms all three baselines on each of the 25 skills (Table III), averaging 96.9% success compared with 41.2% for ProtoAct, 54.4% for BioProVLA, and 47.6% for ENPIRE" (§IV-F). BioAgent's per-skill rates range from 84% to 100%, with 17 skills at 50/50; it "records 39 failures in 1,250 trials," with five skills — positioning a tube in the capping machine for recapping (84%), tightening a tube cap (84%), replacing a plate lid (86%), attaching a pipette tip (88%), and returning a centrifuge tube (92%) — accounting for 33 of the 39 failures (84.6%). All methods were evaluated "with the same objects, initial conditions, and skill-specific success criteria"; ProtoAct, BioProVLA, and BioAgent used training data from the same source with matched training budgets, while ENPIRE underwent platform adaptation without additional model training (§IV-C).
+
+**Acquisition and reuse (Table IV; §IV-D).** "Starting from an empty library, BioAgent acquires 20 validated skill types for Task 1 and closes all 20 initial gaps. For Task 2, it reuses 17 types unchanged (17/24, 70.8%), revises two implementations, and acquires five new skill types. All seven flagged gaps are confirmed and closed, expanding the library from 20 to 25 types." The teaching cost of capability growth falls sharply once a library exists: Task 1 required 26 teaching requests and 360 human minutes; Task 2, built largely by reuse, required 9 teaching requests and 114 human minutes — roughly a threefold reduction on both measures for a longer protocol (31 invocations vs 20).
+
+## Limitations
+
+**There is no task-level baseline comparison.** "None of the adapted baselines completes the full 20-invocation workflow in our Task 1 settings" (§IV-C) — ProtoAct, BioProVLA, and ENPIRE score zero complete tasks, so the only end-to-end comparison the paper offers is BioAgent against itself with recovery disabled. The headline task-level numbers (66% / 58%) therefore have no external reference point; they show the system works and that recovery helps, not that it outperforms any alternative at the protocol level.
+
+**The atomic-skill comparison is structurally favorable to BioAgent.** The 25 skills are precisely the skills BioAgent was purpose-taught for these protocols, on its own platform, scored with its own success criteria. The three baselines are the authors' own adaptations of other systems to that platform. Matched training-data source and budgets (§IV-C) narrow but do not remove the asymmetry: an adapted re-implementation is not the original system, and the baselines' extreme lows — ProtoAct at 12% and 14% on opening and closing the incubator door — are at least as consistent with adaptation disadvantage as with the original methods' ability. The per-skill result that BioProVLA scores *below* ProtoAct on replacing a plate lid (30% vs 56%) underlines that these are measurements of ports, not of the named systems as published.
+
+**"Self-directed" operates inside heavy human supervision.** The requirement derivation that defines what the robot must be able to do is human-reviewed: "Human review confirms their meaning and order" (§III-A). The skills themselves are built substantially from human demonstrations and corrections delivered by VR and 3D-mouse teleoperation — 26 teaching requests and 360 human minutes for Task 1 alone. What is self-directed is the *targeting* (which gaps to close, which tools to trust, when to ask for teaching) and the evaluation runs, which are autonomous once the library is frozen. A reader picturing a robot that readies itself for a new protocol unaided would be over-reading the claim.
+
+**Further bounds.** The evidence covers two protocols on one robot in one laboratory; nothing measures transfer to a different platform, lab, or protocol family. At 50 runs per condition, the task-level rates carry wide sampling uncertainty (a 66% rate at n = 50 is compatible with a true rate roughly between the low 50s and high 70s), so the +12/+18-point recovery gains should be read as substantial but imprecisely sized. The paper's two recovery experiments also use different run counts (50 in Table II, 40 in Table V) and report different absolute rates for the same conditions, which limits how finely the recovery effect can be pinned down from the published numbers. Finally, the system has many tuned-looking constants — the 60% learning-trial gate, the experience threshold η, retry budgets — whose sensitivity is not reported in the text read.
+
+## Competing approaches
+
+The paper's comparisons are the three adapted baselines of Table III. **ProtoAct** and **BioProVLA** are prior laboratory-robot systems re-implemented by the authors on the Monte 02 platform, trained from the same data source with matched budgets; they average 41.2% and 54.4% respectively on the atomic skills, and neither completes a full protocol. **ENPIRE** is included under platform adaptation without additional model training and averages 47.6%. The informative contrast is less the ordering than the failure mode: per-skill competence in the 40–55% range compounds over a 20–31-step protocol into near-certain end-to-end failure, which is why none of the three finishes Task 1 — long-horizon success is a product of per-step reliabilities, and BioAgent's claim is that targeted acquisition plus validity-aware recovery is what pushes the product into a usable range.
+
+It is also worth locating BioAgent's contribution relative to its own backend. The manipulation policy is π₀.₅, a general vision-language-action model, fine-tuned conventionally; the paper does not claim a better policy architecture. What BioAgent adds is the layer around the policy: requirement decomposition, gap-targeted acquisition with a teaching budget, a validation gate before a skill joins the library, execution-time validity monitoring, and recovery composed from already-validated skills. The honest comparison class is therefore other *system-level* organizations of the same policy generation, which the atomic-skill table only partially supplies (see Limitations).
+
+## Implications
+
+BioAgent is a concrete instance of capability growth as library curation rather than weight updates. The robot's competence after Task 1 lives in an inspectable artifact — 20 validated skill types with recorded implementations, bindings, validation evidence, and task packages — and the marginal cost of the second protocol is dominated by the five genuinely new skills, not by relearning the seventeen that carried over unchanged. The teaching-effort numbers (26 requests / 360 minutes falling to 9 / 114) are the economic core of the paper: if reuse ratios like 17/24 hold across a protocol family, the human cost of automating each additional protocol declines steeply, and the binding constraint becomes the quality of gap detection rather than the supply of demonstrations.
+
+The second implication is methodological. By separating acquisition (learning stage, human in the loop) from execution (evaluation stage, frozen library, no new skills), BioAgent makes its autonomy claim cleanly testable: evaluation runs either succeed with the prepared library or terminate, and the recovery ablation isolates exactly what runtime validity handling adds. That separation is a design choice other embodied-agent work could adopt to avoid conflating "learned during the test" with "performed at the test."
+
+Finally, the failure concentration is instructive: five contact-rich skills (capping, lid replacement, tip attachment) produce 84.6% of all atomic failures. For this class of system, capability growth is bottlenecked by a small set of physically fiddly skills, and a gap-directed teaching budget is rationally spent exactly there — which is what BioAgent's experience-weighted tool selection is designed to do.
+
+## Reproducible experiment
+
+The paper's own results cannot be rerun from public artifacts: no code or data is released (see Evidence status), and the platform is a specific commercial dual-arm robot with a π₀.₅ fine-tune trained on eight H100s. What can be extracted and tested on any comparable robot stack:
+
+1. **Recovery ablation.** Take any long-horizon manipulation protocol (≥20 steps) and a fixed, frozen skill library. Run n ≥ 40 trials per condition with precondition checking and retry/precondition-restoration recovery enabled vs disabled. BioAgent predicts a double-digit percentage-point gain in complete-task success (its Table II gains are +12 and +18 points at n = 50). A null or small effect on another platform would bound the claim's generality.
+2. **Reuse accounting.** Freeze the library after protocol A; on a new protocol B from the same family, classify each required skill as reused unchanged / revised / newly acquired, and log human teaching requests and minutes for B vs A. BioAgent's figures to beat or refute: 17/24 reused unchanged, and teaching effort falling from 26 requests / 360 minutes to 9 / 114.
+3. **Table audit (no hardware).** The published Table III per-skill cells can be re-averaged to check the reported 96.9% / 41.2% / 54.4% / 47.6% means and the 39-failure count; the research notes behind this page did exactly this and found the arithmetic internally consistent.
 
 ## Evidence status
 
-Imported from a retained prior briefing summary. The source URL was recorded previously; its contents and reported metrics have **not** been independently reverified in this import.
+Every quantitative result on this page is **author-reported** by the team that built BioAgent; there is no independent replication, and this page's numbers were taken from the arXiv v1 full text (submitted 30 October 2026), which a later version could revise. **Artifact availability is minimal:** the paper gives only a project page (https://suiuko.github.io/bioagentweb/), which lists the code repository as "Coming soon" and offers demo videos and a skill-template excerpt; no code and no dataset are available to inspect, and nothing was executed for this page. As an internal-consistency check, the research notes independently re-derived the Table III averages (96.9%, 41.2%, 54.4%, 47.6%) and the 39-failures-in-1,250-trials count from the published per-skill cells; the paper's arithmetic is internally consistent, which verifies the reporting, not the underlying experiments. The import-era stub's one-sentence summary ("Robotic laboratory skill-gap discovery and acquisition") remains accurate as a topic label, but its "Key technique" line — acquiring skills during execution — is corrected in *What it is* above: acquisition is a learning-stage activity, and evaluation runs acquire nothing.
 
 ## Historical coverage
 
