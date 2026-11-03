@@ -1,4 +1,6 @@
 ---
+uid: 691885e5-23e2-47f7-a50a-82963d896cfa
+depth: brief
 title: "BlindToChange"
 summary: "Agents fail to verify indirectly changed facts."
 type: project

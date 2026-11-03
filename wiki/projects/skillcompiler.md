@@ -1,4 +1,6 @@
 ---
+uid: a408a95a-700b-4c86-bda0-66e818182da1
+depth: brief
 title: "SkillCompiler"
 summary: "Compile agent skills into deterministic code plus model decisions."
 type: project

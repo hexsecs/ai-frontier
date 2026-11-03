@@ -1,4 +1,6 @@
 ---
+uid: 958fdf8c-5bcd-44bb-a49f-be56f32c169e
+depth: brief
 title: "CodeSpecWeave"
 summary: "Synthetic coding tasks with interdependent requirements."
 type: project

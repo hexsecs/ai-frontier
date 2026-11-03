@@ -1,4 +1,6 @@
 ---
+uid: 7ecfb221-f2b2-4f2e-a28f-9f1be1eccc27
+depth: brief
 title: "Dittany"
 summary: "Dependency-aware repair of multi-agent contributions."
 type: project

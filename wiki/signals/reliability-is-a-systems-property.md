@@ -1,4 +1,6 @@
 ---
+uid: e5293fb7-2647-4963-b610-9fe02204e08b
+depth: brief
 title: "Agent reliability is a systems property"
 summary: "A cross-project hypothesis linking verification, recovery, memory, orchestration, and security."
 type: signal

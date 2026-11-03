@@ -1,4 +1,6 @@
 ---
+uid: a6e4a572-9a4f-44a3-b175-9b5fab4bb88b
+depth: brief
 title: "GitHub Contribution Check"
 summary: "Scheduled contribution review with GitHub Agentic Workflows."
 type: project

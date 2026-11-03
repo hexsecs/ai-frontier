@@ -1,4 +1,6 @@
 ---
+uid: 40511243-5e69-4848-9e23-d1e9bd3e1131
+depth: brief
 title: "EnvOS"
 summary: "Agent benchmark for external-world changes."
 type: project

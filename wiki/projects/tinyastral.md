@@ -1,4 +1,6 @@
 ---
+uid: f418cc0b-c47e-45fc-aee7-9fbc4450009b
+depth: brief
 title: "TinyAstral"
 summary: "Evolve a robotics harness then distill to a smaller model."
 type: project

@@ -1,4 +1,6 @@
 ---
+uid: 201f9dbb-ee7c-4079-9ceb-7e9d3b00b089
+depth: brief
 title: "KARMA"
 summary: "Industrial advertising agents with typed knowledge modules and rollback."
 type: project

@@ -1,4 +1,6 @@
 ---
+uid: c13ec812-fad9-4509-b33a-87634a095daf
+depth: brief
 title: "OpenBot"
 summary: "Self-hosted agent coworker with policy gateway and human takeover."
 type: project

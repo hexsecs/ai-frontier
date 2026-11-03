@@ -1,4 +1,6 @@
 ---
+uid: cba96f25-06f2-4a76-a029-4cc6c409d711
+depth: brief
 title: "A2UI and CopilotKit"
 summary: "Declarative agent-generated UI constrained to trusted components."
 type: project

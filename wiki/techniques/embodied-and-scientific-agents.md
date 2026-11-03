@@ -1,4 +1,6 @@
 ---
+uid: 1a836d84-71ba-4bc5-aedd-7caab288dda9
+depth: brief
 title: "Embodied and scientific agents"
 summary: "Instrument-controlling agents, physical skills, and real-world feedback."
 type: technique

@@ -1,4 +1,6 @@
 ---
+uid: e3ccbe37-5a26-4ad4-afac-3c3655c70d45
+depth: brief
 title: "Adaptive recovery"
 summary: "Selective repair and safe adaptation after failures or changes."
 type: technique

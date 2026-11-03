@@ -1,4 +1,6 @@
 ---
+uid: a3a58647-87f8-4c1b-bf11-40583689ddd3
+depth: brief
 title: "VeriCUA"
 summary: "Independent active verification of computer-use agents."
 type: project

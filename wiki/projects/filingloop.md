@@ -1,4 +1,6 @@
 ---
+uid: bdff6eda-659e-42ca-adfe-567804915328
+depth: brief
 title: "FilingLoop"
 summary: "Agent review of SEC disclosures with procedural self-improvement."
 type: project

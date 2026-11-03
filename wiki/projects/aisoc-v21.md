@@ -1,4 +1,6 @@
 ---
+uid: a7beba4c-8fee-4cea-8f37-060781b90de7
+depth: brief
 title: "AiSOC v21"
 summary: "Evidence-accountable SOC agent platform."
 type: project

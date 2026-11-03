@@ -1,4 +1,6 @@
 ---
+uid: e5b5e75e-1c77-4eaa-ac53-08a3e9da6134
+depth: brief
 title: "Pre-Crime for Agents"
 summary: "Predict agent disclosure behavior from internal signals."
 type: project

@@ -1,4 +1,6 @@
 ---
+uid: e59b78f8-f133-4a81-8f84-93566a8f3cbe
+depth: brief
 title: "ClinGeX"
 summary: "Executable genomic analysis skills evaluated on held-out cases."
 type: project

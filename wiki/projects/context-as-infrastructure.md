@@ -1,4 +1,6 @@
 ---
+uid: b4ae55ea-f8a8-4fe7-be25-a0e4ef247fa2
+depth: brief
 title: "Context as Infrastructure"
 summary: "Precompiled evidence structures for agent retrieval."
 type: project

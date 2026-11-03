@@ -1,4 +1,6 @@
 ---
+uid: b54b13d9-becf-4eec-a930-975759b1202a
+depth: brief
 title: "Relation discovery — 2026-11-02"
 summary: "Candidate architectural connections mined from 34 previously imported agentic AI project summaries."
 type: evaluation

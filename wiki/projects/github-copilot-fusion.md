@@ -1,4 +1,6 @@
 ---
+uid: e9c7e0ee-bc7a-428f-baf9-eed1f17ba02f
+depth: brief
 title: "GitHub Copilot Fusion"
 summary: "Production model routing, cascades, and critique."
 type: project

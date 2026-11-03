@@ -1,4 +1,6 @@
 ---
+uid: 232afdf7-13c9-4277-96b5-4f3333769be9
+depth: brief
 title: "HERA"
 summary: "Autonomous quantum laboratory measurements."
 type: project

@@ -1,4 +1,6 @@
 ---
+uid: 44d8aa39-dcf3-4bb2-8bea-3d45f9c40c4b
+depth: brief
 title: "Auctopus"
 summary: "Multi-agent scientific lab automation controlling a quantum-spin instrument."
 type: project

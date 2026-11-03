@@ -1,4 +1,6 @@
 ---
+uid: 6ef323df-97a9-449e-8852-16465523f8a6
+depth: brief
 title: "ANGLER"
 summary: "Adaptive prompt-injection testing across executable websites."
 type: project

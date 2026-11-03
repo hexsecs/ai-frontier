@@ -1,4 +1,6 @@
 ---
+uid: 44c75c12-9fce-4ffb-8c78-c0a7888c46c9
+depth: brief
 title: "AgenticDS"
 summary: "Typed Planner, Engineer, and Critic roles for dataset discovery."
 type: project

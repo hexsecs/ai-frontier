@@ -1,4 +1,6 @@
 ---
+uid: 443c4cf4-3812-417b-b92d-2be47daa16d3
+depth: brief
 title: "Secure agent operations"
 summary: "Security boundaries, tool policies, prompt injection, and auditability."
 type: technique

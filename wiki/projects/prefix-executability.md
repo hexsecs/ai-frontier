@@ -1,4 +1,6 @@
 ---
+uid: e12af292-510e-4e0c-bae0-a82e71b6e137
+depth: brief
 title: "Prefix Executability"
 summary: "Validate intermediate prefixes of agent tool-call sequences."
 type: project

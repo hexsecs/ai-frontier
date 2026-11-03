@@ -1,4 +1,6 @@
 ---
+uid: b04eeb12-2864-4d02-88c2-f9ecb423d5f4
+depth: brief
 title: "BioAgent"
 summary: "Robotic laboratory skill-gap discovery and acquisition."
 type: project

@@ -1,4 +1,6 @@
 ---
+uid: d9df94d7-36a4-49c9-93b8-92b46cc993ac
+depth: brief
 title: "WebAnything"
 summary: "Reconstruct websites as resettable browser-agent training environments."
 type: project

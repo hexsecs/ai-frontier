@@ -1,4 +1,6 @@
 ---
+uid: cb0b9b68-5a1f-43f7-9604-dc30d0f53fab
+depth: brief
 title: "Generative interfaces"
 summary: "Declarative agent-generated UI with trusted rendering."
 type: technique

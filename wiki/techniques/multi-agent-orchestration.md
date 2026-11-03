@@ -1,4 +1,6 @@
 ---
+uid: 0f4a7510-f98f-4447-a9fc-841b3ef42661
+depth: brief
 title: "Multi-agent orchestration"
 summary: "Typed handoffs, evolving teams, and task-aware model routing."
 type: technique

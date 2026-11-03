@@ -1,4 +1,6 @@
 ---
+uid: 1feb723c-3079-425b-84e2-d283ffba36e7
+depth: brief
 title: "EvoTeam"
 summary: "Evolving team membership, handoffs, and team-scoped memory."
 type: project

@@ -1,4 +1,6 @@
 ---
+uid: 2d0dfc8e-71df-42d3-bdd8-79d4f881f372
+depth: brief
 title: "ExploreRepair"
 summary: "Evidence-specialized agents repair vulnerabilities without proof-of-vulnerability tests."
 type: project

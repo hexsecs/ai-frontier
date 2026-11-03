@@ -1,4 +1,6 @@
 ---
+uid: 3c9975ac-2462-4213-a7e8-16e89103cf90
+depth: brief
 title: "Agent skills and memory"
 summary: "Executable skills, scoped memory, and regression-gated updates."
 type: technique

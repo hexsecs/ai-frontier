@@ -1,4 +1,6 @@
 ---
+uid: 87432c38-695c-48ff-8815-87874b332afa
+depth: brief
 title: "Verification and evidence"
 summary: "Independent checks, provenance, and intermediate validation."
 type: technique

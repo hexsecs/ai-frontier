@@ -1,4 +1,6 @@
 ---
+uid: d3609232-2209-4b5e-aa0c-49f844eb49d0
+depth: brief
 title: "MoLRSI"
 summary: "Recursive agent improvement in molecular discovery."
 type: project

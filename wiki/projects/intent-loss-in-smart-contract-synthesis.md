@@ -1,4 +1,6 @@
 ---
+uid: 60ce2f35-b088-4ba0-9508-346652dec8b4
+depth: brief
 title: "Intent Loss in Smart-Contract Synthesis"
 summary: "Clarification and transaction replay expose intent mismatches in generated contracts."
 type: project

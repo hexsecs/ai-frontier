@@ -1,4 +1,6 @@
 ---
+uid: d01a9540-9153-4b9a-9463-07c0618570cd
+depth: brief
 title: "DynaRev"
 summary: "Browser tasks with changing instructions at milestones."
 type: project

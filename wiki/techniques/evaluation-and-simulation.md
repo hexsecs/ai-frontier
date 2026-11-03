@@ -1,4 +1,6 @@
 ---
+uid: c036d611-8d14-49b2-b230-4f1acf1b582a
+depth: brief
 title: "Evaluation and simulation"
 summary: "Trajectory assessment via benchmarks, retries, simulation, and adversarial tests."
 type: technique

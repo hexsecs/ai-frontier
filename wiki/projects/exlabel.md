@@ -1,4 +1,6 @@
 ---
+uid: 2bbd433f-e987-4668-bc89-9edbef1aad0e
+depth: brief
 title: "ExLabel"
 summary: "Experience-bank evaluator for coding-task clarity and test adequacy."
 type: project

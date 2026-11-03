@@ -1,4 +1,6 @@
 ---
+uid: f5b673c9-0890-4ec3-84b1-017c7b10b10e
+depth: brief
 title: "Security Impact of Coding Agent Memory Files"
 summary: "Agent instruction files can be prompt-injection entry points."
 type: project

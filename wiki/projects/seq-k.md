@@ -1,4 +1,6 @@
 ---
+uid: 0ae84717-721c-47b8-8a5a-1f69a9946aa6
+depth: brief
 title: "Seq@K"
 summary: "Measure improvement across sequential agent attempts with feedback."
 type: project

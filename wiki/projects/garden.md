@@ -1,4 +1,6 @@
 ---
+uid: 5382fb5c-e4e2-4a65-9d54-1fd496822bda
+depth: brief
 title: "GARDEN"
 summary: "Agents engineer reward functions for cooperative multi-agent environments."
 type: project
