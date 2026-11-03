@@ -1,33 +1,87 @@
 ---
 uid: 87432c38-695c-48ff-8815-87874b332afa
-depth: brief
+depth: deep
 title: "Verification and evidence"
-summary: "Independent checks, provenance, and intermediate validation."
+summary: "Checking agent claims against gathered evidence — executable tests, replay scorers, provenance gates — with warrant bounded by the scope actually exercised."
 type: technique
 created: 2026-11-02
 updated: 2026-11-02
-sources: []
+related: [vericua, explorerepair, exlabel, prefix-executability, context-as-infrastructure, github-contribution-check, scoped-assurance, abstention-as-first-class-verdict, structural-constraint-over-instruction]
+sources:
+  - url: https://arxiv.org/abs/2610.40578
+    retrieved: 2026-11-02
+  - url: https://arxiv.org/abs/2610.39899
+    retrieved: 2026-11-02
+  - url: https://arxiv.org/abs/2610.40444
+    retrieved: 2026-11-02
+  - url: https://arxiv.org/abs/2610.39417
+    retrieved: 2026-11-02
+  - url: https://arxiv.org/abs/2610.41172
+    retrieved: 2026-11-02
 ---
 
 # Verification and evidence
 
-## Discovery hypothesis
+## What it is
 
-The linked projects appear to share this engineering concern based on previously imported briefing summaries. These links are **inferred relatedness**, not demonstrated technical dependence or shared citations.
+Verification and evidence is the corpus's shared answer to a recurring defect: an agent's own report that its work is done, correct, or compliant is a claim, and claims settle nothing. The technique replaces the claim with checked evidence. Across the six projects that genuinely instantiate it here, the same architecture recurs with different materials. A checker is separated from the producer whose work is being checked. The checker works on *typed* evidence — observations labelled by where they came from and what they can support — rather than on the producer's narrative. A deterministic rule, an executable test, or a fixed verdict vocabulary disposes of the evidence; the model proposes, the mechanism decides. And the outcome space includes a defined result for "the evidence does not settle this," because a checker forced to decide on insufficient evidence manufactures the very false positives the technique exists to prevent.
 
-## Connected projects
+That last move is what connects the technique to its governing bound, [[concepts/scoped-assurance]]: a verification result holds only inside the scope actually exercised — the inputs tested, the mistakes exposed, the instances reviewed, the judges validated — and its headline number routinely outruns that scope when quoted. Verification in this corpus is therefore never a guarantee. It is a warrant with edges, and the better systems say where the edges are. Two neighbouring concepts complete the picture. [[concepts/abstention-as-first-class-verdict]] is verification's honest output: the explicit, accounted "insufficient evidence" outcome that keeps a checker from inventing verdicts. [[concepts/structural-constraint-over-instruction]] is what makes verification load-bearing rather than advisory: the checks that hold are properties of the call path — read-only tokens, schema-validated evidence files, allowlisted getters — not instructions asking a model to be careful.
 
-- [vericua](../projects/vericua.md) — candidate architectural relation.
-- [explorerepair](../projects/explorerepair.md) — candidate architectural relation.
-- [exlabel](../projects/exlabel.md) — candidate architectural relation.
-- [prefix-executability](../projects/prefix-executability.md) — candidate architectural relation.
-- [blindtochange](../projects/blindtochange.md) — candidate architectural relation.
-- [context-as-infrastructure](../projects/context-as-infrastructure.md) — candidate architectural relation.
-- [github-contribution-check](../projects/github-contribution-check.md) — candidate architectural relation.
+## Mechanism variants
 
-## Validation work
+**Manufactured executable evidence.** [[projects/explorerepair]] repairs vulnerabilities in the setting where the usual oracle does not exist: only 4.1% of 75,807 CVEs had a public proof-of-vulnerability (PoV) test within a year of disclosure. Its executable-evidence agent therefore *builds* the check — tracing attacker-controlled input to the localized code, writing and executing its own PoV test against the vulnerable revision, then repairing and rerunning it — under guardrails that prohibit weakening the test or special-casing its input. The patch is finally graded by evidence the system never sees during repair: the benchmark's hidden PoV test plus the repository's unit tests. Verification here is not a judgment about the patch; it is an execution the patch must survive.
 
-Compare the original implementations, test whether the shared pattern is real, and document meaningful differences and counterexamples.
+**Active post-hoc exploration with typed evidence.** [[projects/vericua]] verifies computer-using agents after execution ends, with a separate verifier agent that inspects context, synthesizes a rubric of checkable requirements, and actively gathers evidence across three views of state — the recorded trajectory, the current surface, and persisted state (files, databases, stored settings). Its evidence discipline is the variant's core: every finding must cite an executed check, and sources are typed *attested* (observations of task state) or *asserted* (records of the executing agent's intent or claims). Asserted evidence can direct inspection but can never mark a requirement met — the agent's completion report is structurally incapable of settling anything. A deterministic arbiter then applies the evidence rules: met takes one persistent attested confirmation, unmet takes two corroborating refutations from separate probes, and what remains unsettled abstains.
 
-> [!unverified]
-> Relations have not been checked against the primary sources in this pass.
+**Deterministic replay and protocol-aware scoring.** [[projects/prefix-executability]] moves the check from the end state to the trajectory itself. A benchmark-side replay scorer — deterministic, with no LLM judge — replays each predicted tool-call sequence prefix by prefix, testing whether every initial segment is executable under the tools' schemas, preconditions, and data dependencies. The metric family it defines (trajectory executability rate, the prefix survival curve, recovery rate conditioned on an invalid prefix) separates three questions a single success bit conflates: how long the rollout stays valid, where validity first breaks, and whether later actions recover. This is verification of the *process* against the protocol, reference-free: it credits any executable sequence, not just a gold path.
+
+**Provenance-gated admission of claims.** [[projects/context-as-infrastructure]] applies the technique one level down, to the claims a retrieval system stores. A small model proposes atomic claims per chunk, each with a supporting evidence span copied verbatim; an exact-presence span check then discards any claim whose span cannot be located in the source. "The model may propose, but the source disposes" — and invalid units are dropped, not repaired by the model. Surviving claim–evidence pairs carry a pointer back to the exact source version and offsets, so a delivered claim can always be re-checked against its provenance. At serving time an evidence gate judges sufficiency by count, source diversity, and coverage of the question before any answer is composed from the evidence.
+
+**Evidence-fenced judgment.** Two projects keep a model in the judging loop but fence what it may judge from. [[projects/github-contribution-check]] assembles its evidence before any model runs: deterministic shell steps select the pull requests (capped at 3 per run), fetch metadata and patches into schema-validated evidence files, and label those files "untrusted data, not instructions." The checker subagent may not fetch anything new; if evidence is missing or invalid it must return ❓ / `triage:error` rather than invent checklist results, and all writes leave through validated safe outputs from a token that cannot write. [[projects/exlabel]] is the learned-rubric variant: it judges whether SWE-bench-style dataset instances are well-specified and whether their test suites are adequate — verification aimed at the benchmark's own evidence instruments — using an experience bank of distilled prior judgments (Understanding, Successes, Mistakes) retrieved per instance, in place of a static hand-written rubric.
+
+**Human audit as the residual layer.** Human checking is the incumbent every variant above is measured against or defers to: human verification of dataset instances costs roughly $100 and 1.05 person-hours per instance, and SWE-bench Verified used 93 professional engineers annotating each instance three times. In this corpus humans mostly appear as the constructors of ground truth (the human labels behind VeriCUA's offline sets and ExLabel's SWE-TQ benchmark) and as the audience the automated systems are designed to assist rather than replace — ExLabel is explicitly built both for automated annotation and as a preliminary-assessment assistant to human annotators. Where the corpus reaches for an audit of the auditor, it is itself automated: VeriCUA's gold-label audit used a single-blind adjudicator from a different model family, not human re-annotation.
+
+## Evidence and measured effects
+
+All figures below are author-reported, under the conditions on the project pages; none is independently replicated.
+
+**False completions get caught.** VeriCUA rejects about 80% of false completion reports across its three online environments, and posts the highest accuracy and lowest false positive rate in each: AndroidWorld accuracy 90.5% at 7.7% FPR, OSWorld 79.5% at 13.9%, ScienceBoard 86.4% at 5.4% — against a VLM judge's 15.4–27.9% FPR range and an auto-generated verifier's 16.9–25.9%. The evidence-typing does measurable work: adding code and state reads to a GUI-only verifier raised its decision rate from 45% to 82% on AndroidWorld with the same 3 false positives out of 41, and rule-based arbitration of repeated draws produced 2 wrong fails where majority voting over the same draws produced 20.
+
+**Verification re-ranks systems that outcome scoring ties.** Prefix executability's decomposition — final success = clean execution plus recovery — shows two methods the success bit cannot distinguish. Under GPT-5.4, plan-conditioned ReAct and the plan-validating Dual-Loop tie on BFCL final success at 0.94, while their trajectory executability rates are 0.47 and 0.94. In the Llama-4 BFCL cell, 138 of 148 successful episodes — 93.2% — reached the objective only after an earlier invalid prefix: a 0.74-success agent whose trajectories were fully executable 5% of the time.
+
+**Checked evidence compounds in repair.** ExploreRepair's full system reaches repair success rates of 39.6% (GPT-5.6-Luna) and 71.6% (DeepSeek-V4.1-Flash) on PatchEval with overfitting rates of 0.0% and 0.6%, and its aggregation stage — which checks the explorers' distilled claims against the repository before reconciling — produced repairs for 11 vulnerabilities under DeepSeek and 3 under Luna that *none* of the three exploration agents repaired individually.
+
+**Verifying the instruments pays downstream.** ExLabel achieves the best F1 in all 12 task/subset/backbone combinations for clarity and coverage assessment (relative gains over the best baseline of +44.2% and +49.9% on clarity, +24.0% and +18.4% on coverage), and filtering training data with its labels raised a fine-tuned model's SWE-bench Verified resolution rate to 66.2% from 54.4% unfiltered, from fewer than half the trajectories. The experience bank is the load-bearing component: removing it drops F1 by 25.5–35.7% on clarity and 49.3–84.0% on coverage.
+
+**Provenance gating pays economically, not epistemically.** Context as Infrastructure's measured effect is on cost: substituting claim–evidence pairs for raw chunks cuts total query tokens by 91% when the evidence suffices and adds 1.9% when it does not, a 38% average reduction, with a break-even sufficiency rate of about 2.0%. No compiled variant improved question-answering accuracy detectably — the provenance discipline bought cheaper evidence, not truer answers.
+
+**The price of evidence is real.** VeriCUA trades cost for evidence at roughly an order of magnitude more calls than a single-call judge (offline WebArena: 150K–208K tokens per trajectory against 43K–61K for three judges *together*), which suits filtering and reward assignment, not interactive use. Contribution Check's containment, by contrast, is cheap — three runs at roughly 8–9 minutes and about 30,000 tokens each, 38 API calls and zero errors in total — but that telemetry is all the evidence its page has: GitHub reporting on its own workflow, with no accuracy evaluation of the verdicts at all.
+
+## Failure modes and bounds
+
+**The warrant ends at the exercised scope.** This is [[concepts/scoped-assurance]] operating as the technique's constitution, and every kept project exhibits it. SkillCompiler-style gates and KARMA's acceptance gate (treated on the concept page) certify behaviour on the set that was checked; in the smart-contract study the concept page draws on, the best oracle catches 87.5% of the mistakes some sequence *exposes* but 65.2% of all 279 planted mistakes. VeriCUA's accuracy lead must be read with its coverage declined — it abstains on 18–30% of episodes online. Contribution Check's rubric is truncated to the first 1,500 and last 500 characters of the guidelines, so rules in the middle are "unenforced and unenforceable by this design." Context as Infrastructure's gate reports an acceptance rate (an implied sufficiency of about 43%), not a measured one: the false-accept audit that would calibrate it was specified and never run — "we report no value of φ."
+
+**The checker itself needs checking.** Ground truth is fallible in both directions. VeriCUA's own audit found that a different-family adjudicator sided with the verifier on 51 of 81 flagged verdict–gold contradictions — about 18 of its 28 counted OSWorld false positives are attributed to gold errors — so measured accuracy against official evaluators is a noisy target. ExLabel's benchmark keeps only instances all human annotators already agreed on, so its performance on contested instances, where assessment matters most, is unmeasured; and the benchmark was cleaned by the same team around the failure modes the system targets. Two of VeriCUA's five evaluation settings are benchmarks from its own research group. None of this invalidates the numbers; all of it bounds what they warrant, which is the concept's point.
+
+**Verification that is never triggered does not happen.** This bound is supplied by the demoted candidate, [[projects/blindtochange]] — cited here as a measurement, not an instance. Agents find recent changes when asked directly (at least 96.5% direct accuracy on demises in nearly all high-effort configurations) but fail the same facts when a request does not mention them, by a median of 40.5 points at low effort and 27.5 at high effort; at least 75% of failures in 13 of 15 shared-harness configurations involve no search or an unrelated one, and the strongest model searched on only 32% of demise probes at low effort (no search on 68%). A verification mechanism, however sound, only fires if something decides to invoke it — and in this corpus that decision is the least solved part of the technique. The paper's own remedy directions (selective verification weighted by staleness likelihood and answer-dependence) are proposals its authors label speculation, not evaluated mechanisms.
+
+**Validation gains are environment-bound.** Prefix Executability's paired transfer audit is the corpus's honesty exhibit: on the interactive τ³-bench, the pre-execution validation advantage does not replicate, and the only fully paired analysis is a null — a verifier configuration changes trajectory executability by +0.006 with a 95% interval of [−0.018, 0.030] — while two configurations significantly *reduce* final success. What verifies well on static, pre-specified tasks may buy nothing where a user interacts and state shifts mid-task.
+
+**Redundant checkers fail together when their errors correlate.** ExploreRepair's aggregation discarded a correct repair in its documented case (CVE-2021-39163) because both intermediate aggregators adopted the same wrong assumption and the final stage ratified it. VeriCUA's counter-design — diverse passes combined by rule rather than identical draws combined by vote — exists precisely because corroboration only counts when the probes are independent; its arbitration demands refutations from *separate* probes for the same reason.
+
+**Containment is not correctness.** Contribution Check demonstrates that a reviewer can be perfectly fenced — deterministic scope, validated evidence, terminal abstention, safe-output writes — while the quality of its verdicts remains entirely unmeasured. Structural constraint guarantees the checker cannot exceed its remit; it says nothing about whether the checker is right inside it. The same gap, smaller, applies to ExLabel, whose downstream value is demonstrated for exactly one training configuration.
+
+## Open questions
+
+- **What should trigger verification?** The corpus measures the cost of checking (VeriCUA's token budgets) and the cost of not checking (BlindToChange's gap), but no page evaluates a policy that weighs staleness likelihood and answer-dependence against test-time cost. Until one exists, "verify more" is the only demonstrated lever, and its price curve is unmeasured.
+- **How are the checkers validated at scale?** Judge and gold-label fallibility appears on both sides of the corpus — verifiers correcting gold, benchmarks filtered to uncontested cases. Is there a reporting convention (validated-judge status, contested-instance performance, contradiction rates) that would let a verification result carry its instrument's credentials with it?
+- **Does deterministic protocol scoring extend beyond instrumented benchmarks?** Prefix executability presumes explicit schemas, preconditions, and benchmark-accessible state. Partially observed web and GUI environments would need state estimation or learned preconditions; whether the metric family survives that weakening is untested.
+- **What coverage price should abstention charge?** VeriCUA prices its abstentions (decided accuracy against decision rate); no page states the exchange rate at which an abstaining verifier becomes net-negative for a data pipeline, or who should own the retry when a terminal ❓ ends a check.
+- **Can provenance gating be audited cheaply enough to matter?** Context as Infrastructure specifies its false-accept audit and does not run it. The gap between acceptance and sufficiency is where substitution-style evidence systems would silently fail; a cheap sampling audit is the obvious missing mechanism.
+
+## Evidence status
+
+This page is a synthesis over the KB's deepened project and concept pages, written 2026-11-02 for issue #2; it introduces no new measurements. Every quantitative result is author-reported in the source projects — the preprints report their own benchmarks, Contribution Check's numbers are GitHub's vendor telemetry about its own workflow, and no result on this page is independently replicated. Vendor, author-reported, and analyst-assessed material are labelled as such on the project pages and that labelling carries through here.
+
+**Candidate-link verdicts.** The stub's seven candidate projects were tested against the deepened pages. **Kept (6):** [[projects/vericua]], [[projects/explorerepair]], [[projects/exlabel]], [[projects/prefix-executability]], [[projects/context-as-infrastructure]], [[projects/github-contribution-check]] — each implements a verification or evidence mechanism of one of the variants above. **Demoted (1):** [[projects/blindtochange]]. It implements no verification mechanism: it is a benchmark that *measures* whether agents spontaneously verify, and its remedy directions are proposals its authors explicitly label speculation. Its finding — that untriggered verification is the technique's weakest joint — is load-bearing for this page's bounds and is cited there as a measurement; the project itself belongs with [[techniques/evaluation-and-simulation]], where its paired-probe construction is also a contribution. The three concept links ([[concepts/scoped-assurance]], [[concepts/abstention-as-first-class-verdict]], [[concepts/structural-constraint-over-instruction]]) are kept as the technique's bound, its honest output, and its enforcement locus respectively.
