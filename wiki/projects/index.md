@@ -14,8 +14,8 @@ title: Projects
 - [BlindToChange](./blindtochange.md) — Search agents find recent deaths and ended tenures when asked directly, but usually never look when a request does not mention them.
 - [ClinGeX](./clingex.md) — Executable genomic analysis skills evaluated on held-out cases.
 - [CodeSpecWeave](./codespecweave.md) — Synthetic coding tasks with interdependent requirements.
-- [Context as Infrastructure](./context-as-infrastructure.md) — Precompiled evidence structures for agent retrieval.
-- [Dittany](./dittany.md) — Dependency-aware repair of multi-agent contributions.
+- [Context as Infrastructure](./context-as-infrastructure.md) — A RAGFlow vendor paper finds precompiled context structures add no accuracy; claim–evidence substitution cuts query tokens 38% on average instead.
+- [Dittany](./dittany.md) — Runtime repair for multi-agent applications: a contract-derived contribution graph detects failed contributions and guides action- and graph-level repair.
 - [DynaRev](./dynarev.md) — Browser tasks with changing instructions at milestones.
 - [EnvOS](./envos.md) — Agent benchmark for external-world changes.
 - [EvoTeam](./evoteam.md) — Evolving team membership, handoffs, and team-scoped memory.
@@ -23,19 +23,19 @@ title: Projects
 - [ExploreRepair](./explorerepair.md) — Evidence-specialized agents repair vulnerabilities without proof-of-vulnerability tests.
 - [FilingLoop](./filingloop.md) — Agent review of SEC disclosures with procedural self-improvement.
 - [GARDEN](./garden.md) — Agents engineer reward functions for cooperative multi-agent environments.
-- [GitHub Contribution Check](./github-contribution-check.md) — Scheduled contribution review with GitHub Agentic Workflows.
+- [GitHub Contribution Check](./github-contribution-check.md) — A scheduled PR-compliance reviewer on GitHub Agentic Workflows, built around constraining the LLM; all published evidence is GitHub's own telemetry.
 - [GitHub Copilot Fusion](./github-copilot-fusion.md) — Production model routing, cascades, and critique.
 - [HERA](./hera.md) — Autonomous quantum laboratory measurements.
 - [Intent Loss in Smart-Contract Synthesis](./intent-loss-in-smart-contract-synthesis.md) — Clarification and transaction replay expose intent mismatches in generated contracts.
 - [KARMA](./karma.md) — Industrial advertising agents with typed knowledge modules and rollback.
 - [MoLRSI](./molrsi.md) — Recursive agent improvement in molecular discovery.
-- [OpenBot](./openbot.md) — Self-hosted agent coworker with policy gateway and human takeover.
+- [OpenBot](./openbot.md) — CopilotKit's self-hosted agent coworker: an audit-first policy gateway records every action before it runs, plus human takeover; no measurements published.
 - [Pre-Crime for Agents](./pre-crime-for-agents.md) — Predict agent disclosure behavior from internal signals.
 - [Prefix Executability](./prefix-executability.md) — Final success and prefix executability rank the same tool-using agents differently; most successful episodes pass through invalid prefixes.
 - [Repairs for Whom?](./repairs-for-whom.md) — Repair selection must be matched to executor capability.
 - [Security Impact of Coding Agent Memory Files](./security-impact-of-coding-agent-memory-files.md) — Agent instruction files can be prompt-injection entry points.
 - [Seq@K](./seq-k.md) — Measure improvement across sequential agent attempts with feedback.
 - [SkillCompiler](./skillcompiler.md) — Compile agent skills into deterministic code plus model decisions.
-- [TinyAstral](./tinyastral.md) — Evolve a robotics harness then distill to a smaller model.
+- [TinyAstral](./tinyastral.md) — An RSI loop evolves a frozen 180B teacher's robot harness (RoboTwin 33.4% to 63.6%), then distills it into a 4B student at 62.8% — all in simulation.
 - [VeriCUA](./vericua.md) — Independent active verification of computer-use agents.
 - [WebAnything](./webanything.md) — Reconstruct websites as resettable browser-agent training environments.
