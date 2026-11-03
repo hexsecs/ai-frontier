@@ -1,30 +1,120 @@
 ---
 uid: a3a58647-87f8-4c1b-bf11-40583689ddd3
-depth: brief
-title: "VeriCUA"
-summary: "Independent active verification of computer-use agents."
+depth: full
+title: "VeriCUA: Verification as Agentic Exploration for Computer-Using Agents"
+summary: "Active verification of computer-use agents by a separate post-hoc verifier, independent of the executing agent's own completion claims."
 type: project
 created: 2026-10-30
-updated: 2026-10-30
+updated: 2026-11-02
 sources:
   - url: https://arxiv.org/abs/2610.40578
-    retrieved: 2026-10-30
+    retrieved: 2026-11-02
 ---
 
 # VeriCUA
 
-## What was demonstrated
+## What it is
 
-Independent active verification of computer-use agents.
+VeriCUA is a verification procedure for computer-using agents (CUAs), presented in the preprint "VeriCUA: Verification as Agentic Exploration for Computer-Using Agents" by Qiushi Sun, Da Yu, Alexander Knop, Amer Sinha, Lingpeng Kong, Ben Kao, Ravi Kumar, and Pritish Kamath (arXiv:2610.40578 [cs.AI], submitted 29 October 2026, CC BY 4.0; no venue shown). Six authors are affiliated with Google; Kong and Kao with The University of Hong Kong.
 
-## Key technique
+Building and scaling CUAs requires reliable task-completion verification for data curation, evaluation, and reinforcement learning, including for tasks with no supplied task-specific checker. The two typical automated approaches both rest on partial views: VLM judges see only the observations supplied to them (a fixed set of frames can omit a decisive effect), and automatically generated verifier programs depend on accessible state (a generated query may target state that does not answer the verification question, or query incorrect locations). A trajectory can therefore look successful when edits remain unsaved or an operation failed silently, and an agent may report completion after doing only part of the instruction — accepting such a run is a false positive.
 
-Verification of GUI, database, and filesystem outcomes against acceptance criteria.
+VeriCUA's answer is one platform-agnostic procedure: a separate verifier agent, run after execution ends, that actively gathers evidence about the end state instead of judging a fixed record. It has two instantiations sharing one workflow — online (probing post-episode machine state) and offline (auditing fixed recordings) — and a ternary verdict: success, fail, or abstain. "Independent" applies in a specific, qualified sense throughout this page: the verifier is independent *of the executing agent*, whose own completion report is demoted to a claim that cannot settle any requirement. VeriCUA is not third-party validation: the results below are reported by the method's own authors.
+
+## Mechanism
+
+**Formulation.** Given an instruction *g*, an executing agent produces a trajectory τ = [o_0, a_0, …, o_T] (observations, actions, recorded reasoning) and leaves the environment in state s_T. Verification begins only after the attempt ends. Although completion is binary, the verifier outputs y ∈ {success, fail, abstain}, abstention being a first-class outcome when evidence is insufficient. Available sources can include the retained trajectory, recorded accessibility trees (a11y trees), a frozen snapshot, post-execution state, and, for change requirements, a pre-execution reference.
+
+**The four-stage workflow.**
+
+1. *Context inspection.* The verifier first explores whatever is available — online: application packages, relevant directories, exposed database schemas; offline: the recorded steps, frames, and structured observations — producing context *c*.
+2. *Rubric synthesis.* From *g* and *c* it builds a rubric R = {(r_i, h_i)}: each r_i a checkable requirement, h_i ∈ {hard, soft}. Hard requirements must be justified by outcomes requested in the instruction; context supplies meaning and evidence locations, but evidence locations must not become extra success conditions. The rubric prompts (Appendix F) require end-state requirements only, with exact quantifiers and counts.
+3. *Active exploration.* A verifier policy iteratively selects an inspection action (tool + arguments); the harness executes it and returns an observation with its evidence type and source attributes. Each check's *findings* — how an observation supports or refutes a requirement — accumulate in an inspection record. Exploration continues until the hard requirements are settled or the budget is exhausted, and findings steer the next check (a text match that leaves persistence unresolved prompts a file read).
+4. *Rule-based arbitration.* A deterministic arbiter applies the setting's evidence rules to the stored findings: each requirement becomes met, unmet, or unknown; the verdict is success iff all hard requirements are met, fail if any is unmet, otherwise unresolved (handled by the setting's abstention or fallback policy).
+
+**Three views of state; hybrid action space.** The verifier inspects the *trajectory* (historical: frames, actions, reasoning — search the action log, inspect selected frames, read recorded a11y trees), the *surface* (the current interface: a fresh screenshot or UI-hierarchy read, distinct from recorded screenshots), and *persisted state* (files, databases, stored settings, queried by code tools). Online, it can also synthesize a *checker*: a sequence of permitted reads paired with a predicate — structured predicates run in a restricted evaluator, semantic comparisons use a model judgment. The online getter inventory has 17 verbs, each stamped persistent or volatile; a checker is data: read-only getter calls plus one predicate (a Python expression over getter outputs, or a plain-language criterion decided by a separate judge).
+
+**Evidence discipline** is the core of the design. *Grounded findings*: every finding cites the executed check that returned its observation; the harness rejects citations matching no executed call and attaches the valid citation's attributes. *Attested vs. asserted sources*: observations of task state (a post-action frame, a file read, a database query) are *attested*; records of the executing agent's intent or claims (its completion message, a pre-action frame) are *asserted* — asserted evidence can direct further inspection but can never alone mark a requirement met. *Source attributes constrain inference* (frame timing; online, persistence — a screen can show edited text, only a file read shows it was saved). *Arbitration thresholds*: online, met takes one persistent attested confirmation, unmet two corroborating refutations from separate probes; offline, met requires attested support from *every* completed audit path, unmet corroborating refutations from separate probes.
+
+**Online vs. offline.** Online, the verifier probes the machine state left after the episode ends, combining GUI inspection with code checks of stored artifacts; synthesized checkers can be reused across repeated executions of the same task. Unresolved tasks abstain (counted as fail in binary evaluation). Offline, the verifier audits fixed recordings through up to K audit paths (default K = 3, early stop after two paths agree on every hard requirement — on about two fifths of trajectories); forward inspection seeks support, backward inspection seeks refutations. Unresolved tasks fall back to an *initial judgment*: a single-pass VLM assessment computed *before* exploration and withheld ("sealed") from the audit paths; on WebArena it fires on 23% of trajectories. Budgets (author-reported, Appendix B.3): offline paths get up to four support calls, then at least four refutation calls (or two per hard requirement), one observation per call; the rubric comes from three candidate decompositions consolidated in a fourth call, and the sealed judgment reads the last five frames plus the log. Online, two candidate rubrics are consolidated and two checkers requested per hard requirement. No token caps; calls time out at 180 seconds.
+
+**Independence and read-only enforcement.** Verdicts do not rest on any single channel: arbitration requires attested evidence, refutations must be corroborated by separate probes, and the sealed judgment is independent of the audit paths. The verifier never writes to the environment it verifies: on recordings this is structural (every verb is a pure function of files on disk); on a machine, verbs come from a fixed allowlist, arguments that could smuggle shell control are rejected, and a digest of the plan's persistent targets is compared before and after execution. In the AndroidWorld adapter (headless Pixel 6 emulator, API 33 / Android 13) the harness has root over adb — every store the benchmark evaluator can read is readable by the verifier — and state is snapshotted after the official evaluator runs, so passes replay on the identical end state. OSWorld and ScienceBoard use the benchmarks' own unmodified images.
+
+## Evidence
+
+**Claim type: every result in this section is author-reported; none is independently replicated, and the paper cites no third-party numbers for VeriCUA.** Conditions common to all headline numbers: all verifiers and baselines run on the gemini-3-flash-preview backbone (the backbone study re-runs them on gemini-3.1-pro-preview); online, the executing agents also run on gemini-3-flash-preview under each benchmark's own agent scaffold. Metrics (success is the positive class): agreement with gold (= accuracy) and false positive rate (FPR), abstentions counted as fail, plus decision rate and decided accuracy. Gold labels: official evaluators online, human labels for offline OSReward, official checkers for offline WebArena. On WebArena, verifier and judges alike also receive a11y-tree variants of the input.
+
+**Online verification** (paper's Table 1; accuracy / FPR in %; both baselines decide 100% of episodes). *AndroidWorld* (116 episodes, M3A scaffold): VeriCUA Acc 90.5, FPR 7.7, decided 82%, decided Acc 95.1%; VLM judge 78.4 / 15.4; auto-generated verifier 82.4 / 16.9. *OSWorld* (361 tasks, 1 rollout per task, executing-agent success 44.3%): VeriCUA Acc 79.5, FPR 13.9, decided 78%, decided Acc 88.7%; judge 73.4 / 27.9; generated verifier 75.9 / 25.9, with higher recall than VeriCUA (78.1 vs. 71.3). *ScienceBoard* (169 tasks, executing-agent success 23.7%): VeriCUA Acc 86.4, FPR 5.4, decided 70%, decided Acc 91.6%; judge 71.6 / 24.8; generated verifier 76.9 / 21.7, again with higher recall (72.5 vs. 60.0). VeriCUA thus has the highest accuracy and lowest FPR in all three environments, but not the highest recall everywhere. Its ScienceBoard FPR is roughly a quarter of the generated verifier's, which the authors attribute to context inspection before checker construction: scripts built without it query incorrect state locations in the scientific software.
+
+**Offline verification** (paper's Table 2; accuracy / balanced accuracy in %). VeriCUA scores 70.4 / 68.3 on OSReward-Hard (n=284), 87.2 / 86.3 on the OSReward full set (n=1,019), 82.7 / 83.1 on WebArena (n=715 trajectories from three rollout agents), and 94.3 / 94.1 (AndroidWorld) and 86.3 / 81.2 (OSWorld) on offline evaluations of recorded trajectories. It leads every compared judge on every column. The accuracy margin over the strongest compared judge is +4.7 points on the hard subset (70.4 vs. OS-Themis's 65.7) against +3.5 on the full set (87.2 vs. CUAJudge's 83.7) — the basis for the paper's "largest gains on hard cases" claim. 
+
+**Ablations and scaling** (all author-reported):
+
+- *Action space* (online AndroidWorld). GUI-only: Acc 77.0, decided 45%, decided Acc 87.9%, 3 false positives out of 41. Hybrid (GUI + code, the default): Acc 90.5, decided 82%, decided Acc 95.1%, the same 3/41 false positives. Adding code reads raises decision rate and recall with zero additional false positives; every additional correct decision from the code channel is supported by a file or application-store read.
+- *Matched budget* (flash backbone; OSReward / OSReward-Hard accuracy). VeriCUA under an exploration limit (86.4 / 68.7) still leads TRM with N=10 repeated runs (83.5 / 58.5) and CUAJudge at a fixed step limit (84.8 / 64.5).
+- *Multi-pass combination* (AndroidWorld multi-pass suite — a filtered subset of claimed-completion-but-gold-fail snapshots, disagreements, and abstentions; not comparable to the online table, and its counts are small numbers on a selected subset). Three default draws combined by the arbiter: 80.9 agreement, 95.6 decided Acc, 2 wrong fails; adding a vision-fallback draw: 87.0 agreement, 96.0 decided Acc, still 2 wrong fails. Majority voting over the same draws: 80.0 agreement, 20 wrong fails against the arbiter's 2.
+
+**Backbone study** (author-reported). On OSReward-Hard, VeriCUA is the only compared method that improves on both metrics from flash to pro (accuracy 70.4 → 73.1, balanced accuracy 68.3 → 69.2). Important qualifier: on the OSReward *full* set, a single-call judge on a stronger backbone exceeds VeriCUA-on-flash (Claude Opus 4.8: 89.7 / 90.0 Acc / BalAcc, vs. VeriCUA flash 87.2 / 86.3); on the hard subset VeriCUA-on-flash still leads on accuracy (70.4 vs. 69.7) but not balanced accuracy (68.3 vs. 69.7). The headline comparisons are all same-backbone (preview Gemini) comparisons.
+
+**Rejecting false completion reports** (paper's §5.3, author-reported). Across the three online environments (an analysis using an AndroidWorld subset), "VeriCUA rejects about 80% of these reports and outperforms both baselines in each environment"; the difference is largest on ScienceBoard, where the generated verifier rarely rejects an incorrect completion claim.
+
+**Confident failures and the gold-label audit** (paper's §5.5 and Appendix C.6, author-reported). Retaining only those initial fail judgments that exploration also resolves as fail raises failure precision on every benchmark (WebArena 88.4% → 92.0%; OSReward full 83.8% → 92.7%; OSReward-Hard 80.0% → 88.9%) at the cost of retention (29–49%). And in the authors' gold-label audit, a single-blind adjudicator from a different model family confirms 51 of 81 flagged verdict–gold contradictions (of 814 trajectories) — the paper's "supports VeriCUA on 63%" — and about 18 of VeriCUA's 28 counted online OSWorld false positives are attributed to gold errors.
+
+## Limitations
+
+**Cost (author-stated, with author-reported figures).** "VeriCUA trades cost for evidence" (the authors' words): an order of magnitude more calls than a single-call judge — it suits filtering and reward assignment, not interactive use. Tokens per trajectory/episode (Appendix C.5): offline WebArena, VeriCUA 150K–208K vs. 43K–61K for the three judges *together*; offline OSReward, 345K–378K vs. 33K–35K for the three judges together. Online, the auto-generated verifier uses 16.2K tokens against VeriCUA's 39.2K on the first suite, and 21K against VeriCUA's 43K–51K *per pass* on the multi-pass suite.
+
+**Abstention and coverage.** VeriCUA abstains on 18–30% of episodes online (decision rates 82%, 78%, 70% across AndroidWorld, OSWorld, ScienceBoard). On recordings it abstains wherever the recording holds no evidence for a requirement; the authors state these abstentions are a coverage limit, lifted by online access only for instrumentable environments. The sealed fallback fires on 23% of WebArena trajectories; the offline screenshots-only configuration decides only 33% of WebArena cases. The accuracy lead should be read together with the coverage declined.
+
+**Stochasticity (author-stated).** The verifier is stochastic; its draw-to-draw spread must accompany comparisons, and the authors do report per-draw results.
+
+**Baselines are the authors' re-implementations, two of them reduced (evident from the methods, not author-flagged).** Under the shared harness, CUAJudge's four-stage pipeline is collapsed into one call (frame-selection and init-vs-final modules dropped); OS-Themis is cut from six milestones and twelve frames to four and eight, and from a multi-agent critic to two calls. The authors' own budget ablation shows restoring OS-Themis's original budget raises its mean balanced accuracy from 74.2 to 75.9 — "changes little" in their words, but a real gain. Offline judges run at temperature 0, parse failures mapped to fail.
+
+**Same-group benchmarks (evident from the methods).** OSReward and ScienceBoard — two of the five evaluation settings, and the two with the most dramatic margins (the OSReward-Hard gains, the ScienceBoard FPR gap) — are benchmarks from the same research group (Sun et al. 2026a, 2026c; Qiushi Sun is first author of both and of VeriCUA). This does not invalidate the numbers — gold labels are human labels and official evaluators — but the strongest results are not on neutral ground.
+
+**Preview-model dependence.** Every headline comparison runs on gemini-3-flash-preview or gemini-3.1-pro-preview, which also power the executing agents online. Results may shift as preview models change, and backbone choice can overturn the offline full-set ranking (see Evidence).
+
+**Agreement with official evaluators is a noisy target.** By the authors' own audit, a large share of disagreements are gold errors — cutting both ways: measured accuracy is likely understated where gold is wrong, but the same noise bounds how strongly any agreement gap can be interpreted.
+
+**Privileged access.** Online verification presumes root over adb on the emulator, VM state access, pre-state anchors, and snapshot control. Deployed agents on real user machines generally cannot be verified this way; the method targets benchmark, curation, and RL pipelines where the environment is owned.
+
+**Asymmetric baseline access online, in both directions.** The auto-generated verifier gets unrestricted host-side adb and Python — more raw access than VeriCUA's allowlist — but no trajectory, no context-inspection results, and no pre-state anchor: a strong-but-uninformed baseline.
+
+**Misuse surface (author-stated).** The same machinery could certify agents acting on real systems — one reason VeriCUA never writes to its environment.
+
+## Competing approaches
+
+- **VLM judges** (Pan et al. 2024, autonomous evaluation of digital agents): single-pass judgment from supplied observations. The implemented baseline is TRM (from OS-Genesis, Sun et al. 2025), scoring a trajectory 1–5 in one call from instruction, thoughts/actions, and final frames, thresholded at 4.
+- **Auto-generated verifiers** (Xue et al. 2026b, EvoCUA): a model-written evaluator script per task, run once against the machine for a binary verdict.
+- **Structured / checklist judges**: CUAJudge (Xue et al. 2026a) derives key points from the task and checks them against sampled frames in one call; OS-Themis (Li et al. 2026) checks ordered milestones and reviews them. Distinct from both are the **task-specific programmatic benchmark evaluators** (OSWorld, AndroidWorld) — the incumbent gold standard VeriCUA is measured against: precise, but hand-built per task and unavailable for new tasks.
+- **Agentic verifiers** — the closest prior art, from which VeriCUA differentiates itself mainly by the rubric-after-inspection order and source-aware arbitration: SeekJudge (Wan et al. 2026) iteratively inspects recorded trajectories; Cui et al. 2026 interact with the execution environment for reward modeling; Sanayei et al. 2026 (evidence-first verification) separate investigation from validation, checking proposed claims against state or trace sources before accepting rubric verdicts.
+- **Rubric-based reward modeling**: AdaRubric (Ding 2026) generates rubrics from task descriptions alone — VeriCUA's contrast is generating the rubric *after* inspection; OpenRubrics (Liu et al. 2026) uses synthetic criteria from preferred/rejected responses.
+- **Process reward models and platform-native signals**: Web-Shepherd (Chae et al. 2025); safety-oriented workflow-constraint validation in OS-Sentinel (Sun et al. 2026b). The problem itself is framed by judge/reward benchmarks (OSReward, CUARewardBench, AJ-Bench) and by audits showing benchmark evaluators contain errors (OSWorld-Verified).
+
+## Implications
+
+- **Verification is becoming an agent loop, not a judge call.** The winning pattern here is: inspect context → synthesize a checkable rubric → gather typed evidence adaptively → arbitrate deterministically. The model proposes; the harness and the rules dispose.
+- **Type your evidence.** The attested/asserted distinction is portable: an agent's own completion report, plans, and pre-action observations are claims, and a sound verifier architecture makes them structurally incapable of settling a requirement. Harness-enforced citation grounding (rejecting findings whose citation matches no executed call) is a concrete anti-hallucination mechanism for verifier agents.
+- **End-state checks beat trajectory vibes.** The rubric prompts enforce end-state requirements with exact quantifiers and counts, and forbid process requirements — a reusable discipline for rubric-based reward pipelines.
+- **Persisted state is the highest-value channel.** The code/state channel added decisions at zero false-positive cost, while screenshots alone decided only 33% of WebArena cases. Budget for file, database, and store reads before more frames.
+- **Abstention is a feature for data pipelines.** VeriCUA's profile — high decided accuracy, conservative coverage, roughly 80% rejection of false completion claims (author-reported) — is what trajectory filtering and reward assignment want, at roughly 3–10× a judge's token cost.
+- **Combine diverse passes; do not majority-vote identical ones.** Adding a *visual* pass beat repeating the default configuration; rule-based combination of the same draws produced 2 wrong fails where majority voting produced 20 (author-reported, filtered suite).
+- **Read-only-by-construction matters.** Allowlisted getters, shell-smuggling argument rejection, and before/after digests of persistent targets are a template for letting an agent inspect live systems safely; the extension contract (verbs + evidence types + cold-start view) shows how to add evidence sources without touching downstream logic.
+
+## Reproducible experiment
+
+The paper prints its synthesis prompts (Appendix F) and full verifier configuration (Appendix B.3), so partial replication is feasible without the authors' code.
+
+1. **Offline arm (cheapest).** Take the public OSReward trajectory set (1,019 trajectories; hard subset 284). Implement (a) a TRM-style single-call judge: a 1–5 score from instruction, thought/action log, and last three frames, threshold 4, temperature 0; and (b) a VeriCUA-style auditor: rubric from three candidate decompositions consolidated in a fourth call (prompt F.1); a sealed initial judgment computed first; then K = 3 audit paths (up to four support calls, then at least four refutation calls; verbs: frame inspection, OCR, action-log search, a11y reads), with the paper's arbitration thresholds and fallback to the initial judgment. Compare accuracy and balanced accuracy against the human labels, abstentions counted as fail. Given the paper's costs (roughly 345K–378K tokens per trajectory for the auditor vs. 33K–35K for three judges), a 100-trajectory stratified subsample is the realistic first run.
+2. **Online arm.** AndroidWorld on a headless Pixel 6 / API 33 emulator: run the benchmark scaffold on a task subset, snapshot the end state, record a pre-state anchor. Implement the 17-getter allowlist over adb, the rubric prompt (F.2), and the checker prompt (F.3) — two checkers per hard requirement, a restricted predicate evaluator, a model judge for semantic predicates — plus the arbiter as specified above. Baselines: a one-word VLM judge on the final screenshot, and a generated one-shot evaluator script. Measure agreement with the official evaluator, FPR, decision rate, decided accuracy. Reference cost: about 39K tokens and 100 s per episode per pass.
+3. **Ablations that carry the claims:** GUI-only vs. hybrid action space (expect the decision-rate jump at constant false positives); screenshots vs. +a11y-trees vs. trees-only offline; arbiter combination vs. majority voting.
+
+Caveat: exact reproduction also requires harness details the paper only summarizes, plus the same preview backbones.
 
 ## Evidence status
 
-Imported from a retained prior briefing summary. The source URL was recorded previously; its contents and reported metrics have **not** been independently reverified in this import.
+Every quantitative result on this page is **author-reported**: the authors ran all methods under their own harness on their chosen backbones. Independent replication: **none**. There are no vendor claims as such, but note the overlap: most authors are Google researchers, Google preview models serve as verifier, judge, and executing-agent backbones, and two of the five benchmarks are same-group (OSReward, ScienceBoard). The gold-label audit's confirmations are **model-adjudicated** (single-blind, a different model family), not human re-annotation. No code or data release is mentioned in the paper. Drawn from a full read of the arXiv v1 text (abstract, main text, references, Appendices A–F); figures were not inspected as images, so all numbers come from its tables and captions. One internal inconsistency is worth recording: the observation-input ablation's WebArena accuracy (80.0) differs from the headline (82.7) as printed and is not reconciled in the paper.
 
 ## Historical coverage
 
-[Briefing 2026-10-30](../briefings/2026/10/2026-10-30.md)
+[Briefing 2026-10-30](../briefings/2026/2026-10-30.md)
