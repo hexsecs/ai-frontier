@@ -25,3 +25,5 @@ At Phil's direction ("finish the remaining items for the ai wiki to get them all
 - **The three reconstructed briefings (2026-10-30, 2026-10-31, 2026-11-01): stub → full.** Their snapshots are untouched — verified by prefix diff: everything above the expanded addendum body is byte-identical except the depth line. The 2026-11-02 retrospective addenda were expanded in place into full retrospectives (per-project claim → verdict → decisive evidence, concept-layer placement, fuller syntheses), so each page's grade now describes the snapshot plus its full retrospective apparatus.
 
 The wiki now has zero content pages below `full`: 39 deep, 20 full (the seven category indexes carry no depth grade).
+
+- 2026-11-03: Published complete November 3 daily briefing with five new selections (Agensh, RoboArchitect, AgentShield, AgentSWE, AgentOS), primary URLs, evidence tiers, experiments, comparison, sourced chart, and Mermaid architecture; earlier snapshots unchanged.
