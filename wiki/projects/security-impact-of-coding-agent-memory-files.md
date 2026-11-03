@@ -1,6 +1,6 @@
 ---
 uid: f5b673c9-0890-4ec3-84b1-017c7b10b10e
-depth: full
+depth: deep
 title: "Security Impact of Coding Agent's Memory Files"
 summary: "Project memory files can serve as an indirect prompt-injection entry point for coding agents; measured security effects were small and chance-like."
 type: project

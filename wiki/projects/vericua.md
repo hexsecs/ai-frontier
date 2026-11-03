@@ -1,6 +1,6 @@
 ---
 uid: a3a58647-87f8-4c1b-bf11-40583689ddd3
-depth: full
+depth: deep
 title: "VeriCUA: Verification as Agentic Exploration for Computer-Using Agents"
 summary: "Active verification of computer-use agents by a separate post-hoc verifier, independent of the executing agent's own completion claims."
 type: project
@@ -117,4 +117,4 @@ Every quantitative result on this page is **author-reported**: the authors ran a
 
 ## Historical coverage
 
-[Briefing 2026-10-30](../briefings/2026/2026-10-30.md)
+[Briefing 2026-10-30](../briefings/2026/10/2026-10-30.md)

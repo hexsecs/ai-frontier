@@ -1,6 +1,6 @@
 ---
 uid: 180cf4ed-ebfe-4163-8733-68c33d4d0b9d
-depth: full
+depth: deep
 title: "Repairs for Whom? Evaluator–Executor Mismatch in Selecting Repairs for Failed LLM Agents"
 summary: "Repair selection must match the deployed executor's identity, not capability: stronger models choose worse repairs for it; labels must name their executor."
 type: project

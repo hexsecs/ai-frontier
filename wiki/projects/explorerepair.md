@@ -3,7 +3,7 @@ uid: 2d0dfc8e-71df-42d3-bdd8-79d4f881f372
 title: "ExploreRepair: Evidence-Specialized Agents for Vulnerability Repair under Information Constraints"
 summary: "Three evidence-specialized agents repair vulnerabilities with no provided proof-of-vulnerability test — one builds its own — given only a function-level hint."
 type: project
-depth: full
+depth: deep
 created: 2026-10-30
 updated: 2026-11-02
 sources:
@@ -135,4 +135,4 @@ Every quantitative result on this page is **author-reported**: the ExploreRepair
 
 ## Historical coverage
 
-[Briefing 2026-10-30](../briefings/2026/2026-10-30.md)
+[Briefing 2026-10-30](../briefings/2026/10/2026-10-30.md)

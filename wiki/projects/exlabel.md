@@ -1,6 +1,6 @@
 ---
 uid: 2bbd433f-e987-4668-bc89-9edbef1aad0e
-depth: full
+depth: deep
 title: "Well-Specified and Well-Tested? Assessing SWE-bench-Style Datasets with a Self-Evolving Agent"
 summary: "Self-evolving experience-bank evaluator labeling SWE-bench-style dataset instances for task clarity and test coverage (suite adequacy)."
 type: project
