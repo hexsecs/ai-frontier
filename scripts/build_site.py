@@ -108,6 +108,8 @@ def main():
             continue
         title = str(front.get("title") or re.search(r"^# (.+)$", body, re.M).group(1) if re.search(r"^# (.+)$", body, re.M) else page_id)
         summary = str(front.get("summary") or "")
+        if re.search(r"<(?:Chart|grid|grid-item|box|row|caption|title|text)\\b", body):
+            raise ValueError(f"{file.relative_to(ROOT)}: unconverted ChatGPT layout component in Markdown")
         rendered = markdown.markdown(embed_visualizations(body), extensions=["tables", "fenced_code", "sane_lists"])
         rendered = rewrite_links(rendered, page_id)
         rendered = bleach.clean(rendered,
