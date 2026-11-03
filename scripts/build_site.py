@@ -125,6 +125,7 @@ def main():
         body_text = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", rendered))[:12000]
         pages.append({"id": page_id, "title": title, "summary": summary, "category": category,
                       "created": str(front.get("created") or ""), "updated": str(front.get("updated") or ""),
+                      "depth": str(front.get("depth") or "full"), "type": str(front.get("type") or category.rstrip("s")),
                       "body_text": html.unescape(body_text), "html": rendered})
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps({"pages": pages}, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
