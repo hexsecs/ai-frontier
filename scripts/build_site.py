@@ -110,7 +110,10 @@ def main():
         summary = str(front.get("summary") or "")
         if re.search(r"<(?:Chart|grid|grid-item|box|row|caption|title|text)\\b", body):
             raise ValueError(f"{file.relative_to(ROOT)}: unconverted ChatGPT layout component in Markdown")
-        rendered = markdown.markdown(embed_visualizations(body), extensions=["tables", "fenced_code", "sane_lists"])
+        compiled = embed_visualizations(body)
+        if re.search(r"(?m)^\\s{0,3}```(?:chart|vega-lite|mermaid|graph)\\b", compiled):
+            raise ValueError(f"{file.relative_to(ROOT)}: visualization fence was not compiled")
+        rendered = markdown.markdown(compiled, extensions=["tables", "fenced_code", "sane_lists"])
         rendered = rewrite_links(rendered, page_id)
         rendered = bleach.clean(rendered,
             tags=set(bleach.sanitizer.ALLOWED_TAGS) | {"h1","h2","h3","h4","h5","h6","p","pre","code","img","figure","figcaption","div","span","table","thead","tbody","tr","th","td","hr","br","del","sup","sub"},
