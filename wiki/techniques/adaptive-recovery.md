@@ -1,32 +1,83 @@
 ---
 uid: e3ccbe37-5a26-4ad4-afac-3c3655c70d45
-depth: brief
 title: "Adaptive recovery"
-summary: "Selective repair and safe adaptation after failures or changes."
+summary: "Recovery succeeds when repair scope follows the contribution graph, not the failure's location; local repair alone scores below doing nothing."
 type: technique
+depth: deep
 created: 2026-11-02
 updated: 2026-11-02
-sources: []
+related: [dittany, repairs-for-whom, dynarev, envos, evoteam, information-content-dominance, scoped-assurance]
+sources:
+  - url: https://arxiv.org/abs/2610.42144
+    retrieved: 2026-11-02
+  - url: https://arxiv.org/abs/2610.38610
+    retrieved: 2026-11-02
+  - url: https://arxiv.org/abs/2610.40133
+    retrieved: 2026-11-02
+  - url: https://arxiv.org/abs/2610.40246
+    retrieved: 2026-11-02
+  - url: https://arxiv.org/abs/2610.39813
+    retrieved: 2026-11-02
 ---
 
 # Adaptive recovery
 
-## Discovery hypothesis
+## What it is
 
-The linked projects appear to share this engineering concern based on previously imported briefing summaries. These links are **inferred relatedness**, not demonstrated technical dependence or shared citations.
+Adaptive recovery is the family of mechanisms by which an agent system, once something has gone wrong — a step failed, an intermediate result violated its contract, the goal was revised mid-task, the world changed under a stale value — restores a path to task success *without discarding the work that is still valid*. The mechanisms differ in what they treat as broken: a single action, a subgraph of dependent contributions, a choice among candidate repairs, the goal statement itself, an agent's stale belief, or the accumulated organization that produced the failure. What unifies them is that recovery is a decision, not a reflex: something must detect the failure, decide its scope, choose or construct a remedy, and re-verify the result before downstream work consumes it.
 
-## Connected projects
+The corpus's central finding about this family is that **recovery is a scope decision before it is an effort decision**. The signal page [[signals/reliability-is-a-systems-property]] grades the loop's recovery link as evidence-backed at graph scope and *contradicted* at action scope: the one system that ablates scope shows its local repair mode scoring below no repair. This page also tests the stub's candidate links against the deepened project pages. Five of the six candidates instantiate recovery and are synthesized below. One — [[projects/blindtochange]] — does not: it implements and evaluates no recovery mechanism, and is demoted to a boundary case, discussed under Failure modes, because it measures the step recovery presupposes and agents most often skip: noticing that anything needs recovering from. What *triggers* recovery, what its *unit* is, and what *scores* it organize the variants below.
 
-- [dittany](../projects/dittany.md) — candidate architectural relation.
-- [repairs-for-whom](../projects/repairs-for-whom.md) — candidate architectural relation.
-- [dynarev](../projects/dynarev.md) — candidate architectural relation.
-- [envos](../projects/envos.md) — candidate architectural relation.
-- [blindtochange](../projects/blindtochange.md) — candidate architectural relation.
-- [evoteam](../projects/evoteam.md) — candidate architectural relation.
+## Mechanism variants
 
-## Validation work
+**Detect-then-repair over a contribution graph ([[projects/dittany]]).** Dittany derives, for each subtask of a multi-agent application, an *expected contribution* with acceptance conditions, and links contributions into a graph whose edges connect outputs to the inputs that consume them. Runtime checkers label each condition **satisfied**, **violated**, or **unestablished**; only the latter two trigger repair, and pending checks resume when their inputs arrive. Repair then runs at two scopes. *Action-level repair* fixes the current action using inputs it already has — recomputation of a failed calculation, evidence-constrained revision of content against the unmet condition, constrained reassignment of adjustable choices, method substitution. *Graph-level repair* fires when recovery needs what no local fix can supply: it computes the *contribution gap* (missing content plus unestablished or violated conditions), builds a repair subgraph that recursively spawns subtasks producing the missing inputs, re-checks every unfinished node that will receive a recovery output, and reopens previously accepted results — and their completed consumers — when rechecking invalidates them, while independent contributions whose conditions still hold are retained. Escalation from action to graph scope happens only when action-level repair ends with unmet conditions and budget remains; budgets are not reset by escalation.
 
-Compare the original implementations, test whether the shared pattern is real, and document meaningful differences and counterexamples.
+**Repair selection as part of the mechanism ([[projects/repairs-for-whom]]).** Where Dittany constructs repairs, Repairs for Whom? isolates the prior decision: given a failed trajectory and a fixed set of candidate single-step repairs, *which evaluator should select among them?* Its mechanism is **matched selection** — score each candidate by rollouts of the *deployed executor* (the exact policy, prompt protocol, decoding, and invalid-action rules that produced the failure and will run the repair) and pick the highest estimated net gain over the original action. The study's contribution to recovery technique is that selection is not a neutral wrapper around repair: acceptance-style verification rules re-implemented from published methods (accept if 2-of-3 replays succeed, accept on a single replay flip) lose to matched selection mainly *because they accept rather than rank*, and log-reading judges — including the deployed model judging itself — select poorly where outcomes depend on unobserved state.
 
-> [!unverified]
-> Relations have not been checked against the primary sources in this pass.
+**Goal revision as recovery from a changed specification ([[projects/dynarev]]).** In DynaRev the failure is exogenous: the user's goal itself changes mid-execution, delivered at semantic milestones as additive constraints, unconditional overrides, or conditional overrides the agent must resolve from web state. The recovery mechanism the benchmark's strategy study validates has two inseparable halves: **rewrite the accumulated instructions into one consolidated current goal, and preserve the execution state** (current browser state, accumulated progress). The alternatives are recovery anti-patterns: resetting the browser treats the revision as a new task and discards progress; clearing interaction history is roughly neutral; rewriting *after* a reset cannot recover what the reset threw away.
+
+**Adaptation to authoritative change, driven by disclosure ([[projects/envos]]).** EnvOS's stale-value phenomenon is recovery with the agent's *belief* as the broken unit: a task-relevant value was served, the authoritative state then changed, and the agent is about to commit on the stale value. The measured recovery lever is not an agent-side repair loop but what reaches the agent at the decision point — in the clinic workflow, showing the current value at review versus a reminder-and-link cue versus nothing extra. This is [[concepts/information-content-dominance]] in recovery form: the content of what arrives at the commit point, not exhortation to go and fetch it, is what restores correct action. The caveat is structural: the disclosure is arranged by the harness, so this variant measures recovery *performance under arranged disclosure*, not an agent's self-initiated repair.
+
+**Post-failure adaptation of persistent state ([[projects/evoteam]]).** EvoTeam recovers at two timescales. Within a run, the Chairman monitors execution and can reassign subtasks inside the execution team when allocation blocks progress. Between runs, three reflectors convert execution traces — including failures — into revised persistent state: the Team Reflector revises rosters and team descriptions (and decides whether a provisional team is admitted to the reusable-team library at all), the Rule Reflector creates, revises, or removes interaction rules *only within the team that learned them*, and the Agent Reflector updates individual skills, which are global. The scoping is the safety mechanism: the paper's preliminary study found that carrying evolved collaboration experience naively across heterogeneous tasks *hurts* — team templates cannot support a new division of labor, handoff rules misfire in new contexts — so organization is reused broadly, coordination guidance is quarantined per team, and skills float globally.
+
+## Evidence and measured effects
+
+All figures below are author-reported from the respective project pages; see Evidence status for provenance.
+
+**Dittany (9,000 application–task instances, 30 MAS applications, one backbone).** The full system reaches **84.76% task accuracy against 58.01% for native execution** and 63.48% for Reflexion, the strongest aggregate recovery baseline; in the paired comparison it passes 75.10% of the inputs native execution fails. Detection runs at 88.28% precision and 79.18% recall over 8,758 label-resolved executions. The scope ablation is the corpus's decisive recovery measurement: **action-level repair alone scores 52.54% — below the 58.01% of doing nothing** — graph-level repair alone scores 69.17%, and adding graph scope to action-only repair is worth 32.21 points. Inside the combination, the action scope's demonstrated contribution is efficiency as much as accuracy: adding it to graph-only repair cuts token consumption from 451.4M to 374.9M. The full system uses 17.92% more tokens than native execution but fewer than every recovery baseline.
+
+**Recovery must be scored conditionally ([[projects/prefix-executability]], via the signal page's grading).** Prefix-executability's Recovery Rate measures success *conditional on* an invalid prefix, and on BFCL plain ReAct recovered at **0.00** while plan-conditioned variants recovered at **0.73–0.90** — the same final-success number can hide opposite recovery behaviour. A recovery claim stated only as final success is, in [[concepts/scoped-assurance]]'s terms, quoted outside its scope: the denominator that matters is the failures, not the tasks.
+
+**Repairs for Whom? (unscreened pools of the first 60 failures per agent and environment).** Matched selection's gains over the original action are large — 0.82–0.87 in success probability on the ALFWorld pools, 0.15 and 0.31 in WebShop reward — and substitutes for the deployed executor's judgement reliably destroy part of them. Greedy replay loses 0.08–0.13 of net gain; selection by a stronger same-family model at an equal rollout budget loses **0.25** in ALFWorld and 0.07 in WebShop; cross-family selection loses in both directions. Twenty strong-model rollouts per candidate buy about as much as one or two of the deployed agent's own, at 6–39× the GPU cost; conversely, **roughly three of the deployed agent's own rollouts per candidate recover most of matched selection's value**. Repair-location labels are executor-relative: the argmax position from a stronger model's rollouts agrees with the deployed agent's in only 32% of trajectories.
+
+**DynaRev (181 tasks; strategy study on one model).** Rewrite-and-preserve-state raised Score from 0.647 to **0.718** while *reducing* steps (50.3 → 44.9) and tokens (806.7k → 658.8k). Browser reset scored 0.586 with more steps; Reset + Rewrite was worst of all at **0.525**; clearing history alone was roughly neutral (0.648). Responsiveness is not satisfaction: WRA (adaptation within three actions of a revision) sits in a narrow 66.8–69.4% band across all five models, its ordering does not track final correctness, and the best strict task success is 43.1% — coping with goal revision remains far from solved.
+
+**EnvOS (small preregistered paired blocks).** In clinic booking with Claude Opus 5, success ran **0/16 with nothing shown at review, 2/16 with a reminder-plus-link cue, and 15/16 with the current value shown** (primary contrast net +0.81). In insurance claims, Sonnet 5 met the full endpoint on 1/10 without the current-policy panel and 9/10 with it. The agent-initiated path barely exists: only 1 of 16 cued trajectories followed the supplied link to check the source.
+
+**EvoTeam (avg@3; evolution over 16–20 instances per benchmark, then frozen).** Under mixed-benchmark evolution EvoTeam averages **59.58 against Meta-Team's 55.55** (+4.03) and ranks first on all six metrics, while under per-benchmark evolution the margin is a near-tie (+0.55) and EvoTeam loses one benchmark outright. Ablations credit the learned interaction rules with up to +10.00 points (GAIA) and +8.75 (LOCA-Bench) over templates alone, though the full framework is best in only five of six ablation settings.
+
+## Failure modes and bounds
+
+**Local repair is net-negative.** The technique's central caution is Dittany's ablation: repair confined to the action where the failure surfaced scores *below* the no-repair baseline (52.54% vs 58.01%). The pattern generalizes across the corpus's intervention studies, as the signal page records: an added refinement loop cost one synthesis pipeline 12.8 points of fidelity, and DynaRev's Reset + Rewrite is the worst strategy measured. A recovery stage is not evidence of improvement, and the no-intervention arm is a required control for any recovery claim.
+
+**Recovery inherits its detector's scope.** Dittany's 79.18% recall means roughly a fifth of failure-containing executions never trigger repair at all, and per [[concepts/scoped-assurance]] every downstream number is bounded by what the checkers exercised — including their blind spots: Dittany's host agents, extraction, checking, repair, and outcome assessor all run on a single backbone, so detection and repair share one model family's correlated errors. Aggregate margins also conceal distribution: Dittany loses to a baseline in two of six frameworks and scores below native execution on four of thirty applications, and two of its four recovery baselines are mostly literature numbers rather than matched re-runs, so the Reflexion margin is the solid comparison.
+
+**The wrong selector quietly taxes recovery.** Repairs for Whom? shows the failure need not be in the repair at all: a stronger evaluator's preferences genuinely *reverse* the deployed executor's (confirmed on fresh rollouts), so escalating selection to a bigger model is a downgrade, and any "verified repair" label silently expires when the executing model, decoding, or protocol changes. Its scope is bounded — single-step repairs, fixed candidate sets, two 7–8B deployed agents, restorable text worlds — and candidate generation bounds everything downstream: where an LLM both locates and proposes, even hindsight-optimal selection over its candidates reaches only 0.37 against 0.64 for richer candidate sets.
+
+**Detection is the precondition, and it is where agents fail first — the demoted candidate.** [[projects/blindtochange]] is not a recovery technique: it is a benchmark showing that search agents who find a disqualifying change almost every time when *asked* (≥96.5% direct accuracy on demises at high effort in nearly all configurations) routinely never look when a request doesn't mention it — median direct-to-indirect gaps of 27.5–42.5 points, with at least 75% of failures in 13 of 15 shared-harness configurations being no search or unrelated search. It proposes remedies (selective verification, continual learning) but implements and evaluates none; its one concrete prompt is labelled speculation by its own authors. Its role here is as the boundary condition for every variant above: recovery machinery triggered by the agent *noticing* a stale premise will mostly never fire — which is why EnvOS's arranged disclosure outperforms the reminder to self-check, and why Dittany's trigger is a checker verdict rather than an agent's suspicion.
+
+**Adaptation can transfer negatively, and gates do not guarantee.** EvoTeam's motivating result is that experience accumulated from failures can *degrade* a system serving different tasks, and a rival method's evolved state collapses in the same mixed setting (41.30 average, below a single agent on one benchmark). Team-scoped quarantine is the mitigation — a scope discipline applied to learned state. The update-side bound from the signal page applies to any recovery that writes persistent state: KARMA's regression gate retains patches that improve its validation set, yet two of eighteen settings regressed on an untouched hold-out after passing it.
+
+**Small and single-model evidence.** DynaRev's strategy result — this page's main goal-revision evidence — is measured on one model over an unspecified task subset. EnvOS's contrasts rest on 16 and 10 instances with one rollout per condition, and its claims contrast does not survive the paper's own retrospective paper-wide correction. EvoTeam reports no variability or significance measures against sub-point margins, and its cost claims are figure-only.
+
+## Open questions
+
+- **The factorial experiment is unrun.** No page in the corpus toggles detection, recovery scope, and update gating independently inside one system; the signal page's proposed design (verification on/off × recovery scope × update gating, with a mandatory no-intervention arm and recovery measured at contribution granularity) remains the settling test for most claims on this page.
+- **Scope without a graph.** Dittany decides repair scope from a contribution graph derived from application specifications. Most single-agent and tool-use settings have no such graph: what plays the scope-deciding role there — trajectory structure, a planner's decomposition, the failure's consumers — is untested.
+- **Conditional recovery metrics as standard.** Recovery Rate exists in one study's protocol. Whether benchmarks should report success-conditional-on-failure separately from final success by default is an open reporting convention, not yet a practice.
+- **A trigger policy for the undetected premise.** BlindToChange reframes the trigger problem as economic: which assumptions to verify, weighted by staleness likelihood and how much the answer depends on them, against test-time cost. No page in the corpus implements or prices such a policy.
+- **Selection beyond the single step.** Matched selection is demonstrated for single-step repairs executed by one agent in restorable worlds. Whether executor-matching survives multi-step repairs, non-restorable environments, and multi-agent executors — where "the executor" is itself a team — is unknown.
+
+## Evidence status
+
+This page is a synthesis over the KB's deepened project, concept, and signal pages, written for issue #2; the technique grouping is the KB's analytical construct, and the candidate links inherited from the imported stub were tested against the deepened pages — five of six retained, one ([[projects/blindtochange]]) demoted to a boundary case with the reason stated. Every quantitative result is **author-reported** from a single preprint or project source, with no independent replication in any case: Dittany's results come from one team's testbed on a single backbone with mixed baseline provenance and no released code or data; Repairs for Whom? releases code, trajectories, and rollout outcomes; DynaRev's strategy finding is single-model; EnvOS's effects are large but rest on very small preregistered blocks; EvoTeam's margins carry no reported variance. Analyst-assessed bounds are flagged on the underlying project pages and carried here at the same strength.
