@@ -1,6 +1,7 @@
 ---
 title: Project title
 summary: A concise, factual summary under 160 characters.
+uid: "REPLACE-WITH-NEW-UUID"
 type: project
 # Generate a new UUID for each actual page; do not copy a template UID.
 created: YYYY-MM-DD
