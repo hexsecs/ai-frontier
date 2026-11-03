@@ -16,4 +16,4 @@ jobs:
       - name: Install OpenShelf CLI
         run: python -m pip install git+https://github.com/OpenNorms/openshelf.git
       - name: Validate knowledge base
-        run: openshelf lint .
+        run: python scripts/validate_openshelf.py
