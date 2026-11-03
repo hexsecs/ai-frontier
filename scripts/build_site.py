@@ -106,7 +106,7 @@ def main():
         front, body = split_frontmatter(file.read_text(encoding="utf-8"))
         body = convert_chatgpt_charts(body)
         category = page_id.split("/", 1)[0]
-        if category not in {"projects", "techniques", "briefings", "signals", "experiments", "evaluations"}:
+        if category not in {"projects", "concepts", "techniques", "briefings", "signals", "experiments", "evaluations"}:
             continue
         title = str(front.get("title") or re.search(r"^# (.+)$", body, re.M).group(1) if re.search(r"^# (.+)$", body, re.M) else page_id)
         summary = str(front.get("summary") or "")
