@@ -1,29 +1,85 @@
 ---
 uid: 0ae84717-721c-47b8-8a5a-1f69a9946aa6
-depth: brief
-title: "Seq@K"
-summary: "Measure improvement across sequential agent attempts with feedback."
+depth: deep
+title: "Seq@K: Evaluating Language Models Under Sequential Feedback"
+summary: "Evaluation protocol measuring whether a model solves a task within K sequential attempts, given feedback after each failure; rankings diverge from Pass@K."
 type: project
 created: 2026-10-31
-updated: 2026-10-31
+updated: 2026-11-02
 sources:
   - url: https://arxiv.org/abs/2610.37859
-    retrieved: 2026-10-31
+    retrieved: 2026-11-02
 ---
 
 # Seq@K
 
-## What was demonstrated
+## What it is
 
-Measure improvement across sequential agent attempts with feedback.
+Seq@K is an evaluation protocol for language models, proposed by Thomson Yen, Gilbert Yang, Naimeng Ye, Minghui Chen and colleagues (Columbia Business School, UC Santa Barbara, Northwestern University) in an October 2026 arXiv preprint. It is the sequential-feedback counterpart of Pass@K. Both metrics ask whether a model succeeds at least once within a budget of K attempts; they differ in how the attempts are produced. Under Pass@K, each candidate is drawn independently from the static task prompt, so the metric measures one-shot ability plus sampling luck. Under Seq@K, attempts are generated iteratively: after each failed attempt the model receives feedback, and every later attempt is conditioned on the full history of earlier attempts and their feedback. The trajectory stops at the first success.
 
-## Key technique
+Seq@K is a measurement method, not a technique for improving agents — nothing is trained and no parameters change. What it measures is revision capability: whether a model can use failure information to fix its own output. The authors' central claim is that this capability is largely distinct from the sampling capability Pass@K measures, and that evaluating deployed feedback-loop systems (coding assistants that run tests, support agents that retry, review pipelines) with Pass@K therefore gives misleading rankings, misleading model gaps, and misleading cost estimates.
 
-Evaluate learning from retries, not only independent sampling.
+A crucial qualification is built into the definition: Seq@K is a *family* of evaluations indexed by feedback mode. The paper states that a numerical Seq@K value "is well-defined only after specifying feedback mode alongside the benchmark task split, verifier, prompt builder, decoding hyperparameters, and attempt budget." Two Seq@5 numbers produced under different feedback modes are not commensurable, and the paper's own results show the feedback mode matters more than almost anything else.
+
+## Mechanism
+
+Formally, Pass@K samples each candidate independently, $Y_{i,t} \sim \pi_\theta(\cdot \mid x_i)$, and credits success if any candidate passes the task verifier. Seq@K samples attempt $t$ from $\pi_\theta(\cdot \mid x_i, H_{i,t-1})$, where the history $H_{i,t-1}$ contains every earlier attempt paired with the feedback returned after it. Feedback is issued only after a failure; attempts with $t \geq 2$ are called *revisions*. Three roles are distinguished: the **actor** (the model being evaluated), **critics** (models that write feedback), and **graders/verifiers** (a binary success check, itself an LLM where the benchmark requires one).
+
+The feedback modes form a ladder of increasing information:
+
+1. **Binary feedback** — only a pass/fail verdict. In coding the literal message is: "Your previous solution failed the hidden tests. Please revise the code."
+2. **Raw verifier feedback** — direct evaluator diagnostics: execution traces, failed test assertions, or per-item rubric verdicts. In coding ("test-detail" feedback) the actor sees up to two failed tests with the function call, expected output, and actual output.
+3. **LLM critic feedback** — a model writes a targeted critique of the failed attempt. Critics vary on two dimensions the paper manipulates systematically: *rubric access* (rubric-aware critics see the grading criteria; rubric-blind critics do not) and *style* (directive instructions vs. socratic questions). The critic may be the actor itself or a different model.
+
+The authors are explicit that the upper rungs of this ladder leak privileged information: raw verifier feedback and test details "show the actor part of what is graded, so Seq@K under these modes measures success with that information." That is deliberate — the protocol is meant to mirror deployments where a test suite or rubric genuinely is available — but it means high Seq@K numbers under informative feedback are partly measuring information access, not just revision skill.
+
+History handling is part of the protocol. By default each attempt's prompt is a single user message containing the task, the attempt number, and every earlier attempt with its feedback. Variants replace earlier attempts with a summary, or omit the attempt count; both are treated as experimental variables.
+
+The paper also defines companion diagnostics. **ΔPass@K / ΔSeq@K** factor out one-shot ability by measuring the gain from attempts 2–5 over attempt 1. **Early-Gain Share** and **Last-Gain Share** locate where in the trajectory the improvement lands (the fraction of the total gain arriving on the first retry, or on the last allowed attempt). **Selection loss** measures the practical cost of choosing a model with the wrong metric: the held-out Seq@5 gap between the actor picked on calibration tasks and the best candidate. **Criterion repair** tracks, on rubric-graded tasks, what fraction of first-attempt failures a revision fixes — and, symmetrically, what fraction of initially passing criteria it breaks.
+
+The empirical study spans seven benchmark variants from five families (AdvancedIF, CLBench DKR and RSA, HealthBench's hard split, ResearchRubrics, MBPP Pro, HumanEval Pro), 16 actor models, and 471 run records. Main comparisons use temperature 0.7, a budget of K = 5, and bootstrap confidence intervals over tasks. Coding comparisons exclude 15 of 100 tasks whose tests call a function the prompt never names, leaving 45 MBPP Pro and 40 HumanEval Pro tasks.
+
+## Evidence
+
+Everything in this section is **author-reported**: all numbers come from the paper's own runs, and no independent replication exists.
+
+**Sequential gains are not sampling gains.** Across 26 model–benchmark pairs, final Pass@5 and Seq@5 scores correlate moderately (Spearman +0.68), but once first attempts are removed the correlation collapses: the gain from independent resampling (ΔPass@5) and the gain from feedback-conditioned revision (ΔSeq@5) correlate at Spearman −0.08. In the paper's words, "how much a model gains from more independent samples says little about how much it gains from feedback." A model that looks strong under Pass@K because it samples diversely may gain almost nothing from feedback, and vice versa.
+
+**Model selection flips.** In a controlled selection study, four candidate coding actors were ranked on n calibration tasks and the winner deployed under Seq@5 with test-detail feedback on held-out tasks. Calibrating with Pass@5 picked an actor whose held-out Seq@5 was 70.8% on HumanEval Pro and 90.2% on MBPP Pro. Calibrating with Seq@3 — a cheaper metric read off the first three attempts of the same runs — picked actors reaching 96.8% (+26.0 pp, 95% CI [+6.8, +44.7]) and 98.4% (+8.3 pp, CI [+1.8, +19.9]) respectively. On MBPP Pro, Seq@3 calibration on a single task matched the selection quality of Pass@5 on ten tasks at roughly 11× lower cost. Practitioners choosing models for retry-loop deployments with Pass@K are, on this evidence, systematically choosing the wrong models.
+
+**Actor gaps move in both directions.** The best–worst gap between actors shrank on AdvancedIF (33.3 → 6.7 points from Pass@5 to Seq@5) but widened sharply on HumanEval Pro (10.8 → 51.7 points) and on MBPP Pro (18.5 → 31.1, though that change's interval includes zero). On CLBench DKR, where independent sampling solves at most ~14% of tasks, sequential feedback reached 50% (Opus 4.7 at K = 5). Pass@K neither uniformly overstates nor understates differences; it measures a different quantity.
+
+**Timing and revision behaviour vary by actor and setup.** Gemini 3 Flash is front-loaded — 86% of its total DKR gain arrives on the first retry (Early-Gain Share 0.86) — while Opus 4.7 and DeepSeek V4 Pro are still gaining on the final allowed attempt. These diagnostics describe an actor *under a given feedback setup*, not the actor alone: Qwen3.6 Max's Early-Gain Share moved from 0.20 to 0.57 under a different critic/grader configuration. Raw revision behaviour is sometimes degenerate: on the coding benchmarks, Qwen3 Coder Flash resubmitted its previous attempt completely unchanged in 48% of revisions, and DeepSeek V3.2 in 6%, while Sonnet 4.6 and Gemini 3 Flash never did. An LLM-annotated audit of 842 revisions found 22% unhelpful (addressing none of the valid feedback requests), 34% addressing some, and 44% addressing all — and even revisions addressing all feedback frequently failed, because the revision broke a criterion that had passed before.
+
+**Feedback content dominates feedback existence.** On CLBench DKR, the fraction of first-attempt-failed criteria repaired by the best revision was 73.8% under rubric-aware critics, versus 34.4% under binary feedback, 36.8% under rubric-blind critics, and 36.5% for independent retries with no feedback at all. Binary feedback's difference from plain resampling was −2.1 pp with a confidence interval including zero: told only "that failed," a model repairs no more than it does by drawing a fresh sample. In coding the picture is model-dependent — binary feedback lifted Sonnet 4.6 by 17–26 points over Pass@5, but changed DeepSeek V3.2 and Qwen3 Coder Flash by at most 3.3 points — while test-detail feedback produced large gains nearly everywhere (e.g. Sonnet 4.6 to 0.985 Seq@5 on MBPP Pro). The paper's reading: binary feedback helps only when the model can diagnose its own failure from the bare verdict; informative feedback helps when it surfaces criteria the actor would not find itself.
+
+**History representation is a first-order variable.** Replacing full attempt history with a summary changed success rates by −14.4 pp on HealthBench, −7.2 pp on ResearchRubrics, and −6.1 pp on DKR, while slightly *improving* coding results (+1.8/+0.5 pp). The authors conclude history handling "is therefore part of the protocol and should be reported along with Seq@K."
+
+## Limitations
+
+Several caveats are stated or documented in the paper itself. **Protocol-relativity:** a Seq@K value without its full specification (feedback mode, split, verifier, prompt builder, decoding, budget) is meaningless, which limits cross-paper comparison. **Privileged feedback:** the strongest results come from feedback modes that expose grading information — per-item rubric verdicts, rubric-aware critics, failed tests with expected outputs — closer to an oracle tutor than to typical user feedback; under rubric-blind critique, repair rates were indistinguishable from having no feedback at all. **Optimistic correlation inputs:** each pair's Seq@5 in the 26-pair correlation analysis is the *best* non-binary feedback configuration for that pair, selected on the same tasks, so those Seq@5 values are optimistic by construction. **Post-hoc metric choice:** Seq@4 was added to the selection study after the Seq@3 results were seen, and the comparison is against Pass@5 only, not against every alternative use of the same sampling budget. **LLM-labelled annotations:** the revision audit labels are LLM labels, not human annotations (inter-annotator κ = 0.73 overall, 0.53 on DKR), and the annotators are Claude models while three actors are also Claude models. **Cost accounting** covers API charges only, excluding test execution, and in the DKR frontier excludes critic calls.
+
+Analyst-assessed caveats follow from the method. Many headline contrasts rest on 28–30 shared tasks (RSA pairs on 10), and several intervals are wide: the Δ-correlation's interval [−0.47, +0.31] does not exclude a moderately positive relationship, so the "distinct capability" conclusion leans on a near-zero point estimate. The selection result — the paper's most practical claim — is demonstrated only for four coding actors on two coding benchmarks with test-detail feedback; whether Seq@K calibration helps on noisy, LLM-judged benchmarks is extrapolated, not tested. Rubric benchmarks are graded by frontier LLMs (Sonnet 4.6, GPT-5.4) from the same model families as actors and critics in the pool, and no grader-agreement audit against humans is reported for the main scores. All main comparisons use a single untuned temperature (0.7), and behaviours like identical resubmission are plausibly decoding-sensitive. AdvancedIF shows ceiling effects, with several actors at Seq@5 = 1.000 on 30 tasks, compressing differences at the top. Finally, the paper has no standalone limitations section; its caveats are distributed through the appendices, and replication is blocked by missing artifacts (below).
+
+## Competing approaches
+
+The incumbent is **Pass@K** (and Pass@1) itself — the feedback-blind metric Seq@K is defined against and still the default in most model reporting. **Reflexion**, **Self-Refine**, and **CRITIC** occupy adjacent ground but are *methods* for improving agents through feedback, not evaluation protocols; the paper positions Reflexion as "the closest to our setting." **RefineBench** evaluates refinement on a new purpose-built task set with checklist grading, and found self-refinement yields little while targeted feedback nearly saturates frontier models; Seq@K's counter-position is that no new tasks are needed — applying a sequential protocol to existing benchmarks already reverses conclusions. **Refine@K** in ICPC-Eval measures revision from execution feedback but only for competitive programming. Multi-turn and agentic benchmarks (**SWE-bench**, **WebArena**, τ-bench, **MINT**) score long interactions in which planning, tool use, state tracking, and feedback use are entangled; Seq@K deliberately isolates only the last of these. The paper's revision-annotation methodology follows **GEPA**'s annotation precedent, though GEPA is not a competitor.
+
+## Implications
+
+For anyone deploying models in feedback loops — test-driven coding assistants, retrying workflow agents, iterative review pipelines — Seq@K argues that model selection should be calibrated under the deployment protocol, not under independent sampling: on the paper's coding evidence, Pass@K-based selection left 8–26 points of held-out sequential success on the table and cost more to compute. Benchmarks that report only Pass@K will misstate the gap between models in whichever direction the feedback dynamics push, and leaderboard orderings should be expected to shuffle when a sequential protocol is applied (see [[techniques/evaluation-and-simulation]]).
+
+For system builders, the feedback-content result is the actionable one: attempt budget is worth little if the feedback carries no diagnostic content. A bare failure verdict performed no better than resampling on rubric tasks, while rubric-aware critique more than doubled criterion repair. Investment in *what* the loop tells the model — failed tests with expected outputs, per-criterion verdicts, rubric-informed critique — dominates investment in more retries. History representation deserves the same care: summarising past attempts cost up to 14.4 points on some benchmarks, so context compression in retry loops is a measured risk, not a free optimisation. And the degenerate-revision findings (unchanged resubmission, revisions that break previously passing criteria) argue for monitoring revision quality directly, not just final success rates.
+
+## Reproducible experiment
+
+A conceptual replication of the headline findings needs only public components. Take HumanEval Pro or MBPP Pro, four API actors of differing families, K = 5, temperature 0.7, three seeds. Run each actor under Pass@5 (independent samples) and under Seq@5 with test-detail feedback (up to two failed tests shown, with expected vs. actual output). First, reproduce the correlation claim: compute ΔPass@5 and ΔSeq@5 per model and check whether sampling gains predict revision gains. Second, reproduce the selection claim: on 10 calibration tasks, pick the best actor by Pass@5 and by Seq@3, then compare the picked actors' held-out Seq@5. Third, reproduce the feedback-content claim on any rubric-graded task set: compare criterion repair under binary feedback, rubric-blind critique, and rubric-aware critique against an independent-retry control. The paper's bootstrap procedure (resampling tasks, 2,000 draws, keeping all actors' results on a resampled task together) should be followed for intervals.
+
+An *exact* rerun of the paper's own numbers is currently impossible for third parties: the paper releases no code, no run records, and no prompt builders beyond the coding feedback texts, and several actors and graders are proprietary API models whose behaviour drifts over time. Independent groups can test the protocol's claims, but cannot audit the paper's specific tables.
 
 ## Evidence status
 
-Imported from a retained prior briefing summary. The source URL was recorded previously; its contents and reported metrics have **not** been independently reverified in this import.
+Single-source. The primary source (arXiv:2610.37859) was read in full — all sections, appendices, and tables — for this upgrade, and every figure on this page traces to it. All quantitative results are **author-reported**; no independent replication was found, and the paper's framing claims (e.g. that Seq@K is the more faithful metric for feedback-loop systems) are the authors' argued position, supported by their study but not themselves measurements. The paper contains no code or data release URL and none was found by search, so exact reruns are currently impossible for third parties. The earlier import's caution therefore still stands in substance: the source has now been inspected directly, but its results have been verified by no one but its authors.
 
 ## Historical coverage
 
