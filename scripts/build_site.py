@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """Build the AI Frontier GitHub Pages search index from OpenShelf Markdown."""
 import html
+import shutil
+import urllib.parse
 import json
 import pathlib
 import posixpath
@@ -10,6 +12,7 @@ import sys
 try:
     import markdown
     import yaml
+    import bleach
 except ImportError as exc:
     raise SystemExit("Install dependencies: pip install markdown PyYAML") from exc
 
@@ -38,6 +41,32 @@ def rewrite_links(rendered, page_id):
         return match.group(1) + "#/page/" + suffix + match.group(3)
     return re.sub(r'(href=")([^"]+)(")', change, rendered)
 
+def enhance_media(rendered, file):
+    def replace_image(match):
+        attrs = match.group(1)
+        src_match = re.search(r'src="([^"]+)"', attrs)
+        if not src_match:
+            return match.group(0)
+        src = html.unescape(src_match.group(1))
+        parsed = urllib.parse.urlsplit(src)
+        if not parsed.scheme and not src.startswith(("//", "#", "data:")):
+            source = (file.parent / urllib.parse.unquote(parsed.path)).resolve()
+            if source.is_file() and source.is_relative_to(ROOT) and source.suffix.lower() in {".png", ".jpg", ".jpeg", ".webp", ".gif", ".svg", ".avif"}:
+                dest = ROOT / "docs" / "assets" / source.relative_to(ROOT)
+                dest.parent.mkdir(parents=True, exist_ok=True)
+                shutil.copy2(source, dest)
+                url = "./assets/" + urllib.parse.quote(source.relative_to(ROOT).as_posix())
+                attrs = attrs.replace(src_match.group(0), 'src="' + html.escape(url, quote=True) + '"')
+        alt_match = re.search(r'alt="([^"]*)"', attrs)
+        caption = alt_match.group(1) if alt_match else ""
+        return ('<figure class="briefing-figure"><a href="' +
+                html.escape(re.search(r'src="([^"]+)"', attrs).group(1), quote=True) +
+                '" target="_blank" rel="noopener noreferrer" aria-label="Open full-size image">' +
+                '<img' + attrs + ' loading="lazy" decoding="async"></a>' +
+                ('<figcaption>' + caption + '</figcaption>' if caption else '') + '</figure>')
+    return re.sub(r'<img\\b([^>]*?)/?>', replace_image, rendered)
+
+
 def main():
     pages = []
     for file in sorted(WIKI.rglob("*.md")):
@@ -52,6 +81,11 @@ def main():
         summary = str(front.get("summary") or "")
         rendered = markdown.markdown(body, extensions=["tables", "fenced_code", "sane_lists"])
         rendered = rewrite_links(rendered, page_id)
+        rendered = bleach.clean(rendered,
+            tags=set(bleach.sanitizer.ALLOWED_TAGS) | {"h1","h2","h3","h4","h5","h6","p","pre","code","img","figure","figcaption","div","span","table","thead","tbody","tr","th","td","hr","br","del","sup","sub"},
+            attributes={"a":["href","title","target","rel","aria-label"],"img":["src","alt","title","loading","decoding","width","height"],"*":["class","id"]},
+            protocols={"http","https","mailto","data"}, strip=True)
+        rendered = enhance_media(rendered, file)
         body_text = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", rendered))[:12000]
         pages.append({"id": page_id, "title": title, "summary": summary, "category": category,
                       "created": str(front.get("created") or ""), "updated": str(front.get("updated") or ""),
