@@ -70,37 +70,8 @@ def enhance_media(rendered, file):
 
 
 def embed_visualizations(body):
-    """Convert supported fenced Markdown into inert, validated visualization specs."""
-    pattern = re.compile(r'^\\x60{3}(chart|vega-lite|mermaid|graph)\\s*\\n(.*?)^\\x60{3}\\s*
-    pages = []
-    for file in sorted(WIKI.rglob("*.md")):
-        if file.name.startswith("_"):
-            continue
-        page_id = file.relative_to(WIKI).as_posix()[:-3]
-        front, body = split_frontmatter(file.read_text(encoding="utf-8"))
-        category = page_id.split("/", 1)[0]
-        if category not in {"projects", "techniques", "briefings", "signals", "experiments", "evaluations"}:
-            continue
-        title = str(front.get("title") or re.search(r"^# (.+)$", body, re.M).group(1) if re.search(r"^# (.+)$", body, re.M) else page_id)
-        summary = str(front.get("summary") or "")
-        rendered = markdown.markdown(embed_visualizations(body), extensions=["tables", "fenced_code", "sane_lists"])
-        rendered = rewrite_links(rendered, page_id)
-        rendered = bleach.clean(rendered,
-            tags=set(bleach.sanitizer.ALLOWED_TAGS) | {"h1","h2","h3","h4","h5","h6","p","pre","code","img","figure","figcaption","div","span","table","thead","tbody","tr","th","td","hr","br","del","sup","sub"},
-            attributes={"a":["href","title","target","rel","aria-label"],"img":["src","alt","title","loading","decoding","width","height"],"*":["class","id","data-visual","data-spec"]},
-            protocols={"http","https","mailto","data"}, strip=True)
-        rendered = enhance_media(rendered, file)
-        body_text = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", rendered))[:12000]
-        pages.append({"id": page_id, "title": title, "summary": summary, "category": category,
-                      "created": str(front.get("created") or ""), "updated": str(front.get("updated") or ""),
-                      "body_text": html.unescape(body_text), "html": rendered})
-    OUT.parent.mkdir(parents=True, exist_ok=True)
-    OUT.write_text(json.dumps({"pages": pages}, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
-    print(f"Indexed {len(pages)} pages into {OUT.relative_to(ROOT)}")
-
-if __name__ == "__main__":
-    main()
-, re.M | re.S)
+    """Compile supported fenced Markdown into inert, validated visualization specs."""
+    pattern = re.compile(r'^```(chart|vega-lite|mermaid|graph)\s*\n(.*?)^```\s*$', re.M | re.S)
     def replace(match):
         kind, raw = match.group(1), match.group(2).strip()
         if len(raw) > 100_000:
@@ -112,23 +83,16 @@ if __name__ == "__main__":
                 raise ValueError(f"Invalid {kind} JSON: {exc}") from exc
             if not isinstance(spec, dict):
                 raise ValueError(f"{kind} must contain a JSON object")
-            if kind == "graph":
-                if not isinstance(spec.get("nodes"), list) or not isinstance(spec.get("edges"), list):
-                    raise ValueError("graph requires nodes and edges arrays")
-            if kind == "chart":
-                if spec.get("type") not in {"bar", "line", "scatter", "pie", "doughnut", "radar"}:
-                    raise ValueError("Unsupported chart type")
-                if not isinstance(spec.get("labels"), list) or not isinstance(spec.get("datasets"), list):
-                    raise ValueError("chart requires labels and datasets arrays")
-            if kind == "vega-lite":
-                if not isinstance(spec.get("mark"), (str, dict)) and not isinstance(spec.get("layer"), list):
-                    raise ValueError("vega-lite requires mark or layer")
-                if "url" in json.dumps(spec).lower():
-                    raise ValueError("External data URLs are not supported in embedded Vega-Lite")
+            if kind == "graph" and (not isinstance(spec.get("nodes"), list) or not isinstance(spec.get("edges"), list)):
+                raise ValueError("graph requires nodes and edges arrays")
+            if kind == "chart" and (spec.get("type") not in {"bar", "line", "scatter", "pie", "doughnut", "radar"} or not isinstance(spec.get("labels"), list) or not isinstance(spec.get("datasets"), list)):
+                raise ValueError("chart requires a supported type, labels and datasets")
+            if kind == "vega-lite" and not isinstance(spec.get("mark"), (str, dict)) and not isinstance(spec.get("layer"), list):
+                raise ValueError("vega-lite requires mark or layer")
             raw = json.dumps(spec, separators=(",", ":"))
         encoded = base64.b64encode(raw.encode("utf-8")).decode("ascii")
-        return ('\\n<div class="interactive-figure" data-visual="' + kind +
-                '" data-spec="' + encoded + '"><p>Interactive figure loads on the website.</p></div>\\n')
+        return ('\n<div class="interactive-figure" data-visual="' + kind +
+                '" data-spec="' + encoded + '"><p>Interactive figure loads on the website.</p></div>\n')
     return pattern.sub(replace, body)
 
 
