@@ -15,3 +15,14 @@
 .article-body .mermaid{overflow-x:auto;max-width:100%;text-align:center;padding:16px;background:#101b34;border:1px solid var(--line);border-radius:12px}
 .article-body .mermaid svg{max-width:100%;height:auto}
 @media(max-width:760px){.article-body .briefing-figure{margin:20px -6px}.article-body .briefing-figure img{max-height:440px}.article-body figcaption{padding:0 10px}.article-body th,.article-body td{padding:8px}}
+
+/* Markdown-native interactive figures */
+.article-body .interactive-figure{margin:28px 0;padding:18px;background:linear-gradient(135deg,#10192d,#192540);border:1px solid #354766;border-radius:18px;min-width:0;overflow:hidden}
+.article-body .figure-canvas{width:100%;min-width:0;min-height:220px;overflow-x:auto}
+.article-body .figure-canvas svg{max-width:100%}
+.article-body .figure-caption{color:#acb9d0;text-align:center;font-size:13px;line-height:1.6;margin-top:12px}
+.article-body .network-canvas{height:430px;overflow:hidden;touch-action:pan-y}
+.article-body .figure-fit{background:#334569;border:1px solid #64769c;color:white;border-radius:9px;padding:8px 13px;cursor:pointer;margin-top:10px}
+.article-body .figure-error{color:#f5adad}
+.article-body .vega-actions a{color:#c6b8ff!important}
+@media(max-width:700px){.article-body .interactive-figure{margin:18px -8px;padding:10px;border-radius:12px}.article-body .network-canvas{height:350px}}
