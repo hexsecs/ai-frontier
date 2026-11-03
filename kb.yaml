@@ -21,4 +21,6 @@ types:
   signal: Evidence-backed emerging pattern or hypothesis.
   experiment: Reproducible proposed or completed experiment.
   evaluation: Comparative evidence and benchmarking assessment.
+  concept: Cross-project phenomenon or claim that project pages supply evidence for or against; the relation-bearing layer of the KB.
+  index: Category navigation page.
 tags: [agentic-ai, autonomous-agents, research]
