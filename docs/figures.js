@@ -37,10 +37,10 @@ async function render(node){
     const vega=kind==='chart'?chartToVega(spec):safeVega(spec);
     await window.vegaEmbed(frame,vega,{actions:{export:true,source:false,compiled:false,editor:false},renderer:'svg',tooltip:true,theme:'dark'});
   }else if(kind==='mermaid'){
-    await loadAll(libs.mermaid);
-    if(!window.__frontierMermaidReady){window.mermaid.initialize({startOnLoad:false,securityLevel:'strict',theme:'dark',flowchart:{htmlLabels:false},maxTextSize:100000});window.__frontierMermaidReady=true}
+    const mermaid=(await import('https://cdn.jsdelivr.net/npm/mermaid@11.4.1/dist/mermaid.esm.min.mjs')).default;
+    if(!window.__frontierMermaidReady){mermaid.initialize({startOnLoad:false,securityLevel:'strict',theme:'dark',flowchart:{htmlLabels:false},maxTextSize:100000});window.__frontierMermaidReady=true}
     const id='frontier-diagram-'+Math.random().toString(36).slice(2);
-    const result=await window.mermaid.render(id,spec);frame.innerHTML=result.svg;
+    const result=await mermaid.render(id,spec);frame.innerHTML=result.svg;
     const svg=frame.querySelector('svg');if(svg){svg.removeAttribute('height');svg.style.maxWidth='100%';svg.style.height='auto'}
   }else if(kind==='graph'){
     await loadAll(libs.cyto);
