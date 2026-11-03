@@ -7,11 +7,11 @@ title: Projects
 
 - [A2UI and CopilotKit](./a2ui-and-copilotkit.md) — Declarative agent-generated UI constrained to trusted components.
 - [AgenticDS](./agenticds.md) — Typed Planner, Engineer, and Critic roles for dataset discovery.
-- [AiSOC v21](./aisoc-v21.md) — Evidence-accountable SOC agent platform.
-- [ANGLER](./angler.md) — Adaptive prompt-injection testing across executable websites.
+- [AiSOC v21](./aisoc-v21.md) — Evidence-accountable SOC platform whose v21 release fixes serving-model attribution; its own verdict eval finds every measured model near chance.
+- [ANGLER](./angler.md) — REEF, a verifier-grounded prompt-injection benchmark on nine executable sites, plus ANGLER, an adaptive attacker that lifts attack success to 20.36%.
 - [Auctopus](./auctopus.md) — Multi-agent scientific lab automation controlling a quantum-spin instrument.
-- [BioAgent](./bioagent.md) — Robotic laboratory skill-gap discovery and acquisition.
-- [BlindToChange](./blindtochange.md) — Agents fail to verify indirectly changed facts.
+- [BioAgent](./bioagent.md) — Dual-arm lab robot that detects skill gaps before execution, acquires skills through human teaching, and reuses them across protocols.
+- [BlindToChange](./blindtochange.md) — Search agents find recent deaths and ended tenures when asked directly, but usually never look when a request does not mention them.
 - [ClinGeX](./clingex.md) — Executable genomic analysis skills evaluated on held-out cases.
 - [CodeSpecWeave](./codespecweave.md) — Synthetic coding tasks with interdependent requirements.
 - [Context as Infrastructure](./context-as-infrastructure.md) — Precompiled evidence structures for agent retrieval.
@@ -31,7 +31,7 @@ title: Projects
 - [MoLRSI](./molrsi.md) — Recursive agent improvement in molecular discovery.
 - [OpenBot](./openbot.md) — Self-hosted agent coworker with policy gateway and human takeover.
 - [Pre-Crime for Agents](./pre-crime-for-agents.md) — Predict agent disclosure behavior from internal signals.
-- [Prefix Executability](./prefix-executability.md) — Validate intermediate prefixes of agent tool-call sequences.
+- [Prefix Executability](./prefix-executability.md) — Final success and prefix executability rank the same tool-using agents differently; most successful episodes pass through invalid prefixes.
 - [Repairs for Whom?](./repairs-for-whom.md) — Repair selection must be matched to executor capability.
 - [Security Impact of Coding Agent Memory Files](./security-impact-of-coding-agent-memory-files.md) — Agent instruction files can be prompt-injection entry points.
 - [Seq@K](./seq-k.md) — Measure improvement across sequential agent attempts with feedback.
