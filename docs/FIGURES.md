@@ -66,3 +66,13 @@ flowchart LR
 - Do not embed JavaScript, raw HTML scripts, arbitrary Vega expressions, or remote data sources in a briefing.
 - The website loads Vega-Lite, Mermaid, and Cytoscape from versioned public CDNs. An internet connection is required for interactive figures; Markdown source remains readable without them.
 - Interactive charts are rendered on the GitHub Pages site, not directly in GitHub's native Markdown viewer (which displays their fenced definitions).
+
+## OpenShelf token-budget override
+
+OpenShelf recommends a 2,500-token L2 page budget. Longer research briefings may deliberately exceed this advisory limit. Add a justification to the Markdown page:
+
+```markdown
+<!-- openshelf:budget-override reason="Full research context and sourced technical evidence belong in this dated briefing." -->
+```
+
+The validation workflow acknowledges the L2 budget warning for that page and prints the justification. **All actual OpenShelf errors remain fatal**, including metadata, links, and schema errors. The override does not modify OpenShelf's own validator or exempt a page from linting. Keep the explanation specific and avoid using overrides for unnecessary repetition.
