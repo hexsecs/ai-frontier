@@ -108,11 +108,11 @@ def main():
             continue
         title = str(front.get("title") or re.search(r"^# (.+)$", body, re.M).group(1) if re.search(r"^# (.+)$", body, re.M) else page_id)
         summary = str(front.get("summary") or "")
-        rendered = markdown.markdown(body, extensions=["tables", "fenced_code", "sane_lists"])
+        rendered = markdown.markdown(embed_visualizations(body), extensions=["tables", "fenced_code", "sane_lists"])
         rendered = rewrite_links(rendered, page_id)
         rendered = bleach.clean(rendered,
             tags=set(bleach.sanitizer.ALLOWED_TAGS) | {"h1","h2","h3","h4","h5","h6","p","pre","code","img","figure","figcaption","div","span","table","thead","tbody","tr","th","td","hr","br","del","sup","sub"},
-            attributes={"a":["href","title","target","rel","aria-label"],"img":["src","alt","title","loading","decoding","width","height"],"*":["class","id"]},
+            attributes={"a":["href","title","target","rel","aria-label"],"img":["src","alt","title","loading","decoding","width","height"],"*":["class","id","data-visual","data-spec","role","aria-label"]},
             protocols={"http","https","mailto","data"}, strip=True)
         rendered = enhance_media(rendered, file)
         body_text = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", rendered))[:12000]
