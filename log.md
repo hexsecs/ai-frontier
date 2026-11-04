@@ -27,3 +27,4 @@ At Phil's direction ("finish the remaining items for the ai wiki to get them all
 The wiki now has zero content pages below `full`: 39 deep, 20 full (the seven category indexes carry no depth grade).
 
 - 2026-11-03: Published complete November 3 daily briefing with five new selections (Agensh, RoboArchitect, AgentShield, AgentSWE, AgentOS), primary URLs, evidence tiers, experiments, comparison, sourced chart, and Mermaid architecture; earlier snapshots unchanged.
+- 2026-11-04: Archived six-source full-fidelity daily briefing with adoption chart, architecture figure and fault-injection experiment. New PRs identified as proposals; older exploratory items explicitly dated.
