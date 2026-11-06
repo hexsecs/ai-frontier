@@ -13,3 +13,4 @@ Historical coverage is limited by the available original records. October 30–N
 - [2026-11-02](./2026/11/2026-11-02.md) — 9 discoveries indexed; original detailed text recovered for items 1–5; remaining sections unavailable.
 - [2026-11-03](./2026/11/2026-11-03.md) — five fully archived, implementation-led discoveries with chart and architecture figure.
 - [2026-11-04](./2026/11/2026-11-04.md) — seven full-fidelity findings: adoption telemetry, macOS VM computer use, write reconciliation, ACP provenance, cross-repo evaluation, tool policy, and constrained CI.
+- [2026-11-05](./2026/11/2026-11-05.md) — seven primary-source findings on self-evolving workflows, research provenance, durable agents, memory and harness security.
