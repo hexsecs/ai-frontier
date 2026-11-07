@@ -1,12 +1,12 @@
 ---
 uid: a71e85c9-126e-4580-a88e-d26333d0357f
 created: 2026-11-02
-updated: 2026-11-02
+updated: 2026-11-07
 type: concept
 depth: full
 title: "Capability locus"
 summary: "When an agent system improves, where does capability live — weights, harness, external state, or their interaction? One system now measures the decomposition."
-related: [hera, agenticds, garden, tinyastral, dittany]
+related: [hera, agenticds, garden, tinyastral, dittany, strategist]
 sources:
   - url: https://arxiv.org/abs/2610.41216
     retrieved: 2026-11-02
@@ -193,3 +193,8 @@ half-measurement. The original HERA–AgenticDS disagreement remains
 explicitly unresolved. Every underlying result is author-reported;
 TinyAstral's are simulation-only, and no locus measurement in the
 corpus has an independent replication.
+
+
+## 2026-11-07 evidence connections
+
+- [[projects/strategist]]: newly linked primary-source project; see its dated briefing and evidence limitations before treating this relationship as a universal mechanism.
