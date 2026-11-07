@@ -39,3 +39,8 @@ title: Projects
 - [TinyAstral](./tinyastral.md) — An RSI loop evolves a frozen 180B teacher's robot harness (RoboTwin 33.4% to 63.6%), then distills it into a 4B student at 62.8% — all in simulation.
 - [VeriCUA](./vericua.md) — Independent active verification of computer-use agents.
 - [WebAnything](./webanything.md) — Reconstruct websites as resettable browser-agent training environments.
+- [Strategist](./strategist.md) — Evolves executable inference strategies in a reusable cross-task blueprint library.
+- [FINCOSMOS](./fincosmos.md) — Hidden-intent and programmatic-veto evaluation of financial research agents.
+- [ChemE-as-Code](./cheme-as-code.md) — Git-linked engineering artifacts and provenance-aware deterministic checks.
+- [FA-Agent](./fa-agent.md) — Visual seismic pick correction with explicit evidence-based removal.
+- [ControlAnything](./controlanything.md) — Just-in-time generated device connectors and mixed-reality controls.

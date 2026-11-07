@@ -5,8 +5,8 @@ summary: "A verification result holds only inside the scope actually exercised; 
 type: concept
 depth: full
 created: 2026-11-02
-updated: 2026-11-02
-related: [skillcompiler, intent-loss-in-smart-contract-synthesis, webanything, dynarev, clingex, karma, envos, pre-crime-for-agents, aisoc-v21, prefix-executability, openbot]
+updated: 2026-11-07
+related: [skillcompiler, intent-loss-in-smart-contract-synthesis, webanything, dynarev, clingex, karma, envos, pre-crime-for-agents, aisoc-v21, prefix-executability, openbot, fincosmos, cheme-as-code, controlanything]
 sources:
   - url: https://arxiv.org/abs/2610.39508
     retrieved: 2026-11-02
@@ -84,3 +84,10 @@ Sibling concepts, named in plain text: this entry is distinct from **precommitme
 ## Evidence status
 
 This concept is the KB's own analytical construct. No paper in the corpus names it. It was synthesized on 2026-11-02 in mining pass 1 from the KB's deepened project pages, and graded strong in the register (8 supporting pages across 2 clusters) on the strength of the quoted passages above. Every underlying result is author-reported in the source papers; the concept asserts no new measurements, only a reading discipline over results the pages themselves publish. The one relation flagged *suspected — unverified* in the Relations section is carried with the register's own flag and is not asserted here.
+
+
+## 2026-11-07 evidence connections
+
+- [[projects/fincosmos]]: newly linked primary-source project; see its dated briefing and evidence limitations before treating this relationship as a universal mechanism.
+- [[projects/cheme-as-code]]: newly linked primary-source project; see its dated briefing and evidence limitations before treating this relationship as a universal mechanism.
+- [[projects/controlanything]]: newly linked primary-source project; see its dated briefing and evidence limitations before treating this relationship as a universal mechanism.

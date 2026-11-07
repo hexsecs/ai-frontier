@@ -16,3 +16,4 @@ Historical coverage is limited by the available original records. October 30–N
 - [2026-11-05](./2026/11/2026-11-05.md) — seven primary-source findings on self-evolving workflows, research provenance, durable agents, memory and harness security.
 
 - [2026-11-06](./2026/11/2026-11-06.md) — five full-fidelity discoveries on robot planner optimization, selective PR automation, abstention, and hybrid browser infrastructure.
+- [2026-11-07](./2026/11/2026-11-07.md) — five primary-source findings with canonical project ingestion and sourced relation mining.
