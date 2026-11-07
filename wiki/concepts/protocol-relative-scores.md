@@ -5,8 +5,8 @@ summary: "A reported gap — and sometimes the ranking itself — is a property 
 type: concept
 depth: full
 created: 2026-11-02
-updated: 2026-11-02
-related: [intent-loss-in-smart-contract-synthesis, seq-k, dynarev, clingex, webanything, prefix-executability, angler]
+updated: 2026-11-07
+related: [intent-loss-in-smart-contract-synthesis, seq-k, dynarev, clingex, webanything, prefix-executability, angler, fincosmos]
 sources:
   - url: https://arxiv.org/abs/2610.37830
     retrieved: 2026-11-02
@@ -183,3 +183,8 @@ register grades the concept medium (five supporting pages). The
 concept asserts exactly what those pages jointly support — magnitudes
 and pass rates always, rankings often — and its bound comes from inside
 the evidence, not from caution applied after the fact.
+
+
+## 2026-11-07 evidence connections
+
+- [[projects/fincosmos]]: newly linked primary-source project; see its dated briefing and evidence limitations before treating this relationship as a universal mechanism.
