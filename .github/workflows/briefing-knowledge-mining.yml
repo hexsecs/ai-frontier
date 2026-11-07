@@ -1,0 +1,23 @@
+name: Briefing knowledge mining gate
+on:
+  pull_request:
+    paths:
+      - 'wiki/briefings/**'
+      - 'scripts/check_briefing_mining.py'
+      - 'AGENTS.md'
+      - 'automation/briefing-policy.yaml'
+  push:
+    branches: [main]
+    paths:
+      - 'wiki/briefings/**'
+      - 'scripts/check_briefing_mining.py'
+jobs:
+  mining-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Require knowledge-mining audit for new dated briefings
+        run: python scripts/check_briefing_mining.py
