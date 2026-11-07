@@ -5,8 +5,8 @@ summary: "Where these agent systems are trustworthy, the trust comes from struct
 type: concept
 depth: full
 created: 2026-11-02
-updated: 2026-11-02
-related: [github-contribution-check, openbot, tinyastral, dittany, envos]
+updated: 2026-11-07
+related: [github-contribution-check, openbot, tinyastral, dittany, envos, cheme-as-code]
 sources:
   - url: https://github.github.com/gh-aw/blog/2026-11-02-weekly-update/
     retrieved: 2026-11-02
@@ -65,3 +65,8 @@ This concept is the broader claim about the *locus of trust*; **gated admission*
 ## Evidence status
 
 This concept is the KB's analytical construct, first mined in mining pass 2 (2026-11-02) from the cluster-F project pages, with a pass-1 single-source hold (EnvOS's disclosure-beats-exhortation) as its recorded lineage and a pass-2 brush against BlindToChange as corroboration of its corollary. All underlying material is author-reported or author-documented: TinyAstral's and Dittany's figures are their papers' own, Contribution Check's mechanism is checkable against its public workflow source while its telemetry is GitHub's, and OpenBot's mechanism is documented by its authors with no effectiveness measurements published. No supporting paper names this concept or claims it; the synthesis, and its bounds, are the KB's.
+
+
+## 2026-11-07 evidence connections
+
+- [[projects/cheme-as-code]]: newly linked primary-source project; see its dated briefing and evidence limitations before treating this relationship as a universal mechanism.
