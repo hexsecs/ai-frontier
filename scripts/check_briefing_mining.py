@@ -27,18 +27,18 @@ for path in sorted((root / "wiki/briefings").glob("*/*/*.md")):
         "### Mining audit",
     )
     for heading in required:
-        if not re.search(r"^" + re.escape(heading) + r"\\s*$", text, re.M):
+        if not re.search(r"^" + re.escape(heading) + r"\s*$", text, re.M):
             errors.append(f"{path.relative_to(root)}: missing {heading}")
     # A heading with no content is not an audit.
     for i, heading in enumerate(required[1:]):
-        match = re.search(r"^" + re.escape(heading) + r"\\s*$", text, re.M)
+        match = re.search(r"^" + re.escape(heading) + r"\s*$", text, re.M)
         if not match:
             continue
         following = text[match.end():]
-        body = re.split(r"^#{2,3}\\s+", following, maxsplit=1, flags=re.M)[0]
+        body = re.split(r"^#{2,3}\s+", following, maxsplit=1, flags=re.M)[0]
         if len(body.strip()) < 35:
             errors.append(f"{path.relative_to(root)}: {heading} requires a substantive audit")
-    if not re.search(r"wiki/(?:projects|concepts|techniques|signals|evaluations|experiments)/|\\[\\[", text):
+    if not re.search(r"wiki/(?:projects|concepts|techniques|signals|evaluations|experiments)/|\[\[", text):
         errors.append(f"{path.relative_to(root)}: no canonical wiki references found")
 for err in errors:
     print("ERROR:", err)
