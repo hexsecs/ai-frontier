@@ -31,3 +31,5 @@ The wiki now has zero content pages below `full`: 39 deep, 20 full (the seven ca
 - 2026-11-05: Correction — trimmed the 2026-11-03 briefing's frontmatter summary from 162 to 158 characters to satisfy the 160-character metadata policy (its length was failing CI for every PR). No briefing content changed; the summary's wording is otherwise intact.
 
 - 2026-11-05: Archived seven full-fidelity agentic AI findings (auto_research, SeaFlow, adversarial speculative reasoning, AgenticBench, Rivet Agents, tigerless agent-memory, OpenMA), including provenance-gated research experiment and 5/2 core/exploratory balance. Review branch; sources are author-reported or repository-described, not locally reproduced.
+
+- 2026-11-06: Added full-fidelity five-item briefing on Late Autumn, scoped GitHub PR agents, abstention, and Browser4. Three sources share a GitHub workflow family; next search should diversify. Primary-source evidence not independently reproduced.
