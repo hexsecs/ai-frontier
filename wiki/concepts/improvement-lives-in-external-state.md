@@ -1,12 +1,12 @@
 ---
 uid: 9cafe10f-c05b-4127-8fd8-fc3ea28431e8
 created: 2026-11-02
-updated: 2026-11-02
+updated: 2026-11-07
 type: concept
 depth: full
 title: "Improvement lives in external state"
 summary: "Agents in this corpus improve by editing persistent external state (memory, knowledge modules, skills, team rules) while model weights stay frozen."
-related: [filingloop, garden, hera, karma, molrsi, evoteam, github-copilot-fusion, tinyastral, bioagent, angler]
+related: [filingloop, garden, hera, karma, molrsi, evoteam, github-copilot-fusion, tinyastral, bioagent, angler, strategist, fa-agent]
 sources:
   - url: https://arxiv.org/abs/2610.39884
     retrieved: 2026-11-02
@@ -262,3 +262,9 @@ the cluster E–F pages) extended the concept with three more supporting
 pages — tinyastral, bioagent, and angler — and two further bounds:
 tinyastral's stage-2 distillation into the weights, and
 context-as-infrastructure's null result, where only cost moved.
+
+
+## 2026-11-07 evidence connections
+
+- [[projects/strategist]]: newly linked primary-source project; see its dated briefing and evidence limitations before treating this relationship as a universal mechanism.
+- [[projects/fa-agent]]: newly linked primary-source project; see its dated briefing and evidence limitations before treating this relationship as a universal mechanism.
