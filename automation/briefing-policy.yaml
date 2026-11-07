@@ -29,5 +29,30 @@ process:
   preserve_historical_briefings: true
   update_canonical_pages: true
   require_source_provenance: true
-  require_human_review_before_merge: true
+  require_human_review_before_merge: false
   never_infer_negative_feedback_from_non_engagement: true
+
+knowledge_ingestion:
+  required_for_every_briefing: true
+  archive_full_visible_narrative: true
+  require_canonical_mining_audit: true
+  required_briefing_sections:
+    - "### Canonical updates"
+    - "### Relations and evidence"
+    - "### Mining audit"
+  canonical_categories: [projects, concepts, techniques, evaluations, signals, experiments]
+  relationship_types: [implements, extends, evaluates, compares_with, depends_on, mitigates, contradicts]
+  provenance_required_for_relations: true
+  deduplicate_by: [canonical_repo_url, doi, arxiv_id, official_url, aliases]
+  allow_evidence_justified_no_change: true
+  preserve_existing_uid_and_created: true
+  update_indexes_and_log: true
+publication:
+  prefer_pull_request: true
+  enable_auto_merge_after_required_checks: true
+  verify_pages_deployment: true
+  mandatory_checks:
+    - "python scripts/check_frontmatter.py"
+    - "python scripts/check_briefing_mining.py"
+    - "openshelf lint ."
+    - "chart conversion tests"
