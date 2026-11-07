@@ -5,8 +5,8 @@ summary: "When a verdict is forced, systems invent one; making insufficient evid
 type: concept
 depth: full
 created: 2026-11-02
-updated: 2026-11-02
-related: [vericua, github-contribution-check, dittany, aisoc-v21]
+updated: 2026-11-07
+related: [vericua, github-contribution-check, dittany, aisoc-v21, fa-agent]
 sources:
   - url: https://arxiv.org/abs/2610.40578
     retrieved: 2026-11-02
@@ -196,3 +196,8 @@ two preprints report their own designs, the workflow's behaviour is
 specified in its own source file, and AiSOC's abstention figures come
 from its own published eval — with no independent replication of any
 instance.
+
+
+## 2026-11-07 evidence connections
+
+- [[projects/fa-agent]]: newly linked primary-source project; see its dated briefing and evidence limitations before treating this relationship as a universal mechanism.
