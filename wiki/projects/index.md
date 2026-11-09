@@ -50,3 +50,8 @@ title: Projects
 - [MASBench](./masbench.md) — Benchmarks multi-agent protocols, memory, and routing under partially observable tasks.
 - [ST-Bench](./st-bench.md) — Measures multi-agent scientific-analysis coverage, numerical realism, and inference-time tradeoffs.
 - [Agent Orchestrator (OrchestratorInc)](./agent-orchestrator.md) — Runs coding-agent fleets with isolated worktrees, CI-repair reactions, and review escalation.
+- [EnvOpt](./envopt.md) — Agent environment optimization across models and harnesses.
+- [Tracybot](./tracybot.md) — Trace code changes back to developer prompts and tasklets.
+- [ProcGrep](./procgrep.md) — Audit coding-agent behavioral fingerprints and trajectories.
+- [WeaveBench](./weavebench.md) — Evaluate long-horizon GUI, CLI and coding workflows.
+- [A Case Study in Assuring AI-Written Software](./assuring-ai-written-software.md) — Production case of failed monitors and agent governance.
