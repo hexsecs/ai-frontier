@@ -44,3 +44,9 @@ title: Projects
 - [ChemE-as-Code](./cheme-as-code.md) — Git-linked engineering artifacts and provenance-aware deterministic checks.
 - [FA-Agent](./fa-agent.md) — Visual seismic pick correction with explicit evidence-based removal.
 - [ControlAnything](./controlanything.md) — Just-in-time generated device connectors and mixed-reality controls.
+
+- [EvoAudit / Beneath the Surface](./evoaudit.md) — Audits harness self-evolution for forgotten tasks, cost, transfer, and misleading selection criteria.
+- [TandemBench](./tandembench.md) — Tests whether decision models can select and verify optimal multi-agent coordination plans.
+- [MASBench](./masbench.md) — Benchmarks multi-agent protocols, memory, and routing under partially observable tasks.
+- [ST-Bench](./st-bench.md) — Measures multi-agent scientific-analysis coverage, numerical realism, and inference-time tradeoffs.
+- [Agent Orchestrator (OrchestratorInc)](./agent-orchestrator.md) — Runs coding-agent fleets with isolated worktrees, CI-repair reactions, and review escalation.

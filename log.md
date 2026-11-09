@@ -34,3 +34,5 @@ The wiki now has zero content pages below `full`: 39 deep, 20 full (the seven ca
 
 - 2026-11-06: Added full-fidelity five-item briefing on Late Autumn, scoped GitHub PR agents, abstention, and Browser4. Three sources share a GitHub workflow family; next search should diversify. Primary-source evidence not independently reproduced.
 - 2026-11-07: Published full-fidelity five-item daily briefing (Strategist, FINCOSMOS, ChemE-as-Code, FA-Agent, ControlAnything). Created five canonical project pages with OpenShelf metadata and primary URLs, linked five existing concept families and an analyst comparison to SkillCompiler, and recorded no-change rationale for concept taxonomy. Historical briefings unchanged; validation and Pages deployment pending CI.
+
+- 2026-11-08: Archived complete five-item briefing and mined five canonical project records (EvoAudit, TandemBench, MASBench, ST-Bench, Agent Orchestrator). Added sourced relation statements, preserved historical snapshots, and recorded uncertainty around vendor claims and older gap-fill research.
