@@ -2,7 +2,7 @@
 uid: b6a90401-a8d1-4d13-9a40-000000000011
 title: "GitHub Octoverse 2026"
 summary: "Canonical evidence record for GitHub Octoverse 2026; mechanism, limitations, practical implications and source provenance from the November 4 briefing."
-type: project
+type: case-study
 created: 2026-11-09
 updated: 2026-11-09
 depth: brief
