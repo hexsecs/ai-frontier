@@ -2,7 +2,7 @@
 uid: 4b76268a-826f-47b3-87ad-7bbf95f72c02
 title: "TandemBench"
 summary: "Tests whether decision models can select and verify optimal multi-agent coordination plans."
-type: project
+type: benchmark
 created: 2026-11-08
 updated: 2026-11-08
 depth: brief
