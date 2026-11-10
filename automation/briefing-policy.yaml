@@ -56,3 +56,15 @@ publication:
     - "python scripts/check_briefing_mining.py"
     - "openshelf lint ."
     - "chart conversion tests"
+
+synthesis_layer:
+  required_after_each_briefing: true
+  audit_recent_briefings: 7
+  mine_cross_briefing_patterns: true
+  require_support_and_counterexamples: true
+  update_canonical_concepts_techniques_evaluations_signals: true
+  create_new_concept_only_with_multiple_independent_sources: true
+  preserve_immutable_briefings: true
+  prefer_explicit_directional_relations_with_source_urls: true
+  track_unresolved_contradictions_and_blind_spots: true
+  evaluate_experiments_by_independent_acceptance_and_regressions: true

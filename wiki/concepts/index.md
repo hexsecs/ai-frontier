@@ -18,3 +18,6 @@ Cross-project phenomena and claims, mined from the KB's own deepened project pag
 - [Structural constraint over instruction](./structural-constraint-over-instruction.md) — Where these agent systems are trustworthy, the trust comes from structural limits the model cannot talk its way around, not from prompt instructions.
 - [Capability locus](./capability-locus.md) — When an agent system improves, where does capability live — weights, harness, external state, or their interaction? One system now measures the decomposition.
 - [Abstention as a first-class verdict](./abstention-as-first-class-verdict.md) — When a verdict is forced, systems invent one; making insufficient evidence an explicit, accounted outcome changes the failure shape of the decision.
+
+- [Verified completion versus apparent success](./verified-completion-vs-apparent-success.md) — Independent acceptance is stronger than agent claims, user approval, transport acknowledgements, or merely declared checks.
+- [Preservation-aware agent improvement](./preservation-aware-agent-improvement.md) — Strategy, harness and environment evolution must measure lost as well as newly solved tasks.
