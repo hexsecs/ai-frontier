@@ -5,6 +5,8 @@ title: Projects
 
 # Projects
 
+This is the legacy canonical file-location index. Some entries are now classified as benchmarks, case studies or workflows in frontmatter; use their dedicated category indexes for type-based browsing. Existing paths and UUIDs remain unchanged to preserve links.
+
 - [A2UI and CopilotKit](./a2ui-and-copilotkit.md) — Declarative agent-generated UI constrained to trusted components.
 - [AgenticDS](./agenticds.md) — Typed Planner, Engineer, and Critic roles for dataset discovery.
 - [AiSOC v21](./aisoc-v21.md) — Evidence-accountable SOC platform whose v21 release fixes serving-model attribution; its own verdict eval finds every measured model near chance.
