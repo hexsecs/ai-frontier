@@ -2,7 +2,7 @@
 uid: b6a90603-a8d1-4d13-9a40-000000000033
 title: "Code Simplifier"
 summary: "Canonical November 6 research finding: Code Simplifier; documented mechanism, evidence limitations and next steps."
-type: project
+type: workflow
 created: 2026-11-09
 updated: 2026-11-09
 depth: brief
