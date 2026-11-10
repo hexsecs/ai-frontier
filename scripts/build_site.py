@@ -22,6 +22,21 @@ ROOT = pathlib.Path(__file__).resolve().parents[1]
 WIKI = ROOT / "wiki"
 OUT = ROOT / "docs" / "data.json"
 
+
+WIKILINK = re.compile(r'\[\[([A-Za-z0-9_./-]+)(?:\|([^\]\n]+))?\]\]')
+
+def expand_wikilinks(body):
+    """Convert OpenShelf wiki references before Markdown rendering."""
+    def replace(match):
+        target, label = match.group(1), match.group(2)
+        if target.startswith("/") or ".." in target.split("/"):
+            return match.group(0)
+        target = target.removesuffix(".md")
+        label = label or target.split("/")[-1].replace("-", " ")
+        # Escape label to prevent Markdown/HTML injection from wiki titles.
+        return '<a href="#/page/' + urllib.parse.quote(target, safe="/-_.") + '">' + html.escape(label) + '</a>'
+    return WIKILINK.sub(replace, body)
+
 def split_frontmatter(text):
     if not text.startswith("---\n"):
         return {}, text
@@ -106,7 +121,7 @@ def main():
         front, body = split_frontmatter(file.read_text(encoding="utf-8"))
         body = convert_chatgpt_charts(body)
         category = page_id.split("/", 1)[0]
-        if category not in {"projects", "concepts", "techniques", "briefings", "signals", "experiments", "evaluations"}:
+        if category not in {"projects", "concepts", "techniques", "briefings", "signals", "experiments", "evaluations", "benchmarks", "case-studies", "workflows", "domains"}:
             continue
         title = str(front.get("title") or re.search(r"^# (.+)$", body, re.M).group(1) if re.search(r"^# (.+)$", body, re.M) else page_id)
         summary = str(front.get("summary") or "")
@@ -115,7 +130,7 @@ def main():
         compiled = embed_visualizations(body)
         if re.search(r"(?m)^\\s{0,3}```(?:chart|vega-lite|mermaid|graph)\\b", compiled):
             raise ValueError(f"{file.relative_to(ROOT)}: visualization fence was not compiled")
-        rendered = markdown.markdown(compiled, extensions=["tables", "fenced_code", "sane_lists"])
+        rendered = markdown.markdown(expand_wikilinks(compiled), extensions=["tables", "fenced_code", "sane_lists"])
         rendered = rewrite_links(rendered, page_id)
         rendered = bleach.clean(rendered,
             tags=set(bleach.sanitizer.ALLOWED_TAGS) | {"h1","h2","h3","h4","h5","h6","p","pre","code","img","figure","figcaption","div","span","table","thead","tbody","tr","th","td","hr","br","del","sup","sub"},

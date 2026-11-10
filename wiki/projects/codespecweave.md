@@ -3,7 +3,7 @@ uid: 958fdf8c-5bcd-44bb-a49f-be56f32c169e
 depth: deep
 title: "When Requirements Interact: Scaling Long-Horizon Coding via Interdependent Specifications"
 summary: "Synthetic coding tasks with interdependent requirements, grounded in real-repo seeds; 73.9% of pilot candidates had flawed tests."
-type: project
+type: benchmark
 created: 2026-10-30
 updated: 2026-11-02
 related: [ground-truth-fallibility, comparator-construction-shapes-margins]

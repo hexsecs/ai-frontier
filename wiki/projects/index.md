@@ -5,6 +5,8 @@ title: Projects
 
 # Projects
 
+This is the legacy canonical file-location index. Some entries are now classified as benchmarks, case studies or workflows in frontmatter; use their dedicated category indexes for type-based browsing. Existing paths and UUIDs remain unchanged to preserve links.
+
 - [A2UI and CopilotKit](./a2ui-and-copilotkit.md) — Declarative agent-generated UI constrained to trusted components.
 - [AgenticDS](./agenticds.md) — Typed Planner, Engineer, and Critic roles for dataset discovery.
 - [AiSOC v21](./aisoc-v21.md) — Evidence-accountable SOC platform whose v21 release fixes serving-model attribution; its own verdict eval finds every measured model near chance.
@@ -55,3 +57,30 @@ title: Projects
 - [ProcGrep](./procgrep.md) — Audit coding-agent behavioral fingerprints and trajectories.
 - [WeaveBench](./weavebench.md) — Evaluate long-horizon GUI, CLI and coding workflows.
 - [A Case Study in Assuring AI-Written Software](./assuring-ai-written-software.md) — Production case of failed monitors and agent governance.
+
+## Backfilled from November 3–6 briefings
+
+- [Agensh](./agensh.md) — Canonical backfill of the dated briefing's sourced mechanism, assessment and limitations.
+- [RoboArchitect](./roboarchitect.md) — Canonical backfill of the dated briefing's sourced mechanism, assessment and limitations.
+- [AgentShield](./agentshield.md) — Canonical backfill of the dated briefing's sourced mechanism, assessment and limitations.
+- [AgentSWE](./agentswe.md) — Canonical backfill of the dated briefing's sourced mechanism, assessment and limitations.
+- [AgentOS](./agentos.md) — Canonical backfill of the dated briefing's sourced mechanism, assessment and limitations.
+- [GitHub Octoverse 2026](./github-octoverse-2026.md) — Canonical backfill of the dated briefing's sourced mechanism, assessment and limitations.
+- [CUA AgentEnv](./cua-agentenv.md) — Canonical backfill of the dated briefing's sourced mechanism, assessment and limitations.
+- [BuilderIO agent-native](./builderio-agent-native.md) — Canonical backfill of the dated briefing's sourced mechanism, assessment and limitations.
+- [Claude Agent ACP](./claude-agent-acp.md) — Canonical backfill of the dated briefing's sourced mechanism, assessment and limitations.
+- [CrossSWE](./crossswe.md) — Canonical backfill of the dated briefing's sourced mechanism, assessment and limitations.
+- [ToolGuardian](./toolguardian.md) — Canonical backfill of the dated briefing's sourced mechanism, assessment and limitations.
+- [GitHub Agentic Workflows](./github-agentic-workflows.md) — Canonical backfill of the dated briefing's sourced mechanism, assessment and limitations.
+- [auto_research](./auto-research.md) — Canonical backfill of the dated briefing's sourced mechanism, assessment and limitations.
+- [SeaFlow](./seaflow.md) — Canonical backfill of the dated briefing's sourced mechanism, assessment and limitations.
+- [Adversarial Speculative Reasoning](./adversarial-speculative-reasoning.md) — Canonical backfill of the dated briefing's sourced mechanism, assessment and limitations.
+- [AgenticBench](./agenticbench.md) — Canonical backfill of the dated briefing's sourced mechanism, assessment and limitations.
+- [Rivet Agents](./rivet-agents.md) — Canonical backfill of the dated briefing's sourced mechanism, assessment and limitations.
+- [tigerless agent-memory](./tigerless-agent-memory.md) — Canonical backfill of the dated briefing's sourced mechanism, assessment and limitations.
+- [OpenMA](./openma.md) — Canonical backfill of the dated briefing's sourced mechanism, assessment and limitations.
+- [Late Autumn](./late-autumn.md) — Canonical backfill of the dated briefing's sourced mechanism, assessment and limitations.
+- [Matt Pocock Skills Reviewer](./matt-pocock-skills-reviewer.md) — Canonical backfill of the dated briefing's sourced mechanism, assessment and limitations.
+- [Code Simplifier](./code-simplifier.md) — Canonical backfill of the dated briefing's sourced mechanism, assessment and limitations.
+- [PR Sous Chef](./pr-sous-chef.md) — Canonical backfill of the dated briefing's sourced mechanism, assessment and limitations.
+- [Browser4](./browser4.md) — Canonical backfill of the dated briefing's sourced mechanism, assessment and limitations.
