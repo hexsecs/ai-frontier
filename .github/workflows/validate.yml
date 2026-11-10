@@ -19,3 +19,13 @@ jobs:
         run: python scripts/check_frontmatter.py
       - name: Validate knowledge base
         run: python scripts/validate_openshelf.py
+      - name: Validate internal OpenShelf references
+        run: python scripts/check_links.py
+      - name: Install Pages build dependencies
+        run: python -m pip install 'Markdown>=3.6,<4' 'bleach>=6,<7'
+      - name: Test renderer and link validation
+        run: python -m unittest discover -s scripts -p 'test_*.py'
+      - name: Build rendered site
+        run: python scripts/build_site.py
+      - name: Validate rendered internal routes
+        run: python scripts/check_links.py --rendered
