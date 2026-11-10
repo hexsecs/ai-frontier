@@ -33,24 +33,24 @@ sources:
 
 ## Mechanism and boundary
 
-The reusable mechanism is **Persistent agent execution and coordination across tasks**. Distinguish model reasoning, tool execution, persistent state, side effects, and the independently observed acceptance condition. The historical source summary above is the factual evidence base; the interpretation below is an analyst synthesis.
+**SeaFlow decomposes complex interactive tasks into applicability-conditioned procedures.** A procedure may execute deterministic code or call a model; execution feedback can refine the decomposition, applicability conditions and procedure choice. The optimization target is selective reuse of stable decision logic while retaining model calls where reasoning is needed. The documented contribution is not durable checkpoint recovery or generic stateful orchestration.
 
 ## Critical evidence assessment
 
-**Failure mode / counterweight:** State persistence does not ensure side-effect consistency; retry semantics and stale state can corrupt outcomes. The cited sources have not been independently reproduced in this mining pass. Report source-reported metrics as such, and do not equate a successful demo, publication, repository release or PR proposal with production readiness. Negative and missing results matter as much as successes.
+**Key risk:** An overly broad applicability condition may route a task to inappropriate deterministic code; an overly narrow one may increase fallback model calls and erase efficiency gains. Competition performance in bargaining, negotiation and persuasion does not independently establish transfer to coding or browser automation. Report both wrong-procedure selection and unnecessary model invocation, as well as final-task success and cost. The briefing's competition and efficiency claims remain author-reported.
 
 ## Directional relationships and comparative interpretation
 
-Related evidence: [[projects/agentos]]; [[concepts/preservation-aware-agent-improvement]]. These are analyst-level **compares_with** links, not verified direct dependencies. Compare this mechanism against the simpler baseline, distinguish quality from throughput, and preserve task-level losses rather than averaging them away. See [[evaluations/briefing-synthesis-2026-11-03-to-09]].
+Compare with [[projects/skillcompiler]] as a related but distinct method for replacing model decisions with executable code; SeaFlow emphasizes semantic decomposition, applicability conditions and feedback-based refinement. Compare with [[projects/agentos]] only to contrast procedural selection against durable task execution; they are not the same mechanism. These are analyst-level **compares_with** links, not direct dependency claims. See [[evaluations/briefing-synthesis-2026-11-03-to-09]].
 
 ## Reproducible evaluation
 
-**Proposed, not executed:** Run interrupted multi-step workflows; compare checkpoint correctness, duplicate actions and verified end states. Hold model, prompts, inputs and budget constant; log task-level results, full tool receipts, source spans, failed attempts, checker execution, elapsed time and tokens. Evaluate unseen cases and require explicit evidence before promoting changes to a trusted workflow.
+**Proposed, not executed:** Select 30 recurring, held-out workflow tasks spanning deterministic, bounded-choice and open-ended decisions. Compare (A) all-model execution, (B) fixed manually written procedures and (C) SeaFlow-style applicability-conditioned code/model procedures with execution-feedback refinement. Freeze models, task set, budgets and scoring. Measure applicability precision/recall, wrong-procedure selections, model-call reduction, fallback frequency, tokens, latency, total cost and independently accepted task success. Evaluate transfer to shifted task conditions and log every refinement and regression. Do not infer successful cost savings if accepted-task rate declines.
 
 ## Deployment considerations and open questions
 
-Sandbox the initial integration. Specify the authority boundary, persistence model, rollback path and owner of independent acceptance. Open questions include transfer to unseen tasks, sensitivity to the evaluator, total operational cost and whether the same improvement survives adversarial failure injection.
+Prototype in a sandbox with explicit fallback to the model when applicability is uncertain. Review generated code before promotion, version applicability predicates, and test distribution shifts. Open questions: how stable are applicability boundaries, how costly is procedure refinement, and which decision segments truly benefit from compilation?
 
 ## Provenance and depth
 
-**Full analytical treatment based on the dated primary-source briefing; not an independent replication.** Historical claims are preserved above; comparisons, risks and tests in this section are proposed analyses.
+**Full evidence-scoped analytical synthesis of the archived paper/repository briefing, not independent reproduction.** The proposed ablations and comparisons are analyst experiments, not reported SeaFlow results.
