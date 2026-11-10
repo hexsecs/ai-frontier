@@ -2,7 +2,7 @@
 uid: b6a90407-a8d1-4d13-9a40-000000000017
 title: "GitHub Agentic Workflows"
 summary: "Canonical evidence record for GitHub Agentic Workflows; mechanism, limitations, practical implications and source provenance from the November 4 briefing."
-type: project
+type: workflow
 created: 2026-11-09
 updated: 2026-11-09
 depth: brief
