@@ -16,6 +16,10 @@ A curated, source-backed guide to practical agentic AI, autonomous workflows, an
 - [Experiments](wiki/experiments/index.md) — ideas, protocols, and measured outcomes.
 - [Evaluations](wiki/evaluations/index.md) — benchmarks, replication, and reliability assessments.
 
+## Latest briefing
+
+- [November 10: executable evidence and agent substrate](wiki/briefings/2026/11/2026-11-10.md) — five new implementation-led findings and reproducible CI experiment.
+
 ## Latest synthesis
 
 - [November 3–9 evidence synthesis](wiki/evaluations/briefing-synthesis-2026-11-03-to-09.md) — Cross-briefing findings, independent-acceptance and regression-preservation concepts, counterevidence, and prioritized experiments.

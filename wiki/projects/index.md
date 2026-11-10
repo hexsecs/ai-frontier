@@ -84,3 +84,11 @@ This is the legacy canonical file-location index. Some entries are now classifie
 - [Code Simplifier](./code-simplifier.md) — Canonical backfill of the dated briefing's sourced mechanism, assessment and limitations.
 - [PR Sous Chef](./pr-sous-chef.md) — Canonical backfill of the dated briefing's sourced mechanism, assessment and limitations.
 - [Browser4](./browser4.md) — Canonical backfill of the dated briefing's sourced mechanism, assessment and limitations.
+
+## November 10 additions
+
+- [RECEIPT](./receipt.md) — process-aware command completion and false-success detection.
+- [ToolSpace](./toolspace.md) — execution-witnessed multi-tool task generation.
+- [Agent-R²](./agent-r2.md) — real-document productivity task synthesis.
+- [Strands Box](./strands-box.md) — default-deny history-sensitive agent sandbox.
+- [AgenTopology](./agentopology.md) — declarative multi-agent teams and handoff contracts.
