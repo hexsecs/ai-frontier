@@ -5,7 +5,7 @@ summary: "Canonical November 6 research finding: Browser4; documented mechanism,
 type: project
 created: 2026-11-09
 updated: 2026-11-09
-depth: brief
+depth: full
 sources:
   - https://github.com/platonai/browser4
 ---
@@ -30,6 +30,22 @@ sources:
 
 **Verdict:** Promising concrete infrastructure, but launch date and performance claims require verification.
 
-## Cross-briefing context
+## Mechanism and system boundary
 
-For independent acceptance, regression preservation, and source limits, see [[concepts/verified-completion-vs-apparent-success]], [[concepts/preservation-aware-agent-improvement]] and [[evaluations/briefing-synthesis-2026-11-03-to-09]]. These are analytical comparisons, not direct project dependencies.
+Browser agent execution and interaction span perception, tool authority, navigation state and observable task effects. The historical report above supplies source-reported evidence; the following is analytical synthesis, not independent source inspection.
+
+## Critical evidence and counterexamples
+
+Dynamic content, UI drift, session persistence and hidden effects can invalidate replay or produce misleading success. Browser actions are not equivalent to independently verified target state. Require a frozen task definition and external acceptance checks.
+
+## Comparative synthesis
+
+Compare [[domains/computer-and-device-use]], [[projects/weavebench]], and [[concepts/verified-completion-vs-apparent-success]]. These are analyst comparisons, not direct dependencies. A browser-only success measure may miss terminal and filesystem failures.
+
+## Proposed experiment
+
+Replay 20 stateful browser tasks from controlled snapshots. Measure success, wrong-side-effect rate, trace coverage, state drift, tokens, time and recoverability after interruptions. Keep a non-agent baseline and held-out tasks; do not claim the experiment was run.
+
+## Provenance and deployment
+
+Full analytical treatment of the archived briefing, not independently reproduced research. Use sandboxed browser sessions and least-privilege credentials.

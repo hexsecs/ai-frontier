@@ -5,7 +5,7 @@ summary: "Canonical evidence record for GitHub Agentic Workflows; mechanism, lim
 type: workflow
 created: 2026-11-09
 updated: 2026-11-09
-depth: brief
+depth: full
 sources:
   - https://github.blog/changelog/2026-06-11-github-agentic-workflows-is-now-in-public-preview/
 ---
@@ -28,6 +28,26 @@ sources:
 
 **Limitations:** Customer testimonials and performance claims are vendor-supplied; the preview announcement does not prove reliability, security or economic value in a particular repository.
 
-## Knowledge-base synthesis
+## Mechanism and boundary
 
-This entry preserves the finding as a reusable canonical reference rather than leaving it accessible only by briefing date. Compare its stated mechanism and evidence tier against [[concepts/scoped-assurance]], [[concepts/validation-tier-gap]], and the [November 3–9 cross-briefing synthesis](../evaluations/briefing-synthesis-2026-11-03-to-09.md). These are analyst-level thematic connections, not assertions that the original project cites or implements the linked concepts. Future source verification should replace this backfill with a deeper independently checked treatment while retaining this page identity.
+The reusable mechanism is **GitHub-triggered declarative agent workflows**. Distinguish model reasoning, tool execution, persistent state, side effects, and the independently observed acceptance condition. The historical source summary above is the factual evidence base; the interpretation below is an analyst synthesis.
+
+## Critical evidence assessment
+
+**Failure mode / counterweight:** Workflow permissions and untrusted PR content can cause unintended writes; CI is not full content acceptance. The cited sources have not been independently reproduced in this mining pass. Report source-reported metrics as such, and do not equate a successful demo, publication, repository release or PR proposal with production readiness. Negative and missing results matter as much as successes.
+
+## Directional relationships and comparative interpretation
+
+Related evidence: [[workflows/index]]; [[projects/agent-orchestrator]]. These are analyst-level **compares_with** links, not verified direct dependencies. Compare this mechanism against the simpler baseline, distinguish quality from throughput, and preserve task-level losses rather than averaging them away. See [[evaluations/briefing-synthesis-2026-11-03-to-09]].
+
+## Reproducible evaluation
+
+**Proposed, not executed:** Replay 20 PR tasks under scoped permissions; audit side effects, validator receipts, PR content injection and rollbacks. Hold model, prompts, inputs and budget constant; log task-level results, full tool receipts, source spans, failed attempts, checker execution, elapsed time and tokens. Evaluate unseen cases and require explicit evidence before promoting changes to a trusted workflow.
+
+## Deployment considerations and open questions
+
+Sandbox the initial integration. Specify the authority boundary, persistence model, rollback path and owner of independent acceptance. Open questions include transfer to unseen tasks, sensitivity to the evaluator, total operational cost and whether the same improvement survives adversarial failure injection.
+
+## Provenance and depth
+
+**Full analytical treatment based on the dated primary-source briefing; not an independent replication.** Historical claims are preserved above; comparisons, risks and tests in this section are proposed analyses.

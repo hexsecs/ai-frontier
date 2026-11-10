@@ -5,7 +5,7 @@ summary: "Canonical evidence record for Adversarial Speculative Reasoning; mecha
 type: project
 created: 2026-11-09
 updated: 2026-11-09
-depth: brief
+depth: full
 sources:
   - https://arxiv.org/abs/2611.05345
 ---
@@ -30,6 +30,26 @@ sources:
 
 **Caveat:** Hardware, numerical kernels and draft-model training conditions may determine transferability. Do not infer reproducibility on closed hosted models.
 
-## Knowledge-base synthesis
+## Mechanism and boundary
 
-This entry preserves the finding as a reusable canonical reference rather than leaving it accessible only by briefing date. Compare its stated mechanism and evidence tier against [[concepts/scoped-assurance]], [[concepts/validation-tier-gap]], and the [November 3–9 cross-briefing synthesis](../evaluations/briefing-synthesis-2026-11-03-to-09.md). These are analyst-level thematic connections, not assertions that the original project cites or implements the linked concepts. Future source verification should replace this backfill with a deeper independently checked treatment while retaining this page identity.
+**Adversarial Speculative Reasoning (ASR) is an inference-time speculative-decoding intervention, not a multi-agent debate technique.** A draft model proposes tokens, and the target model verifies them. ASR trains the draft to induce rejections at consequential positions in long reasoning trajectories, creating new verification windows and altering numerical-error accumulation while preserving the intended target distribution. The archived briefing describes small trainable parameter fractions and sensitivity to numerical precision. The intervention requires access to the speculative-decoding stack and draft training; it is not implemented by adding prompting agents.
+
+## Critical evidence assessment
+
+**Key risk:** The claimed gain may depend on numerical kernels, precision, rejection placement, draft/target pairing and task length. A distribution-preserving decoding argument does not by itself establish identical finite-precision trajectories or general coding-agent improvement. The briefing reports author-run coding-agent results but does not verify exact table-level effect sizes. Distinguish observed acceptance/rejection patterns from downstream independently scored task success; record rejected tokens, verification windows and inference overhead.
+
+## Directional relationships and comparative interpretation
+
+Compare with [[projects/roboarchitect]] and [[projects/envopt]] only at the level of **where capability is optimized**: model inference versus external harness versus information environment. These are analyst-level **compares_with** links, not shared implementations. ASR is not an instance of [[techniques/multi-agent-orchestration]]. See [[evaluations/briefing-synthesis-2026-11-03-to-09]] for broader cross-briefing synthesis.
+
+## Reproducible evaluation
+
+**Proposed, not executed:** On a self-hosted stack with draft/target speculative decoding, compare (A) ordinary speculative decoding, (B) matched-budget ASR-trained draft and (C) a control draft with comparable rejection frequency but without targeted rejection placement. Use the same target weights, prompt set, hardware, numerical precision and task-scoring harness. Evaluate held-out long-horizon coding tasks. Measure rejection position distributions, accepted draft-token runs, verification-window boundaries, finite-precision divergence, independently verified task success, latency, tokens and compute cost. Repeat at multiple precision settings to distinguish targeted verification from generic rejection-rate effects.
+
+## Deployment considerations and open questions
+
+Do not treat ASR as an API prompt recipe. Adoption requires draft-model training and instrumentation of the target verifier. Key questions are whether gains transfer across numerical implementations and task lengths, whether rejection placement matters beyond aggregate acceptance rate, and whether end-to-end quality compensates for verification overhead.
+
+## Provenance and depth
+
+**Full evidence-scoped analytical synthesis of the archived primary-source briefing, not an independent replication.** No new benchmark values or causal claims have been introduced.

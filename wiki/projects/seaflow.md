@@ -5,7 +5,7 @@ summary: "Canonical evidence record for SeaFlow; mechanism, limitations, practic
 type: project
 created: 2026-11-09
 updated: 2026-11-09
-depth: brief
+depth: full
 sources:
   - https://arxiv.org/abs/2611.01840
   - https://github.com/Applied-Machine-Learning-Lab/NeurIPS2026_SeaFlow
@@ -31,6 +31,26 @@ sources:
 
 **Caveat:** Success in negotiation games does not establish performance in repository engineering or browser automation; applicability-condition errors may silently route work to an unsuitable procedure.
 
-## Knowledge-base synthesis
+## Mechanism and boundary
 
-This entry preserves the finding as a reusable canonical reference rather than leaving it accessible only by briefing date. Compare its stated mechanism and evidence tier against [[concepts/scoped-assurance]], [[concepts/validation-tier-gap]], and the [November 3–9 cross-briefing synthesis](../evaluations/briefing-synthesis-2026-11-03-to-09.md). These are analyst-level thematic connections, not assertions that the original project cites or implements the linked concepts. Future source verification should replace this backfill with a deeper independently checked treatment while retaining this page identity.
+**SeaFlow decomposes complex interactive tasks into applicability-conditioned procedures.** A procedure may execute deterministic code or call a model; execution feedback can refine the decomposition, applicability conditions and procedure choice. The optimization target is selective reuse of stable decision logic while retaining model calls where reasoning is needed. The documented contribution is not durable checkpoint recovery or generic stateful orchestration.
+
+## Critical evidence assessment
+
+**Key risk:** An overly broad applicability condition may route a task to inappropriate deterministic code; an overly narrow one may increase fallback model calls and erase efficiency gains. Competition performance in bargaining, negotiation and persuasion does not independently establish transfer to coding or browser automation. Report both wrong-procedure selection and unnecessary model invocation, as well as final-task success and cost. The briefing's competition and efficiency claims remain author-reported.
+
+## Directional relationships and comparative interpretation
+
+Compare with [[projects/skillcompiler]] as a related but distinct method for replacing model decisions with executable code; SeaFlow emphasizes semantic decomposition, applicability conditions and feedback-based refinement. Compare with [[projects/agentos]] only to contrast procedural selection against durable task execution; they are not the same mechanism. These are analyst-level **compares_with** links, not direct dependency claims. See [[evaluations/briefing-synthesis-2026-11-03-to-09]].
+
+## Reproducible evaluation
+
+**Proposed, not executed:** Select 30 recurring, held-out workflow tasks spanning deterministic, bounded-choice and open-ended decisions. Compare (A) all-model execution, (B) fixed manually written procedures and (C) SeaFlow-style applicability-conditioned code/model procedures with execution-feedback refinement. Freeze models, task set, budgets and scoring. Measure applicability precision/recall, wrong-procedure selections, model-call reduction, fallback frequency, tokens, latency, total cost and independently accepted task success. Evaluate transfer to shifted task conditions and log every refinement and regression. Do not infer successful cost savings if accepted-task rate declines.
+
+## Deployment considerations and open questions
+
+Prototype in a sandbox with explicit fallback to the model when applicability is uncertain. Review generated code before promotion, version applicability predicates, and test distribution shifts. Open questions: how stable are applicability boundaries, how costly is procedure refinement, and which decision segments truly benefit from compilation?
+
+## Provenance and depth
+
+**Full evidence-scoped analytical synthesis of the archived paper/repository briefing, not independent reproduction.** The proposed ablations and comparisons are analyst experiments, not reported SeaFlow results.
