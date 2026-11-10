@@ -32,24 +32,24 @@ sources:
 
 ## Mechanism and boundary
 
-The reusable mechanism is **Speculative multi-agent reasoning under adversarial scrutiny**. Distinguish model reasoning, tool execution, persistent state, side effects, and the independently observed acceptance condition. The historical source summary above is the factual evidence base; the interpretation below is an analyst synthesis.
+**Adversarial Speculative Reasoning (ASR) is an inference-time speculative-decoding intervention, not a multi-agent debate technique.** A draft model proposes tokens, and the target model verifies them. ASR trains the draft to induce rejections at consequential positions in long reasoning trajectories, creating new verification windows and altering numerical-error accumulation while preserving the intended target distribution. The archived briefing describes small trainable parameter fractions and sensitivity to numerical precision. The intervention requires access to the speculative-decoding stack and draft training; it is not implemented by adding prompting agents.
 
 ## Critical evidence assessment
 
-**Failure mode / counterweight:** More candidate reasoning paths can amplify correlated errors and expensive invalid checks. The cited sources have not been independently reproduced in this mining pass. Report source-reported metrics as such, and do not equate a successful demo, publication, repository release or PR proposal with production readiness. Negative and missing results matter as much as successes.
+**Key risk:** The claimed gain may depend on numerical kernels, precision, rejection placement, draft/target pairing and task length. A distribution-preserving decoding argument does not by itself establish identical finite-precision trajectories or general coding-agent improvement. The briefing reports author-run coding-agent results but does not verify exact table-level effect sizes. Distinguish observed acceptance/rejection patterns from downstream independently scored task success; record rejected tokens, verification windows and inference overhead.
 
 ## Directional relationships and comparative interpretation
 
-Related evidence: [[techniques/multi-agent-orchestration]]; [[concepts/evaluator-circularity]]. These are analyst-level **compares_with** links, not verified direct dependencies. Compare this mechanism against the simpler baseline, distinguish quality from throughput, and preserve task-level losses rather than averaging them away. See [[evaluations/briefing-synthesis-2026-11-03-to-09]].
+Compare with [[projects/roboarchitect]] and [[projects/envopt]] only at the level of **where capability is optimized**: model inference versus external harness versus information environment. These are analyst-level **compares_with** links, not shared implementations. ASR is not an instance of [[techniques/multi-agent-orchestration]]. See [[evaluations/briefing-synthesis-2026-11-03-to-09]] for broader cross-briefing synthesis.
 
 ## Reproducible evaluation
 
-**Proposed, not executed:** Compare single path, parallel proposals and adversarial verification on 30 held-out tasks at matched budgets. Hold model, prompts, inputs and budget constant; log task-level results, full tool receipts, source spans, failed attempts, checker execution, elapsed time and tokens. Evaluate unseen cases and require explicit evidence before promoting changes to a trusted workflow.
+**Proposed, not executed:** On a self-hosted stack with draft/target speculative decoding, compare (A) ordinary speculative decoding, (B) matched-budget ASR-trained draft and (C) a control draft with comparable rejection frequency but without targeted rejection placement. Use the same target weights, prompt set, hardware, numerical precision and task-scoring harness. Evaluate held-out long-horizon coding tasks. Measure rejection position distributions, accepted draft-token runs, verification-window boundaries, finite-precision divergence, independently verified task success, latency, tokens and compute cost. Repeat at multiple precision settings to distinguish targeted verification from generic rejection-rate effects.
 
 ## Deployment considerations and open questions
 
-Sandbox the initial integration. Specify the authority boundary, persistence model, rollback path and owner of independent acceptance. Open questions include transfer to unseen tasks, sensitivity to the evaluator, total operational cost and whether the same improvement survives adversarial failure injection.
+Do not treat ASR as an API prompt recipe. Adoption requires draft-model training and instrumentation of the target verifier. Key questions are whether gains transfer across numerical implementations and task lengths, whether rejection placement matters beyond aggregate acceptance rate, and whether end-to-end quality compensates for verification overhead.
 
 ## Provenance and depth
 
-**Full analytical treatment based on the dated primary-source briefing; not an independent replication.** Historical claims are preserved above; comparisons, risks and tests in this section are proposed analyses.
+**Full evidence-scoped analytical synthesis of the archived primary-source briefing, not an independent replication.** No new benchmark values or causal claims have been introduced.
