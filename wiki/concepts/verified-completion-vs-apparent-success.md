@@ -26,7 +26,7 @@ A task's apparent success is not equivalent to independent acceptance. This is a
 - **ControlAnything** ([[projects/controlanything]], [paper](https://arxiv.org/abs/2611.08321)) reports 9/10 ready requests, but readiness establishes connector and transport acknowledgements, **not physical effects**. Acknowledgement is not actuation evidence.
 - **ChemE-as-Code** ([[projects/cheme-as-code]], [paper](https://arxiv.org/abs/2611.07947)) versions engineering artifacts and checks dependency consistency; the illustrative ammonia design was **not independently engineer-reviewed**. Internal consistency is narrower than domain certification.
 - **Production assurance case** ([[projects/assuring-ai-written-software]], [paper](https://arxiv.org/abs/2610.08651)) reports silently missing or proxy-based checks and an automated repair that disrupted operations. The check-execution record itself must be independently observable. Single-case qualitative evidence.
-- **AgentSWE** ([November 3 briefing](../briefings/2026/11/2026-11-03.md), [paper](https://arxiv.org/abs/2610.13361)) tests agents that construct other agents. Acceptance must cover the built agent's actual behavior rather than its self-description.
+- **AgentSWE** ([[briefings/2026/11/2026-11-03]], [paper](https://arxiv.org/abs/2610.13361)) tests agents that construct other agents. Acceptance must cover the built agent's actual behavior rather than its self-description.
 
 ## Competing explanations and counterweights
 
