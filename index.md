@@ -12,6 +12,10 @@ A curated, source-backed guide to practical agentic AI, autonomous workflows, an
 - [Experiments](wiki/experiments/index.md) — ideas, protocols, and measured outcomes.
 - [Evaluations](wiki/evaluations/index.md) — benchmarks, replication, and reliability assessments.
 
+## Latest synthesis
+
+- [November 3–9 evidence synthesis](wiki/evaluations/briefing-synthesis-2026-11-03-to-09.md) — Cross-briefing findings, independent-acceptance and regression-preservation concepts, counterevidence, and prioritized experiments.
+
 ## Curation
 
 Research priorities and selection rules live in [`automation/briefing-policy.yaml`](automation/briefing-policy.yaml).
