@@ -2,7 +2,7 @@
 uid: 4b76268a-826f-47b3-87ad-7bbf95f72c04
 title: "ST-Bench"
 summary: "Measures multi-agent scientific-analysis coverage, numerical realism, and inference-time tradeoffs."
-type: project
+type: benchmark
 created: 2026-11-08
 updated: 2026-11-08
 depth: brief

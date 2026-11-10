@@ -2,7 +2,7 @@
 uid: a29b51f0-ec09-4b70-9e90-900000000005
 title: "A Case Study in Assuring AI-Written Software"
 summary: "Documents real production coding-agent assurance failures and human-governed oversight."
-type: project
+type: case-study
 created: 2026-11-09
 updated: 2026-11-09
 depth: brief

@@ -3,7 +3,7 @@ uid: 0ae84717-721c-47b8-8a5a-1f69a9946aa6
 depth: deep
 title: "Seq@K: Evaluating Language Models Under Sequential Feedback"
 summary: "Evaluation protocol measuring whether a model solves a task within K sequential attempts, given feedback after each failure; rankings diverge from Pass@K."
-type: project
+type: benchmark
 created: 2026-10-31
 updated: 2026-11-02
 related: [evaluator-circularity, information-content-dominance, protocol-relative-scores]

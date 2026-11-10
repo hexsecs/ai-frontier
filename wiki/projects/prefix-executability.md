@@ -3,7 +3,7 @@ uid: e12af292-510e-4e0c-bae0-a82e71b6e137
 depth: deep
 title: "Prefix Executability: Evaluating Tool-Using Agents Beyond Final Success"
 summary: "Successful episodes often pass through invalid prefixes: final success and prefix executability rank the same agents differently."
-type: project
+type: benchmark
 created: 2026-11-01
 updated: 2026-11-02
 related: [protocol-relative-scores, scoped-assurance]

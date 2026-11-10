@@ -2,7 +2,7 @@
 uid: a29b51f0-ec09-4b70-9e90-900000000004
 title: "WeaveBench"
 summary: "Evaluates real desktop agents across GUI, CLI and code with trajectory-aware checks."
-type: project
+type: benchmark
 created: 2026-11-09
 updated: 2026-11-09
 depth: brief

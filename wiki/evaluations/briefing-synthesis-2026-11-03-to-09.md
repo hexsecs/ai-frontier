@@ -1,7 +1,7 @@
 ---
 uid: 1bcb3936-0009-42a9-80e4-e50d96faeb8f
 title: "Agentic AI briefing synthesis: November 3–9, 2026"
-summary: "Cross-briefing evidence map, contradictions, gaps and prioritized experiments spanning 39 reported agentic AI findings."
+summary: "Cross-briefing evidence map, contradictions, gaps and prioritized experiments spanning 41 reported agentic AI findings."
 type: evaluation
 created: 2026-11-09
 updated: 2026-11-09
@@ -24,6 +24,10 @@ sources:
 ## Scope and provenance
 
 This is a **retrospective synthesis**, not a replacement for the immutable daily reports. Seven briefings, **41 selected findings** (5+7+7+5+5+5+5), were reviewed from [[briefings/2026/11/2026-11-03]] through [[briefings/2026/11/2026-11-09]]. Some findings are older gap-fills or GitHub PR proposals, not fresh November releases. Source-level assertions below refer to primary URLs; comparative relations are analyst interpretations unless a paper actually compares the methods. Historical October 30–November 2 reconstructed pages are outside this audit.
+
+## Reclassified evidence and operationalization
+
+The canonical corpus now separates [[benchmarks/index]] (measurement instruments), [[case-studies/index]] (field evidence), [[workflows/index]] (repeatable automation), and [[domains/index]] (application contexts) from implementations. The original briefing snapshots remain immutable. The proposed [[experiments/hidden-acceptance-regression-ingestion]] turns the central independent-acceptance and preservation argument into an executable protocol. Reclassification changes navigation and ontology, **not** source-reported results or evidence strength.
 
 ## Cross-briefing synthesis matrix
 

@@ -16,7 +16,11 @@ maintainers: [hexsecs]
 license: CC-BY-4.0
 types:
   briefing: Immutable dated research briefing.
-  project: Canonical record for an agentic AI implementation or research project.
+  project: Canonical record for a named agentic implementation, library, framework, or prototype.
+  benchmark: Named task suite, dataset, or evaluation protocol with defined scoring.
+  case-study: Evidence-scoped real-world deployment, incident, or observational report.
+  workflow: Runnable agent automation recipe with triggers, tools, boundaries, and outputs.
+  domain: Application area used to group work across implementations and techniques.
   technique: Reusable agentic design pattern.
   signal: Evidence-backed emerging pattern or hypothesis.
   experiment: Reproducible proposed or completed experiment.

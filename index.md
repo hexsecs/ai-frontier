@@ -5,6 +5,10 @@ A curated, source-backed guide to practical agentic AI, autonomous workflows, an
 ## Browse
 
 - [Daily briefings](wiki/briefings/index.md) — chronological snapshots of discoveries and assessments.
+- [Benchmarks](wiki/benchmarks/index.md) — Evaluation suites and scoring protocols.
+- [Case studies](wiki/case-studies/index.md) — Deployment evidence, operational observations and failures.
+- [Workflows](wiki/workflows/index.md) — Reusable agent automations and integration recipes.
+- [Domains](wiki/domains/index.md) — Application areas distinct from agent techniques.
 - [Projects](wiki/projects/index.md) — canonical pages for individual systems and repositories.
 - [Concepts](wiki/concepts/index.md) — cross-project phenomena and claims mined from the project pages, with their evidence for and against.
 - [Techniques](wiki/techniques/index.md) — reusable architectural patterns.

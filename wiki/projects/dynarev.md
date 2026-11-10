@@ -3,7 +3,7 @@ uid: d01a9540-9153-4b9a-9463-07c0618570cd
 depth: deep
 title: "DynaRev: Benchmarking Web Agents under Dynamic Goal Revision"
 summary: "DynaRev: 181-task web-agent benchmark delivering additive and override goal revisions at semantic milestones, scored for correctness, responsiveness, and cost."
-type: project
+type: benchmark
 created: 2026-11-01
 updated: 2026-11-02
 related: [evaluator-circularity, information-content-dominance, protocol-relative-scores, scoped-assurance]
