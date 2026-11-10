@@ -2,7 +2,7 @@
 uid: b6a90304-a8d1-4d13-9a40-000000000004
 title: "AgentSWE"
 summary: "Canonical evidence record for AgentSWE; mechanism, limitations, practical implications and source provenance from the November 3 briefing."
-type: project
+type: benchmark
 created: 2026-11-09
 updated: 2026-11-09
 depth: brief
