@@ -132,6 +132,9 @@ def main():
             raise ValueError(f"{file.relative_to(ROOT)}: visualization fence was not compiled")
         rendered = markdown.markdown(expand_wikilinks(compiled), extensions=["tables", "fenced_code", "sane_lists"])
         rendered = rewrite_links(rendered, page_id)
+        # Python-Markdown leaves bare source URLs as text; linkify text nodes
+        # without nesting anchors or modifying code examples.
+        rendered = bleach.linkify(rendered, skip_tags=["pre", "code"])
         rendered = bleach.clean(rendered,
             tags=set(bleach.sanitizer.ALLOWED_TAGS) | {"h1","h2","h3","h4","h5","h6","p","pre","code","img","figure","figcaption","div","span","table","thead","tbody","tr","th","td","hr","br","del","sup","sub"},
             attributes={"a":["href","title","target","rel","aria-label"],"img":["src","alt","title","loading","decoding","width","height"],"*":["class","id","data-visual","data-spec","role","aria-label"]},
