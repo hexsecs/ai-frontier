@@ -2,7 +2,7 @@
 uid: b6a90604-a8d1-4d13-9a40-000000000034
 title: "PR Sous Chef"
 summary: "Canonical November 6 research finding: PR Sous Chef; documented mechanism, evidence limitations and next steps."
-type: project
+type: workflow
 created: 2026-11-09
 updated: 2026-11-09
 depth: brief
