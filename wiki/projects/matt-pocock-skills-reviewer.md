@@ -2,7 +2,7 @@
 uid: b6a90602-a8d1-4d13-9a40-000000000032
 title: "Matt Pocock Skills Reviewer"
 summary: "Canonical November 6 research finding: Matt Pocock Skills Reviewer; documented mechanism, evidence limitations and next steps."
-type: project
+type: workflow
 created: 2026-11-09
 updated: 2026-11-09
 depth: brief
