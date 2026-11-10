@@ -65,3 +65,27 @@ Reproducible benchmark design, limited to fully observable simulated coordinatio
 ## Depth and provenance
 
 This is a **full analytical mining pass** grounded in the original dated briefing and primary-source links, not a claim of new direct source inspection or reproduced benchmarks. Source-reported measurements and newly proposed engineering interpretations are intentionally distinguished.
+
+## Full-depth mechanism and scope
+
+**Selection and verification of multi-agent coordination plans.** Model the input/task, worker or evaluator, state transition, persisted artifact and external acceptance oracle separately. The original source and evidence summary above anchors the factual claims. This analysis distinguishes implementation behavior from measurement protocol and operational deployment.
+
+## Evidence quality, negative findings and confounders
+
+**Principal counterweight:** Selecting a plausible team plan does not prove global optimality; scoring depends on candidate-plan coverage. Check whether the cited source reports a controlled comparison, author-only result, user perception, benchmark score, or production observation. These evidence tiers are not interchangeable. Missing independent validation, hidden costs, sampling bias and failure-to-execute checks should be reported rather than assumed away.
+
+## Comparative and typed knowledge synthesis
+
+Compare with [[benchmarks/index]]; [[projects/masbench]] and [[evaluations/briefing-synthesis-2026-11-03-to-09]]. **Relationship type: compares_with (analyst synthesis)**, not a verified implementation dependency or head-to-head result. For any cross-paper numeric comparison, require matching tasks, models, runtime, budget, and independent scoring before treating differences as meaningful.
+
+## Reproducible evaluation protocol
+
+**Proposed; not executed:** Generate plans for 30 tasks, hold out optimal-plan evidence, compare selected plans with independent execution outcomes. Pre-register task set, control, held-out cases, success criteria and failure taxonomy. Record tool and validator execution receipts, raw artifacts, per-task scores, regressions, uncertainty, time and tokens. Fail closed on unknown acceptance outcomes. Preserve negative cases and report false positives and false negatives.
+
+## Practical integration and open questions
+
+Start in an isolated environment with least privilege, explicit state ownership, deterministic checkpoints and rollback. Ask whether the mechanism generalizes beyond the source's distribution, whether a simpler baseline is competitive, and what evidence independently proves success. Record promotion criteria before deployment.
+
+## Provenance and research status
+
+**Full evidence-scoped analytical depth** mined from the archived briefing and its canonical source references. New comparative claims and experiments are analyst hypotheses, not independently reproduced findings. The original paper/repository was not re-run in this pass.
