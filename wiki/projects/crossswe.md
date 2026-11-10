@@ -2,7 +2,7 @@
 uid: b6a90405-a8d1-4d13-9a40-000000000015
 title: "CrossSWE"
 summary: "Canonical evidence record for CrossSWE; mechanism, limitations, practical implications and source provenance from the November 4 briefing."
-type: project
+type: benchmark
 created: 2026-11-09
 updated: 2026-11-09
 depth: brief
