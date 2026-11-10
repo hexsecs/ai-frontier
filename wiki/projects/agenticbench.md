@@ -2,7 +2,7 @@
 uid: b6a90504-a8d1-4d13-9a40-000000000024
 title: "AgenticBench"
 summary: "Canonical evidence record for AgenticBench; mechanism, limitations, practical implications and source provenance from the November 5 briefing."
-type: project
+type: benchmark
 created: 2026-11-09
 updated: 2026-11-09
 depth: brief
