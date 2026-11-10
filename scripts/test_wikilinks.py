@@ -1,4 +1,6 @@
 import unittest
+import bleach
+import markdown
 from build_site import expand_wikilinks, rewrite_links
 
 
@@ -17,6 +19,20 @@ class WikiLinkTests(unittest.TestCase):
 
     def test_escape_label(self):
         self.assertIn('&lt;script&gt;', expand_wikilinks('[[projects/strategist|<script>]]'))
+
+    def test_bare_briefing_sources_are_clickable(self):
+        source = "**Source:** https://arxiv.org/abs/2611.07372. **Implementation:** https://github.com/TracyTeam/tracybot."
+        rendered = bleach.linkify(markdown.markdown(source), skip_tags=["pre", "code"])
+        self.assertIn('href="https://arxiv.org/abs/2611.07372"', rendered)
+        self.assertIn('href="https://github.com/TracyTeam/tracybot"', rendered)
+
+    def test_existing_links_are_not_nested(self):
+        rendered = bleach.linkify('<a href="#/page/projects/envopt">EnvOpt</a> and <a href="https://example.org">paper</a>', skip_tags=["pre", "code"])
+        self.assertEqual(rendered.count("<a "), 2)
+
+    def test_code_urls_remain_literal(self):
+        rendered = bleach.linkify("<code>https://example.org</code><pre>https://example.org</pre>", skip_tags=["pre", "code"])
+        self.assertNotIn("<a ", rendered)
 
     def test_traversal_rejected(self):
         self.assertEqual(expand_wikilinks('[[../secret]]'), '[[../secret]]')
