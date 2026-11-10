@@ -2,7 +2,7 @@
 uid: 4b76268a-826f-47b3-87ad-7bbf95f72c03
 title: "MASBench"
 summary: "Benchmarks multi-agent protocols, memory, and routing under partially observable tasks."
-type: project
+type: benchmark
 created: 2026-11-08
 updated: 2026-11-08
 depth: brief
