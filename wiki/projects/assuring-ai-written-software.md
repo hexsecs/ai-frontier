@@ -68,3 +68,27 @@ Evaluate first in a constrained environment with explicit authorization, source 
 ## Provenance and depth statement
 
 **Full analytical synthesis of the archived briefing**, not a claim that new source experiments were performed or original benchmarks reproduced. Primary URLs and author-reported measurements remain in the earlier sections; proposed interpretations and experiments are editorial analysis.
+
+## Full-depth mechanism and scope
+
+**Production assurance and monitoring of AI-written software.** Model the input/task, worker or evaluator, state transition, persisted artifact and external acceptance oracle separately. The original source and evidence summary above anchors the factual claims. This analysis distinguishes implementation behavior from measurement protocol and operational deployment.
+
+## Evidence quality, negative findings and confounders
+
+**Principal counterweight:** Silently skipped monitors and proxy checks undermine claimed assurance; a single case cannot establish prevalence. Check whether the cited source reports a controlled comparison, author-only result, user perception, benchmark score, or production observation. These evidence tiers are not interchangeable. Missing independent validation, hidden costs, sampling bias and failure-to-execute checks should be reported rather than assumed away.
+
+## Comparative and typed knowledge synthesis
+
+Compare with [[case-studies/index]]; [[concepts/verified-completion-vs-apparent-success]] and [[evaluations/briefing-synthesis-2026-11-03-to-09]]. **Relationship type: compares_with (analyst synthesis)**, not a verified implementation dependency or head-to-head result. For any cross-paper numeric comparison, require matching tasks, models, runtime, budget, and independent scoring before treating differences as meaningful.
+
+## Reproducible evaluation protocol
+
+**Proposed; not executed:** Inject missing audit jobs and faulty repair actions into a sandboxed CI pipeline; measure detection and recovery. Pre-register task set, control, held-out cases, success criteria and failure taxonomy. Record tool and validator execution receipts, raw artifacts, per-task scores, regressions, uncertainty, time and tokens. Fail closed on unknown acceptance outcomes. Preserve negative cases and report false positives and false negatives.
+
+## Practical integration and open questions
+
+Start in an isolated environment with least privilege, explicit state ownership, deterministic checkpoints and rollback. Ask whether the mechanism generalizes beyond the source's distribution, whether a simpler baseline is competitive, and what evidence independently proves success. Record promotion criteria before deployment.
+
+## Provenance and research status
+
+**Full evidence-scoped analytical depth** mined from the archived briefing and its canonical source references. New comparative claims and experiments are analyst hypotheses, not independently reproduced findings. The original paper/repository was not re-run in this pass.
