@@ -39,7 +39,7 @@ def check_source():
                 inbound.add(target)
         for match in MDLINK.finditer(body):
             raw = unquote(html.unescape(match.group(1))).split("#", 1)[0].split("?", 1)[0]
-            if not raw.endswith(".md") or raw.startswith(("/", "//")):
+            if not raw.endswith(".md") or raw.startswith(("/", "//", "http:", "https:", "mailto:", "data:")):
                 continue
             target = posixpath.normpath(posixpath.join(posixpath.dirname(page), raw))[:-3]
             if target not in ids:
