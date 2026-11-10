@@ -3,7 +3,7 @@ uid: 40511243-5e69-4848-9e23-d1e9bd3e1131
 depth: deep
 title: "EnvOS: Auditing Computer-Use Agents When the World Moves On — Phenomenon-Based Task Construction, Certification, and Evidence-Based Evaluation"
 summary: "Framework that builds and certifies computer-use environments changing mid-task, then audits each verdict from archived evidence; tested on stale values."
-type: project
+type: benchmark
 created: 2026-11-01
 updated: 2026-11-02
 related: [evaluator-circularity, scoped-assurance, structural-constraint-over-instruction]
