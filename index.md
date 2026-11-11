@@ -18,6 +18,7 @@ A curated, source-backed guide to practical agentic AI, autonomous workflows, an
 
 ## Latest briefing
 
+- [November 11: program-owned control, proof gates and research memory](wiki/briefings/2026/11/2026-11-11.md) — five evidence-scoped findings and executable CI experiment.
 - [November 10: executable evidence and agent substrate](wiki/briefings/2026/11/2026-11-10.md) — five new implementation-led findings and reproducible CI experiment.
 
 ## Latest synthesis
