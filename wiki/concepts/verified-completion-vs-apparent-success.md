@@ -4,7 +4,7 @@ title: "Verified completion versus apparent success"
 summary: "Agent completion claims, user approval, tool acknowledgements and passing checks do not establish independently verified outcomes."
 type: concept
 created: 2026-11-09
-updated: 2026-11-09
+updated: 2026-11-10
 depth: full
 sources:
   - https://arxiv.org/abs/2611.07464
@@ -12,6 +12,8 @@ sources:
   - https://arxiv.org/abs/2611.08321
   - https://arxiv.org/abs/2610.08651
   - https://arxiv.org/abs/2610.13361
+  - https://github.com/BuilderIO/agent-native/pull/8670
+  - https://raw.githubusercontent.com/OrchestratorInc/agent-orchestrator/main/docs/architecture.md
 ---
 
 # Verified completion versus apparent success
@@ -45,3 +47,12 @@ Create 30 repository-ingestion tasks with hidden acceptance rules and planted fa
 ## Evidence status
 
 Cross-paper inference assembled from the cited primary reports and existing canonical records; no experiment run for this synthesis. Published numbers remain author-reported.
+
+## 2026-11-10 evidence connections
+
+Two deepened project pages (sources re-read 2026-11-10) extend this concept from gap-**measurement** to gap-**closure**. Both links are analyst-level relations to KB project pages; neither source names the concept.
+
+- **[[projects/builderio-agent-native]] — the concept implemented as infrastructure.** BuilderIO's observed-write classification replaces a position-derived completion verdict ("the handler started, so it might have written" → the run ends `write_tool_outcome_unknown` even for pre-save rejections) with an observation-derived one, fail-closed at every boundary: unknown SQL is a write, an unwrappable `fetch` counts every call as having sent a write, and a never-arrived result stays `unknown`. This is the acceptance-evidence ladder's discipline built into the call path rather than measured after the fact — the run-ending verdict becomes evidence-derived instead of control-flow-derived. Bounds, from the inspected PR record: the observation funnel sits *beneath* explicit author labels (`NoWriteError` / `retrySafe` take precedence over observed evidence), its completeness is the whole property (an unobserved write channel reads as retry-safe — the inverse of the failure being fixed), and three review findings were declined as documented risks rather than fixed. Mechanism inspected (PR threads and raw files at head commit `dec69e4c`); every verification number is author-reported.
+- **[[projects/agent-orchestrator]] — the discipline applied to UI state and irreversible actions.** The architecture's context-boundary rule refuses to represent continuity it cannot prove ("Prior rows remain intact, but are not represented as context inherited by the new provider"), and session termination is fail-closed against the same error class: "Failed probes are NOT proof of death," with termination requiring both-dead evidence, no contradicting recent activity, and no merged-PR ownership. Vendor-documented mechanism with zero published outcome measurement — the instance shows the discipline *designed*, not its effect measured.
+
+Typed relations: builderio-agent-native **implements** the acceptance-evidence discipline as call-path infrastructure; agent-orchestrator **applies** it to display status and irreversible actions. Neither is a benchmark measurement of the gap like the five instances above, so both rows extend the concept's evidence base rather than re-grade it.

@@ -1,7 +1,7 @@
 ---
 uid: 9cafe10f-c05b-4127-8fd8-fc3ea28431e8
 created: 2026-11-02
-updated: 2026-11-07
+updated: 2026-11-10
 type: concept
 depth: full
 title: "Improvement lives in external state"
@@ -16,6 +16,8 @@ sources:
     retrieved: 2026-11-02
   - url: https://arxiv.org/abs/2610.39074
     retrieved: 2026-11-02
+  - url: https://github.com/agentclientprotocol/claude-agent-acp/pull/1516
+    retrieved: 2026-11-10
 ---
 
 # Improvement lives in external state
@@ -268,3 +270,7 @@ context-as-infrastructure's null result, where only cost moved.
 
 - [[projects/strategist]]: newly linked primary-source project; see its dated briefing and evidence limitations before treating this relationship as a universal mechanism.
 - [[projects/fa-agent]]: newly linked primary-source project; see its dated briefing and evidence limitations before treating this relationship as a universal mechanism.
+
+## 2026-11-10 evidence connections
+
+- **[[projects/claude-agent-acp]] — a bound, not an instance (analyst-level link).** The release's idle-compaction feature ("compact idle sessions before the prompt cache expires") turns on external state — provider prompt-cache temperature — that the client cannot see at all and the adapter can only partially infer, so the adapter acts on the client's behalf with no published figure measuring the trade. This bounds the concept's claimed side-benefits: inspectability, reversibility and portability presuppose that the external state is visible to its owner; external state no party can observe gets managed by guesswork. The project page calls this the concept "inverted"; recorded here as a boundary case, not a supporting instance.
