@@ -1,39 +1,142 @@
 ---
 uid: dabbda38-5d69-44a0-adfc-eaef69fa768a
 title: "Agent-R² — Real-source productivity task synthesis"
-summary: "A training-data pipeline grounded in occupational task seeds, workflow evidence and authentic web-sourced attachments. F"
+summary: "Real-source synthesis of 4k office-work tasks with fine-grained rubrics, training a 4B agent that beats Qwen3-235B on GDPval and OfficeQA."
 type: project
 created: 2026-11-10
 updated: 2026-11-10
-depth: full
+depth: deep
 sources:
   - https://arxiv.org/abs/2611.08219
+  - https://arxiv.org/html/2611.08219v1
 ---
 
 # Agent-R² — Real-source productivity task synthesis
 
-**Source and date:** https://arxiv.org/abs/2611.08219 (2026-11-05).
+## What it is
+
+Agent-R² is a **real-source data synthesis framework** for post-training agents on realistic productivity work. It is reported in the arXiv preprint "Agent-R²: Scaling Agents for Realistic Productivity Work via Real-Source Data Synthesis" (arXiv:2611.08219v1, submitted 5 November 2026, cs.CL) by Teng Pan, Zixuan Wang, Yuchen Yan, Qifei Wu, Yao Chen, Yingqi Qu, Ruiqing Zhang and Yongliang Shen, affiliated with Zhejiang University and Baidu Inc. The paper is a preprint; no peer-reviewed venue is claimed. The authors state that code is available at `https://github.com/ZJU-REAL/Agent-R2` (not opened or run by the KB maintainers).
+
+The framing: current agents fail at realistic professional work for three reasons — long-horizon professional workflows with implicit conventions, heterogeneous and messy multi-file contexts, and deliverables with fine-grained requirements — and existing training data covers these only in isolation. The authors argue what is missing is not more data but data that reflects *real* work: real intents, authentic files and deliverable-level standards. Agent-R² therefore grounds every stage of synthesis in real sources rather than in manually authored workflows or LLM-generated files, distils **4,000 task instances from 10,000 web-corpus candidates**, and trains **Agent-R²-4B** on them with supervised fine-tuning followed by rubric-based reinforcement learning.
 
 ## Mechanism
 
-A training-data pipeline grounded in occupational task seeds, workflow evidence and authentic web-sourced attachments. From 10,000 candidates it constructs 4,000 tasks with multi-format files and deliverable-level rubrics, then trains a 4B agent with supervised and reinforcement learning. Real-document task grounding, fine-grained deliverable rubrics, and training against shortcut-prone agent behavior.
+**Problem formulation.** A task instance is x = (I, F_a, F_r, R): the user instruction I, the attachment set F_a available during solving, an optional reference set F_r used only for evaluation (empty when none is provided), and the task-specific rubric R. Solving and evaluation both use a persistent sandbox environment E = (S, T, δ, Ω) with tool set T = {bash, web_search, web_fetch, view_image}. `bash` executes shell commands and file operations inside the sandbox; `web_search` and `web_fetch` locate and retrieve web content; `view_image` gives visual access to images or rendered file pages — for a solver without native multimodal capability the tool requires a textual visual query q and invokes an auxiliary vision policy π_v, while a multimodal solver receives the image directly. Evaluation runs in a *separate* sandbox initialised with the generated deliverable files F_d and, when available, the reference files F_r; an evaluator policy π_e interacts with that environment to judge the deliverables under R and outputs the final score.
 
-## Evidence and novelty
+**Stage 1 — workflow extraction.** The pipeline starts from a web corpus C and occupational activity seeds G (drawn from O*NET). The corpus is sampled from the DLR-Web dataset used by DESIGNER, itself filtered from FineFineWeb; each corpus segment carries discipline metadata that is mapped to an occupational category to select the matching seeds. For every segment the synthesis model π_syn (Qwen3.6-Plus) performs **workflow extraction** under two filters — workflow filtering and file-oriented filtering — where a segment must both describe a workable workflow and be file-oriented (completing the work requires locating, reading, editing or producing file artifacts). A segment passing both becomes a workflow blueprint with information dependencies, required file types and expected outputs.
 
-Authors report Agent-R²-4B scores 51.0% on GDPval and 14.8% on OfficeQA, versus 48.0% and 13.8% for their cited Qwen3-235B comparison. High: shifts optimization toward realistic file-grounded deliverables instead of isolated tool-call benchmarks.
+**Stage 2 — attachment searching.** For each blueprint, π_syn runs a multi-turn search-and-verification loop: it generates a search query conditioned on the workflow, required file types, previous queries and prior results, runs `web_search` for titles and snippets, screens each result for workflow relevance, then downloads promising candidates and inspects them with `bash` and `view_image` (cover pages, tables of contents). Files verified as relevant are retained in F_c; files longer than 50 pages or larger than 2 MB are discarded to control download latency and construction overhead. The loop stops when the retained files jointly satisfy the workflow's information and operation needs or the turn cap is reached; only pairs (w, F_c) that satisfy the workflow are passed on.
 
-## Comparison
+**Stage 3 — task synthesis.** Each retained pair is instantiated inside the sandbox. To expose file content to the model, paginated files are rendered into page images and spreadsheets are parsed into sheet-level tables, with the original files preserved for inspection. Conditioned on the blueprint and the candidate files, π_syn runs a multi-turn synthesis: it inspects file contents, searches and fetches web evidence when the workflow requires it, selects which candidates become the attachment set F_a ⊆ F_c, and jointly designs the instruction I and the rubric R. The rubric ties success criteria to file-level evidence and constraints. **Claude-Opus-4.5 is then used as the expert policy** π_exp to solve the synthesized task in the sandbox; the resulting files become the reference set F_r and the tool interactions are recorded as the expert trajectory τ. Each candidate is verified by evaluating the reference files against the rubric: for each rubric item the reference does not satisfy, the item is revised if it is unsupported by the attachments, mismatched with the instruction or otherwise unreasonable; if the item is reasonable the rubric is kept and the expert is asked to revise the deliverables once in the sandbox. The retained instances form the final task set D together with verified expert trajectories Z.
 
-Like WeaveBench from Nov 9, it evaluates deliverables; unlike WeaveBench, it synthesizes training examples and trains a smaller model.
+**Data attrition.** Starting from 10,000 seed documents, about 2,200 are discarded at workflow extraction and about 3,800 during attachment searching and verification, leaving about 4,000 task instances. Each filtering step is a structured JSON decision (during workflow extraction only documents labelled `"workflow": true` are kept; during attachment searching only files listed under `highly_relevant_files` are retained).
+
+**Statistics.** Each task carries 2.51 attachments on average and 15.3 rubric items on average. Attachment counts and sizes by type: 5,010 PDFs (avg 1.00 MB, 15.0 pages), 3,149 DOCX (0.25 MB, 13.7 pages), 1,258 XLSX (0.20 MB), 390 PPTX (0.78 MB, 23.6 pages). The type distribution follows real-source availability — more PDFs, fewer presentations — which the authors treat as preserving the authenticity of the file environments. Expert trajectories average 18.0 steps and 41.8k tokens.
+
+**Training.** The 4k instances are split with no task overlap: 3k for SFT and 1k for RL. SFT teaches the model to follow expert trajectories, inspect files and perform tool-based operations for deliverable construction; each trajectory is split into per-round samples so every sample fits the Qwen3 chat template, and SFT runs for a fixed two epochs. RL starts from the SFT model and optimises with GRPO in the persistent sandbox. Because agent-as-a-judge evaluation needs extra interactive tool use and is inefficient during RL, **Qwen3.6-Plus is used as an MLLM-as-a-judge** for outcome scoring: after completion the generated deliverable, relevant file evidence and reference files are converted into model-consumable representations — .pdf, .pptx and .docx files rendered into images, .xlsx files represented by recalculated values and formulas in Markdown together with rendered page images, preserving cell-level content and visual layout — and scored against the synthesized rubric and reference files. The reward is the judge's score normalised by the rubric's maximum score, and 0 if no deliverable was produced. Only outcome reward is used; there are **no explicit penalties for intermediate tool-call errors**, deliberately, to avoid inducing tool-specific calling preferences.
+
+## Evidence
+
+All results are **author-reported** from this single preprint; none has been independently replicated.
+
+**Setup.** Baselines are GPT-4.1, Gemini-2.5-Pro and Claude-Opus-4.5 (closed source) and DeepSeek-v3.1, GLM-4.7, Qwen3-30B-A3B-Thinking-2507, Qwen3-235B-A22B-Thinking-2507 and Qwen3-VL-235B-A22B-Thinking (open source), plus the Agent-R² base, SFT and final models. GDPval (Patwardhan et al., 2025) is the **in-domain** benchmark, split by deliverable type into office and non-office; OfficeQA (Opsahl-Ong et al., 2026) is the **out-of-domain** benchmark, using its official Markdown version where office source files are provided as plain-text Markdown. GDPval deliverables are graded with an agent-as-a-judge protocol using Gemini-3.1-Pro as judge; OfficeQA combines rule-based matching with model-based assessment. Both benchmarks allow a maximum of 100 steps. For text-only solvers, `view_image` calls are handled by an auxiliary multimodal model of comparable family and scale (Qwen3-VL for the Qwen3 family, DeepSeek-v4-Flash for DeepSeek-v3.1). **Pass@k** allows up to k attempts and scores the first attempt that produces a deliverable (GDPval) or a correct answer (OfficeQA).
+
+**GDPval results** (Pass@1 / Pass@3; Office, Non-Office, Full):
+
+| Model | Office | Non-Office | Full |
+|---|---|---|---|
+| GPT-4.1 | 38.0 / 51.5 | 44.9 / 55.5 | 39.4 / 52.3 |
+| Gemini-2.5-Pro | 57.0 / 59.4 | 61.4 / 63.3 | 57.9 / 60.2 |
+| Claude-Opus-4.5 | 73.8 / 77.4 | 68.2 / 72.3 | 72.6 / 76.3 |
+| DeepSeek-v3.1 | 48.3 / 57.5 | 50.9 / 61.7 | 48.8 / 58.4 |
+| GLM-4.7 | 60.8 / 67.1 | 61.9 / 68.3 | 61.1 / 67.4 |
+| Qwen3-30B-A3B-Thinking-2507 | 33.7 / 38.5 | 40.4 / 44.9 | 35.0 / 39.8 |
+| Qwen3-235B-A22B-Thinking-2507 | 46.9 / 52.9 | 52.0 / 58.6 | 48.0 / 54.1 |
+| Qwen3-VL-235B-A22B-Thinking | 48.4 / 50.9 | 54.7 / 57.9 | 49.7 / 52.4 |
+| Qwen3-4B-Thinking-2507 (base) | 31.1 / 35.7 | 37.8 / 42.3 | 32.4 / 37.0 |
+| Agent-R²-4B-SFT | 45.9 / 51.5 | 42.8 / 47.6 | 45.3 / 50.7 |
+| Agent-R²-4B | 51.5 / 54.7 | 48.9 / 55.1 | 51.0 / 54.8 |
+
+The headline is **51.0% vs 48.0% Pass@1** for Qwen3-235B-A22B-Thinking-2507 on the full set — a 3.0-point margin from a 4B model — plus 18.6 points over its own base model. On Pass@3 the margin is 54.8% vs 54.1%, i.e. 0.7 points. On office tasks the final model comes within 4.7 points of Gemini-2.5-Pro on Pass@3 (54.7 vs 59.4). The paper attributes the stage split as: SFT brings the larger gains on office tasks by imitating expert trajectories, while RL contributes the larger gains on the less directly targeted non-office tasks.
+
+**OfficeQA (out-of-domain) results** (Pass@1 / Pass@3): base Qwen3-4B-Thinking-2507 2.2 / 4.5; Qwen3-30B-A3B-Thinking-2507 2.9 / 5.7; Qwen3-235B-A22B-Thinking-2507 13.8 / 25.6; Agent-R²-4B-SFT 11.4 / 21.7; **Agent-R²-4B 14.8 / 26.8**. The out-of-domain transfer is the notable part: a 2.2 → 14.8 point improvement on document-grounded QA from productivity-work training.
+
+**Behavioural analysis.** The base model averages 6.7 tool-call steps and 2.88 tool-call errors per sample; the SFT model rises to 39.0 steps and 16.3 errors, with completion rate falling from 86.8% to 78.2%; the RL model averages 33.1 steps and 12.9 errors with a completion rate of 90.9%. The paper defines *effective steps* as tool-call steps that do not result in errors and reports a positive correlation between effective steps and GDPval Pass@1.
+
+**Shortcut behaviour on all 220 GDPval tasks** (rule-based matching on trajectories and deliverables; metric definitions in the paper's Appendix C):
+
+| Metric (%) | Base | SFT | RL |
+|---|---|---|---|
+| Re-checking the deliverable ↑ | 0.5 | 91.7 | 95.8 |
+| Writing despite an unfixed error ↓ | 55.0 | 16.0 | 11.0 |
+| Numerical-error fix rate ↑ | 60.7 | 79.6 | 85.7 |
+| Deliverables with placeholder text ↓ | 12.5 | 9.6 | 5.7 |
+| Traceable numbers in deliverables ↑ | 31.2 | 34.6 | 38.8 |
+
+The paper's reading: the base model rarely re-checks its deliverable and writes the deliverable right after an unfixed error in 55% of build-phase error episodes; after SFT and RL the agent re-checks almost every deliverable and such bypasses fall to 16% and 11%. Placeholder text falls to 5.7%, the same rate as in the expert-written GDPval deliverables. From SFT to RL, writer code that masks errors with `except → default/pass` falls from 4.1% to 0.9%, and the share of traceable numbers rises from 34.6% to 38.8%.
+
+**Ablations.** Replacing the attachment-searching stage with model-generated files on a 1k subset and re-synthesising each task the same way yields matched pairs; the SFT model trained on real files reaches **43.3** GDPval Pass@1 against **41.4** for the synthetic-file counterpart — a 1.9-point effect. Expert trajectories also use 2.54× more tool calls with real files (20.4 vs 8.0). Removing rubric rewards from RL (starting from the same SFT model) lowers GDPval Pass@1 from **51.0 to 49.5**.
+
+**Controls against confounds.** A **judge-stability** study evaluates Agent-R²-4B and Qwen3-235B-A22B-Thinking-2507 on all 220 GDPval tasks three times under each of two judges, Gemini-3.1-Pro and DeepSeek-v4-Flash: per-task median absolute difference between repeats is 3.2 and 3.1 points (mean 5.7 and 5.4), Agent-R²-4B stays within 50.8–51.1 (Gemini-3.1-Pro) and 51.7–52.3 (DeepSeek-v4-Flash) while Qwen3-235B stays within 47.7–48.2 and 49.2–49.9, the two judges agree on relative quality with per-task Pearson correlation 0.93, and the lowest Agent-R²-4B score exceeds the highest Qwen3-235B score in all six evaluations. A **data-scaling** study (SFT on 1k/2k/4k trajectories, scored 0–1 on 100 held-out synthesized tasks) gives held-out scores 0.486 / 0.507 / 0.617 and win rates over the base of 64% / 67% / 73%, while GDPval Pass@1 saturates at 43.3 / 44.9 / 45.5 — the paper's evidence that the pipeline keeps producing useful supervision and that the benchmark was not overfitted. A **4k-SFT control** (training on all 4k expert trajectories) reaches 45.5, only slightly above the 3k-SFT model (45.3) and well below SFT+RL (51.0), which controls for the gain coming from more data or from teacher distillation rather than from RL. An **additional benchmark**, GTA-Workflow (132 open-ended workflows), gives a Root Score of 4.52/10 for Agent-R²-4B against 1.53/10 for its base model and 5.15/10 for DeepSeek-v4-Flash.
+
+**Decontamination audit.** Attachment SHA-256 hashes and recovered source URLs do not overlap with any file in GDPval or OfficeQA. Only 0.6% of source domains appear in GDPval instructions. Nearest-neighbour 5-gram MinHash Jaccard similarity to benchmark documents averages 0.005 for GDPval (max 0.125) and 0.009 for OfficeQA (max 0.023), against 0.36 for two different issues of the same U.S. Treasury Bulletin. Instruction-level embedding cosine similarity to the nearest training instruction averages 0.43 for GDPval and 0.36 for OfficeQA — below the 0.46 similarity between a GDPval prompt and its nearest *other* GDPval prompt, and far below the 0.93 of a paraphrase.
+
+**Manual quality audit (100 examples).** Workflow–question alignment 86% (the other 14 partially aligned: some questions use descriptive calculation instead of causal or simulation analysis, some omit cross-validation, some omit or modify a requested artifact); rubric-item validity 99.8% (two items inaccurate because repeated calculations produce wrong numbers); visual presentation 97%. On the same 100 tasks, cross-file consistency 95% (one example mixes GPU specifications with data on ASIC Bitcoin miners) and task feasibility 85%. Rubric grounding: of the specific numbers appearing in training rubrics, 41.9% appear in the instruction, 39.0% appear only in the attachments, and 19.1% appear in neither and must be computed.
+
+**Effective steps decomposed** (SFT → RL, per task): computation 11.9 → 7.3, attachment reading 3.4 → 3.4, deliverable writing 2.3 → 2.7, build phase 4.9 → 5.5, and the share of steps spent on reading, writing and checking the deliverable rises 40% → 48%. Within each model, longer trajectories score *lower* (per-task Spearman −0.15 for SFT, −0.41 for RL), and the share of runs hitting the 100-step limit drops from 8.2% to 3.6%.
 
 ## Limitations
 
-Author-reported model comparison; benchmark task distributions and model settings matter, and no independent replication was checked.
+**Stated by the authors.** The paper does not include a separate "Limitations" section; the caveats it does state are distributed. The authors report that the pipeline "keeps producing useful supervision as it scales" while GDPval saturates, acknowledge that SFT's longer exploration "does not necessarily produce a successful deliverable" because of limited model capacity and environmental complexity, and note that "limited generalization" means not every exploration attempt succeeds. The manual audit reports partial workflow–question alignment in 14 of 100 examples and cross-file inconsistency in 5%. The data-scaling result is presented as evidence that they "do not overfit the benchmark". Nothing in the inspected text discloses a training-data release, an evaluation-code release, or licensing/robots compliance detail for the web-sourced attachments beyond the code URL.
 
-## Reproducible next step
+**Assessed from the reporting.**
 
-Create 20 real-document deliverable tasks from permission-cleared technical standards and project files; grade factual grounding, artifact correctness and unsupported shortcuts separately.
+- **Single source, and the artifact was not inspected.** Everything rests on one arXiv preprint (v1, 5 November 2026). The claimed code release was not opened, cloned or run, and no independent replication is known.
+- **The headline margin is small relative to judge noise.** The claim rests on 51.0% vs 48.0% Pass@1 on GDPval. The paper's own judge-stability appendix measures a **median per-task absolute difference of 3.2 points between repeated evaluations** of the same model by the same judge (mean 5.7), i.e. of the same order as the margin being claimed. The paper's defence is that the ranking is stable across two judges and three repeats (Agent-R²-4B's minimum always exceeds Qwen3-235B's maximum), which is an ordering argument, not a magnitude argument — the effect size of the gap itself is not established against that noise floor. No confidence intervals or significance tests on the headline gap are reported.
+- **Both headline benchmarks are LLM-graded.** GDPval uses an agent-as-a-judge with Gemini-3.1-Pro; the RL reward uses Qwen3.6-Plus as MLLM-as-a-judge over rubrics that the same synthesis model wrote. A rubric authored by the pipeline and graded by an LLM can encode the pipeline's own notion of a good deliverable; the OfficeQA result (rule-based matching plus model-based assessment) is the only partly rule-based number.
+- **The training data is derived from the same pipeline that produced the rubrics.** The 4k instances come from the synthesis pipeline, the rubrics come from that pipeline, and the reference files come from Claude-Opus-4.5 solving its own synthesized tasks. Nothing in the paper separates "the model learned productivity work" from "the model learned the judges' rubric style".
+- **The real-file ablation is weak.** 43.3 vs 41.4 Pass@1 on a 1k subset, with no confidence interval, on the metric that is itself LLM-judged. The paper's stronger supporting observation is behavioural (2.54× more tool calls in the expert trajectories), which is a statement about task difficulty, not about agent quality.
+- **The rubric-reward ablation is small.** 51.0 → 49.5 without rubric rewards, again with no interval, and the two arms differ in an outcome signal that is itself a judge score.
+- **Manual audits are self-reported.** 86% alignment, 85% feasibility and 99.8% rubric validity come from the authors' own 100-example inspection; 85% feasibility means roughly one task in six in the retained set may not be completable from its instruction and attachments.
+- **Contamination is audited at four levels but not against the training distribution's own overlap with productivity benchmarks generally** — no check against agent benchmarks beyond GDPval and OfficeQA is reported.
+- **The evaluation harness is favourable to the trained model.** The trained model's own auxiliary vision backend (Qwen3-VL-4B-Thinking) matches its base family, while some baselines are paired with different backbones; the paper says the choice was made "where possible" to promote fairness, which leaves some pairings unequal.
+- **DeepSeek-v3.1 is evaluated with a different vision backend** (DeepSeek-v4-Flash, a different model generation) — an unequal comparison the paper discloses in its appendix table.
 
-## Related
+## Competing approaches
+
+The paper's own related work separates **benchmarks for real-world productivity tasks** — GDPval (Patwardhan et al., 2025), $1M-Bench (Yang et al., 2026), Agents' Last Exam (Sun et al., 2026), Finance Agent Benchmark (Bigeard et al., 2025), APEX-Agents (Vidgen et al., 2026), AgentSkillOS (Li et al., 2026), ClawBench (Zhang et al., 2026), EdgeBench (Zhu et al., 2026), Workspace-Bench (Tang et al., 2026) and EnterpriseClawBench (Zhong et al., 2026) — from **data synthesis for agent post-training**: AgentTrek (Xu et al., 2025b), Unlocking Implicit Experience (Xu et al., 2026b), EnvScaler (Song et al., 2026), EnvFactory (Xu et al., 2026a), Agent-World (Dong et al., 2026), Terminal-World (Cheng et al., 2026), Endless Terminals (Gandhi et al., 2026), CLI-Universe (Hua et al., 2026) and Synthetic Computers at Scale (Ge et al., 2026). The authors' differentiation claim is that prior work targets specific tools with predefined interfaces or structured text files, whereas Agent-R² grounds task synthesis in real occupational workflows with authentic multi-format attachments.
+
+Within this knowledge base the comparison is analyst-level, not a shared implementation: Agent-R² *synthesises training data and trains a model* on deliverable-level tasks, while [[projects/weavebench]] *evaluates* hybrid-interface agents with a trajectory-aware judge, and [[projects/receipt]] supplies process-state evidence for whether a claimed completion happened. The rubric-scored deliverable approach is an instance of the [[techniques/verification-and-evidence]] pattern and sits close to [[concepts/evaluator-circularity]], since the rubric generator and the rubric grader are both models.
+
+## Implications
+
+The following is analysis by the KB maintainers, not a claim of the authors.
+
+The most transferable engineering idea is **grounding synthetic tasks in artifacts that already exist**. Replacing the attachment-searching stage with model-generated files costs only 1.9 points of GDPval Pass@1 in the authors' ablation, but it also collapses the expert trajectories from 20.4 to 8.0 tool calls — a 2.5× difference in how much work a solver must do to ground itself. The practical lesson for teams building training data is that synthetic files may be cheap enough to keep in the training mix, but they will teach agents to work on tidier problems than they will face. The fidelity of the *inputs* is what sets the difficulty of the task.
+
+Second, **the shortcut-behaviour metrics are the reusable part, not the headline score**. "Re-checking the deliverable", "writing despite an unfixed error", "placeholder text" and "traceable numbers" are four cheap, rule-based, trajectory-level measures that a team can compute on its own logs without an LLM judge and without a reference answer. The paper's most striking number is 0.5% → 95.8% on re-checking: a metric that separates "produced a file" from "verified the file". Any agent framework that emits deliverable-producing actions can instrument these four quantities today.
+
+Third, **the RL result argues for outcome-only rewards with no process penalties**. The authors deliberately omit penalties for intermediate tool-call errors to avoid teaching tool-calling preferences, and the resulting model makes *fewer* errors (12.9 vs 16.3) and completes more often (90.9% vs 78.2%) while spending fewer steps than the SFT model. In other words the shortcut suppression appears to come from what the reward measures (deliverable quality), not from shaping the trajectory. Teams that add process shaping should check it is not simply taxing exploration — the SFT stage's own trajectory length was already 5.8× the base model's.
+
+Fourth, **the 4k-SFT control is the right experiment to copy**. Separating "more data" from "better use of data" by training an arm on all 4k trajectories is cheap and decisive: it showed the gain was RL, not distillation. Data-scaling curves that saturate on the benchmark while continuing to rise on held-out synthetic tasks are exactly the pattern needed to show the pipeline is not just benchmark-fitting.
+
+Fifth, **the decontamination audit is a template worth reusing**. Four levels (file hashes and source URLs, source domains, near-duplicate documents via MinHash, instruction-level embedding similarity) with concrete reference points (0.36 for two issues of the same bulletin; 0.93 for a paraphrase) make the claim auditable rather than assertable. The comparison "training instruction vs nearest other benchmark prompt" is the one that generalises best.
+
+## Reproducible experiment
+
+The paper claims a code release but the KB maintainers did not inspect it, so a faithful check means reimplementation from the method section and appendices, which do specify the pipeline in usable detail.
+
+1. **Pipeline replication at reduced scale.** Take 1,000 web-corpus segments with discipline metadata, seed them with O\*NET occupational tasks, extract file-oriented workflows with a synthesis model, run the search-and-verify attachment loop with the stated filters (>50 pages or >2 MB discarded), and synthesise instructions and rubrics, then have an expert policy solve each task once for reference files and trajectories. The paper's attrition to expect is roughly 40% survival at each of the two filtering stages. Pass criterion: the surviving set has comparable attachment counts (the paper's 2.51 per task) and rubric density (15.3 items per task) — a much lower rubric density would mean the rubrics are not fine-grained in the same sense.
+2. **Real-file vs synthetic-file arm on a matched subset.** Re-synthesise the same tasks with model-generated attachments, train one SFT model per arm under an identical recipe, and compare on a held-out deliverable suite. The paper's reference is 43.3 vs 41.4 Pass@1 with expert trajectories at 20.4 vs 8.0 tool calls; the tool-call ratio is the more robust signal, since a 1.9-point judged difference is inside the paper's own judge noise.
+3. **Shortcut metrics before and after training.** Instrument your own trajectories for the four rule-based metrics (re-check rate, write-despite-unfixed-error rate, placeholder-text rate, traceable-number share) and compare the base model, an SFT model and an SFT+RL model. The paper's reference is 0.5 → 91.7 → 95.8 for re-checking, 55.0 → 16.0 → 11.0 for writing despite an unfixed error, and 12.5 → 9.6 → 5.7 for placeholder text. These are computable without a judge and are the cleanest of the paper's claims to reproduce.
+4. **Judge-noise budget before trusting a small margin.** Grade the same 220 (or your own 50) deliverables three times with the same judge and twice with a second judge, and compute the per-task absolute differences. The paper's reference is a median per-task difference of 3.2–3.1 points (mean 5.7) with per-task Pearson correlation 0.93 between judges. Before claiming that a trained model beats a larger baseline, establish that the margin exceeds this floor; the paper's own 3.0-point GDPval gap is comparable to it, and only the *ordering* was shown to be stable.
+
+Substituting available open-weight models for the paper's hosted backbones is unavoidable; record the substitution, the judge model and its version, and the rubric source with any comparison.
+
+## Evidence status
+
+This page is grounded in a full read of the primary source — the arXiv abstract page (https://arxiv.org/abs/2611.08219) and the complete HTML full text including appendices A–H and the reference list (https://arxiv.org/html/2611.08219v1) — fetched on 2026-11-10. Every quantitative result is **author-reported**; the baselines were run by the authors; the paper is a single preprint (v1, 5 November 2026) with no peer-reviewed venue claimed. The code URL given in the paper's footnote (`https://github.com/ZJU-REAL/Agent-R2`) was not opened, cloned or executed by the KB maintainers, and no independent replication is known. Claim types are separated in the text: the "real work needs real data" framing and the differentiation from prior synthesis pipelines are the authors'; the items under "Assessed from the reporting" and the whole Implications section are analysis by the KB maintainers. Nothing on this page was reproduced, executed, cloned or tested by the KB maintainers.
+
+## Historical coverage
 
 - [[briefings/2026/11/2026-11-10]] — dated full-fidelity research and cross-project synthesis.
