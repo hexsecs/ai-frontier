@@ -5,9 +5,13 @@ summary: "Where these agent systems are trustworthy, the trust comes from struct
 type: concept
 depth: full
 created: 2026-11-02
-updated: 2026-11-07
-related: [github-contribution-check, openbot, tinyastral, dittany, envos, cheme-as-code]
+updated: 2026-11-12
+related: [llm-as-code, spec-first-verification-agents, github-contribution-check, openbot, tinyastral, dittany, envos, cheme-as-code]
 sources:
+  - url: https://arxiv.org/abs/2606.15874
+    retrieved: 2026-11-12
+  - url: https://arxiv.org/abs/2611.02285
+    retrieved: 2026-11-12
   - url: https://github.github.com/gh-aw/blog/2026-11-02-weekly-update/
     retrieved: 2026-11-02
   - url: https://github.com/github/gh-aw/blob/main/.github/workflows/contribution-check.md
@@ -70,3 +74,9 @@ This concept is the KB's analytical construct, first mined in mining pass 2 (202
 ## 2026-11-07 evidence connections
 
 - [[projects/cheme-as-code]]: newly linked primary-source project; see its dated briefing and evidence limitations before treating this relationship as a universal mechanism.
+
+## 2026-11-12 cross-briefing synthesis: program-owned transitions and formal gates
+
+[[projects/llm-as-code]] (https://arxiv.org/abs/2606.15874) places branching, stopping and call-tree context in code instead of model instructions; this **supports the design pattern**, but its reported stability is not independent evidence of a security guarantee. [[projects/spec-first-verification-agents]] (https://arxiv.org/abs/2611.02285) proposes proof-gated implementation against formal specifications; it is a proposal, not evidence that proof generation or human-review reduction works in production. Compared with earlier [[projects/github-contribution-check]] and [[projects/openbot]], the novelty is the control/verification surface, not a demonstrated universal improvement. Existing counterevidence remains: shipped allow-all defaults, constraints that omit checks, and unmeasured enforcement effectiveness.
+
+**Reproducible proposed test:** Run 25 fixed CI tasks with model-directed versus program-owned control, each with and without independent postcondition checks; deliberately include interactive commands and missing validators. Report verified success, silent omissions and policy bypasses separately. No new standalone concept is justified.
