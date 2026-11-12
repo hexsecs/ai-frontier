@@ -92,3 +92,11 @@ This is the legacy canonical file-location index. Some entries are now classifie
 - [Agent-R²](./agent-r2.md) — real-document productivity task synthesis.
 - [Strands Box](./strands-box.md) — default-deny history-sensitive agent sandbox.
 - [AgenTopology](./agentopology.md) — declarative multi-agent teams and handoff contracts.
+
+## November 12, 2026
+
+- [Baya — Compile-Then-Execute](./baya-compile-then-execute.md) — Structural web-agent prompt-injection defense with author-reported evaluation.
+- [Harness Matters](./harness-matters-web-agent-security.md) — Paired adversarial calibration of web-agent harness security.
+- [Coder Eval](./coder-eval.md) — Sandboxed coding-agent skill and task regression tests.
+- [fastbrowse](./fastbrowse.md) — Constrained browser actions and quote-grounded evidence.
+- [KinoCut](./kinocut.md) — Guardrailed local media editing MCP tools.
