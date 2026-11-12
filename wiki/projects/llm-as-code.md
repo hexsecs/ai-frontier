@@ -6,6 +6,7 @@ type: project
 created: 2026-11-11
 updated: 2026-11-11
 depth: brief
+related: [receipt, structural-constraint-over-instruction]
 sources:
   - https://arxiv.org/abs/2606.15874
 ---
@@ -37,5 +38,8 @@ Refactor one 20-step browser or CI workflow into explicit program-owned states w
 The abstract reports greater stability without a headline quantitative figure; no independent replication was conducted.
 
 ## Related
+
+- [[projects/receipt]] — analyst `compares_with`: deterministic transition control versus observing incomplete process execution; no head-to-head benchmark (https://arxiv.org/abs/2606.15874; https://arxiv.org/abs/2611.01930).
+- [[concepts/structural-constraint-over-instruction]] — architecture-level support, not proof of effectiveness.
 
 - [[briefings/2026/11/2026-11-11]]
