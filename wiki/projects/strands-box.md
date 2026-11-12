@@ -6,6 +6,7 @@ type: project
 created: 2026-11-10
 updated: 2026-11-10
 depth: full
+related: [lifelong-materials-agent-memory]
 sources:
   - https://github.com/strands-agents/box
 ---
@@ -35,5 +36,7 @@ Preview-stage project; do not infer production hardening or complete containment
 In a disposable VM, test whether reading a designated secret file reliably blocks subsequent outbound HTTP and MCP calls; test bypass paths and policy logging.
 
 ## Related
+
+- [[projects/lifelong-materials-agent-memory]] — reciprocal analyst `compares_with`: externally enforced action-history policy versus reusable learned failure guards; neither is a substitute for the other (https://github.com/strands-agents/box; https://arxiv.org/abs/2608.11224).
 
 - [[briefings/2026/11/2026-11-10]] — dated full-fidelity research and cross-project synthesis.
