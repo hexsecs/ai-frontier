@@ -6,6 +6,7 @@ type: project
 created: 2026-11-10
 updated: 2026-11-10
 depth: full
+related: [llm-as-code]
 sources:
   - https://arxiv.org/abs/2611.01930
 ---
@@ -35,5 +36,7 @@ Author-reported evaluation; not independently replicated here. Results depend on
 Instrument ten common deployment commands, including confirmation prompts, password requests and editor invocations; assert both process completion and target-state postconditions.
 
 ## Related
+
+- [[projects/llm-as-code]] — reciprocal analyst `compares_with`: control-flow ownership and process-state detection solve different failure classes (https://arxiv.org/abs/2611.01930; https://arxiv.org/abs/2606.15874).
 
 - [[briefings/2026/11/2026-11-10]] — dated full-fidelity research and cross-project synthesis.
