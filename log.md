@@ -49,3 +49,5 @@ The wiki now has zero content pages below `full`: 39 deep, 20 full (the seven ca
 - 2026-11-10: Archived complete five-item research briefing; created RECEIPT, ToolSpace, Agent-R², Strands Box and AgenTopology canonical pages with source URLs, comparisons, limitations, experiments and mining audit. Updated root and category indexes. No unsupported new concept was created.
 
 - 2026-11-11: Archived complete five-item AI Frontier briefing; mined five source-scoped canonical projects, documented five evidence-labeled relationships, updated navigation and recorded cross-briefing source-concentration audit. No historical snapshot overwritten.
+
+- 2026-11-12: Addressed PR #35 review findings without replacing the November 11 historical narrative: restored 4-core/1-exploratory (80/20) classification; added evidence-labeled reciprocal comparisons to LLM-as-Code/RECEIPT and materials-memory/Strands Box; updated existing agent-skills-and-memory and structural-constraint synthesis pages with support, counterevidence, limitations and reproducible experiments. CI and merge verification required.
