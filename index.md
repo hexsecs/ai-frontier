@@ -18,6 +18,8 @@ A curated, source-backed guide to practical agentic AI, autonomous workflows, an
 
 ## Latest briefing
 
+- [November 12: bounded browser agents and verifiable tool execution](wiki/briefings/2026/11/2026-11-12.md) — five sourced findings, portable chart, architecture and knowledge mining.
+
 - [November 10: executable evidence and agent substrate](wiki/briefings/2026/11/2026-11-10.md) — five new implementation-led findings and reproducible CI experiment.
 
 ## Latest synthesis
