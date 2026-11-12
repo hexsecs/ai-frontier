@@ -6,6 +6,7 @@ type: project
 created: 2026-11-11
 updated: 2026-11-11
 depth: brief
+related: [strands-box, agent-skills-and-memory]
 sources:
   - https://arxiv.org/abs/2608.11224
 ---
@@ -37,5 +38,8 @@ Record recurring OpenShelf CI failures as executable preflight checks, then comp
 Older domain-diversifying study; author-reported results in computational materials workflows, not production generality.
 
 ## Related
+
+- [[projects/strands-box]] — analyst `compares_with`: failure-derived reusable guards versus externally enforced access policies; no demonstrated integration (https://arxiv.org/abs/2608.11224; https://github.com/strands-agents/box).
+- [[techniques/agent-skills-and-memory]] — source-scoped evidence for procedural memory, bounded by negative-transfer and gate-ablation gaps.
 
 - [[briefings/2026/11/2026-11-11]]
