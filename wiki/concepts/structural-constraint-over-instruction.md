@@ -5,8 +5,8 @@ summary: "Where these agent systems are trustworthy, the trust comes from struct
 type: concept
 depth: full
 created: 2026-11-02
-updated: 2026-11-07
-related: [github-contribution-check, openbot, tinyastral, dittany, envos, cheme-as-code]
+updated: 2026-11-10
+related: [github-contribution-check, openbot, tinyastral, dittany, envos, cheme-as-code, builderio-agent-native, agent-orchestrator]
 sources:
   - url: https://github.github.com/gh-aw/blog/2026-11-02-weekly-update/
     retrieved: 2026-11-02
@@ -18,6 +18,10 @@ sources:
     retrieved: 2026-11-02
   - url: https://arxiv.org/abs/2610.40246
     retrieved: 2026-11-02
+  - url: https://github.com/BuilderIO/agent-native/pull/8670
+    retrieved: 2026-11-10
+  - url: https://raw.githubusercontent.com/OrchestratorInc/agent-orchestrator/main/docs/architecture.md
+    retrieved: 2026-11-10
 ---
 
 # Structural constraint over instruction
@@ -70,3 +74,12 @@ This concept is the KB's analytical construct, first mined in mining pass 2 (202
 ## 2026-11-07 evidence connections
 
 - [[projects/cheme-as-code]]: newly linked primary-source project; see its dated briefing and evidence limitations before treating this relationship as a universal mechanism.
+
+## 2026-11-10 evidence connections
+
+Two further instances from the depth pass over the November 3–8 project pages (analyst-level links; neither source names the concept), each adding an enforcement kind the existing instances lack:
+
+- **[[projects/builderio-agent-native]] — a review convention made a checked invariant.** The PR's 985-line AST guard (`scripts/guard-no-unobserved-writes.ts`) turns "every new write site must be observed" from a review convention into a per-function, path-ordered, alias-aware checked rule with an explicit escape hatch (`// observed-write-ok: <reason>`), and the SQL write-classifier's defaults fail closed everywhere the grammar is ambiguous (unknown statement shapes, multi-statement strings, queries with no SQL text, and `SELECT`s calling side-effecting built-ins all read as writes). "Instruct the model to be careful" is exactly what this design does not do. The instance carries this concept's cost bound inside itself: the guard's own header documents that an HTTP-client or SDK import passes on *any* note in the file, because imports have no call site — structure capped exactly where static analysis stops.
+- **[[projects/agent-orchestrator]] — the irreversible action gets the highest evidential bar.** Fleet supervision made structurally conservative: "Failed probes are NOT proof of death. A session is only terminated when the runtime and process are both clearly dead and recent activity doesn't contradict that," plus no merged-PR ownership — the most irreversible action (killing a worker) cannot be triggered by an instruction or a hunch, only by durable facts. "Display status is never stored. It is computed at read time from durable facts" is the same locus rule applied to state. Vendor-documented design with no outcome measurement, so it extends this concept's mechanism evidence, not its (already thin) effectiveness evidence.
+
+Both rows inherit the concept's standing bound: these are design-verified safeguards, not measured ones.
