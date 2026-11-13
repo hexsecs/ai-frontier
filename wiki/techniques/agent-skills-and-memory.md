@@ -5,9 +5,10 @@ title: "Agent skills and memory"
 summary: "Persistent skills and memory let frozen models improve when admission to the store is gated; ungated memory and unmeasured stores return nulls."
 type: technique
 created: 2026-11-02
-updated: 2026-11-02
-related: [skillcompiler, karma, filingloop, context-as-infrastructure, clingex, security-impact-of-coding-agent-memory-files, improvement-lives-in-external-state, capability-locus]
+updated: 2026-11-13
+related: [coding-agent-memory-post-training-ii, skillcompiler, karma, filingloop, context-as-infrastructure, clingex, security-impact-of-coding-agent-memory-files, improvement-lives-in-external-state, capability-locus]
 sources:
+  - https://arxiv.org/abs/2611.14009
   - url: https://arxiv.org/abs/2610.39508
     retrieved: 2026-11-02
   - url: https://arxiv.org/abs/2610.39884
@@ -78,3 +79,7 @@ All results in this section are **author-reported** from the projects' own paper
 ## Evidence status
 
 This page is a synthesis over the knowledge base's own deepened project and concept pages, written for issue #2; it introduces no source not already carried by those pages. Every quantitative result is **author-reported** from a single preprint or study per project, with no independent replication recorded in this KB; claim types are separated in the text — headline results are the projects' own measurements, the gated-admission pattern and its two residues are the KB's mining-pass-1 register synthesis, and the bounds include both author-acknowledged limits and analyst-assessed ones flagged on the project pages. Nothing here was reproduced, executed, or independently verified by the KB maintainers. Candidate-link verdicts for this page: all six candidate projects are kept, in differentiated roles — SkillCompiler and ClinGeX as the gated-store evidence, KARMA as the behavioral gate, FilingLoop as the form-only gate (kept on the strength of its validate-or-keep rule, with its performance-blindness stated), Context as Infrastructure as the governed store with a null capability result, and the memory-files study as the ungated counterfactual. Seq-K and EvoTeam contribute to the gated-admission section from the register and concept pages but are not listed as connected projects.
+
+## November 13 update: trainable file-operation memory
+
+[[projects/coding-agent-memory-post-training-ii]] (https://arxiv.org/abs/2611.14009) reports on-policy distillation that teaches a policy when to write, search and reuse ordinary workspace files across context resets. This differs from gated persistent skill admission, JAM's query-time retrieval and reusable failure guards. The reported 2.97× relative gain on CAMG-II is author-reported, not evidence that ungated memory is safe or that results transfer to production. Earlier null and negative-transfer findings remain counterevidence. Proposed controlled test: fixed interrupted coding tasks comparing prompted files, learned file operations and no persistent memory with identical budgets and independent acceptance checks.
