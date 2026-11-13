@@ -92,3 +92,8 @@ This is the legacy canonical file-location index. Some entries are now classifie
 - [Agent-R²](./agent-r2.md) — real-document productivity task synthesis.
 - [Strands Box](./strands-box.md) — default-deny history-sensitive agent sandbox.
 - [AgenTopology](./agentopology.md) — declarative multi-agent teams and handoff contracts.
+
+- [CAMP-II](./coding-agent-memory-post-training-ii.md) — Trained file-based memory operations.
+- [ExpertCrowd-SWE](./expertcrowd-swe.md) — Expert-authored merge-blocker grading.
+- [ServerBench](./serverbench.md) — Autonomous LLM serving optimization.
+- [GeoFaham](./geofaham.md) — Artifact-centric geospatial agent collaboration.
