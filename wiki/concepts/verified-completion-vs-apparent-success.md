@@ -4,9 +4,12 @@ title: "Verified completion versus apparent success"
 summary: "Agent completion claims, user approval, tool acknowledgements and passing checks do not establish independently verified outcomes."
 type: concept
 created: 2026-11-09
-updated: 2026-11-10
+updated: 2026-11-13
 depth: full
 sources:
+  - https://arxiv.org/abs/2611.13246
+  - https://arxiv.org/abs/2611.01484
+  - https://arxiv.org/abs/2611.06841
   - https://arxiv.org/abs/2611.07464
   - https://arxiv.org/abs/2611.07947
   - https://arxiv.org/abs/2611.08321
@@ -56,3 +59,7 @@ Two deepened project pages (sources re-read 2026-11-10) extend this concept from
 - **[[projects/agent-orchestrator]] — the discipline applied to UI state and irreversible actions.** The architecture's context-boundary rule refuses to represent continuity it cannot prove ("Prior rows remain intact, but are not represented as context inherited by the new provider"), and session termination is fail-closed against the same error class: "Failed probes are NOT proof of death," with termination requiring both-dead evidence, no contradicting recent activity, and no merged-PR ownership. Vendor-documented mechanism with zero published outcome measurement — the instance shows the discipline *designed*, not its effect measured.
 
 Typed relations: builderio-agent-native **implements** the acceptance-evidence discipline as call-path infrastructure; agent-orchestrator **applies** it to display status and irreversible actions. Neither is a benchmark measurement of the gap like the five instances above, so both rows extend the concept's evidence base rather than re-grade it.
+
+## November 13 update: compositional acceptance
+
+[[projects/expertcrowd-swe]] uses calibrated executable merge blockers (https://arxiv.org/abs/2611.13246); [[projects/crossswe]] rejects incomplete multi-repository fixes (https://arxiv.org/abs/2611.01484); [[projects/serverbench]] independently verifies optimized execution paths (https://arxiv.org/abs/2611.06841). These independently support the *need* for scoped postconditions, not proof that any single grader guarantees correctness. Counterexamples include superficial patches, partial repo changes, unexercised optimized paths and held-out grader opacity. Proposed experiment: 25 fixed tasks with hidden postconditions and adversarial no-op patches; compare apparent success with externally verified success and regression rate. All published performance numbers are author-reported and protocol-relative.
