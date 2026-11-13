@@ -18,7 +18,7 @@ A curated, source-backed guide to practical agentic AI, autonomous workflows, an
 
 ## Latest briefing
 
-- [November 10: executable evidence and agent substrate](wiki/briefings/2026/11/2026-11-10.md) — five new implementation-led findings and reproducible CI experiment.
+- [November 13: compositional acceptance for agents](wiki/briefings/2026/11/2026-11-13.md) — five sourced findings with experiments and cross-briefing mining.
 
 ## Latest synthesis
 
