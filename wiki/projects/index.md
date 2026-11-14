@@ -107,3 +107,8 @@ This is the legacy canonical file-location index. Some entries are now classifie
 - [ServerBench](./serverbench.md) — Autonomous LLM serving optimization.
 - [GeoFaham](./geofaham.md) — Artifact-centric geospatial agent collaboration.
 - [WorkflowArena](./workflowarena.md) — Evaluates model-authored executable multi-agent delegation across 145 integrated tasks.
+
+## November 14 additions
+
+- [AlphaProof Code](./alphaproof-code.md) — Lean-kernel-checked machine-code cryptographic proofs.
+- [agent-browser](./agent-browser.md) — Browser snapshot control and recorded-flow replay.
