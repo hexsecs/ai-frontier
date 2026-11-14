@@ -24,7 +24,8 @@ def validate(text, wiki):
     if not discoveries:
         errors.append('no numbered discovery sections; use ## 1. Title')
     for m in discoveries:
-        following = re.search(r'^#{2,3}\s+', text[m.end():], re.M)
+        level = len(m.group(0).split(' ', 1)[0])
+        following = re.search(r'^#{1,' + str(level) + r'}\s+', text[m.end():], re.M)
         end = m.end() + following.start() if following else len(text)
         targets = CANONICAL.findall(text[m.end():end])
         if not targets:

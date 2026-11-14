@@ -23,6 +23,13 @@ class KnowledgeIntegrationTests(unittest.TestCase):
         errors = validate('## 1. Example\nNo link.\n## Knowledge mining\n[[projects/example]]', self.wiki)
         self.assertEqual(len(errors), 2)
 
+    def test_nested_subsections_belong_to_discovery(self):
+        self.assertEqual(validate('## 1. Example\n### Evidence\nSee [[projects/example]].', self.wiki), [])
+        self.assertEqual(validate('### 1. Example\n#### Evidence\nSee [[projects/example]].', self.wiki), [])
+
+    def test_parent_heading_ends_discovery(self):
+        self.assertTrue(validate('### 1. Example\nNo link.\n## Synthesis\n[[projects/example]]', self.wiki))
+
     def test_missing_target(self):
         self.assertTrue(validate('## 1. Example\n[[projects/missing]]', self.wiki))
 
