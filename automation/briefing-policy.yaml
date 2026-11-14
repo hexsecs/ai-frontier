@@ -29,6 +29,9 @@ process:
   preserve_historical_briefings: true
   update_canonical_pages: true
   require_source_provenance: true
+  inspect_claim_support_before_publication: true
+  never_invent_sources_or_results: true
+  distinguish_availability_identity_and_claim_verification: true
   require_human_review_before_merge: false
   never_infer_negative_feedback_from_non_engagement: true
 
@@ -52,6 +55,7 @@ publication:
   verify_pages_deployment: true
   mandatory_checks:
     - "python scripts/check_frontmatter.py"
+    - "python scripts/check_article_prose.py"
     - "python scripts/check_briefing_mining.py"
     - "openshelf lint ."
     - "chart conversion tests"

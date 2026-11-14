@@ -4,7 +4,7 @@ title: "ToolSpace — Execution-grounded tool environments"
 summary: "Pipeline that mines data, state and retry dependencies from real MCP execution traces to synthesize replayable cross-environment agent tasks"
 type: project
 created: 2026-11-10
-updated: 2026-11-10
+updated: 2026-11-14
 depth: deep
 related: [evaluator-circularity, protocol-relative-scores, preservation-aware-agent-improvement]
 sources:
@@ -20,7 +20,7 @@ ToolSpace is a framework for synthesising long-horizon agent training environmen
 
 Its target is the family of MCP environment-scaling methods the paper calls *data-centric environment synthesis*: synthesize a database and a theme first, then derive tools and tasks from them. The authors identify three consequences of that ordering — tool interfaces that diverge from real ones because tools are reverse-synthesized from the fabricated database; tool-composition links that are built by random linking or shallow LLM judgment rather than by observed execution; and tasks confined to a single environment, because tools are locked inside their own sandboxes and no cross-environment reachability relation exists. ToolSpace reverses the dependency: the tool graph comes first, environments are derived from it, and databases are synthesized only where state actually has to change.
 
-The paper's stated outputs are a typed tool-composition graph mined by deterministic rules from adjacent calls in real execution traces, environment clusters derived from that graph, a cross-environment task sampler that keeps only replay-verified chains, and two harder benchmark splits — AutomationBench Pro (300 tasks) and τ³-Bench Banking Pro (98 tasks) — on which seven frontier models drop by up to 38.2 points. The paper lists a project page (https://toolspace-agent.github.io/), a GitHub repository (https://github.com/dongguanting/ToolSpace) and a Hugging Face model collection (https://huggingface.co/collections/dongguanting/toolspace); these URLs are given in the paper's header and were not fetched for this page.
+The paper's stated outputs are a typed tool-composition graph mined by deterministic rules from adjacent calls in real execution traces, environment clusters derived from that graph, a cross-environment task sampler that keeps only replay-verified chains, and two harder benchmark splits — AutomationBench Pro (300 tasks) and τ³-Bench Banking Pro (98 tasks) — on which seven frontier models drop by up to 38.2 points. The paper lists a project page (https://toolspace-agent.github.io/), a GitHub repository (https://github.com/dongguanting/ToolSpace) and a Hugging Face model collection (https://huggingface.co/collections/dongguanting/toolspace); these URLs are given in the paper's header and were not fetched in this assessment.
 
 ## Mechanism
 
@@ -149,7 +149,7 @@ Finally, the practical caveat: the replay-verification filter is what makes the 
 
 ## Reproducible experiment
 
-The paper states a GitHub repository, a project page with an interactive demo and a Hugging Face model collection; these URLs appear in the paper's header and were not fetched for this page, so their contents and completeness are unverified here. Assuming the pipeline is runnable, a check that would meaningfully probe the claims rather than restate them:
+The paper states a GitHub repository, a project page with an interactive demo and a Hugging Face model collection; these URLs appear in the paper's header and were not fetched in this assessment, so their contents and completeness are unverified here. Assuming the pipeline is runnable, a check that would meaningfully probe the claims rather than restate them:
 
 1. **Edge mining on a small, controlled corpus.** Take one real MCP server set (a handful of tools with a stateful object) plus a few hundred recorded call chains. Mine the three edge types with the stated rules — value-provenance for data edges, mutation/read identity for state edges, error-then-switch for retry edges — and check the two known failure modes by hand: a common constant such as `limit=10` appearing in both calls must not create a data edge, and two calls touching different objects with equal values must not create a state edge. A pass criterion is that the mined edge set matches a hand-labelled set on this sample; a failure would show the rules need more context than the paper describes.
 2. **Witnessed vs judged edges at small scale.** Build the same graph twice — once from the deterministic rules, once by asking a model to propose adjacency — and run the pipeline from each. The paper's ablation reports a large gap (for example AutomationBench 45.8 vs 37.8, τ³-Bench Banking 34.0 vs 26.7) at 35B scale; at small scale the informative measurement is whether the *composition* of the two edge sets differs, i.e. whether the judged set contains edges the rules reject as coincidental.
@@ -160,8 +160,12 @@ If the released artifacts turn out not to contain the pipeline or the Pro task s
 
 ## Evidence status
 
-This page is grounded in a full read of the primary source — the arXiv abstract page (https://arxiv.org/abs/2611.05036) and the complete HTML full text including all seven sections, the three tables, the algorithm and the reference list (https://arxiv.org/html/2611.05036v1) — fetched on 2026-11-10. Every quantitative result is **author-reported**; the Pro-split standard scores come from a third-party leaderboard and the DeepSeek scores from vendor release notes, as the paper states; the paper's comment field reads "Working in progress" and no peer-reviewed venue is claimed. The repository, project-page and model-collection URLs are quoted from the paper's header and were not fetched or inspected for this page. Claim types are separated in the text: the "execution-witnessed edges clearly outperform LLM-judged ones" reading, the beyond-teacher interpretation and the cost-saving framing are the authors'; the items under "Assessed from the reporting" and the whole Implications section are analysis by the KB maintainers. Nothing on this page was reproduced, executed, cloned or trained by the KB maintainers, and no independent replication is known.
+Every quantitative result is **author-reported**; the Pro-split standard scores come from a third-party leaderboard and the DeepSeek scores from vendor release notes, as the paper states; the paper's comment field reads "Working in progress" and no peer-reviewed venue is claimed. The repository, project-page and model-collection URLs are quoted from the paper's header and were not fetched or inspected in this assessment.
 
-## Historical coverage
 
-- [[briefings/2026/11/2026-11-10]] — dated full-fidelity research and cross-project synthesis.
+
+Sources: <https://arxiv.org/abs/2611.05036> · <https://arxiv.org/html/2611.05036v1>.
+
+## Related reading
+
+- [[briefings/2026/11/2026-11-10]]

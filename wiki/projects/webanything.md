@@ -5,7 +5,7 @@ title: "WebAnything: From the Wild Web to Scalable Agent Environments"
 summary: "Fully automated framework reconstructing specified real websites into source-grounded, resettable local environments for web-agent training and evaluation."
 type: project
 created: 2026-10-31
-updated: 2026-11-02
+updated: 2026-11-14
 related: [evaluator-circularity, protocol-relative-scores, scoped-assurance]
 sources:
   - url: https://arxiv.org/abs/2610.37786
@@ -77,12 +77,12 @@ The paper is also a useful disclosure template. Its counting discipline (generat
 
 ## Reproducible experiment
 
-The code is public (MIT) as the `webanything` package and CLI, with a frozen 244-site inventory manifest and three runnable demo sites; per KB policy it was not cloned or executed for this page, so the following is a proposed protocol, not a performed one. A minimal replication of the paper's central tradeoff: pick one small, publicly accessible site within the tool's permitted scope; construct it in Full Coverage mode; freeze the candidate and run the Independent Verifier; then score the reconstruction against the live source on both axes — Pixel Similarity, SSIM, and Text F1 over a handful of matched states (rendering the source reference under the same JavaScript conditions as the mirror, to avoid the paper's asymmetry) — and run a fixed offline interaction test set (navigation, retrieval, a form, a state mutation, state restoration after reset) reporting capability coverage, executed-test success, and all-test pass as separate denominators. The prediction to test: fidelity metrics land high while all-test pass trails them, reproducing the paper's gap between what the mirror shows and what it does. A stricter variant additionally candidate-matches every Builder–Verifier pair, testing whether the discrepancy yield survives the strictness the historical records mostly lack.
+The code is public (MIT) as the `webanything` package and CLI, with a frozen 244-site inventory manifest and three runnable demo sites; per KB policy it was not cloned or executed in this assessment, so the following is a proposed protocol, not a performed one. A minimal replication of the paper's central tradeoff: pick one small, publicly accessible site within the tool's permitted scope; construct it in Full Coverage mode; freeze the candidate and run the Independent Verifier; then score the reconstruction against the live source on both axes — Pixel Similarity, SSIM, and Text F1 over a handful of matched states (rendering the source reference under the same JavaScript conditions as the mirror, to avoid the paper's asymmetry) — and run a fixed offline interaction test set (navigation, retrieval, a form, a state mutation, state restoration after reset) reporting capability coverage, executed-test success, and all-test pass as separate denominators. The prediction to test: fidelity metrics land high while all-test pass trails them, reproducing the paper's gap between what the mirror shows and what it does. A stricter variant additionally candidate-matches every Builder–Verifier pair, testing whether the discrepancy yield survives the strictness the historical records mostly lack.
 
 ## Evidence status
 
-Single arXiv preprint (v1, October 2026) by the system's own authors, five of whom are employed by the company that releases the system; every quantitative claim on this page is **author-reported**, with no independent replication. The primary source was read in full on 2026-11-02 — main text, limitations, ethics, and Appendices A–F — and the linked repository's README was read the same day (its "evidence boundary" section informs several caveats above). Repository code was not cloned or executed, no benchmark was reproduced, and supplementary archives were not separately downloaded; figures were checked for internal consistency within the paper only.
+Single arXiv preprint (v1, October 2026) by the system's own authors, five of whom are employed by the company that releases the system; every quantitative claim on this page is **author-reported**, with no independent replication. Repository code was not cloned or executed, no benchmark was reproduced, and supplementary archives were not separately downloaded; figures were checked for internal consistency within the paper only.
 
-## Historical coverage
+## Related reading
 
 [Briefing 2026-10-31](../briefings/2026/10/2026-10-31.md)

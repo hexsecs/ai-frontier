@@ -4,7 +4,7 @@ title: "EvoAudit / Beneath the Surface"
 summary: "Diagnoses harness self-evolution for task-coverage trade-offs, deployment cost and transfer, and revises four evolution operators accordingly."
 type: project
 created: 2026-11-08
-updated: 2026-11-10
+updated: 2026-11-14
 depth: deep
 sources:
   - https://arxiv.org/abs/2611.07624
@@ -150,8 +150,12 @@ RSIHub exists and the paper specifies its protocols in unusual detail, so an ind
 
 ## Evidence status
 
-This page is grounded in the arXiv abstract page (https://arxiv.org/abs/2611.07624), the complete HTML full text of v1 including appendices A–F and the reference list (https://arxiv.org/html/2611.07624v1), and a read-only inspection of the public RSIHub repository over HTTPS on 2026-11-10: the repository file tree via https://api.github.com/repos/simple-agent-lab/RSIHub/git/trees/main?recursive=1 and the root README via https://raw.githubusercontent.com/simple-agent-lab/RSIHub/main/README.md. Every quantitative result on this page is **author-reported** by the paper's authors from the single preprint, including the four comparison recipes, which the authors reimplemented themselves; the repository section reports what the inspected tree and README contain and do not contain. No code from the repository was cloned, installed or executed, no test suite was run, no evolution run was performed, and no number on this page was recomputed. Nothing on this page was reproduced by the KB maintainers, and no independent replication is known. Claim types are separated in the text: the phenomenon, mechanism and AGE results, and the paper's framing of its own contributions, are the authors'; the items under "Assessed from the reporting and the repository" and the whole Implications section are analysis by the KB maintainers.
+Every quantitative result on this page is **author-reported** by the paper's authors from the single preprint, including the four comparison recipes, which the authors reimplemented themselves; the repository section reports what the inspected tree and README contain and do not contain. No code from the repository was cloned, installed or executed, no test suite was run, no evolution run was performed, and no number on this page was recomputed.
 
-## Historical coverage
 
-- [[briefings/2026/11/2026-11-09]] — dated full-fidelity research and cross-project synthesis that compares EvoAudit against the neighbouring provenance and trajectory projects.
+
+Sources: <https://arxiv.org/abs/2611.07624> · <https://arxiv.org/html/2611.07624v1> · <https://api.github.com/repos/simple-agent-lab/RSIHub/git/trees/main?recursive=1> · <https://raw.githubusercontent.com/simple-agent-lab/RSIHub/main/README.md>.
+
+## Related reading
+
+- [[briefings/2026/11/2026-11-09]]

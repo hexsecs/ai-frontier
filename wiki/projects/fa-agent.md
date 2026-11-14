@@ -4,7 +4,7 @@ title: "FA-Agent: Multimodal Seismic First-Arrival Picking"
 summary: "Multimodal agent reads seismic gathers, calls processing tools and keeps, corrects or removes first-arrival picks, with expert rules stored as skills."
 type: project
 created: 2026-11-07
-updated: 2026-11-10
+updated: 2026-11-14
 depth: deep
 related: [abstention-as-first-class-verdict, improvement-lives-in-external-state]
 sources:
@@ -129,8 +129,12 @@ Substituting a different multimodal model is unavoidable, since GPT-6 Astra may 
 
 ## Evidence status
 
-This page is grounded in a full read of the primary source on 2026-11-10: the arXiv abstract page (https://arxiv.org/abs/2611.06555) and the complete HTML full text of version 2 including the data-and-materials statement and the reference list (https://arxiv.org/html/2611.06555v2). Every quantitative result is **author-reported**; the paper is a single preprint under review at GEOPHYSICS, with no peer-reviewed venue claimed, and the code is stated to become public only after initial review. No independent replication is known. Claim types are separated in the text: the novelty claim and the conservative-principle framing are the authors'; the items under "Assessed from the reporting" and the whole Implications section are analysis by the KB maintainers. Nothing on this page was reproduced, executed, cloned or tested by the KB maintainers, and no field gather was processed or inspected.
+Every quantitative result is **author-reported**; the paper is a single preprint under review at GEOPHYSICS, with no peer-reviewed venue claimed, and the code is stated to become public only after initial review. No independent replication is known.
 
-## Historical coverage
 
-- [[briefings/2026/11/2026-11-07]] — dated full-fidelity report that first mined this source.
+
+Sources: <https://arxiv.org/abs/2611.06555> · <https://arxiv.org/html/2611.06555v2>.
+
+## Related reading
+
+- [[briefings/2026/11/2026-11-07]]

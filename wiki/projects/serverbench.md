@@ -4,7 +4,7 @@ title: "ServerBench: Agent-Designed LLM Serving Systems"
 summary: "Coding agents optimize LLM serving systems under verified workload, latency and GPU-cost constraints."
 type: project
 created: 2026-11-13
-updated: 2026-11-13
+updated: 2026-11-14
 depth: brief
 related: [verified-completion-vs-apparent-success]
 sources:
@@ -34,4 +34,4 @@ Related: [[concepts/verified-completion-vs-apparent-success]]; relation is analy
 In a sandbox, let two coding agents optimize a small inference service against a fixed replay trace; require correctness, p95 latency and cost accounting.
 
 ## Provenance
-[[briefings/2026/11/2026-11-13]] — complete dated narrative.
+[[briefings/2026/11/2026-11-13]]

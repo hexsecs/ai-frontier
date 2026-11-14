@@ -5,7 +5,7 @@ title: "TandemBench"
 summary: "Benchmark that asks decision models to pick optimal two-agent cooking plans and to notice when every supplied plan is suboptimal."
 type: benchmark
 created: 2026-11-08
-updated: 2026-11-10
+updated: 2026-11-14
 related: [protocol-relative-scores, capability-locus, comparator-construction-shapes-margins]
 sources:
   - url: https://arxiv.org/abs/2611.05827
@@ -161,8 +161,12 @@ Report the substituted model, its inference settings and any dataset-version dif
 
 ## Evidence status
 
-This page is grounded in a full read of the primary source on 2026-11-10: the arXiv abstract page (https://arxiv.org/abs/2611.05827) and the complete HTML full text of v1 including appendices A–H and the reference list (https://arxiv.org/html/2611.05827v1). Every quantitative result is **author-reported**; the paper links its dataset and evaluation code publicly, the models were run by the authors under their own protocols, and no independent replication is known. Claim types are separated in the text: the DA/VA decoupling, the stage-versus-total analysis and the interpretation of position sensitivity are the authors'; the items under "Assessed from the reporting" and the whole Implications section are analysis by the KB maintainers. The paper is a preprint (v1, 4 November 2026) with no peer-reviewed venue claimed. Nothing on this page was reproduced, executed, cloned or tested by the KB maintainers.
+Every quantitative result is **author-reported**; the paper links its dataset and evaluation code publicly, the models were run by the authors under their own protocols, and no independent replication is cited. The paper is a preprint (v1, 4 November 2026) with no peer-reviewed venue claimed.
 
-## Historical coverage
 
-- [[briefings/2026/11/2026-11-08]] — the dated briefing that introduced TandemBench.
+
+Sources: <https://arxiv.org/abs/2611.05827> · <https://arxiv.org/html/2611.05827v1>.
+
+## Related reading
+
+- [[briefings/2026/11/2026-11-08]]

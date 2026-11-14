@@ -4,7 +4,7 @@ title: "Agent Orchestrator (OrchestratorInc)"
 summary: "Go-based fleet orchestrator running parallel coding agents in isolated worktrees with CI-repair and review escalation."
 type: project
 created: 2026-11-08
-updated: 2026-11-10
+updated: 2026-11-14
 depth: deep
 sources:
   - https://github.com/OrchestratorInc/agent-orchestrator
@@ -101,9 +101,9 @@ Proposed, not executed; all arms need a test repository with CI and at least two
 
 ## Evidence status
 
-Grounded in HTTPS reads on 2026-11-10 of the repository page, README, docs/STATUS.md, docs/architecture.md, LICENSE and the releases API; no code was executed, installed, cloned or benchmarked by the KB maintainers. **Inspected and checkable:** all mechanism statements above, which any reader can verify against the same public documents. **Vendor-stated:** every working-behaviour claim (the end-to-end GitHub flow, in-flight-turn survival across daemon replacement, the Qwen approval-mode verification, hibernation behaviour). **Not present anywhere in the inspected material:** benchmarks, throughput, reliability, cost, merge-rate or reviewer-quality results, or any independent evaluation. The Implications and assessed-Limitations sections are analysis by the KB maintainers; the reproducible experiment is proposed and not executed.
+**Inspected and checkable:** all mechanism statements above, which any reader can verify against the same public documents. **Vendor-stated:** every working-behaviour claim (the end-to-end GitHub flow, in-flight-turn survival across daemon replacement, the Qwen approval-mode verification, hibernation behaviour). **Not present anywhere in the inspected material:** benchmarks, throughput, reliability, cost, merge-rate or reviewer-quality results, or any independent evaluation. The Implications and assessed-Limitations sections are analysis by the KB maintainers; the reproducible experiment is proposed and not executed.
 
-## Historical coverage
+## Related reading
 
-- [[briefings/2026/11/2026-11-08]] — the dated full-fidelity research and cross-project synthesis briefing that first ingested this repository.
+- [[briefings/2026/11/2026-11-08]]
 - [[projects/claude-agent-acp]] — the Chat driver this project names for Claude Code sessions (source-verified dependency direction: agent-orchestrator documents consuming claude-agent-acp).

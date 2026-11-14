@@ -4,7 +4,7 @@ title: "fastbrowse — Bounded Browser Agent with Quote-Level Evidence"
 summary: "A browser agent that chooses actual page controls, cites source quotes and gates irreversible actions in code."
 type: project
 created: 2026-11-12
-updated: 2026-11-12
+updated: 2026-11-14
 depth: brief
 related: [baya-compile-then-execute]
 sources:
@@ -13,8 +13,8 @@ sources:
 
 # fastbrowse — Bounded Browser Agent with Quote-Level Evidence
 
-**Source:** https://github.com/agent-labs-dev/fastbrowse  
-**Date:** 2026-11-12 (repository inspected; release date unverified)  
+**Source:** https://github.com/agent-labs-dev/fastbrowse
+**Date:** 2026-11-12 (repository inspected; release date unverified)
 **Evidence status:** Source repository inspected; release date and independent evaluation not verified.
 
 ## Mechanism
@@ -41,5 +41,5 @@ Interesting engineering tradeoff and code artifact; claims about cost and reliab
 
 ## Related
 
-- [[briefings/2026/11/2026-11-12]] — complete dated evidence and cross-project synthesis.
+- [[briefings/2026/11/2026-11-12]]
 - [[projects/baya-compile-then-execute]] — analyst comparison, not a demonstrated head-to-head; source URLs and limitations in the briefing.

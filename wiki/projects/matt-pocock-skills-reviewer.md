@@ -4,7 +4,7 @@ title: "Matt Pocock Skills Reviewer"
 summary: "gh-aw PR reviewer applying five commit-pinned Matt Pocock skills: Haiku triage, fixed write shapes, three vendor-reported runs, no accuracy evidence."
 type: workflow
 created: 2026-11-09
-updated: 2026-11-10
+updated: 2026-11-14
 depth: deep
 sources:
   - https://github.github.com/gh-aw/blog/2026-11-06-agent-of-the-day/
@@ -118,9 +118,13 @@ The mechanism's claims are falsifiable on a throwaway repository with gh-aw inst
 
 ## Evidence status
 
-This page is grounded in a full read of two public documents on 2026-11-10, fetched by HTTPS without executing anything: the workflow source (https://raw.githubusercontent.com/github/gh-aw/main/.github/workflows/mattpocock-skills-reviewer.md) and the vendor blog post "Agent of the Day – November 6, 2026" (https://github.github.com/gh-aw/blog/2026-11-06-agent-of-the-day/). **Inspected:** every mechanism statement — triggers, permissions, credit cap, timeout and its #66819 comment, the five pinned skills and their commit, the `pr-triage` agent definition and fallback rule, the investigation budget, the safe-output maxima and encoding rules, the scope and tone rules — comes from the workflow file and can be checked by any reader. **Vendor-claimed:** the three run rows (branches, durations, token counts), the audit of run 42230049178 (zero errors/warnings, adaptive style, four tool types, one comment plus one review), and the two medium-severity audit flags. These are GitHub's reports on GitHub's own repository, with no independent replication and no published denominator. The "assessed" items in Limitations and the whole Implications section are analysis by the KB maintainers, and the reproducible experiment is proposed and not executed. Nothing on this page was installed, cloned, compiled or run by the KB maintainers, and no independent evaluation of this workflow is known to them.
+**Inspected:** every mechanism statement — triggers, permissions, credit cap, timeout and its #66819 comment, the five pinned skills and their commit, the `pr-triage` agent definition and fallback rule, the investigation budget, the safe-output maxima and encoding rules, the scope and tone rules — comes from the workflow file and can be checked by any reader. **Vendor-claimed:** the three run rows (branches, durations, token counts), the audit of run 42230049178 (zero errors/warnings, adaptive style, four tool types, one comment plus one review), and the two medium-severity audit flags. These are GitHub's reports on GitHub's own repository, with no independent replication and no published denominator. The "assessed" items in Limitations and the whole Implications section are analysis by the KB maintainers, and the reproducible experiment is proposed and not executed.
 
-## Historical coverage
 
-- [[briefings/2026/11/2026-11-06]] — finding 2, the dated briefing this page backfills.
+
+Sources: <https://raw.githubusercontent.com/github/gh-aw/main/.github/workflows/mattpocock-skills-reviewer.md> · <https://github.github.com/gh-aw/blog/2026-11-06-agent-of-the-day/>.
+
+## Related reading
+
+- [[briefings/2026/11/2026-11-06]]
 - Sibling gh-aw workflows under the same platform: [[projects/github-contribution-check]] (deterministic rubric selection), [[projects/pr-sous-chef]] (deterministic work selection), and the platform page [[projects/github-agentic-workflows]]; the workflow corpus is [[workflows/index]] and the cross-project synthesis is [[evaluations/briefing-synthesis-2026-11-03-to-09]]. Analyst-level comparison only: [[projects/skillcompiler]] treats skills as compilable programs rather than review guidance — a different use of the skills idea, and no source here connects the two. These are analyst-selected thematic comparisons, not source-verified dependencies.

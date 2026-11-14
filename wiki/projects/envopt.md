@@ -4,7 +4,7 @@ title: "EnvOpt"
 summary: "Automated pipeline that optimizes a shared agent environment for lower cost and better pass rate, training without verifiers."
 type: project
 created: 2026-11-09
-updated: 2026-11-10
+updated: 2026-11-14
 depth: deep
 related: [verified-completion-vs-apparent-success, preservation-aware-agent-improvement, protocol-relative-scores]
 sources:
@@ -127,8 +127,12 @@ The paper's 2026-era hosted backbones (Claude Haiku 4.5, Opus 4.8/5, GPT-5.4-min
 
 ## Evidence status
 
-This page is grounded in a full read of the primary source — the arXiv abstract page (https://arxiv.org/abs/2611.07372) and the complete HTML full text including §4's discussion, the reference list and Appendix A (https://arxiv.org/html/2611.07372v1) — fetched on 2026-11-10. Every quantitative result is **author-reported**; the baselines (GEPA, Meta-Harness, gskill, Advisor Models) were run by the authors, and no independent replication is known. A full-text search for a code or data link found only the third-party data-eng-bench repository and arXiv's own infrastructure, so no EnvOpt artifact is publicly linked in the inspected text. Several result tables and figures are images and are therefore not verifiable from the HTML text alone; the numbers quoted here are the ones stated in prose or in the abstract. Claim types are separated in the text: the third-axis, first-of-its-kind and transfer claims are the authors'; the items under "Assessed from the reporting" and the whole Implications section are analysis by the KB maintainers. Nothing on this page was reproduced, executed, cloned or tested by the KB maintainers, and no attack code from the source was run.
+Every quantitative result is **author-reported**; the baselines (GEPA, Meta-Harness, gskill, Advisor Models) were run by the authors, and no independent replication is cited. A full-text search for a code or data link found only the third-party data-eng-bench repository and arXiv's own infrastructure, so no EnvOpt artifact is publicly linked in the inspected text. Several result tables and figures are images and are therefore not verifiable from the HTML text alone; the numbers quoted here are the ones stated in prose or in the abstract.
 
-## Historical coverage
 
-- [[briefings/2026/11/2026-11-09]] — dated full-fidelity research and cross-project synthesis; this page is the deep-depth grounding of the EnvOpt finding.
+
+Sources: <https://arxiv.org/abs/2611.07372> · <https://arxiv.org/html/2611.07372v1>.
+
+## Related reading
+
+- [[briefings/2026/11/2026-11-09]]

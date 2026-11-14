@@ -1,7 +1,7 @@
 ---
 uid: 9cafe10f-c05b-4127-8fd8-fc3ea28431e8
 created: 2026-11-02
-updated: 2026-11-10
+updated: 2026-11-14
 type: concept
 depth: full
 title: "Improvement lives in external state"
@@ -24,7 +24,7 @@ sources:
 
 ## What it is
 
-The claim: across the systems this knowledge base has deepened, the thing
+The claim: across the systems discussed here, the thing
 that improves is persistent state *around* a frozen model — a skill
 document, a curated corpus, a reward program, a knowledge directory, a
 team library — not the model's weights. The model is held fixed while
@@ -39,7 +39,7 @@ support: in this corpus, the locus of improvement is external state.
 Freezing the artifact is also what makes the improvement inspectable,
 reversible, portable, and its transfer measurable, because the identical
 artifact can be applied unchanged to cases it was not developed on.
-(Mining pass 1 also recorded the alias *frozen-artifact-learning*.)
+Also called *frozen-artifact learning* in this analysis.
 
 ## Evidence for
 
@@ -51,8 +51,7 @@ schema-checked steps; a patch is kept only if it improves a fixed
 validation set, and the initial and final knowledge states are each
 evaluated on the untouched hold-out exactly once, at the end.
 
-**[[projects/tinyastral]]** is the purest tested instance in either
-mining pass. Its first stage evolves only a harness around a frozen
+**[[projects/tinyastral]]** illustrates a measured harness contribution. Its first stage evolves only a harness around a frozen
 teacher: "Only H changes. The weights of π_T stay fixed throughout,
 and M does not act in the environment." RoboTwin success rises from
 33.4% to 63.6% on harness edits alone, and the artifact's portability
@@ -142,7 +141,7 @@ steer. Stored text improves a system only when the channel actually
 moves behavior, which is the separate question owned by the sibling
 concept persistent-memory-steers-later-behavior.
 
-A second null, from mining pass 2, is cleaner.
+A second study supplies a clearer null result.
 [[projects/context-as-infrastructure]] builds, freezes, and serves the
 external state this concept describes — compiled claim–evidence trees,
 graphs, wikis, timelines — and "No compiled structure the authors
@@ -180,7 +179,7 @@ harness, distillation adds +21.6 pp over the untrained 4B
 initialization." But the deposit does not absorb the artifact — "The
 scaffolding is not absorbed into the weights alone; the student is
 deployed within the harness that was evolved around its teacher." The
-concept survives in a two-locus form pass 1 did not have: stage 1 the
+comparison distinguishes two loci: stage 1 the
 pure instance, stage 2 a split between weights and the state carrying
 the gain at deployment.
 
@@ -249,22 +248,7 @@ stored artifacts, and the two should not be merged.
 
 ## Evidence status
 
-This concept is the knowledge base's own analytical construct,
-synthesized on 2026-11-02 in mining pass 1 from the KB's own deepened
-project pages; it is not a term any single source paper uses for the
-pattern. Mining pass 1 graded the candidate **strong**: seven
-supporting pages, six of them non-vendor, spanning two clusters. Every
-underlying result is author-reported from its source paper; none has
-an independent replication recorded in this KB, and the one vendor
-page (github-copilot-fusion) is weighted as architectural description
-only. The bounds above — one null result, one disputed relation
-typing, one capability-locus contradiction — are part of the concept's
-record, not qualifications added later. Mining pass 2 (2026-11-02, over
-the cluster E–F pages) extended the concept with three more supporting
-pages — tinyastral, bioagent, and angler — and two further bounds:
-tinyastral's stage-2 distillation into the weights, and
-context-as-infrastructure's null result, where only cost moved.
-
+This is an analyst interpretation of the cited studies, not an additional experimental result. Underlying measurements remain author-reported; no independent replication is cited. TinyAstral also distills behavior into model weights, and Context as Infrastructure reports cost changes without a measured capability benefit for its compiled artifacts. External persistence alone does not establish improvement.
 
 ## 2026-11-07 evidence connections
 

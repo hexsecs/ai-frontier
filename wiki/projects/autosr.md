@@ -12,8 +12,8 @@ sources:
 
 # AutoSR: Automatic Symbolic Regression by Searching Research States
 
-**Original source:** https://arxiv.org/abs/2608.16876  
-**Date:** 2026-08-17  
+**Original source:** https://arxiv.org/abs/2608.16876
+**Date:** 2026-08-17
 **Evidence status:** Author-reported research; not independently replicated in this knowledge base.
 
 ## Mechanism

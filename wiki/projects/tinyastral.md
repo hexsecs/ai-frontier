@@ -5,7 +5,7 @@ title: "TinyAstral: Transferring Self-Evolving Harnesses to Tiny Generalist Mani
 summary: "An RSI loop evolves a frozen 180B teacher's robot harness (RoboTwin 33.4% to 63.6%), then distills it into a 4B student at 62.8% — all in simulation."
 type: project
 created: 2026-11-02
-updated: 2026-11-02
+updated: 2026-11-14
 related: [capability-locus, comparator-construction-shapes-margins, improvement-lives-in-external-state, structural-constraint-over-instruction, validation-tier-gap]
 sources:
   - url: https://arxiv.org/abs/2610.41216
@@ -81,8 +81,8 @@ A true replication is not extractable: the paper text releases no code, harness,
 
 ## Evidence status
 
-All benchmark results on this page are **author-reported** results from the single authoring team (Huawei / Noah's Ark Lab); no independent replication is cited, and several models involved are too recent for third-party verification. The paper text itself gives **no code, data, or weights URL** — the only repository URL in the text is a competitor's. The project page linked from the arXiv metadata in turn links a code repository, an SFT dataset, and weights; per house rules, those artifacts were **not inspected or executed** for this page, and nothing here claims they were. The stub's claims were re-verified against the full text in this pass: the two-stage summary and the scaffolding-transfer framing are confirmed, with two precisions the stub missed — the student is deployed *inside* the frozen harness rather than absorbing it into weights alone, and the harness also transfers sideways to other frozen planners with no distillation at all. The stub's implicit suggestion of physical-robot results is corrected in emphasis: all benchmark numbers are simulation.
+All benchmark results on this page are **author-reported** results from the single authoring team (Huawei / Noah's Ark Lab); no independent replication is cited, and several models involved are too recent for third-party verification. The paper text itself gives **no code, data, or weights URL** — the only repository URL in the text is a competitor's. The project page linked from the arXiv metadata in turn links a code repository, an SFT dataset, and weights; per house rules, those artifacts were **not inspected or executed** in this assessment, and nothing here claims they were.
 
-## Historical coverage
+## Related reading
 
 [Briefing 2026-11-02](../briefings/2026/11/2026-11-02.md)

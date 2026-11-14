@@ -5,7 +5,7 @@ title: "MoLRSI: A Recursive Self-Improving AI agent for Molecular Discovery"
 summary: "Improves its molecular workflow-search policy across tasks via persistent memory; wet-lab validated: 15.9% antibiotic hit rate, 8 pMHC binder hits."
 type: project
 created: 2026-11-01
-updated: 2026-11-02
+updated: 2026-11-14
 related: [evaluator-circularity, improvement-lives-in-external-state, validation-tier-gap]
 sources:
   - url: https://arxiv.org/abs/2610.39714
@@ -129,10 +129,10 @@ The decisive experiment to reproduce is the paper's own RSI ablation — the loa
 
 ## Evidence status
 
-All results are **author-reported** from a single-team preprint (arXiv:2610.39714; this page is based on v1, read in full including Methods and Supplementary Information S1–S4; arXiv also lists a v2, revised 2026-10-30). No independent replication is mentioned anywhere in the paper.
+All results are **author-reported** from a single-team preprint (arXiv:2610.39714; version 1; a revised version 2 is also available). No independent replication is mentioned anywhere in the paper.
 
 Within that tier, the evidence is unusually well-constructed for an agent paper: matched budgets, libraries and backbones for the RSI ablation; test sets excluded from search; similarity-based rather than random splits; a shared held-out set for the predictor comparison; cross-metric scoring for the design comparison; and two prospective wet-lab validations. The physical results validate the end workflows; the self-improvement claim rests on computational ablations only — both statements should travel together.
 
-## Historical coverage
+## Related reading
 
 [Briefing 2026-11-01](../briefings/2026/11/2026-11-01.md)

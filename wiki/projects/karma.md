@@ -5,7 +5,7 @@ title: "KARMA: Training-Free Knowledge-Atomic Harness Evolution for Industrial A
 summary: "Training-free evolution of six typed knowledge modules for an Alibaba advertising agent, gated by validation with snapshot rollback; offline log replay."
 type: project
 created: 2026-11-01
-updated: 2026-11-02
+updated: 2026-11-14
 related: [improvement-lives-in-external-state, scoped-assurance, validation-tier-gap]
 sources:
   - url: https://arxiv.org/abs/2610.39884
@@ -105,12 +105,12 @@ A full reproduction is not possible from public artifacts: the paper gives no co
 4. Accept the patch only if a fixed validation set improves by at least θ = 0.01; otherwise restore the snapshot. Keep a hold-out set untouched by every part of the loop and evaluate the initial and final knowledge on it exactly once.
 5. Ablate the evidence channels (successes only, failures only, both) and sweep θ; the paper's signature results to check are that removing either channel more than halves the gain, and that validation-gated acceptance still permits occasional hold-out regressions.
 
-The run artifacts the paper describes recording — split membership, traces, scores, knowledge states, mutation journals, fingerprints, gate decisions — are the right checklist for an independent implementation, but the paper states that identifiers, proprietary tool responses, and credentials are excluded from public reporting, and no artifacts were available to inspect for this page.
+The run artifacts the paper describes recording — split membership, traces, scores, knowledge states, mutation journals, fingerprints, gate decisions — are the right checklist for an independent implementation, but the paper states that identifiers, proprietary tool responses, and credentials are excluded from public reporting, and no artifacts were available to inspect in this assessment.
 
 ## Evidence status
 
 Every result on this page is author-reported. All numbers come from the authors' own runs, on their own proprietary and unreleased data, against baselines the authors themselves re-implemented; no independent replication is mentioned in the paper, and none is possible from public artifacts, since neither code nor data is available. Internal validity is comparatively careful for an unreplicated preprint — an untouched hold-out evaluated exactly once, a full-ingestion ablation over both evidence channels, an engine comparison under a shared gate, a full cross-domain transfer matrix, and seed and threshold sensitivity checks — but all of it is single-team, single-platform, single-month (July 2026 logs) evidence, with each main configuration run once and no uncertainty estimates reported. The venue status is unestablished: this is an arXiv preprint whose HTML rendering still carries an unedited conference-template placeholder.
 
-## Historical coverage
+## Related reading
 
 [Briefing 2026-11-01](../briefings/2026/11/2026-11-01.md)

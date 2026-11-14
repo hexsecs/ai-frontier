@@ -4,7 +4,7 @@ title: "Late Autumn"
 summary: "LLM coding agents specialize a general lifelong multi-robot planner to one modeled warehouse, raising throughput 22-60% with reviewable scored commits."
 type: project
 created: 2026-11-09
-updated: 2026-11-10
+updated: 2026-11-14
 depth: deep
 sources:
   - https://arxiv.org/abs/2611.02391
@@ -152,8 +152,12 @@ Model and harness substitutions are unavoidable (the paper used Opus 5.5, Fable 
 
 ## Evidence status
 
-This page is grounded in a full read of the primary source — the arXiv abstract page (https://arxiv.org/abs/2611.02391) and the complete HTML full text including appendices A–F, all three tables and the reference list (https://arxiv.org/html/2611.02391v1) — fetched on 2026-11-10. Every quantitative result is **author-reported**; there is no peer-reviewed venue claimed in the inspected text; no code, planner repository or trace archive URL is given in the inspected text, and the only ancillary file is frontier_steps.csv with the per-step table. All results are from simulation on a modelled floor; the paper states that no agent-generated patch has been deployed on physical robots, and no such deployment is claimed here. Claim types are separated in the text: the "no algorithm is best on all problems" framing, the transfer conclusion and the recommendation to shift experts toward metrics and simulators are the authors'; the items under "Assessed from the reporting" and the whole Implications section are analysis by the KB maintainers. Nothing on this page was reproduced, executed, cloned or tested by the KB maintainers, and no independent replication is known.
+Every quantitative result is **author-reported**; there is no peer-reviewed venue claimed in the inspected text; no code, planner repository or trace archive URL is given in the inspected text, and the only ancillary file is frontier_steps.csv with the per-step table. All results are from simulation on a modelled floor; the paper states that no agent-generated patch has been deployed on physical robots, and no such deployment is claimed here.
 
-## Historical coverage
 
-- [[briefings/2026/11/2026-11-06]] — dated full-fidelity research and cross-project synthesis (this page supersedes that snapshot's assessment).
+
+Sources: <https://arxiv.org/abs/2611.02391> · <https://arxiv.org/html/2611.02391v1>.
+
+## Related reading
+
+- [[briefings/2026/11/2026-11-06]]

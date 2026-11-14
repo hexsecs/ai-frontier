@@ -4,7 +4,7 @@ title: "ST-Bench"
 summary: "Benchmark of 100 Earth-science analysis tasks and 2,067 queries measuring whether multi-agent systems beat a single agent, and at what cost."
 type: benchmark
 created: 2026-11-08
-updated: 2026-11-10
+updated: 2026-11-14
 depth: deep
 related: [preservation-aware-agent-improvement, verified-completion-vs-apparent-success, protocol-relative-scores]
 sources:
@@ -105,7 +105,7 @@ By difficulty, MAS improves Easy, Medium and Hard alike by roughly 22 pp under t
 
 **Assessed from the reporting.**
 
-- **Single source, no public artifact located.** Everything rests on arXiv:2610.07763 v1 (6 October 2026). A full-text search of the inspected HTML for a code or benchmark-release URL found none; the external links that do appear point to the upstream *source datasets* (CAMELS at Zenodo, CY-Bench at agml.org, the DOIs of the adapted publications), not to a release of the tasks, Parquet files, reward function or evaluation code. The paper's phrase "the current release" for token accounting and parallelism therefore refers to a release whose location is not given in the inspected text, and no independent replication is known.
+- **Single source, no public artifact located.** Everything rests on arXiv:2610.07763 v1 (6 October 2026). A full-text search of the inspected HTML for a code or benchmark-release URL found none; the external links that do appear point to the upstream *source datasets* (CAMELS at Zenodo, CY-Bench at agml.org, the DOIs of the adapted publications), not to a release of the tasks, Parquet files, reward function or evaluation code. The paper's phrase "the current release" for token accounting and parallelism therefore refers to a release whose location is not given in the inspected text, and no independent replication is cited.
 - **The baseline is weak in absolute terms.** GPT-5 scores 11.0 out of 100, and the difficulty breakdown shows Easy tasks at 4.3. A large part of the measured gain may be recovering from execution brittleness — parsing, data loading, exception handling — rather than from any coordination advantage the multi-agent structure provides.
 - **The score is a product, and the product structure rewards coverage.** `score_t = success_rate × pass_rate` means a system that never produces realistic output scores zero regardless of potential quality, and a system that produces realistic output on a few queries scores near zero. This is a deliberate anti-defensive-default design, but it makes the headline number sensitive to the realistic-output filter's threshold (at least one strictly positive numeric value, no −1 sentinel) — a threshold not ablated in the paper.
 - **The training reward is partly circular.** `s_reference` measures closeness to a cached *single-agent* reference value, so 50% of the training reward is similarity to the baseline the MAS is being compared against, and the same cached reference is used to penalize zero outputs. That is a sensible way to suppress defensive defaults, but it means the optimization target is not independent of the comparison baseline; the paper does not report an ablation with the reference term removed.
@@ -157,8 +157,12 @@ Substituting an available backbone for GPT-5 is unavoidable, and the substitutio
 
 ## Evidence status
 
-This page is grounded in a full read of the primary source — the arXiv abstract page (https://arxiv.org/abs/2610.07763) and the complete HTML full text including the technical appendices A–D and the reference list (https://arxiv.org/html/2610.07763v1) — fetched on 2026-11-10. Every quantitative result is **author-reported**; the five MAS methods and the single-agent baselines were run by the authors on one GPT-5 backbone; the paper is a single preprint (v1) with no peer-reviewed venue claimed. A full-text search of the inspected HTML for a code or benchmark-release URL found none — the external links in the text point to upstream source datasets and publications — so no artifact is publicly linked in the inspected text. The scores for the GPT-5.2 and GPT-4o baselines, the per-configuration realistic-output rates other than W4S per-task's 38.2%, the token cost ratios, and the per-task values behind Figures 2–6 are not disclosed in the inspected text and are not reported here. Claim types are separated in the text: the "first scientific benchmark with signals fine-grained enough to drive MAS workflow optimization" claim and the "conditional rather than universal" conclusion are the authors'; the items under "Assessed from the reporting" and the whole Implications section are analysis by the KB maintainers. Nothing on this page was reproduced, executed or tested by the KB maintainers, and no independent replication is known.
+Every quantitative result is **author-reported**; the five MAS methods and the single-agent baselines were run by the authors on one GPT-5 backbone; the paper is a single preprint (v1) with no peer-reviewed venue claimed. A full-text search of the inspected HTML for a code or benchmark-release URL found none — the external links in the text point to upstream source datasets and publications — so no artifact is publicly linked in the inspected text. The scores for the GPT-5.2 and GPT-4o baselines, the per-configuration realistic-output rates other than W4S per-task's 38.2%, the token cost ratios, and the per-task values behind Figures 2–6 are not disclosed in the inspected text and are not reported here.
 
-## Historical coverage
 
-- [[briefings/2026/11/2026-11-08]] — dated full-fidelity research briefing that created this canonical record.
+
+Sources: <https://arxiv.org/abs/2610.07763> · <https://arxiv.org/html/2610.07763v1>.
+
+## Related reading
+
+- [[briefings/2026/11/2026-11-08]]

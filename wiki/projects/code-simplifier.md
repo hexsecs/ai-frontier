@@ -4,7 +4,7 @@ title: "Code Simplifier"
 summary: "Daily gh-aw cleanup agent: deterministic candidate precompute, Haiku gate and scout, strict evals, six required endings; three vendor-reported no-op runs."
 type: workflow
 created: 2026-11-09
-updated: 2026-11-10
+updated: 2026-11-14
 depth: deep
 sources:
   - https://github.github.com/gh-aw/blog/2026-11-05-agent-of-the-day/
@@ -116,9 +116,13 @@ The deterministic half is testable without a model; the write path needs a scrat
 
 ## Evidence status
 
-This page is grounded in a full read of two public documents on 2026-11-10, fetched by HTTPS without executing anything: the workflow source (https://raw.githubusercontent.com/github/gh-aw/main/.github/workflows/code-simplifier.md) and the vendor blog post "Agent of the Day – November 5, 2026" (https://github.github.com/gh-aw/blog/2026-11-05-agent-of-the-day/). **Inspected:** every mechanism statement — the frontmatter budgets and permissions, the skip-if-decision text, both deterministic steps with their exact filters and caps, the five phases, the `scope-filter` and `simplification-scout` agent definitions and their output shapes, the four language skills, the command guardrails, and the six required endings — comes from the workflow file and can be checked by any reader. **Vendor-claimed:** the three run rows (timestamps, durations, token counts), the "0 safe-output items" aggregate, the audit's `directed`/`read_only` classification, the 7,637-token working set, the ~1.0 rebuild factor, and the ~114k token flag. These are GitHub's reports on GitHub's own repository, with no independent replication; no eval results are published for the two declared evals. The "assessed" items in Limitations and the whole Implications section are analysis by the KB maintainers, and the reproducible experiment is proposed and not executed. Nothing on this page was installed, cloned, compiled or run by the KB maintainers.
+**Inspected:** every mechanism statement — the frontmatter budgets and permissions, the skip-if-decision text, both deterministic steps with their exact filters and caps, the five phases, the `scope-filter` and `simplification-scout` agent definitions and their output shapes, the four language skills, the command guardrails, and the six required endings — comes from the workflow file and can be checked by any reader. **Vendor-claimed:** the three run rows (timestamps, durations, token counts), the "0 safe-output items" aggregate, the audit's `directed`/`read_only` classification, the 7,637-token working set, the ~1.0 rebuild factor, and the ~114k token flag. These are GitHub's reports on GitHub's own repository, with no independent replication; no eval results are published for the two declared evals. The "assessed" items in Limitations and the whole Implications section are analysis by the KB maintainers, and the reproducible experiment is proposed and not executed.
 
-## Historical coverage
 
-- [[briefings/2026/11/2026-11-06]] — finding 3, the dated briefing this page backfills.
+
+Sources: <https://raw.githubusercontent.com/github/gh-aw/main/.github/workflows/code-simplifier.md> · <https://github.github.com/gh-aw/blog/2026-11-05-agent-of-the-day/>.
+
+## Related reading
+
+- [[briefings/2026/11/2026-11-06]]
 - Sibling gh-aw workflows under the same platform: [[projects/github-contribution-check]], [[projects/pr-sous-chef]], [[projects/matt-pocock-skills-reviewer]] and the platform page [[projects/github-agentic-workflows]]; the workflow corpus is [[workflows/index]] and the cross-project synthesis is [[evaluations/briefing-synthesis-2026-11-03-to-09]]. These are analyst-selected thematic comparisons, not source-verified dependencies.

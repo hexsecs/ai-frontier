@@ -4,7 +4,7 @@ title: "RoboArchitect"
 summary: "A coding model evolves the control harness around a frozen robot policy, raising held-out manipulation success from 9.7% to 43.3% without weight updates."
 type: project
 created: 2026-11-09
-updated: 2026-11-10
+updated: 2026-11-14
 depth: deep
 related: [capability-locus]
 sources:
@@ -152,9 +152,13 @@ Substituting an available coding model for `claude-opus-5` and available VLA che
 
 ## Evidence status
 
-This page is grounded in a full read of the primary source on 2026-11-10: the arXiv abstract page (https://arxiv.org/abs/2610.42141) and the complete HTML full text including appendices A–C with the control-routine and memory detail, the benchmark table and the evolution trajectories (https://arxiv.org/html/2610.42141v1). Every quantitative result is **author-reported**; the baselines — the bare policies and the finetuned reference checkpoints — were run by the authors in the authors' harness; the paper is a single preprint (v1) with no peer-reviewed venue claimed; and all evaluation is in simulation. No independent replication is known. Claim types are separated in the text: the claim that harness design can be automated and the "substantial headroom in the harness" conclusion are the authors'; the items under "Assessed from the reporting" and the whole Implications section are analysis by the KB maintainers. Nothing on this page was reproduced, executed, cloned or tested by the KB maintainers, and no simulator, policy or harness was run.
+Every quantitative result is **author-reported**; the baselines — the bare policies and the finetuned reference checkpoints — were run by the authors in the authors' harness; the paper is a single preprint (v1) with no peer-reviewed venue claimed; and all evaluation is in simulation. No independent replication is known.
 
-## Historical coverage
 
-- [[briefings/2026/11/2026-11-03]] — finding 2, the dated report that first mined this source.
+
+Sources: <https://arxiv.org/abs/2610.42141> · <https://arxiv.org/html/2610.42141v1>.
+
+## Related reading
+
+- [[briefings/2026/11/2026-11-03]]
 - [[evaluations/briefing-synthesis-2026-11-03-to-09]] — cross-briefing synthesis that includes this project.

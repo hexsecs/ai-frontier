@@ -4,7 +4,7 @@ title: "WeaveBench"
 summary: "Peer-reviewed EMNLP 2026 benchmark of 114 hybrid GUI/CLI/code desktop tasks with a trajectory-aware judge; best model-runtime PassRate 41.2%."
 type: benchmark
 created: 2026-11-09
-updated: 2026-11-10
+updated: 2026-11-14
 depth: deep
 sources:
   - https://aclanthology.org/2026.emnlp-main.658/
@@ -92,7 +92,7 @@ Both single-interface settings stay at or below 3.5%, roughly an order of magnit
 
 **Assessed from the reporting.**
 
-- **Single source, and the artifact was not inspected.** Everything rests on one EMNLP 2026 paper. The release is claimed at a GitHub URL but the KB maintainers did not clone or run it, so no third party has rerun these configurations here and no independent replication is known.
+- **Single source, and the artifact was not inspected.** Everything rests on one EMNLP 2026 paper. The release is claimed at a GitHub URL but the KB maintainers did not clone or run it, so no third party has rerun these configurations here and no independent replication is cited.
 - **The judge is a model.** All scores come from an LLM judge (fixed backbone GPT-5.5) reading trajectories and artifacts. The paper does validate it against three human experts with Fleiss' κ = 0.88 on one model–runtime pairing only, and the 41.2% vs 43.0% gap is a 1.8-point discrepancy on that single configuration. Judge transfer to other backbones is explicitly an open question.
 - **The headline 41.2% is a best cell** and comes from one model–runtime pair. Within the same paper the same backbone ranges from 13.2% to 41.2% across four runtimes, which is a larger spread than most of the between-model differences in Table 2.
 - **Small per-domain denominators.** Domains hold 10–18 tasks each, so a single task is worth 5.6–10 points of a domain PassRate; many per-domain cells in Tables 2 and 3 differ by one or two tasks.
@@ -134,8 +134,12 @@ Substituting available open-weight models for the paper's hosted 2026 backbones 
 
 ## Evidence status
 
-This page is grounded in a full read of the primary source — the ACL Anthology landing page (https://aclanthology.org/2026.emnlp-main.658/) and the complete 19-page paper PDF (https://aclanthology.org/2026.emnlp-main.658.pdf), including appendices A–D — fetched on 2026-11-10. Every quantitative result is **author-reported**; the baselines are the paper's own runs of third-party models, and the judge is the paper's own model. The paper is peer-reviewed at EMNLP 2026 (main conference, pages 15152–15170). The claimed code release at `https://github.com/weavebench/WeaveBench` was not opened, cloned or executed by the KB maintainers. Claim types are separated in the text: the differentiation claim against other CUA benchmarks is the authors'; the items under "Assessed from the reporting" and the whole Implications section are analysis by the KB maintainers. Nothing on this page was reproduced, executed, cloned or tested by the KB maintainers, and no independent replication is known.
+Every quantitative result is **author-reported**; the baselines are the paper's own runs of third-party models, and the judge is the paper's own model. The paper is peer-reviewed at EMNLP 2026 (main conference, pages 15152–15170). The claimed code release at `https://github.com/weavebench/WeaveBench` was not opened, cloned or executed by the KB maintainers.
 
-## Historical coverage
 
-- [[briefings/2026/11/2026-11-09]] — dated full-fidelity research and cross-project synthesis; the source-specific findings above are retained without silently upgrading their evidence tier.
+
+Sources: <https://aclanthology.org/2026.emnlp-main.658/> · <https://aclanthology.org/2026.emnlp-main.658.pdf>.
+
+## Related reading
+
+- [[briefings/2026/11/2026-11-09]]

@@ -4,7 +4,7 @@ title: "GitHub Agentic Workflows"
 summary: "GitHub's gh-aw compiles Markdown workflows into hardened Actions YAML; mechanism is repository-inspectable, performance evidence is vendor-only."
 type: workflow
 created: 2026-11-09
-updated: 2026-11-10
+updated: 2026-11-14
 depth: deep
 sources:
   - https://github.blog/changelog/2026-06-11-github-agentic-workflows-is-now-in-public-preview/
@@ -144,8 +144,12 @@ No step should be reported as passing on the basis of a single successful run; t
 
 ## Evidence status
 
-This page is grounded in a full read of the primary sources on 2026-11-10: the GitHub changelog announcement (https://github.blog/changelog/2026-06-11-github-agentic-workflows-is-now-in-public-preview/) and the `github/gh-aw` repository (https://github.com/github/gh-aw), read through raw files rather than by cloning — `README.md`, the introduction guides `how-they-work.mdx` and `architecture.mdx`, the reference pages `permissions.md`, `integrity.md`, `threat-detection.md`, `safe-outputs.md`, `compilation-process.md` and `sandbox.md`, the safe-outputs specification, the `.github/aw/github-agentic-workflows.md` authoring reference and sample workflow sources under `.github/workflows/`, plus the repository metadata, release listing, security-advisory listing and file tree obtained from the GitHub API. **Mechanism claims are repository-inspected** and can be checked by any reader against the same files; **performance claims are vendor-reported only** — the changelog publishes no measurement of the product, and its three customer quotations are testimonials with no methodology. Where the sources describe behaviour in their own terms (the integrity levels, the safe-output keys and maxima, the sandbox runtimes, the detection defaults and credit cap, the compilation phases, the advisory list), those descriptions are quoted or paraphrased as the source's statements and not as verified outcomes. The items under "Assessed by the KB maintainers" and the whole Implications section are analysis by the KB maintainers, and the reproducible experiment is proposed and not executed. Nothing on this page was installed, compiled, cloned or executed by the KB maintainers, no repository code was run, and no independent evaluation of the product's reliability or security is known to the KB maintainers.
+**Mechanism claims are repository-inspected** and can be checked by any reader against the same files; **performance claims are vendor-reported only** — the changelog publishes no measurement of the product, and its three customer quotations are testimonials with no methodology. Where the sources describe behaviour in their own terms (the integrity levels, the safe-output keys and maxima, the sandbox runtimes, the detection defaults and credit cap, the compilation phases, the advisory list), those descriptions are quoted or paraphrased as the source's statements and not as verified outcomes.
 
-## Historical coverage
 
-- [[briefings/2026/11/2026-11-04]] — dated full-fidelity research briefing; finding 7 selected this preview announcement.
+
+Sources: <https://github.blog/changelog/2026-06-11-github-agentic-workflows-is-now-in-public-preview/> · <https://github.com/github/gh-aw>.
+
+## Related reading
+
+- [[briefings/2026/11/2026-11-04]]

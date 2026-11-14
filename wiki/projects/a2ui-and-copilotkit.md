@@ -5,7 +5,7 @@ title: "A2UI and CopilotKit"
 summary: "Google's A2UI protocol lets agents emit declarative UI from a trusted component catalog; CopilotKit carries it over AG-UI and renders it natively in apps."
 type: project
 created: 2026-10-30
-updated: 2026-11-02
+updated: 2026-11-14
 sources:
   - url: https://developers.googleblog.com/build-generative-ui-apps-with-a2ui-copilotkit-agents/
     retrieved: 2026-11-02
@@ -109,7 +109,7 @@ A2UI's real proposal is a placement of the trust boundary: the component catalog
 
 ## Reproducible experiment
 
-The missing numbers are measurable with published artifacts, and the following protocol would produce them. (Proposed here; not performed for this page.)
+The missing numbers are measurable with published artifacts, and the following protocol would produce them. (Proposed experiment; no result is asserted.)
 
 1. Stand up the A2UI Restaurant Finder quickstart (Gemini ADK agent, Lit renderer) or the CopilotKit Dojo dynamic-schema demo, unmodified.
 2. Fix a graded set of ~50 UI-generation requests, from single-card displays to multi-step forms with validation. Run each against at least two models, logging: first-pass validity (fraction of generations passing catalog validation with no `VALIDATION_FAILED`), correction-loop recovery rate within the configured retries, retries consumed, and end-to-end latency and token cost per surface.
@@ -120,8 +120,8 @@ Steps 2–4 measure, respectively, the reliability claim, the portability claim,
 
 ## Evidence status
 
-Read in full on 2026-11-02 for this page: the Google Developers Blog announcement; the A2UI Protocol v0.9.1 specification; the a2ui.org homepage and version table; the `a2ui-project/a2ui` repository landing page and README; CopilotKit's A2UI documentation, generative-UI concepts overview, generative-UI taxonomy page, and dynamic-schema documentation. Not inspected: the v1.0 candidate and v0.9/v0.8 spec texts (only version-table summaries), the raw JSON schema files, renderer or SDK source code, and the repository's `conformance/` and `eval/` directories. AG-UI's own specification was not read in full; AG-UI details rest on the A2UI spec's binding section and CopilotKit's documentation. No code was executed and no demo was run. All quantitative content on this page is structural (spec counts, version states, repository metadata); every benefit claim is a vendor claim and is labelled as such where it appears.
+Not inspected: the v1.0 candidate and v0.9/v0.8 spec texts (only version-table summaries), the raw JSON schema files, renderer or SDK source code, and the repository's `conformance/` and `eval/` directories. AG-UI's own specification was not read in full; AG-UI details rest on the A2UI spec's binding section and CopilotKit's documentation. No code was executed and no demo was run. All quantitative content on this page is structural (spec counts, version states, repository metadata); every benefit claim is a vendor claim and is labelled as such where it appears.
 
-## Historical coverage
+## Related reading
 
 [Briefing 2026-10-30](../briefings/2026/10/2026-10-30.md)

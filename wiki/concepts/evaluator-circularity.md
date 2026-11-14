@@ -5,7 +5,7 @@ title: "Evaluator circularity"
 summary: "When the evaluated system sits inside its own grading path, the score partly measures self-agreement rather than external quality."
 type: concept
 created: 2026-11-02
-updated: 2026-11-02
+updated: 2026-11-14
 related: [filingloop, agenticds, auctopus, hera, dynarev, clingex, intent-loss-in-smart-contract-synthesis, webanything, seq-k, molrsi, envos, evoteam, dittany]
 sources:
   - url: https://arxiv.org/abs/2610.37905
@@ -164,7 +164,7 @@ mitigation working.
 
 ## Relations
 
-The register types the core of this entry as one shared failure mode:
+The shared validity risk is:
 [[projects/filingloop]] —same-failure-mode→ [[projects/auctopus]];
 [[projects/agenticds]] —same-failure-mode→ [[projects/filingloop]];
 [[projects/clingex]] —same-failure-mode→ [[projects/dynarev]];
@@ -182,11 +182,11 @@ bias). Two further pairs — [[projects/filingloop]] —same-failure-mode→
 [[projects/dynarev]] and
 [[projects/intent-loss-in-smart-contract-synthesis]]
 —same-failure-mode→ [[projects/filingloop]] — are recorded in the
-register as suspected, unverified: inferred from shared membership in
+analysis as suspected and unverified: inferred from shared membership in
 this concept only, and not asserted here.
 
 Distinguish from evaluator-identity-relativity (a sibling concept named
-in the register): circularity requires the contestant inside the
+in this comparison): circularity requires the contestant inside the
 grading path, while relativity is what remains when the evaluator is
 fully independent but non-interchangeable. Distinguish also from
 producer-self-check-gap: circularity is about *who* judges, whereas the
@@ -214,13 +214,4 @@ self-check gap persists under a genuinely separate verifier context —
 
 ## Evidence status
 
-This concept is the knowledge base's own analytical construct,
-synthesized on 2026-11-02 in mining pass 1 from the KB's deepened
-project pages; no paper in the supporting set names it. (The register
-also records the alias self-referential-evaluation.) Every underlying
-result is author-reported and unreplicated, and the supporting
-quotations are taken from the project pages' own text — in most cases
-the overlap is disclosed there rather than concealed. The register
-grades the entry strong: 12 supporting pages across 3 clusters, with
-the tension and bounds material above recorded from the same pages.
-This page asserts no result beyond what those pages report.
+This is an analyst interpretation of the cited studies, not an additional experimental result. Underlying measurements remain author-reported; no independent replication is cited. Overlap between producer and evaluator is a validity risk, not proof that any particular result is wrong.

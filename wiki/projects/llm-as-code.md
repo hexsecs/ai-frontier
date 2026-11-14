@@ -13,8 +13,8 @@ sources:
 
 # LLM-as-Code: Agentic Programming for Agent Harness
 
-**Original source:** https://arxiv.org/abs/2606.15874  
-**Date:** 2026-11-09 revision (original June 14)  
+**Original source:** https://arxiv.org/abs/2606.15874
+**Date:** 2026-11-09 revision (original June 14)
 **Evidence status:** Author-reported research; not independently replicated in this knowledge base.
 
 ## Mechanism

@@ -4,7 +4,7 @@ title: "auto_research"
 summary: "Multi-agent pipeline for X-ray polarimetry that writes its own analysis tools, gates them with checks and review, and admits only numbers with provenance."
 type: project
 created: 2026-11-09
-updated: 2026-11-10
+updated: 2026-11-14
 depth: deep
 sources:
   - https://arxiv.org/abs/2611.05251
@@ -158,8 +158,12 @@ Any reproduction must substitute models available to the tester for the paper's 
 
 ## Evidence status
 
-This page is grounded in a full read of the primary source — the arXiv abstract page (https://arxiv.org/abs/2611.05251) and the complete HTML full text including appendices A–E, all nine tables and the reference list (https://arxiv.org/html/2611.05251v1) — fetched on 2026-11-10. Every quantitative result is **author-reported**; the baselines and defect benchmark were run by the authors; the paper is a single preprint (v1, 3 November 2026) with no peer-reviewed venue claimed in the inspected text. The event logs and the planted defects and controls are stated to be available from the corresponding author on request, not from a public URL; the six model-tier reports are attached as ancillary files anc/run1.pdf–anc/run6.pdf. Claim types are separated in the text: the design's generality beyond astronomy, the adequacy of the checks, and the reviewer-cross-provider argument are the authors'; the items under "Assessed from the reporting" and the whole Implications section are analysis by the KB maintainers. Nothing on this page was reproduced, executed, cloned or tested by the KB maintainers, and no independent replication is known.
+Every quantitative result is **author-reported**; the baselines and defect benchmark were run by the authors; the paper is a single preprint (v1, 3 November 2026) with no peer-reviewed venue claimed in the inspected text. The event logs and the planted defects and controls are stated to be available from the corresponding author on request, not from a public URL; the six model-tier reports are attached as ancillary files anc/run1.pdf–anc/run6.pdf.
 
-## Historical coverage
 
-- [[briefings/2026/11/2026-11-05]] — dated full-fidelity research and cross-project synthesis (this page supersedes that snapshot's assessment).
+
+Sources: <https://arxiv.org/abs/2611.05251> · <https://arxiv.org/html/2611.05251v1>.
+
+## Related reading
+
+- [[briefings/2026/11/2026-11-05]]

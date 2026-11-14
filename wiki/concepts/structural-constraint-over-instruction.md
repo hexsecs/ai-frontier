@@ -5,7 +5,7 @@ summary: "Where these agent systems are trustworthy, the trust comes from struct
 type: concept
 depth: full
 created: 2026-11-02
-updated: 2026-11-12
+updated: 2026-11-14
 related: [llm-as-code, spec-first-verification-agents, github-contribution-check, openbot, tinyastral, dittany, envos, cheme-as-code, builderio-agent-native, agent-orchestrator]
 sources:
   - url: https://arxiv.org/abs/2611.02285
@@ -48,7 +48,7 @@ The distinction is one of enforcement locus. An instruction is a request the mod
 
 **Validation before execution and exclusion of known failures — [[projects/dittany]].** Dittany constrains multi-agent repair the same way: "Every candidate is validated against the specification and available data before execution; previously failed choices with unchanged inputs and conditions are excluded." The repairing agent's freedom ends at a check it does not grade.
 
-**The interface-level ancestor — [[projects/envos]].** The pass-1 hold this concept generalises measured the same contrast inside a single system. Telling the agent to go and check a possibly-stale value barely worked — "only 1 of 16 verification-reminder trajectories followed the supplied link" — while showing the current value at the decision point succeeded in 15 of 16. Exhortation failed; changing what the situation structurally presents succeeded. The mining register keeps the two entries distinct — EnvOS's instance is about information placement, this concept about enforcement locus — but they are the same shape at different scales, and the pass-2 brush against [[projects/blindtochange]] adds the exhortation-fails half at scale: that benchmark's shared harness prompt already instructs models to search before answering time-sensitive questions, and the full performance gap persists under it.
+**The interface-level ancestor — [[projects/envos]].** This study measures an information-placement contrast within one system. Telling the agent to go and check a possibly-stale value barely worked — "only 1 of 16 verification-reminder trajectories followed the supplied link" — while showing the current value at the decision point succeeded in 15 of 16. Exhortation failed; changing what the situation structurally presents succeeded. The two mechanisms differ — EnvOS's instance is about information placement, this concept about enforcement locus — but they are the same shape at different scales, and the comparison with [[projects/blindtochange]] adds the exhortation-fails half at scale: that benchmark's shared harness prompt already instructs models to search before answering time-sensitive questions, and the full performance gap persists under it.
 
 ## Evidence against and bounds
 
@@ -62,7 +62,7 @@ The distinction is one of enforcement locus. An instruction is a request the mod
 
 ## Relations
 
-This concept is the broader claim about the *locus of trust*; **gated admission** (a pass-1 technique seed, not a concept page) is one mechanism instance of it — pass a check before becoming consequential, as in TinyAstral's statistical gate or Dittany's pre-execution validation. Several supporting instances have no admission gate at all: OpenBot's record-before-act ordering admits nothing, it records everything, and contribution-check's read-only token is a fence, not a gate. The concept also neighbours **precommitment** (named in pass 1; no page in this slice): a pre-registered acceptance test is a commitment device, but precommitment binds the *experimenters'* future discretion, whereas structural constraint binds the *model's* present action space — TinyAstral happens to use both at once. Within the built concept layer, the closest relative is [[concepts/improvement-lives-in-external-state]], whose improvement mechanism this concept's gates police, and [[concepts/scoped-assurance]]: a configured policy's scope is exactly the scope inside which OpenBot's fail-closed assurance holds.
+This concept is the broader claim about the *locus of trust*; **gated admission** (an admission mechanism) is one mechanism instance of it — pass a check before becoming consequential, as in TinyAstral's statistical gate or Dittany's pre-execution validation. Several supporting instances have no admission gate at all: OpenBot's record-before-act ordering admits nothing, it records everything, and contribution-check's read-only token is a fence, not a gate. The concept also neighbours **precommitment** (commitment before observation): a pre-registered acceptance test is a commitment device, but precommitment binds the *experimenters'* future discretion, whereas structural constraint binds the *model's* present action space — TinyAstral happens to use both at once. Within the built concept layer, the closest relative is [[concepts/improvement-lives-in-external-state]], whose improvement mechanism this concept's gates police, and [[concepts/scoped-assurance]]: a configured policy's scope is exactly the scope inside which OpenBot's fail-closed assurance holds.
 
 ## Open questions
 
@@ -72,8 +72,7 @@ This concept is the broader claim about the *locus of trust*; **gated admission*
 
 ## Evidence status
 
-This concept is the KB's analytical construct, first mined in mining pass 2 (2026-11-02) from the cluster-F project pages, with a pass-1 single-source hold (EnvOS's disclosure-beats-exhortation) as its recorded lineage and a pass-2 brush against BlindToChange as corroboration of its corollary. All underlying material is author-reported or author-documented: TinyAstral's and Dittany's figures are their papers' own, Contribution Check's mechanism is checkable against its public workflow source while its telemetry is GitHub's, and OpenBot's mechanism is documented by its authors with no effectiveness measurements published. No supporting paper names this concept or claims it; the synthesis, and its bounds, are the KB's.
-
+This is an analyst interpretation of the cited studies, not an additional experimental result. Underlying measurements remain author-reported; no independent replication is cited. Architecture descriptions establish intended boundaries, not measured resistance to every attack or proof of correct task outcomes.
 
 ## 2026-11-07 evidence connections
 
@@ -81,7 +80,7 @@ This concept is the KB's analytical construct, first mined in mining pass 2 (202
 
 ## 2026-11-10 evidence connections
 
-Two further instances from the depth pass over the November 3–8 project pages (analyst-level links; neither source names the concept), each adding an enforcement kind the existing instances lack:
+Two further architectural comparisons illustrate different enforcement boundaries; neither source names this concept:
 
 - **[[projects/builderio-agent-native]] — a review convention made a checked invariant.** The PR's 985-line AST guard (`scripts/guard-no-unobserved-writes.ts`) turns "every new write site must be observed" from a review convention into a per-function, path-ordered, alias-aware checked rule with an explicit escape hatch (`// observed-write-ok: <reason>`), and the SQL write-classifier's defaults fail closed everywhere the grammar is ambiguous (unknown statement shapes, multi-statement strings, queries with no SQL text, and `SELECT`s calling side-effecting built-ins all read as writes). "Instruct the model to be careful" is exactly what this design does not do. The instance carries this concept's cost bound inside itself: the guard's own header documents that an HTTP-client or SDK import passes on *any* note in the file, because imports have no call site — structure capped exactly where static analysis stops.
 - **[[projects/agent-orchestrator]] — the irreversible action gets the highest evidential bar.** Fleet supervision made structurally conservative: "Failed probes are NOT proof of death. A session is only terminated when the runtime and process are both clearly dead and recent activity doesn't contradict that," plus no merged-PR ownership — the most irreversible action (killing a worker) cannot be triggered by an instruction or a hunch, only by durable facts. "Display status is never stored. It is computed at read time from durable facts" is the same locus rule applied to state. Vendor-documented design with no outcome measurement, so it extends this concept's mechanism evidence, not its (already thin) effectiveness evidence.

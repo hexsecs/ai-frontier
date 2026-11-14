@@ -5,7 +5,7 @@ title: "Prefix Executability: Evaluating Tool-Using Agents Beyond Final Success"
 summary: "Successful episodes often pass through invalid prefixes: final success and prefix executability rank the same agents differently."
 type: benchmark
 created: 2026-11-01
-updated: 2026-11-02
+updated: 2026-11-14
 related: [protocol-relative-scores, scoped-assurance]
 sources:
   - url: https://arxiv.org/abs/2610.40444
@@ -86,8 +86,8 @@ The substantive check is a protocol replication. BFCL v3 multi-turn and ToolSand
 
 ## Evidence status
 
-Every quantitative result on this page is **author-reported**: all four authors are at Oracle AI, the work was funded by Oracle, and there is no independent replication. The paper releases **no code and no data** — no repository for the replay scorer, the instrumentation, or the Dual-Loop implementation, and no rollout logs or task-ID lists; the three benchmarks are pre-existing third-party artifacts. The protocol itself is specified completely enough (§2 and Appendix C) that an independent implementation is feasible, which raises the evidence ceiling for the *metric family* above what the unreleased code would otherwise allow; the specific point estimates, however, rest on the authors' uninspectable instrumentation and marginal-interval reporting. The paper's internal counter-evidence — the τ³ transfer audit and the paired sensitivity null — is reported above at the same prominence as its headline, because the authors reported it that way; a page that cited only the static-benchmark divergence would misrepresent the source.
+Every quantitative result on this page is **author-reported**: all four authors are at Oracle AI, the work was funded by Oracle, and no independent replication is cited. The paper releases **no code and no data** — no repository for the replay scorer, the instrumentation, or the Dual-Loop implementation, and no rollout logs or task-ID lists; the three benchmarks are pre-existing third-party artifacts. The protocol itself is specified completely enough (§2 and Appendix C) that an independent implementation is feasible, which raises the evidence ceiling for the *metric family* above what the unreleased code would otherwise allow; the specific point estimates, however, rest on the authors' uninspectable instrumentation and marginal-interval reporting. The paper's internal counter-evidence — the τ³ transfer audit and the paired sensitivity null — is reported above at the same prominence as its headline, because the authors reported it that way; a page that cited only the static-benchmark divergence would misrepresent the source.
 
-## Historical coverage
+## Related reading
 
 [Briefing 2026-11-01](../briefings/2026/11/2026-11-01.md)

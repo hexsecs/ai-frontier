@@ -5,7 +5,7 @@ title: "Agent reliability is a systems property"
 summary: "Reliability as a loop of verification, scoped recovery, and gated memory survives only in scoped form; its evaluation link grades itself."
 type: signal
 created: 2026-11-02
-updated: 2026-11-02
+updated: 2026-11-14
 sources: []
 ---
 
@@ -17,17 +17,17 @@ The original page claimed that the imported projects suggest an engineering loop
 
 > plan → execute → verify → recover selectively → update skills and memory after regression checks → evaluate,
 
-with orchestration and security constraining each stage. Its status line was explicit:
+with orchestration and security constraining each stage. This is an untested integration hypothesis:
 
-> **Hypothesis, not validated architecture:** these connections were mined from prior summaries and require source-level verification.
+> **Hypothesis, not validated architecture:** component-level evidence does not establish the effectiveness of their integration.
 
-That source-level verification has now happened for the project corpus. This page tests the loop against the deepened project pages and the concepts mined from them in pass 1. The verdict is not a clean confirmation: most links have real evidence behind them, several survive only in a narrower form than the loop states, and one link — evaluation — is compromised in a way the original formulation did not anticipate.
+The cited studies support parts of the loop under different conditions; they do not validate it as one integrated architecture.
 
 ## The loop, link by link
 
 **Plan → execute.** The corpus does not test planning as such, but it tests what a plan-stage delivers. [[concepts/information-content-dominance]] records that information obtained *before* generation dominates everything after it: in [[projects/intent-loss-in-smart-contract-synthesis]], elicited answers were worth roughly twenty points of fidelity while post-generation stages added at most about one. [[projects/prefix-executability]] complicates this: plan-conditioned agents reached the highest final success while their trajectories were executable only about half the time — a plan can buy outcomes without buying clean execution. Supported, in the form: *what reaches the agent before it acts matters more than the loop around it.*
 
-**Execute → verify.** This is the loop's best-evidenced transition, held in the register as verification-is-load-bearing. In [[projects/agenticds]], every configuration that removes the Critic falls below both agent baselines, and unchecked expansion actively lowers ranking quality. In [[projects/auctopus]], a run that met all ten precommitted accuracy criteria was still classified **inconclusive** because its controls failed — the verdict layer, not the result layer, decided. In [[projects/filingloop]], gains concentrated in the one role whose output is verifiable against a filing. The bound is [[concepts/scoped-assurance]]: a check warrants only the scope it exercised — [[projects/skillcompiler]]'s validated programs still fail roughly one invocation in nine (88.84% success), and [[projects/karma]]'s gate, below, passed patches that later regressed. Verification is load-bearing; it is not a guarantee.
+**Execute → verify.** This is the loop's best-evidenced transition, illustrated by the following studies. In [[projects/agenticds]], every configuration that removes the Critic falls below both agent baselines, and unchecked expansion actively lowers ranking quality. In [[projects/auctopus]], a run that met all ten precommitted accuracy criteria was still classified **inconclusive** because its controls failed — the verdict layer, not the result layer, decided. In [[projects/filingloop]], gains concentrated in the one role whose output is verifiable against a filing. The bound is [[concepts/scoped-assurance]]: a check warrants only the scope it exercised — [[projects/skillcompiler]]'s validated programs still fail roughly one invocation in nine (88.84% success), and [[projects/karma]]'s gate, below, passed patches that later regressed. Verification is load-bearing; it is not a guarantee.
 
 **Verify → recover selectively.** Dittany and prefix-executability jointly support a verdict-triggered, scope-decided recovery step. [[projects/dittany]]'s runtime checkers label contributions satisfied, violated, or unestablished against a contract-derived contribution graph, and only violated or unestablished conditions trigger repair. [[projects/prefix-executability]] shows why the recovery step must be scored separately from success: its Recovery Rate measures success *conditional on* an invalid prefix, and on BFCL plain ReAct recovered at 0.00 while plan-conditioned variants recovered at 0.73–0.90 — the same final-success number can hide opposite recovery behaviour.
 
@@ -44,13 +44,13 @@ That source-level verification has now happened for the project corpus. This pag
 - Verification carries quality where it is ablated: removing AgenticDS's Critic drops every such configuration below both baselines; Auctopus's checker overruled a passing result on control evidence.
 - Recovery at the right scope is worth a large margin: Dittany's graph scope is +32.21 points over action-only repair; the combined system reaches 84.76% against 58.01% native.
 - Updates live in external state and can be gated: KARMA's snapshot-and-restore gate, FilingLoop's validate-or-keep, and test-gated admission in ClinGeX and SkillCompiler are working instances of regression-checked updating, with an untouched hold-out as the discipline that makes the check mean anything.
-- Precommitment (register) supports the loop's credibility conditions: [[projects/hera]] sealed conclusions as hashes before each session and froze its corpus and grader in advance; [[projects/filingloop]] fixed denominators before execution.
+- Precommitment supports the loop's credibility conditions: [[projects/hera]] sealed conclusions as hashes before each session and froze its corpus and grader in advance; [[projects/filingloop]] fixed denominators before execution.
 - The constraint layer exists in buildable form: OpenBot's audit-before-act gateway and Dittany's contribution graph show orchestration and security as mechanisms, not slogans.
 
 ## Evidence against and bounds
 
 - **Verification fails too.** [[projects/hera]] built the corpus's most complete verification apparatus — sealing, blinding, a frozen grader — and its blinded second-expert check still failed its own pre-sealed prediction: 65% exact agreement, κ = 0.38, against a predicted ≥0.70. Declaring a mitigation is not the mitigation working.
-- **Recovery harms in its local form.** Dittany's action-only repair scores below no repair at all. The register's net-negative-interventions entry generalises the warning: [[projects/intent-loss-in-smart-contract-synthesis]]'s security-and-refinement loop *cost* 12.8 points of fidelity; DeepSeek assistance in [[projects/clingex]] scored below unassisted clinicians in two of three scenarios; [[projects/dynarev]]'s Reset + Rewrite strategy was the worst of all (0.525). An added stage is not evidence of improvement, and the no-intervention baseline is a required control.
+- **Recovery harms in its local form.** Dittany's action-only repair scores below no repair at all. Counterexamples illustrate the warning: [[projects/intent-loss-in-smart-contract-synthesis]]'s security-and-refinement loop *cost* 12.8 points of fidelity; DeepSeek assistance in [[projects/clingex]] scored below unassisted clinicians in two of three scenarios; [[projects/dynarev]]'s Reset + Rewrite strategy was the worst of all (0.525). An added stage is not evidence of improvement, and the no-intervention baseline is a required control.
 - **Updates do not reliably steer.** [[projects/security-impact-of-coding-agent-memory-files]] is the null the loop must carry: planted memory files changed secure-completion rates by −8 to +6 percentage points, no consistent direction, inside the band the authors cannot distinguish from chance. Persistent state was present, loaded and adversarially written — and did not reliably move behaviour. Transfer can also be actively negative: KARMA's Automotive knowledge lowered every other domain's score.
 - **Evaluation grades itself.** Per [[concepts/evaluator-circularity]], the loop's final stage is, in the limiting instances, the system scoring its own output with its own model against its own substrate. Any version of this loop that treats evaluation as an external verdict overstates what the corpus supports.
 - **Scores are protocol-relative and standards are fallible.** Per [[concepts/protocol-relative-scores]] and [[concepts/ground-truth-fallibility]], the numbers each link rests on move with the measurement convention and are bounded by the standard's own error rate — magnitudes always, rankings often.
@@ -76,4 +76,4 @@ The original page proposed: compare workflows with and without independent verif
 - **Evaluate:** plausible as a stage, **compromised as practised** — [[concepts/evaluator-circularity]] makes it the loop's weakest link, escapable by deterministic scorers or genuinely external audit, neither of which is the corpus's default.
 - **Orchestration / security constraints:** architecturally demonstrated ([[projects/openbot]], [[projects/dittany]]), effect unmeasured; aggregation without diversity is a documented failure mode, not a safeguard.
 
-Overall: **hypothesis, link-tested, not validated architecture** — the original status line stands, narrowed: five of seven links now rest on named, deepened evidence, one is contradicted in its unscoped form, and the settling experiment remains unrun.
+**Status:** an untested architecture hypothesis. The component evidence below does not establish the effectiveness of their integration.

@@ -5,7 +5,7 @@ title: "Pre-Crime for Agents, at the Last Second: Probing When a Recruited Agent
 summary: "Linear probes on a pressured agent's activations flag the call about to leak a secret — at the last second only, and permitted disclosures too."
 type: project
 created: 2026-11-01
-updated: 2026-11-02
+updated: 2026-11-14
 related: [scoped-assurance, validation-tier-gap]
 sources:
   - url: https://arxiv.org/abs/2610.40588
@@ -100,6 +100,6 @@ Two honesty constraints on that paragraph. First, the repository landing page wa
 
 All results are **author-reported**, from a single-author preprint submitted on 29 October 2026, with no independent replication mentioned in the paper and none known. The internal transparency is above average for a preprint, and worth crediting explicitly: a pre-registered test for the gpt-oss-20b reasoning probe, with plan, threshold and success criterion committed before test collection; test episodes scored once by detectors frozen on development data; a within-scenario-and-round AUROC that neutralises round and scenario shortcuts by construction; held-out-scenario development evaluation; explicit shortcut controls; a full reproducibility index (Appendix Q); and an unusually candid analysis-history appendix (Appendix P) disclosing which analyses were planned and which were added after seeing results — including that the headline per-call question was not the original plan and that one operating point was chosen on the test episodes. The counterweights are the small positive counts (38 and 26 leaking test calls), the differing attacks and probe types behind the two models' headlines, and the marginal activation-specific contribution over a trained text baseline. Net: a careful, honestly reported single study whose narrow claims (last-second, per-call, disclosure-not-violation) are well supported on its own data, and whose broader "pre-crime" framing its own numbers do not support.
 
-## Historical coverage
+## Related reading
 
 [Briefing 2026-11-01](../briefings/2026/11/2026-11-01.md)

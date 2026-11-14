@@ -4,7 +4,7 @@ title: "Harness Matters — Measuring and Dissecting Security Resilience in Web 
 summary: "WebTrap Farm evaluates how agent harness stages and models jointly determine browser-agent security."
 type: project
 created: 2026-11-12
-updated: 2026-11-12
+updated: 2026-11-14
 depth: brief
 related: [coder-eval]
 sources:
@@ -13,8 +13,8 @@ sources:
 
 # Harness Matters — Measuring and Dissecting Security Resilience in Web Agents
 
-**Source:** https://arxiv.org/abs/2611.11971  
-**Date:** 2026-11-09  
+**Source:** https://arxiv.org/abs/2611.11971
+**Date:** 2026-11-09
 **Evidence status:** Author-reported research; not independently replicated.
 
 ## Mechanism
@@ -41,5 +41,5 @@ High evaluation relevance; new November research, but no independently replicate
 
 ## Related
 
-- [[briefings/2026/11/2026-11-12]] — complete dated evidence and cross-project synthesis.
+- [[briefings/2026/11/2026-11-12]]
 - [[projects/coder-eval]] — analyst comparison, not a demonstrated head-to-head; source URLs and limitations in the briefing.

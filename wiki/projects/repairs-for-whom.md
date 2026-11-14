@@ -5,7 +5,7 @@ title: "Repairs for Whom? Evaluator–Executor Mismatch in Selecting Repairs for
 summary: "Repair selection must match the deployed executor's identity, not capability: stronger models choose worse repairs for it; labels must name their executor."
 type: project
 created: 2026-10-30
-updated: 2026-11-02
+updated: 2026-11-14
 related: [comparator-construction-shapes-margins]
 sources:
   - url: https://arxiv.org/abs/2610.38610
@@ -97,8 +97,8 @@ Expected replication targets (author-reported): greedy-replay loss ≈ 0.13, 14B
 
 ## Evidence status
 
-All quantitative results on this page are **author-reported** from a single study; the paper cites no independent replication of its own results, and none is claimed here. The internal robustness checks — pre-specified tests with Holm correction, a positive control per pool, fresh-rollout confirmation of the preference-reversal result, and second-objective and LLM-only-subset re-checks — are part of the same study and do not constitute independent replication. This page replaces the 2026-10-30 briefing import, whose summary and metrics had not been independently reverified; the upgrade is written from a full reading of the arXiv v1 text (Sections 1–9, Appendices A–J); every figure above is as reported there. The one adjacent result in tension (small-regret cross-model transfer of oversight controllers) concerns a different task and is recorded under Competing approaches.
+All quantitative results on this page are **author-reported** from a single study; the paper cites no independent replication of its own results, and none is claimed here. The internal robustness checks — pre-specified tests with Holm correction, a positive control per pool, fresh-rollout confirmation of the preference-reversal result, and second-objective and LLM-only-subset re-checks — are part of the same study and do not constitute independent replication. The one adjacent result in tension (small-regret cross-model transfer of oversight controllers) concerns a different task and is recorded under Competing approaches.
 
-## Historical coverage
+## Related reading
 
 [Briefing 2026-10-30](../briefings/2026/10/2026-10-30.md)

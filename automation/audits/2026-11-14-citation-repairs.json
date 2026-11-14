@@ -1,0 +1,160 @@
+[
+  {
+    "previous": "https://raw.githubusercontent.com/CopilotKit/OpenBot/main/docs/architecture.md",
+    "pinned": "https://raw.githubusercontent.com/CopilotKit/OpenBot/f71b0f4bb6223bc1c7aa0026ad0e3bd5ef9233b0/docs/architecture.md",
+    "status": 200,
+    "bytes": 40995,
+    "scope": "Retrieved file; historical claim support not comprehensively re-audited"
+  },
+  {
+    "previous": "https://raw.githubusercontent.com/CopilotKit/OpenBot/main/docs/web-research.md",
+    "pinned": "https://raw.githubusercontent.com/CopilotKit/OpenBot/f71b0f4bb6223bc1c7aa0026ad0e3bd5ef9233b0/docs/web-research.md",
+    "status": 200,
+    "bytes": 5139,
+    "scope": "Retrieved file; historical claim support not comprehensively re-audited"
+  },
+  {
+    "previous": "https://raw.githubusercontent.com/CopilotKit/OpenBot/main/release-policy.json",
+    "pinned": "https://raw.githubusercontent.com/CopilotKit/OpenBot/f71b0f4bb6223bc1c7aa0026ad0e3bd5ef9233b0/release-policy.json",
+    "status": 200,
+    "bytes": 743,
+    "scope": "Retrieved file; historical claim support not comprehensively re-audited"
+  },
+  {
+    "previous": "https://raw.githubusercontent.com/CopilotKit/OpenBot/main/agent-computer/src/browser-runtime.ts",
+    "pinned": "https://raw.githubusercontent.com/CopilotKit/OpenBot/6d1919a3b53a0730894258f197f3beb4e8db4f2f/agent-computer/src/browser-runtime.ts",
+    "status": 200,
+    "bytes": 2422,
+    "scope": "Retrieved file; historical claim support not comprehensively re-audited"
+  },
+  {
+    "previous": "https://raw.githubusercontent.com/CopilotKit/OpenBot/main/README.md",
+    "pinned": "https://raw.githubusercontent.com/CopilotKit/OpenBot/f71b0f4bb6223bc1c7aa0026ad0e3bd5ef9233b0/README.md",
+    "status": 200,
+    "bytes": 46951,
+    "scope": "Retrieved file; historical claim support not comprehensively re-audited"
+  },
+  {
+    "previous": "https://raw.githubusercontent.com/CopilotKit/OpenBot/main/server/src/computer/gateway.ts",
+    "pinned": "https://raw.githubusercontent.com/CopilotKit/OpenBot/6d1919a3b53a0730894258f197f3beb4e8db4f2f/server/src/computer/gateway.ts",
+    "status": 200,
+    "bytes": 81626,
+    "scope": "Retrieved file; historical claim support not comprehensively re-audited"
+  },
+  {
+    "previous": "https://raw.githubusercontent.com/CopilotKit/OpenBot/main/server/src/what-if.ts",
+    "pinned": "https://raw.githubusercontent.com/CopilotKit/OpenBot/6d1919a3b53a0730894258f197f3beb4e8db4f2f/server/src/what-if.ts",
+    "status": 200,
+    "bytes": 40857,
+    "scope": "Retrieved file; historical claim support not comprehensively re-audited"
+  },
+  {
+    "previous": "https://raw.githubusercontent.com/CopilotKit/OpenBot/main/server/src/computer/policy.ts",
+    "pinned": "https://raw.githubusercontent.com/CopilotKit/OpenBot/6d1919a3b53a0730894258f197f3beb4e8db4f2f/server/src/computer/policy.ts",
+    "status": 200,
+    "bytes": 29196,
+    "scope": "Retrieved file; historical claim support not comprehensively re-audited"
+  },
+  {
+    "previous": "https://raw.githubusercontent.com/CopilotKit/OpenBot/main/.github/workflows/ci.yml",
+    "pinned": "https://raw.githubusercontent.com/CopilotKit/OpenBot/f71b0f4bb6223bc1c7aa0026ad0e3bd5ef9233b0/.github/workflows/ci.yml",
+    "status": 200,
+    "bytes": 25437,
+    "scope": "Retrieved file; historical claim support not comprehensively re-audited"
+  },
+  {
+    "previous": "https://raw.githubusercontent.com/CopilotKit/OpenBot/main/server/src/approvals/policy.ts",
+    "pinned": "https://raw.githubusercontent.com/CopilotKit/OpenBot/6d1919a3b53a0730894258f197f3beb4e8db4f2f/server/src/approvals/policy.ts",
+    "status": 200,
+    "bytes": 48157,
+    "scope": "Retrieved file; historical claim support not comprehensively re-audited"
+  },
+  {
+    "previous": "https://raw.githubusercontent.com/CopilotKit/OpenBot/main/agent-computer/src/action-barrier.ts",
+    "pinned": "https://raw.githubusercontent.com/CopilotKit/OpenBot/6d1919a3b53a0730894258f197f3beb4e8db4f2f/agent-computer/src/action-barrier.ts",
+    "status": 200,
+    "bytes": 1292,
+    "scope": "Retrieved file; historical claim support not comprehensively re-audited"
+  },
+  {
+    "previous": "https://raw.githubusercontent.com/CopilotKit/OpenBot/main/docs/README.md",
+    "pinned": "https://raw.githubusercontent.com/CopilotKit/OpenBot/f71b0f4bb6223bc1c7aa0026ad0e3bd5ef9233b0/docs/README.md",
+    "status": 200,
+    "bytes": 3683,
+    "scope": "Retrieved file; historical claim support not comprehensively re-audited"
+  },
+  {
+    "previous": "https://raw.githubusercontent.com/CopilotKit/OpenBot/main/CHANGELOG.md",
+    "pinned": "https://raw.githubusercontent.com/CopilotKit/OpenBot/f71b0f4bb6223bc1c7aa0026ad0e3bd5ef9233b0/CHANGELOG.md",
+    "status": 200,
+    "bytes": 615375,
+    "scope": "Retrieved file; historical claim support not comprehensively re-audited"
+  },
+  {
+    "previous": "https://raw.githubusercontent.com/CopilotKit/OpenBot/main/agent-computer/src/real-browser.ts",
+    "pinned": "https://raw.githubusercontent.com/CopilotKit/OpenBot/6d1919a3b53a0730894258f197f3beb4e8db4f2f/agent-computer/src/real-browser.ts",
+    "status": 200,
+    "bytes": 19156,
+    "scope": "Retrieved file; historical claim support not comprehensively re-audited"
+  },
+  {
+    "previous": "https://raw.githubusercontent.com/CopilotKit/OpenBot/main/server/src/computer/policy-store.ts",
+    "pinned": "https://raw.githubusercontent.com/CopilotKit/OpenBot/6d1919a3b53a0730894258f197f3beb4e8db4f2f/server/src/computer/policy-store.ts",
+    "status": 200,
+    "bytes": 14154,
+    "scope": "Retrieved file; historical claim support not comprehensively re-audited"
+  },
+  {
+    "previous": "https://raw.githubusercontent.com/CopilotKit/OpenBot/main/docs/approvals.md",
+    "pinned": "https://raw.githubusercontent.com/CopilotKit/OpenBot/f71b0f4bb6223bc1c7aa0026ad0e3bd5ef9233b0/docs/approvals.md",
+    "status": 200,
+    "bytes": 9654,
+    "scope": "Retrieved file; historical claim support not comprehensively re-audited"
+  },
+  {
+    "previous": "https://raw.githubusercontent.com/CopilotKit/OpenBot/main/server/src/audit.ts",
+    "pinned": "https://raw.githubusercontent.com/CopilotKit/OpenBot/6d1919a3b53a0730894258f197f3beb4e8db4f2f/server/src/audit.ts",
+    "status": 200,
+    "bytes": 69981,
+    "scope": "Retrieved file; historical claim support not comprehensively re-audited"
+  },
+  {
+    "previous": "https://raw.githubusercontent.com/CopilotKit/OpenBot/main/server/src/computer/policy-dry-run.ts",
+    "pinned": "https://raw.githubusercontent.com/CopilotKit/OpenBot/6d1919a3b53a0730894258f197f3beb4e8db4f2f/server/src/computer/policy-dry-run.ts",
+    "status": 200,
+    "bytes": 13346,
+    "scope": "Retrieved file; historical claim support not comprehensively re-audited"
+  },
+  {
+    "previous": "https://raw.githubusercontent.com/CopilotKit/OpenBot/main/.env.example",
+    "pinned": "https://raw.githubusercontent.com/CopilotKit/OpenBot/f71b0f4bb6223bc1c7aa0026ad0e3bd5ef9233b0/.env.example",
+    "status": 200,
+    "bytes": 39820,
+    "scope": "Retrieved file; historical claim support not comprehensively re-audited"
+  },
+  {
+    "previous": "https://raw.githubusercontent.com/trycua/cua/feat/agentenv-macos-drivers/libs/python/agentenv_cua/src/agentenv_cua/macos-apps/envs/bench-sentinel/sentinel.py",
+    "corrected": "https://raw.githubusercontent.com/trycua/cua/feat/agentenv-macos-drivers/libs/python/agentenv-cua/src/agentenv_cua/macos-apps/envs/bench-sentinel/sentinel.py",
+    "status": 200,
+    "scope": "Retrieved source; ready-check start/sample behavior confirmed in the file"
+  },
+  {
+    "previous": "https://docs.github.com/copilot/how-tars/administer-copilot/manage-for-enterprise/manage-availability-of-default-models",
+    "corrected": "https://docs.github.com/en/copilot/how-tos/administer-copilot/manage-for-enterprise/manage-availability-of-default-models",
+    "status": 200,
+    "title": "Managing availability of models in your enterprise - GitHub Docs",
+    "scope": "Official documentation identity and relevant policy/workflow description inspected; no outcome replication"
+  },
+  {
+    "previous": "https://github.com/github/gh-aw/introduction/overview/",
+    "corrected": "https://github.github.io/gh-aw/introduction/overview/",
+    "status": 200,
+    "title": "What are Agentic Workflows? | GitHub Agentic Workflows",
+    "scope": "Official documentation identity and relevant policy/workflow description inspected; no outcome replication"
+  },
+  {
+    "previous": "https://raw.githubusercontent.com/platonai/Browser4/main/docs/browser-behavior-modules.md",
+    "action": "Removed unavailable supplementary citation; no file at this path or path-specific commit history was retrieved. Other cited implementation and documentation references retained.",
+    "scope": "Unavailability does not prove fabrication or invalidate the remaining sources"
+  }
+]

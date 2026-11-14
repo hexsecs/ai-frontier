@@ -4,7 +4,7 @@ title: "AgenTopology — Declarative multi-agent topology"
 summary: "TypeScript project defining a declarative .at language for agent teams, with a 109-rule validator and scaffold/plan targets for Claude Code, Codex and Cursor."
 type: project
 created: 2026-11-10
-updated: 2026-11-10
+updated: 2026-11-14
 depth: deep
 sources:
   - https://github.com/agentopology/agentopology
@@ -128,12 +128,12 @@ Report per-target results separately; do not average across targets, because the
 
 ## Evidence status
 
-Grounded in HTTPS reads on **2026-11-10** of: the repository page and GitHub API repository record for `agentopology/agentopology`; `README.md`, `package.json`, `CHANGELOG.md`, `LICENSE`, `spec/grammar.md`, `spec/validation.md`, `src/parser/validator.ts`, `src/plan/brief.ts`, `src/plan/render.ts`, `examples/code-review.at` and `docs/PRIOR_ART.md` from `https://raw.githubusercontent.com/agentopology/agentopology/main/…`; the recursive file tree of `main` via the GitHub API; the `spec/claude-code/hooks-contract.json` and `hooks-contract.2.1.295.json` snapshots named in the changelog; and the npm registry record for `agentopology`.
-
 Code-inspected facts: the 109 rule identifiers and their severities in the validator; the grammar and validation rule sets as written in `spec/`; the type definitions and brief structure in `src/plan/`; the example topology's constructs; the changelog's per-version claims; the npm and GitHub timestamps and counts. Claims, not verified here: every efficacy, adoption or priority claim in the README and in `docs/PRIOR_ART.md`; the description of the 0.4→0.9.x feature history in the changelog (read as text, not as verified behaviour); and the comment-level statistic "31 of 44 agents across 11 real topologies declare `writes`", whose corpus is not identified in the inspected files. The project ships no CI configuration, no benchmark and no independent evaluation; none is known to this knowledge base.
 
-**Nothing on this page was executed, installed, cloned, built or benchmarked by the KB maintainers.** No project code was run; only text files were fetched over HTTPS.
 
-## Historical coverage
 
-- [[briefings/2026/11/2026-11-10]] — dated full-fidelity research and cross-project synthesis; this page retains that snapshot's "v0.4 described, release date unverified" caveat as superseded by the registry and repository records fetched here.
+Sources: <https://raw.githubusercontent.com/agentopology/agentopology/main/…>.
+
+## Related reading
+
+- [[briefings/2026/11/2026-11-10]]

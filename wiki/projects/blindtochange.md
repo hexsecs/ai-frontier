@@ -5,7 +5,7 @@ title: "BlindToChange: AI Agents Can Find Changes When Asked But Do They Look Wh
 summary: "Search agents find recent changes when asked directly but usually never look when a recommendation request doesn't mention them."
 type: project
 created: 2026-11-02
-updated: 2026-11-02
+updated: 2026-11-14
 sources:
   - url: https://arxiv.org/abs/2610.41435
     retrieved: 2026-11-02
@@ -25,7 +25,7 @@ BlindToChange is a benchmark that measures whether search agents *proactively di
 
 The benchmark's central contrast is between two probe types for the same event. A **direct probe** asks explicitly which of the old and new facts holds ("Is Tony Hoare, the British computer scientist, alive?") and isolates the difficulty of *finding* the update. An **indirect probe** is a recommendation request that never names the affected entity: the entity was a natural candidate before the event and is disqualified after it. Accuracy on the pair separates "can find a change when asked" from "looks for a change when needed."
 
-> **Correction to this page's earlier framing.** The imported stub summarised the paper as "agents fail to verify indirectly changed facts" and named a "key technique: trigger verification for implicit environment changes." Both are wrong, and the distinction matters. In this paper "indirect" describes the **probe**, not the change: the changes are discrete, directly recorded events, and nothing in the evaluated dataset involves a fact changing as a side effect of another change. Nor does the paper implement any verification-triggering technique — it is a benchmark paper. Its discussion section only *proposes* remedy directions (selective verification; continual learning) and explicitly labels the one concrete prompt it considers — "Before finalizing your answer, verify the facts it relies on" — as speculation: "we speculate that it would help."
+> **Benchmark scope.** In this paper "indirect" describes the **probe**, not the change: the changes are discrete, directly recorded events, and nothing in the evaluated dataset involves a fact changing as a side effect of another change. Nor does the paper implement any verification-triggering technique — it is a benchmark paper. Its discussion section only *proposes* remedy directions (selective verification; continual learning) and explicitly labels the one concrete prompt it considers — "Before finalizing your answer, verify the facts it relies on" — as speculation: "we speculate that it would help."
 
 The evaluated dataset is also narrower than the framing suggests. It covers **only two event types, both about people**: deaths ("demises") and ends of official tenures, drawn from Wikidata for events dated February–June 2026, all postdating the most recent reported knowledge cutoff among the evaluated models (January 2026). The paper's emblematic Figure 1 example — the Bayeux Tapestry Museum being closed for renovations — is illustrative only; closures and every other non-person event type are never evaluated.
 
@@ -110,8 +110,8 @@ A full-pipeline variant is also documented: the repository README gives the end-
 
 ## Evidence status
 
-All benchmark results on this page are **author-reported**; the paper cites no independent replication, and none is claimed here. The evaluation ran against the **live web** (providers' native tools and Exa), so exact numerical reproduction of the main results table is not expected — the same probe set will not produce identical trajectories later; the authors' answer to drift is that the pipeline can regenerate probes from newer events. Availability is this paper's strength: the full pipeline code is public under the MIT license and the dataset under CC BY 4.0 (GitHub and Hugging Face, linked in the sources), including per-model probe tables, prompts, judging, and failure-classification scripts. The paper's full text was read for this page; the repository was inspected but not executed. This page also corrects the imported stub's framing (see the correction note in *What it is*): "indirect" describes the probe, the evaluated changes are deaths and ended tenures only, and the paper proposes — but does not implement or evaluate — any verification technique; its one concrete prompt suggestion is labelled speculation by the authors themselves.
+All benchmark results on this page are **author-reported**; the paper cites no independent replication, and none is claimed here. The evaluation ran against the **live web** (providers' native tools and Exa), so exact numerical reproduction of the main results table is not expected — the same probe set will not produce identical trajectories later; the authors' answer to drift is that the pipeline can regenerate probes from newer events. Availability is this paper's strength: the full pipeline code is public under the MIT license and the dataset under CC BY 4.0 (GitHub and Hugging Face, linked in the sources), including per-model probe tables, prompts, judging, and failure-classification scripts. The benchmark scope is important: "indirect" describes the probe, the evaluated changes are deaths and ended tenures only, and the paper proposes — but does not implement or evaluate — any verification technique; its one concrete prompt suggestion is labelled speculation by the authors themselves.
 
-## Historical coverage
+## Related reading
 
 [Briefing 2026-11-02](../briefings/2026/11/2026-11-02.md)

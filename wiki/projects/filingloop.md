@@ -5,7 +5,7 @@ title: "FilingLoop: Evaluating and Evolving LLM Agents for Corporate Disclosure 
 summary: "Benchmark and self-evolving agent framework for SEC disclosure review and revision, learning role-specific procedures across cases without weight updates."
 type: project
 created: 2026-10-31
-updated: 2026-11-02
+updated: 2026-11-14
 related: [evaluator-circularity, improvement-lives-in-external-state]
 sources:
   - url: https://arxiv.org/abs/2610.37905
@@ -86,8 +86,8 @@ A reader can reproduce the *design* from the paper's appendices, which specify c
 
 ## Evidence status
 
-Every quantitative claim on this page is author-reported: one research group, its own benchmark, a single seeded stream, and a single grading model that also serves as the framework's backbone, fact matcher, and skill editor. The primary source (arXiv:2610.37905 v1, full text including Appendices A–I) was read in full on 2026-11-02 for the issue #2 upgrade of this page; the numbers above were checked against its tables and text at that time. No independent replication exists — the only secondary coverage found restates the abstract. The paper implies an accompanying implementation (it references shared prompts and build scripts) but publishes no code or data URL, and a web search on 2026-11-02 found no official repository; the underlying records are public SEC EDGAR documents. Nothing on this page rests on executing the system or reproducing the benchmark locally.
+Every quantitative claim on this page is author-reported: one research group, its own benchmark, a single seeded stream, and a single grading model that also serves as the framework's backbone, fact matcher, and skill editor. No independent replication exists — the only secondary coverage found restates the abstract. The paper implies an accompanying implementation (it references shared prompts and build scripts) but publishes no code or data URL, and a web search on 2026-11-02 found no official repository; the underlying records are public SEC EDGAR documents. Nothing on this page rests on executing the system or reproducing the benchmark locally.
 
-## Historical coverage
+## Related reading
 
 [Briefing 2026-10-31](../briefings/2026/10/2026-10-31.md)

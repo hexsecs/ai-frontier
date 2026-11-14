@@ -4,7 +4,7 @@ title: "SeaFlow"
 summary: "Agent that evolves applicability-conditioned code workflows from game records; 1st overall at GLEE with sub-millisecond decisions."
 type: project
 created: 2026-11-09
-updated: 2026-11-10
+updated: 2026-11-14
 depth: deep
 sources:
   - https://arxiv.org/abs/2611.01840
@@ -37,7 +37,7 @@ The problem the paper names is that agentic workflows invoke a model at every st
 
 **Revision protocol, as reconstructed from the repository** (paper Appendix B.1). The recurring protocol uses a shared history-inspector prompt followed by a strategy prompt and one family-specific routing prompt. The coding agent is instructed to open the exact replay, reconstruct decision-time state, compute payoffs or continuation values with diagnostic code, record the visited route, modify only the affected node, preserve sibling behaviour and the parent fallback, and add a named replay. A revision names the target node, the semantic distinction, the executor, the fallback and the validation condition. The paper notes that the repository retains these instructions and the accepted code, but not one fixed design-time model identifier or a complete proposal ledger.
 
-**What the repository shows.** The released tree is organised as `glee_agent/` (workflows, runtime helpers, judge, diagnostics, fitted artefacts), `glee_runtime/` (game queue, move scheduling, networking), `scripts/` (replay diagnosis, reference building, model fitting) and `tests/`. Files inspected directly for this page:
+**What the repository shows.** The released tree is organised as `glee_agent/` (workflows, runtime helpers, judge, diagnostics, fitted artefacts), `glee_runtime/` (game queue, move scheduling, networking), `scripts/` (replay diagnosis, reference building, model fitting) and `tests/`. Files inspected directly in this assessment:
 
 - `glee_agent/workflows/tree.py` — builds decision-path labels of the form `bargaining/<regime>/<plan.procedure>/<action_type>`, `negotiation/<regime>/<band>/<proc>/<action_type>` and `persuasion/<regime>/<proc>/<action_type>`. Its docstring states that live play still uses the per-family `play()`, so the path is a label over the same decision structure rather than a separate dispatcher.
 - `glee_agent/route.py` — maps each family to its `play` function and each regime to a handler; an unknown family returns `{"decision": "reject"}`, and a `fail_closed` helper returns the same, i.e. the deterministic fallback is a rejection.
@@ -143,8 +143,12 @@ Substituting available models for GPT-5.5 and Grok-4.6 is unavoidable, and the s
 
 ## Evidence status
 
-This page is grounded in a full read of the primary source — the arXiv abstract page (https://arxiv.org/abs/2611.01840) and the complete HTML full text including appendices A–F and the reference list (https://arxiv.org/html/2611.01840v1) — fetched on 2026-11-10, and in a read-only inspection of the released repository at https://github.com/Applied-Machine-Learning-Lab/NeurIPS2026_SeaFlow via `raw.githubusercontent.com` on 2026-11-10: `README.md`, `WORKFLOW.md`, `docs/modeling-workflow.md`, `docs/patch.md`, `scripts/evolve.py`, `glee_agent/route.py`, `glee_agent/workflows/tree.py`, `glee_agent/workflows/bargaining/classify.py` and `.env.example`, plus the repository file tree. Every quantitative result is **author-reported**; the competition result and the efficiency figures are the authors' and the competition's, and no independent replication is known. Repository-derived statements above are marked as repository-inspected and describe the code and documentation as read, not as executed behaviour. Claim types are separated in the text: the first-place competition result, the workflow-design comparison with prior work and the GLEE-compliance statement are the authors'; the items under "Assessed from the reporting" and the whole Implications section are analysis by the KB maintainers. Nothing on this page was reproduced, executed, cloned, installed or tested by the KB maintainers, no repository code was run, and no independent replication is known.
+Every quantitative result is **author-reported**; the competition result and the efficiency figures are the authors' and the competition's, and no independent replication is cited. Repository-derived statements above are marked as repository-inspected and describe the code and documentation as read, not as executed behaviour.
 
-## Historical coverage
 
-- [[briefings/2026/11/2026-11-05]] — dated full-fidelity research and cross-project synthesis.
+
+Sources: <https://arxiv.org/abs/2611.01840> · <https://arxiv.org/html/2611.01840v1> · <https://github.com/Applied-Machine-Learning-Lab/NeurIPS2026_SeaFlow>.
+
+## Related reading
+
+- [[briefings/2026/11/2026-11-05]]

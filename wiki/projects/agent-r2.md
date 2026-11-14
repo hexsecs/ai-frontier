@@ -4,7 +4,7 @@ title: "Agent-R² — Real-source productivity task synthesis"
 summary: "Real-source synthesis of 4k office-work tasks with fine-grained rubrics, training a 4B agent that beats Qwen3-235B on GDPval and OfficeQA."
 type: project
 created: 2026-11-10
-updated: 2026-11-10
+updated: 2026-11-14
 depth: deep
 sources:
   - https://arxiv.org/abs/2611.08219
@@ -91,7 +91,7 @@ The paper's reading: the base model rarely re-checks its deliverable and writes 
 
 **Assessed from the reporting.**
 
-- **Single source, and the artifact was not inspected.** Everything rests on one arXiv preprint (v1, 5 November 2026). The claimed code release was not opened, cloned or run, and no independent replication is known.
+- **Single source, and the artifact was not inspected.** Everything rests on one arXiv preprint (v1, 5 November 2026). The claimed code release was not opened, cloned or run, and no independent replication is cited.
 - **The headline margin is small relative to judge noise.** The claim rests on 51.0% vs 48.0% Pass@1 on GDPval. The paper's own judge-stability appendix measures a **median per-task absolute difference of 3.2 points between repeated evaluations** of the same model by the same judge (mean 5.7), i.e. of the same order as the margin being claimed. The paper's defence is that the ranking is stable across two judges and three repeats (Agent-R²-4B's minimum always exceeds Qwen3-235B's maximum), which is an ordering argument, not a magnitude argument — the effect size of the gap itself is not established against that noise floor. No confidence intervals or significance tests on the headline gap are reported.
 - **Both headline benchmarks are LLM-graded.** GDPval uses an agent-as-a-judge with Gemini-3.1-Pro; the RL reward uses Qwen3.6-Plus as MLLM-as-a-judge over rubrics that the same synthesis model wrote. A rubric authored by the pipeline and graded by an LLM can encode the pipeline's own notion of a good deliverable; the OfficeQA result (rule-based matching plus model-based assessment) is the only partly rule-based number.
 - **The training data is derived from the same pipeline that produced the rubrics.** The 4k instances come from the synthesis pipeline, the rubrics come from that pipeline, and the reference files come from Claude-Opus-4.5 solving its own synthesized tasks. Nothing in the paper separates "the model learned productivity work" from "the model learned the judges' rubric style".
@@ -135,8 +135,12 @@ Substituting available open-weight models for the paper's hosted backbones is un
 
 ## Evidence status
 
-This page is grounded in a full read of the primary source — the arXiv abstract page (https://arxiv.org/abs/2611.08219) and the complete HTML full text including appendices A–H and the reference list (https://arxiv.org/html/2611.08219v1) — fetched on 2026-11-10. Every quantitative result is **author-reported**; the baselines were run by the authors; the paper is a single preprint (v1, 5 November 2026) with no peer-reviewed venue claimed. The code URL given in the paper's footnote (`https://github.com/ZJU-REAL/Agent-R2`) was not opened, cloned or executed by the KB maintainers, and no independent replication is known. Claim types are separated in the text: the "real work needs real data" framing and the differentiation from prior synthesis pipelines are the authors'; the items under "Assessed from the reporting" and the whole Implications section are analysis by the KB maintainers. Nothing on this page was reproduced, executed, cloned or tested by the KB maintainers.
+Every quantitative result is **author-reported**; the baselines were run by the authors; the paper is a single preprint (v1, 5 November 2026) with no peer-reviewed venue claimed. The code URL given in the paper's footnote (`https://github.com/ZJU-REAL/Agent-R2`) was not opened, cloned or executed by the KB maintainers, and no independent replication is cited.
 
-## Historical coverage
 
-- [[briefings/2026/11/2026-11-10]] — dated full-fidelity research and cross-project synthesis.
+
+Sources: <https://arxiv.org/abs/2611.08219> · <https://arxiv.org/html/2611.08219v1>.
+
+## Related reading
+
+- [[briefings/2026/11/2026-11-10]]

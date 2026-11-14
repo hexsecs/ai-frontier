@@ -4,7 +4,7 @@ title: "ToolGuardian"
 summary: "Declarative security framework that vets MCP-style tools before admission and authorizes each invocation in task context."
 type: project
 created: 2026-11-09
-updated: 2026-11-10
+updated: 2026-11-14
 depth: deep
 related: [structural-constraint-over-instruction, secure-agent-operations, verified-completion-vs-apparent-success]
 sources:
@@ -90,7 +90,7 @@ Removing compositional source–sink reasoning preserves atomic correctness but 
 
 **Assessed from the reporting.**
 
-- **Single source, no artifact.** Everything rests on one arXiv preprint (v1, 23 July 2026). A search of the inspected HTML for a code or data link finds only third-party scanner repositories cited as related work (Cisco's mcp-scanner, MCPScan.ai) and arXiv's own infrastructure; no ToolGuardian implementation, fact-extraction pipeline, benchmark corpus or ASP rule set is publicly linked in the inspected text, so the configurations cannot be rerun as written and no independent replication is known.
+- **Single source, no artifact.** Everything rests on one arXiv preprint (v1, 23 July 2026). A search of the inspected HTML for a code or data link finds only third-party scanner repositories cited as related work (Cisco's mcp-scanner, MCPScan.ai) and arXiv's own infrastructure; no ToolGuardian implementation, fact-extraction pipeline, benchmark corpus or ASP rule set is publicly linked in the inspected text, so the configurations cannot be rerun as written and no independent replication is cited.
 - **Very small absolute counts.** The headline 0.86 / 88% is 14 of 16 decisions correct at P₂; at P₃ the ASP confusion matrix is seven true positives, two false positives, one false negative and six true negatives. The runtime "20/20" is twenty curated scenarios, and the composite denominator is eight.
 - **The runtime result is close to specification conformance, not coverage.** The authors say so themselves: the catalog is co-designed with the rules, all three very different realizations score identically, and the paper offers no held-out scenarios. A rule set and a test set written together can be perfect without being right.
 - **The strongest ablation is on the heuristic baseline.** Removing compositional rules degrades the heuristic; no equivalent ablation is reported for the ASP rules, even though the conclusion drawn ("runtime security depends … on explicit policy structure for composition") is stated generally. The ASP rule set's own completeness is untested.
@@ -137,8 +137,12 @@ Substituting an available open-weight model for `openai/gpt-oss-120b` is straigh
 
 ## Evidence status
 
-This page is grounded in a full read of the primary source — the arXiv abstract page (https://arxiv.org/abs/2607.21835) and the complete HTML full text including §V–X, the eleven result tables, the appendices (tool benchmark, task catalogue, enforcement case study) and the reference list (https://arxiv.org/html/2607.21835v1) — fetched on 2026-11-10. Every quantitative result is **author-reported**; the heuristic and LLM baselines were run by the authors, the paper is a single preprint (v1) with no peer-reviewed venue claimed, and no independent replication is known. A full-text search for a code or data link found only third-party scanner repositories cited as related work, so no ToolGuardian implementation or benchmark corpus is publicly linked in the inspected text. The internal inconsistency in the composite-scenario count (7 versus 8) is present in the source text as inspected. Claim types are separated in the text: the first-ASP-framework and differentiation claims are the authors'; the items under "Assessed from the reporting" and the whole Implications section are analysis by the KB maintainers. Nothing on this page was reproduced, executed, cloned or tested by the KB maintainers, and no malicious tool code was run.
+Every quantitative result is **author-reported**; the heuristic and LLM baselines were run by the authors, the paper is a single preprint (v1) with no peer-reviewed venue claimed, and no independent replication is cited. A full-text search for a code or data link found only third-party scanner repositories cited as related work, so no ToolGuardian implementation or benchmark corpus is publicly linked in the inspected text. The internal inconsistency in the composite-scenario count (7 versus 8) is present in the source text as inspected.
 
-## Historical coverage
 
-- [[briefings/2026/11/2026-11-04]] — dated full-fidelity research and cross-project synthesis; this page is the deep-depth grounding of the ToolGuardian finding.
+
+Sources: <https://arxiv.org/abs/2607.21835> · <https://arxiv.org/html/2607.21835v1>.
+
+## Related reading
+
+- [[briefings/2026/11/2026-11-04]]

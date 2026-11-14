@@ -4,7 +4,7 @@ title: "BuilderIO agent-native"
 summary: "BuilderIO agent-native PR #8670: classify failed writes from observed writes with fail-closed channels; AI-reviewed, merged 2026-11-04."
 type: project
 created: 2026-11-09
-updated: 2026-11-10
+updated: 2026-11-14
 depth: deep
 sources:
   - https://github.com/BuilderIO/agent-native/pull/8670
@@ -106,9 +106,9 @@ Proposed, not executed; arms use the published PR and repository at the merged c
 
 ## Evidence status
 
-Grounded in HTTPS reads on 2026-11-10 of the PR page (metadata, description, commit list, the four Builder review rounds and their threads, merge state), the PR file and commit listings, and the raw files at head commit `dec69e4c2c184df705e428e249bccd4b99ba1c52` (`action.ts`, `action-frame.ts`, `outbound-write-observation.ts`, `db/sql-write-classifier.ts`, `db/note-sql-statement.ts`, `scripts/guard-no-unobserved-writes.ts`). **Inspected:** PR identity, timeline, review-thread contents and outcomes, the changed-file inventory, and the mechanism as present in the raw code. **Author-reported:** every verification figure (test counts, mutation score, guard checks, CI explanations) and the 7-of-9 production-failure count; none of it was reproduced by the KB maintainers. **Bot-generated:** the Builder findings, quoted as the reviewer's statements and adjudicated by the author's in-thread replies. Nothing on this page was installed, cloned, compiled, executed or benchmarked by the KB maintainers; no independent evaluation of the PR's behaviour is known to them, and deployed behaviour is unverified by anyone in the record.
+**Inspected:** PR identity, timeline, review-thread contents and outcomes, the changed-file inventory, and the mechanism as present in the raw code. **Author-reported:** every verification figure (test counts, mutation score, guard checks, CI explanations) and the 7-of-9 production-failure count; none of it was reproduced by the KB maintainers. **Bot-generated:** the Builder findings, quoted as the reviewer's statements and adjudicated by the author's in-thread replies.
 
-## Historical coverage
+## Related reading
 
-- [[briefings/2026/11/2026-11-04]] — the dated full-fidelity research briefing and cross-project synthesis that selected this PR.
+- [[briefings/2026/11/2026-11-04]]
 - [[evaluations/briefing-synthesis-2026-11-03-to-09]] — the cross-project synthesis layer covering this and sibling agent-framework findings.

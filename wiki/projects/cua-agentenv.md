@@ -4,7 +4,7 @@ title: "CUA AgentEnv"
 summary: "Cua's AgentEnv plugin for macOS VMs: a lume sandbox provider plus cua-driver and three benchmark-arm drivers for computer-use tasks."
 type: project
 created: 2026-11-09
-updated: 2026-11-10
+updated: 2026-11-14
 depth: deep
 related: [capability-locus, structural-constraint-over-instruction, verified-completion-vs-apparent-success]
 sources:
@@ -26,7 +26,7 @@ sources:
   - https://raw.githubusercontent.com/trycua/cua/feat/agentenv-macos-drivers/libs/python/agentenv-cua/pyproject.toml
   - https://raw.githubusercontent.com/trycua/cua/feat/agentenv-macos-drivers/libs/python/agentenv-cua/src/agentenv_cua/macos-drivers/envs/agent-desktop/macos_computer.py
   - https://raw.githubusercontent.com/trycua/cua/feat/agentenv-macos-drivers/libs/python/agentenv-cua/src/agentenv_cua/macos-drivers/envs/codex-cu/driver.py
-  - https://raw.githubusercontent.com/trycua/cua/feat/agentenv-macos-drivers/libs/python/agentenv_cua/src/agentenv_cua/macos-apps/envs/bench-sentinel/sentinel.py
+  - https://raw.githubusercontent.com/trycua/cua/feat/agentenv-macos-drivers/libs/python/agentenv-cua/src/agentenv_cua/macos-apps/envs/bench-sentinel/sentinel.py
   - https://raw.githubusercontent.com/trycua/cua/feat/agentenv-macos-drivers/libs/python/agentenv-cua/src/agentenv_cua/macos-apps/artifacts/sentinel-macos/run.py
 ---
 
@@ -145,15 +145,17 @@ Report the versions of lume, cua-driver, `agentenv-framework`, `agentenv-framewo
 
 ## Evidence status
 
-This page is grounded in reads of the two primary sources over HTTPS on 2026-11-10: the pull-request metadata and changed-file listings (https://api.github.com/repos/trycua/cua/pulls/6405, https://api.github.com/repos/trycua/cua/pulls/6407, and their `/files` endpoints), the two PR landing pages (https://github.com/trycua/cua/pull/6405 and https://github.com/trycua/cua/pull/6407), and, at the PR head branches, the files `libs/python/agentenv-cua/README.md` (on both `feat/agentenv-macos-plugin` and `feat/agentenv-macos-drivers`), `pyproject.toml`, `src/agentenv_cua/lume/provider.py`, `src/agentenv_cua/drivers/cua_driver_macos/driver.py`, `src/agentenv_cua/drivers/cua_driver_macos/env.toml`, `image/provision.sh`, `smoke/conformance_smoke.py`, `tests/test_lume_provider.py`, `src/agentenv_cua/macos-drivers/envs/agent-desktop/macos_computer.py`, `src/agentenv_cua/macos-drivers/envs/codex-cu/driver.py`, `src/agentenv_cua/macos-apps/envs/bench-sentinel/sentinel.py` and `src/agentenv_cua/macos-apps/artifacts/sentinel-macos/run.py`.
+Code-inspected facts are the provider's semantics, the driver's ready checks and pins, the guest provisioning steps, the sentinel's arming logic, the package metadata and the offline test assertions. Claims are the PR authors' own statements — the 20 and 120 offline test counts, the `agent-env plugin check` results, the compilation check on a Mac, and the "not yet run on a macOS VM" status — none of which the KB maintainers verified; the only automated artifact inspected on either PR is a Codecov coverage comment, which is not a functional result. The Xcode-level environment facts of the guest (TCC rows, SIP, screen-capture consent) are read from the provisioning script, which shows what the script does, not that it ran. The whole of Implications is analysis by the KB maintainers.
 
-Claim types are separated in the text. Code-inspected facts are the provider's semantics, the driver's ready checks and pins, the guest provisioning steps, the sentinel's arming logic, the package metadata and the offline test assertions. Claims are the PR authors' own statements — the 20 and 120 offline test counts, the `agent-env plugin check` results, the compilation check on a Mac, and the "not yet run on a macOS VM" status — none of which the KB maintainers verified; the only automated artifact inspected on either PR is a Codecov coverage comment, which is not a functional result. The Xcode-level environment facts of the guest (TCC rows, SIP, screen-capture consent) are read from the provisioning script, which shows what the script does, not that it ran. The whole of Implications is analysis by the KB maintainers.
+Both pull requests were open drafts at the time of inspection, and the plugin is not released as a merged capability.
 
-Nothing on this page was executed, cloned, built or tested by the KB maintainers; no macOS VM was booted, no image was built, no test suite was run, and no pull request was merged. Both pull requests were open drafts at the time of inspection, and the plugin is not released as a merged capability.
 
-## Historical coverage
 
-- [[briefings/2026/11/2026-11-04]] — dated full-fidelity research and cross-project synthesis.
+Sources: <https://api.github.com/repos/trycua/cua/pulls/6405> · <https://api.github.com/repos/trycua/cua/pulls/6407> · <https://github.com/trycua/cua/pull/6405> · <https://github.com/trycua/cua/pull/6407>.
+
+## Related reading
+
+- [[briefings/2026/11/2026-11-04]]
 - [[domains/computer-and-device-use]] — application context this project serves.
 - [[projects/browser4]] — analyst-level **compares_with** on the browser-automation axis, not a verified dependency.
 - [[evaluations/briefing-synthesis-2026-11-03-to-09]] — cross-project synthesis covering this record.

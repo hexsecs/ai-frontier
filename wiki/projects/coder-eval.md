@@ -4,7 +4,7 @@ title: "Coder Eval — Declarative CI Tests for Coding Agents"
 summary: "Runs coding agents on sandboxed YAML tasks with measurable postconditions, skill activation checks and CI gates."
 type: project
 created: 2026-11-12
-updated: 2026-11-12
+updated: 2026-11-14
 depth: brief
 related: [harness-matters-web-agent-security]
 sources:
@@ -13,8 +13,8 @@ sources:
 
 # Coder Eval — Declarative CI Tests for Coding Agents
 
-**Source:** https://github.com/UiPath/coder_eval  
-**Date:** 2026-11-12 (repository inspected; original release date unverified)  
+**Source:** https://github.com/UiPath/coder_eval
+**Date:** 2026-11-12 (repository inspected; original release date unverified)
 **Evidence status:** Source repository inspected; release date and independent evaluation not verified.
 
 ## Mechanism
@@ -41,5 +41,5 @@ Immediately actionable implementation; newer repository activity is not evidence
 
 ## Related
 
-- [[briefings/2026/11/2026-11-12]] — complete dated evidence and cross-project synthesis.
+- [[briefings/2026/11/2026-11-12]]
 - [[projects/harness-matters-web-agent-security]] — analyst comparison, not a demonstrated head-to-head; source URLs and limitations in the briefing.

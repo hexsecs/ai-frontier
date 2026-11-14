@@ -4,7 +4,7 @@ title: "Adversarial Speculative Reasoning"
 summary: "Trains a speculative-decoding draft to be rejected at decision points so the target model writes critical reasoning at highest precision."
 type: project
 created: 2026-11-09
-updated: 2026-11-10
+updated: 2026-11-14
 depth: deep
 sources:
   - https://arxiv.org/abs/2611.05345
@@ -86,7 +86,7 @@ All three mean gains are positive and the two that reach significance are on dif
 
 **Assessed from the reporting.**
 
-- **Single source, no artifact.** Everything rests on one arXiv preprint (v1, 3 November 2026). A full-text search finds no code or data release for the trained drafts, the fork-pair datasets or the measurement harnesses; the only repository URL is DeepSWE's own benchmark repository. No third party can rerun these configurations as written, and no independent replication is known.
+- **Single source, no artifact.** Everything rests on one arXiv preprint (v1, 3 November 2026). A full-text search finds no code or data release for the trained drafts, the fork-pair datasets or the measurement harnesses; the only repository URL is DeepSWE's own benchmark repository. No third party can rerun these configurations as written, and no independent replication is cited.
 - **The mechanism is a two-link chain, and only the first link is directly measured.** The measured link is numerical noise growing within a verification block (4% per slot, 34% noisier last slot) and appearing far downstream as a 10–20% excess of >4-nat deviations after ~30 turns. The second link — that higher-precision encoding causes the agent to *hold* better decisions — is asserted as a hypothesis and is never measured directly; the end-to-end task success is the only evidence for it, and it is a single link covering both a change in draft behaviour and a change in trajectory precision.
 - **Effect sizes are modest and partly insignificant.** Two of the three headline gains have confidence intervals excluding zero (+7.0 with CI [2.6, 11.4] and +1.4 with CI [0.4, 2.4], p = 0.011); the third, DeepSeek on DeepSWE at +4.0 points, has CI [−1.3, 7.3] spanning zero. The +1.4-point NL2Repo-Bench gain is 1.4 points on a mean test pass rate.
 - **Baseline-run variance is not separated from treatment effect.** Each configuration is run five times independently, but the paper does not report a variance estimate for the *unbiased* draft across runs on the same benchmark, so how much of the +4.0 on DeepSeek could be run-to-run noise is not stated.
@@ -134,8 +134,12 @@ Substituting available models for the paper's hosted 2026 backbones is unavoidab
 
 ## Evidence status
 
-This page is grounded in a full read of the primary source — the arXiv abstract page (https://arxiv.org/abs/2611.05345) and the complete HTML full text including the reference list (https://arxiv.org/html/2611.05345v1) — fetched on 2026-11-10. Every quantitative result is **author-reported**; the baselines were run by the authors; the paper is a single preprint (v1, 3 November 2026) with no peer-reviewed venue claimed. A full-text search found no code or data release for the trained drafts, the fork pairs or the measurement harness — the only repository URL is DeepSWE's own benchmark repository — so no artifact is publicly linked in the inspected text, and no independent replication is known. Claim types are separated in the text: the recasting of speculative decoding as a precision allocator and the "we hypothesize" statement about decision durability are the authors'; the items under "Assessed from the reporting" and the whole Implications section are analysis by the KB maintainers. Nothing on this page was reproduced, executed, cloned or tested by the KB maintainers.
+Every quantitative result is **author-reported**; the baselines were run by the authors; the paper is a single preprint (v1, 3 November 2026) with no peer-reviewed venue claimed. A full-text search found no code or data release for the trained drafts, the fork pairs or the measurement harness — the only repository URL is DeepSWE's own benchmark repository — so no artifact is publicly linked in the inspected text, and no independent replication is cited.
 
-## Historical coverage
 
-- [[briefings/2026/11/2026-11-05]] — dated full-fidelity research and cross-project synthesis; this page supersedes the earlier backfilled record with a full read of the primary source.
+
+Sources: <https://arxiv.org/abs/2611.05345> · <https://arxiv.org/html/2611.05345v1>.
+
+## Related reading
+
+- [[briefings/2026/11/2026-11-05]]

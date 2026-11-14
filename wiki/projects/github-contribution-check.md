@@ -5,7 +5,7 @@ title: "GitHub Contribution Check"
 summary: "Scheduled gh-aw PR-compliance reviewer: deterministic pre-filter, read-only Haiku evaluator, safe-output-only writes, vendor telemetry only."
 type: project
 created: 2026-11-02
-updated: 2026-11-10
+updated: 2026-11-14
 related: [abstention-as-first-class-verdict, structural-constraint-over-instruction, validation-tier-gap]
 sources:
   - url: https://github.github.com/gh-aw/blog/2026-11-02-weekly-update/
@@ -14,7 +14,7 @@ sources:
     retrieved: 2026-11-02
   - url: https://github.com/github/gh-aw
     retrieved: 2026-11-02
-  - url: https://github.com/github/gh-aw/introduction/overview/
+  - url: https://github.github.io/gh-aw/introduction/overview/
     retrieved: 2026-11-02
   - https://raw.githubusercontent.com/github/gh-aw/main/.github/workflows/contribution-check.md
   - https://raw.githubusercontent.com/github/gh-aw/main/.github/agents/contribution-checker.agent.md
@@ -121,10 +121,10 @@ The mechanism's sharpest claims are falsifiable in an afternoon on a throwaway r
 
 ## Evidence status
 
-This page rests on two different bases and they should not be confused. The **mechanism description is checkable**: it derives from the public workflow source file, the public evaluator agent file and the gh-aw safe-outputs reference, read in full for this page on 2026-11-10, and every cap, pin, allowlist and safe-output setting quoted above can be checked against the same files. The **performance claims are vendor claims and vendor telemetry only**: every number comes from GitHub's own blog reporting on its own project's runs in its own repository, no independent replication or evaluation exists, and no code was executed in preparing this page. Where the sources describe behaviour in their own terms — the checklist, the verdict rules, the `triage:error` contract, the E002 handling — those descriptions are quoted or paraphrased as the source's statements, not as verified outcomes. The items under "assessed" in Limitations and the whole Implications section are analysis by the KB maintainers, and the reproducible experiment is proposed and not executed. Nothing on this page was installed, cloned, compiled or run by the KB maintainers.
+This page rests on two different bases and they should not be confused. The **mechanism description is checkable**: it derives from the public workflow source file, the public evaluator agent file and the gh-aw safe-outputs reference, and every cap, pin, allowlist and safe-output setting quoted above can be checked against the same files. The **performance claims are vendor claims and vendor telemetry only**: every number comes from GitHub's own blog reporting on its own project's runs in its own repository, no independent replication or evaluation exists, and no code was executed in preparing this page. Where the sources describe behaviour in their own terms — the checklist, the verdict rules, the `triage:error` contract, the E002 handling — those descriptions are quoted or paraphrased as the source's statements, not as verified outcomes.
 
-One correction to the imported stub is recorded here: the stub named the project's key technique as "measure recurring agent automation cost and API usage." That is unsupported. Cost visibility is a trait of the blog's reporting and of the surrounding gh-aw platform (telemetry import, economy routing, the daily credit cap); the workflow's purpose is PR compliance review, and its distinctive techniques are the deterministic pre-filtering, the fenced sub-agent dispatch and the safe-output-only writes described above.
+Cost visibility is a trait of the blog's reporting and of the surrounding gh-aw platform (telemetry import, economy routing, the daily credit cap); the workflow's purpose is PR compliance review, and its distinctive techniques are the deterministic pre-filtering, the fenced sub-agent dispatch and the safe-output-only writes described above.
 
-## Historical coverage
+## Related reading
 
 [Briefing 2026-11-02](../briefings/2026/11/2026-11-02.md)

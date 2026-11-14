@@ -4,7 +4,7 @@ title: "OpenMA"
 summary: "Self-hostable managed-agent platform separating session, execution and recovery from harness, sandbox and model, with Claude and OpenAI API surfaces."
 type: project
 created: 2026-11-09
-updated: 2026-11-10
+updated: 2026-11-14
 depth: deep
 sources:
   - https://github.com/openma-ai/open-managed-agents
@@ -121,9 +121,13 @@ Keep the run disposable: the platform holds model credentials, wallet-style secr
 
 ## Evidence status
 
-This page is grounded in files fetched over HTTPS on 2026-11-10 and read: `README.md`, `docs/v1-architecture.md`, `docs/openai-agents-compatibility-status.md`, `packages/session-runtime/src/machine.ts`, `packages/session-runtime/package.json`, `packages/sandbox/src/recovery.ts`, `packages/managed-agents-runtime/package.json`, `apps/agent/src/harness/interface.ts` and `.github/workflows/ci.yml` — all under `https://raw.githubusercontent.com/openma-ai/open-managed-agents/main/`. The repository file tree was read from `https://api.github.com/repos/openma-ai/open-managed-agents/git/trees/main?recursive=1` (5,021 paths, not truncated) and metadata from `https://api.github.com/repos/openma-ai/open-managed-agents`. Claim types are separated above: code-inspected facts come from file contents; the compatibility acceptance counts are vendor-reported and are labelled as such, including the report's own caveat that they used a local controlled model; the Limitations assessment and the whole Implications section are analysis by the KB maintainers. Nothing here was installed, cloned, executed, benchmarked or reproduced by the KB maintainers, no project code was run, and no independent replication of any OpenMA claim is known.
+The repository file tree was read from `https://api.github.com/repos/openma-ai/open-managed-agents/git/trees/main?recursive=1` (5,021 paths, not truncated) and metadata from `https://api.github.com/repos/openma-ai/open-managed-agents`.
 
-## Historical coverage
 
-- [[briefings/2026/11/2026-11-05]] — finding 7, the dated briefing this record was backfilled from.
+
+Sources: <https://raw.githubusercontent.com/openma-ai/open-managed-agents/main/>.
+
+## Related reading
+
+- [[briefings/2026/11/2026-11-05]]
 - [[evaluations/briefing-synthesis-2026-11-03-to-09]] — the cross-project synthesis that placed this record against [[techniques/multi-agent-orchestration]] and [[projects/agensh]].

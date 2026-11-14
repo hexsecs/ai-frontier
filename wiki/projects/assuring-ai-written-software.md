@@ -4,7 +4,7 @@ title: "A Case Study in Assuring AI-Written Software"
 summary: "One operator's production healthcare platform, built by coding agents and governed by agents, exposed proxy checks, silent audits and an unsafe repair."
 type: case-study
 created: 2026-11-09
-updated: 2026-11-10
+updated: 2026-11-14
 depth: deep
 sources:
   - https://arxiv.org/abs/2610.08651
@@ -118,8 +118,12 @@ Cost, elapsed time and tokens should be recorded per run, and any failure to det
 
 ## Evidence status
 
-This page is grounded in a full read of the primary source — the arXiv abstract page (https://arxiv.org/abs/2610.08651) and the complete HTML full text including Section 5 "Limitations and responsible use" and Appendix A "Implementation Details" (https://arxiv.org/html/2610.08651v1) — fetched on 2026-11-10. Every factual statement about the deployment, the workflow and the incidents is **author-reported** from a single v1 preprint accepted to a workshop; nothing was independently replicated and no artifact, dataset or repository is linked by the paper. Claim types are separated in the text: the workflow description, the incidents, the 84/69 coverage figure and the stated limitations are the authors'; the items under "Assessed from the reporting" and the whole Implications section are analysis by the KB maintainers, as is the reproducible experiment, which is proposed and not executed. Nothing on this page was reproduced, executed, cloned or tested by the KB maintainers, and no independent replication is known.
+Every factual statement about the deployment, the workflow and the incidents is **author-reported** from a single v1 preprint accepted to a workshop; nothing was independently replicated and no artifact, dataset or repository is linked by the paper.
 
-## Historical coverage
 
-- [[briefings/2026/11/2026-11-09]] — dated full-fidelity research briefing; finding 5 selected this case study.
+
+Sources: <https://arxiv.org/abs/2610.08651> · <https://arxiv.org/html/2610.08651v1>.
+
+## Related reading
+
+- [[briefings/2026/11/2026-11-09]]

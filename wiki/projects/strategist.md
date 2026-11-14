@@ -4,7 +4,7 @@ title: "Strategist: Evolving Reasoning with Agents"
 summary: "Meta-agent evolves executable inference strategies as blueprints in a shared library, matching the strongest baseline's accuracy at 39% lower inference cost."
 type: project
 created: 2026-11-07
-updated: 2026-11-10
+updated: 2026-11-14
 depth: deep
 related: [improvement-lives-in-external-state, capability-locus]
 sources:
@@ -155,8 +155,12 @@ Model substitutions are unavoidable: the paper used Qwen3-0.6B/1.7B/4B as execut
 
 ## Evidence status
 
-This page is grounded in a full read of the primary source — the arXiv abstract page (https://arxiv.org/abs/2611.03618) and the complete HTML full text including appendices A–D, all seven tables and the reference list (https://arxiv.org/html/2611.03618v1) — fetched on 2026-11-10. Every quantitative result is **author-reported**; the 18 in-house baselines and the five external frameworks were run by the authors; the paper is a single preprint (v1, 2 November 2026) whose arXiv comments field states "NeurIPS 2026", with no peer-review confirmation present in the inspected text. Code is linked at github.com/zlab-princeton/Strategist; the paper does not state a release version for the link. Claim types are separated in the text: the priority claim ("the first automated strategy-design system that accumulates knowledge from one task to the next"), the transfer conclusion, and the framing of the strategy layer as the central design bottleneck are the authors'; the items under "Assessed from the reporting" and the whole Implications section are analysis by the KB maintainers. Nothing on this page was reproduced, executed, cloned or tested by the KB maintainers, and no independent replication is known.
+Every quantitative result is **author-reported**; the 18 in-house baselines and the five external frameworks were run by the authors; the paper is a single preprint (v1, 2 November 2026) whose arXiv comments field states "NeurIPS 2026", with no peer-review confirmation present in the inspected text. Code is linked at github.com/zlab-princeton/Strategist; the paper does not state a release version for the link.
 
-## Historical coverage
 
-- [[briefings/2026/11/2026-11-07]] — dated full-fidelity research and cross-project synthesis (this page supersedes that snapshot's assessment).
+
+Sources: <https://arxiv.org/abs/2611.03618> · <https://arxiv.org/html/2611.03618v1>.
+
+## Related reading
+
+- [[briefings/2026/11/2026-11-07]]

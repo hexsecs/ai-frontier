@@ -5,7 +5,7 @@ summary: "A reported gap — and sometimes the ranking itself — is a property 
 type: concept
 depth: full
 created: 2026-11-02
-updated: 2026-11-07
+updated: 2026-11-14
 related: [intent-loss-in-smart-contract-synthesis, seq-k, dynarev, clingex, webanything, prefix-executability, angler, fincosmos]
 sources:
   - url: https://arxiv.org/abs/2610.37830
@@ -144,7 +144,7 @@ exactly what makes the movement attributable to it.
   —contradicts (apparent)→ [[projects/seq-k]]: intent-loss finds
   post-generation stages worth at most about one point, seq-k finds
   post-failure revision repairing 73.8% of failed criteria. The
-  register resolves the apparent contradiction by information content —
+  comparison resolves the apparent contradiction by information content —
   and information content is itself one of seq-k's protocol variables
   (feedback mode), so the resolution reinforces rather than weakens
   this concept.
@@ -174,16 +174,7 @@ exactly what makes the movement attributable to it.
 
 ## Evidence status
 
-This concept is the knowledge base's own analytical construct,
-synthesized 2026-11-02 in mining pass 1 from the KB's deepened project
-pages listed above — it is not a term any of the underlying papers use
-for their own results. Every underlying result is author-reported from
-a single-team preprint, with no independent replication in the set; the
-register grades the concept medium (five supporting pages). The
-concept asserts exactly what those pages jointly support — magnitudes
-and pass rates always, rankings often — and its bound comes from inside
-the evidence, not from caution applied after the fact.
-
+This is an analyst interpretation of the cited studies, not an additional experimental result. Underlying measurements remain author-reported; no independent replication is cited. Magnitudes and pass rates depend on the protocol, while ranking changes require the specific evidence discussed above.
 
 ## 2026-11-07 evidence connections
 

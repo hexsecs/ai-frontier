@@ -5,7 +5,7 @@ title: "Measuring Where Intent Gets Lost in Agentic Smart Contract Synthesis"
 summary: "Exact-replay fidelity study of smart-contract synthesis: pre-generation elicitation adds 19–23 points; judges and static tools miss planted errors."
 type: project
 created: 2026-10-31
-updated: 2026-11-02
+updated: 2026-11-14
 related: [evaluator-circularity, information-content-dominance, protocol-relative-scores, scoped-assurance]
 sources:
   - url: https://arxiv.org/abs/2610.37830
@@ -40,7 +40,7 @@ The testbed is drawn from the FSM-SCG corpus (21,976 contracts), filtered to non
 
 ## Evidence
 
-All results below are **author-reported** from this single study; no independent replication exists. Conditions differ across experiments (denominators run 92–100 of the development contracts, and 499 of 500 at scale), so conditions are stated with each result.
+All results below are **author-reported** from this single study; no independent replication is cited. Conditions differ across experiments (denominators run 92–100 of the development contracts, and 499 of 500 at scale), so conditions are stated with each result.
 
 **The grading instruments fail on planted mistakes.** On 200 guard-removal mutants, Slither caught 1.5% — "the static analyzer was built for vulnerability classes, not intent." An LLM judge reading the code caught 65.0% of 40 mutants but flagged 80% of untouched contracts; requiring the judge to produce executable proof cut false alarms to 40% but also cut catches to 30.0%. A black-box LLM tester caught 17.5% at a 40% false-alarm rate. A reference model written from the description caught 94.3% on 66 held-out contracts — but a reference model written from function names alone caught 87.5%, which the authors call the conventions shortcut: most of what such an oracle rewards is knowledge of conventions any capable model has, not understanding of the description. The original pipeline's self-grading rubric judge, in its earlier evaluation, correlated with the aggregate of three human raters at only r = 0.15.
 
@@ -78,8 +78,8 @@ A scaled-down replication can be run from the method as described in the paper's
 
 ## Evidence status
 
-Every quantitative result on this page is author-reported from the single study above; no independent replication was found, and none is claimed. The paper was read in full on 2026-11-02, including appendices (system architecture, all 36 pre-set criteria with outcomes, measurement details, prompts, and resource documentation). The paper states that an artifact repository contains per-contract sources, generated and repaired contracts, and scores; that repository was **not inspected** — its link returned HTTP 401 at review time — so its contents are reported here as paper-stated only, and the page makes no claim that any repository was tested or any benchmark reproduced. The paper contains no vendor claims; model names (GPT-5.4, GPT-5.4-mini, Claude Sonnet 5, Gemini 3.5 Flash, Gemini 2.5 Flash) are experimental conditions. The paper's suggestion that web agents acting on user requests share the same failure modes is explicitly labelled by the authors as a hypothesis they have not tested, and is recorded here as speculation, not as a result.
+Every quantitative result on this page is author-reported from the single study above; no independent replication was found, and none is claimed. The paper states that an artifact repository contains per-contract sources, generated and repaired contracts, and scores; that repository was **not inspected** — its link returned HTTP 401 at review time — so its contents are reported here as paper-stated only, and the page makes no claim that any repository was tested or any benchmark reproduced. The paper contains no vendor claims; model names (GPT-5.4, GPT-5.4-mini, Claude Sonnet 5, Gemini 3.5 Flash, Gemini 2.5 Flash) are experimental conditions. The paper's suggestion that web agents acting on user requests share the same failure modes is explicitly labelled by the authors as a hypothesis they have not tested, and is recorded here as speculation, not as a result.
 
-## Historical coverage
+## Related reading
 
 [Briefing 2026-10-31](../briefings/2026/10/2026-10-31.md)

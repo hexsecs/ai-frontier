@@ -5,7 +5,7 @@ title: "VeriCUA: Verification as Agentic Exploration for Computer-Using Agents"
 summary: "Active verification of computer-use agents by a separate post-hoc verifier, independent of the executing agent's own completion claims."
 type: project
 created: 2026-10-30
-updated: 2026-11-02
+updated: 2026-11-14
 related: [ground-truth-fallibility, abstention-as-first-class-verdict, comparator-construction-shapes-margins]
 sources:
   - url: https://arxiv.org/abs/2610.40578
@@ -47,7 +47,7 @@ VeriCUA's answer is one platform-agnostic procedure: a separate verifier agent, 
 
 **Online verification** (paper's Table 1; accuracy / FPR in %; both baselines decide 100% of episodes). *AndroidWorld* (116 episodes, M3A scaffold): VeriCUA Acc 90.5, FPR 7.7, decided 82%, decided Acc 95.1%; VLM judge 78.4 / 15.4; auto-generated verifier 82.4 / 16.9. *OSWorld* (361 tasks, 1 rollout per task, executing-agent success 44.3%): VeriCUA Acc 79.5, FPR 13.9, decided 78%, decided Acc 88.7%; judge 73.4 / 27.9; generated verifier 75.9 / 25.9, with higher recall than VeriCUA (78.1 vs. 71.3). *ScienceBoard* (169 tasks, executing-agent success 23.7%): VeriCUA Acc 86.4, FPR 5.4, decided 70%, decided Acc 91.6%; judge 71.6 / 24.8; generated verifier 76.9 / 21.7, again with higher recall (72.5 vs. 60.0). VeriCUA thus has the highest accuracy and lowest FPR in all three environments, but not the highest recall everywhere. Its ScienceBoard FPR is roughly a quarter of the generated verifier's, which the authors attribute to context inspection before checker construction: scripts built without it query incorrect state locations in the scientific software.
 
-**Offline verification** (paper's Table 2; accuracy / balanced accuracy in %). VeriCUA scores 70.4 / 68.3 on OSReward-Hard (n=284), 87.2 / 86.3 on the OSReward full set (n=1,019), 82.7 / 83.1 on WebArena (n=715 trajectories from three rollout agents), and 94.3 / 94.1 (AndroidWorld) and 86.3 / 81.2 (OSWorld) on offline evaluations of recorded trajectories. It leads every compared judge on every column. The accuracy margin over the strongest compared judge is +4.7 points on the hard subset (70.4 vs. OS-Themis's 65.7) against +3.5 on the full set (87.2 vs. CUAJudge's 83.7) — the basis for the paper's "largest gains on hard cases" claim. 
+**Offline verification** (paper's Table 2; accuracy / balanced accuracy in %). VeriCUA scores 70.4 / 68.3 on OSReward-Hard (n=284), 87.2 / 86.3 on the OSReward full set (n=1,019), 82.7 / 83.1 on WebArena (n=715 trajectories from three rollout agents), and 94.3 / 94.1 (AndroidWorld) and 86.3 / 81.2 (OSWorld) on offline evaluations of recorded trajectories. It leads every compared judge on every column. The accuracy margin over the strongest compared judge is +4.7 points on the hard subset (70.4 vs. OS-Themis's 65.7) against +3.5 on the full set (87.2 vs. CUAJudge's 83.7) — the basis for the paper's "largest gains on hard cases" claim.
 
 **Ablations and scaling** (all author-reported):
 
@@ -114,8 +114,8 @@ Caveat: exact reproduction also requires harness details the paper only summariz
 
 ## Evidence status
 
-Every quantitative result on this page is **author-reported**: the authors ran all methods under their own harness on their chosen backbones. Independent replication: **none**. There are no vendor claims as such, but note the overlap: most authors are Google researchers, Google preview models serve as verifier, judge, and executing-agent backbones, and two of the five benchmarks are same-group (OSReward, ScienceBoard). The gold-label audit's confirmations are **model-adjudicated** (single-blind, a different model family), not human re-annotation. No code or data release is mentioned in the paper. Drawn from a full read of the arXiv v1 text (abstract, main text, references, Appendices A–F); figures were not inspected as images, so all numbers come from its tables and captions. One internal inconsistency is worth recording: the observation-input ablation's WebArena accuracy (80.0) differs from the headline (82.7) as printed and is not reconciled in the paper.
+Every quantitative result on this page is **author-reported**: the authors ran all methods under their own harness on their chosen backbones. No independent replication is cited. There are no vendor claims as such, but note the overlap: most authors are Google researchers, Google preview models serve as verifier, judge, and executing-agent backbones, and two of the five benchmarks are same-group (OSReward, ScienceBoard). The gold-label audit's confirmations are **model-adjudicated** (single-blind, a different model family), not human re-annotation. No code or data release is mentioned in the paper. One internal inconsistency is worth recording: the observation-input ablation's WebArena accuracy (80.0) differs from the headline (82.7) as printed and is not reconciled in the paper.
 
-## Historical coverage
+## Related reading
 
 [Briefing 2026-10-30](../briefings/2026/10/2026-10-30.md)
