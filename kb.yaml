@@ -9,7 +9,6 @@ layout:
   index: index.md
   sources: raw
   schema: AGENTS.md
-  log: log.md
 profile: wiki
 visibility: public
 maintainers: [hexsecs]
