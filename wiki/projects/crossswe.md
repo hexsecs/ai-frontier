@@ -4,9 +4,9 @@ title: "CrossSWE"
 summary: "Benchmark of 171 real-world cross-repository joint-development tasks where only coordinated changes across interdependent repositories pass."
 type: benchmark
 created: 2026-11-09
-updated: 2026-11-10
+updated: 2026-11-13
 depth: deep
-related: [protocol-relative-scores, capability-locus, verified-completion-vs-apparent-success]
+related: [expertcrowd-swe, geofaham, protocol-relative-scores, capability-locus, verified-completion-vs-apparent-success]
 sources:
   - https://arxiv.org/abs/2611.01484
   - https://arxiv.org/html/2611.01484v1
@@ -136,3 +136,7 @@ This page is grounded in a full read of the primary source — the arXiv abstrac
 ## Historical coverage
 
 - [[briefings/2026/11/2026-11-04]] — dated full-fidelity research briefing; finding 5 selected CrossSWE.
+
+## November 13 comparison update
+
+[[projects/expertcrowd-swe]] (https://arxiv.org/abs/2611.13246) tests expert-authored merge blockers in individual codebases; CrossSWE tests cross-repository consistency (https://arxiv.org/abs/2611.01484). Scores are protocol-relative, not head-to-head. [[projects/geofaham]] (https://arxiv.org/abs/2611.04977) similarly coordinates artifacts across tools, but geospatial metadata correctness is not the same as repository interface consistency. Proposed experiment: paired repository changes with independent integration postconditions.

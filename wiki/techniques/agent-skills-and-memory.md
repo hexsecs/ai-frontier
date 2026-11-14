@@ -5,9 +5,10 @@ title: "Agent skills and memory"
 summary: "Persistent skills and memory let frozen models improve when admission to the store is gated; ungated memory and unmeasured stores return nulls."
 type: technique
 created: 2026-11-02
-updated: 2026-11-12
-related: [just-in-time-agent-memory, lifelong-materials-agent-memory, skillcompiler, karma, filingloop, context-as-infrastructure, clingex, security-impact-of-coding-agent-memory-files, improvement-lives-in-external-state, capability-locus]
+updated: 2026-11-13
+related: [coding-agent-memory-post-training-ii, skillcompiler, karma, filingloop, context-as-infrastructure, clingex, security-impact-of-coding-agent-memory-files, improvement-lives-in-external-state, capability-locus, just-in-time-agent-memory, lifelong-materials-agent-memory]
 sources:
+  - https://arxiv.org/abs/2611.14009
   - url: https://arxiv.org/abs/2609.34385
     retrieved: 2026-11-12
   - url: https://arxiv.org/abs/2608.11224
@@ -88,3 +89,7 @@ This page is a synthesis over the knowledge base's own deepened project and conc
 [[projects/just-in-time-agent-memory]] preserves raw history for iterative, query-conditioned reconstruction (https://arxiv.org/abs/2609.34385); [[projects/lifelong-materials-agent-memory]] instead reports reusable failure-derived execution guards in materials-science tools (https://arxiv.org/abs/2608.11224). These are complementary **author-reported** mechanisms, not a demonstrated integrated improvement. JAM's retrieval does not itself gate what becomes executable; materials memory does not prove its guards transfer safely to unrelated tasks. Existing KARMA negative-transfer results and the memory-file near-null remain counterevidence to any universal claim that persistent memory improves outcomes. No independent replication or head-to-head test is recorded.
 
 **Reproducible proposed test:** On 25 fixed repository tasks with repeatable failures, compare raw-history query-time retrieval, reusable preflight guards, both, and neither; hold model/tool budget constant; measure independently verified success, guard false positives, retrieval provenance, negative transfer, tokens and retries. This extends the earlier gate-isolation question rather than replacing it.
+
+## November 13 update: trainable file-operation memory
+
+[[projects/coding-agent-memory-post-training-ii]] (https://arxiv.org/abs/2611.14009) reports on-policy distillation that teaches a policy when to write, search and reuse ordinary workspace files across context resets. This differs from gated persistent skill admission, JAM's query-time retrieval and reusable failure guards. The reported 2.97× relative gain on CAMG-II is author-reported, not evidence that ungated memory is safe or that results transfer to production. Earlier null and negative-transfer findings remain counterevidence. Proposed controlled test: fixed interrupted coding tasks comparing prompted files, learned file operations and no persistent memory with identical budgets and independent acceptance checks.

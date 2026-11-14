@@ -102,3 +102,8 @@ This is the legacy canonical file-location index. Some entries are now classifie
 - [Coder Eval](./coder-eval.md) — Sandboxed coding-agent skill and task regression tests.
 - [fastbrowse](./fastbrowse.md) — Constrained browser actions and quote-grounded evidence.
 - [KinoCut](./kinocut.md) — Guardrailed local media editing MCP tools.
+- [CAMP-II](./coding-agent-memory-post-training-ii.md) — Trained file-based memory operations.
+- [ExpertCrowd-SWE](./expertcrowd-swe.md) — Expert-authored merge-blocker grading.
+- [ServerBench](./serverbench.md) — Autonomous LLM serving optimization.
+- [GeoFaham](./geofaham.md) — Artifact-centric geospatial agent collaboration.
+- [WorkflowArena](./workflowarena.md) — Evaluates model-authored executable multi-agent delegation across 145 integrated tasks.

@@ -18,7 +18,7 @@ A curated, source-backed guide to practical agentic AI, autonomous workflows, an
 
 ## Latest briefing
 
-- [November 12: bounded browser agents and executable evaluation](wiki/briefings/2026/11/2026-11-12.md) — five findings with sourced chart and experiments.
+- [November 13: memory, orchestration and compositional verification](wiki/briefings/2026/11/2026-11-13.md) — five findings and reproducible experiments.
 
 ## Latest synthesis
 
