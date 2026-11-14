@@ -92,9 +92,11 @@ This is the legacy canonical file-location index. Some entries are now classifie
 - [Agent-R²](./agent-r2.md) — real-document productivity task synthesis.
 - [Strands Box](./strands-box.md) — default-deny history-sensitive agent sandbox.
 - [AgenTopology](./agentopology.md) — declarative multi-agent teams and handoff contracts.
-
-## November 12, 2026
-
+- [LLM-as-Code](./llm-as-code.md) — Program-owned agent control flow.
+- [Spec-first verification agents](./spec-first-verification-agents.md) — Formal specification and mechanically checked synthesis architecture.
+- [JAM](./just-in-time-agent-memory.md) — Query-time research over preserved memory.
+- [AutoSR](./autosr.md) — Persistent research-state tree search for scientific equations.
+- [Lifelong materials agent memory](./lifelong-materials-agent-memory.md) — Failure-derived reusable scientific guardrails.
 - [Baya — Compile-Then-Execute](./baya-compile-then-execute.md) — Structural web-agent prompt-injection defense with author-reported evaluation.
 - [Harness Matters](./harness-matters-web-agent-security.md) — Paired adversarial calibration of web-agent harness security.
 - [Coder Eval](./coder-eval.md) — Sandboxed coding-agent skill and task regression tests.

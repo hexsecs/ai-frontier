@@ -6,7 +6,7 @@ type: project
 created: 2026-11-10
 updated: 2026-11-10
 depth: deep
-related: [structural-constraint-over-instruction, secure-agent-operations, verified-completion-vs-apparent-success]
+related: [lifelong-materials-agent-memory, structural-constraint-over-instruction, secure-agent-operations, verified-completion-vs-apparent-success]
 sources:
   - https://github.com/strands-agents/box
   - https://api.github.com/repos/strands-agents/box
@@ -158,5 +158,11 @@ Claim types are separated in the text. Code-inspected facts are the file layout,
 Nothing on this page was executed, cloned, built, installed or tested by the KB maintainers; no Box binary was run, no policy was loaded, and no sandbox was entered. No independent security evaluation of Box is known from the inspected files.
 
 ## Historical coverage
+
+- [[briefings/2026/11/2026-11-10]] — dated full-fidelity research and cross-project synthesis.
+
+## Related comparisons added November 11
+
+- [[projects/lifelong-materials-agent-memory]] — reciprocal analyst `compares_with`: externally enforced action-history policy versus reusable learned failure guards; neither is a substitute for the other (https://github.com/strands-agents/box; https://arxiv.org/abs/2608.11224).
 
 - [[briefings/2026/11/2026-11-10]] — dated full-fidelity research and cross-project synthesis.
