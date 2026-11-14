@@ -6,7 +6,7 @@ type: project
 created: 2026-11-10
 updated: 2026-11-10
 depth: deep
-related: [verified-completion-vs-apparent-success, protocol-relative-scores, capability-locus]
+related: [llm-as-code, verified-completion-vs-apparent-success, protocol-relative-scores, capability-locus]
 sources:
   - https://arxiv.org/abs/2611.01930
   - https://arxiv.org/html/2611.01930v1
@@ -162,5 +162,11 @@ Substituting available models for the paper's 2026 hosted backbones is unavoidab
 This page is grounded in a full read of the primary source — the arXiv abstract page (https://arxiv.org/abs/2611.01930) and the complete HTML full text including appendices A–B.8 and the reference list (https://arxiv.org/html/2611.01930v1) — fetched on 2026-11-10. Every quantitative result is **author-reported**; the baselines were run by the authors; the paper is a single preprint (v1) with no peer-reviewed venue claimed. A full-text search for a code or data link found only third-party harness and corpus URLs, so no artifact for RECEIPT, Litmus, Tripwire or WaitAtlas is publicly linked in the inspected text. Claim types are separated in the text: the first-of-its-kind claim and the "agent builders should report…" recommendations are the authors'; the items under "Assessed from the reporting" and the whole Implications section are analysis by the KB maintainers. Nothing on this page was reproduced, executed, cloned or tested by the KB maintainers, and no independent replication is known.
 
 ## Historical coverage
+
+- [[briefings/2026/11/2026-11-10]] — dated full-fidelity research and cross-project synthesis.
+
+## Related comparisons added November 11
+
+- [[projects/llm-as-code]] — reciprocal analyst `compares_with`: control-flow ownership and process-state detection solve different failure classes (https://arxiv.org/abs/2611.01930; https://arxiv.org/abs/2606.15874).
 
 - [[briefings/2026/11/2026-11-10]] — dated full-fidelity research and cross-project synthesis.
