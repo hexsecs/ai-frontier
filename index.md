@@ -18,7 +18,7 @@ A curated, source-backed guide to practical agentic AI, autonomous workflows, an
 
 ## Latest briefing
 
-- [November 13: compositional acceptance for agents](wiki/briefings/2026/11/2026-11-13.md) — five sourced findings with experiments and cross-briefing mining.
+- [November 13: memory, orchestration and compositional verification](wiki/briefings/2026/11/2026-11-13.md) — five findings and reproducible experiments.
 
 ## Latest synthesis
 

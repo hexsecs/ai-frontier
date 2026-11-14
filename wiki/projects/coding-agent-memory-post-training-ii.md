@@ -1,7 +1,7 @@
 ---
 uid: 0f51e12c-1f8d-4e64-93a8-c8202799fe4b
 title: "Coding Agent Memory Post-Training II (CAMP-II)"
-summary: "CAMG-II spans Shop, Coding, AutoResearch, General and Visual long-horizon environments, giving agents ordinary Bash and persistent workspaces. CA"
+summary: "Coding agents learn to manage persistent workspace files across context resets through asynchronous policy distillation."
 type: project
 created: 2026-11-13
 updated: 2026-11-13

@@ -8,8 +8,6 @@ updated: 2026-11-13
 depth: full
 sources:
   - https://arxiv.org/abs/2611.13246
-  - https://arxiv.org/abs/2611.01484
-  - https://arxiv.org/abs/2611.06841
   - https://arxiv.org/abs/2611.07464
   - https://arxiv.org/abs/2611.07947
   - https://arxiv.org/abs/2611.08321

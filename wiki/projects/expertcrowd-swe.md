@@ -1,7 +1,7 @@
 ---
 uid: 0f51e12c-1f8d-4e64-93a8-b0a2f9aed41d
 title: "ExpertCrowd-SWE"
-summary: "A benchmark of 100 expert-authored, multi-file tasks across 87 open-source projects and 11 languages, each with pinned code, sealed reference sol"
+summary: "One hundred expert-authored engineering tasks use calibrated executable graders and must-pass merge blockers."
 type: project
 created: 2026-11-13
 updated: 2026-11-13

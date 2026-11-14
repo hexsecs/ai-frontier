@@ -1,7 +1,7 @@
 ---
 uid: e2f32dc4-4ed5-40d5-9a90-c8a98f9d9e31
 title: "GeoFaham: Multi-Agent Disaster Geospatial Analytics"
-summary: "Specialist agents for vector operations, map features, imagery discovery and raster analysis, coordinated by a dual-ledger orchestrator. A R"
+summary: "Specialist agents coordinate geospatial analysis with typed artifacts, persistent responses and dependency-aware planning."
 type: project
 created: 2026-11-13
 updated: 2026-11-13

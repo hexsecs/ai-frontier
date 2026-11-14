@@ -5,9 +5,13 @@ summary: "Where these agent systems are trustworthy, the trust comes from struct
 type: concept
 depth: full
 created: 2026-11-02
-updated: 2026-11-10
-related: [github-contribution-check, openbot, tinyastral, dittany, envos, cheme-as-code, builderio-agent-native, agent-orchestrator]
+updated: 2026-11-12
+related: [llm-as-code, spec-first-verification-agents, github-contribution-check, openbot, tinyastral, dittany, envos, cheme-as-code, builderio-agent-native, agent-orchestrator]
 sources:
+  - url: https://arxiv.org/abs/2611.02285
+    retrieved: 2026-11-12
+  - url: https://arxiv.org/abs/2606.15874
+    retrieved: 2026-11-12
   - url: https://github.github.com/gh-aw/blog/2026-11-02-weekly-update/
     retrieved: 2026-11-02
   - url: https://github.com/github/gh-aw/blob/main/.github/workflows/contribution-check.md
@@ -83,3 +87,9 @@ Two further instances from the depth pass over the November 3–8 project pages 
 - **[[projects/agent-orchestrator]] — the irreversible action gets the highest evidential bar.** Fleet supervision made structurally conservative: "Failed probes are NOT proof of death. A session is only terminated when the runtime and process are both clearly dead and recent activity doesn't contradict that," plus no merged-PR ownership — the most irreversible action (killing a worker) cannot be triggered by an instruction or a hunch, only by durable facts. "Display status is never stored. It is computed at read time from durable facts" is the same locus rule applied to state. Vendor-documented design with no outcome measurement, so it extends this concept's mechanism evidence, not its (already thin) effectiveness evidence.
 
 Both rows inherit the concept's standing bound: these are design-verified safeguards, not measured ones.
+
+## 2026-11-12 cross-briefing synthesis: program-owned transitions and formal gates
+
+[[projects/llm-as-code]] (https://arxiv.org/abs/2606.15874) places branching, stopping and call-tree context in code instead of model instructions; this **supports the design pattern**, but its reported stability is not independent evidence of a security guarantee. [[projects/spec-first-verification-agents]] (https://arxiv.org/abs/2611.02285) proposes proof-gated implementation against formal specifications; it is a proposal, not evidence that proof generation or human-review reduction works in production. Compared with earlier [[projects/github-contribution-check]] and [[projects/openbot]], the novelty is the control/verification surface, not a demonstrated universal improvement. Existing counterevidence remains: shipped allow-all defaults, constraints that omit checks, and unmeasured enforcement effectiveness.
+
+**Reproducible proposed test:** Run 25 fixed CI tasks with model-directed versus program-owned control, each with and without independent postcondition checks; deliberately include interactive commands and missing validators. Report verified success, silent omissions and policy bypasses separately. No new standalone concept is justified.

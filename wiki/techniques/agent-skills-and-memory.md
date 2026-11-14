@@ -6,9 +6,13 @@ summary: "Persistent skills and memory let frozen models improve when admission 
 type: technique
 created: 2026-11-02
 updated: 2026-11-13
-related: [coding-agent-memory-post-training-ii, skillcompiler, karma, filingloop, context-as-infrastructure, clingex, security-impact-of-coding-agent-memory-files, improvement-lives-in-external-state, capability-locus]
+related: [coding-agent-memory-post-training-ii, skillcompiler, karma, filingloop, context-as-infrastructure, clingex, security-impact-of-coding-agent-memory-files, improvement-lives-in-external-state, capability-locus, just-in-time-agent-memory, lifelong-materials-agent-memory]
 sources:
   - https://arxiv.org/abs/2611.14009
+  - url: https://arxiv.org/abs/2609.34385
+    retrieved: 2026-11-12
+  - url: https://arxiv.org/abs/2608.11224
+    retrieved: 2026-11-12
   - url: https://arxiv.org/abs/2610.39508
     retrieved: 2026-11-02
   - url: https://arxiv.org/abs/2610.39884
@@ -79,6 +83,12 @@ All results in this section are **author-reported** from the projects' own paper
 ## Evidence status
 
 This page is a synthesis over the knowledge base's own deepened project and concept pages, written for issue #2; it introduces no source not already carried by those pages. Every quantitative result is **author-reported** from a single preprint or study per project, with no independent replication recorded in this KB; claim types are separated in the text — headline results are the projects' own measurements, the gated-admission pattern and its two residues are the KB's mining-pass-1 register synthesis, and the bounds include both author-acknowledged limits and analyst-assessed ones flagged on the project pages. Nothing here was reproduced, executed, or independently verified by the KB maintainers. Candidate-link verdicts for this page: all six candidate projects are kept, in differentiated roles — SkillCompiler and ClinGeX as the gated-store evidence, KARMA as the behavioral gate, FilingLoop as the form-only gate (kept on the strength of its validate-or-keep rule, with its performance-blindness stated), Context as Infrastructure as the governed store with a null capability result, and the memory-files study as the ungated counterfactual. Seq-K and EvoTeam contribute to the gated-admission section from the register and concept pages but are not listed as connected projects.
+
+## 2026-11-12 cross-briefing synthesis: query-time evidence versus procedural guards
+
+[[projects/just-in-time-agent-memory]] preserves raw history for iterative, query-conditioned reconstruction (https://arxiv.org/abs/2609.34385); [[projects/lifelong-materials-agent-memory]] instead reports reusable failure-derived execution guards in materials-science tools (https://arxiv.org/abs/2608.11224). These are complementary **author-reported** mechanisms, not a demonstrated integrated improvement. JAM's retrieval does not itself gate what becomes executable; materials memory does not prove its guards transfer safely to unrelated tasks. Existing KARMA negative-transfer results and the memory-file near-null remain counterevidence to any universal claim that persistent memory improves outcomes. No independent replication or head-to-head test is recorded.
+
+**Reproducible proposed test:** On 25 fixed repository tasks with repeatable failures, compare raw-history query-time retrieval, reusable preflight guards, both, and neither; hold model/tool budget constant; measure independently verified success, guard false positives, retrieval provenance, negative transfer, tokens and retries. This extends the earlier gate-isolation question rather than replacing it.
 
 ## November 13 update: trainable file-operation memory
 

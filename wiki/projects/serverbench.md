@@ -1,7 +1,7 @@
 ---
 uid: d691c930-8bb3-4f68-996a-bac137a64f23
 title: "ServerBench: Agent-Designed LLM Serving Systems"
-summary: "A benchmark where coding agents modify complete specialized LLM serving systems and experiment against latency-qualified token value per GPU"
+summary: "Coding agents optimize LLM serving systems under verified workload, latency and GPU-cost constraints."
 type: project
 created: 2026-11-13
 updated: 2026-11-13
