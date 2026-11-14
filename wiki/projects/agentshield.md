@@ -6,7 +6,7 @@ type: project
 created: 2026-11-09
 updated: 2026-11-14
 depth: deep
-related: [structural-constraint-over-instruction, secure-agent-operations, capability-locus]
+related: [concepts/structural-constraint-over-instruction, techniques/secure-agent-operations, concepts/capability-locus]
 sources:
   - https://arxiv.org/abs/2610.41181
   - https://arxiv.org/html/2610.41181v1

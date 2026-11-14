@@ -6,7 +6,7 @@ type: concept
 depth: full
 created: 2026-11-02
 updated: 2026-11-14
-related: [tinyastral, openbot, context-as-infrastructure, github-contribution-check, karma, molrsi, pre-crime-for-agents]
+related: [projects/tinyastral, projects/openbot, projects/context-as-infrastructure, projects/github-contribution-check, projects/karma, projects/molrsi, projects/pre-crime-for-agents]
 sources:
   - url: https://arxiv.org/abs/2610.41216
     retrieved: 2026-11-02
@@ -51,6 +51,8 @@ Second, no framing deception is required for the gap to exist. A gap is a mismat
 Third, a gap is therefore not an accusation of overclaiming. Where the source itself discloses the tier — as several instances above do, in the source's own words — the mismatch is visible precisely because the disclosure exists. The concept names the distance between framing and evidence; whether that distance misleads depends on whether the reader is shown both ends of it, and in most instances here, they are.
 
 ## Relations
+
+[[concepts/scoped-assurance]] concerns the warrant of a particular check; [[concepts/verified-completion-vs-apparent-success]] distinguishes completion claims from observed task outcomes.
 
 - [[projects/tinyastral]] —same-failure-mode→ [[projects/karma]] — the pass-2 miner maps TinyAstral directly onto KARMA's shape: a provenance word ("industrial") or genre framing (physical robotics) claims a tier the measurements do not occupy; TinyAstral sits one tier further removed, simulation standing in for physical runs where KARMA's offline replay at least replays real logged actions.
 - [[projects/molrsi]] —bounds→ the concept from inside an instance: its page separates its own claims by tier, assigning the physical results to the workflows and the computational ablations to the loop — an instance that also demonstrates the disclosure that bounds the concept's force.

@@ -6,7 +6,7 @@ type: project
 created: 2026-11-07
 updated: 2026-11-14
 depth: deep
-related: [structural-constraint-over-instruction, scoped-assurance]
+related: [concepts/structural-constraint-over-instruction, concepts/scoped-assurance]
 sources:
   - url: https://arxiv.org/abs/2611.08321
     retrieved: 2026-11-07

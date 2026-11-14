@@ -6,7 +6,7 @@ type: technique
 depth: deep
 created: 2026-11-02
 updated: 2026-11-14
-related: [dittany, repairs-for-whom, dynarev, envos, evoteam, information-content-dominance, scoped-assurance]
+related: [projects/dittany, projects/repairs-for-whom, projects/dynarev, projects/envos, projects/evoteam, concepts/information-content-dominance, concepts/scoped-assurance]
 sources:
   - url: https://arxiv.org/abs/2610.42144
     retrieved: 2026-11-02

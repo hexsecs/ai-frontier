@@ -6,7 +6,7 @@ type: project
 created: 2026-11-12
 updated: 2026-11-14
 depth: brief
-related: [harness-matters-web-agent-security]
+related: [projects/harness-matters-web-agent-security]
 sources:
   - https://github.com/UiPath/coder_eval
 ---

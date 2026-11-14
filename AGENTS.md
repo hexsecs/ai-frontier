@@ -39,3 +39,12 @@ The KB is the knowledge. Write articles about systems, mechanisms, evidence, com
 - Articles must not describe their own edits, upgrades, depth campaigns, mining passes, promotion decisions or creation history. Write “Acquisition precedes evaluation,” not “This page corrects the earlier description of acquisition.” GitHub history and PRs document changes. Preserve subject-relevant evidence limitations and source citations.
 - A scientific workflow, ingestion technique or evaluation of an agent's process may itself be an article subject. Discuss that subject normally; the prohibition concerns commentary about creating or maintaining this KB's articles.
 - Before merge, run `python scripts/check_article_prose.py` as well as the existing checks. Its narrow textual checks catch known maintenance language; passing them does not establish complete editorial quality or factual accuracy.
+
+
+## Organization and navigation
+
+- Use `wiki/topics/` pages with the existing `index` type for question-led reading paths. Keep canonical IDs stable and link new content from a category index and a relevant reading path.
+- Keep entity type, application domain and evidence status distinct. Use existing types and tags; do not introduce unvalidated frontmatter. State evidence status beside the affected claim when a page contains mixed evidence.
+- Use full canonical IDs in `related:`. This metadata and generated backlinks provide navigation only; explain scientific relationships and provenance in article prose.
+- A project describes one implementation; a technique explains a reusable mechanism; a concept states a bounded cross-project phenomenon; an evaluation compares evidence; an experiment specifies a test and its status. Briefings preserve dated discovery records.
+- Run `python scripts/editorial_report.py` for nonblocking navigation suggestions. Suggestions are not link quotas, evidence judgments or grounds for automatic scientific backlinks.

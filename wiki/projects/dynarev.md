@@ -6,7 +6,7 @@ summary: "DynaRev: 181-task web-agent benchmark delivering additive and override
 type: benchmark
 created: 2026-11-01
 updated: 2026-11-14
-related: [evaluator-circularity, information-content-dominance, protocol-relative-scores, scoped-assurance]
+related: [concepts/evaluator-circularity, concepts/information-content-dominance, concepts/protocol-relative-scores, concepts/scoped-assurance]
 sources:
   - url: https://arxiv.org/abs/2610.40133
     retrieved: 2026-11-02

@@ -6,7 +6,7 @@ type: benchmark
 created: 2026-11-09
 updated: 2026-11-14
 depth: deep
-related: [expertcrowd-swe, geofaham, protocol-relative-scores, capability-locus, verified-completion-vs-apparent-success]
+related: [projects/expertcrowd-swe, projects/geofaham, concepts/protocol-relative-scores, concepts/capability-locus, concepts/verified-completion-vs-apparent-success]
 sources:
   - https://arxiv.org/abs/2611.01484
   - https://arxiv.org/html/2611.01484v1
@@ -138,6 +138,8 @@ Every quantitative result is **author-reported**; the five models were run by th
 Sources: <https://arxiv.org/abs/2611.01484> · <https://arxiv.org/html/2611.01484v1>.
 
 ## Related reading
+
+[[concepts/verified-completion-vs-apparent-success]] discusses whole-task acceptance and incomplete multi-repository changes.
 
 - [[briefings/2026/11/2026-11-04]]
 

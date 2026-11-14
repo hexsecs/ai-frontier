@@ -4,9 +4,9 @@ title: "LLM-as-Code: Agentic Programming for Agent Harness"
 summary: "Call-tree/DAG-derived context and deterministic control flow rather than an LLM controlling every step."
 type: project
 created: 2026-11-11
-updated: 2026-11-11
+updated: 2026-11-14
 depth: brief
-related: [receipt, structural-constraint-over-instruction]
+related: [projects/receipt, concepts/structural-constraint-over-instruction]
 sources:
   - https://arxiv.org/abs/2606.15874
 ---

@@ -10,6 +10,7 @@ import posixpath
 import re
 import sys
 from chatgpt_charts import convert as convert_chatgpt_charts
+from page_navigation import attach_navigation
 
 try:
     import markdown
@@ -25,14 +26,14 @@ OUT = ROOT / "docs" / "data.json"
 
 WIKILINK = re.compile(r'\[\[([A-Za-z0-9_./-]+)(?:\|([^\]\n]+))?\]\]')
 
-def expand_wikilinks(body):
+def expand_wikilinks(body, titles=None):
     """Convert OpenShelf wiki references before Markdown rendering."""
     def replace(match):
         target, label = match.group(1), match.group(2)
         if target.startswith("/") or ".." in target.split("/"):
             return match.group(0)
         target = target.removesuffix(".md")
-        label = label or target.split("/")[-1].replace("-", " ")
+        label = label or (titles or {}).get(target) or target.split("/")[-1].replace("-", " ")
         # Escape label to prevent Markdown/HTML injection from wiki titles.
         return '<a href="#/page/' + urllib.parse.quote(target, safe="/-_.") + '">' + html.escape(label) + '</a>'
     return WIKILINK.sub(replace, body)
@@ -114,6 +115,12 @@ def embed_visualizations(body):
 
 def main():
     pages = []
+    titles = {}
+    for file in WIKI.rglob('*.md'):
+        if not file.name.startswith('_'):
+            front, _ = split_frontmatter(file.read_text(encoding='utf-8'))
+            if front.get('title'):
+                titles[file.relative_to(WIKI).as_posix()[:-3]] = str(front['title'])
     for file in sorted(WIKI.rglob("*.md")):
         if file.name.startswith("_"):
             continue
@@ -121,7 +128,7 @@ def main():
         front, body = split_frontmatter(file.read_text(encoding="utf-8"))
         body = convert_chatgpt_charts(body)
         category = page_id.split("/", 1)[0]
-        if category not in {"projects", "concepts", "techniques", "briefings", "signals", "experiments", "evaluations", "benchmarks", "case-studies", "workflows", "domains"}:
+        if category not in {"projects", "concepts", "techniques", "briefings", "signals", "experiments", "evaluations", "benchmarks", "case-studies", "workflows", "domains", "topics"}:
             continue
         title = str(front.get("title") or re.search(r"^# (.+)$", body, re.M).group(1) if re.search(r"^# (.+)$", body, re.M) else page_id)
         summary = str(front.get("summary") or "")
@@ -130,7 +137,7 @@ def main():
         compiled = embed_visualizations(body)
         if re.search(r"(?m)^\\s{0,3}```(?:chart|vega-lite|mermaid|graph)\\b", compiled):
             raise ValueError(f"{file.relative_to(ROOT)}: visualization fence was not compiled")
-        rendered = markdown.markdown(expand_wikilinks(compiled), extensions=["tables", "fenced_code", "sane_lists"])
+        rendered = markdown.markdown(expand_wikilinks(compiled, titles), extensions=["tables", "fenced_code", "sane_lists"])
         rendered = rewrite_links(rendered, page_id)
         # Python-Markdown leaves bare source URLs as text; linkify text nodes
         # without nesting anchors or modifying code examples.
@@ -143,8 +150,10 @@ def main():
         body_text = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", rendered))[:12000]
         pages.append({"id": page_id, "title": title, "summary": summary, "category": category,
                       "created": str(front.get("created") or ""), "updated": str(front.get("updated") or ""),
+                      "related_raw": front.get("related", []), "tags": front.get("tags", []),
                       "depth": str(front.get("depth") or "full"), "type": str(front.get("type") or category.rstrip("s")),
                       "body_text": html.unescape(body_text), "html": rendered})
+    attach_navigation(pages)
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps({"pages": pages}, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     print(f"Indexed {len(pages)} pages into {OUT.relative_to(ROOT)}")

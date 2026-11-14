@@ -6,7 +6,7 @@ type: project
 created: 2026-11-07
 updated: 2026-11-14
 depth: deep
-related: [improvement-lives-in-external-state, capability-locus]
+related: [concepts/improvement-lives-in-external-state, concepts/capability-locus]
 sources:
   - url: https://arxiv.org/abs/2611.03618
     retrieved: 2026-11-07

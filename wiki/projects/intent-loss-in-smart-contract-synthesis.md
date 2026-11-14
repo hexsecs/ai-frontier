@@ -6,7 +6,7 @@ summary: "Exact-replay fidelity study of smart-contract synthesis: pre-generatio
 type: project
 created: 2026-10-31
 updated: 2026-11-14
-related: [evaluator-circularity, information-content-dominance, protocol-relative-scores, scoped-assurance]
+related: [concepts/evaluator-circularity, concepts/information-content-dominance, concepts/protocol-relative-scores, concepts/scoped-assurance]
 sources:
   - url: https://arxiv.org/abs/2610.37830
     retrieved: 2026-11-02

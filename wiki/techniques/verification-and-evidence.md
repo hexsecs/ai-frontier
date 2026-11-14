@@ -6,7 +6,7 @@ summary: "Checking agent claims against gathered evidence — executable tests, 
 type: technique
 created: 2026-11-02
 updated: 2026-11-14
-related: [vericua, explorerepair, exlabel, prefix-executability, context-as-infrastructure, github-contribution-check, scoped-assurance, abstention-as-first-class-verdict, structural-constraint-over-instruction]
+related: [projects/vericua, projects/explorerepair, projects/exlabel, projects/prefix-executability, projects/context-as-infrastructure, projects/github-contribution-check, concepts/scoped-assurance, concepts/abstention-as-first-class-verdict, concepts/structural-constraint-over-instruction]
 sources:
   - url: https://arxiv.org/abs/2610.40578
     retrieved: 2026-11-02

@@ -1,12 +1,12 @@
 ---
 uid: 1a836d84-71ba-4bc5-aedd-7caab288dda9
 depth: deep
-title: "Embodied and scientific agents"
+title: "Closed-loop instrument and simulation execution"
 summary: "Agents acting on instruments and physical systems, where feedback arrives as measurement, actions carry real cost, and evidence tiers bound every claim."
 type: technique
 created: 2026-11-02
 updated: 2026-11-14
-related: [auctopus, hera, bioagent, molrsi, tinyastral, validation-tier-gap, capability-locus, improvement-lives-in-external-state]
+related: [projects/auctopus, projects/hera, projects/bioagent, projects/molrsi, projects/tinyastral, concepts/validation-tier-gap, concepts/capability-locus, concepts/improvement-lives-in-external-state]
 sources:
   - url: https://arxiv.org/abs/2610.40589
     retrieved: 2026-11-02
@@ -20,9 +20,11 @@ sources:
     retrieved: 2026-11-02
 ---
 
-# Embodied and scientific agents
+# Closed-loop instrument and simulation execution
 
 ## What it is
+
+This technique concerns the observe–act–measure loop, including instrument feedback, execution constraints and the boundary between simulated and physical validation. Use [[domains/scientific-and-embodied]] to browse the application area. The comparison is architectural; it does not imply one shared implementation or transferable performance.
 
 Embodied and scientific agents act through instruments, robots or computational research environments. Their shared engineering pressures include costly actions, measurement feedback, provenance and explicit validation boundaries.
 

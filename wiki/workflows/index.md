@@ -5,9 +5,7 @@ title: workflows
 
 # workflows
 
-These records retain their original canonical file paths under `wiki/projects/` so existing links and UIDs remain stable; their OpenShelf `type` reflects the new classification. A later path migration should preserve aliases.
-
-- [GitHub Agentic Workflows](../projects/github-agentic-workflows.md)
-- [Skills Reviewer](../projects/matt-pocock-skills-reviewer.md)
-- [Code Simplifier](../projects/code-simplifier.md)
-- [PR Sous Chef](../projects/pr-sous-chef.md)
+- [[projects/github-agentic-workflows|GitHub Agentic Workflows]] — GitHub's gh-aw compiles Markdown workflows into hardened Actions YAML; mechanism is repository-inspectable, performance evidence is vendor-only.
+- [[projects/matt-pocock-skills-reviewer|Skills Reviewer]] — gh-aw PR reviewer applying five commit-pinned Matt Pocock skills: Haiku triage, fixed write shapes, three vendor-reported runs, no accuracy evidence.
+- [[projects/code-simplifier|Code Simplifier]] — Daily gh-aw cleanup agent: deterministic candidate precompute, Haiku gate and scout, strict evals, six required endings; three vendor-reported no-op runs.
+- [[projects/pr-sous-chef|PR Sous Chef]] — gh-aw PR nudger: deterministic prefilter, idempotent state fingerprint, delegated Copilot assignment; two of four published runs failed.

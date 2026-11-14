@@ -6,7 +6,7 @@ summary: "GitHub Copilot Fusion: generally available runtime router and orchestr
 type: project
 created: 2026-11-01
 updated: 2026-11-14
-related: ["improvement-lives-in-external-state"]
+related: [concepts/improvement-lives-in-external-state]
 sources:
   - url: https://github.blog/changelog/2026-10-28-route-and-orchestrate-models-with-github-copilot-fusion/
     retrieved: 2026-11-02

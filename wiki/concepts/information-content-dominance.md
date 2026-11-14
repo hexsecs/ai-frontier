@@ -6,7 +6,7 @@ type: concept
 depth: full
 created: 2026-11-02
 updated: 2026-11-14
-related: [seq-k, intent-loss-in-smart-contract-synthesis, dynarev, skillcompiler]
+related: [projects/seq-k, projects/intent-loss-in-smart-contract-synthesis, projects/dynarev, projects/skillcompiler]
 sources:
   - url: https://arxiv.org/abs/2610.37859
     retrieved: 2026-11-02
@@ -49,6 +49,8 @@ An added stage is not itself evidence of improvement. Where *net-negative interv
 **Structure is not worth zero — it is worth what it preserves.** SkillCompiler's skeleton and revision loop still cost ~2.7 points each when removed, and seq-k shows a purely structural choice destroying value: replacing full attempt history with a summary cost up to −14.4 points on HealthBench. Both are consistent with this concept read precisely — structure matters insofar as it delivers or retains information, and a structure that compresses content away (summarisation) or discards it (resetting, in dynarev) is exactly the failure mode the concept predicts. DynaRev's winning strategy also entangles this concept with *accumulated state as asset*, since rewriting the goal helped while preserving browser state; the two contributions are not separated in that experiment.
 
 ## Relations
+
+[[concepts/protocol-relative-scores]] explains why the feedback supplied is part of the measurement protocol. [[concepts/preservation-aware-agent-improvement]] addresses previously satisfied criteria lost during revision.
 
 - [[projects/intent-loss-in-smart-contract-synthesis]] —contradicts (apparent)→ [[projects/seq-k]]: "everything after generation is worth at most about one point" against 73.8% of failed criteria repaired post-failure. Read in isolation, the studies can suggest conflicting conclusions; this concept is the resolution both pages' terms support.
 - [[projects/dynarev]] —supports→ [[projects/seq-k]]: delivering identical final requirements progressively changes outcomes in model-dependent directions, converging with seq-k's finding that gains from independent samples say little about gains from feedback (Δ-correlation −0.08). Independent designs, same underlying claim about revision.

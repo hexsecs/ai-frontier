@@ -2,11 +2,11 @@
 uid: 8b867faa-1a65-4b5a-a927-41c40ccc9e78
 title: "FINCOSMOS: An Open-World Evaluation Paradigm for Agents in Finance"
 summary: "Open-world agent benchmark for finance: hidden intent, self-sourced Web data, point-in-time backtests and 15 veto checks; no session accepted in 150 runs."
-type: project
+type: benchmark
 created: 2026-11-07
 updated: 2026-11-14
 depth: deep
-related: [scoped-assurance, protocol-relative-scores, abstention-as-first-class-verdict]
+related: [concepts/scoped-assurance, concepts/protocol-relative-scores, concepts/abstention-as-first-class-verdict]
 sources:
   - url: https://arxiv.org/abs/2611.07464
     retrieved: 2026-11-07

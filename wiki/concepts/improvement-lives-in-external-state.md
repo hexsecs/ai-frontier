@@ -6,7 +6,7 @@ type: concept
 depth: full
 title: "Improvement lives in external state"
 summary: "Agents in this corpus improve by editing persistent external state (memory, knowledge modules, skills, team rules) while model weights stay frozen."
-related: [filingloop, garden, hera, karma, molrsi, evoteam, github-copilot-fusion, tinyastral, bioagent, angler, strategist, fa-agent]
+related: [projects/filingloop, projects/garden, projects/hera, projects/karma, projects/molrsi, projects/evoteam, projects/github-copilot-fusion, projects/tinyastral, projects/bioagent, projects/angler, projects/strategist, projects/fa-agent]
 sources:
   - url: https://arxiv.org/abs/2610.39884
     retrieved: 2026-11-02
@@ -194,6 +194,8 @@ execution state and attempt history; this concept concerns cross-task
 stored artifacts, and the two should not be merged.
 
 ## Relations
+
+[[concepts/capability-locus]] asks the wider attribution question. [[concepts/preservation-aware-agent-improvement]] asks whether retained state preserves earlier capabilities.
 
 - [[projects/filingloop]] —shares-mechanism→ [[projects/garden]]:
   a frozen artifact, developed on some cases, applied unchanged to

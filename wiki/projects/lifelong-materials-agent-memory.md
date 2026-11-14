@@ -4,9 +4,9 @@ title: "Harnessing Agent Memory to Build Lifelong AI Partners for Materials Scie
 summary: "Turn observed execution failures into reusable pre-execution guardrails and model-independent procedural memory."
 type: project
 created: 2026-11-11
-updated: 2026-11-11
+updated: 2026-11-14
 depth: brief
-related: [strands-box, agent-skills-and-memory]
+related: [projects/strands-box, techniques/agent-skills-and-memory]
 sources:
   - https://arxiv.org/abs/2608.11224
 ---

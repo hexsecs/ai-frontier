@@ -6,7 +6,7 @@ summary: "Agent coordination through evolving teams, typed contracts, independen
 type: technique
 created: 2026-11-02
 updated: 2026-11-14
-related: [evoteam, agenticds, explorerepair, openbot]
+related: [projects/evoteam, projects/agenticds, projects/explorerepair, projects/openbot]
 sources:
   - url: https://arxiv.org/abs/2610.39813
     retrieved: 2026-11-02

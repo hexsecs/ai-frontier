@@ -6,7 +6,7 @@ type: project
 created: 2026-11-10
 updated: 2026-11-14
 depth: deep
-related: [lifelong-materials-agent-memory, structural-constraint-over-instruction, secure-agent-operations, verified-completion-vs-apparent-success]
+related: [projects/lifelong-materials-agent-memory, concepts/structural-constraint-over-instruction, techniques/secure-agent-operations, concepts/verified-completion-vs-apparent-success]
 sources:
   - https://github.com/strands-agents/box
   - https://api.github.com/repos/strands-agents/box
@@ -160,6 +160,8 @@ No independent security evaluation of Box is known from the inspected files.
 Sources: <https://github.com/strands-agents/box> · <https://api.github.com/repos/strands-agents/box> · <https://api.github.com/repos/strands-agents/box/releases> · <https://api.github.com/repos/strands-agents/box/git/trees/main?recursive=1> · <https://raw.githubusercontent.com/strands-agents/box/main/>.
 
 ## Related reading
+
+Compare [[techniques/secure-agent-operations]] and [[concepts/structural-constraint-over-instruction]] for the distinction between externally enforced authority and model instructions; these are architectural comparisons, not a measured integration.
 
 - [[briefings/2026/11/2026-11-10]]
 

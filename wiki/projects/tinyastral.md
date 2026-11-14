@@ -6,7 +6,7 @@ summary: "An RSI loop evolves a frozen 180B teacher's robot harness (RoboTwin 33
 type: project
 created: 2026-11-02
 updated: 2026-11-14
-related: [capability-locus, comparator-construction-shapes-margins, improvement-lives-in-external-state, structural-constraint-over-instruction, validation-tier-gap]
+related: [concepts/capability-locus, concepts/comparator-construction-shapes-margins, concepts/improvement-lives-in-external-state, concepts/structural-constraint-over-instruction, concepts/validation-tier-gap]
 sources:
   - url: https://arxiv.org/abs/2610.41216
     retrieved: 2026-11-02
@@ -84,5 +84,7 @@ A true replication is not extractable: the paper text releases no code, harness,
 All benchmark results on this page are **author-reported** results from the single authoring team (Huawei / Noah's Ark Lab); no independent replication is cited, and several models involved are too recent for third-party verification. The paper text itself gives **no code, data, or weights URL** — the only repository URL in the text is a competitor's. The project page linked from the arXiv metadata in turn links a code repository, an SFT dataset, and weights; per house rules, those artifacts were **not inspected or executed** in this assessment, and nothing here claims they were.
 
 ## Related reading
+
+[[concepts/capability-locus]] compares harness and weights contributions; [[concepts/validation-tier-gap]] retains the simulation boundary; [[concepts/comparator-construction-shapes-margins]] discusses comparator construction.
 
 [Briefing 2026-11-02](../briefings/2026/11/2026-11-02.md)

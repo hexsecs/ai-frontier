@@ -6,7 +6,7 @@ type: project
 created: 2026-11-09
 updated: 2026-11-14
 depth: deep
-related: [verified-completion-vs-apparent-success, preservation-aware-agent-improvement, protocol-relative-scores]
+related: [concepts/verified-completion-vs-apparent-success, concepts/preservation-aware-agent-improvement, concepts/protocol-relative-scores]
 sources:
   - https://arxiv.org/abs/2611.07372
   - https://arxiv.org/html/2611.07372v1

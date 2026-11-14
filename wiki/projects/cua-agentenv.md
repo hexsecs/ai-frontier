@@ -6,7 +6,7 @@ type: project
 created: 2026-11-09
 updated: 2026-11-14
 depth: deep
-related: [capability-locus, structural-constraint-over-instruction, verified-completion-vs-apparent-success]
+related: [concepts/capability-locus, concepts/structural-constraint-over-instruction, concepts/verified-completion-vs-apparent-success]
 sources:
   - https://github.com/trycua/cua/pull/6405
   - https://github.com/trycua/cua/pull/6407

@@ -6,7 +6,7 @@ summary: "When the evaluated system sits inside its own grading path, the score 
 type: concept
 created: 2026-11-02
 updated: 2026-11-14
-related: [filingloop, agenticds, auctopus, hera, dynarev, clingex, intent-loss-in-smart-contract-synthesis, webanything, seq-k, molrsi, envos, evoteam, dittany]
+related: [projects/filingloop, projects/agenticds, projects/auctopus, projects/hera, projects/dynarev, projects/clingex, projects/intent-loss-in-smart-contract-synthesis, projects/webanything, projects/seq-k, projects/molrsi, projects/envos, projects/evoteam, projects/dittany]
 sources:
   - url: https://arxiv.org/abs/2610.37905
     retrieved: 2026-11-02
@@ -163,6 +163,8 @@ well; but it shows that declaring a mitigation is not the same as the
 mitigation working.
 
 ## Relations
+
+[[concepts/ground-truth-fallibility]] addresses erroneous references even without self-grading; [[concepts/scoped-assurance]] addresses the exercised scope of a check.
 
 The shared validity risk is:
 [[projects/filingloop]] —same-failure-mode→ [[projects/auctopus]];

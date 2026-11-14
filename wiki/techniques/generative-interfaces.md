@@ -6,7 +6,7 @@ summary: "Agents propose declarative UI or actions; a trusted host validates aga
 type: technique
 created: 2026-11-02
 updated: 2026-11-14
-related: [a2ui-and-copilotkit, openbot]
+related: [projects/a2ui-and-copilotkit, projects/openbot]
 sources:
   - url: https://a2ui.org/specification/v0.9.1-a2ui/
     retrieved: 2026-11-02

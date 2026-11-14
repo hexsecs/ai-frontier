@@ -4,7 +4,7 @@ title: "Hidden-acceptance and regression-preserving ingestion evaluation"
 summary: "Reproducible protocol testing source-grounded knowledge ingestion against hidden requirements, regressions and missing validators."
 type: experiment
 created: 2026-11-09
-updated: 2026-11-09
+updated: 2026-11-14
 depth: full
 sources:
   - https://arxiv.org/abs/2611.07464
@@ -36,3 +36,8 @@ Report independent full-task acceptance rate, relation precision and recall, new
 ## Provenance and follow-up
 
 [[concepts/verified-completion-vs-apparent-success]] motivates independent acceptance; [[concepts/preservation-aware-agent-improvement]] motivates regression preservation. [[evaluations/briefing-synthesis-2026-11-03-to-09]] compares the underlying research. This is a test plan, not a claim of achieved improvement.
+
+
+## Relationship to the companion protocol
+
+This protocol varies strategy-library and information-environment support while keeping independent acceptance as the measurement framework. The companion varies independent acceptance and regression gating as interventions; its arms answer a different causal question. See [[experiments/independent-acceptance-regression-ingestion]]. Both protocols are proposed, not executed.

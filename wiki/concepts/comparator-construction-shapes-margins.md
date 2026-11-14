@@ -6,7 +6,7 @@ type: concept
 depth: full
 created: 2026-11-02
 updated: 2026-11-14
-related: [explorerepair, vericua, repairs-for-whom, codespecweave, angler, bioagent, dittany, tinyastral, context-as-infrastructure]
+related: [projects/explorerepair, projects/vericua, projects/repairs-for-whom, projects/codespecweave, projects/angler, projects/bioagent, projects/dittany, projects/tinyastral, projects/context-as-infrastructure]
 sources:
   - url: https://arxiv.org/abs/2610.40578
     retrieved: 2026-11-02
@@ -35,8 +35,7 @@ restore a cut loop, re-run instead of transcribing, swap a random policy
 for a real competitor — and the margin moves, sometimes by more than the
 effect the paper is claiming.
 
-This is distinct from the neighbouring phenomena. Protocol-relative
-scores vary the *measurement convention* — scoring rule, denominators,
+This is distinct from the neighbouring phenomena. [[concepts/protocol-relative-scores|Protocol-relative scores]] vary the *measurement convention* — scoring rule, denominators,
 attempt structure — over a fixed set of comparators; this concept varies
 how the comparator itself was *produced*, before any scoring convention
 is applied. Evaluator-identity-relativity varies *who grades* the
@@ -158,10 +157,10 @@ provenance ([[projects/codespecweave]]). TinyAstral and ExploreRepair
 are the same failure shape in two clusters — a baseline run outside its
 designed conditions — which is what carried this entry across the
 single-cluster line. Angler and BioAgent also anchor
-protocol-relative-scores, and the two concepts compose: a score can be
+[[concepts/protocol-relative-scores]], and the two concepts compose: a score can be
 protocol-relative *and* measured against a constructed comparator, and
 the discounts multiply rather than substitute. Codespecweave's
-benchmark-provenance mode borders evaluator-circularity, where the
+benchmark-provenance mode borders [[concepts/evaluator-circularity]], where the
 evaluation is partly produced by the thing evaluated; the difference is
 that here the distortion enters through the comparison set's
 construction, whether or not any judging is self-referential.

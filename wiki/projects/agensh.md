@@ -6,7 +6,7 @@ type: project
 created: 2026-11-09
 updated: 2026-11-14
 depth: deep
-related: [multi-agent-orchestration, capability-locus, verified-completion-vs-apparent-success]
+related: [techniques/multi-agent-orchestration, concepts/capability-locus, concepts/verified-completion-vs-apparent-success]
 sources:
   - https://github.com/microsoft/Agensh
   - https://arxiv.org/abs/2609.26781

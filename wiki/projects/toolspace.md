@@ -6,7 +6,7 @@ type: project
 created: 2026-11-10
 updated: 2026-11-14
 depth: deep
-related: [evaluator-circularity, protocol-relative-scores, preservation-aware-agent-improvement]
+related: [concepts/evaluator-circularity, concepts/protocol-relative-scores, concepts/preservation-aware-agent-improvement]
 sources:
   - https://arxiv.org/abs/2611.05036
   - https://arxiv.org/html/2611.05036v1

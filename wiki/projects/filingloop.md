@@ -6,7 +6,7 @@ summary: "Benchmark and self-evolving agent framework for SEC disclosure review 
 type: project
 created: 2026-10-31
 updated: 2026-11-14
-related: [evaluator-circularity, improvement-lives-in-external-state]
+related: [concepts/evaluator-circularity, concepts/improvement-lives-in-external-state]
 sources:
   - url: https://arxiv.org/abs/2610.37905
     retrieved: 2026-11-02

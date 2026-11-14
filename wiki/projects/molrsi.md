@@ -6,7 +6,7 @@ summary: "Improves its molecular workflow-search policy across tasks via persist
 type: project
 created: 2026-11-01
 updated: 2026-11-14
-related: [evaluator-circularity, improvement-lives-in-external-state, validation-tier-gap]
+related: [concepts/evaluator-circularity, concepts/improvement-lives-in-external-state, concepts/validation-tier-gap]
 sources:
   - url: https://arxiv.org/abs/2610.39714
     retrieved: 2026-11-02

@@ -9,6 +9,8 @@ import posixpath
 import re
 import sys
 from urllib.parse import unquote
+import yaml
+from page_navigation import reachable_from, resolve_related
 
 ROOT = Path(__file__).resolve().parents[1]
 WIKI = ROOT / "wiki"
@@ -26,17 +28,36 @@ def body_only(text):
 def check_source():
     ids = {p.relative_to(WIKI).as_posix()[:-3] for p in WIKI.rglob("*.md") if not p.name.startswith("_")}
     errors, inbound = [], set()
+    adjacency = {page: set() for page in ids}
+    adjacency['__root__'] = set()
+    root_text = (ROOT / 'index.md').read_text(encoding='utf-8')
+    for match in MDLINK.finditer(body_only(root_text)):
+        raw = unquote(html.unescape(match.group(1))).split('#', 1)[0]
+        if raw.startswith('wiki/') and raw.endswith('.md'):
+            target = posixpath.normpath(raw)[5:-3]
+            if target in ids:
+                adjacency['__root__'].add(target)
+                inbound.add(target)
+            else:
+                errors.append(f'index.md: missing root target {raw}')
     for path in sorted(WIKI.rglob("*.md")):
         if path.name.startswith("_"):
             continue
         page = path.relative_to(WIKI).as_posix()[:-3]
-        body = body_only(path.read_text(encoding="utf-8"))
+        text = path.read_text(encoding="utf-8")
+        body = body_only(text)
+        if text.startswith('---\n'):
+            front = yaml.safe_load(text[4:].split('\n---', 1)[0]) or {}
+            _, unresolved = resolve_related(front.get('related', []), ids)
+            for target in unresolved:
+                errors.append(f'{page}: unresolved related navigation {target}')
         for match in WIKILINK.finditer(body):
             target = match.group(1).split("|", 1)[0].strip().removesuffix(".md")
             if target not in ids:
                 errors.append(f"{page}: missing wiki target [[{target}]]")
             else:
                 inbound.add(target)
+                adjacency[page].add(target)
         for match in MDLINK.finditer(body):
             raw = unquote(html.unescape(match.group(1))).split("#", 1)[0].split("?", 1)[0]
             if not raw.endswith(".md") or raw.startswith(("/", "//", "http:", "https:", "mailto:", "data:")):
@@ -46,6 +67,10 @@ def check_source():
                 errors.append(f"{page}: missing Markdown target {raw}")
             else:
                 inbound.add(target)
+                adjacency[page].add(target)
+    unreachable = sorted(ids - reachable_from('__root__', adjacency))
+    for page in unreachable:
+        errors.append(f'{page}: unreachable from root index through article links')
     orphans = sorted(ids - inbound)
     print(f"Source: {len(ids)} pages, {len(errors)} broken links, {len(orphans)} orphan candidates")
     for orphan in orphans[:30]:

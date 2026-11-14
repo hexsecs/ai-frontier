@@ -6,7 +6,7 @@ type: project
 depth: deep
 created: 2026-11-02
 updated: 2026-11-14
-related: [abstention-as-first-class-verdict, capability-locus, comparator-construction-shapes-margins, evaluator-circularity, structural-constraint-over-instruction]
+related: [concepts/abstention-as-first-class-verdict, concepts/capability-locus, concepts/comparator-construction-shapes-margins, concepts/evaluator-circularity, concepts/structural-constraint-over-instruction]
 sources:
   - url: https://arxiv.org/abs/2610.42144
     retrieved: 2026-11-02

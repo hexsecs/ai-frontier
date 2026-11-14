@@ -6,7 +6,7 @@ type: concept
 depth: full
 created: 2026-11-02
 updated: 2026-11-14
-related: [skillcompiler, intent-loss-in-smart-contract-synthesis, webanything, dynarev, clingex, karma, envos, pre-crime-for-agents, aisoc-v21, prefix-executability, openbot, fincosmos, cheme-as-code, controlanything]
+related: [projects/skillcompiler, projects/intent-loss-in-smart-contract-synthesis, projects/webanything, projects/dynarev, projects/clingex, projects/karma, projects/envos, projects/pre-crime-for-agents, projects/aisoc-v21, projects/prefix-executability, projects/openbot, projects/fincosmos, projects/cheme-as-code, projects/controlanything]
 sources:
   - url: https://arxiv.org/abs/2610.39508
     retrieved: 2026-11-02
@@ -63,6 +63,8 @@ The concept is a discipline with good and bad instances, not a universal accusat
 
 ## Relations
 
+[[concepts/verified-completion-vs-apparent-success]] applies this scope distinction to task postconditions and observed effects.
+
 Source-grounded analyst comparisons:
 
 - [[projects/clingex]] —shares-mechanism→ [[projects/skillcompiler]] — test-gated admission of reusable components: only skills passing all frozen tests entered ClinGeX's deployed library; SkillCompiler requires revalidation of an affected realization "before admission" on any change. The gate is the shared mechanism whose warrant this concept scopes.
@@ -72,7 +74,7 @@ Source-grounded analyst comparisons:
 - [[projects/intent-loss-in-smart-contract-synthesis]] —same-failure-mode→ [[projects/clingex]] — self-grading inside the evaluated loop: intent-loss's original pipeline "grades itself with an LLM rubric judge"; ClinGeX's ablation items were generated and scored within the evaluated core's own model family.
 - [[projects/karma]] —same-failure-mode→ [[projects/skillcompiler]] — both anchor this concept from the gate side (KARMA's gate non-guarantee; SkillCompiler's 88.84% invocation success after validation). This is an unverified analogy inferred from shared properties, not a demonstrated common failure mechanism.
 
-Sibling concepts, named in plain text: this entry is distinct from **precommitment**, which concerns locking the yardstick *before* outcomes exist — scoped assurance concerns the warrant of a result *after* the check ran, however well it was locked. It is also distinct from **validation-tier-gap**, which concerns a project's framing inviting a stronger evidence tier than its measurements occupy; scoped assurance concerns a specific check's result quoted beyond the set it exercised. ClinGeX's home-field benchmark also appears under **construct-validity-leakage**, and the unvalidated-judge cases border on **evaluator-circularity**.
+Sibling concepts, named in plain text: this entry is distinct from **precommitment**, which concerns locking the yardstick *before* outcomes exist — scoped assurance concerns the warrant of a result *after* the check ran, however well it was locked. It is also distinct from [[concepts/validation-tier-gap]], which concerns a project's framing inviting a stronger evidence tier than its measurements occupy; scoped assurance concerns a specific check's result quoted beyond the set it exercised. ClinGeX's home-field benchmark also appears under **construct-validity-leakage**, and the unvalidated-judge cases border on [[concepts/evaluator-circularity]].
 
 ## Open questions
 

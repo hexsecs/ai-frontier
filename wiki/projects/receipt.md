@@ -6,7 +6,7 @@ type: project
 created: 2026-11-10
 updated: 2026-11-14
 depth: deep
-related: [llm-as-code, verified-completion-vs-apparent-success, protocol-relative-scores, capability-locus]
+related: [projects/llm-as-code, concepts/verified-completion-vs-apparent-success, concepts/protocol-relative-scores, concepts/capability-locus]
 sources:
   - https://arxiv.org/abs/2611.01930
   - https://arxiv.org/html/2611.01930v1

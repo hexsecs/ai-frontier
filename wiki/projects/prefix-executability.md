@@ -6,7 +6,7 @@ summary: "Successful episodes often pass through invalid prefixes: final success
 type: benchmark
 created: 2026-11-01
 updated: 2026-11-14
-related: [protocol-relative-scores, scoped-assurance]
+related: [concepts/protocol-relative-scores, concepts/scoped-assurance]
 sources:
   - url: https://arxiv.org/abs/2610.40444
     retrieved: 2026-11-02

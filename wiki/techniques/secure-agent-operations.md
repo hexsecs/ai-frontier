@@ -5,8 +5,8 @@ title: "Secure agent operations"
 summary: "How this corpus runs agents under security constraint — policy gateways, structural write channels, provenance-gated detection — and what was measured."
 type: technique
 created: 2026-11-02
-updated: 2026-11-02
-related: [aisoc-v21, angler, security-impact-of-coding-agent-memory-files, openbot, github-contribution-check, pre-crime-for-agents, structural-constraint-over-instruction, scoped-assurance]
+updated: 2026-11-14
+related: [projects/aisoc-v21, projects/angler, projects/security-impact-of-coding-agent-memory-files, projects/openbot, projects/github-contribution-check, projects/pre-crime-for-agents, concepts/structural-constraint-over-instruction, concepts/scoped-assurance]
 sources:
   - url: https://github.com/CopilotKit/openbot
     retrieved: 2026-11-02

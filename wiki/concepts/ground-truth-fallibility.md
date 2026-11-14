@@ -6,7 +6,7 @@ type: concept
 depth: full
 created: 2026-11-02
 updated: 2026-11-14
-related: [vericua, codespecweave, exlabel, explorerepair]
+related: [projects/vericua, projects/codespecweave, projects/exlabel, projects/explorerepair]
 sources:
   - url: https://arxiv.org/abs/2610.40578
     retrieved: 2026-11-02
@@ -127,6 +127,8 @@ agreement with the standard and correctness are different quantities
 that happen to share a number.
 
 ## Relations
+
+Compare [[concepts/evaluator-circularity]]: an independent reference can still be wrong. [[concepts/scoped-assurance]] bounds what passing a check establishes, even when its reference is sound.
 
 - **[[projects/codespecweave]] —supports→ [[projects/vericua]]** —
   CodeSpecWeave's audit is large-scale evidence for VeriCUA's founding

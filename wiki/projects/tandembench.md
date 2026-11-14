@@ -6,7 +6,7 @@ summary: "Benchmark that asks decision models to pick optimal two-agent cooking 
 type: benchmark
 created: 2026-11-08
 updated: 2026-11-14
-related: [protocol-relative-scores, capability-locus, comparator-construction-shapes-margins]
+related: [concepts/protocol-relative-scores, concepts/capability-locus, concepts/comparator-construction-shapes-margins]
 sources:
   - url: https://arxiv.org/abs/2611.05827
     retrieved: 2026-11-10

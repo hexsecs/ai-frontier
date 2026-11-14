@@ -6,7 +6,7 @@ type: benchmark
 created: 2026-11-08
 updated: 2026-11-14
 depth: deep
-related: [preservation-aware-agent-improvement, verified-completion-vs-apparent-success, protocol-relative-scores]
+related: [concepts/preservation-aware-agent-improvement, concepts/verified-completion-vs-apparent-success, concepts/protocol-relative-scores]
 sources:
   - https://arxiv.org/abs/2610.07763
   - https://arxiv.org/html/2610.07763v1
