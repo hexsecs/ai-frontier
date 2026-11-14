@@ -1,94 +1,155 @@
 ---
 uid: a29b51f0-ec09-4b70-9e90-900000000003
 title: "ProcGrep / Agent Trajectories as Programs"
-summary: "Fingerprints coding-agent procedures from action trajectories rather than outcome scores."
+summary: "Library and method that fingerprints coding-agent behaviour from action trajectories and lets a target procedure be specified programmatically."
 type: project
 created: 2026-11-09
-updated: 2026-11-09
-depth: full
+updated: 2026-11-10
+depth: deep
 sources:
   - https://arxiv.org/abs/2606.16988
+  - https://arxiv.org/html/2606.16988v2
+  - https://github.com/hamidahoderinwale/procgrep
+  - https://api.github.com/repos/hamidahoderinwale/procgrep/git/trees/main?recursive=1
+  - https://raw.githubusercontent.com/hamidahoderinwale/procgrep/main/README.md
 ---
 
 # ProcGrep / Agent Trajectories as Programs
 
-**Source:** https://arxiv.org/abs/2606.16988  
-**Date:** 2026-11-02  
-**Evidence tier:** Author-reported research; not independently reproduced.
+## What it is
+
+ProcGrep is a library and a set of methods for comparing and auditing coding agents *procedurally* — by what they did, not by whether they passed. The primary source is the arXiv preprint "Agent trajectories as programs: fingerprinting and programming coding-agent behavior" (arXiv:2606.16988, first submitted 15 June 2026, last revised 2 November 2026 as v2; cs.SE and cs.LG; released under CC BY-SA 4.0; preprint, no peer-reviewed venue is claimed). The paper has a single author, Hamidah Oderinwale, whose listed contact address is at `mail.mcgill.ca` and who notes that the work was done with support from Taste Labs. The paper links the library at https://github.com/hamidahoderinwale/procgrep.
+
+The motivating sentence is the abstract's: "Benchmark scores tell you what an agent got right; they do not tell you how it got there." The paper's central construct is the **procedural fingerprint** — "recovered from what an agent actually did (its trajectory) rather than its components or what it states" — described as a distinguishable feature of an agent that is consistent over time. The headline claim is that ten agents are identifiable from their behavioural habits: a probe over their procedural signatures attributes an unseen trajectory to the correct agent at **85.7%** accuracy, against a stated random baseline of **11.1%**.
+
+Three contributions follow from that. First, a **procedural representation** of agent problem-solving, built bottom-up by an emergent vocabulary induction technique that is "meant to be maximally compressive to avoid surface-level variation while being expressive enough to unveil the quirks of the models' patterns". Second, a **natural study** applying that representation to the SWE-Bench evaluation corpus, in which behaviour is most similar between models from similar release periods and between models distilled from one another. Third, **ProcGrep itself**, a library for top-down auditing of agents given their traces, of which one demonstrated application is episodic search: the abstract claims ProcGrep "outperforms LLMs on episodic search in both efficiency and accuracy, offering a deterministic, programmable approach to searching over traces".
+
+The paper positions itself against a saturated-evaluation world: "As more models saturate evaluations, we believe that it will be important to probe model behavior along more holistic dimensions than success rates alone."
 
 ## Mechanism
 
-A procedural representation and ProcGrep auditing library for coding-agent trajectories; compares how agents act across SWE-bench tasks instead of merely scoring final correctness.
+**Corpus.** The paper does not run the agents. It analyses public archives of model traces — the `princeton-nlp/SWE-bench-experiments` archive for SWE-Bench, and Agentless logs — and takes ten agents across four scaffolds (SWE-agent, Agentless, DARS, Moatless) with models from the GPT, Claude, DeepSeek and Qwen families, with 2,639 task instances in total: SWE-agent with Claude-3 Opus (300), Claude-3.5 (289), Claude-3.7 thinking (284), Claude-4 (288), GPT-4 (300), GPT-4o (278); DARS with DeepSeek-R1 (300); Agentless with Claude-3.5 (300); Moatless with DeepSeek-V3 (300); and SWE-agent-LM-32B (499), a model distilled from the Claude-3.7 teacher.
 
-**Key technique:** Induce compact procedural vocabularies from traces, then compare action-pattern distributions and behavioral fingerprints.
+**Vocabulary induction.** To describe procedures at all, the framework needs a shared alphabet, induced bottom-up rather than hand-coded or classifier-based. Actions are extracted from solution patches, which are parsed with an AST yielding a node tree and a syntactic and semantic representation of the code; an embedding stage then contextualises the structured patch with the surrounding code and a behavioural description from the model. Over these action sequences the paper applies **Byte-Pair Encoding** (Algorithm 1 in the appendix): start with each action as its own token, count adjacent token-pair frequencies, and repeatedly merge the most frequent adjacent pair into a new vocabulary token until the target vocabulary size is reached. The idea is borrowed from library learning and program synthesis (DreamCoder), where recurring procedural subsequences are abstracted out of longer programs, but here for the emergent representation rather than for performance. A second algorithm, **PrefixSpan** (Algorithm 2), is evaluated as an alternative and found to separate agents less well than BPE under the paper's V-measure measure (Fig. 9).
 
-## Evidence and limitations
+**Choosing the vocabulary size.** The paper explicitly declines a behavioural stopping point and instead borrows the way clustering algorithms are evaluated, using the **V-measure** V = 2hc/(h+c), where homogeneity h = 1 − H(actions|procedure)/H(actions) and completeness c = 1 − H(procedure|actions)/H(procedure). The sweep rises, plateaus across vocabulary sizes K = 128–256, and then degrades; the authors take the plateau's peak, **K = 192, at V-measure 0.644**.
 
-The paper reports identification of unseen trajectories from ten agents at 85.7% accuracy and a Jensen–Shannon divergence of 0.25 for a teacher/student comparison. Revised November 2; first posted June 15.
+**Fingerprints and divergence.** A fingerprint is a trajectory encoded as a distribution over the induced procedures. Entropy over an agent's procedure distribution is defined as H(p_a) = −Σ_{v∈V} p_a(v) log₂ p_a(v), and divergence between two agents' distributions by JSD(p_a, p_b) = H((p_a+p_b)/2) − ½H(p_a) − ½H(p_b). JSD is used both to compare agents and to detect out-of-distribution behaviour.
 
-Identification accuracy does not imply safety or correctness. Version update is recent, underlying project is older.
+**Identification probe.** A classifier is trained over the procedural signatures and asked to attribute an unseen trajectory to the correct agent. The reported result is 85.7% accuracy against an 11.1% random baseline; in pairwise settings Claude-4 and SWE-agent-LM-32B are the most identifiable and GPT-4 and Claude-3 Opus the most confusable (F1 0.20–0.30). To test whether this is task memorisation rather than style, the paper batches trajectories into five groups with GroupKFold, training on four and holding one out, and reports that accuracy is "relatively unchanged when grouping by task (Δ = −0.007)".
 
-## Novelty and comparison
+**Procedural representation as a success signal.** A second probe predicts whether an agent succeeded or failed from the representation alone, and the paper compares six representations by F1 on single-nearest-neighbour prediction.
 
-Complements EvoAudit's per-task regression accounting by measuring changes in the process used to obtain outcomes; can detect procedural drift even when headline success is unchanged.
+**Programming procedures.** The paper's "programming" half lets a target procedure be specified declaratively and scored. A spec is written as phases with rewards and constraints (for example, exploration requiring at least two search/read actions before the first edit, implementation rewarding any edit, test verification requiring an edit→run_test sequence within a five-step gap, completion rewarding a submit), plus penalties (a five-edit contiguous streak; a first edit with no prior search or read) and bonuses (test-driven, rewarding a run_test before the first edit). Scores are bounded to [0,1] with a maximum attainable 0.70. Two such specs — *test-driven* and *patch-driven* — are contrasted, and the resulting Δ per agent is read as "how consistent each regime is with the model's innate procedural tendencies". The paper is explicit that it hand-authors the sequence and the derived feedback but does not close the loop with a trained model, and that "the scores we assign to the rewards are relatively arbitrary — our main contribution is building the means to specify them in the first place".
 
-## Reproducible next step
+**Repository evidence.** The inspected repository is a Python package (`src/procgrep/`) with modules that map closely onto the paper's pipeline: `bpe.py`, `canonicalize.py`, `encode.py`, `probe.py`, `jsd.py`, `reward.py`, `library.py`, `patterns.py`, `lineage_diff.py`, `stats.py`, `summary.py`, `report.py`, `floor.py`, `ask.py`, `watch.py`, `program.py`, `guard.py`, `curate.py`, `conduct_tree.py`, `umap_project.py`, and an `ingest/` package with roughly twenty per-harness adapters (SWE-agent, SWE-agent trajectories, Agentless, DARS, Moatless, mini-swe-agent, OpenHands, OpenCode, Claude Code, Codex, Gemini CLI, Cursor, SWE-Smith, BDTrace, GumTree, and others). The README establishes that a fingerprint "is a plain count vector over the procedure vocabulary, not a hash or an embedding: unlike a hash, two trajectories can legitimately share one; unlike an embedding, you can read exactly which procedures make two fingerprints differ", and that the vocabulary carries a spec — size, seed, atom alphabet and a hash of the merge list — stamped on fingerprints, JSD matrices and reports, with comparison across mismatched specs raising an error.
 
-Fingerprint the source-selection, test-running and citation-checking trajectories of two OpenShelf agents before and after harness changes; flag new shortcuts and missing verification stages.
+The repository is materially broader than the paper. The README documents capabilities not described in the inspected paper text: `procgrep floor`, which measures the divergence produced when *nothing* differs (same-condition runs), reporting a floor that "falls roughly as 1/n" and inverting it into a `seeds_needed` count of runs per arm needed to detect a target effect; `procgrep ask`, which compiles a natural-language question into a regex once and then matches deterministically, refusing questions the regex layer cannot express; `procgrep watch`, a live rollout monitor; and a `ProcedureSpec` API with `enforce` (emitting `prompt`, `guard`, `reward` and `decode` artifacts), `optimize` and `verify`, all model-free. A separate `runner/` package runs paired baseline/enforced arms through mini-swe-agent, seals a run manifest and reports paired-bootstrap confidence intervals.
 
-## Assessment
+One detail differs between the two. The paper describes `lineage_diff` as analysing teacher/student pairs "along three axes: vocabulary preservation, entropy shifts, and outcome divergence"; the repository README lists four: `["vocabulary", "entropy", "outcome_quadrant", "conditional"]`. The inspected text does not reconcile the two.
 
-The dated [[briefings/2026/11/2026-11-09]] report contains the complete comparison and research audit. Treat source-specific findings as evidence, not independently reproduced outcomes.
+## Evidence
 
-## Relations
+All numbers in this section are **author-reported** from the single preprint; none has been independently replicated.
 
-- **Evidence-backed mechanism:** Induce compact procedural vocabularies from traces, then compare action-pattern distributions and behavioral fingerprints. Source: https://arxiv.org/abs/2606.16988.
-- **Analyst-level relation:** Complements EvoAudit's per-task regression accounting by measuring changes in the process used to obtain outcomes; can detect procedural drift even when headline success is unchanged.
+**Identification.** Ten agents are attributable from their trajectories at **85.7%** accuracy against a stated random baseline of **11.1%**. The most identifiable agents are Claude-4 and SWE-agent-LM-32B; the most confusable pair is GPT-4 with Claude-3 Opus at F1 0.20–0.30. The task-grouped hold-out changes accuracy by Δ = −0.007.
 
-## Full-depth synthesis: mechanism and boundaries
+**Discriminating action pairs** (Table 2), with the discrimination factor relative to a random baseline and the share of all transitions the pair accounts for: DARS+R1 `search_repo → create_file` at **31.6×** (share 0.022); Moatless+V3 `edit → submit` at **15.7×** (0.064); Agentless+Claude-3.5 `run_test → run_test` at **12.5×** (0.111); Claude-3.7-thinking `create_file → run_test` at **9.7×** (0.029); SWE-agent-LM-32B `create_file → run_test` at **6.0×** (0.023); Claude-4 `read_file → read_file` at **5.0×** (0.603); Claude-3 `create_file → edit` at **4.7×** (0.117); GPT-4 `create_file → edit` at **3.3×** (0.092); GPT-4o `run_test → edit` at **3.3×** (0.141); Claude-3.5 `run_test → edit` at **2.5×** (0.115). The paper notes that the deterministic agents have the most discriminating pairs.
 
-**Core mechanism:** Procedural vocabulary induction and agent fingerprinting from action trajectories. Separate model inference, persistent state, tool privileges, side effects and independent acceptance evidence. The dated source findings above are retained without silently upgrading their evidence tier.
+**Which representation predicts success** (Table 4, F1 on single-nearest-neighbour prediction):
 
-## Evidence quality and counterarguments
+| Representation | n | F1 (k=1) | Source |
+|---|---|---|---|
+| Structural pattern overlap | 289 | 0.347 | Deterministic |
+| Action sequence distance | 289 | 0.274 | Deterministic |
+| Edit action overlap | 289 | 0.256 | Deterministic |
+| Narrative description | 289 | 0.177 | Varies by model |
+| Agent plan description | 289 | 0.155 | Varies by model |
+| Divergence classifier (LLM) | 87–286 | 0.000–0.363 | κ < 0.05 cross-family |
+| Random retrieval | 289 | 0.13–0.24 | Baseline |
 
-**Principal limitation:** Identification accuracy does not imply safe behavior; equivalent outcomes can arise from unsafe shortcuts. Potential confounders include task selection, evaluator design, resource budgets and deployment context. Compare to a simpler baseline; distinguish benchmark, user judgement, tool acknowledgement and independently checked task completion. Missing checks are unknown, never passes.
+**Episodic search against LLM judges** (Table 5), with the deterministic structural match taken as ground truth:
 
-## Directional knowledge relationships
+| Method | Mean F1 | Latency per decision |
+|---|---|---|
+| ProcGrep (structural query) | 1.000 | 1.1 µs |
+| Claude Sonnet 4.6 | 0.278 | 1.71 s |
+| GPT-4o | 0.230 | 0.66 s |
+| GPT-4o-mini | 0.221 | 0.69 s |
+| Claude Opus 4.8 | 0.152 | 1.73 s |
+| Claude 3.5 Haiku | 0.098 | 1.03 s |
+| DeepSeek-chat | 0.093 | 1.51 s |
 
-**Analyst-level compares_with:** [[projects/tracybot]], [[projects/evoaudit]]. These are cross-study comparisons, not verified dependency or implementation links. The item contributes to [[evaluations/briefing-synthesis-2026-11-03-to-09]], [[concepts/verified-completion-vs-apparent-success]] and [[concepts/preservation-aware-agent-improvement]] where relevant. Preserve disagreements and task-level regressions rather than forcing a universal conclusion.
+**Next-action and next-stage prediction** (Table 8), where "Base" is the majority-class rate: next-action accuracy rises from bases of 13–30% to 46–61% for the open-ended model-driven agents (Claude-3 46%, DARS+R1 46%, Claude-3.5 50%, Claude-3.7-thinking 54%, GPT-4 57%, GPT-4o 60%, Claude-4 61%), and from a 31% base to **82%** for the deterministic Agentless+Claude-3.5 and from a 65% base to **73%** for the constrained Moatless+DeepSeek-V3. Next-stage accuracy lands between 47% and 82% across all ten agents.
 
-## Reproducible test plan
+**Procedural divergence by grouping** (Table 6): lineage (teacher → distilled child) JSD **0.250**; family (within family, across generations) **0.518**; scaffold (same model, two harnesses) **0.533**. The paper reads this as scaffold and model generation being stronger indicators than within-family similarity.
 
-**Proposed, not executed:** Compare 30 task traces before/after agent updates and detect omitted validation steps against independent logs. Freeze source snapshots, models, budgets and checker definitions; record each run's full trace, failures, costs, independent acceptance and held-out results. Publish negative cases and per-task changes alongside any aggregate metrics.
+**Cost and efficiency per agent** (Table 3, SWE-bench Verified, n = 2,639). Claude-4 resolves 59.0% of tasks at 64.8 steps per trajectory, a repertoire of 35 procedures, compression ratio 0.417, entropy 5.26 bits, $1.19 per task, $0.018 per inference call and $2.02 per resolved task; Claude-3 Opus resolves 11.7% at $3.42 per task and $29.31 per resolved task; Agentless+Claude-3.5 resolves 40.7% at $0.50 per task (cost marked estimated) with a repertoire of 1 and entropy 0.00; Moatless+DeepSeek-V3 resolves 30.7% at $0.02 per task and $0.06 per resolved task. The paper notes that extended-thinking models reduce cost per step by routing calls through the shell (Claude-4 $0.018/step versus Claude-3 $0.200/step).
 
-## Adoption guidance and unanswered questions
+**Procedural reward scores** (Table 10, maximum attainable 0.70): Agentless+Claude-3.5 0.600, DARS+R1 0.468, Claude-3.5 0.447, Claude-3.7-thinking 0.397, Claude-3 0.384, GPT-4o 0.383, GPT-4 0.381, Claude-4 0.345, Moatless+V3 0.187. The test-driven minus patch-driven Δ (Table 11) is +0.163 for GPT-4o, +0.143 for Claude-3, +0.063 for GPT-4, +0.052 for Claude-3.5, 0.000 for Agentless+Claude-3.5, −0.007 for DARS+R1, −0.361 for Moatless+V3, −0.391 for Claude-3.7-thinking and −0.492 for Claude-4.
 
-Evaluate first in a constrained environment with explicit authorization, source traceability, validator execution records and rollback. Unknowns: independent replication, transfer beyond source tasks, total operating cost and effects on other consumers of the shared environment.
+**Failure signals.** Edit streaks are a strong failure signal: for Moatless+DeepSeek-V3, 43% of trajectories have streaks of five or more edits, and among those the fail rate is 80% versus 59% for streak-free trajectories; for Claude-3.5 the signal is weaker but comparable in magnitude, with pass rate falling from 26% to 11%. Compositionality — subproblems the agent had solved before, combined — is the strongest signal of failure, with the pattern strongest for RLHF-trained models; open-weight agents have failure rates roughly 9% lower across the comparison. Trajectory length also correlates with failure, declining from 45% pass rate at 1–10 steps to about 29% beyond 60.
 
-## Provenance and depth statement
+**Distillation case study and agent-side self-report.** Over 284 parent and 498 child trajectories, the student inherits the teacher's full action vocabulary and shows concentrated entropy (−0.41 bits); passing child trajectories share 0.204 of the parent's tool signatures against 0.193 for failing ones (Δ = 0.01). On the agent's own account, reverse follow-through — every action mentioned somewhere in the model's reasoning — is 1.0 for GPT-4 and GPT-4o, and 0.875 / 0.857 / 0.833 / 0.800 / 0.750 for DARS+R1, Claude-3, Claude-3.5, Claude-3.7 and Claude-4 respectively.
 
-**Full analytical synthesis of the archived briefing**, not a claim that new source experiments were performed or original benchmarks reproduced. Primary URLs and author-reported measurements remain in the earlier sections; proposed interpretations and experiments are editorial analysis.
+**Repository evidence.** The inspected tree contains a substantial test suite (`tests/core/`, `tests/analysis/`, `tests/ingest/adapters/`, `tests/cli/`), the `runner/` package with its own `tests/`, CI workflows (`ci.yml`, `publish.yml`, `deploy-space.yml`, `refresh-spines.yml`), a set of 25 paper-analysis scripts under `examples/paper/` (including `identification_probe_stratified.py`, `distillation_case_study.py`, `reward_scorer.py` and `metric_comparison.py`), and per-figure data under `docs/figures/data/`. The README also links a Hugging Face dataset (`midah/procgrep-spines`) and a hosted explorer Space. What this establishes is that the library is packaged, tested and that the paper's analyses are scripted; it does not establish the paper's headline numbers, because the evaluation consumes SWE-Bench and Agentless trace archives that were not part of the inspected tree, and none of these scripts was executed here.
 
-## Full-depth mechanism and scope
+## Limitations
 
-**Procedural representations of coding-agent trajectories.** Model the input/task, worker or evaluator, state transition, persisted artifact and external acceptance oracle separately. The original source and evidence summary above anchors the factual claims. This analysis distinguishes implementation behavior from measurement protocol and operational deployment.
+**Stated by the authors.** The reward scores are explicitly described as "relatively arbitrary", with the contribution being the means to specify them; dynamic scoring that adapts to observed final states is left to future work. The reward experiments are hand-authored and do not close the loop with a trained model, and the authors note that crafting a spec "will depend on a variety of goals and decisions". The prompt-based classifier baseline is found to have near-zero agreement across model families and to struggle with compositional trajectories. The broader framing is that behavioural fingerprinting is a lens for evaluation, and the authors propose it as a complement to model-diffing methods rather than a replacement.
 
-## Evidence quality, negative findings and confounders
+**Assessed from the reporting and the repository.**
 
-**Principal counterweight:** Agent fingerprint accuracy is not a measure of safety, correctness or causal explanation. Check whether the cited source reports a controlled comparison, author-only result, user perception, benchmark score, or production observation. These evidence tiers are not interchangeable. Missing independent validation, hidden costs, sampling bias and failure-to-execute checks should be reported rather than assumed away.
+- **Single source, single author.** Everything rests on one arXiv preprint (v2, 2 November 2026). The paper links no analysis artifact or archive of the induced vocabularies, so the 85.7% figure, the JSD matrix and the reward tables cannot be recomputed from the citation alone; no independent replication is known.
+- **The traces are borrowed, not produced.** The analysis runs on public archives of other people's model trajectories rather than on runs the authors controlled. Model versions, prompts, scaffolds and harness configurations are whatever the archive contains, and the paper does not report the sampling, filtering or version dates of the archived trajectories in the inspected text.
+- **Fingerprinting is not safety, correctness or causality.** The 85.7% result says a trace can be attributed to an agent. It says nothing about whether that agent was right, safe, or acting for the reasons it states — the paper's own caution that chain-of-thought "cannot be taken as grounded accounts of action" applies to the traces as much as to the narratives.
+- **No uncertainty is reported.** None of the headline numbers carries a confidence interval, and the paper's per-judge sample sizes for the LLM baselines run as low as 87 instances. With ten agents, an accuracy of 85.7% is a difference of roughly 85 of 100 grouped attributions; the paper does not state whether trajectories are independent draws within an agent, so the effective sample size is not disclosed.
+- **Vocabulary-dependence of absolute numbers.** The repository README is explicit that an absolute divergence number depends on the vocabulary it was measured under — refit on a different corpus or at a different size and the same pair gets a different JSD — and that comparability requires matching vocabulary specs. The paper fixes K = 192 on the SWE-Bench corpus but does not report the vocabulary spec alongside the 0.25 student-teacher distance, so that number should be treated as corpus- and vocabulary-specific rather than as a portable constant.
+- **Undisclosed: whether the vocabulary is refit per fold.** The GroupKFold check (Δ = −0.007) addresses task memorisation by the probe, but the inspected text does not state whether the BPE vocabulary is re-induced within each fold. If it is fitted once on the full corpus, the probe's held-out folds still share a vocabulary built with knowledge of the held-out agent's action statistics. This is not disclosed in the inspected text, so it cannot be ruled out.
+- **Length is an uncontrolled confound.** Pass rate falls from 45% at 1–10 steps to about 29% beyond 60 steps, and the paper reports it in a figure without folding it into the identification analysis. Any fingerprint feature correlated with trajectory length — a scaffold that always takes many steps is distinguishable for that reason alone — is a legitimate style signal, but it is not evidence of decision-making style, and the 85.7% number does not separate the two.
+- **The distillation result is a hypothesis, not a finding.** The gap between passing and failing child trajectories sharing the parent's tool signatures is 0.204 against 0.193 — a difference of 0.01. The paper's suggestion that "procedural mimicry could be a means to improve success rates for distilled models" is explicitly framed as a possibility and is not supported by an intervention in the inspected text.
+- **The released library is not the evaluated artifact.** The repository's `floor`, `ask`, `watch` and `ProcedureSpec`/`enforce`/`verify` surfaces are not described in the paper's inspected text, and the repository's own framing ("in ours, by more than most published intervention effects") is a self-description. Anyone citing the library should say which part they are citing.
 
-## Comparative and typed knowledge synthesis
+## Competing approaches
 
-Compare with [[projects/tracybot]]; [[concepts/preservation-aware-agent-improvement]] and [[evaluations/briefing-synthesis-2026-11-03-to-09]]. **Relationship type: compares_with (analyst synthesis)**, not a verified implementation dependency or head-to-head result. For any cross-paper numeric comparison, require matching tasks, models, runtime, budget, and independent scoring before treating differences as meaningful.
+**The direct alternative the paper measures: prompt-based classifiers.** The paper benchmarks against LLM judges reading plans and responses against the reference patch. Across four judge models (GPT-4o, GPT-4o-mini, Qwen-2.5-72B, Llama-3.3-70B) the agreement metrics are low: mean Cohen's κ of **0.12–0.16**, with F1 on compositional-trajectory identification of 0.363 (GPT-4o, n = 286), 0.246 (GPT-4o mini, n = 285), 0.167 (Qwen 2.5 72B, n = 87) and 0.000 (Llama 3.3 70B, n = 87), a weighted mean F1 of 0.253 over 745 items. The paper reads this as evidence that shared, model-independent representations are needed for comparative analysis.
 
-## Reproducible evaluation protocol
+**The alternative for search: an LLM as the query engine.** Table 5 contrasts ProcGrep's deterministic structural matching with six LLM judges over the same queries; the paper reports that LLM judges "struggle with compositional trajectories" and that the deterministic match is exact on queries spanning context retrieval and file counts, conditional events, and missing actions.
 
-**Proposed; not executed:** Fingerprint 30 runs before and after tool-policy edits; compare trace drift with missing checks and accepted results. Pre-register task set, control, held-out cases, success criteria and failure taxonomy. Record tool and validator execution receipts, raw artifacts, per-task scores, regressions, uncertainty, time and tokens. Fail closed on unknown acceptance outcomes. Preserve negative cases and report false positives and false negatives.
+**Cited as related work.** Stylometric authorship attribution of LLM-generated code (Bisztray et al., 2506.17323) and of human code (Caliskan-Islam et al.) is the closest methodological cousin; clustering of solution variation at MOOC scale (Glassman et al., OverCode) is the precursor for comparing many solutions at once; LMArena-style pairwise preference comparison of agent outputs (Chiang et al.) is the outcome-based alternative; the syntactic neural model of Yin and Neubig and DreamCoder (Ellis et al.) are the antecedents of learning sub-sequences from programs; Clio (Tamkin et al.) is the precedent for large-scale observational study of LLM chats; fine-grained source-code differencing (Falleri et al.) is the patch-level ancestor; and RouterBench (Hu et al.) anticipates the routing application. On the question of whether a model says what it does, the paper cites Wei et al. on chain-of-thought and Boppana et al. on "reasoning theater", and positions its contribution as complementing cross-architecture model diffing (Jiralerspong and Bricken; Aranguri and McGrath).
 
-## Practical integration and open questions
+Within this knowledge base, ProcGrep measures the *process* side of the same problem [[projects/evoaudit]] measures from the *outcome* side, and it is the procedural counterpart of [[projects/tracybot]]'s provenance work: where Tracybot asks which prompt wrote which line, ProcGrep asks what routine the agent followed. Both are instances of [[concepts/verified-completion-vs-apparent-success]] — the recorded procedure and the claimed outcome are different objects — and ProcGrep's own vocabulary-fidelity discipline is the [[concepts/protocol-relative-scores]] problem stated inside the library.
 
-Start in an isolated environment with least privilege, explicit state ownership, deterministic checkpoints and rollback. Ask whether the mechanism generalizes beyond the source's distribution, whether a simpler baseline is competitive, and what evidence independently proves success. Record promotion criteria before deployment.
+## Implications
 
-## Provenance and research status
+The following is analysis by the KB maintainers, not a claim of the authors.
 
-**Full evidence-scoped analytical depth** mined from the archived briefing and its canonical source references. New comparative claims and experiments are analyst hypotheses, not independently reproduced findings. The original paper/repository was not re-run in this pass.
+The most useful idea is the *representation*, not the identification number. The paper's real contribution is the claim that agent trajectories can be reduced to a small shared alphabet of procedures whose distribution is comparable across models, scaffolds and harnesses. Everything else follows: fingerprints, divergence matrices, procedural rewards, deterministic search. The evidence that this matters is Table 4 — structural pattern overlap predicts success at F1 0.347 while a natural-language narrative description of the same trajectory reaches 0.177, and while the LLM classifier baseline ranges from 0.000 to 0.363 depending on the judge. A representation that is cheap, deterministic and inspectable beats an expensive one that is neither, and the specific claim "you can read exactly which procedures make two fingerprints differ" is what makes the comparison auditable rather than merely numeric.
+
+Second, the paper quietly demonstrates that *outcomes are a lossy channel*. Two agents with the same resolve rate can differ by a factor of ten in cost per resolved task, and the same model in two scaffolds differs by 8.7% in the mean coverage metric — a gap large enough to change model choice. Any comparison of agents that reports only pass rates is discarding the axis on which the paper's own data says agents differ most.
+
+Third, the divergence result is a caution about distillation as well as an endorsement of it. The student-teacher JSD of 0.25 is half the within-family distance of 0.518, which means a distilled model inherits its teacher's procedural habits measurably. That is a double-edged finding: it makes distillation cheaper to predict and cheaper to audit, and it means a distilled model's "style" may not be its own. Any governance or monitoring regime that keys on behavioural fingerprinting must decide whether inherited behaviour counts as the deployer's own.
+
+Fourth, and most transferable for engineering practice, is the repository's own noise-floor idea even though the paper does not foreground it: identically configured runs already diverge, so a claimed behavioural effect must be read against that floor rather than against zero. This is the same lesson as [[concepts/protocol-relative-scores]] and [[concepts/capability-locus]] applied to trajectories, and it is the practical answer to "did my prompt change actually change what the agent does". A change that does not move the fingerprint beyond the same-condition floor has not changed the behaviour, whatever the score says.
+
+Fifth, the procedural-reward machinery is the most immediately usable artefact and the least validated one. Being able to write "reward an edit→run_test within five steps, penalise five contiguous edits, require search before the first edit" and then score a trajectory against that spec is a real capability, and the test-driven versus patch-driven comparison shows it is sensitive enough to distinguish agent styles. But the paper says the weights are arbitrary and the loop is never closed with a trained model, so a procedural score today is a descriptive statistic with a specification attached — it must not be read as a reward that was ever optimised against.
+
+Finally, a caution about the framing itself: fingerprinting an agent tells you it is recognisable, not that it is good, and it is possible to have a high-fidelity behavioural signature for a degenerate behaviour. A library that makes behaviour legible raises the stakes on the governance question rather than settling it — the same concern the authors of [[concepts/preservation-aware-agent-improvement]] raise about self-improvement, and the reason any deployment of this tooling should treat behavioural drift as a review trigger, not as an automatic promotion signal.
+
+## Reproducible experiment
+
+The library is installable and the paper's evaluation runs over archived public traces, so an independent check is feasible without re-running agents. No such check is executed here; this is a proposed protocol.
+
+1. **Reproduce the identification number.** Install the released package, canonicalize the SWE-agent and Agentless archives used by the paper (the `princeton-nlp/SWE-bench-experiments` dataset and the Agentless logs), induce the vocabulary at the paper's K = 192, and run the identification probe with the same five-fold GroupKFold grouping. The pass criterion is directional: an accuracy materially below 85.7% on the same ten agents would weaken the headline claim, while a materially higher one would suggest the probe is learning something about the archive rather than about style. Report the vocabulary spec (size, seed, atom alphabet, merge-list hash) alongside the number, as the README requires.
+2. **Test the length confound.** Re-run the probe with trajectory length explicitly partialled out — either by stratifying agents by mean steps per trajectory, or by re-weighting — and compare the drop in accuracy to the gap between the agents' mean trajectory lengths in Table 3 (13.0 to 64.8 steps). If accuracy survives, the fingerprints reflect procedure rather than patience; if it collapses, the identification result is substantially a length artefact. The paper does not report this control, so it is genuinely open.
+3. **Test vocabulary-dependence of the divergence numbers.** Recompute the teacher–student JSD of 0.25 at several vocabulary sizes and corpora, and report the spread. The repository's own documentation predicts a materially different number under a different vocabulary; quantifying that spread converts an undocumented fragility into a stated calibration range, and would tell a user how much of the 0.25-vs-0.518-vs-0.533 comparison is stable.
+4. **Validate the reward spec against outcomes.** Take the test-driven and patch-driven specs from the paper, score a held-out set of trajectories from at least two scaffolds, and measure the correlation between procedural score and actual task outcome. The paper's Table 10 gives procedural scores but never tests whether higher procedural scores predict success on the same trajectories; a near-zero correlation would mean the spec measures style consistency rather than quality, which is the distinction the paper's framing depends on.
+5. **Compare the deterministic search against an LLM judge on a realistic query set.** Reproduce Table 5's protocol with 20–50 mixed queries over the archived traces — including conditional ("retrieve events preceded by X") and absence ("retrieve trajectories with no test run") queries — and report both F1 and wall-clock per query for ProcGrep against at least two judges. The paper reports exactness (F1 1.000) against a deterministic ground truth it constructed; an independent query set would test whether that exactness generalises.
+
+## Evidence status
+
+This page is grounded in the arXiv abstract page (https://arxiv.org/abs/2606.16988), the complete HTML full text of v2 including appendices A.1–A.3 and the reference list (https://arxiv.org/html/2606.16988v2), and a read-only inspection of the public library over HTTPS on 2026-11-10: the repository file tree via https://api.github.com/repos/hamidahoderinwale/procgrep/git/trees/main?recursive=1 and the root README via https://raw.githubusercontent.com/hamidahoderinwale/procgrep/main/README.md. Every quantitative result on this page is **author-reported** by the paper's author from the single preprint; the repository section reports what the inspected tree and README contain and do not contain. No code from the repository was cloned, installed or executed, no test suite was run, no trace corpus was downloaded, and no number on this page was recomputed. Nothing on this page was reproduced by the KB maintainers, and no independent replication is known. Claim types are separated in the text: the identification accuracy, the divergence ordering and the distillation interpretation are the author's; the items under "Assessed from the reporting and the repository" and the whole Implications section are analysis by the KB maintainers.
+
+## Historical coverage
+
+- [[briefings/2026/11/2026-11-09]] — dated full-fidelity research and cross-project synthesis that first selected ProcGrep as a core project.

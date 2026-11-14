@@ -5,8 +5,8 @@ summary: "When a verdict is forced, systems invent one; making insufficient evid
 type: concept
 depth: full
 created: 2026-11-02
-updated: 2026-11-07
-related: [vericua, github-contribution-check, dittany, aisoc-v21, fa-agent]
+updated: 2026-11-10
+related: [vericua, github-contribution-check, dittany, aisoc-v21, fa-agent, code-simplifier, matt-pocock-skills-reviewer]
 sources:
   - url: https://arxiv.org/abs/2610.40578
     retrieved: 2026-11-02
@@ -16,6 +16,10 @@ sources:
     retrieved: 2026-11-02
   - url: https://github.com/beenuar/AiSOC/releases/tag/v21.0.0
     retrieved: 2026-11-02
+  - url: https://raw.githubusercontent.com/github/gh-aw/main/.github/workflows/code-simplifier.md
+    retrieved: 2026-11-10
+  - url: https://raw.githubusercontent.com/github/gh-aw/main/.github/workflows/mattpocock-skills-reviewer.md
+    retrieved: 2026-11-10
 ---
 
 # Abstention as a first-class verdict
@@ -201,3 +205,12 @@ instance.
 ## 2026-11-07 evidence connections
 
 - [[projects/fa-agent]]: newly linked primary-source project; see its dated briefing and evidence limitations before treating this relationship as a universal mechanism.
+
+## 2026-11-10 evidence connections
+
+Two further instances from the depth pass over the gh-aw workflow pages (analyst-level links; the sources do not name the concept):
+
+- **[[projects/code-simplifier]] — abstention before the model runs, and typed endings.** A sub-class none of the four instances above has: a skip-if-decision gate that abstains (skips agent execution entirely, at zero model turns) only on *conclusive* no-candidate evidence — "Abstain if either dataset is invalid, incomplete, inconsistent, or contains an eligible candidate," so uncertain evidence preserves execution, the conservative direction. Above the gate, three verbatim `noop` messages name *why* nothing was done (no recent changes, no worthwhile simplifications, budget ceiling), and the output contract forbids finishing without one of six typed endings, three of which are abstentions — a run cannot end in vague success text. This makes abstention structural but not *priced*: the vendor's telemetry reports "0 safe-output items" across the published window, yet no decided-accuracy/coverage pair exists, so VeriCUA's accounting discipline still has no second instance. Bound carried from the page: the published window contains zero write-path runs, so the abstention discipline is evidenced only on the cheap half of the design.
+- **[[projects/matt-pocock-skills-reviewer]] — the disclosure cousin, not a designed abstain verdict.** Its triage fallback degrades to a deterministic heuristic, retries at most once, and must "mention in the Step 6 review body that skill selection used the fallback heuristic" — the concept's accounting made mandatory in prose, without the abstention itself. Its `noop`-instead-of-generic-praise success criterion is abstention at the comment level. Recorded as a brush corroborating the disclosure half of the discipline, not as a designed instance.
+
+The designed-instance count rises to five; the coverage-accounting gap flagged in the bounds section is unchanged — still only VeriCUA prices abstention.
