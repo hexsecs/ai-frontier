@@ -18,7 +18,7 @@ A curated, source-backed guide to practical agentic AI, autonomous workflows, an
 
 ## Latest briefing
 
-- [November 11: deterministic agent control and research memory](wiki/briefings/2026/11/2026-11-11.md) — five findings with source-backed synthesis.
+- [November 12: bounded browser agents and executable evaluation](wiki/briefings/2026/11/2026-11-12.md) — five findings with sourced chart and experiments.
 
 ## Latest synthesis
 

@@ -97,3 +97,8 @@ This is the legacy canonical file-location index. Some entries are now classifie
 - [JAM](./just-in-time-agent-memory.md) — Query-time research over preserved memory.
 - [AutoSR](./autosr.md) — Persistent research-state tree search for scientific equations.
 - [Lifelong materials agent memory](./lifelong-materials-agent-memory.md) — Failure-derived reusable scientific guardrails.
+- [Baya — Compile-Then-Execute](./baya-compile-then-execute.md) — Structural web-agent prompt-injection defense with author-reported evaluation.
+- [Harness Matters](./harness-matters-web-agent-security.md) — Paired adversarial calibration of web-agent harness security.
+- [Coder Eval](./coder-eval.md) — Sandboxed coding-agent skill and task regression tests.
+- [fastbrowse](./fastbrowse.md) — Constrained browser actions and quote-grounded evidence.
+- [KinoCut](./kinocut.md) — Guardrailed local media editing MCP tools.

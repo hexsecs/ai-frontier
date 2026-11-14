@@ -23,3 +23,4 @@ Historical coverage is limited by the available original records. October 30–N
 
 - [2026-11-10](./2026/11/2026-11-10.md) — five full-fidelity findings on process-aware tool execution, execution-grounded tasks, authentic deliverables, policy sandboxes and declarative agent teams.
 - [2026-11-11](./2026/11/2026-11-11.md) — five full-fidelity findings on deterministic agent control, verification, query-time memory and scientific investigation states.
+- [2026-11-12](./2026/11/2026-11-12.md) — five complete findings: compile-then-execute browser safety, harness attacks, coding-agent CI, bounded browser actions and media tools.
