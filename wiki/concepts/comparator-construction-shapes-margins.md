@@ -5,7 +5,7 @@ summary: "A reported margin partly measures how its comparator was built — rei
 type: concept
 depth: full
 created: 2026-11-02
-updated: 2026-11-02
+updated: 2026-11-14
 related: [explorerepair, vericua, repairs-for-whom, codespecweave, angler, bioagent, dittany, tinyastral, context-as-infrastructure]
 sources:
   - url: https://arxiv.org/abs/2610.40578
@@ -144,7 +144,7 @@ quantified. The concept licenses discounting and demanding the
 construction statement; it does not license dismissing any particular
 margin outright. One instance is also dual-coded: tinyastral's
 reduced-settings comparator is simultaneously an effort confound, and
-the register counts it once, here.
+it is one example, rather than independent evidence for each reported metric.
 
 ## Relations
 
@@ -184,15 +184,4 @@ construction, whether or not any judging is self-referential.
 
 ## Evidence status
 
-This concept is the KB's analytical construct, synthesized in mining
-passes 1–2 (2026-11-02) from the KB's own deepened project pages; no
-paper names it. It was **deferred in pass 1** — graded medium on four
-pages, all in one cluster — and **promoted in pass 2** when clusters E
-and F widened its base to nine pages across three clusters and at least
-five construction modes; that deferral and promotion are the register
-discipline working as intended, recorded here rather than smoothed over.
-Every underlying result is author-reported, and several of the strongest
-instances are known only because the claimant's own page disclosed the
-construction — the evidence base is therefore biased toward honest
-papers, and the true prevalence of the phenomenon in the corpus is
-likely higher than these nine pages show.
+This is an analyst interpretation of the cited studies, not an additional experimental result. Underlying measurements remain author-reported; no independent replication is cited. Examples drawn from disclosed comparator choices are subject to reporting bias. They do not establish the prevalence of undisclosed comparator effects.

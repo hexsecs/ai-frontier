@@ -4,7 +4,7 @@ title: "ProcGrep / Agent Trajectories as Programs"
 summary: "Library and method that fingerprints coding-agent behaviour from action trajectories and lets a target procedure be specified programmatically."
 type: project
 created: 2026-11-09
-updated: 2026-11-10
+updated: 2026-11-14
 depth: deep
 sources:
   - https://arxiv.org/abs/2606.16988
@@ -100,7 +100,7 @@ All numbers in this section are **author-reported** from the single preprint; no
 
 **Assessed from the reporting and the repository.**
 
-- **Single source, single author.** Everything rests on one arXiv preprint (v2, 2 November 2026). The paper links no analysis artifact or archive of the induced vocabularies, so the 85.7% figure, the JSD matrix and the reward tables cannot be recomputed from the citation alone; no independent replication is known.
+- **Single source, single author.** Everything rests on one arXiv preprint (v2, 2 November 2026). The paper links no analysis artifact or archive of the induced vocabularies, so the 85.7% figure, the JSD matrix and the reward tables cannot be recomputed from the citation alone; no independent replication is cited.
 - **The traces are borrowed, not produced.** The analysis runs on public archives of other people's model trajectories rather than on runs the authors controlled. Model versions, prompts, scaffolds and harness configurations are whatever the archive contains, and the paper does not report the sampling, filtering or version dates of the archived trajectories in the inspected text.
 - **Fingerprinting is not safety, correctness or causality.** The 85.7% result says a trace can be attributed to an agent. It says nothing about whether that agent was right, safe, or acting for the reasons it states — the paper's own caution that chain-of-thought "cannot be taken as grounded accounts of action" applies to the traces as much as to the narratives.
 - **No uncertainty is reported.** None of the headline numbers carries a confidence interval, and the paper's per-judge sample sizes for the LLM baselines run as low as 87 instances. With ten agents, an accuracy of 85.7% is a difference of roughly 85 of 100 grouped attributions; the paper does not state whether trajectories are independent draws within an agent, so the effective sample size is not disclosed.
@@ -148,8 +148,12 @@ The library is installable and the paper's evaluation runs over archived public 
 
 ## Evidence status
 
-This page is grounded in the arXiv abstract page (https://arxiv.org/abs/2606.16988), the complete HTML full text of v2 including appendices A.1–A.3 and the reference list (https://arxiv.org/html/2606.16988v2), and a read-only inspection of the public library over HTTPS on 2026-11-10: the repository file tree via https://api.github.com/repos/hamidahoderinwale/procgrep/git/trees/main?recursive=1 and the root README via https://raw.githubusercontent.com/hamidahoderinwale/procgrep/main/README.md. Every quantitative result on this page is **author-reported** by the paper's author from the single preprint; the repository section reports what the inspected tree and README contain and do not contain. No code from the repository was cloned, installed or executed, no test suite was run, no trace corpus was downloaded, and no number on this page was recomputed. Nothing on this page was reproduced by the KB maintainers, and no independent replication is known. Claim types are separated in the text: the identification accuracy, the divergence ordering and the distillation interpretation are the author's; the items under "Assessed from the reporting and the repository" and the whole Implications section are analysis by the KB maintainers.
+Every quantitative result on this page is **author-reported** by the paper's author from the single preprint; the repository section reports what the inspected tree and README contain and do not contain. No code from the repository was cloned, installed or executed, no test suite was run, no trace corpus was downloaded, and no number on this page was recomputed.
 
-## Historical coverage
 
-- [[briefings/2026/11/2026-11-09]] — dated full-fidelity research and cross-project synthesis that first selected ProcGrep as a core project.
+
+Sources: <https://arxiv.org/abs/2606.16988> · <https://arxiv.org/html/2606.16988v2> · <https://api.github.com/repos/hamidahoderinwale/procgrep/git/trees/main?recursive=1> · <https://raw.githubusercontent.com/hamidahoderinwale/procgrep/main/README.md>.
+
+## Related reading
+
+- [[briefings/2026/11/2026-11-09]]

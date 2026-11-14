@@ -4,7 +4,7 @@ title: "ControlAnything: On-Demand Device Integration by a Coding Agent"
 summary: "MR coding agent writes and tests device connectors on demand; 9 of 10 requests ready in a median 32.5 s, evidence limited to transport acknowledgements."
 type: project
 created: 2026-11-07
-updated: 2026-11-10
+updated: 2026-11-14
 depth: deep
 related: [structural-constraint-over-instruction, scoped-assurance]
 sources:
@@ -87,7 +87,7 @@ All numbers in this section are **author-reported** from the single preprint; no
 
 **Assessed from the reporting.**
 
-- **Single source, no artifact inspected.** Everything rests on one arXiv preprint (v1, 5 November 2026) by a single author. The paper links a code and video repository, but that repository was not fetched or read for this page, and no independent party has rerun the session.
+- **Single source, no artifact inspected.** Everything rests on one arXiv preprint (v1, 5 November 2026) by a single author. The paper links a code and video repository, but that repository was not fetched or read in this assessment, and no independent party has rerun the session.
 - **The evidence stops one level short of the claim.** "Ready" means the server's binding and dry-run checks passed; the only measured effect is a transport acknowledgement. Nine of ten ready states therefore establish connector readiness, not physical actuation, safety, persistence or permission isolation.
 - **n = 1, one wearer, no statistics.** There is no confidence interval, no second session and no second wearer; the 32.5 s median and the 89.9% model-call share come from nine and ten observations respectively.
 - **The protocol is favourable by construction.** Every target was reachable through one of three transports that the authors wrote by hand and documented in the prompt, and the agent's cross-session notes already contained the OP-1's port name, filter controller numbers and gimbal procedure. The reported readiness times are therefore times for an integration the authors had already prepared, not for an unknown device.
@@ -134,8 +134,12 @@ Substituting the paper's 2026 Meta models with available ones is unavoidable; th
 
 ## Evidence status
 
-This page is grounded in a full read of the primary source — the arXiv abstract page (https://arxiv.org/abs/2611.08321) and the complete HTML full text including the reference list (https://arxiv.org/html/2611.08321v1) — fetched on 2026-11-10. Every quantitative result is **author-reported**; no baseline comparison was run by the authors and no independent replication is known. The code and video repository linked from the abstract page (https://github.com/Apolotary/controlanything) was **not** fetched or inspected for this page, so no statement about the implementation's code is made here. Claim types are separated in the text: the first-of-its-kind claim and the comparison with prior systems are the authors'; the items under "Assessed from the reporting" and the whole Implications section are analysis by the KB maintainers. Nothing on this page was reproduced, executed, cloned or tested by the KB maintainers, and no independent replication is known.
+Every quantitative result is **author-reported**; no baseline comparison was run by the authors and no independent replication is cited. The code and video repository linked from the abstract page (https://github.com/Apolotary/controlanything) was **not** fetched or inspected in this assessment, so no statement about the implementation's code is made here.
 
-## Historical coverage
 
-- [[briefings/2026/11/2026-11-07]] — dated full-fidelity research and cross-project synthesis.
+
+Sources: <https://arxiv.org/abs/2611.08321> · <https://arxiv.org/html/2611.08321v1>.
+
+## Related reading
+
+- [[briefings/2026/11/2026-11-07]]

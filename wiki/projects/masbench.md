@@ -5,7 +5,7 @@ title: "MASBench"
 summary: "Multi-agent collaboration benchmark that isolates protocol, memory and routing effects under deliberately partial observability."
 type: benchmark
 created: 2026-11-08
-updated: 2026-11-10
+updated: 2026-11-14
 related: [protocol-relative-scores, capability-locus, evaluator-circularity]
 sources:
   - url: https://arxiv.org/abs/2610.04672
@@ -145,8 +145,12 @@ Report the substituted models, the exact harness settings and any partition diff
 
 ## Evidence status
 
-This page is grounded in a full read of the primary source on 2026-11-10: the arXiv abstract page (https://arxiv.org/abs/2610.04672), the complete HTML full text of v1 including appendices A–E (https://arxiv.org/html/2610.04672v1), and the v2 HTML (https://arxiv.org/html/2610.04672v2) for comparison of the main tables, whose numbers match v1. Every quantitative result is **author-reported**; no result here was reproduced, executed or cloned by the KB maintainers, and no independent replication is known. Claim types are separated in the text: the design rationale and the mechanism-effect readings are the authors'; the items under "Assessed from the reporting" and the whole Implications section are analysis by the KB maintainers. The paper is a preprint with no peer-reviewed venue claimed; the abstract page records a v2 revision dated 4 November 2026, and this page's numbers are those printed in v1 and v2.
+The paper is a preprint with no peer-reviewed venue claimed; the abstract page records a v2 revision dated 4 November 2026, and this page's numbers are those printed in v1 and v2.
 
-## Historical coverage
 
-- [[briefings/2026/11/2026-11-08]] — the dated briefing that introduced MASBench as an October gap-fill.
+
+Sources: <https://arxiv.org/abs/2610.04672> · <https://arxiv.org/html/2610.04672v1> · <https://arxiv.org/html/2610.04672v2>.
+
+## Related reading
+
+- [[briefings/2026/11/2026-11-08]]

@@ -5,32 +5,32 @@ title: "OpenBot"
 summary: "CopilotKit's self-hosted agent workspace: an audit-first CEL policy gateway records every action before it runs, with a permissive shipped default."
 type: project
 created: 2026-11-02
-updated: 2026-11-10
+updated: 2026-11-14
 related: [scoped-assurance, structural-constraint-over-instruction, validation-tier-gap]
 sources:
   - url: https://github.com/CopilotKit/openbot
     retrieved: 2026-11-02
   - url: https://github.com/CopilotKit/openbot/blob/main/docs/architecture.md
     retrieved: 2026-11-02
-  - https://raw.githubusercontent.com/CopilotKit/OpenBot/main/README.md
-  - https://raw.githubusercontent.com/CopilotKit/OpenBot/main/docs/architecture.md
-  - https://raw.githubusercontent.com/CopilotKit/OpenBot/main/docs/approvals.md
-  - https://raw.githubusercontent.com/CopilotKit/OpenBot/main/docs/README.md
-  - https://raw.githubusercontent.com/CopilotKit/OpenBot/main/docs/web-research.md
-  - https://raw.githubusercontent.com/CopilotKit/OpenBot/main/server/src/computer/gateway.ts
-  - https://raw.githubusercontent.com/CopilotKit/OpenBot/main/server/src/computer/policy.ts
-  - https://raw.githubusercontent.com/CopilotKit/OpenBot/main/server/src/computer/policy-store.ts
-  - https://raw.githubusercontent.com/CopilotKit/OpenBot/main/server/src/computer/policy-dry-run.ts
-  - https://raw.githubusercontent.com/CopilotKit/OpenBot/main/server/src/what-if.ts
-  - https://raw.githubusercontent.com/CopilotKit/OpenBot/main/server/src/audit.ts
-  - https://raw.githubusercontent.com/CopilotKit/OpenBot/main/server/src/approvals/policy.ts
-  - https://raw.githubusercontent.com/CopilotKit/OpenBot/main/agent-computer/src/browser-runtime.ts
-  - https://raw.githubusercontent.com/CopilotKit/OpenBot/main/agent-computer/src/real-browser.ts
-  - https://raw.githubusercontent.com/CopilotKit/OpenBot/main/agent-computer/src/action-barrier.ts
-  - https://raw.githubusercontent.com/CopilotKit/OpenBot/main/.github/workflows/ci.yml
-  - https://raw.githubusercontent.com/CopilotKit/OpenBot/main/.env.example
-  - https://raw.githubusercontent.com/CopilotKit/OpenBot/main/CHANGELOG.md
-  - https://raw.githubusercontent.com/CopilotKit/OpenBot/main/release-policy.json
+  - https://raw.githubusercontent.com/CopilotKit/OpenBot/f71b0f4bb6223bc1c7aa0026ad0e3bd5ef9233b0/README.md
+  - https://raw.githubusercontent.com/CopilotKit/OpenBot/f71b0f4bb6223bc1c7aa0026ad0e3bd5ef9233b0/docs/architecture.md
+  - https://raw.githubusercontent.com/CopilotKit/OpenBot/f71b0f4bb6223bc1c7aa0026ad0e3bd5ef9233b0/docs/approvals.md
+  - https://raw.githubusercontent.com/CopilotKit/OpenBot/f71b0f4bb6223bc1c7aa0026ad0e3bd5ef9233b0/docs/README.md
+  - https://raw.githubusercontent.com/CopilotKit/OpenBot/f71b0f4bb6223bc1c7aa0026ad0e3bd5ef9233b0/docs/web-research.md
+  - https://raw.githubusercontent.com/CopilotKit/OpenBot/6d1919a3b53a0730894258f197f3beb4e8db4f2f/server/src/computer/gateway.ts
+  - https://raw.githubusercontent.com/CopilotKit/OpenBot/6d1919a3b53a0730894258f197f3beb4e8db4f2f/server/src/computer/policy.ts
+  - https://raw.githubusercontent.com/CopilotKit/OpenBot/6d1919a3b53a0730894258f197f3beb4e8db4f2f/server/src/computer/policy-store.ts
+  - https://raw.githubusercontent.com/CopilotKit/OpenBot/6d1919a3b53a0730894258f197f3beb4e8db4f2f/server/src/computer/policy-dry-run.ts
+  - https://raw.githubusercontent.com/CopilotKit/OpenBot/6d1919a3b53a0730894258f197f3beb4e8db4f2f/server/src/what-if.ts
+  - https://raw.githubusercontent.com/CopilotKit/OpenBot/6d1919a3b53a0730894258f197f3beb4e8db4f2f/server/src/audit.ts
+  - https://raw.githubusercontent.com/CopilotKit/OpenBot/6d1919a3b53a0730894258f197f3beb4e8db4f2f/server/src/approvals/policy.ts
+  - https://raw.githubusercontent.com/CopilotKit/OpenBot/6d1919a3b53a0730894258f197f3beb4e8db4f2f/agent-computer/src/browser-runtime.ts
+  - https://raw.githubusercontent.com/CopilotKit/OpenBot/6d1919a3b53a0730894258f197f3beb4e8db4f2f/agent-computer/src/real-browser.ts
+  - https://raw.githubusercontent.com/CopilotKit/OpenBot/6d1919a3b53a0730894258f197f3beb4e8db4f2f/agent-computer/src/action-barrier.ts
+  - https://raw.githubusercontent.com/CopilotKit/OpenBot/f71b0f4bb6223bc1c7aa0026ad0e3bd5ef9233b0/.github/workflows/ci.yml
+  - https://raw.githubusercontent.com/CopilotKit/OpenBot/f71b0f4bb6223bc1c7aa0026ad0e3bd5ef9233b0/.env.example
+  - https://raw.githubusercontent.com/CopilotKit/OpenBot/f71b0f4bb6223bc1c7aa0026ad0e3bd5ef9233b0/CHANGELOG.md
+  - https://raw.githubusercontent.com/CopilotKit/OpenBot/f71b0f4bb6223bc1c7aa0026ad0e3bd5ef9233b0/release-policy.json
 ---
 
 # OpenBot
@@ -43,7 +43,7 @@ The project is maintained by CopilotKit (the AG-UI authors). The application sou
 
 Version and maturity evidence, from the GitHub API and the repository's own `release-policy.json` and `CHANGELOG.md` fetched on 2026-11-10: the repository was created 2026-08-17 and its first release, `v0.0.1`, was published the same day; 34 GitHub releases exist, with `v1.0.0` published 2026-11-09 and `v1.0.1` published 2026-11-10 (a `v1.0.2-rc.1` was published 2026-11-11). `release-policy.json` names the current version `v1.0.2`, the supported upgrade path `v1.0.1` / `v1.0.0` / `v0.3.x`, `requiresDowntime: true` and `recovery: "restore-backup"`, with a database stamp range ending at `0088_approval_reviewer_guidance` and `rollbackCompatible: false`. The repository is TypeScript-dominant with 3,688 tracked files and 1,051 commits; stars and forks are adoption signals, not product evidence.
 
-**This revision is grounded in the current repository, and it corrects the previous page's framing.** The 2026-11-02 revision of this page described a README that opened with "A template, not a product" and a beta badge. Those sentences are present in the README at commit `38acc94` (2026-10-31) and are **absent from the README fetched on 2026-11-10**, which now leads with "AI coworkers. Ready for the enterprise" and offers signed desktop installers, an OpenBot for Business early-access programme, and a Helm chart. The architecture, the gateway and the policy engine are unchanged in substance; the packaging and the commercial framing around them moved on quickly. Nothing in the repository measures whether any of this governance works.
+The README positions OpenBot as an enterprise AI coworker workspace, with desktop installers, an early-access business offering and a Helm chart. Packaging claims do not establish measured governance effectiveness.
 
 ## Mechanism
 
@@ -134,7 +134,7 @@ Finally, nothing here establishes effectiveness. Whether the gateway's policies 
 
 ## Reproducible experiment
 
-No experiment was run for this page. The protocol below is for a reader with a disposable deployment; the first two steps are the README's own suggested trials.
+This is a proposed experiment, not an experimental result. The protocol below is for a reader with a disposable deployment; the first two steps are the README's own suggested trials.
 
 1. **Audit-first invariant.** Install from the quick start on a disposable laptop or VM, ask a Bot to open a page and fill a form (the README suggests `httpbin.org/forms/post`), then inspect `/admin/audit` and confirm a decision row exists for each action and that the row was written before the action took effect. A failure mode worth testing explicitly: an action that is refused must also have a row, and a forwarded action that fails must produce a second row with the same `attempt` id rather than overwriting the first.
 2. **Deny path.** Add a deny rule at `/admin/boundaries` matching that action and retry; the action should be refused with the refusal naming the rule, and the refusal should appear in the audit export.
@@ -146,10 +146,10 @@ Pass criteria: a decision row for every action including refusals; a refusal tha
 
 ## Evidence status
 
-This page is grounded in a read of the OpenBot repository over HTTPS on 2026-11-10: the README, `docs/architecture.md`, `docs/approvals.md`, `docs/README.md`, `docs/web-research.md`, `.env.example`, `CHANGELOG.md`, `release-policy.json`, `.github/workflows/ci.yml`, and the source files `server/src/computer/gateway.ts`, `server/src/computer/policy.ts`, `server/src/computer/policy-store.ts`, `server/src/computer/policy-dry-run.ts`, `server/src/what-if.ts`, `server/src/audit.ts`, `server/src/approvals/policy.ts`, `agent-computer/src/browser-runtime.ts`, `agent-computer/src/real-browser.ts` and `agent-computer/src/action-barrier.ts`, plus the GitHub API for repository metadata and the release list, and the recursive file tree (3,688 files). Facts about the mechanism, the defaults, the policy semantics, the audit event set, the CI jobs and the release history are **code-inspected or repository-inspected**. Claims about effectiveness, throughput, tool-selection reliability and market adoption are the project's own and are labelled as such; the "about ten / about thirty tools" figure is asserted without a cited study.
+Facts about the mechanism, the defaults, the policy semantics, the audit event set, the CI jobs and the release history are **code-inspected or repository-inspected**. Claims about effectiveness, throughput, tool-selection reliability and market adoption are the project's own and are labelled as such; the "about ten / about thirty tools" figure is asserted without a cited study.
 
-Nothing was executed by the KB maintainers. No OpenBot code was cloned, installed, built or run; no deployment was started; no test was executed; no benchmark was reproduced, because the repository contains none to reproduce. The 2026-11-02 revision of this page was grounded in the README at that date; the packaging, licensing and commercial framing have since changed materially, and the section "What it is" records the correction. Historical claims in the archived briefing of 2026-11-02 remain as published.
+No independently reproduced OpenBot performance result is cited.
 
-## Historical coverage
+## Related reading
 
 [Briefing 2026-11-02](../briefings/2026/11/2026-11-02.md)

@@ -12,8 +12,8 @@ sources:
 
 # Just-In-Time Agent Memory with Runtime Agentic Research (JAM)
 
-**Original source:** https://arxiv.org/abs/2609.34385  
-**Date:** 2026-09-28  
+**Original source:** https://arxiv.org/abs/2609.34385
+**Date:** 2026-09-28
 **Evidence status:** Author-reported research; not independently replicated in this knowledge base.
 
 ## Mechanism

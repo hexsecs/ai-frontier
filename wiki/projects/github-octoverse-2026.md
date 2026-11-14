@@ -4,7 +4,7 @@ title: "GitHub Octoverse 2026"
 summary: "GitHub's 2026 platform report: agent-started PRs pass 40% of pull requests; all figures are vendor-reported and observational, not audited."
 type: case-study
 created: 2026-11-09
-updated: 2026-11-10
+updated: 2026-11-14
 depth: deep
 sources:
   - https://github.blog/news-insights/octoverse/octoverse-commits-pushes-reach-new-highs-in-2026-as-developers-build-with-agents/
@@ -141,8 +141,12 @@ Every result should be reported with numerator, denominator, matched-pair count,
 
 ## Evidence status
 
-This page is grounded in a full read of the primary source — the GitHub blog post [Octoverse: Commits, pushes, reach new highs in 2026 as developers build with agents](https://github.blog/news-insights/octoverse/octoverse-commits-pushes-reach-new-highs-in-2026-as-developers-build-with-agents/), including its Glossary and Methodology sections, fetched on 2026-11-10 — together with the Octoverse index page (https://github.blog/news-insights/octoverse/) and the two product documentation pages the post links for its model-selection and stacked-PR material (https://docs.github.com/copilot/concepts/models/auto-model-selection and https://docs.github.com/pull-requests/how-tos/stacked-pull-requests), both fetched on 2026-11-10. Every quantitative result is **vendor-reported by GitHub about its own platform**: no figure was independently audited, the post publishes no dataset, query or code, and the agent-detection method that defines the headline numerator is not described in the Methodology section. Figures that exist only as chart images are reported here as chart captions, and no value has been invented for them. Claim types are separated in the text: the activity figures, the definitions, the explicit caveats and the forecast groupings are the source's; the items under "Assessed by the KB maintainers" and the whole Implications section are analysis by the KB maintainers, and the reproducible experiment is proposed and not executed. Nothing on this page was reproduced, executed or tested by the KB maintainers, and no independent audit or replication is known.
+Every quantitative result is **vendor-reported by GitHub about its own platform**: no figure was independently audited, the post publishes no dataset, query or code, and the agent-detection method that defines the headline numerator is not described in the Methodology section. Figures that exist only as chart images are reported here as chart captions, and no value has been invented for them.
 
-## Historical coverage
 
-- [[briefings/2026/11/2026-11-04]] — dated full-fidelity research briefing; finding 1 selected this report.
+
+Sources: <https://github.blog/news-insights/octoverse/octoverse-commits-pushes-reach-new-highs-in-2026-as-developers-build-with-agents/> · <https://github.blog/news-insights/octoverse/> · <https://docs.github.com/copilot/concepts/models/auto-model-selection> · <https://docs.github.com/pull-requests/how-tos/stacked-pull-requests>.
+
+## Related reading
+
+- [[briefings/2026/11/2026-11-04]]

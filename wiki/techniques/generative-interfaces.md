@@ -5,7 +5,7 @@ title: "Generative interfaces"
 summary: "Agents propose declarative UI or actions; a trusted host validates against a pre-declared catalog or policy before anything renders or runs."
 type: technique
 created: 2026-11-02
-updated: 2026-11-02
+updated: 2026-11-14
 related: [a2ui-and-copilotkit, openbot]
 sources:
   - url: https://a2ui.org/specification/v0.9.1-a2ui/
@@ -20,9 +20,9 @@ sources:
 
 ## What it is
 
-This technique bucket collects the designs in the corpus where an agent's output crosses into a user-facing surface the agent does not own, and a host-controlled structure is interposed between what the agent proposes and what the user sees or what takes effect. The centre of the bucket is [A2UI and CopilotKit](../projects/a2ui-and-copilotkit.md): an agent describes a user interface as a stream of declarative JSON, composed only from a component catalog the client declared in advance, and the host renders it with its own native components. The agent never sends executable code. [OpenBot](../projects/openbot.md), a self-hosted agent coworker, is retained as a bounded second instance, not a co-equal pillar: its user-facing surface is a chat and shared-computer panel rather than generated UI, and its centre of gravity is the policy gateway treated on [[techniques/secure-agent-operations]]. What it shares with A2UI is the abstract move — agent output is a proposal, and a pre-declared, host-held structure disposes of it before it has effects — plus a common substrate, since an OpenBot Bot is any endpoint speaking AG-UI, the CopilotKit protocol that also carries A2UI payloads.
+Generative interfaces let an agent propose user-interface structures that a host validates and renders. [[projects/a2ui-and-copilotkit]] illustrates a catalog-and-schema boundary between generated descriptions and executable application behavior.
 
-The honesty constraint on this page is set by the KB's own concept mining: in the [relation-discovery evaluation](../evaluations/relation-discovery-2026-11-02.md), the generative-interfaces theme dissolved. Two project summaries sharing an interface vocabulary never evidenced a shared mechanism, and A2UI's distinctive candidate concept, the catalog as trust boundary, remains a hold rather than a finding. This page is therefore a technique synthesis over two instances of host interposition — one strong, one bounded — not a claim that the corpus demonstrates a unified generative-interface mechanism.
+[[projects/openbot]] supplies a bounded architectural comparison: its policy gateway governs actions and human takeover rather than generating user interfaces. The common design choice is host-controlled validation; it does not establish equivalent functionality or measured benefits.
 
 ## Mechanism variants
 
@@ -57,4 +57,4 @@ The boundary these designs build is structural, not total, and both project page
 
 ## Evidence status
 
-This page is a synthesis over the KB's two deepened project pages, [A2UI and CopilotKit](../projects/a2ui-and-copilotkit.md) and [OpenBot](../projects/openbot.md), and the relation-discovery evaluation's disposition of this theme; it introduces no external sources and no facts beyond them. A2UI is kept as the technique's central instance. OpenBot is demoted to a bounded instance: it is an operations-and-governance design with a conversational surface, included here for the shared host-interposition move and the AG-UI substrate, not as a second generative-UI system. All benefit claims for both instances are vendor claims or architectural descriptions in their sources; no effectiveness result — benchmark, validity rate, user study, gateway evaluation — exists in the corpus for either, and none is claimed here. The theme's dissolution in concept mining stands: this page documents a pattern an engineer can choose, at the strength the two instances support, not a mechanism the corpus has evidenced across projects.
+Measurements are attributed to their authors or vendors at the point of use. The cross-project comparisons are analyst interpretations, not new experiments or evidence of a shared implementation. No independent replication is cited.

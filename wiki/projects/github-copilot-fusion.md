@@ -5,7 +5,7 @@ title: "GitHub Copilot Fusion"
 summary: "GitHub Copilot Fusion: generally available runtime router and orchestrator for Copilot models and execution patterns."
 type: project
 created: 2026-11-01
-updated: 2026-11-10
+updated: 2026-11-14
 related: ["improvement-lives-in-external-state"]
 sources:
   - url: https://github.blog/changelog/2026-10-28-route-and-orchestrate-models-with-github-copilot-fusion/
@@ -14,7 +14,7 @@ sources:
     retrieved: 2026-11-02
   - url: https://docs.github.com/copilot/concepts/models/auto-model-selection
     retrieved: 2026-11-02
-  - url: https://docs.github.com/copilot/how-tars/administer-copilot/manage-for-enterprise/manage-availability-of-default-models
+  - url: https://docs.github.com/en/copilot/how-tos/administer-copilot/manage-for-enterprise/manage-availability-of-default-models
     retrieved: 2026-11-02
   - https://docs.github.com/copilot/reference/copilot-billing/models-and-pricing
 ---
@@ -51,7 +51,7 @@ While Fusion works, the documentation says the user can follow the progress of e
 
 Every performance figure for Fusion comes from GitHub's launch changelog; none has independent verification, and each is labelled a vendor claim here.
 
-- **Vendor claim:** in the Artificial Analysis Coding Agent Index, Copilot Fusion Max scored 60. This is GitHub citing a third-party index whose report — methodology, task set, sample size, variance — is not given in the changelog and was not inspected for this page.
+- **Vendor claim:** in the Artificial Analysis Coding Agent Index, Copilot Fusion Max scored 60. This is GitHub citing a third-party index whose report — methodology, task set, sample size, variance — is not given in the changelog and was not inspected in this assessment.
 - **Vendor claim:** that score was "within two points of Claude Code with Opus 5.5 Max" on the same index (the comparator's name as printed in the post; its exact score is not stated).
 - **Vendor claim:** Fusion Max delivered that result "at about half the average API cost per task" relative to that comparator, "using about half as many tokens," and took "about 40% less time per task."
 - **Vendor claim, unquantified:** pattern selection adds "minimal latency," and performance has improved since Project HydraFusion launched.
@@ -110,12 +110,14 @@ Two limits would apply even to a well-run version of this protocol. It measures 
 
 ## Evidence status
 
-This page is grounded in the vendor sources inspected on 2026-11-10: the changelog post at https://github.blog/changelog/2026-10-28-route-and-orchestrate-models-with-github-copilot-fusion/, the Copilot Fusion documentation at https://docs.github.com/copilot/concepts/models/copilot-fusion, the auto model selection documentation, the enterprise model-availability documentation, and the Copilot billing documentation at https://docs.github.com/copilot/reference/copilot-billing/models-and-pricing. All performance figures are **vendor claims** from the changelog; the mechanism descriptions are **vendor-stated product behaviour** — a reasonable basis for describing what the feature is, not evidence for how well it works.
+All performance figures are **vendor claims** from the changelog; the mechanism descriptions are **vendor-stated product behaviour** — a reasonable basis for describing what the feature is, not evidence for how well it works.
 
 The inspected facts are the documented routing and orchestration model, the effort levels, the local-model preview, the administrator model policies and billing terms. The claimed facts are the Artificial Analysis Coding Agent Index score of 60, the two-point comparator margin, and the cost, token and time savings; the single third-party figure is quoted by the vendor without methodology and was not inspected here.
 
-Nothing on this page was executed, installed, cloned or benchmarked by the KB maintainers; no workflow code was run, and nothing here reflects an independent evaluation of Fusion.
 
-## Historical coverage
+
+Sources: <https://github.blog/changelog/2026-10-28-route-and-orchestrate-models-with-github-copilot-fusion/> · <https://docs.github.com/copilot/concepts/models/copilot-fusion> · <https://docs.github.com/copilot/reference/copilot-billing/models-and-pricing>.
+
+## Related reading
 
 [Briefing 2026-11-01](../briefings/2026/11/2026-11-01.md)

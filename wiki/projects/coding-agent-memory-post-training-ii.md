@@ -4,7 +4,7 @@ title: "Coding Agent Memory Post-Training II (CAMP-II)"
 summary: "Coding agents learn to manage persistent workspace files across context resets through asynchronous policy distillation."
 type: project
 created: 2026-11-13
-updated: 2026-11-13
+updated: 2026-11-14
 depth: brief
 related: [agent-skills-and-memory]
 sources:
@@ -34,4 +34,4 @@ Related: [[techniques/agent-skills-and-memory]]. The comparison is analytical, n
 On 20 interrupted coding tasks, compare raw transcript compaction, file-based memory with explicit prompts, and learned/file-operation policies. Measure task success, memory read/write count, context resets, token cost, and negative transfer.
 
 ## Provenance
-[[briefings/2026/11/2026-11-13]] — full dated narrative and source-scoped relation audit.
+[[briefings/2026/11/2026-11-13]]

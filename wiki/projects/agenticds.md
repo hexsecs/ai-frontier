@@ -5,7 +5,7 @@ title: "From Intent to Improvement: Agentic Dataset Search for Better Model Trai
 summary: "Contract-governed Planner–Engineer–Critic agent for Hugging Face training-data search; retrieved datasets are verified to improve downstream model training."
 type: project
 created: 2026-10-31
-updated: 2026-11-02
+updated: 2026-11-14
 related: [evaluator-circularity, capability-locus]
 sources:
   - url: https://arxiv.org/abs/2610.39608
@@ -88,8 +88,8 @@ The paper's artifacts make two reproductions possible; neither has been run by t
 
 ## Evidence status
 
-For this revision the primary source — the arXiv HTML full text of arXiv:2610.39608, including appendices and all tables — was read in full on 2026-11-02, and the project repository's landing page and README were inspected (its result tables match the paper's Tables 2 and 3). The repository code was not cloned, run, or audited, HuDS-Bench data was not independently re-scored, and no number was recomputed from raw data. Every quantitative claim on this page is therefore **author-reported**: the experiments were run by the paper's authors, and no independent replication exists. Figures attached to the "Claude Code" and "Codex" baselines are the authors' measurements of GLM-5.2-driven harness configurations, not vendor benchmark results. The authors' positioning of AgenticDS as a component of future data-centric self-improvement loops is speculation, labelled as such in the paper's future-work discussion.
+The repository code was not cloned, run, or audited, HuDS-Bench data was not independently re-scored, and no number was recomputed from raw data. Every quantitative claim on this page is therefore **author-reported**: the experiments were run by the paper's authors, and no independent replication is cited. Figures attached to the "Claude Code" and "Codex" baselines are the authors' measurements of GLM-5.2-driven harness configurations, not vendor benchmark results. The authors' positioning of AgenticDS as a component of future data-centric self-improvement loops is speculation, labelled as such in the paper's future-work discussion.
 
-## Historical coverage
+## Related reading
 
 [Briefing 2026-10-31](../briefings/2026/10/2026-10-31.md)

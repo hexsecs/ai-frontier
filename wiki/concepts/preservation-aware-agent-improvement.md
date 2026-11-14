@@ -4,7 +4,7 @@ title: "Preservation-aware agent improvement"
 summary: "An evolved agent strategy must retain previously verified task coverage, not merely increase aggregate benchmark performance."
 type: concept
 created: 2026-11-09
-updated: 2026-11-09
+updated: 2026-11-14
 depth: full
 sources:
   - https://arxiv.org/abs/2611.03618

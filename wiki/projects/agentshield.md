@@ -4,7 +4,7 @@ title: "AgentShield"
 summary: "Behavioural fingerprinting of browser agents via dynamic forms, plus the Extinction-induced Policy Drift attack on agent safeguards."
 type: project
 created: 2026-11-09
-updated: 2026-11-10
+updated: 2026-11-14
 depth: deep
 related: [structural-constraint-over-instruction, secure-agent-operations, capability-locus]
 sources:
@@ -142,8 +142,12 @@ Use locally hosted pages and agents you control, record the full event timeline 
 
 ## Evidence status
 
-This page is grounded in a full read of the primary source — the arXiv abstract page (https://arxiv.org/abs/2610.41181) and the complete HTML full text including §III–V, the six result tables, Appendices A–C (implementation, ethical considerations, and the venue programme committee's meta-review) and the reference list (https://arxiv.org/html/2610.41181v1) — fetched on 2026-11-10. Every quantitative result is **author-reported**; no independent replication is known. Unlike the other two sources in this set, the paper states a venue: "To appear in Proceedings of IEEE Symposium on Security and Privacy Oakland (IEEE S&P 2027)", and Appendix C contains that venue's programme-committee meta-review, so this is an accepted-conference paper rather than an unrefereed preprint. The paper links an artifact repository (reference [41], https://github.com/moizali01/AgentShield-SP27) and states that code, prompts and data will be released; the KB maintainers did not fetch or run that repository, so its contents are not described here. The per-category content-injection outcomes and the per-agent detection scores are presented in figures, so only the counts stated in the prose are reported above. Claim types are separated in the text: the detection-effectiveness and robustness claims are the authors'; the items under "Assessed from the reporting" and the whole Implications section are analysis by the KB maintainers. Nothing on this page was reproduced, executed, cloned or tested by the KB maintainers, and no injection payload or attack code from the source was run.
+Every quantitative result is **author-reported**; no independent replication is cited. Unlike the other two sources in this set, the paper states a venue: "To appear in Proceedings of IEEE Symposium on Security and Privacy Oakland (IEEE S&P 2027)", and Appendix C contains that venue's programme-committee meta-review, so this is an accepted-conference paper rather than an unrefereed preprint. The paper links an artifact repository (reference [41], https://github.com/moizali01/AgentShield-SP27) and states that code, prompts and data will be released; the KB maintainers did not fetch or run that repository, so its contents are not described here. The per-category content-injection outcomes and the per-agent detection scores are presented in figures, so only the counts stated in the prose are reported above.
 
-## Historical coverage
 
-- [[briefings/2026/11/2026-11-03]] — dated full-fidelity research and cross-project synthesis; this page is the deep-depth grounding of the AgentShield finding.
+
+Sources: <https://arxiv.org/abs/2610.41181> · <https://arxiv.org/html/2610.41181v1>.
+
+## Related reading
+
+- [[briefings/2026/11/2026-11-03]]

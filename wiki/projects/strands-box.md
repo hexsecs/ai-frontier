@@ -4,7 +4,7 @@ title: "Strands Box — Stateful policy sandbox for agents"
 summary: "Rust sandbox that combines OS containment with a default-deny Dogwood policy engine, so file, network and MCP decisions can depend on earlier agent actions."
 type: project
 created: 2026-11-10
-updated: 2026-11-10
+updated: 2026-11-14
 depth: deep
 related: [lifelong-materials-agent-memory, structural-constraint-over-instruction, secure-agent-operations, verified-completion-vs-apparent-success]
 sources:
@@ -151,18 +151,20 @@ Report the exact Box version, the OS and architecture, the policy text, the deci
 
 ## Evidence status
 
-This page is grounded in reads of the primary source over HTTPS on 2026-11-10: the repository landing page and README (https://github.com/strands-agents/box), the GitHub REST endpoints for the repository metadata (https://api.github.com/repos/strands-agents/box), its releases (https://api.github.com/repos/strands-agents/box/releases) and its full file tree (https://api.github.com/repos/strands-agents/box/git/trees/main?recursive=1); and the following files at `main` under https://raw.githubusercontent.com/strands-agents/box/main/ — `README.md`, `SECURITY.md`, `crates/box/README.md`, `crates/policy/README.md`, `crates/egress-gateway/README.md`, `crates/containment/README.md`, `docs/design/architecture.md`, `docs/design/security.md`, `docs/design/policy.md`, `docs/design/tenets.md`, `docs/design/limitations.md`, `docs/design/credentials.md`, `docs/design/egress.md`, `docs/user/security.md`, `docs/user/tool-grammars.md`, `test-workload/README.md` and `.github/workflows/ci.yml`.
+Code-inspected facts are the file layout, the action vocabulary, the crate APIs and their documented semantics, the CI job graph, the workload-suite structure and the released version series. Claims are the project's own statements about its security properties, its measured coverage, the workload-suite verdicts and the agent-driven containment results — none of which the KB maintainers verified. The two performance targets in `docs/design/tenets.md` are the project's own and are marked there as unbenchmarked. The Monty path-resolution discrepancy between `crates/policy/README.md` and `docs/user/security.md` is reported unresolved.
 
-Claim types are separated in the text. Code-inspected facts are the file layout, the action vocabulary, the crate APIs and their documented semantics, the CI job graph, the workload-suite structure and the released version series. Claims are the project's own statements about its security properties, its measured coverage, the workload-suite verdicts and the agent-driven containment results — none of which the KB maintainers verified. The two performance targets in `docs/design/tenets.md` are the project's own and are marked there as unbenchmarked. The Monty path-resolution discrepancy between `crates/policy/README.md` and `docs/user/security.md` is reported unresolved.
+No independent security evaluation of Box is known from the inspected files.
 
-Nothing on this page was executed, cloned, built, installed or tested by the KB maintainers; no Box binary was run, no policy was loaded, and no sandbox was entered. No independent security evaluation of Box is known from the inspected files.
 
-## Historical coverage
 
-- [[briefings/2026/11/2026-11-10]] — dated full-fidelity research and cross-project synthesis.
+Sources: <https://github.com/strands-agents/box> · <https://api.github.com/repos/strands-agents/box> · <https://api.github.com/repos/strands-agents/box/releases> · <https://api.github.com/repos/strands-agents/box/git/trees/main?recursive=1> · <https://raw.githubusercontent.com/strands-agents/box/main/>.
+
+## Related reading
+
+- [[briefings/2026/11/2026-11-10]]
 
 ## Related comparisons added November 11
 
 - [[projects/lifelong-materials-agent-memory]] — reciprocal analyst `compares_with`: externally enforced action-history policy versus reusable learned failure guards; neither is a substitute for the other (https://github.com/strands-agents/box; https://arxiv.org/abs/2608.11224).
 
-- [[briefings/2026/11/2026-11-10]] — dated full-fidelity research and cross-project synthesis.
+- [[briefings/2026/11/2026-11-10]]

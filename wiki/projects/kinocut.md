@@ -4,7 +4,7 @@ title: "KinoCut — Guardrailed Video-Editing MCP Tools"
 summary: "Exposes local FFmpeg-based editing and repurposing operations to agents through bounded MCP tools."
 type: project
 created: 2026-11-12
-updated: 2026-11-12
+updated: 2026-11-14
 depth: brief
 sources:
   - https://github.com/KyaniteLabs/kinocut
@@ -12,8 +12,8 @@ sources:
 
 # KinoCut — Guardrailed Video-Editing MCP Tools
 
-**Source:** https://github.com/KyaniteLabs/kinocut  
-**Date:** 2026-11-12 (repository inspected; launch date unverified)  
+**Source:** https://github.com/KyaniteLabs/kinocut
+**Date:** 2026-11-12 (repository inspected; launch date unverified)
 **Evidence status:** Source repository inspected; release date and independent evaluation not verified.
 
 ## Mechanism
@@ -40,4 +40,4 @@ Practical domain-diversifying experiment; engineering implementation is more cre
 
 ## Related
 
-- [[briefings/2026/11/2026-11-12]] — complete dated evidence and cross-project synthesis.
+- [[briefings/2026/11/2026-11-12]]

@@ -4,7 +4,7 @@ title: "AgentSWE"
 summary: "Benchmark of 25 commissions testing whether coding agents deliver the agent a natural-language requirement describes, graded on held-out cases."
 type: benchmark
 created: 2026-11-09
-updated: 2026-11-10
+updated: 2026-11-14
 depth: deep
 related: [verified-completion-vs-apparent-success, validation-tier-gap, evaluator-circularity]
 sources:
@@ -145,8 +145,12 @@ Substituting an available model for the paper's 2026 hosted builders is unavoida
 
 ## Evidence status
 
-This page is grounded in a full read of the primary source — the arXiv abstract page (https://arxiv.org/abs/2610.13361) and the complete HTML full text including appendices A–J and the reference list (https://arxiv.org/html/2610.13361v1) — fetched on 2026-11-10. Every quantitative result is **author-reported**; the builders, the runtime models and the judges were run by the authors; the paper is a single preprint (v1) with no peer-reviewed venue claimed. The benchmark itself is publicly released at https://github.com/VectorSpaceLab/AgentSWE (repository page fetched 2026-11-10: Apache-2.0 licensed, with the 25 task packages, the AgentSWE-Lite eight-task set, an `agentswe` command-line entry point, held-out cases included in the repository and per-instance evaluation contracts), so unlike most pages in this section the authors' artifact is available for inspection — but the KB maintainers did not clone, install or run it. Numbers that appear only in figures (the per-builder outcome histograms, the per-run scatter of code score against held-out Result) are described here only as the paper's text describes them. Claim types are separated in the text: the first-of-its-kind and novelty claims are the authors'; the items under "Assessed from the reporting" and the whole Implications section are analysis by the KB maintainers. Nothing on this page was reproduced, executed or tested by the KB maintainers, and no independent replication is known.
+Every quantitative result is **author-reported**; the builders, the runtime models and the judges were run by the authors; the paper is a single preprint (v1) with no peer-reviewed venue claimed. The benchmark itself is publicly released at https://github.com/VectorSpaceLab/AgentSWE (repository page fetched 2026-11-10: Apache-2.0 licensed, with the 25 task packages, the AgentSWE-Lite eight-task set, an `agentswe` command-line entry point, held-out cases included in the repository and per-instance evaluation contracts), so unlike most pages in this section the authors' artifact is available for inspection — but the KB maintainers did not clone, install or run it. Numbers that appear only in figures (the per-builder outcome histograms, the per-run scatter of code score against held-out Result) are described here only as the paper's text describes them.
 
-## Historical coverage
 
-- [[briefings/2026/11/2026-11-03]] — dated full-fidelity research briefing; finding 4 selected AgentSWE.
+
+Sources: <https://arxiv.org/abs/2610.13361> · <https://arxiv.org/html/2610.13361v1>.
+
+## Related reading
+
+- [[briefings/2026/11/2026-11-03]]

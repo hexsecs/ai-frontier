@@ -4,7 +4,7 @@ title: "CrossSWE"
 summary: "Benchmark of 171 real-world cross-repository joint-development tasks where only coordinated changes across interdependent repositories pass."
 type: benchmark
 created: 2026-11-09
-updated: 2026-11-13
+updated: 2026-11-14
 depth: deep
 related: [expertcrowd-swe, geofaham, protocol-relative-scores, capability-locus, verified-completion-vs-apparent-success]
 sources:
@@ -87,7 +87,7 @@ The paper contrasts GPT-6.1 Sol's 58.48% on CrossSWE with its reported 75.2% on 
 
 **Assessed from the reporting.**
 
-- **Single source, author-run baselines.** Everything rests on arXiv:2611.01484 v1 (1 November 2026). All five models were run by the authors under one scaffold; no independent replication is known. The comparison against the same model's 75.2% on DeepSWE v1.1 is a *reported* figure from another work, not a measurement in this paper.
+- **Single source, author-run baselines.** Everything rests on arXiv:2611.01484 v1 (1 November 2026). All five models were run by the authors under one scaffold; no independent replication is cited. The comparison against the same model's 75.2% on DeepSWE v1.1 is a *reported* figure from another work, not a measurement in this paper.
 - **The joint-vs-single-side contrast is the load-bearing experiment, and it covers two of five models.** +6.07 and +9.18 percentage points for GPT-6.1 Sol and DeepSeek V4.1 Flash; no single-side number is reported for Claude, GLM or Qwen, so the size of the coordination penalty is established for two models only.
 - **Failure classification is manual and the denominator is unpublished.** The five failure categories and their per-model shares come from manual analysis of unsuccessful trajectories; the paper does not state how many failed runs were classified, so 44.2% cannot be turned into a count, and no inter-annotator agreement is reported.
 - **Pass@1 with a single run per instance.** No repetitions, seeds, confidence intervals or significance tests are reported, and no indication of run-to-run variance across the 171 instances.
@@ -131,12 +131,16 @@ Model substitutions for the paper's 2026 hosted models are unavoidable; the subs
 
 ## Evidence status
 
-This page is grounded in a full read of the primary source — the arXiv abstract page (https://arxiv.org/abs/2611.01484) and the complete HTML full text including appendices A–C and the reference list (https://arxiv.org/html/2611.01484v1) — fetched on 2026-11-10. Every quantitative result is **author-reported**; the five models were run by the authors under a single mini-SWE-agent scaffold; the paper is a single preprint (v1) with no peer-reviewed venue claimed. The dataset is publicly released at https://huggingface.co/datasets/CrossSWE/CrossSWE-Bench (dataset card fetched 2026-11-10: 171 rows, 350 repository entries across 165 distinct upstream repositories, container images pinned by immutable digest, per-instance evaluation contracts); a full-text search of the inspected paper HTML found no linked harness or evaluation-code repository beyond that dataset. The per-model failure percentages for Qwen3.8-Flash-Next, the absolute failure counts behind the classification, and the contents of Figures 5–7 are not disclosed in the inspected text and are not reported here. Claim types are separated in the text: the novelty and differentiation claims are the authors'; the items under "Assessed from the reporting" and the whole Implications section are analysis by the KB maintainers. Nothing on this page was reproduced, executed, cloned or tested by the KB maintainers, and no independent replication is known.
+Every quantitative result is **author-reported**; the five models were run by the authors under a single mini-SWE-agent scaffold; the paper is a single preprint (v1) with no peer-reviewed venue claimed. The dataset is publicly released at https://huggingface.co/datasets/CrossSWE/CrossSWE-Bench (dataset card fetched 2026-11-10: 171 rows, 350 repository entries across 165 distinct upstream repositories, container images pinned by immutable digest, per-instance evaluation contracts); a full-text search of the inspected paper HTML found no linked harness or evaluation-code repository beyond that dataset. The per-model failure percentages for Qwen3.8-Flash-Next, the absolute failure counts behind the classification, and the contents of Figures 5–7 are not disclosed in the inspected text and are not reported here.
 
-## Historical coverage
 
-- [[briefings/2026/11/2026-11-04]] — dated full-fidelity research briefing; finding 5 selected CrossSWE.
 
-## November 13 comparison update
+Sources: <https://arxiv.org/abs/2611.01484> · <https://arxiv.org/html/2611.01484v1>.
+
+## Related reading
+
+- [[briefings/2026/11/2026-11-04]]
+
+## Cross-repository and orchestration comparisons
 
 [[projects/expertcrowd-swe]] (https://arxiv.org/abs/2611.13246) tests expert-authored merge blockers in individual codebases; CrossSWE tests cross-repository consistency (https://arxiv.org/abs/2611.01484). Scores are protocol-relative, not head-to-head. [[projects/geofaham]] (https://arxiv.org/abs/2611.04977) similarly coordinates artifacts across tools, but geospatial metadata correctness is not the same as repository interface consistency. Proposed experiment: paired repository changes with independent integration postconditions.

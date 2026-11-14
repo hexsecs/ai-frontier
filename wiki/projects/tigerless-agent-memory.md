@@ -4,7 +4,7 @@ title: "tigerless agent-memory"
 summary: "Local-first agent memory runtime: Markdown files as the source of truth, a rebuildable SQLite index, and a sleep-time Manage layer on its own clock."
 type: project
 created: 2026-11-09
-updated: 2026-11-10
+updated: 2026-11-14
 depth: deep
 sources:
   - https://github.com/tigerless-labs/agent-memory
@@ -48,7 +48,6 @@ Version and maturity evidence, fetched on 2026-11-10 from the GitHub API and the
 
 The project is maintained by tigerless-labs. `CLAUDE.md` states the wedge as a competitive claim: "the only memory system with a true independent Manage layer (value-based forgetting, sleep-time consolidation with authority tiers) on top of file truth — every competitor either has no M, or buries it in the write path." That is the vendor's own framing and is not established by the repository.
 
-The previous revision of this page was a canonical backfill of the 2026-11-05 briefing's assessment rather than an independent source review. This revision is a repository-grounded re-read: the mechanisms below are inspected from the source, and the benchmark figures in the "Evidence" section are explicitly separated as README claims.
 
 ## Mechanism
 
@@ -145,7 +144,7 @@ Fifth, the measurement design carries a lesson that outlives this project. The h
 
 ## Reproducible experiment
 
-No experiment was run for this page. The protocol below is for a reader with a disposable environment; the first two steps use the repository's own harness entry points.
+This is a proposed experiment, not an experimental result. The protocol below is for a reader with a disposable environment; the first two steps use the repository's own harness entry points.
 
 1. **Install and index.** `git clone`, `uv sync --all-packages`, `mem init`, then write a handful of memories with `mem record --type decision --field project=... --abstract "..." --body "..."`. Confirm `mem --json recall "<query>"` returns hits with paths and that `mem read <name> --level outline` returns headings only. This establishes the substrate the rest of the protocol depends on.
 2. **The rebuild invariant.** `rm -rf ~/agent-memory-store/.index && mem rebuild`, then re-run the same recall and require the same hit set. This is the acceptance condition the repository's own test asserts, and it is the property the whole design rests on.
@@ -157,10 +156,10 @@ Substituting available models for the pinned 2026-era hosted defaults is unavoid
 
 ## Evidence status
 
-This page is grounded in a read of the tigerless-labs/agent-memory repository over HTTPS on 2026-11-10: the README, `CLAUDE.md`, `pyproject.toml`, `.github/workflows/ci.yml`, `.gitignore`, `docs/design/index.md`, `docs/design/write-negotiation.md`, `docs/design/management-operation-boundaries.md`, `docs/design/raw-evidence-reads.md`, `docs/TODO.md`, `docs/plans/memory-management-audit.md`, `skills/agent-memory/SKILL.md`, the core modules `store.py`, `recall.py`, `manage.py`, `distill.py`, `reasoning.py`, `manage_toolkit.py`, `context.py`, `injection.py`, `indexer.py` and `search_index.py`, the executor's `reasoners.py` and `hosts.py`, the harness's `arms.py`, `exam.py`, `judge.py`, `interop.py` and `systems.py`, and `tests/redteam/test_poisoning.py`, plus the GitHub API for repository metadata, releases and the file tree. Mechanism claims are code-inspected; the LongMemEval-S table, the 9 interop pairs, the vector-fusion figures and the CJK check are **README claims with no artefact in the repository** — `docs/experiments.md` and `experiments/` return 404 on the default branch and are gitignored, so the protocol, ledger and raw run records the README refers to are not publicly inspectable. The "only memory system with a true independent Manage layer" statement is the vendor's own.
+Mechanism claims are code-inspected; the LongMemEval-S table, the 9 interop pairs, the vector-fusion figures and the CJK check are **README claims with no artefact in the repository** — `docs/experiments.md` and `experiments/` return 404 on the default branch and are gitignored, so the protocol, ledger and raw run records the README refers to are not publicly inspectable. The "only memory system with a true independent Manage layer" statement is the vendor's own.
 
-Nothing was executed by the KB maintainers. No agent-memory code was cloned, installed, built or run; no store was created; no harness run was performed; no benchmark was reproduced, and the repository ships nothing that would let one be reproduced without reimplementing the protocol from scratch.
+No agent-memory code was cloned, installed, built or run; no store was created; no harness run was performed; no benchmark was reproduced, and the repository ships nothing that would let one be reproduced without reimplementing the protocol from scratch.
 
-## Historical coverage
+## Related reading
 
-[[briefings/2026/11/2026-11-05]] — the dated briefing whose finding this page originally backfilled.
+[[briefings/2026/11/2026-11-05]]

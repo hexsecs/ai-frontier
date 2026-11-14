@@ -5,7 +5,7 @@ title: "DynaRev: Benchmarking Web Agents under Dynamic Goal Revision"
 summary: "DynaRev: 181-task web-agent benchmark delivering additive and override goal revisions at semantic milestones, scored for correctness, responsiveness, and cost."
 type: benchmark
 created: 2026-11-01
-updated: 2026-11-02
+updated: 2026-11-14
 related: [evaluator-circularity, information-content-dominance, protocol-relative-scores, scoped-assurance]
 sources:
   - url: https://arxiv.org/abs/2610.40133
@@ -46,7 +46,7 @@ One scoping decision matters for interpreting results: override revisions are co
 
 ## Evidence
 
-All results below are **author-reported** from the single preprint; conditions are stated with each result, and no independent replication exists (see Evidence status).
+All results below are **author-reported** from the single preprint; conditions are stated with each result, and no independent replication is cited (see Evidence status).
 
 **Main results (all 181 tasks, BrowserGym, 100-step budget, temperature 0).** Gemini-3.8-Flash achieves the best mean constraint satisfaction, **Score 0.735**, the best MFFR (2.28 rounds), and the best cost efficiency under both step and token costs. DeepSeek-V4.1-Flash achieves the best **strict task success, 43.1%** — meaning even the leader fully satisfies every constraint on fewer than half the tasks, while its mean Score (0.698) ranks second. The two rankings genuinely diverge: Qwen3.8-Flash has a lower Score than Claude-Opus-5-5 (0.604 vs 0.681) but a higher success rate (39.2% vs 36.5%). GPT-6.1-Sol uses the fewest steps (24.9 on average) yet posts the lowest Score (0.598) and the earliest first failures (MFFR 1.91); it accumulates performance quickly under small budgets but plateaus early, whereas Gemini and DeepSeek keep improving as budget grows. The paper's own summary: "agents often satisfy only part of the task requirements."
 
@@ -101,7 +101,7 @@ The static predecessors are the seed benchmarks themselves (Online-Mind2Web, Min
 
 ## Reproducible experiment
 
-The authors release code and data at [github.com/zsq259/DynaRev](https://github.com/zsq259/DynaRev). For this page the repository was verified live via its README on 2026-11-02 — the three JSONL data files' task counts (76 + 62 + 43 = 181) match Table 1 — but the code was **not cloned or executed**, per this KB's policy on untrusted code.
+The authors release code and data at [github.com/zsq259/DynaRev](https://github.com/zsq259/DynaRev).
 
 A faithful replication needs: the released task data; BrowserGym with Playwright-driven headless Chromium; viewport-restricted accessibility-tree observations; a 100-step budget at temperature 0; the milestone judge and the trajectory-grounded constraint/WRA evaluators; and API access to the evaluated models (the seed datasets, Online-Mind2Web and Mind2Web 2, are on Hugging Face). Two extensions would test this page's open questions directly:
 
@@ -112,8 +112,8 @@ Exact numerical reproduction should not be expected over time: the tasks descend
 
 ## Evidence status
 
-The primary source (arXiv:2610.40133, HTML full text including appendices and all tables) was read in full on 2026-11-02 for issue #2, and the code/data repository's existence and task counts were verified against its README the same day; the code was not run and the benchmark was not re-executed. Every quantitative result on this page is **author-reported** from that single preprint: no independent replication was located, and the authors claim none. Model identifiers (GPT-6.1-Sol, Gemini-3.8-Flash, Qwen3.8-Flash, Claude-Opus-5-5, DeepSeek-V4.1-Flash) are reproduced as printed in the paper and have not been silently "corrected" to other releases. Items labelled analyst-assessed under Limitations are inferences from the paper's stated method, not claims made by the authors. This page replaces the earlier import, whose own label — metrics "not independently reverified" — was accurate; the contents have now been verified against the source text, which is a weaker claim than independent reproduction of the benchmark.
+Every quantitative result on this page is **author-reported** from that single preprint: no independent replication was located, and the authors claim none. Model identifiers (GPT-6.1-Sol, Gemini-3.8-Flash, Qwen3.8-Flash, Claude-Opus-5-5, DeepSeek-V4.1-Flash) are reproduced as printed in the paper and have not been silently "corrected" to other releases. Items labelled analyst-assessed under Limitations are inferences from the paper's stated method, not claims made by the authors.
 
-## Historical coverage
+## Related reading
 
 [Briefing 2026-11-01](../briefings/2026/11/2026-11-01.md)

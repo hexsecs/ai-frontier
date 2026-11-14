@@ -4,7 +4,7 @@ title: "ExpertCrowd-SWE"
 summary: "One hundred expert-authored engineering tasks use calibrated executable graders and must-pass merge blockers."
 type: project
 created: 2026-11-13
-updated: 2026-11-13
+updated: 2026-11-14
 depth: brief
 related: [crossswe]
 sources:
@@ -34,4 +34,4 @@ Related: [[projects/crossswe]]. The comparison is analytical, not a demonstrated
 Replicate three public tasks with an independent coding harness; verify that no-op and superficially plausible patches score zero and must-pass blockers are enforced.
 
 ## Provenance
-[[briefings/2026/11/2026-11-13]] — full dated narrative and source-scoped relation audit.
+[[briefings/2026/11/2026-11-13]]

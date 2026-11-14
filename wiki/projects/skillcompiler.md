@@ -5,7 +5,7 @@ title: "Compile Away Uncertainty: Self-Evolving Agent Skills via Programmatic Co
 summary: "Self-evolving skill framework that selectively compiles well-specified skill operations into validated, reusable programs while LLM reasoning handles the rest."
 type: project
 created: 2026-10-31
-updated: 2026-11-02
+updated: 2026-11-14
 related: [information-content-dominance, scoped-assurance]
 sources:
   - url: https://arxiv.org/abs/2610.39508
@@ -114,8 +114,8 @@ Substituting an available model for the paper's 2026 hosted backbones is unavoid
 
 ## Evidence status
 
-This page is grounded in a full read of the primary source (arXiv:2610.39508 v1, including appendices) on 2026-11-02 for issue #2. Every quantitative result is **author-reported**; the paper links no code or data release (verified by full-text search), the baselines were run by the authors, and no independent replication is known. Claim types are separated in the text: the first-of-its-kind and differentiation claims are the authors'; the limitations marked as assessed are analysis of the paper's own reporting. Nothing here was reproduced or executed by the KB maintainers.
+Every quantitative result is **author-reported**; the paper links no code or data release (verified by full-text search), the baselines were run by the authors, and no independent replication is cited.
 
-## Historical coverage
+## Related reading
 
 [Briefing 2026-10-31](../briefings/2026/10/2026-10-31.md)

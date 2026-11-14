@@ -12,8 +12,8 @@ sources:
 
 # Modern Software Engineering with Verification Agents
 
-**Original source:** https://arxiv.org/abs/2611.02285  
-**Date:** 2026-11-01  
+**Original source:** https://arxiv.org/abs/2611.02285
+**Date:** 2026-11-01
 **Evidence status:** Author-reported research; not independently replicated in this knowledge base.
 
 ## Mechanism

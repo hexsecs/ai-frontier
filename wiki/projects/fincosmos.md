@@ -4,7 +4,7 @@ title: "FINCOSMOS: An Open-World Evaluation Paradigm for Agents in Finance"
 summary: "Open-world agent benchmark for finance: hidden intent, self-sourced Web data, point-in-time backtests and 15 veto checks; no session accepted in 150 runs."
 type: project
 created: 2026-11-07
-updated: 2026-11-10
+updated: 2026-11-14
 depth: deep
 related: [scoped-assurance, protocol-relative-scores, abstention-as-first-class-verdict]
 sources:
@@ -149,8 +149,10 @@ Substituting available models for the paper's 2026 hosted backbones is unavoidab
 
 ## Evidence status
 
-This page is grounded in a full read of the primary source — the arXiv abstract page (https://arxiv.org/abs/2611.07464) and the complete HTML full text including appendices A–E and the reference list (https://arxiv.org/html/2611.07464v1) — fetched on 2026-11-10. Every quantitative result is **author-reported**; no baseline was run by the KB maintainers and no independent replication is known. The paper states that the benchmark of ten frozen tasks, the task generator, the evaluator and a live leaderboard (https://leaderboard.fincosmos.com.co) are released, but no repository URL for them appears in the inspected text, and none was fetched for this page. Claim types are separated in the text: the first-of-its-kind claim and the comparison with related benchmarks are the authors'; the items under "Assessed from the reporting" and the whole Implications section are analysis by the KB maintainers. Nothing on this page was reproduced, executed, cloned or tested by the KB maintainers, and no independent replication is known.
 
-## Historical coverage
 
-- [[briefings/2026/11/2026-11-07]] — dated full-fidelity research and cross-project synthesis.
+Sources: <https://arxiv.org/abs/2611.07464> · <https://arxiv.org/html/2611.07464v1> · <https://leaderboard.fincosmos.com.co>.
+
+## Related reading
+
+- [[briefings/2026/11/2026-11-07]]

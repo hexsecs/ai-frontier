@@ -13,8 +13,8 @@ sources:
 
 # Harnessing Agent Memory to Build Lifelong AI Partners for Materials Scientists
 
-**Original source:** https://arxiv.org/abs/2608.11224  
-**Date:** 2026-07-25  
+**Original source:** https://arxiv.org/abs/2608.11224
+**Date:** 2026-07-25
 **Evidence status:** Author-reported research; not independently replicated in this knowledge base.
 
 ## Mechanism

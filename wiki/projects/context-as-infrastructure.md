@@ -5,7 +5,7 @@ title: "Context as Infrastructure: Knowledge Compilation for Retrieval in Agenti
 summary: "A RAGFlow vendor paper finds precompiled context structures add no accuracy; claim–evidence substitution cuts query tokens 38% on average instead."
 type: project
 created: 2026-11-02
-updated: 2026-11-02
+updated: 2026-11-14
 related: [comparator-construction-shapes-margins, validation-tier-gap]
 sources:
   - url: https://arxiv.org/abs/2610.41172
@@ -96,14 +96,14 @@ Three checks are extractable, at increasing cost.
 
 **2. Artifact-level check with RAGFlow.** RAGFlow is open source (see Evidence status). Ingest a small document set with the Tree template in the paper's Listing 1 configuration — glm-4-flash extraction, `require_verbatim_span: true`, span-match validation — and test the paper's central representation claim directly against the store: every stored claim's evidence span should match the source verbatim at the recorded chunk offsets, and claims with unlocatable spans should be absent (dropped at validation, not repaired). This checks the "lossless in provenance" property without needing the authors' harness.
 
-**3. Mini token-economics run.** Take roughly 20 multi-hop questions over a small Wikipedia subset and run a BM25/grep harness with evidence substitution off versus on, recording per-query token deltas split by the gate's hit/miss verdict plus the acceptance rate. The paper predicts the *shape* — a large saving on hits, a ~2% penalty on misses, tokens down while rounds and latency rise — rather than any specific average at small N. Exact reproduction of Table 4 is not expected to be possible: it requires the authors' harness configuration and the Qwen decision-model preview service, and the paper reports single-run operating points, so a replication should compare signs and rough magnitudes, not the −38% point value. None of these checks was performed for this page; they are specified from the paper's own configuration and formulas.
+**3. Mini token-economics run.** Take roughly 20 multi-hop questions over a small Wikipedia subset and run a BM25/grep harness with evidence substitution off versus on, recording per-query token deltas split by the gate's hit/miss verdict plus the acceptance rate. The paper predicts the *shape* — a large saving on hits, a ~2% penalty on misses, tokens down while rounds and latency rise — rather than any specific average at small N. Exact reproduction of Table 4 is not expected to be possible: it requires the authors' harness configuration and the Qwen decision-model preview service, and the paper reports single-run operating points, so a replication should compare signs and rough magnitudes, not the −38% point value. None of these checks was performed in this assessment; they are specified from the paper's own configuration and formulas.
 
 ## Evidence status
 
 Everything quantitative on this page is **author-reported**: all experiments were run by the paper's authors, 17 of 18 of whom are employees of InfiniFlow, the vendor of the system evaluated. There is no independent replication, and the metrics have not been independently reverified. The paper's internal labels have been preserved rather than flattened: benchmark accuracies (harness baseline, substitution and gate arms) are single-run operating points from the authors' runs; the deployment-ledger claims for ontology, graph, wiki, timeline, mind-map, and memory artifacts are the authors' own "no measured effect"; the dense-retrieval claim is an unquantified assertion by the authors; and the PageIndex scale figure is the authors' analytic model, not a measurement.
 
-On availability: no dataset release accompanies the paper, and no compiled FRAMES artifacts, harness configurations, or run logs are published; FRAMES and BrowseComp-Plus are third-party public benchmarks. The system itself is implemented in the open-source RAGFlow project (github.com/infiniflow/ragflow), which the paper links — but that repository was **not cloned, executed, or tested** for this page, and no claim here rests on inspecting it. The decision gate additionally depends on external hosted services (a Qwen decision-model preview and, in the authors' comparison, StartLux), which are cited as services, not artifacts.
+On availability: no dataset release accompanies the paper, and no compiled FRAMES artifacts, harness configurations, or run logs are published; FRAMES and BrowseComp-Plus are third-party public benchmarks. The system itself is implemented in the open-source RAGFlow project (github.com/infiniflow/ragflow), which the paper links — but that repository was **not cloned, executed, or tested** in this assessment, and no claim here rests on inspecting it. The decision gate additionally depends on external hosted services (a Qwen decision-model preview and, in the authors' comparison, StartLux), which are cited as services, not artifacts.
 
-## Historical coverage
+## Related reading
 
 [Briefing 2026-11-02](../briefings/2026/11/2026-11-02.md)

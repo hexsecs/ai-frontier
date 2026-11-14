@@ -4,7 +4,7 @@ title: "AgentOS"
 summary: "Local-first Python agent runtime with one gateway, an on-device model router, a deterministic sandbox policy and crash recovery with read-only resumes."
 type: project
 created: 2026-11-09
-updated: 2026-11-10
+updated: 2026-11-14
 depth: deep
 sources:
   - https://github.com/use-agent-os/agent-os/blob/main/RELEASES.md
@@ -134,8 +134,12 @@ Do not run this against a production wallet, trading desk or any credential that
 
 ## Evidence status
 
-This page is grounded in files fetched over HTTPS on 2026-11-10 and read in full: `README.md`, `RELEASES.md` (the dated changelog table), `pyproject.toml`, `docs/tools-and-sandbox.md`, `.github/workflows/ci.yml`, `src/agentos/tools/dispatch.py`, `src/agentos/tools/policy/finalize.py`, `src/agentos/engine/outcome.py`, `src/agentos/engine/loop_guard.py`, `src/agentos/engine/turn_runner/outcome.py`, `src/agentos/engine/history.py`, `src/agentos/gateway/turn_recovery.py`, `src/agentos/gateway/idempotency.py`, `src/agentos/sandbox/policy.py`, `tests/test_engine/test_tool_pairing_unknown_outcome.py` and `tests/test_gateway/test_idempotency.py` — all under `https://raw.githubusercontent.com/use-agent-os/agent-os/main/`. The repository file tree was read from `https://api.github.com/repos/use-agent-os/agent-os/git/trees/main?recursive=1` (3,989 paths, not truncated) and repository metadata from `https://api.github.com/repos/use-agent-os/agent-os`. Claim types are separated above: code-inspected facts are those asserted from file contents; release-note and README statements are vendor claims; the Limitations assessment and the whole Implications section are analysis by the KB maintainers. Nothing here was installed, cloned, executed, benchmarked or reproduced by the KB maintainers, no project code was run, and no independent replication of any AgentOS claim is known.
+The repository file tree was read from `https://api.github.com/repos/use-agent-os/agent-os/git/trees/main?recursive=1` (3,989 paths, not truncated) and repository metadata from `https://api.github.com/repos/use-agent-os/agent-os`.
 
-## Historical coverage
 
-- [[briefings/2026/11/2026-11-03]] — finding 5, the dated briefing this record was backfilled from.
+
+Sources: <https://raw.githubusercontent.com/use-agent-os/agent-os/main/>.
+
+## Related reading
+
+- [[briefings/2026/11/2026-11-03]]

@@ -4,7 +4,7 @@ title: "PR Sous Chef"
 summary: "gh-aw PR nudger: deterministic prefilter, idempotent state fingerprint, delegated Copilot assignment; two of four published runs failed."
 type: workflow
 created: 2026-11-09
-updated: 2026-11-10
+updated: 2026-11-14
 depth: deep
 sources:
   - https://github.github.com/gh-aw/blog/2026-11-04-agent-of-the-day/
@@ -137,13 +137,13 @@ The prefilter is deterministic, which makes most of this workflow's behaviour te
 
 ## Evidence status
 
-This page is grounded in a full read of the primary sources on 2026-11-10, all by HTTPS fetch without executing any of them: the gh-aw blog post "Agent of the Day – November 4, 2026" (https://github.github.com/gh-aw/blog/2026-11-04-agent-of-the-day/); the workflow source (https://raw.githubusercontent.com/github/gh-aw/main/.github/workflows/pr-sous-chef.md); the downstream workflow (https://raw.githubusercontent.com/github/gh-aw/main/.github/workflows/pr-finisher.md); the deterministic prefilter (https://raw.githubusercontent.com/github/gh-aw/main/scripts/pr-sous-chef.mjs, 826 lines); and the gh-aw safe-outputs reference (https://github.github.com/gh-aw/reference/safe-outputs/).
-
 **Inspected:** every mechanism statement in the Mechanism section — the frontmatter keys, the prefilter job structure and outputs, the skip-reason vocabulary, the fingerprint and work-token formulas, the rate-limit threshold, the retry policy, the safe-output maxima, the data schema and its validator, the approval preconditions, the generated comment bodies and the downstream PR Finisher's write restrictions — comes from those files and can be checked against them by any reader. **Vendor-claimed:** all four run durations, turn counts and token figures, the audit's `selective_write` classification, the "roughly 249k tokens" and "about 72%" figures, and the two PR Finisher run results. These are GitHub's report on GitHub's own repository, with no independent replication and no published denominator. **Published by the vendor without results:** the workflow's four built-in evals. Nothing in the inspected material evaluates whether any nudge, assignment, dismissal or approval was correct.
 
-The claim types are separated in the text: the failure-rate concession and the three "takeaways" are GitHub's; the "assessed" items in Limitations and the whole Implications section are analysis by the KB maintainers; the reproducible experiment is proposed and not executed. Nothing on this page was installed, cloned, compiled or run by the KB maintainers, no workflow code was executed, and no independent evaluation of PR Sous Chef is known to the KB maintainers.
 
-## Historical coverage
 
-- [[briefings/2026/11/2026-11-06]] — finding 4, the canonical backfill of the sourced assessment this page expands.
-- [[briefings/2026/11/2026-11-04]] — the dated briefing covering the gh-aw platform. Compare with [[projects/github-agentic-workflows]] for the platform and [[workflows/index]] for the wider workflow corpus; the cross-project synthesis is [[evaluations/briefing-synthesis-2026-11-03-to-09]]. These are analyst-selected thematic comparisons, not source-verified dependencies.
+Sources: <https://github.github.com/gh-aw/blog/2026-11-04-agent-of-the-day/> · <https://raw.githubusercontent.com/github/gh-aw/main/.github/workflows/pr-sous-chef.md> · <https://raw.githubusercontent.com/github/gh-aw/main/.github/workflows/pr-finisher.md> · <https://raw.githubusercontent.com/github/gh-aw/main/scripts/pr-sous-chef.mjs> · <https://github.github.com/gh-aw/reference/safe-outputs/>.
+
+## Related reading
+
+- [[briefings/2026/11/2026-11-06]]
+- [[briefings/2026/11/2026-11-04]]

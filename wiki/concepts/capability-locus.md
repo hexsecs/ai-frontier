@@ -1,7 +1,7 @@
 ---
 uid: a71e85c9-126e-4580-a88e-d26333d0357f
 created: 2026-11-02
-updated: 2026-11-07
+updated: 2026-11-14
 type: concept
 depth: full
 title: "Capability locus"
@@ -30,27 +30,9 @@ hold one side fixed, vary the other, and watch what the quality follows.
 A claim that never runs that ablation is under-specified — "the system
 works" does not say what is doing the work.
 
-This entry was deferred in mining pass 1, deliberately. Two deepened
-pages answer the question in opposite directions, and pass 1 refused to
-pick a winner. [[projects/hera]] ablates its curated corpus and finds
-the artifact dominant; [[projects/agenticds]] holds its scaffold fixed,
-swaps the backbone, and finds the model dominant at the critical
-component. Neither page tests the other's system, so the disagreement
-is genuine. A third page, [[projects/garden]], never separates its
-method's contribution from its engineer model's capability at all —
-the question gone unasked.
+[[projects/hera]] ablates its curated corpus and reports an important contribution from external knowledge. [[projects/agenticds]] holds its scaffold fixed, swaps the backbone and reports model-dependent performance at a critical component. These are different systems, so the results do not contradict one another experimentally. [[projects/garden]] does not isolate its method from its engineer model's contribution.
 
-Pass 2 promotes the entry in a changed form: not a phenomenon with a
-verdict, but a *measured-decomposition* entry. What changed is that one
-corpus system now measures both loci inside a single system and
-reports the split ([[projects/tinyastral]]), and a second cluster
-supplies another half-measurement ([[projects/dittany]]). The concept
-is the question, plus the discipline of decomposing it per system —
-and the corpus's record of how rarely that is done. Pass 2 also
-lengthened the list of candidate loci: alongside weights, harness, and
-external state, the newer pages add an interaction term and a
-behavioral-policy term — the propensity to verify — that is neither
-weights-as-capability nor artifact content.
+[[projects/tinyastral]] measures both components within one system; [[projects/dittany]] provides a partial decomposition. These results motivate component-level ablations rather than a universal claim that capability belongs to weights or scaffolding.
 
 ## Evidence for
 
@@ -161,7 +143,7 @@ attribution of measured quality, whether or not anything accumulates.
 Distinguish also from *verification-is-load-bearing*: that entry is
 one recurring answer — a verification component carries the load —
 where this one is the general question of which component does. The
-register records the typed relation hera —contradicts→ agenticds;
+comparison highlights different component contributions in HERA and AgenticDS;
 this page is where that contradiction is curated rather than settled.
 
 ## Open questions
@@ -183,17 +165,7 @@ this page is where that contradiction is curated rather than settled.
 
 ## Evidence status
 
-This concept is the KB's analytical construct, synthesized in mining
-pass 2 (2026-11-02) from the KB's own deepened project pages; no
-paper names it. It was deferred in pass 1 because its two strongest
-instances contradicted each other with no verdict earned, and it is
-promoted here as a measured-decomposition entry on the strength of
-TinyAstral's both-sides ablation and Dittany's second-cluster
-half-measurement. The original HERA–AgenticDS disagreement remains
-explicitly unresolved. Every underlying result is author-reported;
-TinyAstral's are simulation-only, and no locus measurement in the
-corpus has an independent replication.
-
+This is an analyst interpretation of the cited studies, not an additional experimental result. Underlying measurements remain author-reported; no independent replication is cited. The HERA–AgenticDS contrast does not establish a universal winner: the studies concern different systems. TinyAstral reports simulation results; these do not establish physical deployment performance.
 
 ## 2026-11-07 evidence connections
 

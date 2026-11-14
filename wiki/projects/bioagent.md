@@ -5,7 +5,7 @@ title: "BioAgent: Self-Directed Skill Acquisition and Capability Growth for Long
 summary: "BioAgent: a dual-arm lab robot that detects missing skills before execution, acquires them through human teaching, and reuses them across protocols."
 type: project
 created: 2026-11-02
-updated: 2026-11-02
+updated: 2026-11-14
 related: [comparator-construction-shapes-margins, improvement-lives-in-external-state]
 sources:
   - url: https://arxiv.org/abs/2610.41383
@@ -24,7 +24,7 @@ BioAgent is an embodied agent system for executing unfamiliar wet-lab protocols 
 
 The paper frames protocol execution as two coupled challenges: *capability sufficiency*, "whether the robot has the capabilities required by the task," and *experimental validity*, "whether the current state permits execution under the specified constraints" (§I). The motivating observation is that these interact badly over long horizons: "Even when most of the workflow is supported by existing skills or their compositions, a single missing behavior can prevent its completion." BioAgent's answer is "an embodied agent system that enables robots to execute unfamiliar laboratory protocols by closing only the capability gaps that prevent valid execution, while retaining validated capabilities for future reuse."
 
-The stub this page replaces described the key technique as "acquire missing physical-world skills during execution." That timing is wrong, and the correction matters for how the results should be read. Acquisition — detecting a missing skill, constructing it, teaching it, validating it — happens in a learning/development stage that precedes evaluation. During evaluation the system executes and recovers with the library it already has: if recovery would require a capability the library lacks, "During evaluation, no new recovery skills are acquired. The Monitor terminates execution when no admissible continuation exists, including when a required recovery capability is unavailable" (§III-C). BioAgent is therefore not a system that learns mid-run; it is a system that prepares — auditing a new protocol against its validated skill library, closing the gaps it finds under human supervision — and then runs autonomously with a frozen library.
+**Acquisition precedes evaluation.** Acquisition — detecting a missing skill, constructing it, teaching it, validating it — happens in a learning/development stage that precedes evaluation. During evaluation the system executes and recovers with the library it already has: if recovery would require a capability the library lacks, "During evaluation, no new recovery skills are acquired. The Monitor terminates execution when no admissible continuation exists, including when a required recovery capability is unavailable" (§III-C). BioAgent is therefore not a system that learns mid-run; it is a system that prepares — auditing a new protocol against its validated skill library, closing the gaps it finds under human supervision — and then runs autonomously with a frozen library.
 
 The test setting is two sequential protocols on one platform (a Monte 02 dual-arm robot from Corenetic AI): Task 1, plate pretreatment plus incubator loading (20 ordered skill invocations, 20 distinct skills), and Task 2, plate washing (31 ordered invocations, 24 distinct skills), where the second protocol is executed against the library built for the first, so acquisition, revision, and reuse can all be measured on the same system.
 
@@ -94,8 +94,12 @@ The paper's own results cannot be rerun from public artifacts: no code or data i
 
 ## Evidence status
 
-Every quantitative result on this page is **author-reported** by the team that built BioAgent; there is no independent replication, and this page's numbers were taken from the arXiv v1 full text (submitted 30 October 2026), which a later version could revise. **Artifact availability is minimal:** the paper gives only a project page (https://suiuko.github.io/bioagentweb/), which lists the code repository as "Coming soon" and offers demo videos and a skill-template excerpt; no code and no dataset are available to inspect, and nothing was executed for this page. As an internal-consistency check, the research notes independently re-derived the Table III averages (96.9%, 41.2%, 54.4%, 47.6%) and the 39-failures-in-1,250-trials count from the published per-skill cells; the paper's arithmetic is internally consistent, which verifies the reporting, not the underlying experiments. The import-era stub's one-sentence summary ("Robotic laboratory skill-gap discovery and acquisition") remains accurate as a topic label, but its "Key technique" line — acquiring skills during execution — is corrected in *What it is* above: acquisition is a learning-stage activity, and evaluation runs acquire nothing.
+Every quantitative result on this page is **author-reported** by the team that built BioAgent; no independent replication is cited, and this page's numbers were taken from the arXiv v1 full text (submitted 30 October 2026), which a later version could revise. Arithmetic checks of the reported table give the Table III averages (96.9%, 41.2%, 54.4%, 47.6%) and the 39-failures-in-1,250-trials count from the published per-skill cells; the paper's arithmetic is internally consistent, which verifies the reporting, not the underlying experiments. The import-era stub's one-sentence summary ("Robotic laboratory skill-gap discovery and acquisition") remains accurate as a topic label, but its "Key technique" line — acquiring skills during execution — is corrected in *What it is* above: acquisition is a learning-stage activity, and evaluation runs acquire nothing.
 
-## Historical coverage
+
+
+Sources: <https://suiuko.github.io/bioagentweb/>.
+
+## Related reading
 
 [Briefing 2026-11-02](../briefings/2026/11/2026-11-02.md)

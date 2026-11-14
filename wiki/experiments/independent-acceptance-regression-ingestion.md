@@ -4,7 +4,7 @@ title: "Independent acceptance and regression preservation for autonomous KB ing
 summary: "A reproducible proposed test of agent ingestion correctness, evidence provenance, preserved task coverage and cost."
 type: experiment
 created: 2026-11-09
-updated: 2026-11-09
+updated: 2026-11-14
 depth: full
 sources:
   - https://arxiv.org/abs/2611.07464

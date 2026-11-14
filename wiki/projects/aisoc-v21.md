@@ -5,7 +5,7 @@ title: "AiSOC v21"
 summary: "AiSOC v21 adds verified serving-model attribution to an open-source AI SOC whose own verdict eval finds every measured model near chance."
 type: project
 created: 2026-11-02
-updated: 2026-11-02
+updated: 2026-11-14
 related: [abstention-as-first-class-verdict, scoped-assurance]
 sources:
   - url: https://github.com/beenuar/AiSOC/releases/tag/v21.0.0
@@ -91,7 +91,7 @@ AiSOC v21 is most significant as an evaluation-integrity artifact rather than as
 
 ## Reproducible experiment
 
-Nothing was run for this page (see Evidence status), but the project's claims are unusually checkable, and a reader could:
+Nothing was run in this assessment (see Evidence status), but the project's claims are unusually checkable, and a reader could:
 
 1. **Re-run the verdict eval.** The corpus, the committed scorecard, and the methodology are all in the repository. Grading the same corpus digest through the production triage path with a local model — the documented install is `git clone` plus `make up`, or the no-Docker `pip install aisoc-sandbox` offline demo — should produce a scorecard row comparable to the committed ones, and under v21 the new row's `provenance_status` can be checked against the model that actually served.
 2. **Fill the empty row.** The scorecard's hosted-provider row is empty only for want of a funded key. Running the corpus with a frontier model would produce the first hosted-model measurement and test whether the near-chance verdicts are a small-model artifact or a property of the task.
@@ -103,6 +103,6 @@ The methodology document defines a submission protocol for third-party reproduct
 
 Every result on this page is **author-reported**: author-run and author-labeled, published by the project itself, with **no independent replication**. That is a weaker position than an independently verified result — but a materially stronger one than a vendor-claims page, and the difference is the point of this release: the methodology is published, the corpus and scorecard are committed artifacts, baselines and denominators are printed beside the scores, and the conclusions the project draws from its own numbers are self-critical ("nothing measured here supports autonomous closure"). The five historical scorecard rows remain labeled "unverified" by the project's **own deliberate choice** — v21 declined to invent attribution for calls it could not bind to a serving model, and preserved the rows as unverified rather than withdrawing or quietly repairing them; that refusal is presented here as the integrity stance it is. For this page, the v21.0.0 release notes, README, committed verdict scorecard, benchmark and methodology pages, verdict-corpus README, and architecture walkthrough were **read; no project code was executed**, and no install or benchmark was run. This supersedes the stub's earlier import note, which recorded that the source's contents and reported metrics had not been reverified in the import: the contents have now been read in full, while the metrics remain author-reported and independently unreplicated.
 
-## Historical coverage
+## Related reading
 
 [Briefing 2026-11-02](../briefings/2026/11/2026-11-02.md)

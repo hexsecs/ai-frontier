@@ -4,7 +4,7 @@ title: "Agensh"
 summary: "Microsoft's self-organized multi-agent harness: workers claim and merge sub-tasks through Gitea, Mattermost and a shared-context board."
 type: project
 created: 2026-11-09
-updated: 2026-11-10
+updated: 2026-11-14
 depth: deep
 related: [multi-agent-orchestration, capability-locus, verified-completion-vs-apparent-success]
 sources:
@@ -144,15 +144,15 @@ Freeze the model and harness versions, the dataset and the prompts; preserve raw
 
 ## Evidence status
 
-This page is grounded in a full read of the primary sources over HTTPS on 2026-11-10 for issue #2. Inspected: the arXiv abstract page (https://arxiv.org/abs/2609.26781), the complete HTML full text including appendices A–C (https://arxiv.org/html/2609.26781v1), the repository landing page and README (https://github.com/microsoft/Agensh), the GitHub REST endpoints for repository metadata (https://api.github.com/repos/microsoft/Agensh) and the full file tree (https://api.github.com/repos/microsoft/Agensh/git/trees/main?recursive=1); and at `main` under https://raw.githubusercontent.com/microsoft/Agensh/main/ the files `README.md`, `REPRODUCE.md`, `SECURITY.md`, `agensh/README.md`, `agent/README.md`, `board-service/README.md`, `board-service/verifier.py`, `mini-router/README.md`, `secret-service/README.md`, `docker/README.md` and `scripts/egress_filter.py`.
+Inspected: the arXiv abstract page (https://arxiv.org/abs/2609.26781), the complete HTML full text including appendices A–C (https://arxiv.org/html/2609.26781v1), the repository landing page and README (https://github.com/microsoft/Agensh), the GitHub REST endpoints for repository metadata (https://api.github.com/repos/microsoft/Agensh) and the full file tree (https://api.github.com/repos/microsoft/Agensh/git/trees/main?recursive=1); and at `main` under https://raw.githubusercontent.com/microsoft/Agensh/main/ the files `README.md`, `REPRODUCE.md`, `SECURITY.md`, `agensh/README.md`, `agent/README.md`, `board-service/README.md`, `board-service/verifier.py`, `mini-router/README.md`, `secret-service/README.md`, `docker/README.md` and `scripts/egress_filter.py`.
 
-Claim types are separated in the text. Code-inspected facts are the repository layout, the board's verification logic, the retention and delivery rules, the MCP allowlist sizes, the egress allowlist contents, the token-service checks, the process and resource constraints and the merge-governance configuration. Claims are the paper's scaling numbers, its emergent-cooperation reading, the repository's own operational documentation and its release-difference cautions; all quantitative results are author-reported and none has been independently replicated. The items under "Assessed from the reporting" and the whole of Implications are analysis by the KB maintainers. The repository's `SECURITY.md` is the unmodified Microsoft template and contains no project-specific policy.
+Code-inspected facts are the repository layout, the board's verification logic, the retention and delivery rules, the MCP allowlist sizes, the egress allowlist contents, the token-service checks, the process and resource constraints and the merge-governance configuration. Claims are the paper's scaling numbers, its emergent-cooperation reading, the repository's own operational documentation and its release-difference cautions; all quantitative results are author-reported and none has been independently replicated. The repository's `SECURITY.md` is the unmodified Microsoft template and contains no project-specific policy.
 
-Nothing on this page was executed, cloned, installed or tested by the KB maintainers; no Agensh worker, board service, router or proxy was run, and no experiment was reproduced. No independent evaluation of the coordination substrate is known from the inspected files.
+No independent evaluation of the coordination substrate is known from the inspected files.
 
-## Historical coverage
+## Related reading
 
-- [[briefings/2026/11/2026-11-03]] — dated full-fidelity research and cross-project synthesis.
+- [[briefings/2026/11/2026-11-03]]
 - [[techniques/multi-agent-orchestration]] — reusable design pattern this project instantiates.
 - [[projects/agent-orchestrator]] — analyst-level **compares_with**, not a verified dependency.
 - [[evaluations/briefing-synthesis-2026-11-03-to-09]] — cross-project synthesis covering this record.

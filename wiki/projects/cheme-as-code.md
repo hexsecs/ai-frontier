@@ -4,7 +4,7 @@ title: "ChemE-as-Code: An Open-Source Platform for Agentic AI in Chemical Engine
 summary: "Open-source platform where one LLM agent edits Git-versioned chemical engineering artifacts while deterministic tools compute and check every value."
 type: project
 created: 2026-11-07
-updated: 2026-11-10
+updated: 2026-11-14
 depth: deep
 related: [structural-constraint-over-instruction, scoped-assurance]
 sources:
@@ -172,8 +172,12 @@ Model substitution is unavoidable: the paper used Claude Opus 5.5 and no indepen
 
 ## Evidence status
 
-This page is grounded in a full read of the primary source on 2026-11-10: the arXiv abstract page (https://arxiv.org/abs/2611.07947) and the complete HTML full text including the case study, the check-coverage experiments, the discussion and the data-and-code availability statement (https://arxiv.org/html/2611.07947v1). Every quantitative result is **author-reported**; the paper is a single preprint (v1, 5 November 2026) submitted to the AIChE Journal with no peer-reviewed venue claimed, and the source states explicitly that no independent engineer reviewed the design. The code, the plant repository and the evaluation scripts are publicly linked in the inspected text, so the artifacts exist, but nothing on this page was run, cloned or verified by the KB maintainers. Claim types are separated in the text: the paradigm framing, the plausibility reading and the risk analysis are the authors'; the items under "Assessed from the reporting" and the whole Implications section are analysis by the KB maintainers. No independent replication of any reported number is known, and nothing here was reproduced or executed by the KB maintainers.
+Every quantitative result is **author-reported**; the paper is a single preprint (v1, 5 November 2026) submitted to the AIChE Journal with no peer-reviewed venue claimed, and the source states explicitly that no independent engineer reviewed the design.
 
-## Historical coverage
 
-- [[briefings/2026/11/2026-11-07]] — dated full-fidelity report that first mined this source.
+
+Sources: <https://arxiv.org/abs/2611.07947> · <https://arxiv.org/html/2611.07947v1>.
+
+## Related reading
+
+- [[briefings/2026/11/2026-11-07]]

@@ -5,7 +5,7 @@ summary: "Runtime repair for multi-agent applications: a contract-derived contri
 type: project
 depth: deep
 created: 2026-11-02
-updated: 2026-11-02
+updated: 2026-11-14
 related: [abstention-as-first-class-verdict, capability-locus, comparator-construction-shapes-margins, evaluator-circularity, structural-constraint-over-instruction]
 sources:
   - url: https://arxiv.org/abs/2610.42144
@@ -115,8 +115,8 @@ A full replication is not extractable: the paper releases no code or data (see E
 
 ## Evidence status
 
-Every quantitative result on this page is **author-reported**: a single research team's measurements, on a single backbone model, with no independent replication cited by the paper and none performed for this page. Baseline provenance is mixed and labelled where it matters: Reflexion was re-run as the authors' own MAS-level adaptation, Iterative Rollback is the authors' baseline, and SupervisorAgent and AgentTether figures are mostly literature-reported numbers outside five matched applications. Despite describing a Python implementation in detail, **the paper releases no code and no data** — no repository URL appears anywhere in the text, and the constructed 9,000-instance test set, reference outcomes, and rubrics are not published — so none of the experiments can currently be independently re-run. This page is based on a full reading of the paper's arXiv HTML full text (v1), including tables, the baseline-configuration caveats, and the threats-to-validity section; nothing was executed or reproduced beyond the arithmetic consistency checks described above.
+Baseline provenance is mixed and labelled where it matters: Reflexion was re-run as the authors' own MAS-level adaptation, Iterative Rollback is the authors' baseline, and SupervisorAgent and AgentTether figures are mostly literature-reported numbers outside five matched applications. Despite describing a Python implementation in detail, **the paper releases no code and no data** — no repository URL appears anywhere in the text, and the constructed 9,000-instance test set, reference outcomes, and rubrics are not published — so none of the experiments can currently be independently re-run.
 
-## Historical coverage
+## Related reading
 
 [Briefing 2026-11-02](../briefings/2026/11/2026-11-02.md)

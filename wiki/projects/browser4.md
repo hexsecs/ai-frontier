@@ -4,7 +4,7 @@ title: "Browser4"
 summary: "Apache-2.0 AI-native browser engine: Rust CLI and Spring backend, zero-token X-SQL extraction, a progressive experience store; throughput unbenchmarked."
 type: project
 created: 2026-11-09
-updated: 2026-11-10
+updated: 2026-11-14
 depth: deep
 sources:
   - https://github.com/platonai/browser4
@@ -13,7 +13,6 @@ sources:
   - https://raw.githubusercontent.com/platonai/Browser4/main/docs/experience-memory.md
   - https://raw.githubusercontent.com/platonai/Browser4/main/docs/mcp-tools.md
   - https://raw.githubusercontent.com/platonai/Browser4/main/docs/TESTING.md
-  - https://raw.githubusercontent.com/platonai/Browser4/main/docs/browser-behavior-modules.md
   - https://raw.githubusercontent.com/platonai/Browser4/main/.github/workflows/ci.yml
   - https://raw.githubusercontent.com/platonai/Browser4/main/.github/workflows/pr.yml
   - https://raw.githubusercontent.com/platonai/Browser4/main/.github/workflows/nightly.yml
@@ -41,7 +40,6 @@ Browser4 is an open-source "AI-native browser engine for autonomous agents, inte
 
 Version and maturity evidence from the GitHub API and the repository on 2026-11-10: the repository was created 2018-03-12 (a long-lived repository whose project identity is the recent `Browser4` renaming — the Apache licence and the `2018` creation date are inherited), the current `VERSION` file reads `4.16.4-SNAPSHOT`, and five releases are published in the examined window: `v4.16.0` (2026-11-02), `v4.16.1` (2026-11-04), `v4.16.2` (2026-11-06), `v4.16.3` (2026-11-07), `v4.16.4` (2026-11-08). The last commit on `main` is dated 2026-11-09. The repository tree holds 5,171 entries (3,988 files), 10,590 commits and 1,179 stars.
 
-The previous revision of this page was a canonical backfill of the 2026-11-06 briefing's assessment, not an independent review. This revision grounds the page in the repository itself: the mechanism below is read from source and documentation, and the one performance claim the project makes is identified as such.
 
 ## Mechanism
 
@@ -134,7 +132,7 @@ Finally, the throughput claim should not be repeated as a result. The repository
 
 ## Reproducible experiment
 
-No experiment was run for this page. The protocol below is for a reader with a disposable environment.
+This is a proposed experiment, not an experimental result. The protocol below is for a reader with a disposable environment.
 
 1. **Establish the extraction path is deterministic.** Install the CLI, open a controlled fixture page (the repository ships a MockSite with generated demo pages), and run the same `htmlsnapshot query --sql` three times. The pass criterion is byte-identical rows across runs and zero LLM tokens in the output — the claim under test is "Zero-Token Extraction", and the check is that no provider key is needed and the result does not vary.
 2. **Reproduce the bulk-collection comparison.** Take 20 URLs of your own (not Amazon, to avoid account and locale confounds), and run the same extraction two ways: the built-in `crawl --seed-file … --sql … --format csv` with `--parallel 4`, and a hand-written loop of `goto` + `htmlsnapshot export` followed by local parsing. Record wall clock, tokens consumed, bytes written to disk, number of commands, and behaviour on a deliberately failing URL. The repository's reference numbers are 202.2 s vs ≈555 s on 20 Amazon pages with 2.03 M tokens for the hand-written path; a directionally similar result on a different site would be informative, and a reversal would be a finding worth reporting. Repeat each arm three times — the published comparison has no variance.
@@ -146,10 +144,8 @@ Report token counts, wall clock, command counts and per-task results rather than
 
 ## Evidence status
 
-This page is grounded in a read of the platonai/Browser4 repository over HTTPS on 2026-11-10: the README, `VERSION`, `docs/experience-memory.md`, `docs/mcp-tools.md`, `docs/TESTING.md`, `docs/browser-behavior-modules.md`, the CI workflow files `ci.yml`, `pr.yml`, `nightly.yml` and `nightly-cli.yml`, the skill references `x-sql-dom-load-select.md` and `bulk-collection.md`, the source files `AgentToolCallLoop.kt`, `ToolDisclosure.kt`, `ToolResultDigest.kt`, `PageViewDeduper.kt`, `AgentMemory.kt`, `ExperienceToolExecutor.kt`, `KnowledgeStore.kt` and `XSqlExecutor.kt`, the design documents `docs-dev/copilot/agent-run-flow.md`, `docs-dev/copilot/20261029-agent-run-bulk-collection-evaluation.md` and `docs-dev/copilot/browser4-competitive-advantages.md`, plus the GitHub API for repository metadata, the release list and the recursive file tree (5,171 entries).
+Mechanism claims — the tool loop, the context mechanisms, the experience tiers and confidence model, the X-SQL path, the coding kernel's tool count, the CI structure and the test taxonomy — are **code-inspected or repository-inspected**. The 100k–200k pages-per-machine-per-day figure is a **README claim that the repository's own competitive-analysis document identifies as a design goal with no public benchmark**, and it is labelled as such above. The bulk-collection timings and the locale finding are **author-run measurements in the repository's own retrospective**, single-task and unrepeated. The Playwright MCP / Browser Use / Scrapy comparison is the project's own positioning document, not a benchmark against them. No independent reproduction of any Browser4 figure is known.
 
-Mechanism claims — the tool loop, the context mechanisms, the experience tiers and confidence model, the X-SQL path, the coding kernel's tool count, the CI structure and the test taxonomy — are **code-inspected or repository-inspected**. The 100k–200k pages-per-machine-per-day figure is a **README claim that the repository's own competitive-analysis document identifies as a design goal with no public benchmark**, and it is labelled as such above. The bulk-collection timings and the locale finding are **author-run measurements in the repository's own retrospective**, single-task and unrepeated. The Playwright MCP / Browser Use / Scrapy comparison is the project's own positioning document, not a benchmark against them. Nothing was executed by the KB maintainers: no Browser4 code was cloned, built, installed or run; no browser was driven; no benchmark was reproduced. No independent reproduction of any Browser4 figure is known.
+## Related reading
 
-## Historical coverage
-
-[[briefings/2026/11/2026-11-06]] — the dated briefing whose finding this page originally backfilled.
+[[briefings/2026/11/2026-11-06]]

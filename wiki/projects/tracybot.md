@@ -4,7 +4,7 @@ title: "Tracybot"
 summary: "Open-source VS Code and Git tracing tool that maps agent-generated source lines back to the prompts and Tasklet that produced them."
 type: project
 created: 2026-11-09
-updated: 2026-11-10
+updated: 2026-11-14
 depth: deep
 sources:
   - https://arxiv.org/abs/2611.09395
@@ -120,8 +120,12 @@ The artifact exists, so an independent check means using the released tool rathe
 
 ## Evidence status
 
-This page is grounded in the arXiv abstract page (https://arxiv.org/abs/2611.09395), the complete HTML full text including the reference list (https://arxiv.org/html/2611.09395v1), and a read-only inspection of the public repository over HTTPS on 2026-11-10: the repository file tree via https://api.github.com/repos/TracyTeam/tracybot/git/trees/main?recursive=1, and the raw files `README.md`, `tracking/README.md`, `tracking/tracy.py`, `tracking/hooks/post-commit.py`, `vscode-extension/src/utils.ts`, `vscode-extension/src/adr/buildAdr.ts` and `opencode-plugin/src/Tasklet.ts` under https://raw.githubusercontent.com/TracyTeam/tracybot/main/. Every quantitative result on this page is **author-reported** by the paper's authors from one focus group and one survey; the repository section reports what the inspected code does and does not demonstrate. No code from the repository was cloned, installed or executed, no test suite was run, and no survey or focus group was replicated. Nothing on this page was reproduced by the KB maintainers, and no independent replication is known. Claim types are separated in the text: the four-way differentiation against Git AI, Cursor Blame and PromptTrace, and the "no other tool combines these features" statement, are the authors'; the items under "Assessed from the reporting and the repository" and the whole Implications section are analysis by the KB maintainers.
+Every quantitative result on this page is **author-reported** by the paper's authors from one focus group and one survey; the repository section reports what the inspected code does and does not demonstrate. No code from the repository was cloned, installed or executed, no test suite was run, and no survey or focus group was replicated.
 
-## Historical coverage
 
-- [[briefings/2026/11/2026-11-09]] — dated full-fidelity research and cross-project synthesis that first selected Tracybot as a core project.
+
+Sources: <https://arxiv.org/abs/2611.09395> · <https://arxiv.org/html/2611.09395v1> · <https://api.github.com/repos/TracyTeam/tracybot/git/trees/main?recursive=1> · <https://raw.githubusercontent.com/TracyTeam/tracybot/main/>.
+
+## Related reading
+
+- [[briefings/2026/11/2026-11-09]]

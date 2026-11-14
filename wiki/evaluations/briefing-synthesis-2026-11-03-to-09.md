@@ -4,7 +4,7 @@ title: "Agentic AI briefing synthesis: November 3–9, 2026"
 summary: "Cross-briefing evidence map, contradictions, gaps and prioritized experiments spanning 41 reported agentic AI findings."
 type: evaluation
 created: 2026-11-09
-updated: 2026-11-09
+updated: 2026-11-14
 depth: full
 sources:
   - https://arxiv.org/abs/2611.07464

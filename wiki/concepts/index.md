@@ -5,7 +5,7 @@ title: Concepts
 
 # Concepts
 
-Cross-project phenomena and claims, mined from the KB's own deepened project pages (issue #2, mining pass 1, 2026-11-02). Each concept page names the project pages that supply evidence for it — and the pages that bound or complicate it.
+Cross-project phenomena and analyst interpretations grounded in the cited project evidence. Each concept page names the project pages that supply evidence for it — and the pages that bound or complicate it.
 
 - [Evaluator circularity](./evaluator-circularity.md) — When the evaluated system sits inside its own grading path, the score partly measures self-agreement.
 - [Scoped assurance](./scoped-assurance.md) — A verification result holds only inside the scope actually exercised; headline numbers routinely outrun it.

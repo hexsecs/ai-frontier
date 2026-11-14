@@ -4,7 +4,7 @@ title: "GeoFaham: Multi-Agent Disaster Geospatial Analytics"
 summary: "Specialist agents coordinate geospatial analysis with typed artifacts, persistent responses and dependency-aware planning."
 type: project
 created: 2026-11-13
-updated: 2026-11-13
+updated: 2026-11-14
 depth: brief
 related: [crossswe]
 sources:
@@ -34,4 +34,4 @@ Related: [[projects/crossswe]]; relation is analytical, not a demonstrated integ
 Replay five public disaster tasks and inspect coordinate reference systems, timestamp lineage, raster-vector alignment and artifact handoffs.
 
 ## Provenance
-[[briefings/2026/11/2026-11-13]] — complete dated narrative.
+[[briefings/2026/11/2026-11-13]]

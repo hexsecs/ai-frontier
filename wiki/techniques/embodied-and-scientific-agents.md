@@ -5,7 +5,7 @@ title: "Embodied and scientific agents"
 summary: "Agents acting on instruments and physical systems, where feedback arrives as measurement, actions carry real cost, and evidence tiers bound every claim."
 type: technique
 created: 2026-11-02
-updated: 2026-11-02
+updated: 2026-11-14
 related: [auctopus, hera, bioagent, molrsi, tinyastral, validation-tier-gap, capability-locus, improvement-lives-in-external-state]
 sources:
   - url: https://arxiv.org/abs/2610.40589
@@ -24,21 +24,9 @@ sources:
 
 ## What it is
 
-This page covers the projects whose agents act on a physical system or a scientific instrument — a diamond quantum-spin apparatus, a cryogenic transport rig, a dual-arm wet-lab robot — or run a scientific process ending in a physical measurement. What is genuinely different in this setting is not the agent architecture. It is the physics of the loop:
+Embodied and scientific agents act through instruments, robots or computational research environments. Their shared engineering pressures include costly actions, measurement feedback, provenance and explicit validation boundaries.
 
-- **Feedback arrives as measurement, not text.** The environment answers with photon counts, resistance-versus-field curves, success predicates, and assay readouts — quantities with noise, drift, and controls that can fail independently. An agent in this setting does not get to argue with its observations; it must design measurements whose failure modes are separately checkable.
-- **Actions carry cost and are partly irreversible.** A measurement campaign consumes hours of instrument time and a sample; a protocol run consumes reagents and robot time. [[projects/hera]]'s two trial sessions cost $265 and $196 and up to 42 wall-clock hours. There is no cheap re-roll of the world.
-- **Competence must exist before it is needed.** Physical skills and measurement practice cannot be improvised mid-run at acceptable risk, so these systems front-load capability: a curated corpus of protocols and rules of evidence (HERA), a validated skill library audited and taught before evaluation (BioAgent), acceptance criteria precommitted before results are judged (Auctopus).
-- **Evidence comes in tiers, and the tier decides what a result means.** A prospective physical trial, an offline replay, a simulation benchmark, and a qualitative trajectory figure are all "results," but they warrant very different claims. The corpus's sharpest lesson for this domain is [[concepts/validation-tier-gap]]: the recurring failure is a framing that claims a higher tier than the measurements occupy.
-
-**The dissolution verdict, kept visible.** The KB's own relation-discovery evaluation ([[evaluations/relation-discovery-2026-11-02]]) dissolved this theme as a concept: "Domain is not a mechanism, and co-membership in a domain evidenced nothing." The six candidate projects do carry evidenced relations, but they run through state, evaluation, and information content — not through anything they share *qua* embodiment. This page therefore survives as a domain-technique page, not a mechanism claim: what transfers between these projects is a set of domain pressures (measurement feedback, costly action, tier discipline) and the loci where capability lives ([[concepts/capability-locus]], [[concepts/improvement-lives-in-external-state]]), not shared machinery. The candidate links, adjudicated against the deepened pages:
-
-- **[[projects/auctopus]] — kept, core.** A multi-agent laboratory that ran a real NV-diamond instrument end to end — and rejected its own first run.
-- **[[projects/hera]] — kept, core.** Autonomous cryogenic measurement campaigns with a corpus ablation that prices the knowledge base itself.
-- **[[projects/bioagent]] — kept, core.** The corpus's only page whose results are entirely physical-robot runs, with skill acquisition through teaching as its central mechanism.
-- **[[projects/molrsi]] — kept, with a tier qualification.** A computational workflow-search system whose campaigns end in prospective wet-lab measurements; its loop-versus-endpoint tier split is itself one of this page's lessons.
-- **[[projects/tinyastral]] — kept as the tier-discipline case, demoted as physical evidence.** Robotics framing over an all-simulation evidence base; its value here is the harness/locus decomposition and the tier gap, not physical results.
-- **[[projects/garden]] — demoted.** It designs reward programs for simulated MARL environments (Overcooked, SMAX); nothing physical is measured or actuated. Retained below only as a contrast: the same freeze-and-transfer discipline at the lowest tier.
+The systems below do not share one implementation. [[projects/auctopus]] and [[projects/hera]] report instrument experiments; [[projects/bioagent]] reports physical robot runs; [[projects/molrsi]] combines computational search with wet-lab endpoints; [[projects/tinyastral]] reports quantitative simulation results and qualitative physical demonstrations. [[projects/garden]] is a comparison involving reward engineering for simulated reinforcement-learning policies.
 
 ## Mechanism variants
 
@@ -52,7 +40,7 @@ This page covers the projects whose agents act on a physical system or a scienti
 
 **Harness evolution in simulation (TinyAstral).** A frozen 180B teacher planner acts through a harness that owns perception, geometry, collision-free motion planning, and tool returns — tools "report what they measured rather than what they intended," and unmeasurable checks return unknown rather than a pass. Master agents propose harness edits against observed failure classes, accepted only through a pre-registered paired statistical gate. The final harness is then frozen and a small student distilled inside it. Every quantitative result is simulation; the physical arm appears only in qualitative trajectory figures.
 
-**Reward-program engineering over a training process (GARDEN, demoted).** An LLM reward engineer with shell access to environment and learner source code, training curves, and trajectories writes executable reward programs, tests them through bounded learning probes, and a fixed mechanical rule freezes and hashes one program for unchanged transfer to held-out scenarios. The system acted on is a learning process; its feedback is training metrics — measurement of a simulated process, which is why the link is demoted.
+**Reward-program engineering over a training process (GARDEN comparison).** An LLM reward engineer with shell access to environment and learner source code, training curves, and trajectories writes executable reward programs, tests them through bounded learning probes, and a fixed mechanical rule freezes and hashes one program for unchanged transfer to held-out scenarios. The system acted on is a learning process; its feedback is training metrics — measurement of a simulated process, which distinguishes it from physical experimental feedback.
 
 ## Evidence and measured effects
 
@@ -88,4 +76,4 @@ All results below are **author-reported**; none has an independent replication. 
 
 ## Evidence status
 
-This page is a synthesis over six deepened project pages and three concept pages in this knowledge base, using only facts recorded on those pages. Every quantitative result cited is **author-reported**; none has an independent replication, and no benchmark was reproduced for this page. Auctopus's internal checks are agents of the same system, not external verification; HERA's work was funded by an Anthropic AI for Science Program award (declared by its authors, with Anthropic stated to have had no role in design or analysis); BioAgent releases no code or data, and TinyAstral's linked artifacts were not inspected for its page. The per-project verdicts apply the standard of the KB's own dissolution verdict: a link is kept only where the deepened page evidences the domain pattern, demoted where the pattern is absent (GARDEN) or the evidence sits at a lower tier than the framing (TinyAstral, as physical evidence). This page replaces a stub whose relations were explicitly unverified; the verdicts here are the verification that stub called for.
+Measurements are attributed to their authors or vendors at the point of use. The cross-project comparisons are analyst interpretations, not new experiments or evidence of a shared implementation. No independent replication is cited.

@@ -5,7 +5,7 @@ title: "AgenticBench"
 summary: "Independent rolling benchmark that scores AI coding-agent harnesses on what they do with local files, egress, telemetry and secrets."
 type: benchmark
 created: 2026-11-09
-updated: 2026-11-10
+updated: 2026-11-14
 related: [validation-tier-gap, secure-agent-operations, verified-completion-vs-apparent-success]
 sources:
   - url: https://agenticbench.org/
@@ -141,8 +141,12 @@ The site requires that harness makers ask for the underlying evidence; for a thi
 
 ## Evidence status
 
-This page is grounded in a full inspection of the benchmark's own website on 2026-11-10: the leaderboard (https://agenticbench.org/), the method page (https://agenticbench.org/method.html), the leaderboard overview (https://agenticbench.org/leaderboard-overview.html), the about page (https://agenticbench.org/about.html), the governance charter (https://agenticbench.org/charter.html), the disclosure register (https://agenticbench.org/disclosures.html), the published findings (https://agenticbench.org/public-disclosures.html) and the forthcoming honest-reporting page (https://agenticbench.org/honesty.html). Every pass count, disclosure and status is **reported by the benchmark operator**; the site links no paper and no public repository for the rig (checked across those pages), states that test materials are released only to harness makers under a non-disclosure agreement, and states that its own results remain preliminary until independently reproduced. No independent replication is known. Claim types are separated in the text: the method, the scope statements and the "not a certification" framing are the operator's; the items under "Assessed from the reporting" and the whole Implications section are analysis by the KB maintainers. Nothing on this page was reproduced, executed, cloned or tested by the KB maintainers — no harness was installed and no score was independently verified.
+Every pass count, disclosure and status is **reported by the benchmark operator**; the site links no paper and no public repository for the rig (checked across those pages), states that test materials are released only to harness makers under a non-disclosure agreement, and states that its own results remain preliminary until independently reproduced. No independent replication is known.
 
-## Historical coverage
 
-- [[briefings/2026/11/2026-11-05]] — the dated briefing that introduced AgenticBench as a rolling security evaluation of coding-agent harnesses.
+
+Sources: <https://agenticbench.org/> · <https://agenticbench.org/method.html> · <https://agenticbench.org/leaderboard-overview.html> · <https://agenticbench.org/about.html> · <https://agenticbench.org/charter.html> · <https://agenticbench.org/disclosures.html> · <https://agenticbench.org/public-disclosures.html> · <https://agenticbench.org/honesty.html>.
+
+## Related reading
+
+- [[briefings/2026/11/2026-11-05]]

@@ -5,7 +5,7 @@ summary: "The reference standards benchmarks score against contain measurable er
 type: concept
 depth: full
 created: 2026-11-02
-updated: 2026-11-02
+updated: 2026-11-14
 related: [vericua, codespecweave, exlabel, explorerepair]
 sources:
   - url: https://arxiv.org/abs/2610.40578
@@ -176,13 +176,4 @@ that happen to share a number.
 
 ## Evidence status
 
-This concept is the KB's analytical construct, synthesized 2026-11-02
-in mining pass 1 from the KB's own deepened project pages; the label is
-not a term the underlying papers use for themselves. Mining grade:
-medium — three full supports ([[projects/vericua]],
-[[projects/codespecweave]], [[projects/exlabel]]) plus one bounding
-instance ([[projects/explorerepair]]), all from a single cluster of the
-corpus. Every underlying result is author-reported: the adjudication
-rate, the alignment-flaw audit, and the annotation protocol are as
-reported by each paper's own authors, with no independent replication
-in the KB.
+This is an analyst interpretation of the cited studies, not an additional experimental result. Underlying measurements remain author-reported; no independent replication is cited. The supporting examples concern VeriCUA, CodeSpecWeave and ExLabel; ExploreRepair supplies a limiting case. These examples do not estimate the error rate of all benchmarks.

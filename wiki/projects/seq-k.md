@@ -5,7 +5,7 @@ title: "Seq@K: Evaluating Language Models Under Sequential Feedback"
 summary: "Evaluation protocol measuring whether a model solves a task within K sequential attempts, given feedback after each failure; rankings diverge from Pass@K."
 type: benchmark
 created: 2026-10-31
-updated: 2026-11-02
+updated: 2026-11-14
 related: [evaluator-circularity, information-content-dominance, protocol-relative-scores]
 sources:
   - url: https://arxiv.org/abs/2610.37859
@@ -42,7 +42,7 @@ The empirical study spans seven benchmark variants from five families (AdvancedI
 
 ## Evidence
 
-Everything in this section is **author-reported**: all numbers come from the paper's own runs, and no independent replication exists.
+Everything in this section is **author-reported**: all numbers come from the paper's own runs, and no independent replication is cited.
 
 **Sequential gains are not sampling gains.** Across 26 model–benchmark pairs, final Pass@5 and Seq@5 scores correlate moderately (Spearman +0.68), but once first attempts are removed the correlation collapses: the gain from independent resampling (ΔPass@5) and the gain from feedback-conditioned revision (ΔSeq@5) correlate at Spearman −0.08. In the paper's words, "how much a model gains from more independent samples says little about how much it gains from feedback." A model that looks strong under Pass@K because it samples diversely may gain almost nothing from feedback, and vice versa.
 
@@ -80,8 +80,8 @@ An *exact* rerun of the paper's own numbers is currently impossible for third pa
 
 ## Evidence status
 
-Single-source. The primary source (arXiv:2610.37859) was read in full — all sections, appendices, and tables — for this upgrade, and every figure on this page traces to it. All quantitative results are **author-reported**; no independent replication was found, and the paper's framing claims (e.g. that Seq@K is the more faithful metric for feedback-loop systems) are the authors' argued position, supported by their study but not themselves measurements. The paper contains no code or data release URL and none was found by search, so exact reruns are currently impossible for third parties. The earlier import's caution therefore still stands in substance: the source has now been inspected directly, but its results have been verified by no one but its authors.
+Single-source. The source is arXiv:2610.37859. All quantitative results are **author-reported**; no independent replication was found, and the paper's framing claims (e.g. that Seq@K is the more faithful metric for feedback-loop systems) are the authors' argued position, supported by their study but not themselves measurements. The paper contains no code or data release URL and none was found by search, so exact reruns are currently impossible for third parties.
 
-## Historical coverage
+## Related reading
 
 [Briefing 2026-10-31](../briefings/2026/10/2026-10-31.md)

@@ -5,7 +5,7 @@ title: "GARDEN: Generalist Autonomous Reward Design Through Evidence Navigation 
 summary: "One LLM-engineered reward program for a cooperative MARL task family, frozen and transferred unchanged to held-out scenarios."
 type: project
 created: 2026-10-31
-updated: 2026-11-02
+updated: 2026-11-14
 related: [improvement-lives-in-external-state, capability-locus]
 sources:
   - url: https://arxiv.org/abs/2610.37926
@@ -38,7 +38,7 @@ In the reported experiments, the reward engineer is gpt-6.1-sol at maximum reaso
 
 ## Evidence
 
-All results below are **author-reported** from a single-author preprint; no independent replication exists. Each reward was developed once, and every held-out condition was then trained with **10 matched policy seeds** (the same seeds for every reward); reported values are mean ± standard error over those seeds.
+All results below are **author-reported** from a single-author preprint; no independent replication is cited. Each reward was developed once, and every held-out condition was then trained with **10 matched policy seeds** (the same seeds for every reward); reported values are mean ± standard error over those seeds.
 
 *Held-out transfer versus native shaping.* The development/held-out split was: Overcooked — development on Cramped Room, Bottleneck, and Coordination Ring; held-out on Forced Coordination and Counter Circuit. SMAX — development on 3s5z vs 3s6z, SMACv2 with 5 units, and 5m vs 6m; held-out on 10m vs 11m and SMACv2 with 10 units. A separate reward program was developed for each family. Overcooked's native reward pays 20 points per delivered dish, with shaping of +3/+3/+5 for pot-loading, dish pickup, and soup pickup; SMAX's task reward is a win (all enemies eliminated with at least one ally surviving), with native shaping on reductions in enemy health.
 
@@ -94,8 +94,8 @@ Logging model calls and input tokens per condition (as the paper's Table V does)
 
 ## Evidence status
 
-This page is based on a full read of the primary source — arXiv:2610.37926v1, HTML full text (Sections I–VI, Tables I–V, Algorithm 1, references; the HTML rendering has no appendices) — on 2026-11-02, for issue #2. All quantitative results are **author-reported** (single-author preprint; no conference or journal venue stated), and no independent replication is known. The code repository URL is recorded **as stated in the paper**; the repository was **not inspected** for this page, and no code was executed. Environment and data availability follow the paper: Overcooked and SMAX are part of the public JaxMARL library; other supporting data are available from the author on reasonable request, per the paper. This page replaces an import stub whose contents were explicitly unverified.
+All quantitative results are **author-reported** (single-author preprint; no conference or journal venue stated), and no independent replication is cited. The code repository URL is recorded **as stated in the paper**; the repository was **not inspected** in this assessment, and no code was executed. Environment and data availability follow the paper: Overcooked and SMAX are part of the public JaxMARL library; other supporting data are available from the author on reasonable request, per the paper.
 
-## Historical coverage
+## Related reading
 
 [Briefing 2026-10-31](../briefings/2026/10/2026-10-31.md)
