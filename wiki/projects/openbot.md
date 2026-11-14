@@ -6,7 +6,7 @@ summary: "CopilotKit's self-hosted agent workspace: an audit-first CEL policy ga
 type: project
 created: 2026-11-02
 updated: 2026-11-14
-related: [scoped-assurance, structural-constraint-over-instruction, validation-tier-gap]
+related: [concepts/scoped-assurance, concepts/structural-constraint-over-instruction, concepts/validation-tier-gap]
 sources:
   - url: https://github.com/CopilotKit/openbot
     retrieved: 2026-11-02

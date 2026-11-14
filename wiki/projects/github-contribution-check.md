@@ -6,7 +6,7 @@ summary: "Scheduled gh-aw PR-compliance reviewer: deterministic pre-filter, read
 type: project
 created: 2026-11-02
 updated: 2026-11-14
-related: [abstention-as-first-class-verdict, structural-constraint-over-instruction, validation-tier-gap]
+related: [concepts/abstention-as-first-class-verdict, concepts/structural-constraint-over-instruction, concepts/validation-tier-gap]
 sources:
   - url: https://github.github.com/gh-aw/blog/2026-11-02-weekly-update/
     retrieved: 2026-11-02

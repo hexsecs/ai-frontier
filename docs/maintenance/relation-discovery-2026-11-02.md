@@ -9,6 +9,9 @@ updated: 2026-11-02
 sources: []
 ---
 
+> Historical maintenance artifact, dated November 2, 2026. Its holds and deferrals describe that pass, not the current inventory. Use [the current comparison](../../wiki/evaluations/relation-discovery-2026-11-02.md) and [concept index](../../wiki/concepts/index.md) for current navigation. This document is outside the rendered wiki.
+
+
 # Relation discovery — 2026-11-02
 
 ## What this evaluation is

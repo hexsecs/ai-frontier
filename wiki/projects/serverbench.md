@@ -2,11 +2,11 @@
 uid: d691c930-8bb3-4f68-996a-bac137a64f23
 title: "ServerBench: Agent-Designed LLM Serving Systems"
 summary: "Coding agents optimize LLM serving systems under verified workload, latency and GPU-cost constraints."
-type: project
+type: benchmark
 created: 2026-11-13
 updated: 2026-11-14
 depth: brief
-related: [verified-completion-vs-apparent-success]
+related: [concepts/verified-completion-vs-apparent-success]
 sources:
   - https://arxiv.org/abs/2611.06841
 ---

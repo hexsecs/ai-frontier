@@ -1,0 +1,30 @@
+---
+type: index
+title: "Memory and improvement"
+summary: "Locate persistent capability and evaluate updates without hiding regressions."
+---
+
+# Memory and improvement
+
+What persists between tasks, how is it updated, and which previous capabilities survive?
+
+## Start here
+
+1. [[techniques/agent-skills-and-memory]] — Compare stored procedures, query-time history and learned file operations.
+2. [[concepts/capability-locus]] — Separate contributions from weights, harness and external state.
+3. [[concepts/preservation-aware-agent-improvement]] — Count lost as well as newly solved cases.
+4. [[techniques/gated-admission-and-revalidation]] — Decide what may enter a reusable store.
+
+## Compare mechanisms
+
+| Mechanism | Reading | Question to ask |
+|---|---|---|
+| Preserve and retrieve history | [[projects/just-in-time-agent-memory]] | Can the answer be traced to the original record? |
+| Consolidate persistent memory | [[projects/tigerless-agent-memory]] | Does consolidation preserve useful evidence? |
+| Compile reusable operations | [[projects/skillcompiler]] | Are invocation conditions and validation records still applicable? |
+| Update external knowledge | [[projects/karma]] | Does improvement transfer safely across domains? |
+| Learn memory operations | [[projects/coding-agent-memory-post-training-ii]] | How much comes from training the policy rather than storing more text? |
+
+## Counterevidence and tests
+
+[[projects/security-impact-of-coding-agent-memory-files]] bounds claims that stored text reliably changes behavior. [[techniques/agent-skills-and-memory]] discusses negative transfer and missing gate ablations. Compare the two explicitly different ingestion protocols in [[experiments/index]]; both are proposed, not measured outcomes. See [[topics/verification-and-evaluation]] for acceptance criteria.

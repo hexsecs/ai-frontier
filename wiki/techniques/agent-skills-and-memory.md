@@ -6,7 +6,7 @@ summary: "Persistent skills and memory let frozen models improve when admission 
 type: technique
 created: 2026-11-02
 updated: 2026-11-14
-related: [coding-agent-memory-post-training-ii, skillcompiler, karma, filingloop, context-as-infrastructure, clingex, security-impact-of-coding-agent-memory-files, improvement-lives-in-external-state, capability-locus, just-in-time-agent-memory, lifelong-materials-agent-memory]
+related: [projects/coding-agent-memory-post-training-ii, projects/skillcompiler, projects/karma, projects/filingloop, projects/context-as-infrastructure, projects/clingex, projects/security-impact-of-coding-agent-memory-files, concepts/improvement-lives-in-external-state, concepts/capability-locus, projects/just-in-time-agent-memory, projects/lifelong-materials-agent-memory]
 sources:
   - https://arxiv.org/abs/2611.14009
   - url: https://arxiv.org/abs/2609.34385

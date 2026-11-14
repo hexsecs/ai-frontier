@@ -6,7 +6,7 @@ type: project
 created: 2026-11-12
 updated: 2026-11-14
 depth: brief
-related: [coder-eval]
+related: [projects/coder-eval]
 sources:
   - https://arxiv.org/abs/2611.11971
 ---

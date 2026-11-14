@@ -6,7 +6,7 @@ summary: "Self-evolving experience-bank evaluator labeling SWE-bench-style datas
 type: project
 created: 2026-10-30
 updated: 2026-11-14
-related: [ground-truth-fallibility]
+related: [concepts/ground-truth-fallibility]
 sources:
   - url: https://arxiv.org/abs/2610.39417
     retrieved: 2026-11-02
@@ -120,5 +120,7 @@ Caveats: two backbones are API-served 2026 models (GPT-5.6 Luna, DeepSeek-V4-Fla
 Single-source evidence. All quantitative claims on this page are **author-reported** results from one preprint (arXiv:2610.39417, submitted 29 October 2026, no stated venue), with baselines as run by the authors; the paper cites no independent replication of ExLabel, and none is recorded here. The SWE-TQ benchmark was constructed and cleaned by the same team (see Limitations). The authors' replication package is linked from the paper's Data Availability statement; its contents were not independently inspected in this assessment.
 
 ## Related reading
+
+[[concepts/ground-truth-fallibility]] discusses reference quality; [[concepts/improvement-lives-in-external-state]] places the experience bank alongside other persistent artifacts.
 
 [Briefing 2026-10-30](../briefings/2026/10/2026-10-30.md)

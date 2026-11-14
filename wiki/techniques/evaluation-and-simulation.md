@@ -6,7 +6,7 @@ summary: "How this corpus evaluates agents — benchmark construction, trajector
 type: technique
 created: 2026-11-02
 updated: 2026-11-14
-related: [seq-k, webanything, codespecweave, intent-loss-in-smart-contract-synthesis, angler, pre-crime-for-agents, vericua, envos, evaluator-circularity, ground-truth-fallibility, protocol-relative-scores, comparator-construction-shapes-margins, validation-tier-gap]
+related: [projects/seq-k, projects/webanything, projects/codespecweave, projects/intent-loss-in-smart-contract-synthesis, projects/angler, projects/pre-crime-for-agents, projects/vericua, projects/envos, concepts/evaluator-circularity, concepts/ground-truth-fallibility, concepts/protocol-relative-scores, concepts/comparator-construction-shapes-margins, concepts/validation-tier-gap]
 sources:
   - url: https://arxiv.org/abs/2610.37859
     retrieved: 2026-11-02

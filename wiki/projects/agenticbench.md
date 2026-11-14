@@ -6,7 +6,7 @@ summary: "Independent rolling benchmark that scores AI coding-agent harnesses on
 type: benchmark
 created: 2026-11-09
 updated: 2026-11-14
-related: [validation-tier-gap, secure-agent-operations, verified-completion-vs-apparent-success]
+related: [concepts/validation-tier-gap, techniques/secure-agent-operations, concepts/verified-completion-vs-apparent-success]
 sources:
   - url: https://agenticbench.org/
     retrieved: 2026-11-10

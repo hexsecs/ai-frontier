@@ -2,7 +2,17 @@
 
 A curated, source-backed guide to practical agentic AI, autonomous workflows, and self-improving systems.
 
-## Browse
+## Start with a question
+
+[All reading paths](wiki/topics/index.md) connect mechanisms, evidence limits and proposed tests.
+
+- [Agent execution and recovery](wiki/topics/agent-execution-and-recovery.md) — Run tools, observe effects and recover interrupted work.
+- [Memory and improvement](wiki/topics/memory-and-improvement.md) — Locate persistent capability and evaluate updates without hiding regressions.
+- [Verification and evaluation](wiki/topics/verification-and-evaluation.md) — Establish success and compare evidence under explicit measurement conditions.
+- [Coordination and orchestration](wiki/topics/coordination-and-orchestration.md) — Divide work, exchange artifacts and assess the value of delegation.
+- [Security and authority](wiki/topics/security-and-authority.md) — Locate enforcement boundaries and distinguish permission from instruction.
+
+## Browse by record type
 
 - [Daily briefings](wiki/briefings/index.md) — chronological snapshots of discoveries and assessments.
 - [Benchmarks](wiki/benchmarks/index.md) — Evaluation suites and scoring protocols.

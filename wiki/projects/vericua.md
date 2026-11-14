@@ -6,7 +6,7 @@ summary: "Active verification of computer-use agents by a separate post-hoc veri
 type: project
 created: 2026-10-30
 updated: 2026-11-14
-related: [ground-truth-fallibility, abstention-as-first-class-verdict, comparator-construction-shapes-margins]
+related: [concepts/ground-truth-fallibility, concepts/abstention-as-first-class-verdict, concepts/comparator-construction-shapes-margins]
 sources:
   - url: https://arxiv.org/abs/2610.40578
     retrieved: 2026-11-02
@@ -117,5 +117,7 @@ Caveat: exact reproduction also requires harness details the paper only summariz
 Every quantitative result on this page is **author-reported**: the authors ran all methods under their own harness on their chosen backbones. No independent replication is cited. There are no vendor claims as such, but note the overlap: most authors are Google researchers, Google preview models serve as verifier, judge, and executing-agent backbones, and two of the five benchmarks are same-group (OSReward, ScienceBoard). The gold-label audit's confirmations are **model-adjudicated** (single-blind, a different model family), not human re-annotation. No code or data release is mentioned in the paper. One internal inconsistency is worth recording: the observation-input ablation's WebArena accuracy (80.0) differs from the headline (82.7) as printed and is not reconciled in the paper.
 
 ## Related reading
+
+[[concepts/ground-truth-fallibility]] discusses reference errors, [[concepts/abstention-as-first-class-verdict]] discusses insufficient evidence, and [[concepts/comparator-construction-shapes-margins]] examines adapted baselines. These are analyst interpretations of the evidence above.
 
 [Briefing 2026-10-30](../briefings/2026/10/2026-10-30.md)

@@ -6,7 +6,7 @@ type: benchmark
 created: 2026-11-09
 updated: 2026-11-14
 depth: deep
-related: [verified-completion-vs-apparent-success, validation-tier-gap, evaluator-circularity]
+related: [concepts/verified-completion-vs-apparent-success, concepts/validation-tier-gap, concepts/evaluator-circularity]
 sources:
   - https://arxiv.org/abs/2610.13361
   - https://arxiv.org/html/2610.13361v1

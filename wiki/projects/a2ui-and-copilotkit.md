@@ -124,4 +124,6 @@ Not inspected: the v1.0 candidate and v0.9/v0.8 spec texts (only version-table s
 
 ## Related reading
 
+[[techniques/generative-interfaces]] explains the trusted component catalog; compare [[concepts/structural-constraint-over-instruction]] for the broader authority boundary.
+
 [Briefing 2026-10-30](../briefings/2026/10/2026-10-30.md)

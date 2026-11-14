@@ -6,7 +6,7 @@ summary: "Multi-agent collaboration benchmark that isolates protocol, memory and
 type: benchmark
 created: 2026-11-08
 updated: 2026-11-14
-related: [protocol-relative-scores, capability-locus, evaluator-circularity]
+related: [concepts/protocol-relative-scores, concepts/capability-locus, concepts/evaluator-circularity]
 sources:
   - url: https://arxiv.org/abs/2610.04672
     retrieved: 2026-11-10

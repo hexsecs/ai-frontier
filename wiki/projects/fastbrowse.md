@@ -6,7 +6,7 @@ type: project
 created: 2026-11-12
 updated: 2026-11-14
 depth: brief
-related: [baya-compile-then-execute]
+related: [projects/baya-compile-then-execute]
 sources:
   - https://github.com/agent-labs-dev/fastbrowse
 ---

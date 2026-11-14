@@ -6,7 +6,7 @@ type: project
 created: 2026-11-09
 updated: 2026-11-14
 depth: deep
-related: [capability-locus]
+related: [concepts/capability-locus]
 sources:
   - https://arxiv.org/abs/2610.42141
   - https://arxiv.org/abs/2610.42141

@@ -6,7 +6,7 @@ type: project
 created: 2026-11-13
 updated: 2026-11-14
 depth: brief
-related: [crossswe]
+related: [projects/crossswe]
 sources:
   - https://arxiv.org/abs/2611.04977
 ---
@@ -35,3 +35,8 @@ Replay five public disaster tasks and inspect coordinate reference systems, time
 
 ## Provenance
 [[briefings/2026/11/2026-11-13]]
+
+
+## Related reading
+
+[[techniques/multi-agent-orchestration]] provides context for typed artifact handoffs; [[topics/coordination-and-orchestration]] compares the distinct integration checks needed across domains.

@@ -6,7 +6,7 @@ summary: "REEF benchmarks web-agent prompt-injection vulnerability on nine execu
 type: project
 created: 2026-11-02
 updated: 2026-11-14
-related: [comparator-construction-shapes-margins, improvement-lives-in-external-state, protocol-relative-scores]
+related: [concepts/comparator-construction-shapes-margins, concepts/improvement-lives-in-external-state, concepts/protocol-relative-scores]
 sources:
   - url: https://arxiv.org/abs/2610.41272
     retrieved: 2026-11-02

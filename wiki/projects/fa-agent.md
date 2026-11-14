@@ -6,7 +6,7 @@ type: project
 created: 2026-11-07
 updated: 2026-11-14
 depth: deep
-related: [abstention-as-first-class-verdict, improvement-lives-in-external-state]
+related: [concepts/abstention-as-first-class-verdict, concepts/improvement-lives-in-external-state]
 sources:
   - url: https://arxiv.org/abs/2611.06555
     retrieved: 2026-11-07

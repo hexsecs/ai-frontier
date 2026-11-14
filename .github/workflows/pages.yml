@@ -6,6 +6,8 @@ on:
       - 'docs/**'
       - 'wiki/**'
       - 'scripts/build_site.py'
+      - 'scripts/page_navigation.py'
+      - 'scripts/chatgpt_charts.py'
       - '.github/workflows/pages.yml'
   workflow_dispatch:
 permissions:

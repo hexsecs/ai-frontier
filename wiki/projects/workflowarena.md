@@ -2,11 +2,11 @@
 uid: 67f38b07-421d-429e-9069-56b4ba1b7acb
 title: "WorkflowArena: Executable Multi-Agent Orchestration"
 summary: "A 145-task benchmark evaluates model-authored worker delegation, workflow organization and integrated deliverable verification."
-type: project
+type: benchmark
 created: 2026-11-13
-updated: 2026-11-13
+updated: 2026-11-14
 depth: brief
-related: [expertcrowd-swe, crossswe, verified-completion-vs-apparent-success]
+related: [projects/expertcrowd-swe, projects/crossswe, concepts/verified-completion-vs-apparent-success]
 sources:
   - https://arxiv.org/abs/2611.12856
 ---
@@ -30,3 +30,8 @@ Compared with [[projects/crossswe]], which checks cross-repository change consis
 **Reproducible experiment:** Hold model, tasks and budget constant for five interdependent repository-and-document tasks. Compare a single agent, a fixed two-worker workflow and a model-authored delegation structure. Record verified completion, integration errors, worker count, cost, retries and critical-path duration.
 
 **Verdict:** Novel orchestration benchmark with inspectable evaluation framing; real-world transfer and independent replication remain open.
+
+
+## Related reading
+
+[[techniques/multi-agent-orchestration]] compares coordination designs. [[evaluations/multi-agent-value-and-coordination]] distinguishes this protocol from [[projects/masbench]] and [[projects/st-bench]]; [[concepts/verified-completion-vs-apparent-success]] discusses integrated acceptance.

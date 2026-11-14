@@ -40,3 +40,8 @@ Hidden-check quality itself needs audit; benchmark tasks may not represent real 
 ## Evidence status
 
 This is a design specification, **not a result**. No acceptance rates, savings or improvements are asserted.
+
+
+## Relationship to the companion protocol
+
+This protocol varies independent acceptance and regression gating as interventions. The companion varies strategy-library and information-environment support under a shared acceptance framework. Keep the treatment arms separate when interpreting results. See [[experiments/hidden-acceptance-regression-ingestion]]. Both protocols are proposed, not executed.

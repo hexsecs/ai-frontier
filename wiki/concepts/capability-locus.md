@@ -6,7 +6,7 @@ type: concept
 depth: full
 title: "Capability locus"
 summary: "When an agent system improves, where does capability live — weights, harness, external state, or their interaction? One system now measures the decomposition."
-related: [hera, agenticds, garden, tinyastral, dittany, strategist]
+related: [projects/hera, projects/agenticds, projects/garden, projects/tinyastral, projects/dittany, projects/strategist]
 sources:
   - url: https://arxiv.org/abs/2610.41216
     retrieved: 2026-11-02

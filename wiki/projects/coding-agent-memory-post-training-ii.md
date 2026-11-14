@@ -6,7 +6,7 @@ type: project
 created: 2026-11-13
 updated: 2026-11-14
 depth: brief
-related: [agent-skills-and-memory]
+related: [techniques/agent-skills-and-memory]
 sources:
   - https://arxiv.org/abs/2611.14009
 ---
@@ -35,3 +35,8 @@ On 20 interrupted coding tasks, compare raw transcript compaction, file-based me
 
 ## Provenance
 [[briefings/2026/11/2026-11-13]]
+
+
+## Related reading
+
+[[concepts/capability-locus]] separates learned policy contributions from external artifacts. CAMP-II is a boundary case for [[concepts/improvement-lives-in-external-state]] because it trains memory-operation behavior rather than holding all weights frozen.

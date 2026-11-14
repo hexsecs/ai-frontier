@@ -6,7 +6,7 @@ type: concept
 depth: full
 created: 2026-11-02
 updated: 2026-11-14
-related: [llm-as-code, spec-first-verification-agents, github-contribution-check, openbot, tinyastral, dittany, envos, cheme-as-code, builderio-agent-native, agent-orchestrator]
+related: [projects/llm-as-code, projects/spec-first-verification-agents, projects/github-contribution-check, projects/openbot, projects/tinyastral, projects/dittany, projects/envos, projects/cheme-as-code, projects/builderio-agent-native, projects/agent-orchestrator]
 sources:
   - url: https://arxiv.org/abs/2611.02285
     retrieved: 2026-11-12

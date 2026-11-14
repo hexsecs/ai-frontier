@@ -5,6 +5,11 @@ from build_site import expand_wikilinks, rewrite_links
 
 
 class WikiLinkTests(unittest.TestCase):
+    def test_titles_make_index_links_meaningful_and_explicit_labels_win(self):
+        titles = {'experiments/index': 'Experiment protocols'}
+        self.assertIn('>Experiment protocols</a>', expand_wikilinks('[[experiments/index]]', titles))
+        self.assertIn('>Tests</a>', expand_wikilinks('[[experiments/index|Tests]]', titles))
+
     def test_basic_reference(self):
         self.assertEqual(expand_wikilinks("[[projects/strategist]]"), '<a href="#/page/projects/strategist">strategist</a>')
 

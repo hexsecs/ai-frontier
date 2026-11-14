@@ -6,7 +6,7 @@ type: concept
 depth: full
 created: 2026-11-02
 updated: 2026-11-14
-related: [intent-loss-in-smart-contract-synthesis, seq-k, dynarev, clingex, webanything, prefix-executability, angler, fincosmos]
+related: [projects/intent-loss-in-smart-contract-synthesis, projects/seq-k, projects/dynarev, projects/clingex, projects/webanything, projects/prefix-executability, projects/angler, projects/fincosmos]
 sources:
   - url: https://arxiv.org/abs/2610.37830
     retrieved: 2026-11-02
@@ -144,7 +144,7 @@ exactly what makes the movement attributable to it.
   —contradicts (apparent)→ [[projects/seq-k]]: intent-loss finds
   post-generation stages worth at most about one point, seq-k finds
   post-failure revision repairing 73.8% of failed criteria. The
-  comparison resolves the apparent contradiction by information content —
+  comparison resolves the apparent contradiction by [[concepts/information-content-dominance|information content]] —
   and information content is itself one of seq-k's protocol variables
   (feedback mode), so the resolution reinforces rather than weakens
   this concept.

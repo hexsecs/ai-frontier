@@ -6,7 +6,7 @@ type: project
 created: 2026-11-09
 updated: 2026-11-14
 depth: deep
-related: [structural-constraint-over-instruction, secure-agent-operations, verified-completion-vs-apparent-success]
+related: [concepts/structural-constraint-over-instruction, techniques/secure-agent-operations, concepts/verified-completion-vs-apparent-success]
 sources:
   - https://arxiv.org/abs/2607.21835
   - https://arxiv.org/html/2607.21835v1

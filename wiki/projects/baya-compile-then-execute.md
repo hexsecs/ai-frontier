@@ -6,7 +6,7 @@ type: project
 created: 2026-11-12
 updated: 2026-11-14
 depth: brief
-related: [fastbrowse]
+related: [projects/fastbrowse]
 sources:
   - https://arxiv.org/abs/2611.06039
 ---
@@ -43,3 +43,8 @@ High novelty and strong quantitative evidence, bounded by the tested API coverag
 
 - [[briefings/2026/11/2026-11-12]]
 - [[projects/fastbrowse]] — analyst comparison, not a demonstrated head-to-head; source URLs and limitations in the briefing.
+
+
+## Related reading
+
+[[projects/llm-as-code]] provides the program-owned control comparison named above; [[concepts/structural-constraint-over-instruction]] explains the broader distinction between constrained actions and instructions.

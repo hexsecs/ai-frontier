@@ -2,11 +2,11 @@
 uid: 0f51e12c-1f8d-4e64-93a8-b0a2f9aed41d
 title: "ExpertCrowd-SWE"
 summary: "One hundred expert-authored engineering tasks use calibrated executable graders and must-pass merge blockers."
-type: project
+type: benchmark
 created: 2026-11-13
 updated: 2026-11-14
 depth: brief
-related: [crossswe]
+related: [projects/crossswe]
 sources:
   - https://arxiv.org/abs/2611.13246
 ---
@@ -35,3 +35,8 @@ Replicate three public tasks with an independent coding harness; verify that no-
 
 ## Provenance
 [[briefings/2026/11/2026-11-13]]
+
+
+## Related reading
+
+[[concepts/verified-completion-vs-apparent-success]] compares executable merge blockers with other forms of task acceptance.

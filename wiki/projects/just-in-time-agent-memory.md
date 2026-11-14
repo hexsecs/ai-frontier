@@ -4,7 +4,7 @@ title: "Just-In-Time Agent Memory with Runtime Agentic Research (JAM)"
 summary: "Query-conditioned multi-step evidence retrieval over preserved raw history, rather than pre-compressing everything into fixed summaries."
 type: project
 created: 2026-11-11
-updated: 2026-11-11
+updated: 2026-11-14
 depth: brief
 sources:
   - https://arxiv.org/abs/2609.34385
@@ -39,3 +39,8 @@ Reported quality/cost gains are author-reported; September publication is delibe
 ## Related
 
 - [[briefings/2026/11/2026-11-11]]
+
+
+## Related reading
+
+[[techniques/agent-skills-and-memory]] compares query-time retrieval with persistent procedures. [[projects/tracybot]] captures artifact origins rather than reconstructing query-relevant history; this is an analytical distinction, not a demonstrated integration.

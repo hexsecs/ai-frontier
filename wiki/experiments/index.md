@@ -5,8 +5,11 @@ title: Experiments
 
 # Experiments
 
-Testable experiments and outcomes.
+Both protocols below are proposed and unexecuted. They share a task framing but vary different experimental factors.
 
-- [Hidden-acceptance and regression-preserving ingestion](./hidden-acceptance-regression-ingestion.md) — Proposed independent acceptance and task-regression test; not executed.
+| Protocol | Intervention being tested |
+|---|---|
+| [[experiments/hidden-acceptance-regression-ingestion]] | Strategy library and optimized information environment, scored with shared independent acceptance. |
+| [[experiments/independent-acceptance-regression-ingestion]] | Independent acceptance and a regression-preserving gate. |
 
-- [Independent acceptance and regression preservation](./independent-acceptance-regression-ingestion.md) — Companion evaluation protocol emphasizing checker independence, blind controls and confounders; proposed, not executed.
+The crash, provenance, admission and team-budget protocols in [[techniques/durable-agent-execution]], [[techniques/artifact-and-claim-provenance]], [[techniques/gated-admission-and-revalidation]] and [[evaluations/multi-agent-value-and-coordination]] are additional proposed tests; none reports an executed result.

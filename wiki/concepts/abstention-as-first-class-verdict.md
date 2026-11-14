@@ -6,7 +6,7 @@ type: concept
 depth: full
 created: 2026-11-02
 updated: 2026-11-14
-related: [vericua, github-contribution-check, dittany, aisoc-v21, fa-agent, code-simplifier, matt-pocock-skills-reviewer]
+related: [projects/vericua, projects/github-contribution-check, projects/dittany, projects/aisoc-v21, projects/fa-agent, projects/code-simplifier, projects/matt-pocock-skills-reviewer]
 sources:
   - url: https://arxiv.org/abs/2610.40578
     retrieved: 2026-11-02

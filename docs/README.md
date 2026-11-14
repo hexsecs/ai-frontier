@@ -5,7 +5,7 @@ A responsive, searchable, static GitHub Pages frontend for the OpenShelf knowled
 ## Build locally
 
 ```bash
-python -m pip install 'Markdown>=3.6,<4' 'PyYAML>=6,<7'
+python -m pip install 'Markdown>=3.6,<4' 'PyYAML>=6,<7' 'bleach>=6,<7'
 python scripts/build_site.py
 python -m http.server 8000 --directory docs
 ```
@@ -18,4 +18,8 @@ GitHub Actions workflow `.github/workflows/pages.yml` builds and deploys the `do
 
 ## Notes
 
-The network graph displays candidate relationships inferred from project summaries; it is not a verified citation network. Category totals are computed from the actual indexed Markdown files, not hard-coded mockup counts.
+The home page begins with five question-led reading paths from `wiki/topics/`. These use the existing OpenShelf `index` type. Categories use each record's declared type, so a benchmark can retain its canonical `projects/...` path.
+
+The builder derives `outgoing` and `backlinks` from rendered internal article links and exposes validated `related:` navigation. Backlinks preserve reference direction; they do not infer reciprocal scientific relationships. The graph draws a bounded set of these explicit article links, with no invented fallback edges. Unlabelled wiki links use the target page title when available. Generated `docs/data.json` is not committed.
+
+Run `python scripts/editorial_report.py --json` for advisory suggestions about reading-path membership, unlinked canonical mentions and shared sources. Shared citations do not establish duplicate entities. CI publishes the report as an artifact; suggestions do not fail validation or impose link quotas. `scripts/check_links.py` separately enforces valid internal targets, resolvable related navigation and root reachability.
