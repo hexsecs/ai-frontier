@@ -35,12 +35,11 @@ process:
 knowledge_ingestion:
   required_for_every_briefing: true
   archive_full_visible_narrative: true
-  require_canonical_mining_audit: true
-  required_briefing_sections:
-    - "### Canonical updates"
-    - "### Relations and evidence"
-    - "### Mining audit"
-  canonical_categories: [projects, concepts, techniques, evaluations, signals, experiments]
+  require_inline_canonical_links: true
+  relationship_placement: relevant_article_passage
+  process_audit_location: pull_request_description
+  prohibit_process_sections_in_articles: true
+  canonical_categories: [projects, benchmarks, case-studies, workflows, domains, concepts, techniques, evaluations, signals, experiments]
   relationship_types: [implements, extends, evaluates, compares_with, depends_on, mitigates, contradicts]
   provenance_required_for_relations: true
   deduplicate_by: [canonical_repo_url, doi, arxiv_id, official_url, aliases]
@@ -66,5 +65,7 @@ synthesis_layer:
   create_new_concept_only_with_multiple_independent_sources: true
   preserve_immutable_briefings: true
   prefer_explicit_directional_relations_with_source_urls: true
+  integrate_into_existing_passages: true
+  prohibit_repeated_ingestion_appendices: true
   track_unresolved_contradictions_and_blind_spots: true
   evaluate_experiments_by_independent_acceptance_and_regressions: true

@@ -10,10 +10,9 @@ sources: []
 
 # AI Frontier — YYYY-MM-DD
 
-## Selected discoveries
+## 1. Discovery title
 
-## Exploration picks
+Describe the capability and link its canonical page here. Explain evidence, relevant comparisons, limitations and a practical test in context.
+
 
 ## Frontier signal
-
-## Quality audit

@@ -26,7 +26,7 @@ Authors report 2.97× the gain of the strongest on-policy-distillation baseline 
 Training apparatus and gains are not independently replicated here; no production deployment established.
 
 ## Comparison and relation
-Substantive new training approach to file-based long-horizon memory. Contrasts with JAM's query-time retrieval and materials-memory's reusable guards: CAMP-II changes the policy's learned file-operation behavior.
+Substantive new training approach to file-based long-horizon memory. Contrasts with [[projects/just-in-time-agent-memory|JAM]]'s query-time retrieval and [[projects/lifelong-materials-agent-memory|materials-memory]]'s reusable guards: CAMP-II changes the policy's learned file-operation behavior.
 
 Related: [[techniques/agent-skills-and-memory]]. The comparison is analytical, not a demonstrated integration.
 
