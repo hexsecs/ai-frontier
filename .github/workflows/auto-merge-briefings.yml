@@ -42,6 +42,16 @@ jobs:
           details=$(gh api "repos/$REPO/pulls/$pr")
           [[ $(jq -r '.head.sha' <<<"$details") == "$RUN_SHA" ]] || { echo "PR advanced since validation"; exit 0; }
           [[ $(jq -r '.head.repo.full_name' <<<"$details") == "$REPO" ]] || { echo "Fork PR requires manual review"; exit 0; }
+          # Authorization is independent of branch naming, CI success and the
+          # workflow token's permissions. Only the repository owner is currently
+          # approved for unattended merges. Add automation identities explicitly
+          # after reviewing their token scopes and provenance.
+          author=$(jq -r '.user.login // empty' <<<"$details")
+          author_id=$(jq -r '.user.id // empty' <<<"$details")
+          if [[ "$author" != "hexsecs" || "$author_id" != "89217603" ]]; then
+            echo "PR author is not an approved auto-merge identity; manual review required."
+            exit 0
+          fi
           [[ $(jq -r '.draft' <<<"$details") == false ]] || { echo "Draft PR"; exit 0; }
           [[ $(jq -r '.mergeable' <<<"$details") == true ]] || { echo "Conflicted or mergeability unknown"; exit 0; }
 
