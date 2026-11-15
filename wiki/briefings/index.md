@@ -25,3 +25,5 @@ Historical coverage is limited by the available original records. October 30–N
 - [2026-11-11](./2026/11/2026-11-11.md) — five full-fidelity findings on deterministic agent control, verification, query-time memory and scientific investigation states.
 - [2026-11-12](./2026/11/2026-11-12.md) — five complete findings: compile-then-execute browser safety, harness attacks, coding-agent CI, bounded browser actions and media tools.
 - [2026-11-13](./2026/11/2026-11-13.md) — five findings on learned memory, expert grading, cross-repository engineering, optimized serving and geospatial artifact agents.
+
+- [2026-11-14](./2026/11/2026-11-14.md) — five findings on formal proof agents, browser replay, durable operations, research orchestration and origin boundaries.
