@@ -112,3 +112,11 @@ This is the legacy canonical file-location index. Some entries are now classifie
 
 - [AlphaProof Code](./alphaproof-code.md) — Lean-kernel-checked machine-code cryptographic proofs.
 - [agent-browser](./agent-browser.md) — Browser snapshot control and recorded-flow replay.
+
+## November 16 additions
+
+- [Agent Client Protocol 1.18](./agent-client-protocol.md) — Explicit session lifecycle and interoperable subagent/skill event surfaces instead of proprietary orchestration state.
+- [Framerslab AgentOS 0.18–0.19](./framerslab-agentos.md) — Durable negative memory: enforce deletion/retention across restored databases and derived retrieval indexes, while making host authority explicit.
+- [Compozy 0.7.1–0.7.2](./compozy.md) — Reconcile a durable delegation tree and tool-authority ceiling across cancellation, deletion, process exit and restart.
+- [Thunderbird Thunderbolt 0.1.164–0.1.165](./thunderbolt.md) — Reusable connector identity and explicit authorization in an end-user agent workspace, with bounded GUI recovery.
+- [Open Artifacts 0.193–0.196](./open-artifacts.md) — Versioned human-reviewable artifacts and constrained external sharing as a substrate for agent-created deliverables.
