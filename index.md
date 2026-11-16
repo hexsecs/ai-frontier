@@ -28,7 +28,7 @@ A curated, source-backed guide to practical agentic AI, autonomous workflows, an
 
 ## Latest briefing
 
-- [November 14: verified cryptography, browser replay and durable agent operations](wiki/briefings/2026/11/2026-11-14.md) — five findings and practical experiments.
+- [November 16: agent lifecycle, authority and recoverable artifacts](wiki/briefings/2026/11/2026-11-16.md) — five source-backed implementation findings and experiments.
 
 ## Latest synthesis
 
