@@ -27,3 +27,5 @@ Historical coverage is limited by the available original records. October 30–N
 - [2026-11-13](./2026/11/2026-11-13.md) — five findings on learned memory, expert grading, cross-repository engineering, optimized serving and geospatial artifact agents.
 
 - [2026-11-14](./2026/11/2026-11-14.md) — five findings on formal proof agents, browser replay, durable operations, research orchestration and origin boundaries.
+
+- [2026-11-16](./2026/11/2026-11-16.md) — five findings on ACP replay, durable forgetting, delegation recovery, connector authority and versioned artifacts.
