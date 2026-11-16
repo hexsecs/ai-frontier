@@ -4,7 +4,7 @@ title: "KinoCut — Guardrailed Video-Editing MCP Tools"
 summary: "Exposes local FFmpeg-based editing and repurposing operations to agents through bounded MCP tools."
 type: project
 created: 2026-11-12
-updated: 2026-11-14
+updated: 2026-11-16
 depth: brief
 sources:
   - https://github.com/KyaniteLabs/kinocut
@@ -41,3 +41,7 @@ Practical domain-diversifying experiment; engineering implementation is more cre
 ## Related
 
 - [[briefings/2026/11/2026-11-12]]
+
+## Conceptual context
+
+Distinguish assignment and connector identity from enforced action scope, inheritance ceilings and revocation. See [[concepts/delegated-authority-and-revocation]]. Locate enforcement surfaces and retain the limits of the tested security boundary. See [[techniques/secure-agent-operations]].

@@ -4,7 +4,7 @@ title: "OpenMA"
 summary: "Self-hostable managed-agent platform separating session, execution and recovery from harness, sandbox and model, with Claude and OpenAI API surfaces."
 type: project
 created: 2026-11-09
-updated: 2026-11-14
+updated: 2026-11-16
 depth: deep
 sources:
   - https://github.com/openma-ai/open-managed-agents
@@ -128,6 +128,8 @@ The repository file tree was read from `https://api.github.com/repos/openma-ai/o
 Sources: <https://raw.githubusercontent.com/openma-ai/open-managed-agents/main/>.
 
 ## Related reading
+
+Distinguish reconstructing history, rerunning a procedure and safely repeating its intended effect. See [[concepts/replay-idempotency-and-effect-semantics]]. Compare persistence, interrupted work and reconciliation without assuming exactly-once external effects. See [[techniques/durable-agent-execution]].
 
 - [[briefings/2026/11/2026-11-05]]
 - [[evaluations/briefing-synthesis-2026-11-03-to-09]] — the cross-project synthesis that placed this record against [[techniques/multi-agent-orchestration]] and [[projects/agensh]].

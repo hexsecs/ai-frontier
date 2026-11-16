@@ -5,7 +5,7 @@ title: "Secure agent operations"
 summary: "How this corpus runs agents under security constraint — policy gateways, structural write channels, provenance-gated detection — and what was measured."
 type: technique
 created: 2026-11-02
-updated: 2026-11-14
+updated: 2026-11-16
 related: [projects/aisoc-v21, projects/angler, projects/security-impact-of-coding-agent-memory-files, projects/openbot, projects/github-contribution-check, projects/pre-crime-for-agents, concepts/structural-constraint-over-instruction, concepts/scoped-assurance]
 sources:
   - url: https://github.com/CopilotKit/openbot
@@ -18,6 +18,10 @@ sources:
     retrieved: 2026-11-02
   - url: https://arxiv.org/abs/2610.38521
     retrieved: 2026-11-02
+  - https://raw.githubusercontent.com/compozy/compozy/8cbf8a5a4dcb343f349e2b47635a461bea0c9b24/CHANGELOG.md
+  - https://raw.githubusercontent.com/thunderbird/thunderbolt/2f81a4d9897cc92839632137fc7d38fee75ba240/CHANGELOG.md
+  - https://arxiv.org/html/2606.14027
+  - https://github.com/vercel-labs/agent-browser/releases/tag/v0.42.0
 ---
 
 # Secure agent operations
@@ -69,6 +73,14 @@ The honest summary is that this corpus contains exactly one project that measure
 **Constraints cap capability as well as misuse.** Contribution Check's fence is also its ceiling: the 3-PR cap silently skips pull requests in a busy repository (the report discloses the skipped count; skipped PRs are never revisited), and the rubric is truncated to the first 1,500 plus last 500 characters of the guidelines, so rules in the middle are "unenforced and unenforceable by this design." A perfectly fenced reviewer can also simply be a wrong reviewer — nothing published measures whether its verdicts agree with maintainers.
 
 **No defence in this corpus has faced the adaptive attacker.** ANGLER evaluates no mitigation; OpenBot and Contribution Check evaluate no attacker. The claim "this gateway would blunt an adaptive injection campaign" is therefore unsupported in both directions — plausible, untested. What the corpus does support is the weaker operational stance: assume fixed test suites flatter the defence, and measure final-state outcomes, not engagement.
+
+## Delegated scope and cross-origin flow
+
+[[projects/compozy]] documents narrowing spawned tools to parent authority and retaining stricter workspace policies ([changelog](https://raw.githubusercontent.com/compozy/compozy/8cbf8a5a4dcb343f349e2b47635a461bea0c9b24/CHANGELOG.md)). [[projects/thunderbolt]] documents reusable provider connections and authorization ([changelog](https://raw.githubusercontent.com/thunderbird/thunderbolt/2f81a4d9897cc92839632137fc7d38fee75ba240/CHANGELOG.md)). These address different boundaries: child action scope and connector identity. Neither release establishes a universal privilege-propagation guarantee. [[concepts/delegated-authority-and-revocation]] supplies the shared comparison vocabulary.
+
+[[projects/sopguard]] examines information flowing through the agent between browser origins ([paper](https://arxiv.org/html/2606.14027)). A browser action can be permitted while the resulting transfer is inappropriate. Test source-to-sink movement separately from permission to invoke the tool, especially when [[projects/agent-browser]] replays requests outside the original GUI path. The connection is an analyst-identified test concern, not evidence of a measured vulnerability in that replay feature.
+
+Revoking a grant, canceling work and undoing an earlier write are separate operations. [[experiments/lifecycle-authority-and-retention]] tests their boundaries with disposable accounts and canary data.
 
 ## Open questions
 

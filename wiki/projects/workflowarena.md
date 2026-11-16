@@ -4,7 +4,7 @@ title: "WorkflowArena: Executable Multi-Agent Orchestration"
 summary: "A 145-task benchmark evaluates model-authored worker delegation, workflow organization and integrated deliverable verification."
 type: benchmark
 created: 2026-11-13
-updated: 2026-11-14
+updated: 2026-11-16
 depth: brief
 related: [projects/expertcrowd-swe, projects/crossswe, concepts/verified-completion-vs-apparent-success]
 sources:
@@ -33,5 +33,7 @@ Compared with [[projects/crossswe]], which checks cross-repository change consis
 
 
 ## Related reading
+
+Distinguish local validity, dependency compatibility and whole-task acceptance. See [[concepts/contracts-and-compositional-correctness]].
 
 [[techniques/multi-agent-orchestration]] compares coordination designs. [[evaluations/multi-agent-value-and-coordination]] distinguishes this protocol from [[projects/masbench]] and [[projects/st-bench]]; [[concepts/verified-completion-vs-apparent-success]] discusses integrated acceptance.

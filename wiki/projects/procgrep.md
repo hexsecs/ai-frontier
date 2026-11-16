@@ -4,7 +4,7 @@ title: "ProcGrep / Agent Trajectories as Programs"
 summary: "Library and method that fingerprints coding-agent behaviour from action trajectories and lets a target procedure be specified programmatically."
 type: project
 created: 2026-11-09
-updated: 2026-11-14
+updated: 2026-11-16
 depth: deep
 sources:
   - https://arxiv.org/abs/2606.16988
@@ -155,5 +155,7 @@ Every quantitative result on this page is **author-reported** by the paper's aut
 Sources: <https://arxiv.org/abs/2606.16988> · <https://arxiv.org/html/2606.16988v2> · <https://api.github.com/repos/hamidahoderinwale/procgrep/git/trees/main?recursive=1> · <https://raw.githubusercontent.com/hamidahoderinwale/procgrep/main/README.md>.
 
 ## Related reading
+
+Separate artifact origin and version history from evidence that the resulting claim is correct. See [[techniques/artifact-and-claim-provenance]].
 
 - [[briefings/2026/11/2026-11-09]]

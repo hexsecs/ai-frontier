@@ -4,7 +4,7 @@ title: "fastbrowse — Bounded Browser Agent with Quote-Level Evidence"
 summary: "A browser agent that chooses actual page controls, cites source quotes and gates irreversible actions in code."
 type: project
 created: 2026-11-12
-updated: 2026-11-14
+updated: 2026-11-16
 depth: brief
 related: [projects/baya-compile-then-execute]
 sources:
@@ -43,3 +43,7 @@ Interesting engineering tradeoff and code artifact; claims about cost and reliab
 
 - [[briefings/2026/11/2026-11-12]]
 - [[projects/baya-compile-then-execute]] — analyst comparison, not a demonstrated head-to-head; source URLs and limitations in the briefing.
+
+## Conceptual context
+
+Distinguish assignment and connector identity from enforced action scope, inheritance ceilings and revocation. See [[concepts/delegated-authority-and-revocation]]. Locate enforcement surfaces and retain the limits of the tested security boundary. See [[techniques/secure-agent-operations]].

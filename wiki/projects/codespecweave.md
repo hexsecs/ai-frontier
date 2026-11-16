@@ -5,7 +5,7 @@ title: "When Requirements Interact: Scaling Long-Horizon Coding via Interdepende
 summary: "Synthetic coding tasks with interdependent requirements, grounded in real-repo seeds; 73.9% of pilot candidates had flawed tests."
 type: benchmark
 created: 2026-10-30
-updated: 2026-11-14
+updated: 2026-11-16
 related: [concepts/ground-truth-fallibility, concepts/comparator-construction-shapes-margins]
 sources:
   - url: https://arxiv.org/abs/2610.40256
@@ -371,5 +371,7 @@ models — but the paper's central claims admit a small-scale replication:
 Every quantitative claim on this page — the 104,182-seed pool, the 4,670 training tasks across 2,865 repositories, the benchmark's 100 tasks and 1,044 specifications and its taxonomy counts, the 73.9% alignment-flaw rate, the 44.0–74.0% frontier pass-rate span, and all GRPO training and behavior results — is **author-reported**: produced by the author team's own pipeline, evaluation runs, and automated review process. The benchmark tasks were manually reviewed by the authors themselves. No result is independently replicated, and no result is a vendor claim in the paper's own presentation (the evaluations were run by the author team, not by the model vendors; the paper cites vendor system cards only as model references).
 
 ## Related reading
+
+Read reported margins alongside how baseline systems and comparison sets were constructed. See [[concepts/comparator-construction-shapes-margins]]. Treat reference standards and executable checks as instruments whose correctness also needs evidence. See [[concepts/ground-truth-fallibility]].
 
 [Briefing 2026-10-30](../briefings/2026/10/2026-10-30.md)

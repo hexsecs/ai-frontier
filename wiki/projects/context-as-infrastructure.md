@@ -5,7 +5,7 @@ title: "Context as Infrastructure: Knowledge Compilation for Retrieval in Agenti
 summary: "A RAGFlow vendor paper finds precompiled context structures add no accuracy; claim–evidence substitution cuts query tokens 38% on average instead."
 type: project
 created: 2026-11-02
-updated: 2026-11-14
+updated: 2026-11-16
 related: [concepts/comparator-construction-shapes-margins, concepts/validation-tier-gap]
 sources:
   - url: https://arxiv.org/abs/2610.41172
@@ -105,5 +105,7 @@ Everything quantitative on this page is **author-reported**: all experiments wer
 On availability: no dataset release accompanies the paper, and no compiled FRAMES artifacts, harness configurations, or run logs are published; FRAMES and BrowseComp-Plus are third-party public benchmarks. The system itself is implemented in the open-source RAGFlow project (github.com/infiniflow/ragflow), which the paper links — but that repository was **not cloned, executed, or tested** in this assessment, and no claim here rests on inspecting it. The decision gate additionally depends on external hosted services (a Qwen decision-model preview and, in the authors' comparison, StartLux), which are cited as services, not artifacts.
 
 ## Related reading
+
+Read reported margins alongside how baseline systems and comparison sets were constructed. See [[concepts/comparator-construction-shapes-margins]]. Locate persistent artifacts separately from changes to model weights. See [[concepts/improvement-lives-in-external-state]].
 
 [Briefing 2026-11-02](../briefings/2026/11/2026-11-02.md)

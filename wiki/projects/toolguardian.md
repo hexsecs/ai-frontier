@@ -4,7 +4,7 @@ title: "ToolGuardian"
 summary: "Declarative security framework that vets MCP-style tools before admission and authorizes each invocation in task context."
 type: project
 created: 2026-11-09
-updated: 2026-11-14
+updated: 2026-11-16
 depth: deep
 related: [concepts/structural-constraint-over-instruction, techniques/secure-agent-operations, concepts/verified-completion-vs-apparent-success]
 sources:
@@ -144,5 +144,7 @@ Every quantitative result is **author-reported**; the heuristic and LLM baseline
 Sources: <https://arxiv.org/abs/2607.21835> · <https://arxiv.org/html/2607.21835v1>.
 
 ## Related reading
+
+Distinguish assignment and connector identity from enforced action scope, inheritance ceilings and revocation. See [[concepts/delegated-authority-and-revocation]]. Locate enforcement surfaces and retain the limits of the tested security boundary. See [[techniques/secure-agent-operations]].
 
 - [[briefings/2026/11/2026-11-04]]

@@ -4,7 +4,7 @@ title: "RECEIPT — Process-aware tool execution"
 summary: "Tool-execution protocol that reads from system calls what a process waits for and returns that state to an unmodified agent"
 type: project
 created: 2026-11-10
-updated: 2026-11-14
+updated: 2026-11-16
 depth: deep
 related: [projects/llm-as-code, concepts/verified-completion-vs-apparent-success, concepts/protocol-relative-scores, concepts/capability-locus]
 sources:
@@ -166,6 +166,8 @@ Every quantitative result is **author-reported**; the baselines were run by the 
 Sources: <https://arxiv.org/abs/2611.01930> · <https://arxiv.org/html/2611.01930v1>.
 
 ## Related reading
+
+Distinguish reconstructing history, rerunning a procedure and safely repeating its intended effect. See [[concepts/replay-idempotency-and-effect-semantics]]. Compare persistence, interrupted work and reconciliation without assuming exactly-once external effects. See [[techniques/durable-agent-execution]].
 
 - [[briefings/2026/11/2026-11-10]]
 

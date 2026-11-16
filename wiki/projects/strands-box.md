@@ -4,7 +4,7 @@ title: "Strands Box — Stateful policy sandbox for agents"
 summary: "Rust sandbox that combines OS containment with a default-deny Dogwood policy engine, so file, network and MCP decisions can depend on earlier agent actions."
 type: project
 created: 2026-11-10
-updated: 2026-11-14
+updated: 2026-11-16
 depth: deep
 related: [projects/lifelong-materials-agent-memory, concepts/structural-constraint-over-instruction, techniques/secure-agent-operations, concepts/verified-completion-vs-apparent-success]
 sources:
@@ -160,6 +160,8 @@ No independent security evaluation of Box is known from the inspected files.
 Sources: <https://github.com/strands-agents/box> · <https://api.github.com/repos/strands-agents/box> · <https://api.github.com/repos/strands-agents/box/releases> · <https://api.github.com/repos/strands-agents/box/git/trees/main?recursive=1> · <https://raw.githubusercontent.com/strands-agents/box/main/>.
 
 ## Related reading
+
+Distinguish assignment and connector identity from enforced action scope, inheritance ceilings and revocation. See [[concepts/delegated-authority-and-revocation]].
 
 Compare [[techniques/secure-agent-operations]] and [[concepts/structural-constraint-over-instruction]] for the distinction between externally enforced authority and model instructions; these are architectural comparisons, not a measured integration.
 

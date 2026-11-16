@@ -4,7 +4,7 @@ title: "Rivet Agents"
 summary: "Rivet's agent infrastructure runs coding agents as durable Actors whose conversations, tool calls and plans persist in the Actor's own SQLite database."
 type: project
 created: 2026-11-09
-updated: 2026-11-14
+updated: 2026-11-16
 depth: deep
 sources:
   - https://github.com/rivet-dev/agents
@@ -140,6 +140,8 @@ The repository file tree was read from `https://api.github.com/repos/rivet-dev/a
 Sources: <https://raw.githubusercontent.com/rivet-dev/agents/main/>.
 
 ## Related reading
+
+Distinguish reconstructing history, rerunning a procedure and safely repeating its intended effect. See [[concepts/replay-idempotency-and-effect-semantics]]. Compare persistence, interrupted work and reconciliation without assuming exactly-once external effects. See [[techniques/durable-agent-execution]].
 
 - [[briefings/2026/11/2026-11-05]]
 - [[evaluations/briefing-synthesis-2026-11-03-to-09]] — the cross-project synthesis that placed this record against [[projects/agentos]] and [[projects/builderio-agent-native]].

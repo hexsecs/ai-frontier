@@ -4,7 +4,7 @@ title: "AgentShield"
 summary: "Behavioural fingerprinting of browser agents via dynamic forms, plus the Extinction-induced Policy Drift attack on agent safeguards."
 type: project
 created: 2026-11-09
-updated: 2026-11-14
+updated: 2026-11-16
 depth: deep
 related: [concepts/structural-constraint-over-instruction, techniques/secure-agent-operations, concepts/capability-locus]
 sources:
@@ -149,5 +149,7 @@ Every quantitative result is **author-reported**; no independent replication is 
 Sources: <https://arxiv.org/abs/2610.41181> · <https://arxiv.org/html/2610.41181v1>.
 
 ## Related reading
+
+Locate enforcement surfaces and retain the limits of the tested security boundary. See [[techniques/secure-agent-operations]]. Keep task conditions, feedback, cost and scoring rules attached to reported comparisons. See [[concepts/protocol-relative-scores]].
 
 - [[briefings/2026/11/2026-11-03]]

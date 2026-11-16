@@ -5,7 +5,7 @@ title: "WebAnything: From the Wild Web to Scalable Agent Environments"
 summary: "Fully automated framework reconstructing specified real websites into source-grounded, resettable local environments for web-agent training and evaluation."
 type: project
 created: 2026-10-31
-updated: 2026-11-14
+updated: 2026-11-16
 related: [concepts/evaluator-circularity, concepts/protocol-relative-scores, concepts/scoped-assurance]
 sources:
   - url: https://arxiv.org/abs/2610.37786
@@ -84,5 +84,7 @@ The code is public (MIT) as the `webanything` package and CLI, with a frozen 244
 Single arXiv preprint (v1, October 2026) by the system's own authors, five of whom are employed by the company that releases the system; every quantitative claim on this page is **author-reported**, with no independent replication. Repository code was not cloned or executed, no benchmark was reproduced, and supplementary archives were not separately downloaded; figures were checked for internal consistency within the paper only.
 
 ## Related reading
+
+Inspect whether the system being evaluated participates in constructing or judging its own evidence. See [[concepts/evaluator-circularity]]. Keep task conditions, feedback, cost and scoring rules attached to reported comparisons. See [[concepts/protocol-relative-scores]].
 
 [Briefing 2026-10-31](../briefings/2026/10/2026-10-31.md)

@@ -4,11 +4,13 @@ title: "Artifact and claim provenance"
 summary: "Trace artifacts and reported claims to prompts, tool outputs and executed checks while keeping provenance distinct from correctness."
 type: technique
 created: 2026-11-14
-updated: 2026-11-14
+updated: 2026-11-16
 depth: full
 sources:
   - https://arxiv.org/html/2611.09395v1
   - https://arxiv.org/html/2611.05251v1
+  - https://github.com/open-artifacts-ai/open-artifacts/releases
+  - https://arxiv.org/html/2603.15914
 ---
 
 # Artifact and claim provenance
@@ -29,6 +31,14 @@ Sources: [Tracybot, abstract and architecture](https://arxiv.org/html/2611.09395
 For an auditable result, preserve the requirement or request, the relevant input snapshot, the action/tool invocation, the resulting artifact identity, the claim made about it, and the check that actually ran. Record versions or hashes where later changes would alter interpretation. This chain is a proposed engineering composition of the two designs, not a system evaluated by either study.
 
 Trace capture, artifact identity and claim support answer different questions. A line-to-prompt mapping explains an origin; it does not show that the prompt was correct. An output hash establishes identity relative to recorded bytes; it does not establish scientific validity. A validator-execution receipt establishes that a check ran; the check's adequacy remains a separate question.
+
+## Version history, rollback and sharing
+
+[[projects/open-artifacts]] documents version saving/restoring, selected-text comments and owner-controlled outside sharing ([release history](https://github.com/open-artifacts-ai/open-artifacts/releases)). These are artifact collaboration mechanisms, not evidence of autonomous task performance.
+
+A version identifies an artifact state; attribution explains an origin; rollback restores a selected state; source support establishes why a claim is warranted. None automatically supplies the others. A restored document may still contain an unsupported claim, and retaining history does not by itself preserve every originating tool output. [[concepts/contracts-and-compositional-correctness]] explains how artifact and checker obligations compose.
+
+[[projects/the-agentic-researcher]] supplies another setting: long-running investigations whose claims need run configurations and experiment outputs ([paper](https://arxiv.org/html/2603.15914)). Compare provenance completeness separately from elapsed autonomy, and treat version/sharing controls as distinct from correctness checks.
 
 ## Limits and counterevidence
 

@@ -5,7 +5,7 @@ title: "Measuring Where Intent Gets Lost in Agentic Smart Contract Synthesis"
 summary: "Exact-replay fidelity study of smart-contract synthesis: pre-generation elicitation adds 19–23 points; judges and static tools miss planted errors."
 type: project
 created: 2026-10-31
-updated: 2026-11-14
+updated: 2026-11-16
 related: [concepts/evaluator-circularity, concepts/information-content-dominance, concepts/protocol-relative-scores, concepts/scoped-assurance]
 sources:
   - url: https://arxiv.org/abs/2610.37830
@@ -81,5 +81,7 @@ A scaled-down replication can be run from the method as described in the paper's
 Every quantitative result on this page is author-reported from the single study above; no independent replication was found, and none is claimed. The paper states that an artifact repository contains per-contract sources, generated and repaired contracts, and scores; that repository was **not inspected** — its link returned HTTP 401 at review time — so its contents are reported here as paper-stated only, and the page makes no claim that any repository was tested or any benchmark reproduced. The paper contains no vendor claims; model names (GPT-5.4, GPT-5.4-mini, Claude Sonnet 5, Gemini 3.5 Flash, Gemini 2.5 Flash) are experimental conditions. The paper's suggestion that web agents acting on user requests share the same failure modes is explicitly labelled by the authors as a hypothesis they have not tested, and is recorded here as speculation, not as a result.
 
 ## Related reading
+
+Inspect whether the system being evaluated participates in constructing or judging its own evidence. See [[concepts/evaluator-circularity]]. Compare the information supplied to the agent rather than attributing changes solely to pipeline structure. See [[concepts/information-content-dominance]].
 
 [Briefing 2026-10-31](../briefings/2026/10/2026-10-31.md)

@@ -5,7 +5,7 @@ title: "BlindToChange: AI Agents Can Find Changes When Asked But Do They Look Wh
 summary: "Search agents find recent changes when asked directly but usually never look when a recommendation request doesn't mention them."
 type: project
 created: 2026-11-02
-updated: 2026-11-14
+updated: 2026-11-16
 sources:
   - url: https://arxiv.org/abs/2610.41435
     retrieved: 2026-11-02
@@ -113,5 +113,7 @@ A full-pipeline variant is also documented: the repository README gives the end-
 All benchmark results on this page are **author-reported**; the paper cites no independent replication, and none is claimed here. The evaluation ran against the **live web** (providers' native tools and Exa), so exact numerical reproduction of the main results table is not expected — the same probe set will not produce identical trajectories later; the authors' answer to drift is that the pipeline can regenerate probes from newer events. Availability is this paper's strength: the full pipeline code is public under the MIT license and the dataset under CC BY 4.0 (GitHub and Hugging Face, linked in the sources), including per-model probe tables, prompts, judging, and failure-classification scripts. The benchmark scope is important: "indirect" describes the probe, the evaluated changes are deaths and ended tenures only, and the paper proposes — but does not implement or evaluate — any verification technique; its one concrete prompt suggestion is labelled speculation by the authors themselves.
 
 ## Related reading
+
+Separate contributions from model weights, external state and the execution harness. See [[concepts/capability-locus]]. Distinguish externally enforced action boundaries from instructions a model may or may not follow. See [[concepts/structural-constraint-over-instruction]].
 
 [Briefing 2026-11-02](../briefings/2026/11/2026-11-02.md)

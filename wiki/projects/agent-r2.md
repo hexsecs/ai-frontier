@@ -4,7 +4,7 @@ title: "Agent-R² — Real-source productivity task synthesis"
 summary: "Real-source synthesis of 4k office-work tasks with fine-grained rubrics, training a 4B agent that beats Qwen3-235B on GDPval and OfficeQA."
 type: project
 created: 2026-11-10
-updated: 2026-11-14
+updated: 2026-11-16
 depth: deep
 sources:
   - https://arxiv.org/abs/2611.08219
@@ -142,5 +142,7 @@ Every quantitative result is **author-reported**; the baselines were run by the 
 Sources: <https://arxiv.org/abs/2611.08219> · <https://arxiv.org/html/2611.08219v1>.
 
 ## Related reading
+
+Match the evaluation instrument to the task and retain its measurement limits. See [[techniques/evaluation-and-simulation]].
 
 - [[briefings/2026/11/2026-11-10]]

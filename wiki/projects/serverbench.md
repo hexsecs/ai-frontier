@@ -4,7 +4,7 @@ title: "ServerBench: Agent-Designed LLM Serving Systems"
 summary: "Coding agents optimize LLM serving systems under verified workload, latency and GPU-cost constraints."
 type: benchmark
 created: 2026-11-13
-updated: 2026-11-14
+updated: 2026-11-16
 depth: brief
 related: [concepts/verified-completion-vs-apparent-success]
 sources:
@@ -35,3 +35,7 @@ In a sandbox, let two coding agents optimize a small inference service against a
 
 ## Provenance
 [[briefings/2026/11/2026-11-13]]
+
+## Conceptual context
+
+Separate the checking mechanism from the strength and scope of its warrant. See [[techniques/verification-and-evidence]].

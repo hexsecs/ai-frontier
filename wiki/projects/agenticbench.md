@@ -5,7 +5,7 @@ title: "AgenticBench"
 summary: "Independent rolling benchmark that scores AI coding-agent harnesses on what they do with local files, egress, telemetry and secrets."
 type: benchmark
 created: 2026-11-09
-updated: 2026-11-14
+updated: 2026-11-16
 related: [concepts/validation-tier-gap, techniques/secure-agent-operations, concepts/verified-completion-vs-apparent-success]
 sources:
   - url: https://agenticbench.org/
@@ -148,5 +148,7 @@ Every pass count, disclosure and status is **reported by the benchmark operator*
 Sources: <https://agenticbench.org/> · <https://agenticbench.org/method.html> · <https://agenticbench.org/leaderboard-overview.html> · <https://agenticbench.org/about.html> · <https://agenticbench.org/charter.html> · <https://agenticbench.org/disclosures.html> · <https://agenticbench.org/public-disclosures.html> · <https://agenticbench.org/honesty.html>.
 
 ## Related reading
+
+Keep task conditions, feedback, cost and scoring rules attached to reported comparisons. See [[concepts/protocol-relative-scores]].
 
 - [[briefings/2026/11/2026-11-05]]

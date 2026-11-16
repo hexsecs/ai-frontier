@@ -5,7 +5,7 @@ summary: "Three evidence-specialized agents repair vulnerabilities with no provi
 type: project
 depth: deep
 created: 2026-10-30
-updated: 2026-11-14
+updated: 2026-11-16
 related: [concepts/ground-truth-fallibility, concepts/comparator-construction-shapes-margins]
 sources:
   - url: https://arxiv.org/abs/2610.39899
@@ -135,5 +135,7 @@ Fidelity caveat: exact prompts are not reproduced in the paper text (agent guida
 Every quantitative result on this page is **author-reported**: the ExploreRepair authors' own benchmark measurements under the conditions documented above, including the adapted-baseline caveats under Limitations. The paper cites no independent replication of its results, and none of the headline numbers are vendor claims. Baseline scores (EvoRepair, IntentFix, LoopRepair, Codex) are as measured and adapted by the ExploreRepair authors, not those systems' published numbers. The 4.1%-of-CVEs statistic is a cited third-party result (Householder et al. 2020), reported rather than measured by the authors.
 
 ## Related reading
+
+Read reported margins alongside how baseline systems and comparison sets were constructed. See [[concepts/comparator-construction-shapes-margins]]. Treat reference standards and executable checks as instruments whose correctness also needs evidence. See [[concepts/ground-truth-fallibility]].
 
 [Briefing 2026-10-30](../briefings/2026/10/2026-10-30.md)

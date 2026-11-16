@@ -4,7 +4,7 @@ title: "Adversarial Speculative Reasoning"
 summary: "Trains a speculative-decoding draft to be rejected at decision points so the target model writes critical reasoning at highest precision."
 type: project
 created: 2026-11-09
-updated: 2026-11-14
+updated: 2026-11-16
 depth: deep
 sources:
   - https://arxiv.org/abs/2611.05345
@@ -141,5 +141,7 @@ Every quantitative result is **author-reported**; the baselines were run by the 
 Sources: <https://arxiv.org/abs/2611.05345> · <https://arxiv.org/html/2611.05345v1>.
 
 ## Related reading
+
+Separate contributions from model weights, external state and the execution harness. See [[concepts/capability-locus]]. Keep task conditions, feedback, cost and scoring rules attached to reported comparisons. See [[concepts/protocol-relative-scores]].
 
 - [[briefings/2026/11/2026-11-05]]

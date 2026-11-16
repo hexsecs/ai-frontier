@@ -4,7 +4,7 @@ title: "AgenTopology — Declarative multi-agent topology"
 summary: "TypeScript project defining a declarative .at language for agent teams, with a 109-rule validator and scaffold/plan targets for Claude Code, Codex and Cursor."
 type: project
 created: 2026-11-10
-updated: 2026-11-14
+updated: 2026-11-16
 depth: deep
 sources:
   - https://github.com/agentopology/agentopology
@@ -135,5 +135,7 @@ Code-inspected facts: the 109 rule identifiers and their severities in the valid
 Sources: <https://raw.githubusercontent.com/agentopology/agentopology/main/…>.
 
 ## Related reading
+
+Separate reconstructed session state, live delegated work and independently observed external effects. See [[concepts/agent-state-and-lifecycle]].
 
 - [[briefings/2026/11/2026-11-10]]

@@ -4,7 +4,7 @@ title: agent-browser
 summary: Rust CLI for agent-driven browser control with snapshot references and experimental recorded flow replay.
 type: project
 created: 2026-11-14
-updated: 2026-11-14
+updated: 2026-11-16
 depth: full
 sources:
   - https://github.com/vercel-labs/agent-browser
@@ -21,3 +21,7 @@ The replay hierarchy extends constrained browser execution ideas in [[projects/f
 **Experiment:** Replay five disposable browser tasks and measure success, latency, token cost, and unintended side effects under stale sessions.
 
 Sources: https://github.com/vercel-labs/agent-browser/releases/tag/v0.42.0 ; https://github.com/vercel-labs/agent-browser/releases/tag/v0.43.0
+
+## Conceptual context
+
+Distinguish reconstructing history, rerunning a procedure and safely repeating its intended effect. See [[concepts/replay-idempotency-and-effect-semantics]]. Compare reusable procedures by applicability conditions, execution boundaries and fallback rather than assuming universal benefits. See [[techniques/deterministic-workflow-reuse]].

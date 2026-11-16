@@ -1,7 +1,7 @@
 ---
 uid: 019a5b21-21b5-7c91-8a42-18d90b5e11f6
 title: "Open Artifacts 0.193–0.196"
-summary: "Open Artifacts 0.193–0.196 implements agent infrastructure relevant to lifecycle, authority, recovery or artifact management."
+summary: "Versioned collaborative documents, restoration and owner-controlled sharing; these features do not establish autonomous task correctness."
 type: project
 created: 2026-11-16
 updated: 2026-11-16
@@ -21,3 +21,7 @@ Open Artifacts ships document version saving/restoring and selection comments (0
 **Evidence and limits:** This is a deliberately lower-ranked cross-domain signal: persistent artifact versioning and scoped sharing could make agents easier to supervise. It is not a new autonomous-agent algorithm and should not be presented as one. Exploratory artifact collaboration; agentic novelty limited. Release documentation does not independently establish measured reliability.
 
 **Evaluation:** Have an agent revise a document through three proposed changes, restore the second version, attach source-grounded comments and attempt an unauthorized external share; verify rollback fidelity and permission enforcement.
+
+## Conceptual context
+
+Separate artifact origin and version history from evidence that the resulting claim is correct. See [[techniques/artifact-and-claim-provenance]]. Separate reported progress and local checks from independently accepted task outcomes. See [[concepts/verified-completion-vs-apparent-success]].

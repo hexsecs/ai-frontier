@@ -10,6 +10,8 @@ What establishes task success, how reliable is the grader, and when can scores b
 
 ## Start here
 
+[[concepts/contracts-and-compositional-correctness]] distinguishes local checks from integrated obligations. [[projects/alphaproof-code]] supplies a formal-checking example bounded by specification trust in [[concepts/scoped-assurance]].
+
 1. [[concepts/verified-completion-vs-apparent-success]] — Ask what outcome was independently checked.
 2. [[concepts/scoped-assurance]] — Bound the result by the scope exercised.
 3. [[concepts/protocol-relative-scores]] — Match feedback, attempts, budgets and scoring rules.

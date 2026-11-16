@@ -49,6 +49,9 @@ knowledge_ingestion:
   allow_evidence_justified_no_change: true
   preserve_existing_uid_and_created: true
   update_indexes: true
+  require_selected_entity_source_identity: true
+  comparison_link_is_not_entity_resolution: true
+  require_pr_synthesis_disposition: true
 publication:
   prefer_pull_request: true
   enable_auto_merge_after_required_checks: true
@@ -62,6 +65,9 @@ publication:
 
 synthesis_layer:
   required_after_each_briefing: true
+  foundational_definitions_require_authoritative_sources: true
+  dispositions: [update-existing, create-new, no-change-with-reason]
+  project_only_archiving_is_full_ingestion: false
   audit_recent_briefings: 7
   mine_cross_briefing_patterns: true
   require_support_and_counterexamples: true

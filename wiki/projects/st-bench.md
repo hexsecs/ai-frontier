@@ -4,7 +4,7 @@ title: "ST-Bench"
 summary: "Benchmark of 100 Earth-science analysis tasks and 2,067 queries measuring whether multi-agent systems beat a single agent, and at what cost."
 type: benchmark
 created: 2026-11-08
-updated: 2026-11-14
+updated: 2026-11-16
 depth: deep
 related: [concepts/preservation-aware-agent-improvement, concepts/verified-completion-vs-apparent-success, concepts/protocol-relative-scores]
 sources:
@@ -164,5 +164,7 @@ Every quantitative result is **author-reported**; the five MAS methods and the s
 Sources: <https://arxiv.org/abs/2610.07763> · <https://arxiv.org/html/2610.07763v1>.
 
 ## Related reading
+
+Compare independently accepted output with total coordination, compute and integration cost. See [[evaluations/multi-agent-value-and-coordination]]. Compare handoff and coordination mechanisms rather than assuming that more workers improve results. See [[techniques/multi-agent-orchestration]].
 
 - [[briefings/2026/11/2026-11-08]]

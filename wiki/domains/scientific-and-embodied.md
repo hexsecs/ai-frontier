@@ -4,7 +4,7 @@ title: "Scientific and embodied systems"
 summary: "Agentic research, robotics and scientific instruments grouped as an application domain, not a single mechanism."
 type: domain
 created: 2026-11-09
-updated: 2026-11-09
+updated: 2026-11-16
 depth: brief
 sources:
   - https://arxiv.org/abs/2611.05251
@@ -15,3 +15,6 @@ sources:
 # Scientific and embodied systems
 
 This domain groups application contexts, not a validated universal agentic technique. See [[projects/auto-research]], [[projects/fa-agent]], [[projects/cheme-as-code]], [[projects/roboarchitect]] for canonical source-backed records. Compare outcomes only after matching task scope, deployment maturity, and independent verification tier. Cross-domain patterns and limitations are synthesized in [[evaluations/briefing-synthesis-2026-11-03-to-09]].
+
+
+[[projects/the-agentic-researcher]] provides a canonical long-running scientific workflow record. [[concepts/agent-state-and-lifecycle]] and [[techniques/artifact-and-claim-provenance]] distinguish duration, execution state and the evidence behind a scientific claim.

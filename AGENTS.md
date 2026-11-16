@@ -48,3 +48,10 @@ The KB is the knowledge. Write articles about systems, mechanisms, evidence, com
 - Use full canonical IDs in `related:`. This metadata and generated backlinks provide navigation only; explain scientific relationships and provenance in article prose.
 - A project describes one implementation; a technique explains a reusable mechanism; a concept states a bounded cross-project phenomenon; an evaluation compares evidence; an experiment specifies a test and its status. Briefings preserve dated discovery records.
 - Run `python scripts/editorial_report.py` for nonblocking navigation suggestions. Suggestions are not link quotas, evidence judgments or grounds for automatic scientific backlinks.
+
+
+## Full wiki ingestion
+
+For each finding, resolve its own canonical entity by source identity; a comparison link alone is insufficient. Record in the PR the general concept, specific mechanism, synthesis pages reviewed and disposition: update-existing, create-new or no-change with a specific evidence-based reason. Project-only archiving is not full wiki ingestion. Verify declared substantive synthesis changes against the diff and report unresolved source identity/access separately.
+
+Concept pages may teach sourced foundational distinctions as well as bounded cross-project phenomena. Definitions require authoritative support; empirical claims about benefit, transfer or prevalence retain the multiple-source and counterevidence requirements. Prefer substantive updates to existing syntheses over duplicate general overviews. A dated architecture diagram or frontier-signal paragraph does not replace living canonical integration.

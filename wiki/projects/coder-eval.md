@@ -4,7 +4,7 @@ title: "Coder Eval — Declarative CI Tests for Coding Agents"
 summary: "Runs coding agents on sandboxed YAML tasks with measurable postconditions, skill activation checks and CI gates."
 type: project
 created: 2026-11-12
-updated: 2026-11-14
+updated: 2026-11-16
 depth: brief
 related: [projects/harness-matters-web-agent-security]
 sources:
@@ -43,3 +43,7 @@ Immediately actionable implementation; newer repository activity is not evidence
 
 - [[briefings/2026/11/2026-11-12]]
 - [[projects/harness-matters-web-agent-security]] — analyst comparison, not a demonstrated head-to-head; source URLs and limitations in the briefing.
+
+## Conceptual context
+
+Separate reported progress and local checks from independently accepted task outcomes. See [[concepts/verified-completion-vs-apparent-success]]. Separate the checking mechanism from the strength and scope of its warrant. See [[techniques/verification-and-evidence]].

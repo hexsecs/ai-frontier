@@ -5,7 +5,7 @@ title: "FilingLoop: Evaluating and Evolving LLM Agents for Corporate Disclosure 
 summary: "Benchmark and self-evolving agent framework for SEC disclosure review and revision, learning role-specific procedures across cases without weight updates."
 type: project
 created: 2026-10-31
-updated: 2026-11-14
+updated: 2026-11-16
 related: [concepts/evaluator-circularity, concepts/improvement-lives-in-external-state]
 sources:
   - url: https://arxiv.org/abs/2610.37905
@@ -89,5 +89,7 @@ A reader can reproduce the *design* from the paper's appendices, which specify c
 Every quantitative claim on this page is author-reported: one research group, its own benchmark, a single seeded stream, and a single grading model that also serves as the framework's backbone, fact matcher, and skill editor. No independent replication exists — the only secondary coverage found restates the abstract. The paper implies an accompanying implementation (it references shared prompts and build scripts) but publishes no code or data URL, and a web search on 2026-11-02 found no official repository; the underlying records are public SEC EDGAR documents. Nothing on this page rests on executing the system or reproducing the benchmark locally.
 
 ## Related reading
+
+Inspect whether the system being evaluated participates in constructing or judging its own evidence. See [[concepts/evaluator-circularity]]. Locate persistent artifacts separately from changes to model weights. See [[concepts/improvement-lives-in-external-state]].
 
 [Briefing 2026-10-31](../briefings/2026/10/2026-10-31.md)

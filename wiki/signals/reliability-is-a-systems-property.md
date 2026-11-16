@@ -5,8 +5,11 @@ title: "Agent reliability is a systems property"
 summary: "Reliability as a loop of verification, scoped recovery, and gated memory survives only in scoped form; its evaluation link grades itself."
 type: signal
 created: 2026-11-02
-updated: 2026-11-14
-sources: []
+updated: 2026-11-16
+sources:
+  - https://raw.githubusercontent.com/agentclientprotocol/agent-client-protocol/4aab69b4e6bcb53965ff5b1141d2f04a62a25c6c/CHANGELOG.md
+  - https://raw.githubusercontent.com/compozy/compozy/8cbf8a5a4dcb343f349e2b47635a461bea0c9b24/CHANGELOG.md
+  - https://github.com/framerslab/agentos/releases/tag/v0.18.0
 ---
 
 # Agent reliability is a systems property
@@ -65,6 +68,12 @@ The original page proposed: compare workflows with and without independent verif
 2. **Fix the yardstick before outcomes exist** (precommitment): criteria, denominators and the grader frozen and sealed in advance, with the grader outside the system's own model family, so the evaluate stage does not reintroduce circularity into the experiment itself.
 3. **Keep an untouched hold-out for the update arm,** evaluated once at the end, and report gate pass rates alongside hold-out regressions — KARMA shows the gate and the hold-out can disagree, and that disagreement is a result, not an embarrassment.
 4. **Measure the original four quantities plus preserved work at contribution granularity** (Dittany's accepted-result retention is the model), so "recover selectively" is tested as scope selection, not as effort.
+
+## Lifecycle correctness as a bounded hypothesis
+
+The lifecycle records add a narrower systems question: can session state, delegated work, authority and retention remain consistent across interruption? [[projects/agent-client-protocol]] supplies experimental replay surfaces, [[projects/compozy]] documents parent/child recovery fixes, and [[projects/framerslab-agentos]] documents tombstones intended to survive store restoration ([ACP](https://raw.githubusercontent.com/agentclientprotocol/agent-client-protocol/4aab69b4e6bcb53965ff5b1141d2f04a62a25c6c/CHANGELOG.md), [Compozy](https://raw.githubusercontent.com/compozy/compozy/8cbf8a5a4dcb343f349e2b47635a461bea0c9b24/CHANGELOG.md), [AgentOS](https://github.com/framerslab/agentos/releases/tag/v0.18.0)).
+
+These independently documented mechanisms motivate the hypothesis; release notes do not establish a combined reliability gain or a universal industry trend. A stranded parent, duplicated effect, surviving unauthorized grant or resurrected deleted record would falsify the corresponding implementation claim under the tested conditions. [[experiments/lifecycle-authority-and-retention]] makes that proposed test explicit. [[concepts/agent-state-and-lifecycle]] and [[concepts/delegated-authority-and-revocation]] keep the claim at its actual boundary.
 
 ## Status
 

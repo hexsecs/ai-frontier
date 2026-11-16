@@ -5,7 +5,7 @@ title: "Verification and evidence"
 summary: "Checking agent claims against gathered evidence — executable tests, replay scorers, provenance gates — with warrant bounded by the scope actually exercised."
 type: technique
 created: 2026-11-02
-updated: 2026-11-14
+updated: 2026-11-16
 related: [projects/vericua, projects/explorerepair, projects/exlabel, projects/prefix-executability, projects/context-as-infrastructure, projects/github-contribution-check, concepts/scoped-assurance, concepts/abstention-as-first-class-verdict, concepts/structural-constraint-over-instruction]
 sources:
   - url: https://arxiv.org/abs/2610.40578
@@ -18,6 +18,7 @@ sources:
     retrieved: 2026-11-02
   - url: https://arxiv.org/abs/2610.41172
     retrieved: 2026-11-02
+  - https://deepmind.google/documents/36/Formal_Verification_of_Signal_4.pdf
 ---
 
 # Verification and evidence
@@ -71,6 +72,14 @@ All figures below are author-reported, under the conditions on the project pages
 **Redundant checkers fail together when their errors correlate.** ExploreRepair's aggregation discarded a correct repair in its documented case (CVE-2021-39163) because both intermediate aggregators adopted the same wrong assumption and the final stage ratified it. VeriCUA's counter-design — diverse passes combined by rule rather than identical draws combined by vote — exists precisely because corroboration only counts when the probes are independent; its arbitration demands refutations from *separate* probes for the same reason.
 
 **Containment is not correctness.** Contribution Check demonstrates that a reviewer can be perfectly fenced — deterministic scope, validated evidence, terminal abstention, safe-output writes — while the quality of its verdicts remains entirely unmeasured. Structural constraint guarantees the checker cannot exceed its remit; it says nothing about whether the checker is right inside it. The same gap, smaller, applies to ExLabel, whose downstream value is demonstrated for exactly one training configuration.
+
+## Proof acceptance and specification authority
+
+[[projects/alphaproof-code]] separates human approval of Lean specifications from autonomous proof search; generated proofs are accepted only when the Lean kernel checks them against those specifications ([technical report](https://deepmind.google/documents/36/Formal_Verification_of_Signal_4.pdf)). This is a different checking mechanism from a model judging its own explanation.
+
+The warrant is still conditional: proof checking concerns the approved specification and trusted machine semantics, not every security expectation a user might have. [[concepts/scoped-assurance]] applies at that boundary. [[concepts/contracts-and-compositional-correctness]] distinguishes local obligations from whole-system requirements, while the existing intent-loss record distinguishes fidelity to an implementation from author intent. Neither machine-checked proof volume nor passing tests alone resolves a mistaken specification.
+
+The analogy with [[projects/spec-first-verification-agents]] is architectural: that canonical record is a proposal, whereas AlphaProof Code reports a specific application. Do not transfer the latter's demonstrated scope to every proposed verification-agent design.
 
 ## Open questions
 

@@ -5,7 +5,7 @@ title: "Collaborative AI agents for autonomous experimental research with solid-
 summary: "Multi-agent AI laboratory that selects research questions, proved an exact NV-ensemble calibration law (L²+1), tested on a diamond quantum-spin instrument."
 type: project
 created: 2026-10-30
-updated: 2026-11-14
+updated: 2026-11-16
 related: [concepts/evaluator-circularity]
 sources:
   - url: https://arxiv.org/abs/2610.40589
@@ -79,5 +79,7 @@ A replicator needs an ensemble NV apparatus comparable to the paper's (room-temp
 All quantitative results are author-reported; the verdict grades, process metrics and the drift diagnosis originate inside the system itself. The GitHub repository was **not** inspected; only the paper's release statement about it is relied on. Data and analysis code, described as available on request, were not requested. No independent replication is cited. This replaces the import stub's earlier note: the contents have now been verified against the full text, which is a different claim from independent replication — the latter remains absent.
 
 ## Related reading
+
+Inspect whether the system being evaluated participates in constructing or judging its own evidence. See [[concepts/evaluator-circularity]].
 
 [Briefing 2026-10-30](../briefings/2026/10/2026-10-30.md)

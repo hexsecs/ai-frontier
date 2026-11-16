@@ -4,7 +4,7 @@ title: "Agensh"
 summary: "Microsoft's self-organized multi-agent harness: workers claim and merge sub-tasks through Gitea, Mattermost and a shared-context board."
 type: project
 created: 2026-11-09
-updated: 2026-11-14
+updated: 2026-11-16
 depth: deep
 related: [techniques/multi-agent-orchestration, concepts/capability-locus, concepts/verified-completion-vs-apparent-success]
 sources:
@@ -151,6 +151,8 @@ Code-inspected facts are the repository layout, the board's verification logic, 
 No independent evaluation of the coordination substrate is known from the inspected files.
 
 ## Related reading
+
+Compare independently accepted output with total coordination, compute and integration cost. See [[evaluations/multi-agent-value-and-coordination]].
 
 - [[briefings/2026/11/2026-11-03]]
 - [[techniques/multi-agent-orchestration]] — reusable design pattern this project instantiates.

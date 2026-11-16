@@ -19,3 +19,5 @@ title: Techniques
 - [[techniques/artifact-and-claim-provenance]] — Mechanism comparison, evidence boundaries and a proposed controlled test.
 
 - [[techniques/gated-admission-and-revalidation]] — Mechanism comparison, evidence boundaries and a proposed controlled test.
+
+- [[techniques/deterministic-workflow-reuse|Deterministic workflow reuse]] — Compare selective compilation, applicability-conditioned procedures and recorded replay without assuming equivalent effects.

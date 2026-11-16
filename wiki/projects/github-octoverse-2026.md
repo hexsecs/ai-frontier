@@ -4,7 +4,7 @@ title: "GitHub Octoverse 2026"
 summary: "GitHub's 2026 platform report: agent-started PRs pass 40% of pull requests; all figures are vendor-reported and observational, not audited."
 type: case-study
 created: 2026-11-09
-updated: 2026-11-14
+updated: 2026-11-16
 depth: deep
 sources:
   - https://github.blog/news-insights/octoverse/octoverse-commits-pushes-reach-new-highs-in-2026-as-developers-build-with-agents/
@@ -148,5 +148,7 @@ Every quantitative result is **vendor-reported by GitHub about its own platform*
 Sources: <https://github.blog/news-insights/octoverse/octoverse-commits-pushes-reach-new-highs-in-2026-as-developers-build-with-agents/> · <https://github.blog/news-insights/octoverse/> · <https://docs.github.com/copilot/concepts/models/auto-model-selection> · <https://docs.github.com/pull-requests/how-tos/stacked-pull-requests>.
 
 ## Related reading
+
+Keep implementation, simulation, field and independent-evaluation evidence at their stated tiers. See [[concepts/validation-tier-gap]].
 
 - [[briefings/2026/11/2026-11-04]]

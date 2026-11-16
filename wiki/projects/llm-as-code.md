@@ -4,7 +4,7 @@ title: "LLM-as-Code: Agentic Programming for Agent Harness"
 summary: "Call-tree/DAG-derived context and deterministic control flow rather than an LLM controlling every step."
 type: project
 created: 2026-11-11
-updated: 2026-11-14
+updated: 2026-11-16
 depth: brief
 related: [projects/receipt, concepts/structural-constraint-over-instruction]
 sources:
@@ -43,3 +43,7 @@ The abstract reports greater stability without a headline quantitative figure; n
 - [[concepts/structural-constraint-over-instruction]] — architecture-level support, not proof of effectiveness.
 
 - [[briefings/2026/11/2026-11-11]]
+
+## Conceptual context
+
+Compare reusable procedures by applicability conditions, execution boundaries and fallback rather than assuming universal benefits. See [[techniques/deterministic-workflow-reuse]]. Distinguish admitting a reusable artifact from certifying every later invocation or transfer. See [[techniques/gated-admission-and-revalidation]].

@@ -5,7 +5,7 @@ title: "GitHub Copilot Fusion"
 summary: "GitHub Copilot Fusion: generally available runtime router and orchestrator for Copilot models and execution patterns."
 type: project
 created: 2026-11-01
-updated: 2026-11-14
+updated: 2026-11-16
 related: [concepts/improvement-lives-in-external-state]
 sources:
   - url: https://github.blog/changelog/2026-10-28-route-and-orchestrate-models-with-github-copilot-fusion/
@@ -119,5 +119,7 @@ The inspected facts are the documented routing and orchestration model, the effo
 Sources: <https://github.blog/changelog/2026-10-28-route-and-orchestrate-models-with-github-copilot-fusion/> · <https://docs.github.com/copilot/concepts/models/copilot-fusion> · <https://docs.github.com/copilot/reference/copilot-billing/models-and-pricing>.
 
 ## Related reading
+
+Locate persistent artifacts separately from changes to model weights. See [[concepts/improvement-lives-in-external-state]]. Compare handoff and coordination mechanisms rather than assuming that more workers improve results. See [[techniques/multi-agent-orchestration]].
 
 [Briefing 2026-11-01](../briefings/2026/11/2026-11-01.md)

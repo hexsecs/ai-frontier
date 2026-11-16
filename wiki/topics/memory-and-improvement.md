@@ -10,6 +10,8 @@ What persists between tasks, how is it updated, and which previous capabilities 
 
 ## Start here
 
+The retention section of [[techniques/agent-skills-and-memory]] distinguishes recall from forbidden recall. [[projects/framerslab-agentos]] supplies one documented forgetting implementation; [[experiments/lifecycle-authority-and-retention]] tests restoration without claiming a measured privacy guarantee.
+
 1. [[techniques/agent-skills-and-memory]] — Compare stored procedures, query-time history and learned file operations.
 2. [[concepts/capability-locus]] — Separate contributions from weights, harness and external state.
 3. [[concepts/preservation-aware-agent-improvement]] — Count lost as well as newly solved cases.

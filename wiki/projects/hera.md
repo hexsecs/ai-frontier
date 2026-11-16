@@ -5,7 +5,7 @@ title: "HERA: Assessing an Autonomous Agent for Quantum Device Measurement"
 summary: "Autonomous cryogenic transport measurements of quantum devices by an LLM agent with a curated knowledge base, validated in a blinded expert trial."
 type: project
 created: 2026-10-31
-updated: 2026-11-14
+updated: 2026-11-16
 related: [concepts/evaluator-circularity, concepts/improvement-lives-in-external-state, concepts/capability-locus]
 sources:
   - url: https://arxiv.org/abs/2610.39074
@@ -93,5 +93,7 @@ The skeleton of one is fully specified by the paper's own design, and needs no c
 Every quantitative result on this page is **author-reported** from arXiv:2610.39074 (Gomez, Sharpe, et al., SIMES/SLAC and Stanford, October 2026). Three transparency notes: (1) per-model absolute P(call) means appear only inside a figure image in the paper and were not transcribed, so this page reports gains and pooled values from text and tables only; (2) the GitHub repository and Stanford deposit in Sources are recorded as stated in the paper's availability statements and were not separately inspected; (3) the paper declares support from an Anthropic AI for Science Program award — Anthropic develops the Claude models evaluated — with Anthropic stated to have had no role in design, data collection, analysis, or the decision to publish, and a co-author employed by Amazon Web Services with the work stated to be independent of Amazon.
 
 ## Related reading
+
+Separate contributions from model weights, external state and the execution harness. See [[concepts/capability-locus]]. Inspect whether the system being evaluated participates in constructing or judging its own evidence. See [[concepts/evaluator-circularity]].
 
 [Briefing 2026-10-31](../briefings/2026/10/2026-10-31.md)

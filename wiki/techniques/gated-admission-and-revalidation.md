@@ -4,12 +4,13 @@ title: "Gated admission and revalidation"
 summary: "Validate reusable agent artifacts before admission, retain applicable evidence and revalidate after relevant changes."
 type: technique
 created: 2026-11-14
-updated: 2026-11-14
+updated: 2026-11-16
 depth: full
 sources:
   - https://arxiv.org/html/2610.39508v1
   - https://arxiv.org/html/2610.39884v2
   - https://arxiv.org/html/2611.05251v1
+  - https://github.com/vercel-labs/agent-browser/releases/tag/v0.42.0
 ---
 
 # Gated admission and revalidation
@@ -29,6 +30,12 @@ Sources: [SkillCompiler, program assets and validation](https://arxiv.org/html/2
 ## Design questions
 
 Keep candidate creation separate from authority to promote. Record the accepted artifact and the conditions under which its checks apply. Reuse should consult those conditions rather than treating a historical pass as permanent certification. A rollback snapshot supports recovery; it does not identify every semantic regression. Invocation authorization remains distinct from admission: a valid tool may still be inappropriate for the current request. Compare [[projects/toolguardian]] and [[topics/security-and-authority]].
+
+## Applicability after replay and environment changes
+
+[[techniques/deterministic-workflow-reuse]] compares operation compilation, task compilation and recorded replay. [[projects/skillcompiler]] explicitly requires applicable validation records and observable preconditions; [[projects/agent-browser]] instead documents saved-flow execution tiers ([SkillCompiler](https://arxiv.org/html/2610.39508v1), [agent-browser](https://github.com/vercel-labs/agent-browser/releases/tag/v0.42.0)). Do not infer equivalent admission guarantees from the fact that both reuse an artifact.
+
+When a resource, session, permission or requirement changes, ask which prior validation still applies. [[concepts/replay-idempotency-and-effect-semantics]] explains why deterministic rerunning does not settle an uncertain mutation. [[concepts/contracts-and-compositional-correctness]] explains why valid local artifacts need integration checks. These are analytical implications and proposed evaluation dimensions, not measured benefits from a demonstrated combined system.
 
 ## Limits and counterexamples
 

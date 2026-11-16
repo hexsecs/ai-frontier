@@ -5,7 +5,7 @@ title: "OpenBot"
 summary: "CopilotKit's self-hosted agent workspace: an audit-first CEL policy gateway records every action before it runs, with a permissive shipped default."
 type: project
 created: 2026-11-02
-updated: 2026-11-14
+updated: 2026-11-16
 related: [concepts/scoped-assurance, concepts/structural-constraint-over-instruction, concepts/validation-tier-gap]
 sources:
   - url: https://github.com/CopilotKit/openbot
@@ -151,5 +151,7 @@ Facts about the mechanism, the defaults, the policy semantics, the audit event s
 No independently reproduced OpenBot performance result is cited.
 
 ## Related reading
+
+Distinguish assignment and connector identity from enforced action scope, inheritance ceilings and revocation. See [[concepts/delegated-authority-and-revocation]].
 
 [Briefing 2026-11-02](../briefings/2026/11/2026-11-02.md)

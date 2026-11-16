@@ -4,7 +4,7 @@ title: "GeoFaham: Multi-Agent Disaster Geospatial Analytics"
 summary: "Specialist agents coordinate geospatial analysis with typed artifacts, persistent responses and dependency-aware planning."
 type: project
 created: 2026-11-13
-updated: 2026-11-14
+updated: 2026-11-16
 depth: brief
 related: [projects/crossswe]
 sources:
@@ -38,5 +38,7 @@ Replay five public disaster tasks and inspect coordinate reference systems, time
 
 
 ## Related reading
+
+Distinguish local validity, dependency compatibility and whole-task acceptance. See [[concepts/contracts-and-compositional-correctness]].
 
 [[techniques/multi-agent-orchestration]] provides context for typed artifact handoffs; [[topics/coordination-and-orchestration]] compares the distinct integration checks needed across domains.
