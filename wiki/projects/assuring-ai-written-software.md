@@ -4,7 +4,7 @@ title: "A Case Study in Assuring AI-Written Software"
 summary: "One operator's production healthcare platform, built by coding agents and governed by agents, exposed proxy checks, silent audits and an unsafe repair."
 type: case-study
 created: 2026-11-09
-updated: 2026-11-14
+updated: 2026-11-16
 depth: deep
 sources:
   - https://arxiv.org/abs/2610.08651
@@ -125,5 +125,7 @@ Every factual statement about the deployment, the workflow and the incidents is 
 Sources: <https://arxiv.org/abs/2610.08651> · <https://arxiv.org/html/2610.08651v1>.
 
 ## Related reading
+
+Separate the checking mechanism from the strength and scope of its warrant. See [[techniques/verification-and-evidence]].
 
 - [[briefings/2026/11/2026-11-09]]

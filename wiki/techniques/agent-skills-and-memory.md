@@ -2,10 +2,10 @@
 uid: 3c9975ac-2462-4213-a7e8-16e89103cf90
 depth: deep
 title: "Agent skills and memory"
-summary: "Persistent skills and memory let frozen models improve when admission to the store is gated; ungated memory and unmeasured stores return nulls."
+summary: "Agent memory spans retrieved history, reusable procedures, learned file operations and deletion controls; admission and transfer bound the evidence."
 type: technique
 created: 2026-11-02
-updated: 2026-11-14
+updated: 2026-11-16
 related: [projects/coding-agent-memory-post-training-ii, projects/skillcompiler, projects/karma, projects/filingloop, projects/context-as-infrastructure, projects/clingex, projects/security-impact-of-coding-agent-memory-files, concepts/improvement-lives-in-external-state, concepts/capability-locus, projects/just-in-time-agent-memory, projects/lifelong-materials-agent-memory]
 sources:
   - https://arxiv.org/abs/2611.14009
@@ -23,6 +23,8 @@ sources:
     retrieved: 2026-11-02
   - url: https://arxiv.org/abs/2610.38521
     retrieved: 2026-11-02
+  - https://github.com/framerslab/agentos/releases/tag/v0.18.0
+  - https://raw.githubusercontent.com/paperclipai/paperclip/b4fa1c7fb1c9adafc6407bc46381a0ab89f4b4fd/releases/v2026.1005.0.md
 ---
 
 # Agent skills and memory
@@ -71,6 +73,14 @@ All results in this section are **author-reported** from the projects' own paper
 - **The nulls have their own gaps.** The memory-files study has no benign-file control, so it cannot separate "an instruction file's mere presence changes behaviour" from "malicious guidance changes behaviour" — the attribution question its near-null makes central. Context as Infrastructure never measures its compilation build cost, so its amortisation argument cannot be checked against its own deployment.
 - **Experience can travel badly.** EvoTeam exists because naive cross-task reuse hurt: continuing a strong baseline across heterogeneous tasks underperformed target-only training on all three metrics examined. KARMA's transfer matrix shows the same asymmetry — one domain's evolved knowledge (Automotive) lowered every other domain's score. A gated store controls what enters; it does not control where the contents generalise.
 - **The frozen reader bounds the artifact.** EvoTeam states that effective use of stored experience "depends on the base model's ability to correctly interpret and apply the stored guidance," and [[concepts/capability-locus]] records the unresolved HERA–AgenticDS contradiction on exactly this point: in one system the corpus carried quality, in another the model did. Stores and readers are complements, and this corpus never varies the reader while holding the artifact fixed.
+
+## Retention, forgetting and restored state
+
+Improving recall and preventing forbidden recall are different objectives. [[projects/framerslab-agentos]] documents a forgotten-user ledger, tombstone state copied outside the main store and reapplication when stores are opened, including restoration scenarios ([v0.18 release](https://github.com/framerslab/agentos/releases/tag/v0.18.0)). That is one documented implementation, not independent evidence of a general privacy guarantee.
+
+Retaining the instruction that data must remain absent is different from retaining the data itself. Test derived traces/chunks, retrieval indexes and old snapshots as well as the active memory rows. Contrast this governance problem with [[projects/just-in-time-agent-memory]]'s retrieval of preserved history and [[projects/coding-agent-memory-post-training-ii]]'s learned file operations: neither mechanism alone establishes consent or deletion semantics.
+
+[[projects/paperclip]] documents files persisting across tasks ([release](https://raw.githubusercontent.com/paperclipai/paperclip/b4fa1c7fb1c9adafc6407bc46381a0ab89f4b4fd/releases/v2026.1005.0.md)); persistence should therefore state whose state survives, for how long and under which deletion authority. [[concepts/delegated-authority-and-revocation]] explains revocation, and [[experiments/lifecycle-authority-and-retention]] specifies a proposed restoration test. The cited deletion evidence comes from one implementation; cross-system transfer and broader privacy guarantees remain unmeasured.
 
 ## Open questions
 

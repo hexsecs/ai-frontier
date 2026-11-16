@@ -10,6 +10,8 @@ How do agents execute tools, survive interruptions and establish what actually h
 
 ## Start here
 
+[[concepts/agent-state-and-lifecycle]] introduces the state model; [[concepts/replay-idempotency-and-effect-semantics]] explains retries and effects. [[experiments/lifecycle-authority-and-retention]] tests those boundaries.
+
 1. [[techniques/durable-agent-execution]] — Compare interrupted calls, safe replay and reconciliation.
 2. [[concepts/verified-completion-vs-apparent-success]] — Distinguish a completion claim from an observed outcome.
 3. [[techniques/adaptive-recovery]] — Choose repair scope and account for downstream dependencies.

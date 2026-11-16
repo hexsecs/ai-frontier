@@ -4,7 +4,7 @@ title: "PR Sous Chef"
 summary: "gh-aw PR nudger: deterministic prefilter, idempotent state fingerprint, delegated Copilot assignment; two of four published runs failed."
 type: workflow
 created: 2026-11-09
-updated: 2026-11-14
+updated: 2026-11-16
 depth: deep
 sources:
   - https://github.github.com/gh-aw/blog/2026-11-04-agent-of-the-day/
@@ -144,6 +144,8 @@ The prefilter is deterministic, which makes most of this workflow's behaviour te
 Sources: <https://github.github.com/gh-aw/blog/2026-11-04-agent-of-the-day/> · <https://raw.githubusercontent.com/github/gh-aw/main/.github/workflows/pr-sous-chef.md> · <https://raw.githubusercontent.com/github/gh-aw/main/.github/workflows/pr-finisher.md> · <https://raw.githubusercontent.com/github/gh-aw/main/scripts/pr-sous-chef.mjs> · <https://github.github.com/gh-aw/reference/safe-outputs/>.
 
 ## Related reading
+
+Distinguish reconstructing history, rerunning a procedure and safely repeating its intended effect. See [[concepts/replay-idempotency-and-effect-semantics]]. Treat insufficient evidence and a justified no-op as explicit outcomes rather than forced completion. See [[concepts/abstention-as-first-class-verdict]].
 
 - [[briefings/2026/11/2026-11-06]]
 - [[briefings/2026/11/2026-11-04]]

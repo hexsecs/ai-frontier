@@ -4,7 +4,7 @@ title: "Late Autumn"
 summary: "LLM coding agents specialize a general lifelong multi-robot planner to one modeled warehouse, raising throughput 22-60% with reviewable scored commits."
 type: project
 created: 2026-11-09
-updated: 2026-11-14
+updated: 2026-11-16
 depth: deep
 sources:
   - https://arxiv.org/abs/2611.02391
@@ -159,5 +159,7 @@ Every quantitative result is **author-reported**; there is no peer-reviewed venu
 Sources: <https://arxiv.org/abs/2611.02391> · <https://arxiv.org/html/2611.02391v1>.
 
 ## Related reading
+
+Separate contributions from model weights, external state and the execution harness. See [[concepts/capability-locus]]. Count earlier capabilities lost as well as new cases solved when judging an update. See [[concepts/preservation-aware-agent-improvement]].
 
 - [[briefings/2026/11/2026-11-06]]

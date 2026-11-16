@@ -4,7 +4,7 @@ title: "AutoSR: Automatic Symbolic Regression by Searching Research States"
 summary: "Branch-local research memory plus asynchronous proposer/reviewer experiments and evidence-preserving tree search."
 type: project
 created: 2026-11-11
-updated: 2026-11-11
+updated: 2026-11-16
 depth: brief
 sources:
   - https://arxiv.org/abs/2608.16876
@@ -39,3 +39,7 @@ Older exploratory selection; nine selected cases are feasibility evidence, not a
 ## Related
 
 - [[briefings/2026/11/2026-11-11]]
+
+## Conceptual context
+
+Separate artifact origin and version history from evidence that the resulting claim is correct. See [[techniques/artifact-and-claim-provenance]]. Separate reported progress and local checks from independently accepted task outcomes. See [[concepts/verified-completion-vs-apparent-success]].

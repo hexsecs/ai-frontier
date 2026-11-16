@@ -1,0 +1,3157 @@
+{
+  "date": "2026-11-16",
+  "base_commit": "bdf09287f51dd31d66d4cc0cb3d7ab97eb512390",
+  "scope": {
+    "briefings": 17,
+    "finding_occurrences": 103,
+    "distinct_canonical_records": 103,
+    "substantive_synthesis_files": 16
+  },
+  "interpretation": "Dispositions distinguish substantive synthesis from navigation. No-change decisions do not mean the finding was ignored. Historical factual text is preserved.",
+  "findings": [
+    {
+      "briefing": "briefings/2026/10/2026-10-30",
+      "finding": 1,
+      "entity": "projects/vericua",
+      "entity_sources": [
+        {
+          "url": "https://arxiv.org/abs/2610.40578",
+          "retrieved": "2026-11-02"
+        }
+      ],
+      "general_concept_or_mechanism": "concepts/abstention-as-first-class-verdict",
+      "syntheses_reviewed": [
+        "concepts/abstention-as-first-class-verdict",
+        "concepts/comparator-construction-shapes-margins"
+      ],
+      "disposition": "no-change-with-reason",
+      "reason": "VeriCUA: Verification as Agentic Exploration for Computer-Using Agents: Active verification of computer-use agents by a separate post-hoc verifier, independent of the executing agent's own completion claims. The reviewed explanations (concepts/abstention-as-first-class-verdict, concepts/comparator-construction-shapes-margins) already provide the relevant distinctions. Reprocessing this historical finding supplies navigation, not a newly checked result that changes their empirical conclusions.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "historical_limit": "Reconstructed or partial archive; original completeness and evidence qualifications preserved.",
+      "substantive_synthesis_destinations": [],
+      "mechanism_summary": "Active verification of computer-use agents by a separate post-hoc verifier, independent of the executing agent's own completion claims.",
+      "navigation_only_destinations": [
+        "concepts/abstention-as-first-class-verdict",
+        "concepts/comparator-construction-shapes-margins"
+      ]
+    },
+    {
+      "briefing": "briefings/2026/10/2026-10-30",
+      "finding": 2,
+      "entity": "projects/explorerepair",
+      "entity_sources": [
+        {
+          "url": "https://arxiv.org/abs/2610.39899",
+          "retrieved": "2026-11-02"
+        },
+        {
+          "url": "https://arxiv.org/html/2610.39899v1",
+          "retrieved": "2026-11-02"
+        }
+      ],
+      "general_concept_or_mechanism": "concepts/comparator-construction-shapes-margins",
+      "syntheses_reviewed": [
+        "concepts/comparator-construction-shapes-margins",
+        "concepts/ground-truth-fallibility"
+      ],
+      "disposition": "no-change-with-reason",
+      "reason": "ExploreRepair: Evidence-Specialized Agents for Vulnerability Repair under Information Constraints: Three evidence-specialized agents repair vulnerabilities with no provided proof-of-vulnerability test — one builds its own — given only a function-level hint. The reviewed explanations (concepts/comparator-construction-shapes-margins, concepts/ground-truth-fallibility) already provide the relevant distinctions. Reprocessing this historical finding supplies navigation, not a newly checked result that changes their empirical conclusions.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "historical_limit": "Reconstructed or partial archive; original completeness and evidence qualifications preserved.",
+      "substantive_synthesis_destinations": [],
+      "mechanism_summary": "Three evidence-specialized agents repair vulnerabilities with no provided proof-of-vulnerability test — one builds its own — given only a function-level hint.",
+      "navigation_only_destinations": [
+        "concepts/comparator-construction-shapes-margins",
+        "concepts/ground-truth-fallibility"
+      ]
+    },
+    {
+      "briefing": "briefings/2026/10/2026-10-30",
+      "finding": 3,
+      "entity": "projects/exlabel",
+      "entity_sources": [
+        {
+          "url": "https://arxiv.org/abs/2610.39417",
+          "retrieved": "2026-11-02"
+        },
+        {
+          "url": "https://github.com/ZJU-CTAG/ExLabel",
+          "retrieved": "2026-11-02"
+        }
+      ],
+      "general_concept_or_mechanism": "concepts/ground-truth-fallibility",
+      "syntheses_reviewed": [
+        "concepts/ground-truth-fallibility",
+        "concepts/improvement-lives-in-external-state"
+      ],
+      "disposition": "no-change-with-reason",
+      "reason": "Well-Specified and Well-Tested? Assessing SWE-bench-Style Datasets with a Self-Evolving Agent: Self-evolving experience-bank evaluator labeling SWE-bench-style dataset instances for task clarity and test coverage (suite adequacy). The reviewed explanations (concepts/ground-truth-fallibility, concepts/improvement-lives-in-external-state) already provide the relevant distinctions. Reprocessing this historical finding supplies navigation, not a newly checked result that changes their empirical conclusions.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "historical_limit": "Reconstructed or partial archive; original completeness and evidence qualifications preserved.",
+      "substantive_synthesis_destinations": [],
+      "mechanism_summary": "Self-evolving experience-bank evaluator labeling SWE-bench-style dataset instances for task clarity and test coverage (suite adequacy).",
+      "navigation_only_destinations": [
+        "concepts/ground-truth-fallibility",
+        "concepts/improvement-lives-in-external-state"
+      ]
+    },
+    {
+      "briefing": "briefings/2026/10/2026-10-30",
+      "finding": 4,
+      "entity": "projects/codespecweave",
+      "entity_sources": [
+        {
+          "url": "https://arxiv.org/abs/2610.40256",
+          "retrieved": "2026-11-02"
+        },
+        {
+          "url": "https://arxiv.org/html/2610.40256v1",
+          "retrieved": "2026-11-02"
+        }
+      ],
+      "general_concept_or_mechanism": "concepts/comparator-construction-shapes-margins",
+      "syntheses_reviewed": [
+        "concepts/comparator-construction-shapes-margins",
+        "concepts/ground-truth-fallibility"
+      ],
+      "disposition": "no-change-with-reason",
+      "reason": "When Requirements Interact: Scaling Long-Horizon Coding via Interdependent Specifications: Synthetic coding tasks with interdependent requirements, grounded in real-repo seeds; 73.9% of pilot candidates had flawed tests. The reviewed explanations (concepts/comparator-construction-shapes-margins, concepts/ground-truth-fallibility) already provide the relevant distinctions. Reprocessing this historical finding supplies navigation, not a newly checked result that changes their empirical conclusions.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "historical_limit": "Reconstructed or partial archive; original completeness and evidence qualifications preserved.",
+      "substantive_synthesis_destinations": [],
+      "mechanism_summary": "Synthetic coding tasks with interdependent requirements, grounded in real-repo seeds; 73.9% of pilot candidates had flawed tests.",
+      "navigation_only_destinations": [
+        "concepts/comparator-construction-shapes-margins",
+        "concepts/ground-truth-fallibility"
+      ]
+    },
+    {
+      "briefing": "briefings/2026/10/2026-10-30",
+      "finding": 5,
+      "entity": "projects/repairs-for-whom",
+      "entity_sources": [
+        {
+          "url": "https://arxiv.org/abs/2610.38610",
+          "retrieved": "2026-11-02"
+        },
+        {
+          "url": "https://github.com/lyj20071013/repairs-for-whom",
+          "retrieved": "2026-11-02"
+        }
+      ],
+      "general_concept_or_mechanism": "concepts/comparator-construction-shapes-margins",
+      "syntheses_reviewed": [
+        "concepts/comparator-construction-shapes-margins"
+      ],
+      "disposition": "no-change-with-reason",
+      "reason": "Repairs for Whom? Evaluator–Executor Mismatch in Selecting Repairs for Failed LLM Agents: Repair selection must match the deployed executor's identity, not capability: stronger models choose worse repairs for it; labels must name their executor. The reviewed explanations (concepts/comparator-construction-shapes-margins) already provide the relevant distinctions. Reprocessing this historical finding supplies navigation, not a newly checked result that changes their empirical conclusions.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "historical_limit": "Reconstructed or partial archive; original completeness and evidence qualifications preserved.",
+      "substantive_synthesis_destinations": [],
+      "mechanism_summary": "Repair selection must match the deployed executor's identity, not capability: stronger models choose worse repairs for it; labels must name their executor.",
+      "navigation_only_destinations": [
+        "concepts/comparator-construction-shapes-margins"
+      ]
+    },
+    {
+      "briefing": "briefings/2026/10/2026-10-30",
+      "finding": 6,
+      "entity": "projects/security-impact-of-coding-agent-memory-files",
+      "entity_sources": [
+        {
+          "url": "https://arxiv.org/abs/2610.38521",
+          "retrieved": "2026-11-02"
+        }
+      ],
+      "general_concept_or_mechanism": "concepts/improvement-lives-in-external-state",
+      "syntheses_reviewed": [
+        "concepts/improvement-lives-in-external-state",
+        "techniques/agent-skills-and-memory"
+      ],
+      "disposition": "no-change-with-reason",
+      "reason": "Security Impact of Coding Agent's Memory Files: Project memory files can serve as an indirect prompt-injection entry point for coding agents; measured security effects were small and chance-like. The reviewed explanations (concepts/improvement-lives-in-external-state, techniques/agent-skills-and-memory) already provide the relevant distinctions. Reprocessing this historical finding supplies navigation, not a newly checked result that changes their empirical conclusions.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "historical_limit": "Reconstructed or partial archive; original completeness and evidence qualifications preserved.",
+      "substantive_synthesis_destinations": [
+        "techniques/agent-skills-and-memory"
+      ],
+      "mechanism_summary": "Project memory files can serve as an indirect prompt-injection entry point for coding agents; measured security effects were small and chance-like.",
+      "navigation_only_destinations": [
+        "concepts/improvement-lives-in-external-state"
+      ]
+    },
+    {
+      "briefing": "briefings/2026/10/2026-10-30",
+      "finding": 7,
+      "entity": "projects/auctopus",
+      "entity_sources": [
+        {
+          "url": "https://arxiv.org/abs/2610.40589",
+          "retrieved": "2026-11-02"
+        },
+        {
+          "url": "https://github.com/E-zClap/auctopus",
+          "retrieved": "2026-11-02"
+        }
+      ],
+      "general_concept_or_mechanism": "concepts/evaluator-circularity",
+      "syntheses_reviewed": [
+        "concepts/evaluator-circularity"
+      ],
+      "disposition": "no-change-with-reason",
+      "reason": "Collaborative AI agents for autonomous experimental research with solid-state quantum spins: Multi-agent AI laboratory that selects research questions, proved an exact NV-ensemble calibration law (L²+1), tested on a diamond quantum-spin instrument. The reviewed explanations (concepts/evaluator-circularity) already provide the relevant distinctions. Reprocessing this historical finding supplies navigation, not a newly checked result that changes their empirical conclusions.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "historical_limit": "Reconstructed or partial archive; original completeness and evidence qualifications preserved.",
+      "substantive_synthesis_destinations": [],
+      "mechanism_summary": "Multi-agent AI laboratory that selects research questions, proved an exact NV-ensemble calibration law (L²+1), tested on a diamond quantum-spin instrument.",
+      "navigation_only_destinations": [
+        "concepts/evaluator-circularity"
+      ]
+    },
+    {
+      "briefing": "briefings/2026/10/2026-10-30",
+      "finding": 8,
+      "entity": "projects/a2ui-and-copilotkit",
+      "entity_sources": [
+        {
+          "url": "https://developers.googleblog.com/build-generative-ui-apps-with-a2ui-copilotkit-agents/",
+          "retrieved": "2026-11-02"
+        },
+        {
+          "url": "https://a2ui.org/specification/v0.9.1-a2ui/",
+          "retrieved": "2026-11-02"
+        },
+        {
+          "url": "https://github.com/a2ui-project/a2ui",
+          "retrieved": "2026-11-02"
+        },
+        {
+          "url": "https://docs.copilotkit.ai/generative-ui/a2ui",
+          "retrieved": "2026-11-02"
+        }
+      ],
+      "general_concept_or_mechanism": "techniques/generative-interfaces",
+      "syntheses_reviewed": [
+        "techniques/generative-interfaces"
+      ],
+      "disposition": "no-change-with-reason",
+      "reason": "A2UI and CopilotKit: Google's A2UI protocol lets agents emit declarative UI from a trusted component catalog; CopilotKit carries it over AG-UI and renders it natively in apps. The reviewed explanations (techniques/generative-interfaces) already provide the relevant distinctions. Reprocessing this historical finding supplies navigation, not a newly checked result that changes their empirical conclusions.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "historical_limit": "Reconstructed or partial archive; original completeness and evidence qualifications preserved.",
+      "substantive_synthesis_destinations": [],
+      "mechanism_summary": "Google's A2UI protocol lets agents emit declarative UI from a trusted component catalog; CopilotKit carries it over AG-UI and renders it natively in apps.",
+      "navigation_only_destinations": [
+        "techniques/generative-interfaces"
+      ]
+    },
+    {
+      "briefing": "briefings/2026/10/2026-10-31",
+      "finding": 1,
+      "entity": "projects/skillcompiler",
+      "entity_sources": [
+        {
+          "url": "https://arxiv.org/abs/2610.39508",
+          "retrieved": "2026-11-02"
+        }
+      ],
+      "general_concept_or_mechanism": "techniques/deterministic-workflow-reuse",
+      "syntheses_reviewed": [
+        "techniques/deterministic-workflow-reuse",
+        "techniques/gated-admission-and-revalidation"
+      ],
+      "disposition": "create-new",
+      "reason": "Existing synthesized explanations cover the mechanism; add contextual navigation and use independently checked new material only where it extends those explanations.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "historical_limit": "Reconstructed or partial archive; original completeness and evidence qualifications preserved.",
+      "substantive_synthesis_destinations": [
+        "techniques/deterministic-workflow-reuse",
+        "techniques/gated-admission-and-revalidation"
+      ],
+      "mechanism_summary": "Self-evolving skill framework that selectively compiles well-specified skill operations into validated, reusable programs while LLM reasoning handles the rest.",
+      "navigation_only_destinations": []
+    },
+    {
+      "briefing": "briefings/2026/10/2026-10-31",
+      "finding": 2,
+      "entity": "projects/webanything",
+      "entity_sources": [
+        {
+          "url": "https://arxiv.org/abs/2610.37786",
+          "retrieved": "2026-11-02"
+        },
+        {
+          "url": "https://github.com/china-qijizhifeng/Web-Anything",
+          "retrieved": "2026-11-02"
+        }
+      ],
+      "general_concept_or_mechanism": "concepts/evaluator-circularity",
+      "syntheses_reviewed": [
+        "concepts/evaluator-circularity",
+        "concepts/protocol-relative-scores"
+      ],
+      "disposition": "no-change-with-reason",
+      "reason": "WebAnything: From the Wild Web to Scalable Agent Environments: Fully automated framework reconstructing specified real websites into source-grounded, resettable local environments for web-agent training and evaluation. The reviewed explanations (concepts/evaluator-circularity, concepts/protocol-relative-scores) already provide the relevant distinctions. Reprocessing this historical finding supplies navigation, not a newly checked result that changes their empirical conclusions.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "historical_limit": "Reconstructed or partial archive; original completeness and evidence qualifications preserved.",
+      "substantive_synthesis_destinations": [],
+      "mechanism_summary": "Fully automated framework reconstructing specified real websites into source-grounded, resettable local environments for web-agent training and evaluation.",
+      "navigation_only_destinations": [
+        "concepts/evaluator-circularity",
+        "concepts/protocol-relative-scores"
+      ]
+    },
+    {
+      "briefing": "briefings/2026/10/2026-10-31",
+      "finding": 3,
+      "entity": "projects/agenticds",
+      "entity_sources": [
+        {
+          "url": "https://arxiv.org/abs/2610.39608",
+          "retrieved": "2026-11-02"
+        },
+        {
+          "url": "https://github.com/nju-websoft/AgenticDS",
+          "retrieved": "2026-11-02"
+        }
+      ],
+      "general_concept_or_mechanism": "concepts/contracts-and-compositional-correctness",
+      "syntheses_reviewed": [
+        "concepts/contracts-and-compositional-correctness",
+        "techniques/multi-agent-orchestration"
+      ],
+      "disposition": "create-new",
+      "reason": "Existing synthesized explanations cover the mechanism; add contextual navigation and use independently checked new material only where it extends those explanations.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "historical_limit": "Reconstructed or partial archive; original completeness and evidence qualifications preserved.",
+      "substantive_synthesis_destinations": [
+        "concepts/contracts-and-compositional-correctness",
+        "techniques/multi-agent-orchestration"
+      ],
+      "mechanism_summary": "Contract-governed Planner–Engineer–Critic agent for Hugging Face training-data search; retrieved datasets are verified to improve downstream model training.",
+      "navigation_only_destinations": []
+    },
+    {
+      "briefing": "briefings/2026/10/2026-10-31",
+      "finding": 4,
+      "entity": "projects/seq-k",
+      "entity_sources": [
+        {
+          "url": "https://arxiv.org/abs/2610.37859",
+          "retrieved": "2026-11-02"
+        }
+      ],
+      "general_concept_or_mechanism": "concepts/evaluator-circularity",
+      "syntheses_reviewed": [
+        "concepts/evaluator-circularity",
+        "concepts/information-content-dominance"
+      ],
+      "disposition": "no-change-with-reason",
+      "reason": "Seq@K: Evaluating Language Models Under Sequential Feedback: Evaluation protocol measuring whether a model solves a task within K sequential attempts, given feedback after each failure; rankings diverge from Pass@K. The reviewed explanations (concepts/evaluator-circularity, concepts/information-content-dominance) already provide the relevant distinctions. Reprocessing this historical finding supplies navigation, not a newly checked result that changes their empirical conclusions.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "historical_limit": "Reconstructed or partial archive; original completeness and evidence qualifications preserved.",
+      "substantive_synthesis_destinations": [],
+      "mechanism_summary": "Evaluation protocol measuring whether a model solves a task within K sequential attempts, given feedback after each failure; rankings diverge from Pass@K.",
+      "navigation_only_destinations": [
+        "concepts/evaluator-circularity",
+        "concepts/information-content-dominance"
+      ]
+    },
+    {
+      "briefing": "briefings/2026/10/2026-10-31",
+      "finding": 5,
+      "entity": "projects/intent-loss-in-smart-contract-synthesis",
+      "entity_sources": [
+        {
+          "url": "https://arxiv.org/abs/2610.37830",
+          "retrieved": "2026-11-02"
+        }
+      ],
+      "general_concept_or_mechanism": "concepts/evaluator-circularity",
+      "syntheses_reviewed": [
+        "concepts/evaluator-circularity",
+        "concepts/information-content-dominance"
+      ],
+      "disposition": "no-change-with-reason",
+      "reason": "Measuring Where Intent Gets Lost in Agentic Smart Contract Synthesis: Exact-replay fidelity study of smart-contract synthesis: pre-generation elicitation adds 19–23 points; judges and static tools miss planted errors. The reviewed explanations (concepts/evaluator-circularity, concepts/information-content-dominance) already provide the relevant distinctions. Reprocessing this historical finding supplies navigation, not a newly checked result that changes their empirical conclusions.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "historical_limit": "Reconstructed or partial archive; original completeness and evidence qualifications preserved.",
+      "substantive_synthesis_destinations": [],
+      "mechanism_summary": "Exact-replay fidelity study of smart-contract synthesis: pre-generation elicitation adds 19–23 points; judges and static tools miss planted errors.",
+      "navigation_only_destinations": [
+        "concepts/evaluator-circularity",
+        "concepts/information-content-dominance"
+      ]
+    },
+    {
+      "briefing": "briefings/2026/10/2026-10-31",
+      "finding": 6,
+      "entity": "projects/filingloop",
+      "entity_sources": [
+        {
+          "url": "https://arxiv.org/abs/2610.37905",
+          "retrieved": "2026-11-02"
+        }
+      ],
+      "general_concept_or_mechanism": "concepts/evaluator-circularity",
+      "syntheses_reviewed": [
+        "concepts/evaluator-circularity",
+        "concepts/improvement-lives-in-external-state"
+      ],
+      "disposition": "no-change-with-reason",
+      "reason": "FilingLoop: Evaluating and Evolving LLM Agents for Corporate Disclosure Review and Revision: Benchmark and self-evolving agent framework for SEC disclosure review and revision, learning role-specific procedures across cases without weight updates. The reviewed explanations (concepts/evaluator-circularity, concepts/improvement-lives-in-external-state) already provide the relevant distinctions. Reprocessing this historical finding supplies navigation, not a newly checked result that changes their empirical conclusions.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "historical_limit": "Reconstructed or partial archive; original completeness and evidence qualifications preserved.",
+      "substantive_synthesis_destinations": [],
+      "mechanism_summary": "Benchmark and self-evolving agent framework for SEC disclosure review and revision, learning role-specific procedures across cases without weight updates.",
+      "navigation_only_destinations": [
+        "concepts/evaluator-circularity",
+        "concepts/improvement-lives-in-external-state"
+      ]
+    },
+    {
+      "briefing": "briefings/2026/10/2026-10-31",
+      "finding": 7,
+      "entity": "projects/hera",
+      "entity_sources": [
+        {
+          "url": "https://arxiv.org/abs/2610.39074",
+          "retrieved": "2026-11-02"
+        },
+        {
+          "url": "https://github.com/sharpelab/hera-paper-data",
+          "retrieved": "2026-11-02"
+        },
+        {
+          "url": "https://purl.stanford.edu/tv195gf3182",
+          "retrieved": "2026-11-02"
+        }
+      ],
+      "general_concept_or_mechanism": "concepts/capability-locus",
+      "syntheses_reviewed": [
+        "concepts/capability-locus",
+        "concepts/evaluator-circularity"
+      ],
+      "disposition": "no-change-with-reason",
+      "reason": "HERA: Assessing an Autonomous Agent for Quantum Device Measurement: Autonomous cryogenic transport measurements of quantum devices by an LLM agent with a curated knowledge base, validated in a blinded expert trial. The reviewed explanations (concepts/capability-locus, concepts/evaluator-circularity) already provide the relevant distinctions. Reprocessing this historical finding supplies navigation, not a newly checked result that changes their empirical conclusions.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "historical_limit": "Reconstructed or partial archive; original completeness and evidence qualifications preserved.",
+      "substantive_synthesis_destinations": [],
+      "mechanism_summary": "Autonomous cryogenic transport measurements of quantum devices by an LLM agent with a curated knowledge base, validated in a blinded expert trial.",
+      "navigation_only_destinations": [
+        "concepts/capability-locus",
+        "concepts/evaluator-circularity"
+      ]
+    },
+    {
+      "briefing": "briefings/2026/10/2026-10-31",
+      "finding": 8,
+      "entity": "projects/garden",
+      "entity_sources": [
+        {
+          "url": "https://arxiv.org/abs/2610.37926",
+          "retrieved": "2026-11-02"
+        },
+        {
+          "url": "https://github.com/DoganUrgun/GARDEN",
+          "retrieved": "2026-11-02"
+        }
+      ],
+      "general_concept_or_mechanism": "concepts/capability-locus",
+      "syntheses_reviewed": [
+        "concepts/capability-locus",
+        "concepts/improvement-lives-in-external-state"
+      ],
+      "disposition": "no-change-with-reason",
+      "reason": "GARDEN: Generalist Autonomous Reward Design Through Evidence Navigation for Cooperative Multi-Agent Reinforcement Learning: One LLM-engineered reward program for a cooperative MARL task family, frozen and transferred unchanged to held-out scenarios. The reviewed explanations (concepts/capability-locus, concepts/improvement-lives-in-external-state) already provide the relevant distinctions. Reprocessing this historical finding supplies navigation, not a newly checked result that changes their empirical conclusions.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "historical_limit": "Reconstructed or partial archive; original completeness and evidence qualifications preserved.",
+      "substantive_synthesis_destinations": [],
+      "mechanism_summary": "One LLM-engineered reward program for a cooperative MARL task family, frozen and transferred unchanged to held-out scenarios.",
+      "navigation_only_destinations": [
+        "concepts/capability-locus",
+        "concepts/improvement-lives-in-external-state"
+      ]
+    },
+    {
+      "briefing": "briefings/2026/11/2026-11-01",
+      "finding": 1,
+      "entity": "projects/evoteam",
+      "entity_sources": [
+        {
+          "url": "https://arxiv.org/abs/2610.39813",
+          "retrieved": "2026-11-02"
+        },
+        {
+          "url": "https://github.com/DEEP-JLU/EvoTeam",
+          "retrieved": "2026-11-02"
+        }
+      ],
+      "general_concept_or_mechanism": "concepts/evaluator-circularity",
+      "syntheses_reviewed": [
+        "concepts/evaluator-circularity",
+        "concepts/improvement-lives-in-external-state"
+      ],
+      "disposition": "no-change-with-reason",
+      "reason": "EvoTeam: Multi-Agent Collaboration via Evolving Teams: EvoTeam keeps a library of reusable teams, selects or creates one per task, and evolves rosters, team-scoped handoff rules, and agent skills from traces. The reviewed explanations (concepts/evaluator-circularity, concepts/improvement-lives-in-external-state) already provide the relevant distinctions. Reprocessing this historical finding supplies navigation, not a newly checked result that changes their empirical conclusions.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "historical_limit": "Reconstructed or partial archive; original completeness and evidence qualifications preserved.",
+      "substantive_synthesis_destinations": [],
+      "mechanism_summary": "EvoTeam keeps a library of reusable teams, selects or creates one per task, and evolves rosters, team-scoped handoff rules, and agent skills from traces.",
+      "navigation_only_destinations": [
+        "concepts/evaluator-circularity",
+        "concepts/improvement-lives-in-external-state"
+      ]
+    },
+    {
+      "briefing": "briefings/2026/11/2026-11-01",
+      "finding": 2,
+      "entity": "projects/karma",
+      "entity_sources": [
+        {
+          "url": "https://arxiv.org/abs/2610.39884",
+          "retrieved": "2026-11-02"
+        }
+      ],
+      "general_concept_or_mechanism": "concepts/improvement-lives-in-external-state",
+      "syntheses_reviewed": [
+        "concepts/improvement-lives-in-external-state",
+        "concepts/scoped-assurance"
+      ],
+      "disposition": "no-change-with-reason",
+      "reason": "KARMA: Training-Free Knowledge-Atomic Harness Evolution for Industrial Advertising Agents: Training-free evolution of six typed knowledge modules for an Alibaba advertising agent, gated by validation with snapshot rollback; offline log replay. The reviewed explanations (concepts/improvement-lives-in-external-state, concepts/scoped-assurance) already provide the relevant distinctions. Reprocessing this historical finding supplies navigation, not a newly checked result that changes their empirical conclusions.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "historical_limit": "Reconstructed or partial archive; original completeness and evidence qualifications preserved.",
+      "substantive_synthesis_destinations": [
+        "concepts/scoped-assurance"
+      ],
+      "mechanism_summary": "Training-free evolution of six typed knowledge modules for an Alibaba advertising agent, gated by validation with snapshot rollback; offline log replay.",
+      "navigation_only_destinations": [
+        "concepts/improvement-lives-in-external-state"
+      ]
+    },
+    {
+      "briefing": "briefings/2026/11/2026-11-01",
+      "finding": 3,
+      "entity": "projects/dynarev",
+      "entity_sources": [
+        {
+          "url": "https://arxiv.org/abs/2610.40133",
+          "retrieved": "2026-11-02"
+        },
+        {
+          "url": "https://github.com/zsq259/DynaRev",
+          "retrieved": "2026-11-02"
+        }
+      ],
+      "general_concept_or_mechanism": "concepts/evaluator-circularity",
+      "syntheses_reviewed": [
+        "concepts/evaluator-circularity",
+        "concepts/information-content-dominance"
+      ],
+      "disposition": "no-change-with-reason",
+      "reason": "DynaRev: Benchmarking Web Agents under Dynamic Goal Revision: DynaRev: 181-task web-agent benchmark delivering additive and override goal revisions at semantic milestones, scored for correctness, responsiveness, and cost. The reviewed explanations (concepts/evaluator-circularity, concepts/information-content-dominance) already provide the relevant distinctions. Reprocessing this historical finding supplies navigation, not a newly checked result that changes their empirical conclusions.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "historical_limit": "Reconstructed or partial archive; original completeness and evidence qualifications preserved.",
+      "substantive_synthesis_destinations": [],
+      "mechanism_summary": "DynaRev: 181-task web-agent benchmark delivering additive and override goal revisions at semantic milestones, scored for correctness, responsiveness, and cost.",
+      "navigation_only_destinations": [
+        "concepts/evaluator-circularity",
+        "concepts/information-content-dominance"
+      ]
+    },
+    {
+      "briefing": "briefings/2026/11/2026-11-01",
+      "finding": 4,
+      "entity": "projects/envos",
+      "entity_sources": [
+        {
+          "url": "https://arxiv.org/abs/2610.40246",
+          "retrieved": "2026-11-02"
+        }
+      ],
+      "general_concept_or_mechanism": "concepts/evaluator-circularity",
+      "syntheses_reviewed": [
+        "concepts/evaluator-circularity",
+        "concepts/information-content-dominance"
+      ],
+      "disposition": "no-change-with-reason",
+      "reason": "EnvOS: Auditing Computer-Use Agents When the World Moves On — Phenomenon-Based Task Construction, Certification, and Evidence-Based Evaluation: Framework that builds and certifies computer-use environments changing mid-task, then audits each verdict from archived evidence; tested on stale values. The reviewed explanations (concepts/evaluator-circularity, concepts/information-content-dominance) already provide the relevant distinctions. Reprocessing this historical finding supplies navigation, not a newly checked result that changes their empirical conclusions.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "historical_limit": "Reconstructed or partial archive; original completeness and evidence qualifications preserved.",
+      "substantive_synthesis_destinations": [],
+      "mechanism_summary": "Framework that builds and certifies computer-use environments changing mid-task, then audits each verdict from archived evidence; tested on stale values.",
+      "navigation_only_destinations": [
+        "concepts/evaluator-circularity",
+        "concepts/information-content-dominance"
+      ]
+    },
+    {
+      "briefing": "briefings/2026/11/2026-11-01",
+      "finding": 5,
+      "entity": "projects/prefix-executability",
+      "entity_sources": [
+        {
+          "url": "https://arxiv.org/abs/2610.40444",
+          "retrieved": "2026-11-02"
+        },
+        {
+          "url": "https://arxiv.org/html/2610.40444v1",
+          "retrieved": "2026-11-02"
+        }
+      ],
+      "general_concept_or_mechanism": "concepts/capability-locus",
+      "syntheses_reviewed": [
+        "concepts/capability-locus",
+        "techniques/verification-and-evidence"
+      ],
+      "disposition": "no-change-with-reason",
+      "reason": "Prefix Executability: Evaluating Tool-Using Agents Beyond Final Success: Successful episodes often pass through invalid prefixes: final success and prefix executability rank the same agents differently. The reviewed explanations (concepts/capability-locus, techniques/verification-and-evidence) already provide the relevant distinctions. Reprocessing this historical finding supplies navigation, not a newly checked result that changes their empirical conclusions.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "historical_limit": "Reconstructed or partial archive; original completeness and evidence qualifications preserved.",
+      "substantive_synthesis_destinations": [
+        "techniques/verification-and-evidence"
+      ],
+      "mechanism_summary": "Successful episodes often pass through invalid prefixes: final success and prefix executability rank the same agents differently.",
+      "navigation_only_destinations": [
+        "concepts/capability-locus"
+      ]
+    },
+    {
+      "briefing": "briefings/2026/11/2026-11-01",
+      "finding": 6,
+      "entity": "projects/pre-crime-for-agents",
+      "entity_sources": [
+        {
+          "url": "https://arxiv.org/abs/2610.40588",
+          "retrieved": "2026-11-02"
+        },
+        {
+          "url": "https://github.com/leonidas1712/precrime-agents",
+          "retrieved": "2026-11-02"
+        }
+      ],
+      "general_concept_or_mechanism": "concepts/scoped-assurance",
+      "syntheses_reviewed": [
+        "concepts/scoped-assurance",
+        "techniques/evaluation-and-simulation"
+      ],
+      "disposition": "no-change-with-reason",
+      "reason": "Pre-Crime for Agents, at the Last Second: Probing When a Recruited Agent Gives In: Linear probes on a pressured agent's activations flag the call about to leak a secret — at the last second only, and permitted disclosures too. The reviewed explanations (concepts/scoped-assurance, techniques/evaluation-and-simulation) already provide the relevant distinctions. Reprocessing this historical finding supplies navigation, not a newly checked result that changes their empirical conclusions.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "historical_limit": "Reconstructed or partial archive; original completeness and evidence qualifications preserved.",
+      "substantive_synthesis_destinations": [
+        "concepts/scoped-assurance"
+      ],
+      "mechanism_summary": "Linear probes on a pressured agent's activations flag the call about to leak a secret — at the last second only, and permitted disclosures too.",
+      "navigation_only_destinations": [
+        "techniques/evaluation-and-simulation"
+      ]
+    },
+    {
+      "briefing": "briefings/2026/11/2026-11-01",
+      "finding": 7,
+      "entity": "projects/github-copilot-fusion",
+      "entity_sources": [
+        {
+          "url": "https://github.blog/changelog/2026-10-28-route-and-orchestrate-models-with-github-copilot-fusion/",
+          "retrieved": "2026-11-02"
+        },
+        {
+          "url": "https://docs.github.com/copilot/concepts/models/copilot-fusion",
+          "retrieved": "2026-11-02"
+        },
+        {
+          "url": "https://docs.github.com/copilot/concepts/models/auto-model-selection",
+          "retrieved": "2026-11-02"
+        },
+        {
+          "url": "https://docs.github.com/en/copilot/how-tos/administer-copilot/manage-for-enterprise/manage-availability-of-default-models",
+          "retrieved": "2026-11-02"
+        },
+        "https://docs.github.com/copilot/reference/copilot-billing/models-and-pricing"
+      ],
+      "general_concept_or_mechanism": "concepts/improvement-lives-in-external-state",
+      "syntheses_reviewed": [
+        "concepts/improvement-lives-in-external-state",
+        "techniques/multi-agent-orchestration"
+      ],
+      "disposition": "no-change-with-reason",
+      "reason": "GitHub Copilot Fusion: GitHub Copilot Fusion: generally available runtime router and orchestrator for Copilot models and execution patterns. The reviewed explanations (concepts/improvement-lives-in-external-state, techniques/multi-agent-orchestration) already provide the relevant distinctions. Reprocessing this historical finding supplies navigation, not a newly checked result that changes their empirical conclusions.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "historical_limit": "Reconstructed or partial archive; original completeness and evidence qualifications preserved.",
+      "substantive_synthesis_destinations": [
+        "techniques/multi-agent-orchestration"
+      ],
+      "mechanism_summary": "GitHub Copilot Fusion: generally available runtime router and orchestrator for Copilot models and execution patterns.",
+      "navigation_only_destinations": [
+        "concepts/improvement-lives-in-external-state"
+      ]
+    },
+    {
+      "briefing": "briefings/2026/11/2026-11-01",
+      "finding": 8,
+      "entity": "projects/molrsi",
+      "entity_sources": [
+        {
+          "url": "https://arxiv.org/abs/2610.39714",
+          "retrieved": "2026-11-02"
+        }
+      ],
+      "general_concept_or_mechanism": "concepts/evaluator-circularity",
+      "syntheses_reviewed": [
+        "concepts/evaluator-circularity",
+        "concepts/improvement-lives-in-external-state"
+      ],
+      "disposition": "no-change-with-reason",
+      "reason": "MoLRSI: A Recursive Self-Improving AI agent for Molecular Discovery: Improves its molecular workflow-search policy across tasks via persistent memory; wet-lab validated: 15.9% antibiotic hit rate, 8 pMHC binder hits. The reviewed explanations (concepts/evaluator-circularity, concepts/improvement-lives-in-external-state) already provide the relevant distinctions. Reprocessing this historical finding supplies navigation, not a newly checked result that changes their empirical conclusions.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "historical_limit": "Reconstructed or partial archive; original completeness and evidence qualifications preserved.",
+      "substantive_synthesis_destinations": [],
+      "mechanism_summary": "Improves its molecular workflow-search policy across tasks via persistent memory; wet-lab validated: 15.9% antibiotic hit rate, 8 pMHC binder hits.",
+      "navigation_only_destinations": [
+        "concepts/evaluator-circularity",
+        "concepts/improvement-lives-in-external-state"
+      ]
+    },
+    {
+      "briefing": "briefings/2026/11/2026-11-01",
+      "finding": 9,
+      "entity": "projects/clingex",
+      "entity_sources": [
+        {
+          "url": "https://arxiv.org/abs/2610.40556",
+          "retrieved": "2026-11-02"
+        }
+      ],
+      "general_concept_or_mechanism": "concepts/evaluator-circularity",
+      "syntheses_reviewed": [
+        "concepts/evaluator-circularity",
+        "concepts/protocol-relative-scores"
+      ],
+      "disposition": "no-change-with-reason",
+      "reason": "Advancing Clinical Genomic Analysis with a Skill-Centred Agent: Agent composing 105 executable clinical-genomics skills; beat research agents on 223 held-out cases and raised clinician concordance in a randomized study. The reviewed explanations (concepts/evaluator-circularity, concepts/protocol-relative-scores) already provide the relevant distinctions. Reprocessing this historical finding supplies navigation, not a newly checked result that changes their empirical conclusions.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "historical_limit": "Reconstructed or partial archive; original completeness and evidence qualifications preserved.",
+      "substantive_synthesis_destinations": [],
+      "mechanism_summary": "Agent composing 105 executable clinical-genomics skills; beat research agents on 223 held-out cases and raised clinician concordance in a randomized study.",
+      "navigation_only_destinations": [
+        "concepts/evaluator-circularity",
+        "concepts/protocol-relative-scores"
+      ]
+    },
+    {
+      "briefing": "briefings/2026/11/2026-11-02",
+      "finding": 1,
+      "entity": "projects/dittany",
+      "entity_sources": [
+        {
+          "url": "https://arxiv.org/abs/2610.42144",
+          "retrieved": "2026-11-02"
+        },
+        {
+          "url": "https://arxiv.org/html/2610.42144v1",
+          "retrieved": "2026-11-02"
+        }
+      ],
+      "general_concept_or_mechanism": "concepts/contracts-and-compositional-correctness",
+      "syntheses_reviewed": [
+        "concepts/contracts-and-compositional-correctness",
+        "techniques/multi-agent-orchestration"
+      ],
+      "disposition": "create-new",
+      "reason": "Existing synthesized explanations cover the mechanism; add contextual navigation and use independently checked new material only where it extends those explanations.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "historical_limit": "Reconstructed or partial archive; original completeness and evidence qualifications preserved.",
+      "substantive_synthesis_destinations": [
+        "concepts/contracts-and-compositional-correctness",
+        "techniques/multi-agent-orchestration"
+      ],
+      "mechanism_summary": "Runtime repair for multi-agent applications: a contract-derived contribution graph detects failed contributions and guides action- and graph-level repair.",
+      "navigation_only_destinations": []
+    },
+    {
+      "briefing": "briefings/2026/11/2026-11-02",
+      "finding": 2,
+      "entity": "projects/aisoc-v21",
+      "entity_sources": [
+        {
+          "url": "https://github.com/beenuar/AiSOC/releases/tag/v21.0.0",
+          "retrieved": "2026-11-02"
+        },
+        {
+          "url": "https://github.com/beenuar/AiSOC",
+          "retrieved": "2026-11-02"
+        }
+      ],
+      "general_concept_or_mechanism": "concepts/abstention-as-first-class-verdict",
+      "syntheses_reviewed": [
+        "concepts/abstention-as-first-class-verdict",
+        "techniques/secure-agent-operations"
+      ],
+      "disposition": "no-change-with-reason",
+      "reason": "AiSOC v21: AiSOC v21 adds verified serving-model attribution to an open-source AI SOC whose own verdict eval finds every measured model near chance. The reviewed explanations (concepts/abstention-as-first-class-verdict, techniques/secure-agent-operations) already provide the relevant distinctions. Reprocessing this historical finding supplies navigation, not a newly checked result that changes their empirical conclusions.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "historical_limit": "Reconstructed or partial archive; original completeness and evidence qualifications preserved.",
+      "substantive_synthesis_destinations": [
+        "techniques/secure-agent-operations"
+      ],
+      "mechanism_summary": "AiSOC v21 adds verified serving-model attribution to an open-source AI SOC whose own verdict eval finds every measured model near chance.",
+      "navigation_only_destinations": [
+        "concepts/abstention-as-first-class-verdict"
+      ]
+    },
+    {
+      "briefing": "briefings/2026/11/2026-11-02",
+      "finding": 3,
+      "entity": "projects/context-as-infrastructure",
+      "entity_sources": [
+        {
+          "url": "https://arxiv.org/abs/2610.41172",
+          "retrieved": "2026-11-02"
+        },
+        {
+          "url": "https://arxiv.org/html/2610.41172v1",
+          "retrieved": "2026-11-02"
+        },
+        {
+          "url": "https://github.com/infiniflow/ragflow",
+          "retrieved": "2026-11-02"
+        }
+      ],
+      "general_concept_or_mechanism": "concepts/comparator-construction-shapes-margins",
+      "syntheses_reviewed": [
+        "concepts/comparator-construction-shapes-margins",
+        "concepts/improvement-lives-in-external-state"
+      ],
+      "disposition": "no-change-with-reason",
+      "reason": "Context as Infrastructure: Knowledge Compilation for Retrieval in Agentic Systems with Harnesses: A RAGFlow vendor paper finds precompiled context structures add no accuracy; claim–evidence substitution cuts query tokens 38% on average instead. The reviewed explanations (concepts/comparator-construction-shapes-margins, concepts/improvement-lives-in-external-state) already provide the relevant distinctions. Reprocessing this historical finding supplies navigation, not a newly checked result that changes their empirical conclusions.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "historical_limit": "Reconstructed or partial archive; original completeness and evidence qualifications preserved.",
+      "substantive_synthesis_destinations": [],
+      "mechanism_summary": "A RAGFlow vendor paper finds precompiled context structures add no accuracy; claim–evidence substitution cuts query tokens 38% on average instead.",
+      "navigation_only_destinations": [
+        "concepts/comparator-construction-shapes-margins",
+        "concepts/improvement-lives-in-external-state"
+      ]
+    },
+    {
+      "briefing": "briefings/2026/11/2026-11-02",
+      "finding": 4,
+      "entity": "projects/blindtochange",
+      "entity_sources": [
+        {
+          "url": "https://arxiv.org/abs/2610.41435",
+          "retrieved": "2026-11-02"
+        },
+        {
+          "url": "https://arxiv.org/html/2610.41435v1",
+          "retrieved": "2026-11-02"
+        },
+        {
+          "url": "https://github.com/Anirudh-Phukan/blind-to-change",
+          "retrieved": "2026-11-02"
+        },
+        {
+          "url": "https://huggingface.co/datasets/Anirudh-Phukan/blind-to-change",
+          "retrieved": "2026-11-02"
+        }
+      ],
+      "general_concept_or_mechanism": "concepts/capability-locus",
+      "syntheses_reviewed": [
+        "concepts/capability-locus",
+        "concepts/structural-constraint-over-instruction"
+      ],
+      "disposition": "no-change-with-reason",
+      "reason": "BlindToChange: AI Agents Can Find Changes When Asked But Do They Look When Needed?: Search agents find recent changes when asked directly but usually never look when a recommendation request doesn't mention them. The reviewed explanations (concepts/capability-locus, concepts/structural-constraint-over-instruction) already provide the relevant distinctions. Reprocessing this historical finding supplies navigation, not a newly checked result that changes their empirical conclusions.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "historical_limit": "Reconstructed or partial archive; original completeness and evidence qualifications preserved.",
+      "substantive_synthesis_destinations": [],
+      "mechanism_summary": "Search agents find recent changes when asked directly but usually never look when a recommendation request doesn't mention them.",
+      "navigation_only_destinations": [
+        "concepts/capability-locus",
+        "concepts/structural-constraint-over-instruction"
+      ]
+    },
+    {
+      "briefing": "briefings/2026/11/2026-11-02",
+      "finding": 5,
+      "entity": "projects/angler",
+      "entity_sources": [
+        {
+          "url": "https://arxiv.org/abs/2610.41272",
+          "retrieved": "2026-11-02"
+        },
+        {
+          "url": "https://arxiv.org/html/2610.41272v1",
+          "retrieved": "2026-11-02"
+        }
+      ],
+      "general_concept_or_mechanism": "concepts/capability-locus",
+      "syntheses_reviewed": [
+        "concepts/capability-locus",
+        "concepts/comparator-construction-shapes-margins"
+      ],
+      "disposition": "no-change-with-reason",
+      "reason": "ANGLER: Verifier-Grounded Benchmarking with an Adaptive Attacker for Web Agents: REEF benchmarks web-agent prompt-injection vulnerability on nine executable sites; ANGLER, an adaptive attacker, raises attack success from 15.24% to 20.36%. The reviewed explanations (concepts/capability-locus, concepts/comparator-construction-shapes-margins) already provide the relevant distinctions. Reprocessing this historical finding supplies navigation, not a newly checked result that changes their empirical conclusions.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "historical_limit": "Reconstructed or partial archive; original completeness and evidence qualifications preserved.",
+      "substantive_synthesis_destinations": [],
+      "mechanism_summary": "REEF benchmarks web-agent prompt-injection vulnerability on nine executable sites; ANGLER, an adaptive attacker, raises attack success from 15.24% to 20.36%.",
+      "navigation_only_destinations": [
+        "concepts/capability-locus",
+        "concepts/comparator-construction-shapes-margins"
+      ]
+    },
+    {
+      "briefing": "briefings/2026/11/2026-11-02",
+      "finding": 6,
+      "entity": "projects/github-contribution-check",
+      "entity_sources": [
+        {
+          "url": "https://github.github.com/gh-aw/blog/2026-11-02-weekly-update/",
+          "retrieved": "2026-11-02"
+        },
+        {
+          "url": "https://github.com/github/gh-aw/blob/main/.github/workflows/contribution-check.md",
+          "retrieved": "2026-11-02"
+        },
+        {
+          "url": "https://github.com/github/gh-aw",
+          "retrieved": "2026-11-02"
+        },
+        {
+          "url": "https://github.github.io/gh-aw/introduction/overview/",
+          "retrieved": "2026-11-02"
+        },
+        "https://raw.githubusercontent.com/github/gh-aw/main/.github/workflows/contribution-check.md",
+        "https://raw.githubusercontent.com/github/gh-aw/main/.github/agents/contribution-checker.agent.md",
+        "https://github.github.com/gh-aw/reference/safe-outputs/",
+        "https://github.github.com/gh-aw/introduction/overview/"
+      ],
+      "general_concept_or_mechanism": "concepts/abstention-as-first-class-verdict",
+      "syntheses_reviewed": [
+        "concepts/abstention-as-first-class-verdict",
+        "concepts/structural-constraint-over-instruction"
+      ],
+      "disposition": "no-change-with-reason",
+      "reason": "GitHub Contribution Check: Scheduled gh-aw PR-compliance reviewer: deterministic pre-filter, read-only Haiku evaluator, safe-output-only writes, vendor telemetry only. The reviewed explanations (concepts/abstention-as-first-class-verdict, concepts/structural-constraint-over-instruction) already provide the relevant distinctions. Reprocessing this historical finding supplies navigation, not a newly checked result that changes their empirical conclusions.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "historical_limit": "Reconstructed or partial archive; original completeness and evidence qualifications preserved.",
+      "substantive_synthesis_destinations": [],
+      "mechanism_summary": "Scheduled gh-aw PR-compliance reviewer: deterministic pre-filter, read-only Haiku evaluator, safe-output-only writes, vendor telemetry only.",
+      "navigation_only_destinations": [
+        "concepts/abstention-as-first-class-verdict",
+        "concepts/structural-constraint-over-instruction"
+      ]
+    },
+    {
+      "briefing": "briefings/2026/11/2026-11-02",
+      "finding": 7,
+      "entity": "projects/openbot",
+      "entity_sources": [
+        {
+          "url": "https://github.com/CopilotKit/openbot",
+          "retrieved": "2026-11-02"
+        },
+        {
+          "url": "https://github.com/CopilotKit/openbot/blob/main/docs/architecture.md",
+          "retrieved": "2026-11-02"
+        },
+        "https://raw.githubusercontent.com/CopilotKit/OpenBot/f71b0f4bb6223bc1c7aa0026ad0e3bd5ef9233b0/README.md",
+        "https://raw.githubusercontent.com/CopilotKit/OpenBot/f71b0f4bb6223bc1c7aa0026ad0e3bd5ef9233b0/docs/architecture.md",
+        "https://raw.githubusercontent.com/CopilotKit/OpenBot/f71b0f4bb6223bc1c7aa0026ad0e3bd5ef9233b0/docs/approvals.md",
+        "https://raw.githubusercontent.com/CopilotKit/OpenBot/f71b0f4bb6223bc1c7aa0026ad0e3bd5ef9233b0/docs/README.md",
+        "https://raw.githubusercontent.com/CopilotKit/OpenBot/f71b0f4bb6223bc1c7aa0026ad0e3bd5ef9233b0/docs/web-research.md",
+        "https://raw.githubusercontent.com/CopilotKit/OpenBot/6d1919a3b53a0730894258f197f3beb4e8db4f2f/server/src/computer/gateway.ts",
+        "https://raw.githubusercontent.com/CopilotKit/OpenBot/6d1919a3b53a0730894258f197f3beb4e8db4f2f/server/src/computer/policy.ts",
+        "https://raw.githubusercontent.com/CopilotKit/OpenBot/6d1919a3b53a0730894258f197f3beb4e8db4f2f/server/src/computer/policy-store.ts",
+        "https://raw.githubusercontent.com/CopilotKit/OpenBot/6d1919a3b53a0730894258f197f3beb4e8db4f2f/server/src/computer/policy-dry-run.ts",
+        "https://raw.githubusercontent.com/CopilotKit/OpenBot/6d1919a3b53a0730894258f197f3beb4e8db4f2f/server/src/what-if.ts",
+        "https://raw.githubusercontent.com/CopilotKit/OpenBot/6d1919a3b53a0730894258f197f3beb4e8db4f2f/server/src/audit.ts",
+        "https://raw.githubusercontent.com/CopilotKit/OpenBot/6d1919a3b53a0730894258f197f3beb4e8db4f2f/server/src/approvals/policy.ts",
+        "https://raw.githubusercontent.com/CopilotKit/OpenBot/6d1919a3b53a0730894258f197f3beb4e8db4f2f/agent-computer/src/browser-runtime.ts",
+        "https://raw.githubusercontent.com/CopilotKit/OpenBot/6d1919a3b53a0730894258f197f3beb4e8db4f2f/agent-computer/src/real-browser.ts",
+        "https://raw.githubusercontent.com/CopilotKit/OpenBot/6d1919a3b53a0730894258f197f3beb4e8db4f2f/agent-computer/src/action-barrier.ts",
+        "https://raw.githubusercontent.com/CopilotKit/OpenBot/f71b0f4bb6223bc1c7aa0026ad0e3bd5ef9233b0/.github/workflows/ci.yml",
+        "https://raw.githubusercontent.com/CopilotKit/OpenBot/f71b0f4bb6223bc1c7aa0026ad0e3bd5ef9233b0/.env.example",
+        "https://raw.githubusercontent.com/CopilotKit/OpenBot/f71b0f4bb6223bc1c7aa0026ad0e3bd5ef9233b0/CHANGELOG.md",
+        "https://raw.githubusercontent.com/CopilotKit/OpenBot/f71b0f4bb6223bc1c7aa0026ad0e3bd5ef9233b0/release-policy.json"
+      ],
+      "general_concept_or_mechanism": "concepts/delegated-authority-and-revocation",
+      "syntheses_reviewed": [
+        "concepts/delegated-authority-and-revocation",
+        "techniques/secure-agent-operations"
+      ],
+      "disposition": "create-new",
+      "reason": "Existing synthesized explanations cover the mechanism; add contextual navigation and use independently checked new material only where it extends those explanations.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "historical_limit": "Reconstructed or partial archive; original completeness and evidence qualifications preserved.",
+      "substantive_synthesis_destinations": [
+        "concepts/delegated-authority-and-revocation",
+        "techniques/secure-agent-operations"
+      ],
+      "mechanism_summary": "CopilotKit's self-hosted agent workspace: an audit-first CEL policy gateway records every action before it runs, with a permissive shipped default.",
+      "navigation_only_destinations": []
+    },
+    {
+      "briefing": "briefings/2026/11/2026-11-02",
+      "finding": 8,
+      "entity": "projects/tinyastral",
+      "entity_sources": [
+        {
+          "url": "https://arxiv.org/abs/2610.41216",
+          "retrieved": "2026-11-02"
+        },
+        {
+          "url": "https://arxiv.org/html/2610.41216v1",
+          "retrieved": "2026-11-02"
+        },
+        {
+          "url": "https://garfield-kh.github.io/TinyAstral/",
+          "retrieved": "2026-11-02"
+        }
+      ],
+      "general_concept_or_mechanism": "concepts/capability-locus",
+      "syntheses_reviewed": [
+        "concepts/capability-locus",
+        "concepts/comparator-construction-shapes-margins"
+      ],
+      "disposition": "no-change-with-reason",
+      "reason": "TinyAstral: Transferring Self-Evolving Harnesses to Tiny Generalist Manipulation Agents: An RSI loop evolves a frozen 180B teacher's robot harness (RoboTwin 33.4% to 63.6%), then distills it into a 4B student at 62.8% — all in simulation. The reviewed explanations (concepts/capability-locus, concepts/comparator-construction-shapes-margins) already provide the relevant distinctions. Reprocessing this historical finding supplies navigation, not a newly checked result that changes their empirical conclusions.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "historical_limit": "Reconstructed or partial archive; original completeness and evidence qualifications preserved.",
+      "substantive_synthesis_destinations": [],
+      "mechanism_summary": "An RSI loop evolves a frozen 180B teacher's robot harness (RoboTwin 33.4% to 63.6%), then distills it into a 4B student at 62.8% — all in simulation.",
+      "navigation_only_destinations": [
+        "concepts/capability-locus",
+        "concepts/comparator-construction-shapes-margins"
+      ]
+    },
+    {
+      "briefing": "briefings/2026/11/2026-11-02",
+      "finding": 9,
+      "entity": "projects/bioagent",
+      "entity_sources": [
+        {
+          "url": "https://arxiv.org/abs/2610.41383",
+          "retrieved": "2026-11-02"
+        },
+        {
+          "url": "https://arxiv.org/html/2610.41383v1",
+          "retrieved": "2026-11-02"
+        },
+        {
+          "url": "https://suiuko.github.io/bioagentweb/",
+          "retrieved": "2026-11-02"
+        }
+      ],
+      "general_concept_or_mechanism": "concepts/capability-locus",
+      "syntheses_reviewed": [
+        "concepts/capability-locus",
+        "concepts/comparator-construction-shapes-margins"
+      ],
+      "disposition": "no-change-with-reason",
+      "reason": "BioAgent: Self-Directed Skill Acquisition and Capability Growth for Long-Horizon Laboratory Protocols: BioAgent: a dual-arm lab robot that detects missing skills before execution, acquires them through human teaching, and reuses them across protocols. The reviewed explanations (concepts/capability-locus, concepts/comparator-construction-shapes-margins) already provide the relevant distinctions. Reprocessing this historical finding supplies navigation, not a newly checked result that changes their empirical conclusions.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "historical_limit": "Reconstructed or partial archive; original completeness and evidence qualifications preserved.",
+      "substantive_synthesis_destinations": [],
+      "mechanism_summary": "BioAgent: a dual-arm lab robot that detects missing skills before execution, acquires them through human teaching, and reuses them across protocols.",
+      "navigation_only_destinations": [
+        "concepts/capability-locus",
+        "concepts/comparator-construction-shapes-margins"
+      ]
+    },
+    {
+      "briefing": "briefings/2026/11/2026-11-03",
+      "finding": 1,
+      "entity": "projects/agensh",
+      "entity_sources": [
+        "https://github.com/microsoft/Agensh",
+        "https://arxiv.org/abs/2609.26781",
+        "https://api.github.com/repos/microsoft/Agensh",
+        "https://api.github.com/repos/microsoft/Agensh/git/trees/main?recursive=1",
+        "https://raw.githubusercontent.com/microsoft/Agensh/main/README.md",
+        "https://raw.githubusercontent.com/microsoft/Agensh/main/REPRODUCE.md",
+        "https://raw.githubusercontent.com/microsoft/Agensh/main/SECURITY.md",
+        "https://raw.githubusercontent.com/microsoft/Agensh/main/agensh/README.md",
+        "https://raw.githubusercontent.com/microsoft/Agensh/main/agent/README.md",
+        "https://raw.githubusercontent.com/microsoft/Agensh/main/board-service/README.md",
+        "https://raw.githubusercontent.com/microsoft/Agensh/main/board-service/verifier.py",
+        "https://raw.githubusercontent.com/microsoft/Agensh/main/mini-router/README.md",
+        "https://raw.githubusercontent.com/microsoft/Agensh/main/secret-service/README.md",
+        "https://raw.githubusercontent.com/microsoft/Agensh/main/docker/README.md",
+        "https://raw.githubusercontent.com/microsoft/Agensh/main/scripts/egress_filter.py",
+        "https://arxiv.org/html/2609.26781v1"
+      ],
+      "general_concept_or_mechanism": "evaluations/multi-agent-value-and-coordination",
+      "syntheses_reviewed": [
+        "evaluations/multi-agent-value-and-coordination",
+        "techniques/multi-agent-orchestration"
+      ],
+      "disposition": "update-existing",
+      "reason": "Existing synthesized explanations cover the mechanism; add contextual navigation and use independently checked new material only where it extends those explanations.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "substantive_synthesis_destinations": [
+        "evaluations/multi-agent-value-and-coordination",
+        "techniques/multi-agent-orchestration"
+      ],
+      "mechanism_summary": "Microsoft's self-organized multi-agent harness: workers claim and merge sub-tasks through Gitea, Mattermost and a shared-context board.",
+      "navigation_only_destinations": []
+    },
+    {
+      "briefing": "briefings/2026/11/2026-11-03",
+      "finding": 2,
+      "entity": "projects/roboarchitect",
+      "entity_sources": [
+        "https://arxiv.org/abs/2610.42141",
+        "https://arxiv.org/abs/2610.42141",
+        "https://arxiv.org/html/2610.42141v1"
+      ],
+      "general_concept_or_mechanism": "concepts/capability-locus",
+      "syntheses_reviewed": [
+        "concepts/capability-locus",
+        "concepts/preservation-aware-agent-improvement"
+      ],
+      "disposition": "no-change-with-reason",
+      "reason": "RoboArchitect: A coding model evolves the control harness around a frozen robot policy, raising held-out manipulation success from 9.7% to 43.3% without weight updates. The reviewed explanations (concepts/capability-locus, concepts/preservation-aware-agent-improvement) already provide the relevant distinctions. Reprocessing this historical finding supplies navigation, not a newly checked result that changes their empirical conclusions.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "substantive_synthesis_destinations": [],
+      "mechanism_summary": "A coding model evolves the control harness around a frozen robot policy, raising held-out manipulation success from 9.7% to 43.3% without weight updates.",
+      "navigation_only_destinations": [
+        "concepts/capability-locus",
+        "concepts/preservation-aware-agent-improvement"
+      ]
+    },
+    {
+      "briefing": "briefings/2026/11/2026-11-03",
+      "finding": 3,
+      "entity": "projects/agentshield",
+      "entity_sources": [
+        "https://arxiv.org/abs/2610.41181",
+        "https://arxiv.org/html/2610.41181v1"
+      ],
+      "general_concept_or_mechanism": "techniques/secure-agent-operations",
+      "syntheses_reviewed": [
+        "techniques/secure-agent-operations",
+        "concepts/protocol-relative-scores"
+      ],
+      "disposition": "update-existing",
+      "reason": "Existing synthesized explanations cover the mechanism; add contextual navigation and use independently checked new material only where it extends those explanations.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "substantive_synthesis_destinations": [
+        "techniques/secure-agent-operations"
+      ],
+      "mechanism_summary": "Behavioural fingerprinting of browser agents via dynamic forms, plus the Extinction-induced Policy Drift attack on agent safeguards.",
+      "navigation_only_destinations": [
+        "concepts/protocol-relative-scores"
+      ]
+    },
+    {
+      "briefing": "briefings/2026/11/2026-11-03",
+      "finding": 4,
+      "entity": "projects/agentswe",
+      "entity_sources": [
+        "https://arxiv.org/abs/2610.13361",
+        "https://arxiv.org/html/2610.13361v1",
+        "https://github.com/VectorSpaceLab/AgentSWE"
+      ],
+      "general_concept_or_mechanism": "concepts/verified-completion-vs-apparent-success",
+      "syntheses_reviewed": [
+        "concepts/verified-completion-vs-apparent-success",
+        "concepts/protocol-relative-scores"
+      ],
+      "disposition": "no-change-with-reason",
+      "reason": "AgentSWE: Benchmark of 25 commissions testing whether coding agents deliver the agent a natural-language requirement describes, graded on held-out cases. The reviewed explanations (concepts/verified-completion-vs-apparent-success, concepts/protocol-relative-scores) already provide the relevant distinctions. Reprocessing this historical finding supplies navigation, not a newly checked result that changes their empirical conclusions.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "substantive_synthesis_destinations": [],
+      "mechanism_summary": "Benchmark of 25 commissions testing whether coding agents deliver the agent a natural-language requirement describes, graded on held-out cases.",
+      "navigation_only_destinations": [
+        "concepts/verified-completion-vs-apparent-success",
+        "concepts/protocol-relative-scores"
+      ]
+    },
+    {
+      "briefing": "briefings/2026/11/2026-11-03",
+      "finding": 5,
+      "entity": "projects/agentos",
+      "entity_sources": [
+        "https://github.com/use-agent-os/agent-os/blob/main/RELEASES.md",
+        "https://raw.githubusercontent.com/use-agent-os/agent-os/main/RELEASES.md",
+        "https://raw.githubusercontent.com/use-agent-os/agent-os/main/README.md",
+        "https://raw.githubusercontent.com/use-agent-os/agent-os/main/pyproject.toml",
+        "https://raw.githubusercontent.com/use-agent-os/agent-os/main/docs/tools-and-sandbox.md",
+        "https://raw.githubusercontent.com/use-agent-os/agent-os/main/.github/workflows/ci.yml",
+        "https://raw.githubusercontent.com/use-agent-os/agent-os/main/src/agentos/tools/dispatch.py",
+        "https://raw.githubusercontent.com/use-agent-os/agent-os/main/src/agentos/tools/policy/finalize.py",
+        "https://raw.githubusercontent.com/use-agent-os/agent-os/main/src/agentos/engine/outcome.py",
+        "https://raw.githubusercontent.com/use-agent-os/agent-os/main/src/agentos/engine/loop_guard.py",
+        "https://raw.githubusercontent.com/use-agent-os/agent-os/main/src/agentos/engine/turn_runner/outcome.py",
+        "https://raw.githubusercontent.com/use-agent-os/agent-os/main/src/agentos/gateway/turn_recovery.py",
+        "https://raw.githubusercontent.com/use-agent-os/agent-os/main/src/agentos/gateway/idempotency.py",
+        "https://raw.githubusercontent.com/use-agent-os/agent-os/main/src/agentos/sandbox/policy.py",
+        "https://raw.githubusercontent.com/use-agent-os/agent-os/main/src/agentos/engine/history.py",
+        "https://raw.githubusercontent.com/use-agent-os/agent-os/main/tests/test_engine/test_tool_pairing_unknown_outcome.py",
+        "https://raw.githubusercontent.com/use-agent-os/agent-os/main/tests/test_gateway/test_idempotency.py",
+        "https://api.github.com/repos/use-agent-os/agent-os",
+        "https://api.github.com/repos/use-agent-os/agent-os/git/trees/main?recursive=1"
+      ],
+      "general_concept_or_mechanism": "concepts/replay-idempotency-and-effect-semantics",
+      "syntheses_reviewed": [
+        "concepts/replay-idempotency-and-effect-semantics",
+        "techniques/durable-agent-execution"
+      ],
+      "disposition": "create-new",
+      "reason": "Existing synthesized explanations cover the mechanism; add contextual navigation and use independently checked new material only where it extends those explanations.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "substantive_synthesis_destinations": [
+        "concepts/replay-idempotency-and-effect-semantics",
+        "techniques/durable-agent-execution"
+      ],
+      "mechanism_summary": "Local-first Python agent runtime with one gateway, an on-device model router, a deterministic sandbox policy and crash recovery with read-only resumes.",
+      "navigation_only_destinations": []
+    },
+    {
+      "briefing": "briefings/2026/11/2026-11-04",
+      "finding": 1,
+      "entity": "projects/github-octoverse-2026",
+      "entity_sources": [
+        "https://github.blog/news-insights/octoverse/octoverse-commits-pushes-reach-new-highs-in-2026-as-developers-build-with-agents/",
+        "https://github.blog/news-insights/octoverse/",
+        "https://docs.github.com/copilot/concepts/models/auto-model-selection",
+        "https://docs.github.com/pull-requests/how-tos/stacked-pull-requests"
+      ],
+      "general_concept_or_mechanism": "concepts/validation-tier-gap",
+      "syntheses_reviewed": [
+        "concepts/validation-tier-gap"
+      ],
+      "disposition": "no-change-with-reason",
+      "reason": "Observational vendor adoption figures do not establish a new reusable mechanism, causal improvement or validation tier; retain the canonical case study and link its evidence boundary without inventing a cross-project result.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "substantive_synthesis_destinations": [],
+      "mechanism_summary": "GitHub's 2026 platform report: agent-started PRs pass 40% of pull requests; all figures are vendor-reported and observational, not audited.",
+      "navigation_only_destinations": [
+        "concepts/validation-tier-gap"
+      ]
+    },
+    {
+      "briefing": "briefings/2026/11/2026-11-04",
+      "finding": 2,
+      "entity": "projects/cua-agentenv",
+      "entity_sources": [
+        "https://github.com/trycua/cua/pull/6405",
+        "https://github.com/trycua/cua/pull/6407",
+        "https://api.github.com/repos/trycua/cua/pulls/6405",
+        "https://api.github.com/repos/trycua/cua/pulls/6407",
+        "https://api.github.com/repos/trycua/cua/pulls/6405/files",
+        "https://api.github.com/repos/trycua/cua/pulls/6407/files",
+        "https://raw.githubusercontent.com/trycua/cua/feat/agentenv-macos-plugin/libs/python/agentenv-cua/README.md",
+        "https://raw.githubusercontent.com/trycua/cua/feat/agentenv-macos-plugin/libs/python/agentenv-cua/pyproject.toml",
+        "https://raw.githubusercontent.com/trycua/cua/feat/agentenv-macos-plugin/libs/python/agentenv-cua/src/agentenv_cua/lume/provider.py",
+        "https://raw.githubusercontent.com/trycua/cua/feat/agentenv-macos-plugin/libs/python/agentenv-cua/src/agentenv_cua/drivers/cua_driver_macos/driver.py",
+        "https://raw.githubusercontent.com/trycua/cua/feat/agentenv-macos-plugin/libs/python/agentenv-cua/src/agentenv_cua/drivers/cua_driver_macos/env.toml",
+        "https://raw.githubusercontent.com/trycua/cua/feat/agentenv-macos-plugin/libs/python/agentenv-cua/image/provision.sh",
+        "https://raw.githubusercontent.com/trycua/cua/feat/agentenv-macos-plugin/libs/python/agentenv-cua/smoke/conformance_smoke.py",
+        "https://raw.githubusercontent.com/trycua/cua/feat/agentenv-macos-plugin/libs/python/agentenv-cua/tests/test_lume_provider.py",
+        "https://raw.githubusercontent.com/trycua/cua/feat/agentenv-macos-drivers/libs/python/agentenv-cua/README.md",
+        "https://raw.githubusercontent.com/trycua/cua/feat/agentenv-macos-drivers/libs/python/agentenv-cua/pyproject.toml",
+        "https://raw.githubusercontent.com/trycua/cua/feat/agentenv-macos-drivers/libs/python/agentenv-cua/src/agentenv_cua/macos-drivers/envs/agent-desktop/macos_computer.py",
+        "https://raw.githubusercontent.com/trycua/cua/feat/agentenv-macos-drivers/libs/python/agentenv-cua/src/agentenv_cua/macos-drivers/envs/codex-cu/driver.py",
+        "https://raw.githubusercontent.com/trycua/cua/feat/agentenv-macos-drivers/libs/python/agentenv-cua/src/agentenv_cua/macos-apps/envs/bench-sentinel/sentinel.py",
+        "https://raw.githubusercontent.com/trycua/cua/feat/agentenv-macos-drivers/libs/python/agentenv-cua/src/agentenv_cua/macos-apps/artifacts/sentinel-macos/run.py"
+      ],
+      "general_concept_or_mechanism": "techniques/evaluation-and-simulation",
+      "syntheses_reviewed": [
+        "techniques/evaluation-and-simulation",
+        "concepts/validation-tier-gap"
+      ],
+      "disposition": "no-change-with-reason",
+      "reason": "CUA AgentEnv: Cua's AgentEnv plugin for macOS VMs: a lume sandbox provider plus cua-driver and three benchmark-arm drivers for computer-use tasks. The reviewed explanations (techniques/evaluation-and-simulation, concepts/validation-tier-gap) already provide the relevant distinctions. Reprocessing this historical finding supplies navigation, not a newly checked result that changes their empirical conclusions.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "substantive_synthesis_destinations": [],
+      "mechanism_summary": "Cua's AgentEnv plugin for macOS VMs: a lume sandbox provider plus cua-driver and three benchmark-arm drivers for computer-use tasks.",
+      "navigation_only_destinations": [
+        "techniques/evaluation-and-simulation",
+        "concepts/validation-tier-gap"
+      ]
+    },
+    {
+      "briefing": "briefings/2026/11/2026-11-04",
+      "finding": 3,
+      "entity": "projects/builderio-agent-native",
+      "entity_sources": [
+        "https://github.com/BuilderIO/agent-native/pull/8670",
+        "https://github.com/BuilderIO/agent-native/pull/8670/files",
+        "https://github.com/BuilderIO/agent-native/pull/8670/commits",
+        "https://raw.githubusercontent.com/BuilderIO/agent-native/dec69e4c2c184df705e428e249bccd4b99ba1c52/scripts/guard-no-unobserved-writes.ts",
+        "https://raw.githubusercontent.com/BuilderIO/agent-native/dec69e4c2c184df705e428e249bccd4b99ba1c52/packages/core/src/action.ts",
+        "https://raw.githubusercontent.com/BuilderIO/agent-native/dec69e4c2c184df705e428e249bccd4b99ba1c52/packages/core/src/outbound-write-observation.ts",
+        "https://raw.githubusercontent.com/BuilderIO/agent-native/dec69e4c2c184df705e428e249bccd4b99ba1c52/packages/core/src/db/sql-write-classifier.ts",
+        "https://raw.githubusercontent.com/BuilderIO/agent-native/dec69e4c2c184df705e428e249bccd4b99ba1c52/packages/core/src/db/note-sql-statement.ts"
+      ],
+      "general_concept_or_mechanism": "concepts/replay-idempotency-and-effect-semantics",
+      "syntheses_reviewed": [
+        "concepts/replay-idempotency-and-effect-semantics",
+        "techniques/durable-agent-execution"
+      ],
+      "disposition": "create-new",
+      "reason": "Existing synthesized explanations cover the mechanism; add contextual navigation and use independently checked new material only where it extends those explanations.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "substantive_synthesis_destinations": [
+        "concepts/replay-idempotency-and-effect-semantics",
+        "techniques/durable-agent-execution"
+      ],
+      "mechanism_summary": "BuilderIO agent-native PR #8670: classify failed writes from observed writes with fail-closed channels; AI-reviewed, merged 2026-11-04.",
+      "navigation_only_destinations": []
+    },
+    {
+      "briefing": "briefings/2026/11/2026-11-04",
+      "finding": 4,
+      "entity": "projects/claude-agent-acp",
+      "entity_sources": [
+        "https://github.com/agentclientprotocol/claude-agent-acp/pull/1516",
+        "https://github.com/agentclientprotocol/claude-agent-acp/releases/tag/v0.101.0",
+        "https://agentclientprotocol.com/protocol/v2/overview",
+        "https://agentclientprotocol.com/rfds/subagents"
+      ],
+      "general_concept_or_mechanism": "concepts/agent-state-and-lifecycle",
+      "syntheses_reviewed": [
+        "concepts/agent-state-and-lifecycle",
+        "concepts/structural-constraint-over-instruction"
+      ],
+      "disposition": "create-new",
+      "reason": "Existing synthesized explanations cover the mechanism; add contextual navigation and use independently checked new material only where it extends those explanations.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "substantive_synthesis_destinations": [
+        "concepts/agent-state-and-lifecycle"
+      ],
+      "mechanism_summary": "ACP adapter for the Claude Agent SDK; 0.101.0 release-please PR: idle compaction before cache expiry, Bun executables, Auto-mode default, streamed v2 commands.",
+      "navigation_only_destinations": [
+        "concepts/structural-constraint-over-instruction"
+      ]
+    },
+    {
+      "briefing": "briefings/2026/11/2026-11-04",
+      "finding": 5,
+      "entity": "projects/crossswe",
+      "entity_sources": [
+        "https://arxiv.org/abs/2611.01484",
+        "https://arxiv.org/html/2611.01484v1",
+        "https://huggingface.co/datasets/CrossSWE/CrossSWE-Bench"
+      ],
+      "general_concept_or_mechanism": "concepts/contracts-and-compositional-correctness",
+      "syntheses_reviewed": [
+        "concepts/contracts-and-compositional-correctness",
+        "techniques/multi-agent-orchestration"
+      ],
+      "disposition": "create-new",
+      "reason": "Existing synthesized explanations cover the mechanism; add contextual navigation and use independently checked new material only where it extends those explanations.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "substantive_synthesis_destinations": [
+        "concepts/contracts-and-compositional-correctness",
+        "techniques/multi-agent-orchestration"
+      ],
+      "mechanism_summary": "Benchmark of 171 real-world cross-repository joint-development tasks where only coordinated changes across interdependent repositories pass.",
+      "navigation_only_destinations": []
+    },
+    {
+      "briefing": "briefings/2026/11/2026-11-04",
+      "finding": 6,
+      "entity": "projects/toolguardian",
+      "entity_sources": [
+        "https://arxiv.org/abs/2607.21835",
+        "https://arxiv.org/html/2607.21835v1"
+      ],
+      "general_concept_or_mechanism": "concepts/delegated-authority-and-revocation",
+      "syntheses_reviewed": [
+        "concepts/delegated-authority-and-revocation",
+        "techniques/secure-agent-operations"
+      ],
+      "disposition": "create-new",
+      "reason": "Existing synthesized explanations cover the mechanism; add contextual navigation and use independently checked new material only where it extends those explanations.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "substantive_synthesis_destinations": [
+        "concepts/delegated-authority-and-revocation",
+        "techniques/secure-agent-operations"
+      ],
+      "mechanism_summary": "Declarative security framework that vets MCP-style tools before admission and authorizes each invocation in task context.",
+      "navigation_only_destinations": []
+    },
+    {
+      "briefing": "briefings/2026/11/2026-11-04",
+      "finding": 7,
+      "entity": "projects/github-agentic-workflows",
+      "entity_sources": [
+        "https://github.blog/changelog/2026-06-11-github-agentic-workflows-is-now-in-public-preview/",
+        "https://github.com/github/gh-aw",
+        "https://raw.githubusercontent.com/github/gh-aw/main/README.md",
+        "https://raw.githubusercontent.com/github/gh-aw/main/docs/src/content/docs/introduction/how-they-work.mdx",
+        "https://raw.githubusercontent.com/github/gh-aw/main/docs/src/content/docs/introduction/architecture.mdx",
+        "https://raw.githubusercontent.com/github/gh-aw/main/docs/src/content/docs/reference/permissions.md",
+        "https://raw.githubusercontent.com/github/gh-aw/main/docs/src/content/docs/reference/integrity.md",
+        "https://raw.githubusercontent.com/github/gh-aw/main/docs/src/content/docs/reference/threat-detection.md",
+        "https://raw.githubusercontent.com/github/gh-aw/main/docs/src/content/docs/reference/safe-outputs.md",
+        "https://raw.githubusercontent.com/github/gh-aw/main/docs/src/content/docs/reference/compilation-process.md",
+        "https://raw.githubusercontent.com/github/gh-aw/main/docs/src/content/docs/reference/sandbox.md",
+        "https://raw.githubusercontent.com/github/gh-aw/main/docs/src/content/docs/specs/safe-outputs-specification.md",
+        "https://raw.githubusercontent.com/github/gh-aw/main/.github/workflows/auto-triage-issues.md",
+        "https://raw.githubusercontent.com/github/gh-aw/main/.github/aw/github-agentic-workflows.md"
+      ],
+      "general_concept_or_mechanism": "concepts/structural-constraint-over-instruction",
+      "syntheses_reviewed": [
+        "concepts/structural-constraint-over-instruction",
+        "techniques/secure-agent-operations"
+      ],
+      "disposition": "update-existing",
+      "reason": "Existing synthesized explanations cover the mechanism; add contextual navigation and use independently checked new material only where it extends those explanations.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "substantive_synthesis_destinations": [
+        "techniques/secure-agent-operations"
+      ],
+      "mechanism_summary": "GitHub's gh-aw compiles Markdown workflows into hardened Actions YAML; mechanism is repository-inspectable, performance evidence is vendor-only.",
+      "navigation_only_destinations": [
+        "concepts/structural-constraint-over-instruction"
+      ]
+    },
+    {
+      "briefing": "briefings/2026/11/2026-11-05",
+      "finding": 1,
+      "entity": "projects/auto-research",
+      "entity_sources": [
+        "https://arxiv.org/abs/2611.05251",
+        "https://arxiv.org/html/2611.05251v1"
+      ],
+      "general_concept_or_mechanism": "techniques/artifact-and-claim-provenance",
+      "syntheses_reviewed": [
+        "techniques/artifact-and-claim-provenance",
+        "techniques/gated-admission-and-revalidation"
+      ],
+      "disposition": "no-change-with-reason",
+      "reason": "auto_research: Multi-agent pipeline for X-ray polarimetry that writes its own analysis tools, gates them with checks and review, and admits only numbers with provenance. The reviewed explanations (techniques/artifact-and-claim-provenance, techniques/gated-admission-and-revalidation) already provide the relevant distinctions. Reprocessing this historical finding supplies navigation, not a newly checked result that changes their empirical conclusions.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "substantive_synthesis_destinations": [
+        "techniques/artifact-and-claim-provenance",
+        "techniques/gated-admission-and-revalidation"
+      ],
+      "mechanism_summary": "Multi-agent pipeline for X-ray polarimetry that writes its own analysis tools, gates them with checks and review, and admits only numbers with provenance.",
+      "navigation_only_destinations": []
+    },
+    {
+      "briefing": "briefings/2026/11/2026-11-05",
+      "finding": 2,
+      "entity": "projects/seaflow",
+      "entity_sources": [
+        "https://arxiv.org/abs/2611.01840",
+        "https://github.com/Applied-Machine-Learning-Lab/NeurIPS2026_SeaFlow",
+        "https://arxiv.org/html/2611.01840v1",
+        "https://raw.githubusercontent.com/Applied-Machine-Learning-Lab/NeurIPS2026_SeaFlow/main/README.md",
+        "https://raw.githubusercontent.com/Applied-Machine-Learning-Lab/NeurIPS2026_SeaFlow/main/WORKFLOW.md",
+        "https://raw.githubusercontent.com/Applied-Machine-Learning-Lab/NeurIPS2026_SeaFlow/main/docs/modeling-workflow.md",
+        "https://raw.githubusercontent.com/Applied-Machine-Learning-Lab/NeurIPS2026_SeaFlow/main/docs/patch.md",
+        "https://raw.githubusercontent.com/Applied-Machine-Learning-Lab/NeurIPS2026_SeaFlow/main/scripts/evolve.py",
+        "https://raw.githubusercontent.com/Applied-Machine-Learning-Lab/NeurIPS2026_SeaFlow/main/glee_agent/route.py",
+        "https://raw.githubusercontent.com/Applied-Machine-Learning-Lab/NeurIPS2026_SeaFlow/main/glee_agent/workflows/tree.py",
+        "https://raw.githubusercontent.com/Applied-Machine-Learning-Lab/NeurIPS2026_SeaFlow/main/glee_agent/workflows/bargaining/classify.py",
+        "https://raw.githubusercontent.com/Applied-Machine-Learning-Lab/NeurIPS2026_SeaFlow/main/.env.example"
+      ],
+      "general_concept_or_mechanism": "techniques/deterministic-workflow-reuse",
+      "syntheses_reviewed": [
+        "techniques/deterministic-workflow-reuse",
+        "techniques/gated-admission-and-revalidation"
+      ],
+      "disposition": "create-new",
+      "reason": "Existing synthesized explanations cover the mechanism; add contextual navigation and use independently checked new material only where it extends those explanations.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "substantive_synthesis_destinations": [
+        "techniques/deterministic-workflow-reuse",
+        "techniques/gated-admission-and-revalidation"
+      ],
+      "mechanism_summary": "Agent that evolves applicability-conditioned code workflows from game records; 1st overall at GLEE with sub-millisecond decisions.",
+      "navigation_only_destinations": []
+    },
+    {
+      "briefing": "briefings/2026/11/2026-11-05",
+      "finding": 3,
+      "entity": "projects/adversarial-speculative-reasoning",
+      "entity_sources": [
+        "https://arxiv.org/abs/2611.05345",
+        "https://arxiv.org/html/2611.05345v1"
+      ],
+      "general_concept_or_mechanism": "concepts/capability-locus",
+      "syntheses_reviewed": [
+        "concepts/capability-locus",
+        "concepts/protocol-relative-scores"
+      ],
+      "disposition": "no-change-with-reason",
+      "reason": "Adversarial Speculative Reasoning: Trains a speculative-decoding draft to be rejected at decision points so the target model writes critical reasoning at highest precision. The reviewed explanations (concepts/capability-locus, concepts/protocol-relative-scores) already provide the relevant distinctions. Reprocessing this historical finding supplies navigation, not a newly checked result that changes their empirical conclusions.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "substantive_synthesis_destinations": [],
+      "mechanism_summary": "Trains a speculative-decoding draft to be rejected at decision points so the target model writes critical reasoning at highest precision.",
+      "navigation_only_destinations": [
+        "concepts/capability-locus",
+        "concepts/protocol-relative-scores"
+      ]
+    },
+    {
+      "briefing": "briefings/2026/11/2026-11-05",
+      "finding": 4,
+      "entity": "projects/agenticbench",
+      "entity_sources": [
+        {
+          "url": "https://agenticbench.org/",
+          "retrieved": "2026-11-10"
+        },
+        {
+          "url": "https://agenticbench.org/method.html",
+          "retrieved": "2026-11-10"
+        },
+        {
+          "url": "https://agenticbench.org/leaderboard-overview.html",
+          "retrieved": "2026-11-10"
+        },
+        {
+          "url": "https://agenticbench.org/about.html",
+          "retrieved": "2026-11-10"
+        },
+        {
+          "url": "https://agenticbench.org/charter.html",
+          "retrieved": "2026-11-10"
+        },
+        {
+          "url": "https://agenticbench.org/disclosures.html",
+          "retrieved": "2026-11-10"
+        },
+        {
+          "url": "https://agenticbench.org/public-disclosures.html",
+          "retrieved": "2026-11-10"
+        },
+        {
+          "url": "https://agenticbench.org/honesty.html",
+          "retrieved": "2026-11-10"
+        }
+      ],
+      "general_concept_or_mechanism": "techniques/secure-agent-operations",
+      "syntheses_reviewed": [
+        "techniques/secure-agent-operations",
+        "concepts/protocol-relative-scores"
+      ],
+      "disposition": "update-existing",
+      "reason": "Existing synthesized explanations cover the mechanism; add contextual navigation and use independently checked new material only where it extends those explanations.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "substantive_synthesis_destinations": [
+        "techniques/secure-agent-operations"
+      ],
+      "mechanism_summary": "Independent rolling benchmark that scores AI coding-agent harnesses on what they do with local files, egress, telemetry and secrets.",
+      "navigation_only_destinations": [
+        "concepts/protocol-relative-scores"
+      ]
+    },
+    {
+      "briefing": "briefings/2026/11/2026-11-05",
+      "finding": 5,
+      "entity": "projects/rivet-agents",
+      "entity_sources": [
+        "https://github.com/rivet-dev/agents",
+        "https://raw.githubusercontent.com/rivet-dev/agents/main/README.md",
+        "https://raw.githubusercontent.com/rivet-dev/agents/main/packages/pi/package.json",
+        "https://raw.githubusercontent.com/rivet-dev/agents/main/packages/pi/src/actor.ts",
+        "https://raw.githubusercontent.com/rivet-dev/agents/main/packages/pi/src/runtime.ts",
+        "https://raw.githubusercontent.com/rivet-dev/agents/main/packages/pi/src/actions.ts",
+        "https://raw.githubusercontent.com/rivet-dev/agents/main/packages/pi/src/answers.ts",
+        "https://raw.githubusercontent.com/rivet-dev/agents/main/packages/pi/src/storage.ts",
+        "https://raw.githubusercontent.com/rivet-dev/agents/main/packages/pi/src/watches.ts",
+        "https://raw.githubusercontent.com/rivet-dev/agents/main/packages/pi/src/drain.ts",
+        "https://raw.githubusercontent.com/rivet-dev/agents/main/packages/sandbox-adapter/package.json",
+        "https://raw.githubusercontent.com/rivet-dev/agents/main/packages/sandbox-adapter/src/index.ts",
+        "https://raw.githubusercontent.com/rivet-dev/agents/main/packages/sandbox-adapter/src/agentos.ts",
+        "https://raw.githubusercontent.com/rivet-dev/agents/main/docs/content/docs/index.mdx",
+        "https://raw.githubusercontent.com/rivet-dev/agents/main/docs/content/guides/durable-ai-agents.mdx",
+        "https://raw.githubusercontent.com/rivet-dev/agents/main/docs/content/guides/agent-design-patterns.mdx",
+        "https://raw.githubusercontent.com/rivet-dev/agents/main/docs/content/guides/run-claude-code.mdx",
+        "https://raw.githubusercontent.com/rivet-dev/agents/main/.github/workflows/ci.yaml",
+        "https://api.github.com/repos/rivet-dev/agents",
+        "https://api.github.com/repos/rivet-dev/agents/git/trees/main?recursive=1"
+      ],
+      "general_concept_or_mechanism": "concepts/replay-idempotency-and-effect-semantics",
+      "syntheses_reviewed": [
+        "concepts/replay-idempotency-and-effect-semantics",
+        "techniques/durable-agent-execution"
+      ],
+      "disposition": "create-new",
+      "reason": "Existing synthesized explanations cover the mechanism; add contextual navigation and use independently checked new material only where it extends those explanations.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "substantive_synthesis_destinations": [
+        "concepts/replay-idempotency-and-effect-semantics",
+        "techniques/durable-agent-execution"
+      ],
+      "mechanism_summary": "Rivet's agent infrastructure runs coding agents as durable Actors whose conversations, tool calls and plans persist in the Actor's own SQLite database.",
+      "navigation_only_destinations": []
+    },
+    {
+      "briefing": "briefings/2026/11/2026-11-05",
+      "finding": 6,
+      "entity": "projects/tigerless-agent-memory",
+      "entity_sources": [
+        "https://github.com/tigerless-labs/agent-memory",
+        "https://raw.githubusercontent.com/tigerless-labs/agent-memory/main/README.md",
+        "https://raw.githubusercontent.com/tigerless-labs/agent-memory/main/CLAUDE.md",
+        "https://raw.githubusercontent.com/tigerless-labs/agent-memory/main/pyproject.toml",
+        "https://raw.githubusercontent.com/tigerless-labs/agent-memory/main/.github/workflows/ci.yml",
+        "https://raw.githubusercontent.com/tigerless-labs/agent-memory/main/.gitignore",
+        "https://raw.githubusercontent.com/tigerless-labs/agent-memory/main/docs/design/index.md",
+        "https://raw.githubusercontent.com/tigerless-labs/agent-memory/main/docs/design/write-negotiation.md",
+        "https://raw.githubusercontent.com/tigerless-labs/agent-memory/main/docs/design/management-operation-boundaries.md",
+        "https://raw.githubusercontent.com/tigerless-labs/agent-memory/main/docs/design/raw-evidence-reads.md",
+        "https://raw.githubusercontent.com/tigerless-labs/agent-memory/main/docs/TODO.md",
+        "https://raw.githubusercontent.com/tigerless-labs/agent-memory/main/packages/core/src/agent_memory/core/recall.py",
+        "https://raw.githubusercontent.com/tigerless-labs/agent-memory/main/packages/core/src/agent_memory/core/store.py",
+        "https://raw.githubusercontent.com/tigerless-labs/agent-memory/main/packages/core/src/agent_memory/core/manage.py",
+        "https://raw.githubusercontent.com/tigerless-labs/agent-memory/main/packages/core/src/agent_memory/core/distill.py",
+        "https://raw.githubusercontent.com/tigerless-labs/agent-memory/main/packages/core/src/agent_memory/core/context.py",
+        "https://raw.githubusercontent.com/tigerless-labs/agent-memory/main/packages/core/src/agent_memory/core/injection.py",
+        "https://raw.githubusercontent.com/tigerless-labs/agent-memory/main/packages/core/src/agent_memory/core/indexer.py",
+        "https://raw.githubusercontent.com/tigerless-labs/agent-memory/main/packages/core/src/agent_memory/core/search_index.py",
+        "https://raw.githubusercontent.com/tigerless-labs/agent-memory/main/packages/core/src/agent_memory/core/reasoning.py",
+        "https://raw.githubusercontent.com/tigerless-labs/agent-memory/main/packages/core/src/agent_memory/core/manage_toolkit.py",
+        "https://raw.githubusercontent.com/tigerless-labs/agent-memory/main/packages/harness/src/agent_memory/harness/arms.py",
+        "https://raw.githubusercontent.com/tigerless-labs/agent-memory/main/packages/harness/src/agent_memory/harness/exam.py",
+        "https://raw.githubusercontent.com/tigerless-labs/agent-memory/main/packages/harness/src/agent_memory/harness/judge.py",
+        "https://raw.githubusercontent.com/tigerless-labs/agent-memory/main/packages/harness/src/agent_memory/harness/interop.py",
+        "https://raw.githubusercontent.com/tigerless-labs/agent-memory/main/packages/harness/src/agent_memory/harness/systems.py",
+        "https://raw.githubusercontent.com/tigerless-labs/agent-memory/main/packages/executor/src/agent_memory/executor/reasoners.py",
+        "https://raw.githubusercontent.com/tigerless-labs/agent-memory/main/packages/executor/src/agent_memory/executor/hosts.py",
+        "https://raw.githubusercontent.com/tigerless-labs/agent-memory/main/tests/redteam/test_poisoning.py"
+      ],
+      "general_concept_or_mechanism": "techniques/agent-skills-and-memory",
+      "syntheses_reviewed": [
+        "techniques/agent-skills-and-memory",
+        "concepts/capability-locus"
+      ],
+      "disposition": "update-existing",
+      "reason": "Existing synthesized explanations cover the mechanism; add contextual navigation and use independently checked new material only where it extends those explanations.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "substantive_synthesis_destinations": [
+        "techniques/agent-skills-and-memory"
+      ],
+      "mechanism_summary": "Local-first agent memory runtime: Markdown files as the source of truth, a rebuildable SQLite index, and a sleep-time Manage layer on its own clock.",
+      "navigation_only_destinations": [
+        "concepts/capability-locus"
+      ]
+    },
+    {
+      "briefing": "briefings/2026/11/2026-11-05",
+      "finding": 7,
+      "entity": "projects/openma",
+      "entity_sources": [
+        "https://github.com/openma-ai/open-managed-agents",
+        "https://raw.githubusercontent.com/openma-ai/open-managed-agents/main/README.md",
+        "https://raw.githubusercontent.com/openma-ai/open-managed-agents/main/docs/v1-architecture.md",
+        "https://raw.githubusercontent.com/openma-ai/open-managed-agents/main/docs/openai-agents-compatibility-status.md",
+        "https://raw.githubusercontent.com/openma-ai/open-managed-agents/main/packages/session-runtime/src/machine.ts",
+        "https://raw.githubusercontent.com/openma-ai/open-managed-agents/main/packages/session-runtime/package.json",
+        "https://raw.githubusercontent.com/openma-ai/open-managed-agents/main/packages/sandbox/src/recovery.ts",
+        "https://raw.githubusercontent.com/openma-ai/open-managed-agents/main/packages/managed-agents-runtime/package.json",
+        "https://raw.githubusercontent.com/openma-ai/open-managed-agents/main/apps/agent/src/harness/interface.ts",
+        "https://raw.githubusercontent.com/openma-ai/open-managed-agents/main/.github/workflows/ci.yml",
+        "https://api.github.com/repos/openma-ai/open-managed-agents",
+        "https://api.github.com/repos/openma-ai/open-managed-agents/git/trees/main?recursive=1"
+      ],
+      "general_concept_or_mechanism": "concepts/replay-idempotency-and-effect-semantics",
+      "syntheses_reviewed": [
+        "concepts/replay-idempotency-and-effect-semantics",
+        "techniques/durable-agent-execution"
+      ],
+      "disposition": "create-new",
+      "reason": "Existing synthesized explanations cover the mechanism; add contextual navigation and use independently checked new material only where it extends those explanations.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "substantive_synthesis_destinations": [
+        "concepts/replay-idempotency-and-effect-semantics",
+        "techniques/durable-agent-execution"
+      ],
+      "mechanism_summary": "Self-hostable managed-agent platform separating session, execution and recovery from harness, sandbox and model, with Claude and OpenAI API surfaces.",
+      "navigation_only_destinations": []
+    },
+    {
+      "briefing": "briefings/2026/11/2026-11-06",
+      "finding": 1,
+      "entity": "projects/late-autumn",
+      "entity_sources": [
+        "https://arxiv.org/abs/2611.02391",
+        "https://arxiv.org/html/2611.02391v1"
+      ],
+      "general_concept_or_mechanism": "concepts/capability-locus",
+      "syntheses_reviewed": [
+        "concepts/capability-locus",
+        "concepts/preservation-aware-agent-improvement"
+      ],
+      "disposition": "no-change-with-reason",
+      "reason": "Late Autumn: LLM coding agents specialize a general lifelong multi-robot planner to one modeled warehouse, raising throughput 22-60% with reviewable scored commits. The reviewed explanations (concepts/capability-locus, concepts/preservation-aware-agent-improvement) already provide the relevant distinctions. Reprocessing this historical finding supplies navigation, not a newly checked result that changes their empirical conclusions.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "substantive_synthesis_destinations": [],
+      "mechanism_summary": "LLM coding agents specialize a general lifelong multi-robot planner to one modeled warehouse, raising throughput 22-60% with reviewable scored commits.",
+      "navigation_only_destinations": [
+        "concepts/capability-locus",
+        "concepts/preservation-aware-agent-improvement"
+      ]
+    },
+    {
+      "briefing": "briefings/2026/11/2026-11-06",
+      "finding": 2,
+      "entity": "projects/matt-pocock-skills-reviewer",
+      "entity_sources": [
+        "https://github.github.com/gh-aw/blog/2026-11-06-agent-of-the-day/",
+        "https://raw.githubusercontent.com/github/gh-aw/main/.github/workflows/mattpocock-skills-reviewer.md"
+      ],
+      "general_concept_or_mechanism": "concepts/abstention-as-first-class-verdict",
+      "syntheses_reviewed": [
+        "concepts/abstention-as-first-class-verdict"
+      ],
+      "disposition": "no-change-with-reason",
+      "reason": "Matt Pocock Skills Reviewer: gh-aw PR reviewer applying five commit-pinned Matt Pocock skills: Haiku triage, fixed write shapes, three vendor-reported runs, no accuracy evidence. The reviewed explanations (concepts/abstention-as-first-class-verdict) already provide the relevant distinctions. Reprocessing this historical finding supplies navigation, not a newly checked result that changes their empirical conclusions.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "substantive_synthesis_destinations": [],
+      "mechanism_summary": "gh-aw PR reviewer applying five commit-pinned Matt Pocock skills: Haiku triage, fixed write shapes, three vendor-reported runs, no accuracy evidence.",
+      "navigation_only_destinations": [
+        "concepts/abstention-as-first-class-verdict"
+      ]
+    },
+    {
+      "briefing": "briefings/2026/11/2026-11-06",
+      "finding": 3,
+      "entity": "projects/code-simplifier",
+      "entity_sources": [
+        "https://github.github.com/gh-aw/blog/2026-11-05-agent-of-the-day/",
+        "https://raw.githubusercontent.com/github/gh-aw/main/.github/workflows/code-simplifier.md"
+      ],
+      "general_concept_or_mechanism": "concepts/abstention-as-first-class-verdict",
+      "syntheses_reviewed": [
+        "concepts/abstention-as-first-class-verdict"
+      ],
+      "disposition": "no-change-with-reason",
+      "reason": "Code Simplifier: Daily gh-aw cleanup agent: deterministic candidate precompute, Haiku gate and scout, strict evals, six required endings; three vendor-reported no-op runs. The reviewed explanations (concepts/abstention-as-first-class-verdict) already provide the relevant distinctions. Reprocessing this historical finding supplies navigation, not a newly checked result that changes their empirical conclusions.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "substantive_synthesis_destinations": [],
+      "mechanism_summary": "Daily gh-aw cleanup agent: deterministic candidate precompute, Haiku gate and scout, strict evals, six required endings; three vendor-reported no-op runs.",
+      "navigation_only_destinations": [
+        "concepts/abstention-as-first-class-verdict"
+      ]
+    },
+    {
+      "briefing": "briefings/2026/11/2026-11-06",
+      "finding": 4,
+      "entity": "projects/pr-sous-chef",
+      "entity_sources": [
+        "https://github.github.com/gh-aw/blog/2026-11-04-agent-of-the-day/",
+        "https://raw.githubusercontent.com/github/gh-aw/main/.github/workflows/pr-sous-chef.md",
+        "https://raw.githubusercontent.com/github/gh-aw/main/.github/workflows/pr-finisher.md",
+        "https://raw.githubusercontent.com/github/gh-aw/main/scripts/pr-sous-chef.mjs",
+        "https://github.github.com/gh-aw/reference/safe-outputs/"
+      ],
+      "general_concept_or_mechanism": "concepts/replay-idempotency-and-effect-semantics",
+      "syntheses_reviewed": [
+        "concepts/replay-idempotency-and-effect-semantics",
+        "concepts/abstention-as-first-class-verdict"
+      ],
+      "disposition": "create-new",
+      "reason": "Existing synthesized explanations cover the mechanism; add contextual navigation and use independently checked new material only where it extends those explanations.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "substantive_synthesis_destinations": [
+        "concepts/replay-idempotency-and-effect-semantics"
+      ],
+      "mechanism_summary": "gh-aw PR nudger: deterministic prefilter, idempotent state fingerprint, delegated Copilot assignment; two of four published runs failed.",
+      "navigation_only_destinations": [
+        "concepts/abstention-as-first-class-verdict"
+      ]
+    },
+    {
+      "briefing": "briefings/2026/11/2026-11-06",
+      "finding": 5,
+      "entity": "projects/browser4",
+      "entity_sources": [
+        "https://github.com/platonai/browser4",
+        "https://raw.githubusercontent.com/platonai/Browser4/main/README.md",
+        "https://raw.githubusercontent.com/platonai/Browser4/main/VERSION",
+        "https://raw.githubusercontent.com/platonai/Browser4/main/docs/experience-memory.md",
+        "https://raw.githubusercontent.com/platonai/Browser4/main/docs/mcp-tools.md",
+        "https://raw.githubusercontent.com/platonai/Browser4/main/docs/TESTING.md",
+        "https://raw.githubusercontent.com/platonai/Browser4/main/.github/workflows/ci.yml",
+        "https://raw.githubusercontent.com/platonai/Browser4/main/.github/workflows/pr.yml",
+        "https://raw.githubusercontent.com/platonai/Browser4/main/.github/workflows/nightly.yml",
+        "https://raw.githubusercontent.com/platonai/Browser4/main/.github/workflows/nightly-cli.yml",
+        "https://raw.githubusercontent.com/platonai/Browser4/main/browser4-agentic/src/main/kotlin/ai/platon/pulsar/agentic/inference/chat/AgentToolCallLoop.kt",
+        "https://raw.githubusercontent.com/platonai/Browser4/main/browser4-agentic/src/main/kotlin/ai/platon/pulsar/agentic/inference/chat/ToolDisclosure.kt",
+        "https://raw.githubusercontent.com/platonai/Browser4/main/browser4-agentic/src/main/kotlin/ai/platon/pulsar/agentic/inference/chat/ToolResultDigest.kt",
+        "https://raw.githubusercontent.com/platonai/Browser4/main/browser4-agentic/src/main/kotlin/ai/platon/pulsar/agentic/inference/chat/PageViewDeduper.kt",
+        "https://raw.githubusercontent.com/platonai/Browser4/main/browser4-agentic/src/main/kotlin/ai/platon/pulsar/agentic/memory/AgentMemory.kt",
+        "https://raw.githubusercontent.com/platonai/Browser4/main/browser4-agentic/src/main/kotlin/ai/platon/pulsar/agentic/tools/experience/ExperienceToolExecutor.kt",
+        "https://raw.githubusercontent.com/platonai/Browser4/main/browser4-agentic/src/main/kotlin/ai/platon/pulsar/agentic/tools/experience/KnowledgeStore.kt",
+        "https://raw.githubusercontent.com/platonai/Browser4/main/browser4-agent-tools/src/main/kotlin/ai/platon/pulsar/agentic/tools/advanced/crawl/common/XSqlExecutor.kt",
+        "https://raw.githubusercontent.com/platonai/Browser4/main/skills/browser4-cli/references/x-sql-dom-load-select.md",
+        "https://raw.githubusercontent.com/platonai/Browser4/main/skills/browser4-cli/references/bulk-collection.md",
+        "https://raw.githubusercontent.com/platonai/Browser4/main/docs-dev/copilot/agent-run-flow.md",
+        "https://raw.githubusercontent.com/platonai/Browser4/main/docs-dev/copilot/20261029-agent-run-bulk-collection-evaluation.md",
+        "https://raw.githubusercontent.com/platonai/Browser4/main/docs-dev/copilot/browser4-competitive-advantages.md"
+      ],
+      "general_concept_or_mechanism": "techniques/deterministic-workflow-reuse",
+      "syntheses_reviewed": [
+        "techniques/deterministic-workflow-reuse",
+        "concepts/protocol-relative-scores"
+      ],
+      "disposition": "create-new",
+      "reason": "Existing synthesized explanations cover the mechanism; add contextual navigation and use independently checked new material only where it extends those explanations.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "substantive_synthesis_destinations": [
+        "techniques/deterministic-workflow-reuse"
+      ],
+      "mechanism_summary": "Apache-2.0 AI-native browser engine: Rust CLI and Spring backend, zero-token X-SQL extraction, a progressive experience store; throughput unbenchmarked.",
+      "navigation_only_destinations": [
+        "concepts/protocol-relative-scores"
+      ]
+    },
+    {
+      "briefing": "briefings/2026/11/2026-11-07",
+      "finding": 1,
+      "entity": "projects/strategist",
+      "entity_sources": [
+        {
+          "url": "https://arxiv.org/abs/2611.03618",
+          "retrieved": "2026-11-07"
+        },
+        {
+          "url": "https://arxiv.org/html/2611.03618v1",
+          "retrieved": "2026-11-10"
+        }
+      ],
+      "general_concept_or_mechanism": "concepts/capability-locus",
+      "syntheses_reviewed": [
+        "concepts/capability-locus",
+        "concepts/improvement-lives-in-external-state"
+      ],
+      "disposition": "no-change-with-reason",
+      "reason": "Strategist: Evolving Reasoning with Agents: Meta-agent evolves executable inference strategies as blueprints in a shared library, matching the strongest baseline's accuracy at 39% lower inference cost. The reviewed explanations (concepts/capability-locus, concepts/improvement-lives-in-external-state) already provide the relevant distinctions. Reprocessing this historical finding supplies navigation, not a newly checked result that changes their empirical conclusions.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "substantive_synthesis_destinations": [],
+      "mechanism_summary": "Meta-agent evolves executable inference strategies as blueprints in a shared library, matching the strongest baseline's accuracy at 39% lower inference cost.",
+      "navigation_only_destinations": [
+        "concepts/capability-locus",
+        "concepts/improvement-lives-in-external-state"
+      ]
+    },
+    {
+      "briefing": "briefings/2026/11/2026-11-07",
+      "finding": 2,
+      "entity": "projects/fincosmos",
+      "entity_sources": [
+        {
+          "url": "https://arxiv.org/abs/2611.07464",
+          "retrieved": "2026-11-07"
+        },
+        "https://arxiv.org/abs/2611.07464",
+        "https://arxiv.org/html/2611.07464v1"
+      ],
+      "general_concept_or_mechanism": "concepts/protocol-relative-scores",
+      "syntheses_reviewed": [
+        "concepts/protocol-relative-scores",
+        "concepts/scoped-assurance"
+      ],
+      "disposition": "no-change-with-reason",
+      "reason": "FINCOSMOS: An Open-World Evaluation Paradigm for Agents in Finance: Open-world agent benchmark for finance: hidden intent, self-sourced Web data, point-in-time backtests and 15 veto checks; no session accepted in 150 runs. The reviewed explanations (concepts/protocol-relative-scores, concepts/scoped-assurance) already provide the relevant distinctions. Reprocessing this historical finding supplies navigation, not a newly checked result that changes their empirical conclusions.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "substantive_synthesis_destinations": [
+        "concepts/scoped-assurance"
+      ],
+      "mechanism_summary": "Open-world agent benchmark for finance: hidden intent, self-sourced Web data, point-in-time backtests and 15 veto checks; no session accepted in 150 runs.",
+      "navigation_only_destinations": [
+        "concepts/protocol-relative-scores"
+      ]
+    },
+    {
+      "briefing": "briefings/2026/11/2026-11-07",
+      "finding": 3,
+      "entity": "projects/cheme-as-code",
+      "entity_sources": [
+        {
+          "url": "https://arxiv.org/abs/2611.07947",
+          "retrieved": "2026-11-07"
+        },
+        "https://arxiv.org/abs/2611.07947",
+        "https://arxiv.org/html/2611.07947v1"
+      ],
+      "general_concept_or_mechanism": "techniques/artifact-and-claim-provenance",
+      "syntheses_reviewed": [
+        "techniques/artifact-and-claim-provenance",
+        "concepts/verified-completion-vs-apparent-success"
+      ],
+      "disposition": "update-existing",
+      "reason": "Existing synthesized explanations cover the mechanism; add contextual navigation and use independently checked new material only where it extends those explanations.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "substantive_synthesis_destinations": [
+        "techniques/artifact-and-claim-provenance"
+      ],
+      "mechanism_summary": "Open-source platform where one LLM agent edits Git-versioned chemical engineering artifacts while deterministic tools compute and check every value.",
+      "navigation_only_destinations": [
+        "concepts/verified-completion-vs-apparent-success"
+      ]
+    },
+    {
+      "briefing": "briefings/2026/11/2026-11-07",
+      "finding": 4,
+      "entity": "projects/fa-agent",
+      "entity_sources": [
+        {
+          "url": "https://arxiv.org/abs/2611.06555",
+          "retrieved": "2026-11-07"
+        },
+        "https://arxiv.org/abs/2611.06555",
+        "https://arxiv.org/html/2611.06555v2"
+      ],
+      "general_concept_or_mechanism": "concepts/abstention-as-first-class-verdict",
+      "syntheses_reviewed": [
+        "concepts/abstention-as-first-class-verdict",
+        "concepts/improvement-lives-in-external-state"
+      ],
+      "disposition": "no-change-with-reason",
+      "reason": "FA-Agent: Multimodal Seismic First-Arrival Picking: Multimodal agent reads seismic gathers, calls processing tools and keeps, corrects or removes first-arrival picks, with expert rules stored as skills. The reviewed explanations (concepts/abstention-as-first-class-verdict, concepts/improvement-lives-in-external-state) already provide the relevant distinctions. Reprocessing this historical finding supplies navigation, not a newly checked result that changes their empirical conclusions.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "substantive_synthesis_destinations": [],
+      "mechanism_summary": "Multimodal agent reads seismic gathers, calls processing tools and keeps, corrects or removes first-arrival picks, with expert rules stored as skills.",
+      "navigation_only_destinations": [
+        "concepts/abstention-as-first-class-verdict",
+        "concepts/improvement-lives-in-external-state"
+      ]
+    },
+    {
+      "briefing": "briefings/2026/11/2026-11-07",
+      "finding": 5,
+      "entity": "projects/controlanything",
+      "entity_sources": [
+        {
+          "url": "https://arxiv.org/abs/2611.08321",
+          "retrieved": "2026-11-07"
+        },
+        "https://arxiv.org/abs/2611.08321",
+        "https://arxiv.org/html/2611.08321v1"
+      ],
+      "general_concept_or_mechanism": "concepts/scoped-assurance",
+      "syntheses_reviewed": [
+        "concepts/scoped-assurance",
+        "concepts/verified-completion-vs-apparent-success"
+      ],
+      "disposition": "no-change-with-reason",
+      "reason": "ControlAnything: On-Demand Device Integration by a Coding Agent: MR coding agent writes and tests device connectors on demand; 9 of 10 requests ready in a median 32.5 s, evidence limited to transport acknowledgements. The reviewed explanations (concepts/scoped-assurance, concepts/verified-completion-vs-apparent-success) already provide the relevant distinctions. Reprocessing this historical finding supplies navigation, not a newly checked result that changes their empirical conclusions.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "substantive_synthesis_destinations": [
+        "concepts/scoped-assurance"
+      ],
+      "mechanism_summary": "MR coding agent writes and tests device connectors on demand; 9 of 10 requests ready in a median 32.5 s, evidence limited to transport acknowledgements.",
+      "navigation_only_destinations": [
+        "concepts/verified-completion-vs-apparent-success"
+      ]
+    },
+    {
+      "briefing": "briefings/2026/11/2026-11-08",
+      "finding": 1,
+      "entity": "projects/evoaudit",
+      "entity_sources": [
+        "https://arxiv.org/abs/2611.07624",
+        "https://arxiv.org/html/2611.07624v1",
+        "https://github.com/simple-agent-lab/RSIHub",
+        "https://api.github.com/repos/simple-agent-lab/RSIHub/git/trees/main?recursive=1",
+        "https://raw.githubusercontent.com/simple-agent-lab/RSIHub/main/README.md"
+      ],
+      "general_concept_or_mechanism": "concepts/preservation-aware-agent-improvement",
+      "syntheses_reviewed": [
+        "concepts/preservation-aware-agent-improvement"
+      ],
+      "disposition": "no-change-with-reason",
+      "reason": "EvoAudit / Beneath the Surface: Diagnoses harness self-evolution for task-coverage trade-offs, deployment cost and transfer, and revises four evolution operators accordingly. The reviewed explanations (concepts/preservation-aware-agent-improvement) already provide the relevant distinctions. Reprocessing this historical finding supplies navigation, not a newly checked result that changes their empirical conclusions.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "substantive_synthesis_destinations": [],
+      "mechanism_summary": "Diagnoses harness self-evolution for task-coverage trade-offs, deployment cost and transfer, and revises four evolution operators accordingly.",
+      "navigation_only_destinations": [
+        "concepts/preservation-aware-agent-improvement"
+      ]
+    },
+    {
+      "briefing": "briefings/2026/11/2026-11-08",
+      "finding": 2,
+      "entity": "projects/tandembench",
+      "entity_sources": [
+        {
+          "url": "https://arxiv.org/abs/2611.05827",
+          "retrieved": "2026-11-10"
+        },
+        {
+          "url": "https://arxiv.org/html/2611.05827v1",
+          "retrieved": "2026-11-10"
+        }
+      ],
+      "general_concept_or_mechanism": "evaluations/multi-agent-value-and-coordination",
+      "syntheses_reviewed": [
+        "evaluations/multi-agent-value-and-coordination",
+        "techniques/multi-agent-orchestration"
+      ],
+      "disposition": "update-existing",
+      "reason": "Existing synthesized explanations cover the mechanism; add contextual navigation and use independently checked new material only where it extends those explanations.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "substantive_synthesis_destinations": [
+        "evaluations/multi-agent-value-and-coordination",
+        "techniques/multi-agent-orchestration"
+      ],
+      "mechanism_summary": "Benchmark that asks decision models to pick optimal two-agent cooking plans and to notice when every supplied plan is suboptimal.",
+      "navigation_only_destinations": []
+    },
+    {
+      "briefing": "briefings/2026/11/2026-11-08",
+      "finding": 3,
+      "entity": "projects/masbench",
+      "entity_sources": [
+        {
+          "url": "https://arxiv.org/abs/2610.04672",
+          "retrieved": "2026-11-10"
+        },
+        {
+          "url": "https://arxiv.org/html/2610.04672v1",
+          "retrieved": "2026-11-10"
+        },
+        {
+          "url": "https://arxiv.org/html/2610.04672v2",
+          "retrieved": "2026-11-10"
+        }
+      ],
+      "general_concept_or_mechanism": "evaluations/multi-agent-value-and-coordination",
+      "syntheses_reviewed": [
+        "evaluations/multi-agent-value-and-coordination",
+        "techniques/multi-agent-orchestration"
+      ],
+      "disposition": "update-existing",
+      "reason": "Existing synthesized explanations cover the mechanism; add contextual navigation and use independently checked new material only where it extends those explanations.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "substantive_synthesis_destinations": [
+        "evaluations/multi-agent-value-and-coordination",
+        "techniques/multi-agent-orchestration"
+      ],
+      "mechanism_summary": "Multi-agent collaboration benchmark that isolates protocol, memory and routing effects under deliberately partial observability.",
+      "navigation_only_destinations": []
+    },
+    {
+      "briefing": "briefings/2026/11/2026-11-08",
+      "finding": 4,
+      "entity": "projects/st-bench",
+      "entity_sources": [
+        "https://arxiv.org/abs/2610.07763",
+        "https://arxiv.org/html/2610.07763v1"
+      ],
+      "general_concept_or_mechanism": "evaluations/multi-agent-value-and-coordination",
+      "syntheses_reviewed": [
+        "evaluations/multi-agent-value-and-coordination",
+        "techniques/multi-agent-orchestration"
+      ],
+      "disposition": "update-existing",
+      "reason": "Existing synthesized explanations cover the mechanism; add contextual navigation and use independently checked new material only where it extends those explanations.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "substantive_synthesis_destinations": [
+        "evaluations/multi-agent-value-and-coordination",
+        "techniques/multi-agent-orchestration"
+      ],
+      "mechanism_summary": "Benchmark of 100 Earth-science analysis tasks and 2,067 queries measuring whether multi-agent systems beat a single agent, and at what cost.",
+      "navigation_only_destinations": []
+    },
+    {
+      "briefing": "briefings/2026/11/2026-11-08",
+      "finding": 5,
+      "entity": "projects/agent-orchestrator",
+      "entity_sources": [
+        "https://github.com/OrchestratorInc/agent-orchestrator",
+        "https://raw.githubusercontent.com/OrchestratorInc/agent-orchestrator/main/README.md",
+        "https://raw.githubusercontent.com/OrchestratorInc/agent-orchestrator/main/docs/STATUS.md",
+        "https://raw.githubusercontent.com/OrchestratorInc/agent-orchestrator/main/docs/architecture.md",
+        "https://raw.githubusercontent.com/OrchestratorInc/agent-orchestrator/main/LICENSE",
+        "https://orchestrator.inc",
+        "https://docs.orchestrator.inc",
+        "https://github.com/OrchestratorInc/agent-orchestrator/releases/latest"
+      ],
+      "general_concept_or_mechanism": "concepts/structural-constraint-over-instruction",
+      "syntheses_reviewed": [
+        "concepts/structural-constraint-over-instruction",
+        "concepts/verified-completion-vs-apparent-success"
+      ],
+      "disposition": "no-change-with-reason",
+      "reason": "Agent Orchestrator (OrchestratorInc): Go-based fleet orchestrator running parallel coding agents in isolated worktrees with CI-repair and review escalation. The reviewed explanations (concepts/structural-constraint-over-instruction, concepts/verified-completion-vs-apparent-success) already provide the relevant distinctions. Reprocessing this historical finding supplies navigation, not a newly checked result that changes their empirical conclusions.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "substantive_synthesis_destinations": [],
+      "mechanism_summary": "Go-based fleet orchestrator running parallel coding agents in isolated worktrees with CI-repair and review escalation.",
+      "navigation_only_destinations": [
+        "concepts/structural-constraint-over-instruction",
+        "concepts/verified-completion-vs-apparent-success"
+      ]
+    },
+    {
+      "briefing": "briefings/2026/11/2026-11-09",
+      "finding": 1,
+      "entity": "projects/envopt",
+      "entity_sources": [
+        "https://arxiv.org/abs/2611.07372",
+        "https://arxiv.org/html/2611.07372v1"
+      ],
+      "general_concept_or_mechanism": "concepts/preservation-aware-agent-improvement",
+      "syntheses_reviewed": [
+        "concepts/preservation-aware-agent-improvement"
+      ],
+      "disposition": "no-change-with-reason",
+      "reason": "EnvOpt: Automated pipeline that optimizes a shared agent environment for lower cost and better pass rate, training without verifiers. The reviewed explanations (concepts/preservation-aware-agent-improvement) already provide the relevant distinctions. Reprocessing this historical finding supplies navigation, not a newly checked result that changes their empirical conclusions.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "substantive_synthesis_destinations": [],
+      "mechanism_summary": "Automated pipeline that optimizes a shared agent environment for lower cost and better pass rate, training without verifiers.",
+      "navigation_only_destinations": [
+        "concepts/preservation-aware-agent-improvement"
+      ]
+    },
+    {
+      "briefing": "briefings/2026/11/2026-11-09",
+      "finding": 2,
+      "entity": "projects/tracybot",
+      "entity_sources": [
+        "https://arxiv.org/abs/2611.09395",
+        "https://arxiv.org/html/2611.09395v1",
+        "https://github.com/TracyTeam/tracybot",
+        "https://api.github.com/repos/TracyTeam/tracybot/git/trees/main?recursive=1",
+        "https://raw.githubusercontent.com/TracyTeam/tracybot/main/README.md",
+        "https://raw.githubusercontent.com/TracyTeam/tracybot/main/tracking/README.md",
+        "https://raw.githubusercontent.com/TracyTeam/tracybot/main/tracking/tracy.py",
+        "https://raw.githubusercontent.com/TracyTeam/tracybot/main/tracking/hooks/post-commit.py",
+        "https://raw.githubusercontent.com/TracyTeam/tracybot/main/vscode-extension/src/utils.ts",
+        "https://raw.githubusercontent.com/TracyTeam/tracybot/main/vscode-extension/src/adr/buildAdr.ts",
+        "https://raw.githubusercontent.com/TracyTeam/tracybot/main/opencode-plugin/src/Tasklet.ts"
+      ],
+      "general_concept_or_mechanism": "techniques/artifact-and-claim-provenance",
+      "syntheses_reviewed": [
+        "techniques/artifact-and-claim-provenance",
+        "concepts/verified-completion-vs-apparent-success"
+      ],
+      "disposition": "update-existing",
+      "reason": "Existing synthesized explanations cover the mechanism; add contextual navigation and use independently checked new material only where it extends those explanations.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "substantive_synthesis_destinations": [
+        "techniques/artifact-and-claim-provenance"
+      ],
+      "mechanism_summary": "Open-source VS Code and Git tracing tool that maps agent-generated source lines back to the prompts and Tasklet that produced them.",
+      "navigation_only_destinations": [
+        "concepts/verified-completion-vs-apparent-success"
+      ]
+    },
+    {
+      "briefing": "briefings/2026/11/2026-11-09",
+      "finding": 3,
+      "entity": "projects/procgrep",
+      "entity_sources": [
+        "https://arxiv.org/abs/2606.16988",
+        "https://arxiv.org/html/2606.16988v2",
+        "https://github.com/hamidahoderinwale/procgrep",
+        "https://api.github.com/repos/hamidahoderinwale/procgrep/git/trees/main?recursive=1",
+        "https://raw.githubusercontent.com/hamidahoderinwale/procgrep/main/README.md"
+      ],
+      "general_concept_or_mechanism": "techniques/artifact-and-claim-provenance",
+      "syntheses_reviewed": [
+        "techniques/artifact-and-claim-provenance"
+      ],
+      "disposition": "no-change-with-reason",
+      "reason": "ProcGrep / Agent Trajectories as Programs: Library and method that fingerprints coding-agent behaviour from action trajectories and lets a target procedure be specified programmatically. The reviewed explanations (techniques/artifact-and-claim-provenance) already provide the relevant distinctions. Reprocessing this historical finding supplies navigation, not a newly checked result that changes their empirical conclusions.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "substantive_synthesis_destinations": [
+        "techniques/artifact-and-claim-provenance"
+      ],
+      "mechanism_summary": "Library and method that fingerprints coding-agent behaviour from action trajectories and lets a target procedure be specified programmatically.",
+      "navigation_only_destinations": []
+    },
+    {
+      "briefing": "briefings/2026/11/2026-11-09",
+      "finding": 4,
+      "entity": "projects/weavebench",
+      "entity_sources": [
+        "https://aclanthology.org/2026.emnlp-main.658/",
+        "https://aclanthology.org/2026.emnlp-main.658.pdf"
+      ],
+      "general_concept_or_mechanism": "concepts/verified-completion-vs-apparent-success",
+      "syntheses_reviewed": [
+        "concepts/verified-completion-vs-apparent-success",
+        "concepts/protocol-relative-scores"
+      ],
+      "disposition": "no-change-with-reason",
+      "reason": "WeaveBench: Peer-reviewed EMNLP 2026 benchmark of 114 hybrid GUI/CLI/code desktop tasks with a trajectory-aware judge; best model-runtime PassRate 41.2%. The reviewed explanations (concepts/verified-completion-vs-apparent-success, concepts/protocol-relative-scores) already provide the relevant distinctions. Reprocessing this historical finding supplies navigation, not a newly checked result that changes their empirical conclusions.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "substantive_synthesis_destinations": [],
+      "mechanism_summary": "Peer-reviewed EMNLP 2026 benchmark of 114 hybrid GUI/CLI/code desktop tasks with a trajectory-aware judge; best model-runtime PassRate 41.2%.",
+      "navigation_only_destinations": [
+        "concepts/verified-completion-vs-apparent-success",
+        "concepts/protocol-relative-scores"
+      ]
+    },
+    {
+      "briefing": "briefings/2026/11/2026-11-09",
+      "finding": 5,
+      "entity": "projects/assuring-ai-written-software",
+      "entity_sources": [
+        "https://arxiv.org/abs/2610.08651",
+        "https://arxiv.org/html/2610.08651v1"
+      ],
+      "general_concept_or_mechanism": "concepts/verified-completion-vs-apparent-success",
+      "syntheses_reviewed": [
+        "concepts/verified-completion-vs-apparent-success",
+        "techniques/verification-and-evidence"
+      ],
+      "disposition": "update-existing",
+      "reason": "Existing synthesized explanations cover the mechanism; add contextual navigation and use independently checked new material only where it extends those explanations.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "substantive_synthesis_destinations": [
+        "techniques/verification-and-evidence"
+      ],
+      "mechanism_summary": "One operator's production healthcare platform, built by coding agents and governed by agents, exposed proxy checks, silent audits and an unsafe repair.",
+      "navigation_only_destinations": [
+        "concepts/verified-completion-vs-apparent-success"
+      ]
+    },
+    {
+      "briefing": "briefings/2026/11/2026-11-10",
+      "finding": 1,
+      "entity": "projects/receipt",
+      "entity_sources": [
+        "https://arxiv.org/abs/2611.01930",
+        "https://arxiv.org/html/2611.01930v1"
+      ],
+      "general_concept_or_mechanism": "concepts/replay-idempotency-and-effect-semantics",
+      "syntheses_reviewed": [
+        "concepts/replay-idempotency-and-effect-semantics",
+        "techniques/durable-agent-execution"
+      ],
+      "disposition": "create-new",
+      "reason": "Existing synthesized explanations cover the mechanism; add contextual navigation and use independently checked new material only where it extends those explanations.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "substantive_synthesis_destinations": [
+        "concepts/replay-idempotency-and-effect-semantics",
+        "techniques/durable-agent-execution"
+      ],
+      "mechanism_summary": "Tool-execution protocol that reads from system calls what a process waits for and returns that state to an unmodified agent",
+      "navigation_only_destinations": []
+    },
+    {
+      "briefing": "briefings/2026/11/2026-11-10",
+      "finding": 2,
+      "entity": "projects/toolspace",
+      "entity_sources": [
+        "https://arxiv.org/abs/2611.05036",
+        "https://arxiv.org/html/2611.05036v1"
+      ],
+      "general_concept_or_mechanism": "techniques/evaluation-and-simulation",
+      "syntheses_reviewed": [
+        "techniques/evaluation-and-simulation",
+        "concepts/evaluator-circularity"
+      ],
+      "disposition": "no-change-with-reason",
+      "reason": "ToolSpace — Execution-grounded tool environments: Pipeline that mines data, state and retry dependencies from real MCP execution traces to synthesize replayable cross-environment agent tasks The reviewed explanations (techniques/evaluation-and-simulation, concepts/evaluator-circularity) already provide the relevant distinctions. Reprocessing this historical finding supplies navigation, not a newly checked result that changes their empirical conclusions.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "substantive_synthesis_destinations": [],
+      "mechanism_summary": "Pipeline that mines data, state and retry dependencies from real MCP execution traces to synthesize replayable cross-environment agent tasks",
+      "navigation_only_destinations": [
+        "techniques/evaluation-and-simulation",
+        "concepts/evaluator-circularity"
+      ]
+    },
+    {
+      "briefing": "briefings/2026/11/2026-11-10",
+      "finding": 3,
+      "entity": "projects/agent-r2",
+      "entity_sources": [
+        "https://arxiv.org/abs/2611.08219",
+        "https://arxiv.org/html/2611.08219v1"
+      ],
+      "general_concept_or_mechanism": "techniques/evaluation-and-simulation",
+      "syntheses_reviewed": [
+        "techniques/evaluation-and-simulation",
+        "concepts/evaluator-circularity"
+      ],
+      "disposition": "no-change-with-reason",
+      "reason": "Agent-R² — Real-source productivity task synthesis: Real-source synthesis of 4k office-work tasks with fine-grained rubrics, training a 4B agent that beats Qwen3-235B on GDPval and OfficeQA. The reviewed explanations (techniques/evaluation-and-simulation, concepts/evaluator-circularity) already provide the relevant distinctions. Reprocessing this historical finding supplies navigation, not a newly checked result that changes their empirical conclusions.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "substantive_synthesis_destinations": [],
+      "mechanism_summary": "Real-source synthesis of 4k office-work tasks with fine-grained rubrics, training a 4B agent that beats Qwen3-235B on GDPval and OfficeQA.",
+      "navigation_only_destinations": [
+        "techniques/evaluation-and-simulation",
+        "concepts/evaluator-circularity"
+      ]
+    },
+    {
+      "briefing": "briefings/2026/11/2026-11-10",
+      "finding": 4,
+      "entity": "projects/strands-box",
+      "entity_sources": [
+        "https://github.com/strands-agents/box",
+        "https://api.github.com/repos/strands-agents/box",
+        "https://api.github.com/repos/strands-agents/box/releases",
+        "https://api.github.com/repos/strands-agents/box/git/trees/main?recursive=1",
+        "https://raw.githubusercontent.com/strands-agents/box/main/README.md",
+        "https://raw.githubusercontent.com/strands-agents/box/main/SECURITY.md",
+        "https://raw.githubusercontent.com/strands-agents/box/main/crates/box/README.md",
+        "https://raw.githubusercontent.com/strands-agents/box/main/crates/policy/README.md",
+        "https://raw.githubusercontent.com/strands-agents/box/main/crates/egress-gateway/README.md",
+        "https://raw.githubusercontent.com/strands-agents/box/main/crates/containment/README.md",
+        "https://raw.githubusercontent.com/strands-agents/box/main/docs/design/architecture.md",
+        "https://raw.githubusercontent.com/strands-agents/box/main/docs/design/security.md",
+        "https://raw.githubusercontent.com/strands-agents/box/main/docs/design/policy.md",
+        "https://raw.githubusercontent.com/strands-agents/box/main/docs/design/tenets.md",
+        "https://raw.githubusercontent.com/strands-agents/box/main/docs/design/limitations.md",
+        "https://raw.githubusercontent.com/strands-agents/box/main/docs/design/credentials.md",
+        "https://raw.githubusercontent.com/strands-agents/box/main/docs/design/egress.md",
+        "https://raw.githubusercontent.com/strands-agents/box/main/docs/user/security.md",
+        "https://raw.githubusercontent.com/strands-agents/box/main/docs/user/tool-grammars.md",
+        "https://raw.githubusercontent.com/strands-agents/box/main/test-workload/README.md",
+        "https://raw.githubusercontent.com/strands-agents/box/main/.github/workflows/ci.yml"
+      ],
+      "general_concept_or_mechanism": "concepts/delegated-authority-and-revocation",
+      "syntheses_reviewed": [
+        "concepts/delegated-authority-and-revocation",
+        "techniques/secure-agent-operations"
+      ],
+      "disposition": "create-new",
+      "reason": "Existing synthesized explanations cover the mechanism; add contextual navigation and use independently checked new material only where it extends those explanations.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "substantive_synthesis_destinations": [
+        "concepts/delegated-authority-and-revocation",
+        "techniques/secure-agent-operations"
+      ],
+      "mechanism_summary": "Rust sandbox that combines OS containment with a default-deny Dogwood policy engine, so file, network and MCP decisions can depend on earlier agent actions.",
+      "navigation_only_destinations": []
+    },
+    {
+      "briefing": "briefings/2026/11/2026-11-10",
+      "finding": 5,
+      "entity": "projects/agentopology",
+      "entity_sources": [
+        "https://github.com/agentopology/agentopology",
+        "https://raw.githubusercontent.com/agentopology/agentopology/main/README.md",
+        "https://raw.githubusercontent.com/agentopology/agentopology/main/package.json",
+        "https://raw.githubusercontent.com/agentopology/agentopology/main/CHANGELOG.md",
+        "https://raw.githubusercontent.com/agentopology/agentopology/main/LICENSE",
+        "https://raw.githubusercontent.com/agentopology/agentopology/main/spec/grammar.md",
+        "https://raw.githubusercontent.com/agentopology/agentopology/main/spec/validation.md",
+        "https://raw.githubusercontent.com/agentopology/agentopology/main/src/parser/validator.ts",
+        "https://raw.githubusercontent.com/agentopology/agentopology/main/src/plan/brief.ts",
+        "https://raw.githubusercontent.com/agentopology/agentopology/main/src/plan/render.ts",
+        "https://raw.githubusercontent.com/agentopology/agentopology/main/examples/code-review.at",
+        "https://raw.githubusercontent.com/agentopology/agentopology/main/docs/PRIOR_ART.md",
+        "https://registry.npmjs.org/agentopology"
+      ],
+      "general_concept_or_mechanism": "concepts/agent-state-and-lifecycle",
+      "syntheses_reviewed": [
+        "concepts/agent-state-and-lifecycle",
+        "concepts/structural-constraint-over-instruction"
+      ],
+      "disposition": "create-new",
+      "reason": "Existing synthesized explanations cover the mechanism; add contextual navigation and use independently checked new material only where it extends those explanations.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "substantive_synthesis_destinations": [
+        "concepts/agent-state-and-lifecycle"
+      ],
+      "mechanism_summary": "TypeScript project defining a declarative .at language for agent teams, with a 109-rule validator and scaffold/plan targets for Claude Code, Codex and Cursor.",
+      "navigation_only_destinations": [
+        "concepts/structural-constraint-over-instruction"
+      ]
+    },
+    {
+      "briefing": "briefings/2026/11/2026-11-11",
+      "finding": 1,
+      "entity": "projects/llm-as-code",
+      "entity_sources": [
+        "https://arxiv.org/abs/2606.15874"
+      ],
+      "general_concept_or_mechanism": "techniques/deterministic-workflow-reuse",
+      "syntheses_reviewed": [
+        "techniques/deterministic-workflow-reuse",
+        "techniques/gated-admission-and-revalidation"
+      ],
+      "disposition": "create-new",
+      "reason": "Existing synthesized explanations cover the mechanism; add contextual navigation and use independently checked new material only where it extends those explanations.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "substantive_synthesis_destinations": [
+        "techniques/deterministic-workflow-reuse",
+        "techniques/gated-admission-and-revalidation"
+      ],
+      "mechanism_summary": "Call-tree/DAG-derived context and deterministic control flow rather than an LLM controlling every step.",
+      "navigation_only_destinations": []
+    },
+    {
+      "briefing": "briefings/2026/11/2026-11-11",
+      "finding": 2,
+      "entity": "projects/spec-first-verification-agents",
+      "entity_sources": [
+        "https://arxiv.org/abs/2611.02285"
+      ],
+      "general_concept_or_mechanism": "concepts/contracts-and-compositional-correctness",
+      "syntheses_reviewed": [
+        "concepts/contracts-and-compositional-correctness",
+        "concepts/scoped-assurance"
+      ],
+      "disposition": "create-new",
+      "reason": "Existing synthesized explanations cover the mechanism; add contextual navigation and use independently checked new material only where it extends those explanations.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "substantive_synthesis_destinations": [
+        "concepts/contracts-and-compositional-correctness",
+        "concepts/scoped-assurance"
+      ],
+      "mechanism_summary": "Treat formal specifications as human-reviewed source of truth and generated code/proofs as regenerable outputs, gated by mechanical checks.",
+      "navigation_only_destinations": []
+    },
+    {
+      "briefing": "briefings/2026/11/2026-11-11",
+      "finding": 3,
+      "entity": "projects/just-in-time-agent-memory",
+      "entity_sources": [
+        "https://arxiv.org/abs/2609.34385"
+      ],
+      "general_concept_or_mechanism": "techniques/agent-skills-and-memory",
+      "syntheses_reviewed": [
+        "techniques/agent-skills-and-memory",
+        "concepts/capability-locus"
+      ],
+      "disposition": "update-existing",
+      "reason": "Existing synthesized explanations cover the mechanism; add contextual navigation and use independently checked new material only where it extends those explanations.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "substantive_synthesis_destinations": [
+        "techniques/agent-skills-and-memory"
+      ],
+      "mechanism_summary": "Query-conditioned multi-step evidence retrieval over preserved raw history, rather than pre-compressing everything into fixed summaries.",
+      "navigation_only_destinations": [
+        "concepts/capability-locus"
+      ]
+    },
+    {
+      "briefing": "briefings/2026/11/2026-11-11",
+      "finding": 4,
+      "entity": "projects/autosr",
+      "entity_sources": [
+        "https://arxiv.org/abs/2608.16876"
+      ],
+      "general_concept_or_mechanism": "techniques/artifact-and-claim-provenance",
+      "syntheses_reviewed": [
+        "techniques/artifact-and-claim-provenance",
+        "concepts/verified-completion-vs-apparent-success"
+      ],
+      "disposition": "update-existing",
+      "reason": "Existing synthesized explanations cover the mechanism; add contextual navigation and use independently checked new material only where it extends those explanations.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "substantive_synthesis_destinations": [
+        "techniques/artifact-and-claim-provenance"
+      ],
+      "mechanism_summary": "Branch-local research memory plus asynchronous proposer/reviewer experiments and evidence-preserving tree search.",
+      "navigation_only_destinations": [
+        "concepts/verified-completion-vs-apparent-success"
+      ]
+    },
+    {
+      "briefing": "briefings/2026/11/2026-11-11",
+      "finding": 5,
+      "entity": "projects/lifelong-materials-agent-memory",
+      "entity_sources": [
+        "https://arxiv.org/abs/2608.11224"
+      ],
+      "general_concept_or_mechanism": "techniques/agent-skills-and-memory",
+      "syntheses_reviewed": [
+        "techniques/agent-skills-and-memory",
+        "concepts/capability-locus"
+      ],
+      "disposition": "update-existing",
+      "reason": "Existing synthesized explanations cover the mechanism; add contextual navigation and use independently checked new material only where it extends those explanations.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "substantive_synthesis_destinations": [
+        "techniques/agent-skills-and-memory"
+      ],
+      "mechanism_summary": "Turn observed execution failures into reusable pre-execution guardrails and model-independent procedural memory.",
+      "navigation_only_destinations": [
+        "concepts/capability-locus"
+      ]
+    },
+    {
+      "briefing": "briefings/2026/11/2026-11-12",
+      "finding": 1,
+      "entity": "projects/baya-compile-then-execute",
+      "entity_sources": [
+        "https://arxiv.org/abs/2611.06039"
+      ],
+      "general_concept_or_mechanism": "techniques/deterministic-workflow-reuse",
+      "syntheses_reviewed": [
+        "techniques/deterministic-workflow-reuse",
+        "techniques/gated-admission-and-revalidation"
+      ],
+      "disposition": "create-new",
+      "reason": "Existing synthesized explanations cover the mechanism; add contextual navigation and use independently checked new material only where it extends those explanations.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "substantive_synthesis_destinations": [
+        "techniques/deterministic-workflow-reuse",
+        "techniques/gated-admission-and-revalidation"
+      ],
+      "mechanism_summary": "Compiles web tasks into bounded Python programs before exposing agents to untrusted website content.",
+      "navigation_only_destinations": []
+    },
+    {
+      "briefing": "briefings/2026/11/2026-11-12",
+      "finding": 2,
+      "entity": "projects/harness-matters-web-agent-security",
+      "entity_sources": [
+        "https://arxiv.org/abs/2611.11971"
+      ],
+      "general_concept_or_mechanism": "techniques/secure-agent-operations",
+      "syntheses_reviewed": [
+        "techniques/secure-agent-operations",
+        "techniques/verification-and-evidence"
+      ],
+      "disposition": "no-change-with-reason",
+      "reason": "Harness Matters — Measuring and Dissecting Security Resilience in Web Agents: WebTrap Farm evaluates how agent harness stages and models jointly determine browser-agent security. The reviewed explanations (techniques/secure-agent-operations, techniques/verification-and-evidence) already provide the relevant distinctions. Reprocessing this historical finding supplies navigation, not a newly checked result that changes their empirical conclusions.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "substantive_synthesis_destinations": [
+        "techniques/secure-agent-operations",
+        "techniques/verification-and-evidence"
+      ],
+      "mechanism_summary": "WebTrap Farm evaluates how agent harness stages and models jointly determine browser-agent security.",
+      "navigation_only_destinations": []
+    },
+    {
+      "briefing": "briefings/2026/11/2026-11-12",
+      "finding": 3,
+      "entity": "projects/coder-eval",
+      "entity_sources": [
+        "https://github.com/UiPath/coder_eval"
+      ],
+      "general_concept_or_mechanism": "concepts/verified-completion-vs-apparent-success",
+      "syntheses_reviewed": [
+        "concepts/verified-completion-vs-apparent-success",
+        "techniques/verification-and-evidence"
+      ],
+      "disposition": "update-existing",
+      "reason": "Existing synthesized explanations cover the mechanism; add contextual navigation and use independently checked new material only where it extends those explanations.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "substantive_synthesis_destinations": [
+        "techniques/verification-and-evidence"
+      ],
+      "mechanism_summary": "Runs coding agents on sandboxed YAML tasks with measurable postconditions, skill activation checks and CI gates.",
+      "navigation_only_destinations": [
+        "concepts/verified-completion-vs-apparent-success"
+      ]
+    },
+    {
+      "briefing": "briefings/2026/11/2026-11-12",
+      "finding": 4,
+      "entity": "projects/fastbrowse",
+      "entity_sources": [
+        "https://github.com/agent-labs-dev/fastbrowse"
+      ],
+      "general_concept_or_mechanism": "concepts/delegated-authority-and-revocation",
+      "syntheses_reviewed": [
+        "concepts/delegated-authority-and-revocation",
+        "techniques/secure-agent-operations"
+      ],
+      "disposition": "create-new",
+      "reason": "Existing synthesized explanations cover the mechanism; add contextual navigation and use independently checked new material only where it extends those explanations.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "substantive_synthesis_destinations": [
+        "concepts/delegated-authority-and-revocation",
+        "techniques/secure-agent-operations"
+      ],
+      "mechanism_summary": "A browser agent that chooses actual page controls, cites source quotes and gates irreversible actions in code.",
+      "navigation_only_destinations": []
+    },
+    {
+      "briefing": "briefings/2026/11/2026-11-12",
+      "finding": 5,
+      "entity": "projects/kinocut",
+      "entity_sources": [
+        "https://github.com/KyaniteLabs/kinocut"
+      ],
+      "general_concept_or_mechanism": "concepts/delegated-authority-and-revocation",
+      "syntheses_reviewed": [
+        "concepts/delegated-authority-and-revocation",
+        "techniques/secure-agent-operations"
+      ],
+      "disposition": "create-new",
+      "reason": "Existing synthesized explanations cover the mechanism; add contextual navigation and use independently checked new material only where it extends those explanations.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "substantive_synthesis_destinations": [
+        "concepts/delegated-authority-and-revocation",
+        "techniques/secure-agent-operations"
+      ],
+      "mechanism_summary": "Exposes local FFmpeg-based editing and repurposing operations to agents through bounded MCP tools.",
+      "navigation_only_destinations": []
+    },
+    {
+      "briefing": "briefings/2026/11/2026-11-13",
+      "finding": 1,
+      "entity": "projects/coding-agent-memory-post-training-ii",
+      "entity_sources": [
+        "https://arxiv.org/abs/2611.14009"
+      ],
+      "general_concept_or_mechanism": "techniques/agent-skills-and-memory",
+      "syntheses_reviewed": [
+        "techniques/agent-skills-and-memory",
+        "concepts/capability-locus"
+      ],
+      "disposition": "update-existing",
+      "reason": "Existing synthesized explanations cover the mechanism; add contextual navigation and use independently checked new material only where it extends those explanations.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "substantive_synthesis_destinations": [
+        "techniques/agent-skills-and-memory"
+      ],
+      "mechanism_summary": "Coding agents learn to manage persistent workspace files across context resets through asynchronous policy distillation.",
+      "navigation_only_destinations": [
+        "concepts/capability-locus"
+      ]
+    },
+    {
+      "briefing": "briefings/2026/11/2026-11-13",
+      "finding": 2,
+      "entity": "projects/expertcrowd-swe",
+      "entity_sources": [
+        "https://arxiv.org/abs/2611.13246"
+      ],
+      "general_concept_or_mechanism": "concepts/verified-completion-vs-apparent-success",
+      "syntheses_reviewed": [
+        "concepts/verified-completion-vs-apparent-success",
+        "techniques/verification-and-evidence"
+      ],
+      "disposition": "update-existing",
+      "reason": "Existing synthesized explanations cover the mechanism; add contextual navigation and use independently checked new material only where it extends those explanations.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "substantive_synthesis_destinations": [
+        "techniques/verification-and-evidence"
+      ],
+      "mechanism_summary": "One hundred expert-authored engineering tasks use calibrated executable graders and must-pass merge blockers.",
+      "navigation_only_destinations": [
+        "concepts/verified-completion-vs-apparent-success"
+      ]
+    },
+    {
+      "briefing": "briefings/2026/11/2026-11-13",
+      "finding": 3,
+      "entity": "projects/workflowarena",
+      "entity_sources": [
+        "https://arxiv.org/abs/2611.12856"
+      ],
+      "general_concept_or_mechanism": "concepts/contracts-and-compositional-correctness",
+      "syntheses_reviewed": [
+        "concepts/contracts-and-compositional-correctness",
+        "techniques/multi-agent-orchestration"
+      ],
+      "disposition": "create-new",
+      "reason": "Existing synthesized explanations cover the mechanism; add contextual navigation and use independently checked new material only where it extends those explanations.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "substantive_synthesis_destinations": [
+        "concepts/contracts-and-compositional-correctness",
+        "techniques/multi-agent-orchestration"
+      ],
+      "mechanism_summary": "A 145-task benchmark evaluates model-authored worker delegation, workflow organization and integrated deliverable verification.",
+      "navigation_only_destinations": []
+    },
+    {
+      "briefing": "briefings/2026/11/2026-11-13",
+      "finding": 4,
+      "entity": "projects/serverbench",
+      "entity_sources": [
+        "https://arxiv.org/abs/2611.06841"
+      ],
+      "general_concept_or_mechanism": "concepts/verified-completion-vs-apparent-success",
+      "syntheses_reviewed": [
+        "concepts/verified-completion-vs-apparent-success",
+        "techniques/verification-and-evidence"
+      ],
+      "disposition": "update-existing",
+      "reason": "Existing synthesized explanations cover the mechanism; add contextual navigation and use independently checked new material only where it extends those explanations.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "substantive_synthesis_destinations": [
+        "techniques/verification-and-evidence"
+      ],
+      "mechanism_summary": "Coding agents optimize LLM serving systems under verified workload, latency and GPU-cost constraints.",
+      "navigation_only_destinations": [
+        "concepts/verified-completion-vs-apparent-success"
+      ]
+    },
+    {
+      "briefing": "briefings/2026/11/2026-11-13",
+      "finding": 5,
+      "entity": "projects/geofaham",
+      "entity_sources": [
+        "https://arxiv.org/abs/2611.04977"
+      ],
+      "general_concept_or_mechanism": "concepts/contracts-and-compositional-correctness",
+      "syntheses_reviewed": [
+        "concepts/contracts-and-compositional-correctness",
+        "techniques/multi-agent-orchestration"
+      ],
+      "disposition": "create-new",
+      "reason": "Existing synthesized explanations cover the mechanism; add contextual navigation and use independently checked new material only where it extends those explanations.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "substantive_synthesis_destinations": [
+        "concepts/contracts-and-compositional-correctness",
+        "techniques/multi-agent-orchestration"
+      ],
+      "mechanism_summary": "Specialist agents coordinate geospatial analysis with typed artifacts, persistent responses and dependency-aware planning.",
+      "navigation_only_destinations": []
+    },
+    {
+      "briefing": "briefings/2026/11/2026-11-14",
+      "finding": 1,
+      "entity": "projects/alphaproof-code",
+      "entity_sources": [
+        "https://deepmind.google/documents/36/Formal_Verification_of_Signal_4.pdf"
+      ],
+      "general_concept_or_mechanism": "concepts/contracts-and-compositional-correctness",
+      "syntheses_reviewed": [
+        "concepts/contracts-and-compositional-correctness",
+        "concepts/scoped-assurance"
+      ],
+      "disposition": "create-new",
+      "reason": "Existing synthesized explanations cover the mechanism; add contextual navigation and use independently checked new material only where it extends those explanations.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "substantive_synthesis_destinations": [
+        "concepts/contracts-and-compositional-correctness",
+        "concepts/scoped-assurance"
+      ],
+      "mechanism_summary": "Multi-agent Lean proof generation for selected Signal libsignal machine-code security properties.",
+      "navigation_only_destinations": []
+    },
+    {
+      "briefing": "briefings/2026/11/2026-11-14",
+      "finding": 2,
+      "entity": "projects/agent-browser",
+      "entity_sources": [
+        "https://github.com/vercel-labs/agent-browser",
+        "https://github.com/vercel-labs/agent-browser/releases/tag/v0.42.0",
+        "https://github.com/vercel-labs/agent-browser/releases/tag/v0.43.0"
+      ],
+      "general_concept_or_mechanism": "concepts/replay-idempotency-and-effect-semantics",
+      "syntheses_reviewed": [
+        "concepts/replay-idempotency-and-effect-semantics",
+        "techniques/deterministic-workflow-reuse"
+      ],
+      "disposition": "create-new",
+      "reason": "Existing synthesized explanations cover the mechanism; add contextual navigation and use independently checked new material only where it extends those explanations.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "substantive_synthesis_destinations": [
+        "concepts/replay-idempotency-and-effect-semantics",
+        "techniques/deterministic-workflow-reuse"
+      ],
+      "mechanism_summary": "Rust CLI for agent-driven browser control with snapshot references and experimental recorded flow replay.",
+      "navigation_only_destinations": []
+    },
+    {
+      "briefing": "briefings/2026/11/2026-11-14",
+      "finding": 3,
+      "entity": "projects/paperclip",
+      "entity_sources": [
+        "https://raw.githubusercontent.com/paperclipai/paperclip/b4fa1c7fb1c9adafc6407bc46381a0ab89f4b4fd/releases/v2026.1005.0.md"
+      ],
+      "general_concept_or_mechanism": "concepts/agent-state-and-lifecycle",
+      "syntheses_reviewed": [
+        "concepts/agent-state-and-lifecycle",
+        "techniques/durable-agent-execution"
+      ],
+      "disposition": "create-new",
+      "reason": "Existing synthesized explanations cover the mechanism; add contextual navigation and use independently checked new material only where it extends those explanations.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "substantive_synthesis_destinations": [
+        "concepts/agent-state-and-lifecycle",
+        "techniques/durable-agent-execution"
+      ],
+      "mechanism_summary": "Persistent agent files, explicit task assignment and observable browser takeover in a documented operations release.",
+      "navigation_only_destinations": []
+    },
+    {
+      "briefing": "briefings/2026/11/2026-11-14",
+      "finding": 4,
+      "entity": "projects/the-agentic-researcher",
+      "entity_sources": [
+        "https://arxiv.org/html/2603.15914",
+        "https://github.com/ZIB-IOL/The-Agentic-Researcher"
+      ],
+      "general_concept_or_mechanism": "concepts/agent-state-and-lifecycle",
+      "syntheses_reviewed": [
+        "concepts/agent-state-and-lifecycle",
+        "techniques/durable-agent-execution"
+      ],
+      "disposition": "create-new",
+      "reason": "Existing synthesized explanations cover the mechanism; add contextual navigation and use independently checked new material only where it extends those explanations.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "substantive_synthesis_destinations": [
+        "concepts/agent-state-and-lifecycle",
+        "techniques/durable-agent-execution"
+      ],
+      "mechanism_summary": "Sandboxed CLI agents conduct long-running scientific investigations with scheduled checks and reproducible reporting conventions.",
+      "navigation_only_destinations": []
+    },
+    {
+      "briefing": "briefings/2026/11/2026-11-14",
+      "finding": 5,
+      "entity": "projects/sopguard",
+      "entity_sources": [
+        "https://arxiv.org/html/2606.14027",
+        "https://github.com/wxl-lxw/BrowserOS-SOPGuard"
+      ],
+      "general_concept_or_mechanism": "concepts/delegated-authority-and-revocation",
+      "syntheses_reviewed": [
+        "concepts/delegated-authority-and-revocation",
+        "techniques/secure-agent-operations"
+      ],
+      "disposition": "create-new",
+      "reason": "Existing synthesized explanations cover the mechanism; add contextual navigation and use independently checked new material only where it extends those explanations.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "substantive_synthesis_destinations": [
+        "concepts/delegated-authority-and-revocation",
+        "techniques/secure-agent-operations"
+      ],
+      "mechanism_summary": "Study and constrain agent-mediated cross-origin information flows in browser automation.",
+      "navigation_only_destinations": []
+    },
+    {
+      "briefing": "briefings/2026/11/2026-11-16",
+      "finding": 1,
+      "entity": "projects/agent-client-protocol",
+      "entity_sources": [
+        "https://github.com/agentclientprotocol/agent-client-protocol/blob/main/CHANGELOG.md"
+      ],
+      "general_concept_or_mechanism": "concepts/agent-state-and-lifecycle",
+      "syntheses_reviewed": [
+        "concepts/agent-state-and-lifecycle",
+        "techniques/durable-agent-execution"
+      ],
+      "disposition": "create-new",
+      "reason": "Existing synthesized explanations cover the mechanism; add contextual navigation and use independently checked new material only where it extends those explanations.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "substantive_synthesis_destinations": [
+        "concepts/agent-state-and-lifecycle",
+        "techniques/durable-agent-execution"
+      ],
+      "mechanism_summary": "Experimental ACP session replay, subagent events and fork configuration; protocol surfaces do not establish runtime recovery guarantees.",
+      "navigation_only_destinations": []
+    },
+    {
+      "briefing": "briefings/2026/11/2026-11-16",
+      "finding": 2,
+      "entity": "projects/framerslab-agentos",
+      "entity_sources": [
+        "https://github.com/framerslab/agentos/releases/tag/v0.18.0"
+      ],
+      "general_concept_or_mechanism": "techniques/agent-skills-and-memory",
+      "syntheses_reviewed": [
+        "techniques/agent-skills-and-memory",
+        "concepts/delegated-authority-and-revocation"
+      ],
+      "disposition": "create-new",
+      "reason": "Existing synthesized explanations cover the mechanism; add contextual navigation and use independently checked new material only where it extends those explanations.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "substantive_synthesis_destinations": [
+        "techniques/agent-skills-and-memory",
+        "concepts/delegated-authority-and-revocation"
+      ],
+      "mechanism_summary": "Agent memory deletion uses a forgotten-user ledger and tombstone copies designed to preserve deletion across store restoration.",
+      "navigation_only_destinations": []
+    },
+    {
+      "briefing": "briefings/2026/11/2026-11-16",
+      "finding": 3,
+      "entity": "projects/compozy",
+      "entity_sources": [
+        "https://github.com/compozy/compozy/blob/main/CHANGELOG.md"
+      ],
+      "general_concept_or_mechanism": "concepts/agent-state-and-lifecycle",
+      "syntheses_reviewed": [
+        "concepts/agent-state-and-lifecycle",
+        "techniques/durable-agent-execution",
+        "concepts/delegated-authority-and-revocation"
+      ],
+      "disposition": "create-new",
+      "reason": "Existing synthesized explanations cover the mechanism; add contextual navigation and use independently checked new material only where it extends those explanations.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "substantive_synthesis_destinations": [
+        "concepts/agent-state-and-lifecycle",
+        "techniques/durable-agent-execution",
+        "concepts/delegated-authority-and-revocation"
+      ],
+      "mechanism_summary": "Delegation recovery fixes address deleted children, parent wakeups, orphan reconciliation and inherited tool-authority ceilings.",
+      "navigation_only_destinations": []
+    },
+    {
+      "briefing": "briefings/2026/11/2026-11-16",
+      "finding": 4,
+      "entity": "projects/thunderbolt",
+      "entity_sources": [
+        "https://github.com/thunderbird/thunderbolt/blob/main/CHANGELOG.md"
+      ],
+      "general_concept_or_mechanism": "concepts/delegated-authority-and-revocation",
+      "syntheses_reviewed": [
+        "concepts/delegated-authority-and-revocation",
+        "techniques/secure-agent-operations"
+      ],
+      "disposition": "create-new",
+      "reason": "Existing synthesized explanations cover the mechanism; add contextual navigation and use independently checked new material only where it extends those explanations.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "substantive_synthesis_destinations": [
+        "concepts/delegated-authority-and-revocation",
+        "techniques/secure-agent-operations"
+      ],
+      "mechanism_summary": "Reusable provider authorization and bounded renderer recovery in an agent-enabled desktop workspace.",
+      "navigation_only_destinations": []
+    },
+    {
+      "briefing": "briefings/2026/11/2026-11-16",
+      "finding": 5,
+      "entity": "projects/open-artifacts",
+      "entity_sources": [
+        "https://github.com/open-artifacts-ai/open-artifacts/releases"
+      ],
+      "general_concept_or_mechanism": "techniques/artifact-and-claim-provenance",
+      "syntheses_reviewed": [
+        "techniques/artifact-and-claim-provenance",
+        "concepts/verified-completion-vs-apparent-success"
+      ],
+      "disposition": "update-existing",
+      "reason": "Existing synthesized explanations cover the mechanism; add contextual navigation and use independently checked new material only where it extends those explanations.",
+      "evidence_status": "Existing canonical evidence reviewed for navigation; primary-source rereading is separately recorded for substantive new claims.",
+      "substantive_synthesis_destinations": [
+        "techniques/artifact-and-claim-provenance"
+      ],
+      "mechanism_summary": "Versioned collaborative documents, restoration and owner-controlled sharing; these features do not establish autonomous task correctness.",
+      "navigation_only_destinations": [
+        "concepts/verified-completion-vs-apparent-success"
+      ]
+    }
+  ],
+  "primary_source_review": [
+    {
+      "key": "acp",
+      "url": "https://raw.githubusercontent.com/agentclientprotocol/agent-client-protocol/main/CHANGELOG.md",
+      "bytes": 58410,
+      "retrieval_status": "retrieved",
+      "identity_status": "matched-to-selected-source",
+      "claim_support_status": "relevant-mechanism-passages-read",
+      "replication_status": "not-executed"
+    },
+    {
+      "key": "compozy",
+      "url": "https://raw.githubusercontent.com/compozy/compozy/main/CHANGELOG.md",
+      "bytes": 75731,
+      "retrieval_status": "retrieved",
+      "identity_status": "matched-to-selected-source",
+      "claim_support_status": "relevant-mechanism-passages-read",
+      "replication_status": "not-executed"
+    },
+    {
+      "key": "framers",
+      "url": "https://api.github.com/repos/framerslab/agentos/releases/tags/v0.18.0",
+      "bytes": 14865,
+      "retrieval_status": "retrieved",
+      "identity_status": "matched-to-selected-source",
+      "claim_support_status": "relevant-mechanism-passages-read",
+      "replication_status": "not-executed"
+    },
+    {
+      "key": "browser42",
+      "url": "https://api.github.com/repos/vercel-labs/agent-browser/releases/tags/v0.42.0",
+      "bytes": 16026,
+      "retrieval_status": "retrieved",
+      "identity_status": "matched-to-selected-source",
+      "claim_support_status": "relevant-mechanism-passages-read",
+      "replication_status": "not-executed"
+    },
+    {
+      "key": "browser43",
+      "url": "https://api.github.com/repos/vercel-labs/agent-browser/releases/tags/v0.43.0",
+      "bytes": 15168,
+      "retrieval_status": "retrieved",
+      "identity_status": "matched-to-selected-source",
+      "claim_support_status": "relevant-mechanism-passages-read",
+      "replication_status": "not-executed"
+    },
+    {
+      "key": "paperclip",
+      "url": "https://raw.githubusercontent.com/paperclipai/paperclip/master/releases/v2026.1005.0.md",
+      "bytes": 24239,
+      "retrieval_status": "retrieved",
+      "identity_status": "matched-to-selected-source",
+      "claim_support_status": "relevant-mechanism-passages-read",
+      "replication_status": "not-executed"
+    },
+    {
+      "key": "researcher",
+      "url": "https://arxiv.org/html/2603.15914",
+      "bytes": 523263,
+      "retrieval_status": "retrieved",
+      "identity_status": "matched-to-selected-source",
+      "claim_support_status": "relevant-mechanism-passages-read",
+      "replication_status": "not-executed"
+    },
+    {
+      "key": "sopguard",
+      "url": "https://arxiv.org/html/2606.14027",
+      "bytes": 670982,
+      "retrieval_status": "retrieved",
+      "identity_status": "matched-to-selected-source",
+      "claim_support_status": "relevant-mechanism-passages-read",
+      "replication_status": "not-executed"
+    },
+    {
+      "key": "thunderbolt",
+      "url": "https://raw.githubusercontent.com/thunderbird/thunderbolt/main/CHANGELOG.md",
+      "bytes": 87580,
+      "retrieval_status": "retrieved",
+      "identity_status": "matched-to-selected-source",
+      "claim_support_status": "relevant-mechanism-passages-read",
+      "replication_status": "not-executed"
+    },
+    {
+      "key": "artifacts",
+      "url": "https://api.github.com/repos/open-artifacts-ai/open-artifacts/releases?per_page=8",
+      "bytes": 20724,
+      "retrieval_status": "retrieved",
+      "identity_status": "matched-to-selected-source",
+      "claim_support_status": "relevant-mechanism-passages-read",
+      "replication_status": "not-executed"
+    },
+    {
+      "key": "signal",
+      "url": "https://deepmind.google/documents/36/Formal_Verification_of_Signal_4.pdf",
+      "bytes": 888318,
+      "retrieval_status": "retrieved",
+      "identity_status": "matched-to-selected-source",
+      "claim_support_status": "relevant-mechanism-passages-read",
+      "replication_status": "not-executed"
+    },
+    {
+      "key": "baya",
+      "url": "https://arxiv.org/html/2611.06039",
+      "bytes": 430239,
+      "retrieval_status": "retrieved",
+      "identity_status": "matched-to-selected-source",
+      "claim_support_status": "relevant-mechanism-passages-read",
+      "replication_status": "not-executed"
+    },
+    {
+      "key": "skillcompiler",
+      "url": "https://arxiv.org/html/2610.39508v1",
+      "bytes": 277941,
+      "retrieval_status": "retrieved",
+      "identity_status": "matched-to-selected-source",
+      "claim_support_status": "relevant-mechanism-passages-read",
+      "replication_status": "not-executed"
+    },
+    {
+      "key": "seaflow",
+      "url": "https://arxiv.org/html/2611.01840",
+      "bytes": 231135,
+      "retrieval_status": "retrieved",
+      "identity_status": "matched-to-selected-source",
+      "claim_support_status": "relevant-mechanism-passages-read",
+      "replication_status": "not-executed"
+    },
+    {
+      "key": "agenticds",
+      "url": "https://arxiv.org/html/2610.39074",
+      "bytes": 600297,
+      "retrieval_status": "retrieved",
+      "identity_status": "rejected-for-proposed-claim",
+      "claim_support_status": "not-used",
+      "note": "This URL resolves to HERA; the contract comparison uses AgenticDS 2610.39608 instead."
+    },
+    {
+      "key": "dittany",
+      "url": "https://arxiv.org/html/2610.42144",
+      "bytes": 284813,
+      "retrieval_status": "retrieved",
+      "identity_status": "matched-to-selected-source",
+      "claim_support_status": "relevant-mechanism-passages-read",
+      "replication_status": "not-executed"
+    },
+    {
+      "key": "crossswe",
+      "url": "https://arxiv.org/html/2611.01484v1",
+      "bytes": 147607,
+      "retrieval_status": "retrieved",
+      "identity_status": "matched-to-selected-source",
+      "claim_support_status": "relevant-mechanism-passages-read",
+      "replication_status": "not-executed"
+    },
+    {
+      "key": "rivet",
+      "url": "https://raw.githubusercontent.com/rivet-dev/agents/21c248b1d1d8c3a9d6c1cc7b85531a4a2d0e5c50/docs/content/guides/durable-ai-agents.mdx",
+      "bytes": 9884,
+      "retrieval_status": "retrieved",
+      "identity_status": "matched-to-selected-source",
+      "claim_support_status": "relevant-mechanism-passages-read",
+      "replication_status": "not-executed"
+    },
+    {
+      "key": "openbot",
+      "url": "https://raw.githubusercontent.com/CopilotKit/OpenBot/main/README.md",
+      "bytes": 51008,
+      "retrieval_status": "retrieved",
+      "identity_status": "matched-to-selected-source",
+      "claim_support_status": "relevant-mechanism-passages-read",
+      "replication_status": "not-executed"
+    },
+    {
+      "key": "strands",
+      "url": "https://raw.githubusercontent.com/strands-agents/box/main/docs/design/policy.md",
+      "bytes": 27826,
+      "retrieval_status": "retrieved",
+      "identity_status": "matched-to-selected-source",
+      "claim_support_status": "relevant-mechanism-passages-read",
+      "replication_status": "not-executed"
+    },
+    {
+      "key": "agenticds-correct",
+      "url": "https://arxiv.org/html/2610.39608",
+      "retrieval_status": "retrieved",
+      "identity_status": "matched-to-AgenticDS",
+      "claim_support_status": "typed-object and contracts-before-actions passages read",
+      "replication_status": "not-executed"
+    },
+    {
+      "key": "idempotency",
+      "url": "https://www.rfc-editor.org/rfc/rfc9110.html#section-9.2.2",
+      "retrieval_status": "retrieved",
+      "identity_status": "RFC 9110",
+      "claim_support_status": "section 9.2.2 definition, per-request-side-effect caveat and non-idempotent retry warning read",
+      "replication_status": "not-applicable-definition"
+    },
+    {
+      "key": "framers19",
+      "url": "https://github.com/framerslab/agentos/releases/tag/v0.19.0",
+      "retrieval_status": "retrieved",
+      "identity_status": "v0.19.0 released 2026-11-15",
+      "claim_support_status": "Breaking changes for prompt profile, date tool and inherited factory persistence read; canonical configuration statement clarified.",
+      "replication_status": "not-executed"
+    }
+  ],
+  "source_identity_note": "The initially retrieved arXiv 2610.39074 is HERA, not AgenticDS. It was excluded from the new contract comparison, which uses verified AgenticDS 2610.39608. Retrieval is not claim verification; supporting passages were read for new claims.",
+  "pinned_github_sources": {
+    "acp": "https://raw.githubusercontent.com/agentclientprotocol/agent-client-protocol/4aab69b4e6bcb53965ff5b1141d2f04a62a25c6c/CHANGELOG.md",
+    "compozy": "https://raw.githubusercontent.com/compozy/compozy/8cbf8a5a4dcb343f349e2b47635a461bea0c9b24/CHANGELOG.md",
+    "strands": "https://raw.githubusercontent.com/strands-agents/box/d5278f29972f7bf2f688e3fa76511d3a29705f33/docs/design/policy.md",
+    "thunderbolt": "https://raw.githubusercontent.com/thunderbird/thunderbolt/2f81a4d9897cc92839632137fc7d38fee75ba240/CHANGELOG.md",
+    "openbot": "https://raw.githubusercontent.com/CopilotKit/OpenBot/3083c34b0e9153b86c532112bdf0048202e91000/README.md",
+    "paperclip": "https://raw.githubusercontent.com/paperclipai/paperclip/b4fa1c7fb1c9adafc6407bc46381a0ab89f4b4fd/releases/v2026.1005.0.md"
+  },
+  "substantive_synthesis_files": [
+    "wiki/concepts/agent-state-and-lifecycle.md",
+    "wiki/concepts/replay-idempotency-and-effect-semantics.md",
+    "wiki/concepts/delegated-authority-and-revocation.md",
+    "wiki/concepts/contracts-and-compositional-correctness.md",
+    "wiki/techniques/deterministic-workflow-reuse.md",
+    "wiki/techniques/durable-agent-execution.md",
+    "wiki/techniques/agent-skills-and-memory.md",
+    "wiki/techniques/multi-agent-orchestration.md",
+    "wiki/techniques/secure-agent-operations.md",
+    "wiki/techniques/verification-and-evidence.md",
+    "wiki/techniques/artifact-and-claim-provenance.md",
+    "wiki/techniques/gated-admission-and-revalidation.md",
+    "wiki/concepts/scoped-assurance.md",
+    "wiki/signals/reliability-is-a-systems-property.md",
+    "wiki/evaluations/multi-agent-value-and-coordination.md",
+    "wiki/experiments/lifecycle-authority-and-retention.md"
+  ]
+}

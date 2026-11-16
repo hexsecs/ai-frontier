@@ -4,7 +4,7 @@ title: "ExpertCrowd-SWE"
 summary: "One hundred expert-authored engineering tasks use calibrated executable graders and must-pass merge blockers."
 type: benchmark
 created: 2026-11-13
-updated: 2026-11-14
+updated: 2026-11-16
 depth: brief
 related: [projects/crossswe]
 sources:
@@ -38,5 +38,7 @@ Replicate three public tasks with an independent coding harness; verify that no-
 
 
 ## Related reading
+
+Separate the checking mechanism from the strength and scope of its warrant. See [[techniques/verification-and-evidence]].
 
 [[concepts/verified-completion-vs-apparent-success]] compares executable merge blockers with other forms of task acceptance.

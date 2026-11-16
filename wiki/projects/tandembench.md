@@ -5,7 +5,7 @@ title: "TandemBench"
 summary: "Benchmark that asks decision models to pick optimal two-agent cooking plans and to notice when every supplied plan is suboptimal."
 type: benchmark
 created: 2026-11-08
-updated: 2026-11-14
+updated: 2026-11-16
 related: [concepts/protocol-relative-scores, concepts/capability-locus, concepts/comparator-construction-shapes-margins]
 sources:
   - url: https://arxiv.org/abs/2611.05827
@@ -168,5 +168,7 @@ Every quantitative result is **author-reported**; the paper links its dataset an
 Sources: <https://arxiv.org/abs/2611.05827> · <https://arxiv.org/html/2611.05827v1>.
 
 ## Related reading
+
+Compare independently accepted output with total coordination, compute and integration cost. See [[evaluations/multi-agent-value-and-coordination]]. Compare handoff and coordination mechanisms rather than assuming that more workers improve results. See [[techniques/multi-agent-orchestration]].
 
 - [[briefings/2026/11/2026-11-08]]

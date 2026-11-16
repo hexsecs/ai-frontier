@@ -4,7 +4,7 @@ title: "ChemE-as-Code: An Open-Source Platform for Agentic AI in Chemical Engine
 summary: "Open-source platform where one LLM agent edits Git-versioned chemical engineering artifacts while deterministic tools compute and check every value."
 type: project
 created: 2026-11-07
-updated: 2026-11-14
+updated: 2026-11-16
 depth: deep
 related: [concepts/structural-constraint-over-instruction, concepts/scoped-assurance]
 sources:
@@ -179,5 +179,7 @@ Every quantitative result is **author-reported**; the paper is a single preprint
 Sources: <https://arxiv.org/abs/2611.07947> · <https://arxiv.org/html/2611.07947v1>.
 
 ## Related reading
+
+Separate artifact origin and version history from evidence that the resulting claim is correct. See [[techniques/artifact-and-claim-provenance]].
 
 - [[briefings/2026/11/2026-11-07]]

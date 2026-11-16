@@ -120,3 +120,9 @@ This is the legacy canonical file-location index. Some entries are now classifie
 - [Compozy 0.7.1–0.7.2](./compozy.md) — Reconcile a durable delegation tree and tool-authority ceiling across cancellation, deletion, process exit and restart.
 - [Thunderbird Thunderbolt 0.1.164–0.1.165](./thunderbolt.md) — Reusable connector identity and explicit authorization in an end-user agent workspace, with bounded GUI recovery.
 - [Open Artifacts 0.193–0.196](./open-artifacts.md) — Versioned human-reviewable artifacts and constrained external sharing as a substrate for agent-created deliverables.
+
+- [[projects/paperclip|Paperclip]] — Persistent agent files, explicit task assignment and observable browser takeover in a documented operations release.
+
+- [[projects/the-agentic-researcher|The Agentic Researcher]] — Sandboxed CLI agents conduct long-running scientific investigations with scheduled checks and reproducible reporting conventions.
+
+- [[projects/sopguard|SOPGuard and SOPBench]] — Study and constrain agent-mediated cross-origin information flows in browser automation.

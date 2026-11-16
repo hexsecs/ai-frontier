@@ -4,7 +4,7 @@ title: "SeaFlow"
 summary: "Agent that evolves applicability-conditioned code workflows from game records; 1st overall at GLEE with sub-millisecond decisions."
 type: project
 created: 2026-11-09
-updated: 2026-11-14
+updated: 2026-11-16
 depth: deep
 sources:
   - https://arxiv.org/abs/2611.01840
@@ -150,5 +150,7 @@ Every quantitative result is **author-reported**; the competition result and the
 Sources: <https://arxiv.org/abs/2611.01840> · <https://arxiv.org/html/2611.01840v1> · <https://github.com/Applied-Machine-Learning-Lab/NeurIPS2026_SeaFlow>.
 
 ## Related reading
+
+Compare reusable procedures by applicability conditions, execution boundaries and fallback rather than assuming universal benefits. See [[techniques/deterministic-workflow-reuse]]. Distinguish admitting a reusable artifact from certifying every later invocation or transfer. See [[techniques/gated-admission-and-revalidation]].
 
 - [[briefings/2026/11/2026-11-05]]

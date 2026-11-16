@@ -4,7 +4,7 @@ title: "Tracybot"
 summary: "Open-source VS Code and Git tracing tool that maps agent-generated source lines back to the prompts and Tasklet that produced them."
 type: project
 created: 2026-11-09
-updated: 2026-11-14
+updated: 2026-11-16
 depth: deep
 sources:
   - https://arxiv.org/abs/2611.09395
@@ -127,5 +127,7 @@ Every quantitative result on this page is **author-reported** by the paper's aut
 Sources: <https://arxiv.org/abs/2611.09395> · <https://arxiv.org/html/2611.09395v1> · <https://api.github.com/repos/TracyTeam/tracybot/git/trees/main?recursive=1> · <https://raw.githubusercontent.com/TracyTeam/tracybot/main/>.
 
 ## Related reading
+
+Separate artifact origin and version history from evidence that the resulting claim is correct. See [[techniques/artifact-and-claim-provenance]].
 
 - [[briefings/2026/11/2026-11-09]]

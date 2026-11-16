@@ -5,7 +5,7 @@ title: "MASBench"
 summary: "Multi-agent collaboration benchmark that isolates protocol, memory and routing effects under deliberately partial observability."
 type: benchmark
 created: 2026-11-08
-updated: 2026-11-14
+updated: 2026-11-16
 related: [concepts/protocol-relative-scores, concepts/capability-locus, concepts/evaluator-circularity]
 sources:
   - url: https://arxiv.org/abs/2610.04672
@@ -152,5 +152,7 @@ The paper is a preprint with no peer-reviewed venue claimed; the abstract page r
 Sources: <https://arxiv.org/abs/2610.04672> · <https://arxiv.org/html/2610.04672v1> · <https://arxiv.org/html/2610.04672v2>.
 
 ## Related reading
+
+Compare independently accepted output with total coordination, compute and integration cost. See [[evaluations/multi-agent-value-and-coordination]]. Compare handoff and coordination mechanisms rather than assuming that more workers improve results. See [[techniques/multi-agent-orchestration]].
 
 - [[briefings/2026/11/2026-11-08]]

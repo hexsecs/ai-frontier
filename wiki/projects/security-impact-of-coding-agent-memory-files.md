@@ -5,7 +5,7 @@ title: "Security Impact of Coding Agent's Memory Files"
 summary: "Project memory files can serve as an indirect prompt-injection entry point for coding agents; measured security effects were small and chance-like."
 type: project
 created: 2026-10-30
-updated: 2026-11-14
+updated: 2026-11-16
 sources:
   - url: https://arxiv.org/abs/2610.38521
     retrieved: 2026-11-02
@@ -132,5 +132,7 @@ The paper's design is reproducible in outline; the sketch below follows it descr
 Single primary source: de Moura, Güler & Noller, "Security Impact of Coding Agent's Memory Files," arXiv:2610.38521 (submitted 28 Oct 2026; licence CC BY 4.0). All quantitative results on this page are **author-reported** from that paper; no independent replication is cited in the paper or known to this KB, and the authors themselves frame the work as preliminary "first results" with a larger study planned. No artifact, code, or dataset is publicly linked from the paper; data are stated to be available from the authors upon reasonable request. The paper's summary-level claim — that project memory files *can* serve as an indirect prompt-injection entry point — is supported by the study's end-to-end demonstration of the channel; a claim of demonstrated, reliable steering toward vulnerable code would not be supported at this study's scale, where measured effects were not distinguishable from chance.
 
 ## Related reading
+
+Locate persistent artifacts separately from changes to model weights. See [[concepts/improvement-lives-in-external-state]]. Compare memory operations, admission and reuse while retaining null and negative-transfer evidence. See [[techniques/agent-skills-and-memory]].
 
 [Briefing 2026-10-30](../briefings/2026/10/2026-10-30.md)

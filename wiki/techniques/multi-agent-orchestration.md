@@ -5,7 +5,7 @@ title: "Multi-agent orchestration"
 summary: "Agent coordination through evolving teams, typed contracts, independent exploration and governed handoffs; effects depend on the mechanism."
 type: technique
 created: 2026-11-02
-updated: 2026-11-14
+updated: 2026-11-16
 related: [projects/evoteam, projects/agenticds, projects/explorerepair, projects/openbot]
 sources:
   - url: https://arxiv.org/abs/2610.39813
@@ -16,6 +16,8 @@ sources:
     retrieved: 2026-11-02
   - url: https://arxiv.org/abs/2610.39608
     retrieved: 2026-11-02
+  - https://raw.githubusercontent.com/compozy/compozy/8cbf8a5a4dcb343f349e2b47635a461bea0c9b24/CHANGELOG.md
+  - https://raw.githubusercontent.com/agentclientprotocol/agent-client-protocol/4aab69b4e6bcb53965ff5b1141d2f04a62a25c6c/CHANGELOG.md
 ---
 
 # Multi-agent orchestration
@@ -49,6 +51,14 @@ Every quantitative result in this section is **author-reported** from the projec
 **AgenticDS's ablations credit the verifier, not the coordination.** Removing the Critic costs −0.149 NDCG@10, the largest single-component effect; removing the Planner costs −0.086, and typed graph expansion −0.084. Graph expansion actively *hurts* (−0.025 to −0.029) when its candidates bypass the Critic. The pipeline's three-role structure is real orchestration, but the measured load-bearing element is the dedicated checker reading a structured evidence package — the same shape as the verification findings elsewhere in this knowledge base (see [[techniques/verification-and-evidence]]).
 
 **OpenBot contributes a mechanism and no measurements.** Its documentation contains no benchmarks, task-success figures, or evaluation of the gateway's effectiveness; the absence is itself the finding. Fusion's record is thinner still in kind: a vendor claim of 60 on a third-party coding-agent index, "within two points" of a named comparator at about half the API cost and tokens (all **vendor claims**, methodology unpublished). Dittany, finally, supplies the only population-level numbers about orchestrated systems in the corpus, from the outside: across 9,000 tasks on 30 real MAS applications, native execution achieves 58.01% task accuracy, and two of the four recovery baselines score *below doing nothing at all* (SupervisorAgent 48.39%, AgentTether 50.41%). Whatever orchestration these applications were doing, it left roughly two tasks in five failing, and detection of the failures was itself partial (79.18% recall).
+
+## Lifecycle and authority at the handoff
+
+A handoff needs more than a role and a message: it needs a record of completion, cancellation and ownership of the next action. [[projects/compozy]] documents repairs for child deletion/cancellation, parent wakeups and orphan reconciliation; it also narrows default child tools to parent authority ([changelog](https://raw.githubusercontent.com/compozy/compozy/8cbf8a5a4dcb343f349e2b47635a461bea0c9b24/CHANGELOG.md)). The release fixes are evidence of documented failure handling, not a measured team-performance improvement.
+
+[[projects/agent-client-protocol]]'s experimental subagent and replay surfaces concern host/agent communication ([changelog](https://raw.githubusercontent.com/agentclientprotocol/agent-client-protocol/4aab69b4e6bcb53965ff5b1141d2f04a62a25c6c/CHANGELOG.md)). They do not establish that two runtimes share one scheduler or permission model. [[concepts/agent-state-and-lifecycle]] explains the state distinction; [[concepts/delegated-authority-and-revocation]] explains the permission distinction.
+
+[[concepts/contracts-and-compositional-correctness]] connects the older typed-handoff and contribution-graph examples to integrated acceptance. A schema-valid child output can still leave its parent unable to complete, and a parent reaching a terminal state can still leave an external effect unresolved. Test cancellation and authority alongside final deliverable quality.
 
 ## Failure modes and bounds
 

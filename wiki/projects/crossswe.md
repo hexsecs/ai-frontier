@@ -4,7 +4,7 @@ title: "CrossSWE"
 summary: "Benchmark of 171 real-world cross-repository joint-development tasks where only coordinated changes across interdependent repositories pass."
 type: benchmark
 created: 2026-11-09
-updated: 2026-11-14
+updated: 2026-11-16
 depth: deep
 related: [projects/expertcrowd-swe, projects/geofaham, concepts/protocol-relative-scores, concepts/capability-locus, concepts/verified-completion-vs-apparent-success]
 sources:
@@ -138,6 +138,8 @@ Every quantitative result is **author-reported**; the five models were run by th
 Sources: <https://arxiv.org/abs/2611.01484> · <https://arxiv.org/html/2611.01484v1>.
 
 ## Related reading
+
+Distinguish local validity, dependency compatibility and whole-task acceptance. See [[concepts/contracts-and-compositional-correctness]]. Compare handoff and coordination mechanisms rather than assuming that more workers improve results. See [[techniques/multi-agent-orchestration]].
 
 [[concepts/verified-completion-vs-apparent-success]] discusses whole-task acceptance and incomplete multi-repository changes.
 

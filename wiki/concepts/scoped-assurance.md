@@ -5,7 +5,7 @@ summary: "A verification result holds only inside the scope actually exercised; 
 type: concept
 depth: full
 created: 2026-11-02
-updated: 2026-11-14
+updated: 2026-11-16
 related: [projects/skillcompiler, projects/intent-loss-in-smart-contract-synthesis, projects/webanything, projects/dynarev, projects/clingex, projects/karma, projects/envos, projects/pre-crime-for-agents, projects/aisoc-v21, projects/prefix-executability, projects/openbot, projects/fincosmos, projects/cheme-as-code, projects/controlanything]
 sources:
   - url: https://arxiv.org/abs/2610.39508
@@ -16,6 +16,7 @@ sources:
     retrieved: 2026-11-02
   - url: https://arxiv.org/abs/2610.39884
     retrieved: 2026-11-02
+  - https://deepmind.google/documents/36/Formal_Verification_of_Signal_4.pdf
 ---
 
 # Scoped assurance
@@ -75,6 +76,12 @@ Source-grounded analyst comparisons:
 - [[projects/karma]] —same-failure-mode→ [[projects/skillcompiler]] — both anchor this concept from the gate side (KARMA's gate non-guarantee; SkillCompiler's 88.84% invocation success after validation). This is an unverified analogy inferred from shared properties, not a demonstrated common failure mechanism.
 
 Sibling concepts, named in plain text: this entry is distinct from **precommitment**, which concerns locking the yardstick *before* outcomes exist — scoped assurance concerns the warrant of a result *after* the check ran, however well it was locked. It is also distinct from [[concepts/validation-tier-gap]], which concerns a project's framing inviting a stronger evidence tier than its measurements occupy; scoped assurance concerns a specific check's result quoted beyond the set it exercised. ClinGeX's home-field benchmark also appears under **construct-validity-leakage**, and the unvalidated-judge cases border on [[concepts/evaluator-circularity]].
+
+## Formal proof remains relative to its specification
+
+[[projects/alphaproof-code]] uses a human-guided specification agent and kernel-checked prover outputs for selected machine-code properties ([technical report](https://deepmind.google/documents/36/Formal_Verification_of_Signal_4.pdf)). The check is stronger than model self-agreement for the formal obligation, but it remains relative to the approved specification and trusted semantics. A proof of one property is not evidence that every desired property was specified.
+
+[[concepts/contracts-and-compositional-correctness]] distinguishes those local obligations from whole-task acceptance. This is an analyst application of scoped assurance, not an independently reproduced verification result.
 
 ## Open questions
 

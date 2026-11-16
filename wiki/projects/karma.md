@@ -5,7 +5,7 @@ title: "KARMA: Training-Free Knowledge-Atomic Harness Evolution for Industrial A
 summary: "Training-free evolution of six typed knowledge modules for an Alibaba advertising agent, gated by validation with snapshot rollback; offline log replay."
 type: project
 created: 2026-11-01
-updated: 2026-11-14
+updated: 2026-11-16
 related: [concepts/improvement-lives-in-external-state, concepts/scoped-assurance, concepts/validation-tier-gap]
 sources:
   - url: https://arxiv.org/abs/2610.39884
@@ -112,5 +112,7 @@ The run artifacts the paper describes recording — split membership, traces, sc
 Every result on this page is author-reported. All numbers come from the authors' own runs, on their own proprietary and unreleased data, against baselines the authors themselves re-implemented; no independent replication is mentioned in the paper, and none is possible from public artifacts, since neither code nor data is available. Internal validity is comparatively careful for an unreplicated preprint — an untouched hold-out evaluated exactly once, a full-ingestion ablation over both evidence channels, an engine comparison under a shared gate, a full cross-domain transfer matrix, and seed and threshold sensitivity checks — but all of it is single-team, single-platform, single-month (July 2026 logs) evidence, with each main configuration run once and no uncertainty estimates reported. The venue status is unestablished: this is an arXiv preprint whose HTML rendering still carries an unedited conference-template placeholder.
 
 ## Related reading
+
+Locate persistent artifacts separately from changes to model weights. See [[concepts/improvement-lives-in-external-state]]. Bound each check by the properties, cases and assumptions it actually exercises. See [[concepts/scoped-assurance]].
 
 [Briefing 2026-11-01](../briefings/2026/11/2026-11-01.md)

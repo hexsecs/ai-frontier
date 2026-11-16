@@ -5,7 +5,7 @@ title: "EvoTeam: Multi-Agent Collaboration via Evolving Teams"
 summary: "EvoTeam keeps a library of reusable teams, selects or creates one per task, and evolves rosters, team-scoped handoff rules, and agent skills from traces."
 type: project
 created: 2026-11-01
-updated: 2026-11-14
+updated: 2026-11-16
 related: [concepts/evaluator-circularity, concepts/improvement-lives-in-external-state]
 sources:
   - url: https://arxiv.org/abs/2610.39813
@@ -96,5 +96,7 @@ The sharpest independent check of the paper's central claim would rerun the mixe
 Every quantitative result on this page is **author-reported** from the EvoTeam paper (arXiv:2610.39813 v1 as read; arXiv lists a v2 revised 2026-10-30, against which these numbers have not been re-checked). The authors ran all methods themselves, using official implementations of the baselines under a shared backbone (GPT-5.6-Luna), shared budgets, and the same evolution/holdout splits as Meta-Team. Scoring uses the benchmarks' native evaluators — GAIA's official evaluator, LOCA-Bench's execution-based environment-state checks, BeyondSWE's Fail-to-Pass/Pass-to-Pass test suites, and LoCoBench's composite score — not the authors' own LLM judging final answers. No independent replication is mentioned in the paper and none is known; the results come from one authoring team. The public code repository was inspected at README level only; nothing was executed, and the evolved artifacts (team libraries, rule sets) are not distributed as downloads — they are produced by running the evolution commands.
 
 ## Related reading
+
+Inspect whether the system being evaluated participates in constructing or judging its own evidence. See [[concepts/evaluator-circularity]]. Locate persistent artifacts separately from changes to model weights. See [[concepts/improvement-lives-in-external-state]].
 
 [Briefing 2026-11-01](../briefings/2026/11/2026-11-01.md)

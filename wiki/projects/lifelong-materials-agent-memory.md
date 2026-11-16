@@ -4,7 +4,7 @@ title: "Harnessing Agent Memory to Build Lifelong AI Partners for Materials Scie
 summary: "Turn observed execution failures into reusable pre-execution guardrails and model-independent procedural memory."
 type: project
 created: 2026-11-11
-updated: 2026-11-14
+updated: 2026-11-16
 depth: brief
 related: [projects/strands-box, techniques/agent-skills-and-memory]
 sources:
@@ -43,3 +43,7 @@ Older domain-diversifying study; author-reported results in computational materi
 - [[techniques/agent-skills-and-memory]] — source-scoped evidence for procedural memory, bounded by negative-transfer and gate-ablation gaps.
 
 - [[briefings/2026/11/2026-11-11]]
+
+## Conceptual context
+
+Separate contributions from model weights, external state and the execution harness. See [[concepts/capability-locus]].

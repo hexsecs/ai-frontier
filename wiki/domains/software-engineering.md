@@ -4,7 +4,7 @@ title: "Software engineering and operations"
 summary: "Coding agents, PR automation, durable execution and operational assurance across agentic software workflows."
 type: domain
 created: 2026-11-09
-updated: 2026-11-09
+updated: 2026-11-16
 depth: brief
 sources:
   - https://github.com/microsoft/Agensh
@@ -15,3 +15,6 @@ sources:
 # Software engineering and operations
 
 This domain groups application contexts, not a validated universal agentic technique. See [[projects/agensh]], [[projects/agentos]], [[projects/rivet-agents]], [[workflows/index]], [[case-studies/index]] for canonical source-backed records. Compare outcomes only after matching task scope, deployment maturity, and independent verification tier. Cross-domain patterns and limitations are synthesized in [[evaluations/briefing-synthesis-2026-11-03-to-09]].
+
+
+[[concepts/contracts-and-compositional-correctness]] connects typed handoffs and cross-repository interfaces; [[techniques/deterministic-workflow-reuse]] compares reusable agent procedures. These are reusable mechanisms rather than a universal ranking of coding systems.

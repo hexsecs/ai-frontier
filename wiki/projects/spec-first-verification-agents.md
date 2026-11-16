@@ -4,7 +4,7 @@ title: "Modern Software Engineering with Verification Agents"
 summary: "Treat formal specifications as human-reviewed source of truth and generated code/proofs as regenerable outputs, gated by mechanical checks."
 type: project
 created: 2026-11-11
-updated: 2026-11-11
+updated: 2026-11-16
 depth: brief
 sources:
   - https://arxiv.org/abs/2611.02285
@@ -39,3 +39,7 @@ Primarily an architectural proposal; its >90% review-attention reduction is expl
 ## Related
 
 - [[briefings/2026/11/2026-11-11]]
+
+## Conceptual context
+
+Distinguish local validity, dependency compatibility and whole-task acceptance. See [[concepts/contracts-and-compositional-correctness]]. Bound each check by the properties, cases and assumptions it actually exercises. See [[concepts/scoped-assurance]].

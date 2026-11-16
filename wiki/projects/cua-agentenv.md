@@ -4,7 +4,7 @@ title: "CUA AgentEnv"
 summary: "Cua's AgentEnv plugin for macOS VMs: a lume sandbox provider plus cua-driver and three benchmark-arm drivers for computer-use tasks."
 type: project
 created: 2026-11-09
-updated: 2026-11-14
+updated: 2026-11-16
 depth: deep
 related: [concepts/capability-locus, concepts/structural-constraint-over-instruction, concepts/verified-completion-vs-apparent-success]
 sources:
@@ -154,6 +154,8 @@ Both pull requests were open drafts at the time of inspection, and the plugin is
 Sources: <https://api.github.com/repos/trycua/cua/pulls/6405> · <https://api.github.com/repos/trycua/cua/pulls/6407> · <https://github.com/trycua/cua/pull/6405> · <https://github.com/trycua/cua/pull/6407>.
 
 ## Related reading
+
+Match the evaluation instrument to the task and retain its measurement limits. See [[techniques/evaluation-and-simulation]]. Keep implementation, simulation, field and independent-evaluation evidence at their stated tiers. See [[concepts/validation-tier-gap]].
 
 - [[briefings/2026/11/2026-11-04]]
 - [[domains/computer-and-device-use]] — application context this project serves.

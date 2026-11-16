@@ -4,7 +4,7 @@ title: "auto_research"
 summary: "Multi-agent pipeline for X-ray polarimetry that writes its own analysis tools, gates them with checks and review, and admits only numbers with provenance."
 type: project
 created: 2026-11-09
-updated: 2026-11-14
+updated: 2026-11-16
 depth: deep
 sources:
   - https://arxiv.org/abs/2611.05251
@@ -165,5 +165,7 @@ Every quantitative result is **author-reported**; the baselines and defect bench
 Sources: <https://arxiv.org/abs/2611.05251> · <https://arxiv.org/html/2611.05251v1>.
 
 ## Related reading
+
+Separate artifact origin and version history from evidence that the resulting claim is correct. See [[techniques/artifact-and-claim-provenance]]. Distinguish admitting a reusable artifact from certifying every later invocation or transfer. See [[techniques/gated-admission-and-revalidation]].
 
 - [[briefings/2026/11/2026-11-05]]

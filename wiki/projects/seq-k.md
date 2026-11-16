@@ -5,7 +5,7 @@ title: "Seq@K: Evaluating Language Models Under Sequential Feedback"
 summary: "Evaluation protocol measuring whether a model solves a task within K sequential attempts, given feedback after each failure; rankings diverge from Pass@K."
 type: benchmark
 created: 2026-10-31
-updated: 2026-11-14
+updated: 2026-11-16
 related: [concepts/evaluator-circularity, concepts/information-content-dominance, concepts/protocol-relative-scores]
 sources:
   - url: https://arxiv.org/abs/2610.37859
@@ -83,5 +83,7 @@ An *exact* rerun of the paper's own numbers is currently impossible for third pa
 Single-source. The source is arXiv:2610.37859. All quantitative results are **author-reported**; no independent replication was found, and the paper's framing claims (e.g. that Seq@K is the more faithful metric for feedback-loop systems) are the authors' argued position, supported by their study but not themselves measurements. The paper contains no code or data release URL and none was found by search, so exact reruns are currently impossible for third parties.
 
 ## Related reading
+
+Inspect whether the system being evaluated participates in constructing or judging its own evidence. See [[concepts/evaluator-circularity]]. Compare the information supplied to the agent rather than attributing changes solely to pipeline structure. See [[concepts/information-content-dominance]].
 
 [Briefing 2026-10-31](../briefings/2026/10/2026-10-31.md)

@@ -5,7 +5,7 @@ title: "Repairs for Whom? Evaluator–Executor Mismatch in Selecting Repairs for
 summary: "Repair selection must match the deployed executor's identity, not capability: stronger models choose worse repairs for it; labels must name their executor."
 type: project
 created: 2026-10-30
-updated: 2026-11-14
+updated: 2026-11-16
 related: [concepts/comparator-construction-shapes-margins]
 sources:
   - url: https://arxiv.org/abs/2610.38610
@@ -100,5 +100,7 @@ Expected replication targets (author-reported): greedy-replay loss ≈ 0.13, 14B
 All quantitative results on this page are **author-reported** from a single study; the paper cites no independent replication of its own results, and none is claimed here. The internal robustness checks — pre-specified tests with Holm correction, a positive control per pool, fresh-rollout confirmation of the preference-reversal result, and second-objective and LLM-only-subset re-checks — are part of the same study and do not constitute independent replication. The one adjacent result in tension (small-regret cross-model transfer of oversight controllers) concerns a different task and is recorded under Competing approaches.
 
 ## Related reading
+
+Read reported margins alongside how baseline systems and comparison sets were constructed. See [[concepts/comparator-construction-shapes-margins]].
 
 [Briefing 2026-10-30](../briefings/2026/10/2026-10-30.md)

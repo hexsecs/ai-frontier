@@ -5,7 +5,7 @@ title: "Advancing Clinical Genomic Analysis with a Skill-Centred Agent"
 summary: "Agent composing 105 executable clinical-genomics skills; beat research agents on 223 held-out cases and raised clinician concordance in a randomized study."
 type: project
 created: 2026-11-01
-updated: 2026-11-14
+updated: 2026-11-16
 related: [concepts/evaluator-circularity, concepts/protocol-relative-scores, concepts/scoped-assurance]
 sources:
   - url: https://arxiv.org/abs/2610.40556
@@ -88,5 +88,7 @@ A full reproduction is not currently possible from public materials: the code is
 All results on this page are **author-reported** from a single arXiv preprint (arXiv:2610.40556, submitted 29 October 2026) and its supplement. No independent replication, third-party benchmark, or vendor-neutral evaluation of ClinGeX is known to this KB. The paper's primary source was inspected directly; the ClinGeX code was not inspected (it is not public), no benchmark was reproduced, and the agent-core selection scores could not be extracted numerically because they are published only as radar plots.
 
 ## Related reading
+
+Inspect whether the system being evaluated participates in constructing or judging its own evidence. See [[concepts/evaluator-circularity]]. Keep task conditions, feedback, cost and scoring rules attached to reported comparisons. See [[concepts/protocol-relative-scores]].
 
 [Briefing 2026-11-01](../briefings/2026/11/2026-11-01.md)

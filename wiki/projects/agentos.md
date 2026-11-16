@@ -4,7 +4,7 @@ title: "AgentOS"
 summary: "Local-first Python agent runtime with one gateway, an on-device model router, a deterministic sandbox policy and crash recovery with read-only resumes."
 type: project
 created: 2026-11-09
-updated: 2026-11-14
+updated: 2026-11-16
 depth: deep
 sources:
   - https://github.com/use-agent-os/agent-os/blob/main/RELEASES.md
@@ -141,5 +141,7 @@ The repository file tree was read from `https://api.github.com/repos/use-agent-o
 Sources: <https://raw.githubusercontent.com/use-agent-os/agent-os/main/>.
 
 ## Related reading
+
+Distinguish reconstructing history, rerunning a procedure and safely repeating its intended effect. See [[concepts/replay-idempotency-and-effect-semantics]]. Compare persistence, interrupted work and reconciliation without assuming exactly-once external effects. See [[techniques/durable-agent-execution]].
 
 - [[briefings/2026/11/2026-11-03]]

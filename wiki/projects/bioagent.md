@@ -5,7 +5,7 @@ title: "BioAgent: Self-Directed Skill Acquisition and Capability Growth for Long
 summary: "BioAgent: a dual-arm lab robot that detects missing skills before execution, acquires them through human teaching, and reuses them across protocols."
 type: project
 created: 2026-11-02
-updated: 2026-11-14
+updated: 2026-11-16
 related: [concepts/comparator-construction-shapes-margins, concepts/improvement-lives-in-external-state]
 sources:
   - url: https://arxiv.org/abs/2610.41383
@@ -101,5 +101,7 @@ Every quantitative result on this page is **author-reported** by the team that b
 Sources: <https://suiuko.github.io/bioagentweb/>.
 
 ## Related reading
+
+Separate contributions from model weights, external state and the execution harness. See [[concepts/capability-locus]]. Read reported margins alongside how baseline systems and comparison sets were constructed. See [[concepts/comparator-construction-shapes-margins]].
 
 [Briefing 2026-11-02](../briefings/2026/11/2026-11-02.md)

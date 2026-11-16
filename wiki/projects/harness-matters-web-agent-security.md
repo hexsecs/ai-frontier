@@ -4,7 +4,7 @@ title: "Harness Matters — Measuring and Dissecting Security Resilience in Web 
 summary: "WebTrap Farm evaluates how agent harness stages and models jointly determine browser-agent security."
 type: project
 created: 2026-11-12
-updated: 2026-11-14
+updated: 2026-11-16
 depth: brief
 related: [projects/coder-eval]
 sources:
@@ -43,3 +43,7 @@ High evaluation relevance; new November research, but no independently replicate
 
 - [[briefings/2026/11/2026-11-12]]
 - [[projects/coder-eval]] — analyst comparison, not a demonstrated head-to-head; source URLs and limitations in the briefing.
+
+## Conceptual context
+
+Locate enforcement surfaces and retain the limits of the tested security boundary. See [[techniques/secure-agent-operations]]. Separate the checking mechanism from the strength and scope of its warrant. See [[techniques/verification-and-evidence]].

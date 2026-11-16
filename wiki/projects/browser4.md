@@ -4,7 +4,7 @@ title: "Browser4"
 summary: "Apache-2.0 AI-native browser engine: Rust CLI and Spring backend, zero-token X-SQL extraction, a progressive experience store; throughput unbenchmarked."
 type: project
 created: 2026-11-09
-updated: 2026-11-14
+updated: 2026-11-16
 depth: deep
 sources:
   - https://github.com/platonai/browser4
@@ -147,5 +147,7 @@ Report token counts, wall clock, command counts and per-task results rather than
 Mechanism claims — the tool loop, the context mechanisms, the experience tiers and confidence model, the X-SQL path, the coding kernel's tool count, the CI structure and the test taxonomy — are **code-inspected or repository-inspected**. The 100k–200k pages-per-machine-per-day figure is a **README claim that the repository's own competitive-analysis document identifies as a design goal with no public benchmark**, and it is labelled as such above. The bulk-collection timings and the locale finding are **author-run measurements in the repository's own retrospective**, single-task and unrepeated. The Playwright MCP / Browser Use / Scrapy comparison is the project's own positioning document, not a benchmark against them. No independent reproduction of any Browser4 figure is known.
 
 ## Related reading
+
+Compare reusable procedures by applicability conditions, execution boundaries and fallback rather than assuming universal benefits. See [[techniques/deterministic-workflow-reuse]]. Keep task conditions, feedback, cost and scoring rules attached to reported comparisons. See [[concepts/protocol-relative-scores]].
 
 [[briefings/2026/11/2026-11-06]]

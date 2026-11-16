@@ -10,6 +10,8 @@ Which actions may an agent take, where is that boundary enforced, and what happe
 
 ## Start here
 
+[[concepts/delegated-authority-and-revocation]] introduces grant scope, ceilings and revocation. [[projects/sopguard]] concerns a separate cross-origin information-flow boundary. [[experiments/lifecycle-authority-and-retention]] specifies bounded fault injection.
+
 1. [[concepts/structural-constraint-over-instruction]] — Distinguish model instructions from externally enforced limits.
 2. [[techniques/secure-agent-operations]] — Compare concrete enforcement surfaces and their coverage.
 3. [[techniques/gated-admission-and-revalidation]] — Separate tool admission from authorization of each use.

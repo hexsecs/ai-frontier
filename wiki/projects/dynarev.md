@@ -5,7 +5,7 @@ title: "DynaRev: Benchmarking Web Agents under Dynamic Goal Revision"
 summary: "DynaRev: 181-task web-agent benchmark delivering additive and override goal revisions at semantic milestones, scored for correctness, responsiveness, and cost."
 type: benchmark
 created: 2026-11-01
-updated: 2026-11-14
+updated: 2026-11-16
 related: [concepts/evaluator-circularity, concepts/information-content-dominance, concepts/protocol-relative-scores, concepts/scoped-assurance]
 sources:
   - url: https://arxiv.org/abs/2610.40133
@@ -115,5 +115,7 @@ Exact numerical reproduction should not be expected over time: the tasks descend
 Every quantitative result on this page is **author-reported** from that single preprint: no independent replication was located, and the authors claim none. Model identifiers (GPT-6.1-Sol, Gemini-3.8-Flash, Qwen3.8-Flash, Claude-Opus-5-5, DeepSeek-V4.1-Flash) are reproduced as printed in the paper and have not been silently "corrected" to other releases. Items labelled analyst-assessed under Limitations are inferences from the paper's stated method, not claims made by the authors.
 
 ## Related reading
+
+Inspect whether the system being evaluated participates in constructing or judging its own evidence. See [[concepts/evaluator-circularity]]. Compare the information supplied to the agent rather than attributing changes solely to pipeline structure. See [[concepts/information-content-dominance]].
 
 [Briefing 2026-11-01](../briefings/2026/11/2026-11-01.md)

@@ -4,11 +4,15 @@ title: "Durable agent execution"
 summary: "Persist execution state, classify interrupted effects and reconcile retries without assuming exactly-once external actions."
 type: technique
 created: 2026-11-14
-updated: 2026-11-14
+updated: 2026-11-16
 depth: full
 sources:
   - https://raw.githubusercontent.com/rivet-dev/agents/21c248b1d1d8c3a9d6c1cc7b85531a4a2d0e5c50/docs/content/guides/durable-ai-agents.mdx
   - https://raw.githubusercontent.com/openma-ai/open-managed-agents/d45d7dc194187130bbdd375261d2e6e3c064f812/README.md
+  - https://raw.githubusercontent.com/agentclientprotocol/agent-client-protocol/4aab69b4e6bcb53965ff5b1141d2f04a62a25c6c/CHANGELOG.md
+  - https://raw.githubusercontent.com/compozy/compozy/8cbf8a5a4dcb343f349e2b47635a461bea0c9b24/CHANGELOG.md
+  - https://raw.githubusercontent.com/paperclipai/paperclip/b4fa1c7fb1c9adafc6407bc46381a0ab89f4b4fd/releases/v2026.1005.0.md
+  - https://github.com/vercel-labs/agent-browser/releases/tag/v0.42.0
 ---
 
 # Durable agent execution
@@ -23,6 +27,14 @@ Durable execution separates the record of an agent's work from the process curre
 | [[projects/openma]] | Session history survives independently of the harness and sandbox. | The README describes durable execution claims, renewable leases and fencing across replicas; replacement harnesses rebuild context from durable events after sandbox loss. Workspace restoration remains dependent on the configured resources. |
 
 Sources: [Rivet durable-agent guide](https://raw.githubusercontent.com/rivet-dev/agents/21c248b1d1d8c3a9d6c1cc7b85531a4a2d0e5c50/docs/content/guides/durable-ai-agents.mdx), [OpenMA README](https://raw.githubusercontent.com/openma-ai/open-managed-agents/d45d7dc194187130bbdd375261d2e6e3c064f812/README.md). These describe mechanisms and contracts, not independently measured reliability.
+
+## Session replay and delegated-work reconciliation
+
+[[concepts/agent-state-and-lifecycle]] separates restored session history, live worker state and external effects. [[projects/agent-client-protocol]] documents an unstable replay-complete notification; [[projects/compozy]] documents deleted-child settlement, parent wake delivery and orphan reconciliation at boot. These are different lifecycle boundaries, not implementations of one recovery protocol ([ACP](https://raw.githubusercontent.com/agentclientprotocol/agent-client-protocol/4aab69b4e6bcb53965ff5b1141d2f04a62a25c6c/CHANGELOG.md), [Compozy](https://raw.githubusercontent.com/compozy/compozy/8cbf8a5a4dcb343f349e2b47635a461bea0c9b24/CHANGELOG.md)).
+
+[[projects/agent-browser]] adds another meaning of replay: rerunning a recorded browser flow through different execution tiers ([v0.42 release](https://github.com/vercel-labs/agent-browser/releases/tag/v0.42.0)). [[concepts/replay-idempotency-and-effect-semantics]] distinguishes that procedure from reconstructing history or safely repeating a remote effect. [[projects/paperclip]] documents cross-task files and human browser takeover, which improve continuity without establishing retry safety ([release](https://raw.githubusercontent.com/paperclipai/paperclip/b4fa1c7fb1c9adafc6407bc46381a0ab89f4b4fd/releases/v2026.1005.0.md)).
+
+Extend crash tests to a waiting parent whose child disappears, a client reconstructing events, and a saved flow using stale credentials. Score each boundary separately; successful reconstruction is not evidence that outstanding mutations completed.
 
 ## Distinct responsibilities
 

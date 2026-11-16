@@ -10,6 +10,8 @@ How do agents divide work, preserve shared information and integrate a correct f
 
 ## Start here
 
+[[concepts/contracts-and-compositional-correctness]] explains dependency obligations; [[concepts/agent-state-and-lifecycle]] explains terminal child/parent states. [[concepts/delegated-authority-and-revocation]] separates work assignment from permission.
+
 1. [[techniques/multi-agent-orchestration]] — Compare mechanisms rather than treating all teams as interchangeable.
 2. [[evaluations/multi-agent-value-and-coordination]] — Assess accepted output against total cost.
 3. [[concepts/verified-completion-vs-apparent-success]] — Verify the integrated result.

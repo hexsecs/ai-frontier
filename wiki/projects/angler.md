@@ -5,7 +5,7 @@ title: "ANGLER: Verifier-Grounded Benchmarking with an Adaptive Attacker for Web
 summary: "REEF benchmarks web-agent prompt-injection vulnerability on nine executable sites; ANGLER, an adaptive attacker, raises attack success from 15.24% to 20.36%."
 type: project
 created: 2026-11-02
-updated: 2026-11-14
+updated: 2026-11-16
 related: [concepts/comparator-construction-shapes-margins, concepts/improvement-lives-in-external-state, concepts/protocol-relative-scores]
 sources:
   - url: https://arxiv.org/abs/2610.41272
@@ -133,5 +133,7 @@ Every result on this page is **author-reported** from a single arXiv preprint; n
 **No code or data is released.** No repository, project page, dataset URL, or release statement appears anywhere in the paper ("GitHub" occurs only as the name of one of the nine benchmark websites). The environments are built on AutoWebWorld (Wu et al., 2026) and the target scaffold is VisualWebArena (Koh et al., 2024); neither is this paper's artifact. Corresponding-author emails are the only contact channel given. Model names (GPT-6.1 Sol, Claude Sonnet 5.5, Qwen3.7-Flash, GLM-5V-Turbo, and the Qwen3.5-9B mutation model) are recorded exactly as the paper prints them, not normalised.
 
 ## Related reading
+
+Separate contributions from model weights, external state and the execution harness. See [[concepts/capability-locus]]. Read reported margins alongside how baseline systems and comparison sets were constructed. See [[concepts/comparator-construction-shapes-margins]].
 
 [Briefing 2026-11-02](../briefings/2026/11/2026-11-02.md)

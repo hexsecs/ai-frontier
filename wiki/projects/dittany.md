@@ -5,7 +5,7 @@ summary: "Runtime repair for multi-agent applications: a contract-derived contri
 type: project
 depth: deep
 created: 2026-11-02
-updated: 2026-11-14
+updated: 2026-11-16
 related: [concepts/abstention-as-first-class-verdict, concepts/capability-locus, concepts/comparator-construction-shapes-margins, concepts/evaluator-circularity, concepts/structural-constraint-over-instruction]
 sources:
   - url: https://arxiv.org/abs/2610.42144
@@ -118,5 +118,7 @@ A full replication is not extractable: the paper releases no code or data (see E
 Baseline provenance is mixed and labelled where it matters: Reflexion was re-run as the authors' own MAS-level adaptation, Iterative Rollback is the authors' baseline, and SupervisorAgent and AgentTether figures are mostly literature-reported numbers outside five matched applications. Despite describing a Python implementation in detail, **the paper releases no code and no data** — no repository URL appears anywhere in the text, and the constructed 9,000-instance test set, reference outcomes, and rubrics are not published — so none of the experiments can currently be independently re-run.
 
 ## Related reading
+
+Distinguish local validity, dependency compatibility and whole-task acceptance. See [[concepts/contracts-and-compositional-correctness]]. Compare handoff and coordination mechanisms rather than assuming that more workers improve results. See [[techniques/multi-agent-orchestration]].
 
 [Briefing 2026-11-02](../briefings/2026/11/2026-11-02.md)

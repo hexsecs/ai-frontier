@@ -5,7 +5,7 @@ title: "Compile Away Uncertainty: Self-Evolving Agent Skills via Programmatic Co
 summary: "Self-evolving skill framework that selectively compiles well-specified skill operations into validated, reusable programs while LLM reasoning handles the rest."
 type: project
 created: 2026-10-31
-updated: 2026-11-14
+updated: 2026-11-16
 related: [concepts/information-content-dominance, concepts/scoped-assurance]
 sources:
   - url: https://arxiv.org/abs/2610.39508
@@ -117,6 +117,8 @@ Substituting an available model for the paper's 2026 hosted backbones is unavoid
 Every quantitative result is **author-reported**; the paper links no code or data release (verified by full-text search), the baselines were run by the authors, and no independent replication is cited.
 
 ## Related reading
+
+Compare reusable procedures by applicability conditions, execution boundaries and fallback rather than assuming universal benefits. See [[techniques/deterministic-workflow-reuse]].
 
 [[techniques/gated-admission-and-revalidation]] compares admission lifecycles. [[concepts/scoped-assurance]] bounds local checks; [[concepts/improvement-lives-in-external-state]] locates the reusable artifacts; [[concepts/information-content-dominance]] discusses feedback content.
 

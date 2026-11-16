@@ -4,7 +4,7 @@ title: "Baya — Securing Web Agents with Compile-Then-Execute"
 summary: "Compiles web tasks into bounded Python programs before exposing agents to untrusted website content."
 type: project
 created: 2026-11-12
-updated: 2026-11-14
+updated: 2026-11-16
 depth: brief
 related: [projects/fastbrowse]
 sources:
@@ -46,5 +46,7 @@ High novelty and strong quantitative evidence, bounded by the tested API coverag
 
 
 ## Related reading
+
+Compare reusable procedures by applicability conditions, execution boundaries and fallback rather than assuming universal benefits. See [[techniques/deterministic-workflow-reuse]]. Distinguish admitting a reusable artifact from certifying every later invocation or transfer. See [[techniques/gated-admission-and-revalidation]].
 
 [[projects/llm-as-code]] provides the program-owned control comparison named above; [[concepts/structural-constraint-over-instruction]] explains the broader distinction between constrained actions and instructions.

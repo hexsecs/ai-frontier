@@ -5,7 +5,7 @@ title: "GARDEN: Generalist Autonomous Reward Design Through Evidence Navigation 
 summary: "One LLM-engineered reward program for a cooperative MARL task family, frozen and transferred unchanged to held-out scenarios."
 type: project
 created: 2026-10-31
-updated: 2026-11-14
+updated: 2026-11-16
 related: [concepts/improvement-lives-in-external-state, concepts/capability-locus]
 sources:
   - url: https://arxiv.org/abs/2610.37926
@@ -97,5 +97,7 @@ Logging model calls and input tokens per condition (as the paper's Table V does)
 All quantitative results are **author-reported** (single-author preprint; no conference or journal venue stated), and no independent replication is cited. The code repository URL is recorded **as stated in the paper**; the repository was **not inspected** in this assessment, and no code was executed. Environment and data availability follow the paper: Overcooked and SMAX are part of the public JaxMARL library; other supporting data are available from the author on reasonable request, per the paper.
 
 ## Related reading
+
+Separate contributions from model weights, external state and the execution harness. See [[concepts/capability-locus]]. Locate persistent artifacts separately from changes to model weights. See [[concepts/improvement-lives-in-external-state]].
 
 [Briefing 2026-10-31](../briefings/2026/10/2026-10-31.md)

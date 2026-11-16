@@ -4,7 +4,7 @@ title: "Claude Agent ACP"
 summary: "ACP adapter for the Claude Agent SDK; 0.101.0 release-please PR: idle compaction before cache expiry, Bun executables, Auto-mode default, streamed v2 commands."
 type: project
 created: 2026-11-09
-updated: 2026-11-14
+updated: 2026-11-16
 depth: deep
 sources:
   - https://github.com/agentclientprotocol/claude-agent-acp/pull/1516
@@ -105,6 +105,8 @@ Proposed, not executed; all arms use published releases and public ACP clients, 
 Sources: <https://github.com/agentclientprotocol/claude-agent-acp/pull/1516>.
 
 ## Related reading
+
+Separate reconstructed session state, live delegated work and independently observed external effects. See [[concepts/agent-state-and-lifecycle]]. Distinguish externally enforced action boundaries from instructions a model may or may not follow. See [[concepts/structural-constraint-over-instruction]].
 
 - [[briefings/2026/11/2026-11-04]]
 - Analyst-selected context, not source-verified dependencies: [[projects/agentos]] and [[projects/rivet-agents]] for other agent-framework approaches to protocol and runtime boundaries; [[projects/agent-orchestrator]] consumes claude-agent-acp as its Claude Code Chat driver, per its own documentation; the cross-project synthesis is [[evaluations/briefing-synthesis-2026-11-03-to-09]].

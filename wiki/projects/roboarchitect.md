@@ -4,7 +4,7 @@ title: "RoboArchitect"
 summary: "A coding model evolves the control harness around a frozen robot policy, raising held-out manipulation success from 9.7% to 43.3% without weight updates."
 type: project
 created: 2026-11-09
-updated: 2026-11-14
+updated: 2026-11-16
 depth: deep
 related: [concepts/capability-locus]
 sources:
@@ -159,6 +159,8 @@ Every quantitative result is **author-reported**; the baselines — the bare pol
 Sources: <https://arxiv.org/abs/2610.42141> · <https://arxiv.org/html/2610.42141v1>.
 
 ## Related reading
+
+Count earlier capabilities lost as well as new cases solved when judging an update. See [[concepts/preservation-aware-agent-improvement]].
 
 - [[briefings/2026/11/2026-11-03]]
 - [[evaluations/briefing-synthesis-2026-11-03-to-09]] — cross-briefing synthesis that includes this project.

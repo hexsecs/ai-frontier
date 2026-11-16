@@ -21,3 +21,11 @@ Cross-project phenomena and analyst interpretations grounded in the cited projec
 
 - [Verified completion versus apparent success](./verified-completion-vs-apparent-success.md) — Independent acceptance is stronger than agent claims, user approval, transport acknowledgements, or merely declared checks.
 - [Preservation-aware agent improvement](./preservation-aware-agent-improvement.md) — Strategy, harness and environment evolution must measure lost as well as newly solved tasks.
+
+- [[concepts/agent-state-and-lifecycle|Agent state and lifecycle]] — Separate session, workspace and external-effect state when reasoning about agent replay, delegation and recovery.
+
+- [[concepts/replay-idempotency-and-effect-semantics|Replay, idempotency and effect semantics]] — Distinguish rebuilding history, retrying an operation and repeating its intended effect safely.
+
+- [[concepts/delegated-authority-and-revocation|Delegated authority and revocation]] — Explain authority scope, inheritance ceilings and revocation independently of task delegation or model instructions.
+
+- [[concepts/contracts-and-compositional-correctness|Contracts and compositional correctness]] — Distinguish valid component outputs from satisfied dependencies and independently accepted whole-task outcomes.

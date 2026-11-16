@@ -4,7 +4,7 @@ title: "tigerless agent-memory"
 summary: "Local-first agent memory runtime: Markdown files as the source of truth, a rebuildable SQLite index, and a sleep-time Manage layer on its own clock."
 type: project
 created: 2026-11-09
-updated: 2026-11-14
+updated: 2026-11-16
 depth: deep
 sources:
   - https://github.com/tigerless-labs/agent-memory
@@ -161,5 +161,7 @@ Mechanism claims are code-inspected; the LongMemEval-S table, the 9 interop pair
 No agent-memory code was cloned, installed, built or run; no store was created; no harness run was performed; no benchmark was reproduced, and the repository ships nothing that would let one be reproduced without reimplementing the protocol from scratch.
 
 ## Related reading
+
+Compare memory operations, admission and reuse while retaining null and negative-transfer evidence. See [[techniques/agent-skills-and-memory]]. Separate contributions from model weights, external state and the execution harness. See [[concepts/capability-locus]].
 
 [[briefings/2026/11/2026-11-05]]

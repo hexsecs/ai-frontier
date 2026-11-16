@@ -4,12 +4,13 @@ title: "Multi-agent value and coordination"
 summary: "Compare delegation by accepted output, information exchange and total resource cost under matched evaluation conditions."
 type: evaluation
 created: 2026-11-14
-updated: 2026-11-14
+updated: 2026-11-16
 depth: full
 sources:
   - https://arxiv.org/html/2610.04672v2
   - https://arxiv.org/html/2610.07763v1
   - https://raw.githubusercontent.com/microsoft/Agensh/2dae4e14a653da48549fd9aa093f834841475d6c/README.md
+  - https://raw.githubusercontent.com/compozy/compozy/8cbf8a5a4dcb343f349e2b47635a461bea0c9b24/CHANGELOG.md
 ---
 
 # Multi-agent value and coordination
@@ -35,6 +36,12 @@ MASBench constructs tasks where agents hold different information, allowing cont
 Agensh documents asynchronous cooperation through a Git workspace, messages and shared context. Its architecture is relevant to integration, but its worker count alone cannot establish cost efficiency. No result here establishes a universal best team size. [[concepts/protocol-relative-scores]] and [[concepts/comparator-construction-shapes-margins]] explain why budgets and baseline construction must remain visible.
 
 [[projects/workflowarena]] adds a distinct instrument for authored worker workflows; [[projects/tandembench]] examines coordination-plan selection; [[projects/geofaham]] supplies artifact-centric coordination in another domain. Consult their canonical records for source-specific evidence; these are reading links, not additional results independently verified by this comparison.
+
+## Lifecycle conformance is a separate evaluation axis
+
+A team can produce useful output on completed runs while stranding parents after cancellation or leaving authority behind after restart. [[projects/compozy]] documents fixes for precisely these lifecycle boundaries ([changelog](https://raw.githubusercontent.com/compozy/compozy/8cbf8a5a4dcb343f349e2b47635a461bea0c9b24/CHANGELOG.md)); that release evidence is not a team-quality benchmark or a measured failure distribution.
+
+The existing accepted-output/cost comparison should therefore record termination, orphaned work and permission violations as separate outcomes. [[concepts/agent-state-and-lifecycle]] defines the distinction, and [[experiments/lifecycle-authority-and-retention]] proposes controlled fault injection. Benchmark delegation quality, operational conformance and aggregate resource use separately; a strong final-output score does not erase a lifecycle violation.
 
 ## Proposed controlled experiment
 

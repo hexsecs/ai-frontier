@@ -4,7 +4,7 @@ title: AlphaProof Code
 summary: Multi-agent Lean proof generation for selected Signal libsignal machine-code security properties.
 type: project
 created: 2026-11-14
-updated: 2026-11-14
+updated: 2026-11-16
 depth: full
 sources:
   - https://deepmind.google/documents/36/Formal_Verification_of_Signal_4.pdf
@@ -19,3 +19,7 @@ The separation between specification approval and autonomous proof search makes 
 **Experiment:** Pin a small embedded cryptographic routine and formally specify one invariant; evaluate generated proofs with a trusted checker and track specification changes separately from proof generation.
 
 Source: https://deepmind.google/documents/36/Formal_Verification_of_Signal_4.pdf
+
+## Conceptual context
+
+Distinguish local validity, dependency compatibility and whole-task acceptance. See [[concepts/contracts-and-compositional-correctness]]. Bound each check by the properties, cases and assumptions it actually exercises. See [[concepts/scoped-assurance]].
