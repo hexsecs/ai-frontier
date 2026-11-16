@@ -3117,6 +3117,14 @@
       "identity_status": "RFC 9110",
       "claim_support_status": "section 9.2.2 definition, per-request-side-effect caveat and non-idempotent retry warning read",
       "replication_status": "not-applicable-definition"
+    },
+    {
+      "key": "framers19",
+      "url": "https://github.com/framerslab/agentos/releases/tag/v0.19.0",
+      "retrieval_status": "retrieved",
+      "identity_status": "v0.19.0 released 2026-11-15",
+      "claim_support_status": "Breaking changes for prompt profile, date tool and inherited factory persistence read; canonical configuration statement clarified.",
+      "replication_status": "not-executed"
     }
   ],
   "source_identity_note": "The initially retrieved arXiv 2610.39074 is HERA, not AgenticDS. It was excluded from the new contract comparison, which uses verified AgenticDS 2610.39608. Retrieval is not claim verification; supporting passages were read for new claims.",

@@ -8,6 +8,7 @@ updated: 2026-11-16
 depth: brief
 sources:
   - https://github.com/framerslab/agentos/releases/tag/v0.18.0
+  - https://github.com/framerslab/agentos/releases/tag/v0.19.0
 ---
 
 # Framerslab AgentOS 0.18–0.19
@@ -15,6 +16,8 @@ sources:
 **Source and date:** https://github.com/framerslab/agentos/releases/tag/v0.18.0 (2026-11-14–15).
 
 AgentOS 0.18 adds a forgotten-user ledger, tombstones persisted outside the main memory store, deletion of associated traces/chunks, SQLite secure_delete and retention choices for shared stores. Version 0.19 makes persistence, prompt profiles and date tools explicit host configuration rather than implicit runtime defaults.
+
+Version 0.19 makes the configuration boundary more precise: omitting the conversational-persistence override preserves the factory persistence value rather than implicitly enabling it; the date tool and built-in concise prompt profile require explicit host options ([v0.19 release](https://github.com/framerslab/agentos/releases/tag/v0.19.0)). This is documented configuration behavior, not a measured privacy guarantee.
 
 **Mechanism:** Durable negative memory: enforce deletion/retention across restored databases and derived retrieval indexes, while making host authority explicit.
 
