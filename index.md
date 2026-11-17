@@ -37,3 +37,10 @@ A curated, source-backed guide to practical agentic AI, autonomous workflows, an
 ## Curation
 
 Research priorities and selection rules live in [`automation/briefing-policy.yaml`](automation/briefing-policy.yaml).
+
+
+## Latest research — November 17
+
+- [[briefings/2026/11/2026-11-17]] — Five primary studies; independently accepted correction rather than apparent self-repair.
+- [[projects/toolpulse]], [[projects/heragent]], [[projects/aligning-ai-teams]], [[projects/linera]], [[projects/robocoevo]] — Canonical records.
+- [[techniques/adaptive-recovery]], [[techniques/multi-agent-orchestration]], [[techniques/agent-skills-and-memory]], [[techniques/embodied-and-scientific-agents]] — Mechanism and evidence synthesis.
