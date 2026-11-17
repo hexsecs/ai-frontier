@@ -30,3 +30,8 @@ The retention section of [[techniques/agent-skills-and-memory]] distinguishes re
 ## Counterevidence and tests
 
 [[projects/security-impact-of-coding-agent-memory-files]] bounds claims that stored text reliably changes behavior. [[techniques/agent-skills-and-memory]] discusses negative transfer and missing gate ablations. Compare the two explicitly different ingestion protocols in [[experiments/index]]; both are proposed, not measured outcomes. See [[topics/verification-and-evaluation]] for acceptance criteria.
+
+
+## When forgetting must survive old backups
+
+[[projects/linera]] studies encrypted lineage keys that make derived memory unreadable after a source key is punctured, even when an attacker obtains old ciphertext and current keys ([primary paper](https://arxiv.org/abs/2611.18133)). Unlike [[projects/framerslab-agentos]]'s documented tombstone and deletion mechanism, this is a cryptographic erasure construction with an explicit threat model and a collateral-forgetting tradeoff. See [[techniques/agent-skills-and-memory]] for the fan-in effect and its evidence limits.
