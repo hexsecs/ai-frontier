@@ -31,8 +31,12 @@ This is the legacy canonical file-location index. Some entries are now classifie
 - [HERA](./hera.md) — Autonomous quantum laboratory measurements.
 - [Intent Loss in Smart-Contract Synthesis](./intent-loss-in-smart-contract-synthesis.md) — Clarification and transaction replay expose intent mismatches in generated contracts.
 - [KARMA](./karma.md) — Industrial advertising agents with typed knowledge modules and rollback.
+- [LLM Wiki](./llm-wiki.md) — LLM Wiki is a desktop app that compiles documents into a persistent, graph-linked wiki, extending Karpathy's pattern with review and deep research.
 - [MoLRSI](./molrsi.md) — Recursive agent improvement in molecular discovery.
+- [Open Knowledge Format](./open-knowledge-format.md) — Google's Open Knowledge Format packages knowledge as Markdown bundles with YAML frontmatter; v0.2 adds provenance, verification, and freshness fields.
 - [OpenBot](./openbot.md) — CopilotKit's self-hosted agent coworker: an audit-first policy gateway records every action before it runs, plus human takeover; no measurements published.
+- [OpenShelf](./openshelf.md) — OpenShelf is an open standard for composable Markdown knowledge bases: a kb.yaml manifest, L0–L3 progressive context, and pinned cross-KB composition.
+- [OpenWiki](./openwiki.md) — LangChain's OpenWiki CLI generates and maintains a Markdown wiki for a codebase or personal sources, tracking each fact to versioned source evidence.
 - [Pre-Crime for Agents](./pre-crime-for-agents.md) — Predict agent disclosure behavior from internal signals.
 - [Prefix Executability](./prefix-executability.md) — Final success and prefix executability rank the same tool-using agents differently; most successful episodes pass through invalid prefixes.
 - [Repairs for Whom?](./repairs-for-whom.md) — Repair selection must be matched to executor capability.

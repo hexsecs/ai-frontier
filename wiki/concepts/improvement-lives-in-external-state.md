@@ -1,12 +1,12 @@
 ---
 uid: 9cafe10f-c05b-4127-8fd8-fc3ea28431e8
 created: 2026-11-02
-updated: 2026-11-14
+updated: 2026-11-17
 type: concept
 depth: full
 title: "Improvement lives in external state"
 summary: "Agents in this corpus improve by editing persistent external state (memory, knowledge modules, skills, team rules) while model weights stay frozen."
-related: [projects/filingloop, projects/garden, projects/hera, projects/karma, projects/molrsi, projects/evoteam, projects/github-copilot-fusion, projects/tinyastral, projects/bioagent, projects/angler, projects/strategist, projects/fa-agent]
+related: [projects/filingloop, projects/garden, projects/hera, projects/karma, projects/molrsi, projects/evoteam, projects/github-copilot-fusion, projects/tinyastral, projects/bioagent, projects/angler, projects/strategist, projects/fa-agent, projects/openwiki, projects/openshelf, projects/open-knowledge-format, projects/llm-wiki]
 sources:
   - url: https://arxiv.org/abs/2610.39884
     retrieved: 2026-11-02
@@ -260,3 +260,8 @@ This is an analyst interpretation of the cited studies, not an additional experi
 ## 2026-11-10 evidence connections
 
 - **[[projects/claude-agent-acp]] — a bound, not an instance (analyst-level link).** The release's idle-compaction feature ("compact idle sessions before the prompt cache expires") turns on external state — provider prompt-cache temperature — that the client cannot see at all and the adapter can only partially infer, so the adapter acts on the client's behalf with no published figure measuring the trade. This bounds the concept's claimed side-benefits: inspectability, reversibility and portability presuppose that the external state is visible to its owner; external state no party can observe gets managed by guesswork. The project page calls this the concept "inverted"; recorded here as a boundary case, not a supporting instance.
+
+## 2026-11-17 evidence connections
+
+- **The LLM Wiki tool cluster — [[projects/openwiki]], [[projects/llm-wiki]], [[projects/open-knowledge-format]] and [[projects/openshelf]] — as design-level instances.** In these systems the persistent external artifact (a compiled, interlinked wiki) is not a component of the system but the product itself, maintained around whatever frozen model the operator supplies. They extend the concept's scope without adding measured support: none of the four pages records a measured improvement result, and their inclusion here registers the pattern's purest architectural form, not new evidence for its payoff. The cluster's one mechanism that speaks to the concept's bounds is OpenWiki's Grounded Claims, which prices the maintenance of external state per fact — the cost side of the frozen-artifact bargain that the supporting pages above mostly assert rather than measure.
+
