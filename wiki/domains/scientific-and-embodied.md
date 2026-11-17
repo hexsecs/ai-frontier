@@ -18,3 +18,6 @@ This domain groups application contexts, not a validated universal agentic techn
 
 
 [[projects/the-agentic-researcher]] provides a canonical long-running scientific workflow record. [[concepts/agent-state-and-lifecycle]] and [[techniques/artifact-and-claim-provenance]] distinguish duration, execution state and the evidence behind a scientific claim.
+
+
+[[projects/robocoevo]] ([primary paper](https://arxiv.org/abs/2611.19081)) studies a simulation-only loop in which an agent writes recovery programs for failed robot-policy rollouts and retrains the policy on corrective experience. Unlike frozen-policy harness evolution, both program and policy change; [[techniques/embodied-and-scientific-agents]] distinguishes that mechanism from physical instrument evidence.
