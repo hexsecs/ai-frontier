@@ -5,7 +5,7 @@ title: "Closed-loop instrument and simulation execution"
 summary: "Agents acting on instruments and physical systems, where feedback arrives as measurement, actions carry real cost, and evidence tiers bound every claim."
 type: technique
 created: 2026-11-02
-updated: 2026-11-14
+updated: 2026-11-17
 related: [projects/auctopus, projects/hera, projects/bioagent, projects/molrsi, projects/tinyastral, concepts/validation-tier-gap, concepts/capability-locus, concepts/improvement-lives-in-external-state]
 sources:
   - url: https://arxiv.org/abs/2610.40589
@@ -18,6 +18,7 @@ sources:
     retrieved: 2026-11-02
   - url: https://arxiv.org/abs/2610.41216
     retrieved: 2026-11-02
+  - https://arxiv.org/abs/2611.19081
 ---
 
 # Closed-loop instrument and simulation execution
@@ -43,6 +44,12 @@ The systems below do not share one implementation. [[projects/auctopus]] and [[p
 **Harness evolution in simulation (TinyAstral).** A frozen 180B teacher planner acts through a harness that owns perception, geometry, collision-free motion planning, and tool returns — tools "report what they measured rather than what they intended," and unmeasurable checks return unknown rather than a pass. Master agents propose harness edits against observed failure classes, accepted only through a pre-registered paired statistical gate. The final harness is then frozen and a small student distilled inside it. Every quantitative result is simulation; the physical arm appears only in qualitative trajectory figures.
 
 **Reward-program engineering over a training process (GARDEN comparison).** An LLM reward engineer with shell access to environment and learner source code, training curves, and trajectories writes executable reward programs, tests them through bounded learning probes, and a fixed mechanical rule freezes and hashes one program for unchanged transfer to held-out scenarios. The system acted on is a learning process; its feedback is training metrics — measurement of a simulated process, which distinguishes it from physical experimental feedback.
+
+## Co-evolving recovery code and learned control
+
+[[projects/robocoevo]] ([November 14 study](https://arxiv.org/abs/2611.19081)) couples two capability loci: a multimodal agent writes executable failure detectors and recovery programs for failed robot-policy rollouts, then the corrected trajectories become training data for a vision-language-action policy. The updated policy's changed failure distribution determines which detectors and programs the agent revises next. Unlike [[projects/tinyastral]], which evolves a harness around a frozen policy before distilling a student, this loop repeatedly changes both recovery code and policy parameters. The relation is an architectural contrast, not a measured head-to-head result.
+
+The authors report sustained task-success gains on BEHAVIOR-1K, RoboCasa and RoboTwin, all simulation benchmarks in the cited evaluation. That is stronger than an untested proposal but does not establish safe physical deployment. An important failure mode is moving-target validation: a detector calibrated to one policy may become stale after retraining, while an improvement on previously failed states can regress other tasks. Hold out evaluation seeds and preserve previous-policy success cases; compare frozen policy, script-only recovery and iterative script-plus-policy updates with identical simulation budgets. No such independent comparison is performed here.
 
 ## Evidence and measured effects
 
