@@ -5,7 +5,7 @@ title: "Multi-agent orchestration"
 summary: "Agent coordination through evolving teams, typed contracts, independent exploration and governed handoffs; effects depend on the mechanism."
 type: technique
 created: 2026-11-02
-updated: 2026-11-16
+updated: 2026-11-17
 related: [projects/evoteam, projects/agenticds, projects/explorerepair, projects/openbot]
 sources:
   - url: https://arxiv.org/abs/2610.39813
@@ -18,6 +18,7 @@ sources:
     retrieved: 2026-11-02
   - https://raw.githubusercontent.com/compozy/compozy/8cbf8a5a4dcb343f349e2b47635a461bea0c9b24/CHANGELOG.md
   - https://raw.githubusercontent.com/agentclientprotocol/agent-client-protocol/4aab69b4e6bcb53965ff5b1141d2f04a62a25c6c/CHANGELOG.md
+  - https://arxiv.org/abs/2611.17820
 ---
 
 # Multi-agent orchestration
@@ -27,6 +28,12 @@ sources:
 Multi-agent orchestration coordinates roles, task allocation, handoffs and integration. The cited systems use different mechanisms: [[projects/evoteam]] evolves a reusable team library, [[projects/agenticds]] exchanges typed objects between fixed roles, [[projects/explorerepair]] aggregates independent exploration, and [[projects/openbot]] governs actions and human takeover through a policy gateway.
 
 Shared coordination vocabulary does not establish a common mechanism or transferable performance. [[projects/dittany]] repairs other multi-agent applications; [[projects/github-copilot-fusion]] documents model routing with vendor-reported effects; [[projects/garden]] coordinates reinforcement-learning policies rather than multiple LLM agents. Those distinctions matter when comparing results.
+
+### Safety ownership is not ordinary peer review
+
+[[projects/aligning-ai-teams]] ([November 13 study](https://arxiv.org/abs/2611.17820)) experimentally separates team coordination from responsibility for a whole-system invariant. In two software-engineering cases and ten consulting tasks, individually aligned agents can each respect their delegated scope while collectively overlooking a safety objective. The authors report that generic group chat and mutual critique do not reliably restore single-agent safety behavior; assigning a designated safety lead and having a coordinator publish a system safety specification is more effective in their tested tradeoffs. The released magelab harness configures roles, tools and network topology in YAML.
+
+This is different from EvoTeam's evolving team-scoped handoff rules or AgenticDS's typed deliverable contracts. Those mechanisms make coordination legible but do not by themselves assign a specific actor the authority and obligation to veto an unsafe integrated result. The proposed connection to [[concepts/contracts-and-compositional-correctness]] is analytical, not a head-to-head comparison. The study's deliberately conflicting business/safety objectives limit extrapolation to routine code review. Test the same seeded cross-module invariant with no lead, peer critique and explicit safety owner; score violations independently and account for extra tokens and rejected valid work.
 
 ## Mechanism variants
 
