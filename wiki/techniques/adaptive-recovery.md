@@ -5,7 +5,7 @@ summary: "Recovery succeeds when repair scope follows the contribution graph, no
 type: technique
 depth: deep
 created: 2026-11-02
-updated: 2026-11-14
+updated: 2026-11-17
 related: [projects/dittany, projects/repairs-for-whom, projects/dynarev, projects/envos, projects/evoteam, concepts/information-content-dominance, concepts/scoped-assurance]
 sources:
   - url: https://arxiv.org/abs/2610.42144
@@ -18,6 +18,7 @@ sources:
     retrieved: 2026-11-02
   - url: https://arxiv.org/abs/2610.39813
     retrieved: 2026-11-02
+  - https://arxiv.org/abs/2611.19275
 ---
 
 # Adaptive recovery
@@ -27,6 +28,14 @@ sources:
 Adaptive recovery changes the response to failure based on observed state or feedback. The cited systems differ in what triggers repair, the scope of the repair and the criterion used to accept it.
 
 [[signals/reliability-is-a-systems-property]] distinguishes graph-level recovery from local action repair: the cited Dittany ablation reports a local mode that performs worse than no repair. [[projects/blindtochange]] measures a precondition for recovery—detecting that relevant facts changed—but does not implement a recovery mechanism.
+
+### Triggering repair versus actually repairing
+
+[[projects/toolpulse]] ([primary paper](https://arxiv.org/abs/2611.19275)) adds a pre-dispatch and post-feedback intervention layer to SWE-agent: state rules and semantic trajectory similarity spot repeated ineffective calls or detours, then short cues or model-generated advice steer the next decision. This is not Dittany's dependency-graph repair: ToolPulse operates on the current tool-use trajectory, whereas Dittany can reopen upstream contributions and consumers. The distinction changes what should be scored. ToolPulse's authors report substantive agent responses after 61.6–90.9% of valid detour triggers but final bug-fix success near the unassisted baseline; stopping a repetitive action is not equivalent to satisfying an independent acceptance test. Concise reminders were often more effective than richer advice, and some settings saved tokens. Those findings are confined to the studied SWE-agent trajectories, not all autonomous tools.
+
+[[projects/heragent]] ([primary paper](https://arxiv.org/abs/2611.18443)) supplies a complementary recovery-scope mechanism: setup operations are grouped into semantic blocks with shared validation, checkpoint and rollback boundaries. Compared with command-by-command repair or replaying a full setup script, the authors report higher environment-setup success on four datasets, including 52.0% to 85.0% on Installamatic-Bench. This result concerns reconstructing executable repository environments, not correcting arbitrary code patches. A valid rollback must be followed by a clean-container replay check: a locally green command may leave an incompatible dependency state.
+
+A controlled evaluation should cross trigger strategy (none, short cue, rich cue) with recovery scope (command, block, full reset), then measure final executable setup, verified tests, false interventions, rollback collateral damage and cost. No factorial result is claimed here.
 
 ## Mechanism variants
 

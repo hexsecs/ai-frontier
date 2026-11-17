@@ -30,3 +30,8 @@ How do agents divide work, preserve shared information and integrate a correct f
 ## Limits and experiments
 
 No universal team size follows from these different protocols. [[evaluations/multi-agent-value-and-coordination]] proposes matched-budget tests and separates coverage from conditional quality. [[topics/agent-execution-and-recovery]] covers interrupted workers; [[topics/security-and-authority]] covers their permissions.
+
+
+## Whole-team safety obligations
+
+[[projects/aligning-ai-teams]] finds in controlled tasks that peer critique and group chat do not reliably protect whole-system safety goals when delegated workers focus on their local roles. A named safety lead plus coordinator-authored specification improved alignment in the studied tradeoffs ([primary paper](https://arxiv.org/abs/2611.17820)). This is not proof that a safety lead always improves coding quality; use [[techniques/multi-agent-orchestration]] for comparison with typed contracts and evolving team rules.

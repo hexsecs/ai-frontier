@@ -126,3 +126,11 @@ This is the legacy canonical file-location index. Some entries are now classifie
 - [[projects/the-agentic-researcher|The Agentic Researcher]] — Sandboxed CLI agents conduct long-running scientific investigations with scheduled checks and reproducible reporting conventions.
 
 - [[projects/sopguard|SOPGuard and SOPBench]] — Study and constrain agent-mediated cross-origin information flows in browser automation.
+
+## November 17 research
+
+- [[projects/toolpulse]] — Runtime tool-use interventions; changed behavior is not necessarily a fixed task.
+- [[projects/heragent]] — Semantic setup checkpoints and clean-environment replay.
+- [[projects/aligning-ai-teams]] — Designated safety owner for whole-team invariants.
+- [[projects/linera]] — Cryptographic erasure across derived memory lineage.
+- [[projects/robocoevo]] — Recovery-code and robot-policy co-evolution in simulation.

@@ -28,3 +28,8 @@ How do agents execute tools, survive interruptions and establish what actually h
 ## Limits and experiments
 
 Use [[concepts/scoped-assurance]] to bound recovery claims. The crash-injection protocol in [[techniques/durable-agent-execution]] distinguishes duplicate effects, lost effects and explicitly unknown outcomes. Consult [[topics/security-and-authority]] for the authority a resumed agent should receive.
+
+
+## Checkpoint scope and intervention evidence
+
+[[projects/heragent]] tests semantic setup-block rollback against command- and script-level recovery, while [[projects/toolpulse]] tests runtime tool-use cues. The first reports higher environment-setup success in its benchmarks; the second reports substantial changes in agent responses but aggregate patch success close to baseline ([HerAgent](https://arxiv.org/abs/2611.18443), [ToolPulse](https://arxiv.org/abs/2611.19275)). These are distinct acceptance targets; see [[techniques/adaptive-recovery]] for the scoped comparison.

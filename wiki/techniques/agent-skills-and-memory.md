@@ -5,7 +5,7 @@ title: "Agent skills and memory"
 summary: "Agent memory spans retrieved history, reusable procedures, learned file operations and deletion controls; admission and transfer bound the evidence."
 type: technique
 created: 2026-11-02
-updated: 2026-11-16
+updated: 2026-11-17
 related: [projects/coding-agent-memory-post-training-ii, projects/skillcompiler, projects/karma, projects/filingloop, projects/context-as-infrastructure, projects/clingex, projects/security-impact-of-coding-agent-memory-files, concepts/improvement-lives-in-external-state, concepts/capability-locus, projects/just-in-time-agent-memory, projects/lifelong-materials-agent-memory]
 sources:
   - https://arxiv.org/abs/2611.14009
@@ -25,6 +25,7 @@ sources:
     retrieved: 2026-11-02
   - https://github.com/framerslab/agentos/releases/tag/v0.18.0
   - https://raw.githubusercontent.com/paperclipai/paperclip/b4fa1c7fb1c9adafc6407bc46381a0ab89f4b4fd/releases/v2026.1005.0.md
+  - https://arxiv.org/abs/2611.18133
 ---
 
 # Agent skills and memory
@@ -99,6 +100,14 @@ Measurements are attributed to their authors or vendors at the point of use. The
 [[projects/just-in-time-agent-memory]] preserves raw history for iterative, query-conditioned reconstruction (https://arxiv.org/abs/2609.34385); [[projects/lifelong-materials-agent-memory]] instead reports reusable failure-derived execution guards in materials-science tools (https://arxiv.org/abs/2608.11224). These are complementary **author-reported** mechanisms, not a demonstrated integrated improvement. JAM's retrieval does not itself gate what becomes executable; materials memory does not prove its guards transfer safely to unrelated tasks. Existing KARMA negative-transfer results and the memory-file near-null remain counterevidence to any universal claim that persistent memory improves outcomes. No independent replication or head-to-head test is recorded.
 
 **Reproducible proposed test:** On 25 fixed repository tasks with repeatable failures, compare raw-history query-time retrieval, reusable preflight guards, both, and neither; hold model/tool budget constant; measure independently verified success, guard false positives, retrieval provenance, negative transfer, tokens and retries. This extends the earlier gate-isolation question rather than replacing it.
+
+## Cryptographic lineage erasure and forgetting radius
+
+Recall quality and deletion correctness are different memory objectives. [[projects/framerslab-agentos]] documents logical forgetting, retained tombstones and deletion of associated retrieval artifacts, but that alone is not a cryptographic guarantee against an adversary obtaining old storage. [[projects/linera]] ([November 13 paper](https://arxiv.org/abs/2611.18133)) instead derives the encryption key of every model-written memory from all source memories visible to its writer. Puncturing a source pseudorandom-function key makes descendants undecryptable even when their ciphertext persists in backups; the threat model assumes later access to storage and current keys. A lineage rule must capture everything the model saw, otherwise an omitted dependency can leak.
+
+The paper reports that in its largest-writer ten-conversation LoCoMo test, logical deletion leaked 70 of 71 planted secrets to the storage-and-key attacker, per-object/epoch keys leaked 67, and LinEra leaked none. This is author-reported experimental evidence under a specified threat model, not proof that all plaintext channels or deployed memory products are safe. Fan-in is a privacy/utility control: with 1% of turns forgotten, 73.0% of session-summary derivatives became unreadable, versus 3.8% for four-turn-window writers. Narrower extraction contexts reduce collateral forgetting but may constrain what can be summarized. Re-derivation from remaining permitted inputs can recover some utility.
+
+For a testable comparison, preserve a synthetic backup before forgetting and challenge the restored store with current keys; score both forbidden secret recovery and surviving authorized query accuracy. This complements [[experiments/lifecycle-authority-and-retention]] and does not substitute for tool/connector revocation.
 
 ## Trainable file-operation memory
 
