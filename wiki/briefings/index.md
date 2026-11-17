@@ -29,3 +29,5 @@ Historical coverage is limited by the available original records. October 30–N
 - [2026-11-14](./2026/11/2026-11-14.md) — five findings on formal proof agents, browser replay, durable operations, research orchestration and origin boundaries.
 
 - [2026-11-16](./2026/11/2026-11-16.md) — five findings on ACP replay, durable forgetting, delegation recovery, connector authority and versioned artifacts.
+
+- [2026-11-17](./2026/11/2026-11-17.md) — Five studies on tool-use detours, semantic setup rollback, team safety ownership, lineage-complete forgetting and simulated robot co-evolution.
