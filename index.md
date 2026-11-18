@@ -44,3 +44,5 @@ Research priorities and selection rules live in [`automation/briefing-policy.yam
 - [[briefings/2026/11/2026-11-17]] — Five primary studies; independently accepted correction rather than apparent self-repair.
 - [[projects/toolpulse]], [[projects/heragent]], [[projects/aligning-ai-teams]], [[projects/linera]], [[projects/robocoevo]] — Canonical records.
 - [[techniques/adaptive-recovery]], [[techniques/multi-agent-orchestration]], [[techniques/agent-skills-and-memory]], [[techniques/embodied-and-scientific-agents]] — Mechanism and evidence synthesis.
+
+- [November 18, 2026 briefing](wiki/briefings/2026/11/2026-11-18.md) — Delegated-reader safety, normalized coding traces, reusable programs, deployed backend acceptance and data-agent evaluation.

@@ -41,3 +41,9 @@ Fallback is part of the contract. A procedure may refuse, return control to a mo
 Deterministic execution can reliably repeat the wrong procedure. A compiled workflow can preserve a mistaken specification, and a saved flow can omit an important browser-side effect. Removing model calls therefore establishes neither correctness nor a universal cost advantage after compilation and validation overhead.
 
 Proposed test: compare live model planning, reused validated procedures and procedure-plus-fallback on fixed tasks. Vary environmental drift and stale credentials. Measure accepted outcomes, invalidation detection, duplicate effects, authority violations, construction/validation cost and execution cost separately. No experiment is reported here.
+
+### Parameter binding and metamorphic admission
+
+[[projects/agent-behavior-as-code]] ([October 4 paper](https://arxiv.org/abs/2610.04824)) uses a model to write or revise symbolic programs whose inputs remain unbound until execution. Repeated tasks can rebind parameters and run under deterministic control flow, with model calls retained at specified reasoning points. The authors describe variant tests that reject parameters which fail to influence execution, plus regression checks before editing a stored procedure. This differs from recorded browser-flow replay, which reuses observed action sequences, and from compile-then-execute browser isolation, which restricts access to untrusted live content. Those distinctions do not imply a head-to-head performance ranking.
+
+The authors report 71.9% versus 47.4% Pass^4 on telecom tasks and 98.3% versus 97.3% on GSM-Symbolic; the same report notes that one-off WorkArena tasks cost more. Deterministic execution preserves the program's control flow, not correctness of its assumptions, tool side effects or applicability to new tasks. Test changed-input behavior, previously accepted cases, external effects and one-off overhead before admitting a reusable procedure.

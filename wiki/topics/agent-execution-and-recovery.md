@@ -33,3 +33,7 @@ Use [[concepts/scoped-assurance]] to bound recovery claims. The crash-injection 
 ## Checkpoint scope and intervention evidence
 
 [[projects/heragent]] tests semantic setup-block rollback against command- and script-level recovery, while [[projects/toolpulse]] tests runtime tool-use cues. The first reports higher environment-setup success in its benchmarks; the second reports substantial changes in agent responses but aggregate patch success close to baseline ([HerAgent](https://arxiv.org/abs/2611.18443), [ToolPulse](https://arxiv.org/abs/2611.19275)). These are distinct acceptance targets; see [[techniques/adaptive-recovery]] for the scoped comparison.
+
+## Reusable executable procedures
+
+[[projects/agent-behavior-as-code]] separates model-authored procedure design from deterministic execution and uses changed-input checks before reuse. [[techniques/deterministic-workflow-reuse]] distinguishes parameterized programs from replayed browser sequences and other constrained execution methods.

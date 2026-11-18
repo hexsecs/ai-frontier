@@ -81,3 +81,9 @@ The concept layer names five discounts, and every project in this bucket pays at
 ## Evidence status
 
 Measurements are attributed to their authors or vendors at the point of use. The cross-project comparisons are analyst interpretations, not new experiments or evidence of a shared implementation. No independent replication is cited.
+
+### Normalized trajectories versus executable task acceptance
+
+[[projects/coding-agent-behavioral-trajectories]] ([November 12 paper](https://arxiv.org/abs/2611.17440)) analyzes 143,209 traces from 125 agent configurations with a deterministic parser that maps heterogeneous calls to repository search, file editing and test execution. The authors audit 500 events against a six-model consensus and show that similar solve rates can conceal different behaviors. This complements [[projects/procgrep]], which induces procedural fingerprints from a different corpus and representation; neither study proves that a fingerprint causes superior outcomes. The paper explicitly leaves cross-repository task composition incompletely controlled.
+
+**Acceptance granularity also matters.** [[projects/abc-bench-backend-coding]] ([ACL Findings paper](https://aclanthology.org/2026.findings-acl.1142/)) requires deployed backend services and external API tests for 224 tasks across eight languages and 19 frameworks; patch correctness alone does not imply a running service. [[projects/agenticdatabench]] ([July study](https://arxiv.org/abs/2607.01647)) tests data-agent skill compositions across 15 domains with fine-grained reference labels and some withheld tasks. These instruments differ in task distribution, acceptance oracle and coverage; their scores are not interchangeable. A useful controlled study freezes tasks and harness budgets, then measures trajectory patterns alongside independently verified outputs, separately reporting deployment/setup failures and untested skill combinations.

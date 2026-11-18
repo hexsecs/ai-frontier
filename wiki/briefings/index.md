@@ -31,3 +31,5 @@ Historical coverage is limited by the available original records. October 30–N
 - [2026-11-16](./2026/11/2026-11-16.md) — five findings on ACP replay, durable forgetting, delegation recovery, connector authority and versioned artifacts.
 
 - [2026-11-17](./2026/11/2026-11-17.md) — Five studies on tool-use detours, semantic setup rollback, team safety ownership, lineage-complete forgetting and simulated robot co-evolution.
+
+- [2026-11-18](./2026/11/2026-11-18.md) — Five studies on delegated-reader attacks, coding-agent behavioral traces, executable procedure reuse, deployed backend evaluation and data-agent skill coverage.
