@@ -67,6 +67,25 @@ flowchart LR
 - The website loads Vega-Lite, Mermaid, and Cytoscape from versioned public CDNs. An internet connection is required for interactive figures; Markdown source remains readable without them.
 - Interactive charts are rendered on the GitHub Pages site, not directly in GitHub's native Markdown viewer (which displays their fenced definitions).
 
+## Video cards
+
+When a page's primary source is a video, put a video card directly under the page title. The card is plain Markdown — a linked thumbnail plus one caption line — so it renders as a card in every Markdown renderer (the website, GitHub, the OpenShelf Reader, offline caches) with no HTML, JavaScript, or embed support required:
+
+```markdown
+[![Watch the talk on YouTube — <title>, <speaker>](./<page-slug>-thumbnail.jpg)](https://www.youtube.com/watch?v=<video-id>)
+
+**▶ [Watch on YouTube](https://www.youtube.com/watch?v=<video-id>)** · <speaker> · <venue> · <duration> · published <date>
+```
+
+Rules:
+
+- The thumbnail is repository-hosted next to the page (`<page-slug>-thumbnail.jpg`): take the video's own thumbnail (`https://i.ytimg.com/vi/<video-id>/maxresdefault.jpg`, falling back to `hqdefault.jpg`), draw a simple centred play badge on it, and commit it. A local asset keeps the card intact offline; a hotlinked thumbnail breaks the moment the reader has no network or the host changes the URL.
+- The image's alt text names the video, speaker, and venue; the caption line carries the duration and publication date, which a thumbnail cannot.
+- The whole image links to the canonical watch URL, and the caption's Watch link repeats it for renderers that separate images from links.
+- Renderers that support embeds may progressively enhance the card — the website can swap the linked thumbnail for a click-to-play facade keyed on the YouTube watch URL — but the Markdown card stays the canonical form and must remain fully usable where no enhancement exists. Do not put a raw `<iframe>` in a page: sanitizers strip it, generic renderers show nothing, and offline readers cannot use it.
+
+First instance: `wiki/projects/all-code-is-slop-except-mine.md`.
+
 ## OpenShelf token-budget override
 
 OpenShelf recommends a 2,500-token L2 page budget. Longer research briefings may deliberately exceed this advisory limit. Add a justification to the Markdown page:

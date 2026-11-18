@@ -16,6 +16,10 @@ sources:
 
 # All Code Is Slop (Except Mine)
 
+[![Watch the talk on YouTube — All Code Is Slop (Except Mine), Lauren Tan at AI Engineer Code Summit](./all-code-is-slop-except-mine-thumbnail.jpg)](https://www.youtube.com/watch?v=O_zcc6Xl12g)
+
+**▶ [Watch on YouTube](https://www.youtube.com/watch?v=O_zcc6Xl12g)** · Lauren Tan (poteto) · AI Engineer Code Summit · 17:31 · published 2026-11-14
+
 ## What it is
 
 A practitioner talk by Lauren Tan (poteto), of the Grok Bot team at SpaceXSI (the affiliation as styled in the talk), published on the AI Engineer channel on 2026-11-14. Tan describes how her team reached a state where AI coding agents merge most of their own pull requests: she reports shipping roughly 3,000 PRs to production herself in one month, and the Grok Bot team shipping 11,000 PRs in the month before the talk, at a revert rate steady around 0.5%. Her thesis is that code quality at agent volume is a trust problem, and trust is bought by investing in the agent's environment — codebase, deterministic tooling, verification — rather than by reviewing agent output harder. She calls the result a software factory; the talk's own framing is that the engineer's job is shifting from writing code to gardening the codebase agents read and write.
