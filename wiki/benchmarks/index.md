@@ -23,3 +23,6 @@ Choose an instrument by its tasks and acceptance rules. Scores across these prot
 - [[projects/expertcrowd-swe|ExpertCrowd-SWE]] — One hundred expert-authored engineering tasks use calibrated executable graders and must-pass merge blockers.
 - [[projects/workflowarena|WorkflowArena: Executable Multi-Agent Orchestration]] — A 145-task benchmark evaluates model-authored worker delegation, workflow organization and integrated deliverable verification.
 - [[projects/serverbench|ServerBench: Agent-Designed LLM Serving Systems]] — Coding agents optimize LLM serving systems under verified workload, latency and GPU-cost constraints.
+
+- [[projects/abc-bench-backend-coding|ABC-Bench]] — External API acceptance for deployed backend services across eight languages and 19 frameworks.
+- [[projects/agenticdatabench|AgenticDataBench]] — Fine-grained data-science skill coverage and workflow scoring across 15 domains.
