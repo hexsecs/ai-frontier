@@ -5,8 +5,8 @@ summary: "Where these agent systems are trustworthy, the trust comes from struct
 type: concept
 depth: full
 created: 2026-11-02
-updated: 2026-11-14
-related: [projects/llm-as-code, projects/spec-first-verification-agents, projects/github-contribution-check, projects/openbot, projects/tinyastral, projects/dittany, projects/envos, projects/cheme-as-code, projects/builderio-agent-native, projects/agent-orchestrator]
+updated: 2026-11-18
+related: [projects/llm-as-code, projects/spec-first-verification-agents, projects/github-contribution-check, projects/openbot, projects/tinyastral, projects/dittany, projects/envos, projects/cheme-as-code, projects/builderio-agent-native, projects/agent-orchestrator, projects/all-code-is-slop-except-mine]
 sources:
   - url: https://arxiv.org/abs/2611.02285
     retrieved: 2026-11-12
@@ -92,3 +92,7 @@ Both rows inherit the concept's standing bound: these are design-verified safegu
 [[projects/llm-as-code]] (https://arxiv.org/abs/2606.15874) places branching, stopping and call-tree context in code instead of model instructions; this **supports the design pattern**, but its reported stability is not independent evidence of a security guarantee. [[projects/spec-first-verification-agents]] (https://arxiv.org/abs/2611.02285) proposes proof-gated implementation against formal specifications; it is a proposal, not evidence that proof generation or human-review reduction works in production. Compared with earlier [[projects/github-contribution-check]] and [[projects/openbot]], the novelty is the control/verification surface, not a demonstrated universal improvement. Existing counterevidence remains: shipped allow-all defaults, constraints that omit checks, and unmeasured enforcement effectiveness.
 
 **Reproducible proposed test:** Run 25 fixed CI tasks with model-directed versus program-owned control, each with and without independent postcondition checks; deliberately include interactive commands and missing validators. Report verified success, silent omissions and policy bypasses separately. No new standalone concept is justified.
+
+## 2026-11-18 evidence connections
+
+- **[[projects/all-code-is-slop-except-mine]] — the locus rule applied to code quality, at production scale.** Lauren Tan's Grok Bot talk (https://www.youtube.com/watch?v=O_zcc6Xl12g) states this concept's claim as an operating rule for a production codebase rather than a safeguard design: every agent correction is converted into a deterministic check or eliminated through API/architecture redesign, explicitly *not* added to the rules files, because a check is reproducible and enforceable and an instruction is neither. The instances are quality-side rather than security-side — a framework-level ban on a misuse-prone language feature in product code, directory structure enforced by a dependency-graph analyzer, and a near-total ban on code comments on the stated ground that comments are unenforceable and become the place agents write justifications for workarounds. The instance also carries the concept's standing bound in a new form: it is the first corpus instance to attach an outcome figure to the pattern (11,000 PRs in a month at ~0.5% reverts, speaker-reported), but the figure is a revert rate — it counts backed-out changes, not the subtle shipped defects the talk itself names as the trust problem — so it extends this concept's mechanism evidence and its production scale, not its effectiveness evidence. Her public pstack plugin corroborates the mechanism as artifacts (its `/correct` skill fixes recurring mistake classes at architecture, then types/lint/CI, then tests, docs last); no independent replication is cited.

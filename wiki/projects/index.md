@@ -10,6 +10,7 @@ This is the legacy canonical file-location index. Some entries are now classifie
 - [A2UI and CopilotKit](./a2ui-and-copilotkit.md) — Declarative agent-generated UI constrained to trusted components.
 - [AgenticDS](./agenticds.md) — Typed Planner, Engineer, and Critic roles for dataset discovery.
 - [AiSOC v21](./aisoc-v21.md) — Evidence-accountable SOC platform whose v21 release fixes serving-model attribution; its own verdict eval finds every measured model near chance.
+- [All Code Is Slop (Except Mine)](./all-code-is-slop-except-mine.md) — Lauren Tan's Grok Bot talk: 11,000 PRs in a month at ~0.5% reverts, bought by converting every agent correction into a deterministic check instead of a rule.
 - [ANGLER](./angler.md) — REEF, a verifier-grounded prompt-injection benchmark on nine executable sites, plus ANGLER, an adaptive attacker that lifts attack success to 20.36%.
 - [Auctopus](./auctopus.md) — Multi-agent scientific lab automation controlling a quantum-spin instrument.
 - [BioAgent](./bioagent.md) — Dual-arm lab robot that detects skill gaps before execution, acquires skills through human teaching, and reuses them across protocols.
