@@ -29,3 +29,7 @@ Which actions may an agent take, where is that boundary enforced, and what happe
 ## Counterevidence and experiments
 
 [[projects/security-impact-of-coding-agent-memory-files]] bounds broad claims about instruction-bearing memory. [[projects/assuring-ai-written-software]] illustrates why a named safeguard is insufficient without evidence it ran. [[topics/verification-and-evaluation]] covers checker reliability; [[topics/agent-execution-and-recovery]] covers fail-closed recovery.
+
+## Delegated evidence is not trusted evidence
+
+[[projects/weakest-agent-multi-agent-break]] tests forged records reaching a strong orchestrator through weaker delegated readers. The source supports a boundary between permission to retrieve and evidence suitable for consequential decisions; [[concepts/delegated-authority-and-revocation]] explains why tool authorization alone does not validate the returned claims.
