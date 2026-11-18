@@ -60,11 +60,11 @@ def rewrite_links(rendered, page_id):
     return re.sub(r'(href=")([^"]+)(")', change, rendered)
 
 def enhance_media(rendered, file):
-    def replace_image(match):
-        attrs = match.group(1)
+    def localize_attrs(attrs):
+        """Copy a repo-hosted image into docs/assets and point attrs at it."""
         src_match = re.search(r'src="([^"]+)"', attrs)
         if not src_match:
-            return match.group(0)
+            return attrs
         src = html.unescape(src_match.group(1))
         parsed = urllib.parse.urlsplit(src)
         if not parsed.scheme and not src.startswith(("//", "#", "data:")):
@@ -75,6 +75,17 @@ def enhance_media(rendered, file):
                 shutil.copy2(source, dest)
                 url = "./assets/" + urllib.parse.quote(source.relative_to(ROOT).as_posix())
                 attrs = attrs.replace(src_match.group(0), 'src="' + html.escape(url, quote=True) + '"')
+        return attrs
+
+    def replace_image(match):
+        if match.group(4) is None:
+            # An image already wrapped in an author's link (e.g. a video
+            # card's linked thumbnail) keeps that link; only its src is
+            # localized. Wrapping it in the figure anchor would nest
+            # anchors and break the author's link.
+            return ('<a href="' + match.group(1) + '"' + match.group(2) +
+                    '><img' + localize_attrs(match.group(3)) + '></a>')
+        attrs = localize_attrs(match.group(4))
         alt_match = re.search(r'alt="([^"]*)"', attrs)
         caption = alt_match.group(1) if alt_match else ""
         return ('<figure class="briefing-figure"><a href="' +
@@ -82,7 +93,9 @@ def enhance_media(rendered, file):
                 '" target="_blank" rel="noopener noreferrer" aria-label="Open full-size image">' +
                 '<img' + attrs + ' loading="lazy" decoding="async"></a>' +
                 ('<figcaption>' + caption + '</figcaption>' if caption else '') + '</figure>')
-    return re.sub(r'<img\\b([^>]*?)/?>', replace_image, rendered)
+    # One pass, linked alternative first, so a linked image is consumed
+    # whole and never revisited by the bare-image branch.
+    return re.sub(r'<a href="([^"]+)"([^>]*)><img\b([^>]*?)/?></a>|<img\b([^>]*?)/?>', replace_image, rendered)
 
 
 
