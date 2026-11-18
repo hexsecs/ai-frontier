@@ -134,3 +134,9 @@ This is the legacy canonical file-location index. Some entries are now classifie
 - [[projects/aligning-ai-teams]] — Designated safety owner for whole-team invariants.
 - [[projects/linera]] — Cryptographic erasure across derived memory lineage.
 - [[projects/robocoevo]] — Recovery-code and robot-policy co-evolution in simulation.
+
+- [[projects/weakest-agent-multi-agent-break|Only as Safe as the Weakest Agent]] — Delegated readers can propagate forged evidence despite a strong orchestrator.
+- [[projects/coding-agent-behavioral-trajectories|Coding-agent behavioral trajectories]] — Normalize search, edit and test traces across agent stacks.
+- [[projects/agent-behavior-as-code|Agent Behavior as Code]] — Parameterized executable agent procedures with variant checks.
+- [[projects/abc-bench-backend-coding|ABC-Bench]] — End-to-end deployed backend coding acceptance.
+- [[projects/agenticdatabench|AgenticDataBench]] — Data-agent skill-composition evaluation across domains.
