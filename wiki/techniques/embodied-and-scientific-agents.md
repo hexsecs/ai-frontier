@@ -5,7 +5,7 @@ title: "Closed-loop instrument and simulation execution"
 summary: "Agents acting on instruments and physical systems, where feedback arrives as measurement, actions carry real cost, and evidence tiers bound every claim."
 type: technique
 created: 2026-11-02
-updated: 2026-11-17
+updated: 2026-11-19
 related: [projects/auctopus, projects/hera, projects/bioagent, projects/molrsi, projects/tinyastral, concepts/validation-tier-gap, concepts/capability-locus, concepts/improvement-lives-in-external-state]
 sources:
   - url: https://arxiv.org/abs/2610.40589
@@ -19,6 +19,7 @@ sources:
   - url: https://arxiv.org/abs/2610.41216
     retrieved: 2026-11-02
   - https://arxiv.org/abs/2611.19081
+  - https://arxiv.org/abs/2611.21099
 ---
 
 # Closed-loop instrument and simulation execution
@@ -86,3 +87,12 @@ All results below are **author-reported**; none has an independent replication. 
 ## Evidence status
 
 Measurements are attributed to their authors or vendors at the point of use. The cross-project comparisons are analyst interpretations, not new experiments or evidence of a shared implementation. No independent replication is cited.
+
+## Fast contact control below slow model planning
+
+[[projects/forceharness]] ([November 16 paper](https://arxiv.org/abs/2611.21099)) makes a different intervention from policy learning: an API-only frozen multimodal model receives force-aware tools whose inner loop regulates contact locally and terminates at an observable event. A physics translation layer converts measured force traces into physical quantities with uncertainty, rather than asking the model to infer mechanics from a raw high-rate stream. The authors report real-arm success increasing from 3.3% to 90.0% in their tested zero-shot setting and simulation gains of 17.5 and 34.3 percentage points on ForceBench and HiddenPhys.
+
+This distinguishes **controller time scale** from **planner time scale**. The model selects a bounded action; the local controller handles fast contact regulation and returns a measured outcome. Compared with [[projects/robocoevo]], which updates both external recovery programs and learned policy weights in simulation, ForceHarness keeps model weights frozen and reports a physical-arm test. The evidence tiers and tasks differ, so the comparison establishes a mechanism distinction rather than a superior general robotics result.
+
+The calibration and local force limits are part of the trusted control boundary. A self-terminating primitive can still terminate on a misinterpreted contact event, and an accurate physical summary does not establish global task safety. Compare raw telemetry, physical summaries and locally regulated primitives under identical held-out contact conditions, logging force-limit violations, uncertainty calibration, latency and task completion. No combined experiment is reported.
+
