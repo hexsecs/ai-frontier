@@ -39,3 +39,7 @@ What establishes task success, how reliable is the grader, and when can scores b
 ## When should a coding agent stop?
 
 [[projects/done-but-still-working]] measures intermediate patches against hidden tests; its twice-green self-test stop policy saved cost but did not establish non-inferior patch quality. See [[concepts/verified-completion-vs-apparent-success]] for why a local green check cannot certify final acceptance.
+
+## Physical-control acceptance
+
+[[projects/forceharness]] reports contact-rich real-arm and simulation outcomes under a frozen multimodal model, with fast force regulation inside local tools. Its evidence is task-specific and author-reported; see [[techniques/embodied-and-scientific-agents]] for distinctions between physical and simulated evaluation tiers.
