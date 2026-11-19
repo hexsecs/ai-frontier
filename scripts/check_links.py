@@ -89,6 +89,23 @@ class Links(HTMLParser):
             self.hrefs.extend(v for k, v in attrs if k == "href" and v is not None)
 
 
+CODE_BLOCK = re.compile(r'(?is)<(pre|code)\b[^>]*>.*?</\1>')
+
+
+def visible_html(page_html):
+    """Rendered HTML with code examples removed.
+
+    A wikilink shown inside <code>/<pre> is documentation of the syntax,
+    not a reference — the same exclusion body_only() applies to sources.
+    """
+    text = page_html
+    while True:
+        stripped = CODE_BLOCK.sub('', text)
+        if stripped == text:
+            return text
+        text = stripped
+
+
 def check_rendered():
     path = ROOT / "docs" / "data.json"
     if not path.exists():
@@ -104,7 +121,7 @@ def check_rendered():
                 target = unquote(link[len("#/page/"):].split("?", 1)[0].split("#", 1)[0])
                 if target not in ids:
                     errors.append(f"{page['id']}: broken rendered route {link}")
-        if re.search(r'\[\[[^\]\n]+\]\]', page["html"]):
+        if re.search(r'\[\[[^\]\n]+\]\]', visible_html(page["html"])):
             errors.append(f"{page['id']}: unrendered wiki reference")
     print(f"Rendered: {len(pages)} pages, {len(errors)} link errors")
     for error in errors:
