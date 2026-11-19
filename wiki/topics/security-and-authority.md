@@ -33,3 +33,7 @@ Which actions may an agent take, where is that boundary enforced, and what happe
 ## Delegated evidence is not trusted evidence
 
 [[projects/weakest-agent-multi-agent-break]] tests forged records reaching a strong orchestrator through weaker delegated readers. The source supports a boundary between permission to retrieve and evidence suitable for consequential decisions; [[concepts/delegated-authority-and-revocation]] explains why tool authorization alone does not validate the returned claims.
+
+## Persistent policy text and enforcement
+
+[[projects/values-shape-self-improving-coding-agents]] shows that short value statements in persistent instructions affect evolved coding artifacts, but permitting self-revision narrows the differences. Treat this as behavioral influence, not a security boundary; enforcement remains with external authorization and independent checks.
