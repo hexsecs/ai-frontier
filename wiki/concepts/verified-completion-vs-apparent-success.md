@@ -4,7 +4,7 @@ title: "Verified completion versus apparent success"
 summary: "Agent completion claims, user approval, tool acknowledgements and passing checks do not establish independently verified outcomes."
 type: concept
 created: 2026-11-09
-updated: 2026-11-14
+updated: 2026-11-19
 depth: full
 sources:
   - https://arxiv.org/abs/2611.13246
@@ -15,6 +15,7 @@ sources:
   - https://arxiv.org/abs/2610.13361
   - https://github.com/BuilderIO/agent-native/pull/8670
   - https://raw.githubusercontent.com/OrchestratorInc/agent-orchestrator/main/docs/architecture.md
+  - https://arxiv.org/abs/2611.22901
 ---
 
 # Verified completion versus apparent success
@@ -61,3 +62,10 @@ Typed relations: builderio-agent-native **implements** the acceptance-evidence d
 ## Compositional acceptance
 
 [[projects/expertcrowd-swe]] uses calibrated executable merge blockers (https://arxiv.org/abs/2611.13246); [[projects/crossswe]] rejects incomplete multi-repository fixes (https://arxiv.org/abs/2611.01484); [[projects/serverbench]] independently verifies optimized execution paths (https://arxiv.org/abs/2611.06841). These independently support the *need* for scoped postconditions, not proof that any single grader guarantees correctness. Counterexamples include superficial patches, partial repo changes, unexercised optimized paths and held-out grader opacity. Proposed experiment: 25 fixed tasks with hidden postconditions and adversarial no-op patches; compare apparent success with externally verified success and regression rate. All published performance numbers are author-reported and protocol-relative.
+
+## Self-tests and stopping are not independent acceptance
+
+[[projects/done-but-still-working]] ([November 17 paper](https://arxiv.org/abs/2611.22901)) evaluates intermediate coding-agent patches against hidden tests. A twice-green identical-patch stopping rule saves 23% of cost in the authors' preregistered replication, but its quality non-inferiority test was inconclusive. Thus a stable passing self-test is an actionable *stop candidate*, not a certified fix. This is an important counterexample to treating repeated local green checks as sufficient evidence.
+
+Retrospective replay supports policies that stop or select earlier recorded patches if states are faithfully preserved; it cannot establish the outcomes of a different policy that would have changed the future trajectory. For engineering agents, distinguish three signals: local test success, independent hidden acceptance, and the incremental value or harm of further work. Report costs alongside lost and gained hidden-test passes; do not optimize the stop rule solely on local green rate.
+
