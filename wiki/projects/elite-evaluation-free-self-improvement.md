@@ -30,7 +30,7 @@ The contribution is the specific mechanism and its evaluated boundary, not a gen
 
 ## Limits and counterexamples
 
-Evaluation-free describes candidate selection inside evolution, not absence of final benchmark evaluation or proof of safety. Source abstract and primary paper identity were inspected; full HTML paper was unavailable in this run. Independent replication is not established.
+Evaluation-free describes candidate selection inside evolution, not absence of final benchmark evaluation or proof of safety. This account relies on the paper's abstract; deeper implementation details remain unverified. Independent replication is not established.
 
 ## Proposed bounded experiment
 
