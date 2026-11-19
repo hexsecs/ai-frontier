@@ -37,3 +37,7 @@ Use [[concepts/scoped-assurance]] to bound recovery claims. The crash-injection 
 ## Reusable executable procedures
 
 [[projects/agent-behavior-as-code]] separates model-authored procedure design from deterministic execution and uses changed-input checks before reuse. [[techniques/deterministic-workflow-reuse]] distinguishes parameterized programs from replayed browser sequences and other constrained execution methods.
+
+## Skill drift and recovery cost
+
+[[projects/when-agent-skills-go-stale]] tests checks replayed against changed environments before reusing a stored skill. This is a different failure boundary from process restart: an uninterrupted agent can repeatedly execute an obsolete but syntactically valid procedure. See [[techniques/agent-skills-and-memory]] for selective repair and fallback.
