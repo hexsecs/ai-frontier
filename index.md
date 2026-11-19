@@ -46,3 +46,5 @@ Research priorities and selection rules live in [`automation/briefing-policy.yam
 - [[techniques/adaptive-recovery]], [[techniques/multi-agent-orchestration]], [[techniques/agent-skills-and-memory]], [[techniques/embodied-and-scientific-agents]] — Mechanism and evidence synthesis.
 
 - [November 18, 2026 briefing](wiki/briefings/2026/11/2026-11-18.md) — Delegated-reader safety, normalized coding traces, reusable programs, deployed backend acceptance and data-agent evaluation.
+
+- [November 19, 2026 briefing](wiki/briefings/2026/11/2026-11-19.md) — Stale skills, evaluation-free harness evolution, stopping policy risks, persistent values and physical robotics.
