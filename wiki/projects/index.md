@@ -145,3 +145,11 @@ This is the legacy canonical file-location index. Some entries are now classifie
 - [[projects/agent-behavior-as-code|Agent Behavior as Code]] — Parameterized executable agent procedures with variant checks.
 - [[projects/abc-bench-backend-coding|ABC-Bench]] — End-to-end deployed backend coding acceptance.
 - [[projects/agenticdatabench|AgenticDataBench]] — Data-agent skill-composition evaluation across domains.
+
+## November 19 research
+
+- [[projects/when-agent-skills-go-stale]] — Environment-shift detection and selective skill repair.
+- [[projects/elite-evaluation-free-self-improvement]] — Mechanism integration without downstream candidate scoring.
+- [[projects/done-but-still-working]] — Hidden-test analysis of coding-agent stop policies.
+- [[projects/values-shape-self-improving-coding-agents]] — Persistent value statements affect agent self-improvement.
+- [[projects/forceharness]] — Force-aware local control and physics summaries for frozen models.
