@@ -35,3 +35,7 @@ What establishes task success, how reliable is the grader, and when can scores b
 ## Execution behavior and real-world acceptance
 
 [[projects/coding-agent-behavioral-trajectories]] makes normalized agent actions observable without treating them as proof of success; compare [[projects/procgrep]] for a distinct fingerprinting method. [[projects/abc-bench-backend-coding]] moves acceptance to deployed services and external API tests, while [[projects/agenticdatabench]] evaluates coverage across data-workflow skill combinations. These are different measurement constructs, not comparable leaderboard scores.
+
+## When should a coding agent stop?
+
+[[projects/done-but-still-working]] measures intermediate patches against hidden tests; its twice-green self-test stop policy saved cost but did not establish non-inferior patch quality. See [[concepts/verified-completion-vs-apparent-success]] for why a local green check cannot certify final acceptance.
