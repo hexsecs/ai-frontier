@@ -4,7 +4,7 @@ title: "Preservation-aware agent improvement"
 summary: "An evolved agent strategy must retain previously verified task coverage, not merely increase aggregate benchmark performance."
 type: concept
 created: 2026-11-09
-updated: 2026-11-14
+updated: 2026-11-19
 depth: full
 sources:
   - https://arxiv.org/abs/2611.03618
@@ -12,6 +12,8 @@ sources:
   - https://arxiv.org/abs/2611.07372
   - https://arxiv.org/abs/2610.42141
   - https://arxiv.org/abs/2610.07763
+  - https://arxiv.org/abs/2611.21056
+  - https://arxiv.org/abs/2611.23067
 ---
 
 # Preservation-aware agent improvement
@@ -46,3 +48,12 @@ Use 30 previously validated OpenShelf extraction cases and 20 untouched transfer
 ## Evidence status
 
 Synthesis grounded in author-reported studies; no independent reproduction or production deployment demonstrated here.
+
+## Mechanism integration and persistent values
+
+[[projects/elite-evaluation-free-self-improvement]] ([November 16 paper](https://arxiv.org/abs/2611.21056)) changes the selection signal: multiple agent-harness mechanisms are developed independently from a common parent and combined by code inspection and deterministic validity checks rather than by downstream candidate task scores. Its reported 60.0% to 85.6% SWE-bench Pro improvement demonstrates a promising alternative to expensive evaluate-and-select, **not** that the resulting agent preserved all previously solved cases. Evaluation-free applies inside the candidate evolution loop; final benchmarks still evaluate the outcome. This contrasts with [[projects/evoaudit]]'s measured task losses under conventional evolution, but neither study performs a head-to-head preservation test across identical tasks.
+
+[[projects/values-shape-self-improving-coding-agents]] ([November 17 paper](https://arxiv.org/abs/2611.23067)) introduces a separate optimization input: a short value statement in persistent instructions affects the kinds of solutions evolved and their held-out performance. Allowing the agent to revise the statement narrows the observed treatment differences. This is evidence that the instruction file is a mutable capability input, not evidence that a value statement enforces security. For reproducible improvement, freeze policy and instruction versions during comparisons and explicitly test what happens when the agent can edit them.
+
+A discriminating preservation experiment should factorially vary candidate-selection mechanism (evaluate/select versus source-level integration) and instruction mutability (fixed versus self-editable), while holding baseline tasks, evaluation budget and hidden regression cases fixed. Report new solves, lost solves, critical failures and cost separately. Author-reported results from the two studies are not directly comparable and do not establish a general performance ranking.
+
