@@ -35,3 +35,7 @@ The retention section of [[techniques/agent-skills-and-memory]] distinguishes re
 ## When forgetting must survive old backups
 
 [[projects/linera]] studies encrypted lineage keys that make derived memory unreadable after a source key is punctured, even when an attacker obtains old ciphertext and current keys ([primary paper](https://arxiv.org/abs/2611.18133)). Unlike [[projects/framerslab-agentos]]'s documented tombstone and deletion mechanism, this is a cryptographic erasure construction with an explicit threat model and a collateral-forgetting tradeoff. See [[techniques/agent-skills-and-memory]] for the fan-in effect and its evidence limits.
+
+## Environment-shifted skills and self-improving harnesses
+
+[[projects/when-agent-skills-go-stale]] shows why previously successful reusable procedures need current-environment replay checks and selective repair; [[techniques/agent-skills-and-memory]] distinguishes admission from later invalidation. [[projects/elite-evaluation-free-self-improvement]] integrates compatible harness mechanisms without downstream candidate scoring, while [[projects/values-shape-self-improving-coding-agents]] demonstrates that persistent value statements influence the optimization path. [[concepts/preservation-aware-agent-improvement]] requires independent regression accounting for both mechanisms.
