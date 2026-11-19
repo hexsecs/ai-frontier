@@ -35,3 +35,7 @@ No universal team size follows from these different protocols. [[evaluations/mul
 ## Whole-team safety obligations
 
 [[projects/aligning-ai-teams]] finds in controlled tasks that peer critique and group chat do not reliably protect whole-system safety goals when delegated workers focus on their local roles. A named safety lead plus coordinator-authored specification improved alignment in the studied tradeoffs ([primary paper](https://arxiv.org/abs/2611.17820)). This is not proof that a safety lead always improves coding quality; use [[techniques/multi-agent-orchestration]] for comparison with typed contracts and evolving team rules.
+
+## Harness mechanism integration
+
+[[projects/elite-evaluation-free-self-improvement]] integrates independently proposed changes to one coding-agent implementation without selecting candidate agents by downstream task score. This is source-level integration, not multi-agent task delegation or proof of whole-system correctness; compare [[concepts/preservation-aware-agent-improvement]].
