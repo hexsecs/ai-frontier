@@ -16,6 +16,7 @@ license: CC-BY-4.0
 types:
   briefing: Immutable dated research briefing.
   project: Canonical record for a named agentic implementation, library, framework, or prototype.
+  presentation: Record of a talk, video essay, lecture, or recorded demo; its claims are the presenter's own unless independently corroborated.
   benchmark: Named task suite, dataset, or evaluation protocol with defined scoring.
   case-study: Evidence-scoped real-world deployment, incident, or observational report.
   workflow: Runnable agent automation recipe with triggers, tools, boundaries, and outputs.

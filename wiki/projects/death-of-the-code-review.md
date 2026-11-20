@@ -3,7 +3,7 @@ uid: 47dc0723-5fb9-459f-b037-51aa907a3cfe
 depth: full
 title: "The Death of the Code Review"
 summary: "Laurie Voss's AI Engineer talk on the code-review bottleneck: agents wrote 741% more code, shipped 30% more software, and review is being rebuilt as a system."
-type: project
+type: presentation
 created: 2026-11-20
 updated: 2026-11-20
 related: [projects/all-code-is-slop-except-mine, projects/assuring-ai-written-software, concepts/ground-truth-fallibility, concepts/scoped-assurance, techniques/verification-and-evidence, signals/reliability-is-a-systems-property]
