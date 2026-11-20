@@ -37,3 +37,6 @@ Which actions may an agent take, where is that boundary enforced, and what happe
 ## Persistent policy text and enforcement
 
 [[projects/values-shape-self-improving-coding-agents]] shows that short value statements in persistent instructions affect evolved coding artifacts, but permitting self-revision narrows the differences. Treat this as behavioral influence, not a security boundary; enforcement remains with external authorization and independent checks.
+
+
+[[projects/extensiondev-mcp]] separates extension build/test tools from owner-approved store submission, while [[projects/openhands-agent-canvas]] documents webhook-source validation and Git-provider identity selection. These are different authorization boundaries; see [[techniques/secure-agent-operations]] for evidence limits and proposed tests.
