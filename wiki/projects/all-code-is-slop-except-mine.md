@@ -3,7 +3,7 @@ uid: 998dabca-0247-43a5-b8e1-1e04561d4255
 depth: full
 title: "All Code Is Slop (Except Mine)"
 summary: "Lauren Tan's AI Engineer talk: Grok Bot shipped 11,000 PRs in a month at ~0.5% reverts by turning every agent correction into a deterministic check."
-type: project
+type: presentation
 created: 2026-11-18
 updated: 2026-11-20
 related: [concepts/structural-constraint-over-instruction, concepts/scoped-assurance, concepts/improvement-lives-in-external-state, techniques/verification-and-evidence, signals/reliability-is-a-systems-property, projects/death-of-the-code-review]

@@ -20,6 +20,7 @@ A curated, source-backed guide to practical agentic AI, autonomous workflows, an
 - [Workflows](wiki/workflows/index.md) — Reusable agent automations and integration recipes.
 - [Domains](wiki/domains/index.md) — Application areas distinct from agent techniques.
 - [Projects](wiki/projects/index.md) — canonical pages for individual systems and repositories.
+- [Presentations](wiki/presentations/index.md) — talks, video essays, lectures and recorded demos; claims are the presenter's own unless corroborated.
 - [Concepts](wiki/concepts/index.md) — cross-project phenomena and claims mined from the project pages, with their evidence for and against.
 - [Techniques](wiki/techniques/index.md) — reusable architectural patterns.
 - [Frontier signals](wiki/signals/index.md) — evidence-backed emerging trends.
