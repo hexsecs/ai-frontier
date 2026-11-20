@@ -87,3 +87,8 @@ A handoff needs more than a role and a message: it needs a record of completion,
 ## Evidence status
 
 Measurements are attributed to their authors or vendors at the point of use. The cross-project comparisons are analyst interpretations, not new experiments or evidence of a shared implementation. No independent replication is cited.
+
+
+## Operational boundaries — November 2026
+
+**Board authority versus delegated execution.** [[projects/protoagent-project-board]] uses a beads-backed card graph as the work-state source of truth, dispatching ACP coding workers in isolated worktrees and reconciling PR and restart state ([repository](https://github.com/protoLabsAI/projectBoard-plugin)). That is distinct from ACP's session-message semantics: a reconstructed session does not itself prove a card merged or a PR was not duplicated. [[projects/openjiuwen-agent-core-020]] documents scheduled verifier/challenger dispatch and fixes for canceled queued tasks incorrectly starting ([release](https://github.com/openJiuwen-ai/agent-core/releases/tag/v0.1.20)). The two implementations expose complementary failure surfaces—durable board reconciliation and scheduler cancellation—but there is no direct interoperability or comparative reliability evidence. A controlled test should kill workers at PR-state transitions and cancel queued tasks, measuring external effects rather than status labels.
