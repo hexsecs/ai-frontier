@@ -5,8 +5,8 @@ title: "All Code Is Slop (Except Mine)"
 summary: "Lauren Tan's AI Engineer talk: Grok Bot shipped 11,000 PRs in a month at ~0.5% reverts by turning every agent correction into a deterministic check."
 type: project
 created: 2026-11-18
-updated: 2026-11-18
-related: [concepts/structural-constraint-over-instruction, concepts/scoped-assurance, concepts/improvement-lives-in-external-state, techniques/verification-and-evidence, signals/reliability-is-a-systems-property]
+updated: 2026-11-20
+related: [concepts/structural-constraint-over-instruction, concepts/scoped-assurance, concepts/improvement-lives-in-external-state, techniques/verification-and-evidence, signals/reliability-is-a-systems-property, projects/death-of-the-code-review]
 sources:
   - url: https://www.youtube.com/watch?v=O_zcc6Xl12g
     retrieved: 2026-11-18
@@ -100,3 +100,4 @@ Independent telemetry from the Grok Bot repository or a comparable deployment: d
 - [[concepts/improvement-lives-in-external-state]] — corrections accumulate in code, lint rules and framework design around frozen weights; the rules file is explicitly where improvement is *not* stored.
 - [[techniques/verification-and-evidence]] — the technique layer this deployment runs at scale: runtime verification with feature maps, formal methods as one layer among several, and review redirected at verification artifacts.
 - [[signals/reliability-is-a-systems-property]] — the corpus's reliability loop (verify → recover → gated update); the talk evidences the verify link at production scale and is silent on recovery, which remains the loop's untested-at-scale half.
+- [[projects/death-of-the-code-review]] — the same bottleneck surveyed from the review side: where Tan's team engineered review away by constraining generation, Voss documents review relocating into harnesses, rubrics and production, with the mergeability evidence (METR, FrontierCode) for why test-passing alone never emptied a review queue.

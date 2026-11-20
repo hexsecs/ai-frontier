@@ -18,6 +18,7 @@ This is the legacy canonical file-location index. Some entries are now classifie
 - [ClinGeX](./clingex.md) — Executable genomic analysis skills evaluated on held-out cases.
 - [CodeSpecWeave](./codespecweave.md) — Synthetic coding tasks with interdependent requirements.
 - [Context as Infrastructure](./context-as-infrastructure.md) — A RAGFlow vendor paper finds precompiled context structures add no accuracy; claim–evidence substitution cuts query tokens 38% on average instead.
+- [The Death of the Code Review](./death-of-the-code-review.md) — Laurie Voss's AI Engineer talk on the review bottleneck: agents wrote 741% more code and shipped 30% more software, and review is being rebuilt as an engineered system.
 - [Dittany](./dittany.md) — Runtime repair for multi-agent applications: a contract-derived contribution graph detects failed contributions and guides action- and graph-level repair.
 - [DynaRev](./dynarev.md) — Browser tasks with changing instructions at milestones.
 - [EnvOS](./envos.md) — Agent benchmark for external-world changes.
