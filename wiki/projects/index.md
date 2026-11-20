@@ -154,3 +154,9 @@ This is the legacy canonical file-location index. Some entries are now classifie
 - [[projects/done-but-still-working]] — Hidden-test analysis of coding-agent stop policies.
 - [[projects/values-shape-self-improving-coding-agents]] — Persistent value statements affect agent self-improvement.
 - [[projects/forceharness]] — Force-aware local control and physics summaries for frozen models.
+
+
+- [OpenHands Agent Canvas 1.42](./openhands-agent-canvas.md) — Git-provider identity and webhook-source validation at automation ingress.
+- [protoAgent Project Board](./protoagent-project-board.md) — Beads-backed task graph, ACP worktree delegation and PR reconciliation.
+- [extension.dev MCP](./extensiondev-mcp.md) — Local browser-extension tools separated from owner-approved publication.
+- [openJiuwen Agent Core 0.1.20](./openjiuwen-agent-core-020.md) — Scheduled team review, cancellation fixes and restart recovery.
