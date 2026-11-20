@@ -39,3 +39,6 @@ No universal team size follows from these different protocols. [[evaluations/mul
 ## Harness mechanism integration
 
 [[projects/elite-evaluation-free-self-improvement]] integrates independently proposed changes to one coding-agent implementation without selecting candidate agents by downstream task score. This is source-level integration, not multi-agent task delegation or proof of whole-system correctness; compare [[concepts/preservation-aware-agent-improvement]].
+
+
+[[projects/protoagent-project-board]] grounds delegated coding work in a durable task board and PR lifecycle; [[projects/openjiuwen-agent-core-020]] documents scheduled verifier/challenger review and cancellation-state fixes. Neither establishes cross-framework interoperability. See [[techniques/multi-agent-orchestration]].

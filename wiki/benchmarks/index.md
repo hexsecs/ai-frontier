@@ -26,3 +26,6 @@ Choose an instrument by its tasks and acceptance rules. Scores across these prot
 
 - [[projects/abc-bench-backend-coding|ABC-Bench]] — External API acceptance for deployed backend services across eight languages and 19 frameworks.
 - [[projects/agenticdatabench|AgenticDataBench]] — Fine-grained data-science skill coverage and workflow scoring across 15 domains.
+
+
+- [VTBench public dataset correction](./vthinker-vtbench-dataset-correction.md) — Non-final public interaction subset disclosed November 19; benchmark version integrity.

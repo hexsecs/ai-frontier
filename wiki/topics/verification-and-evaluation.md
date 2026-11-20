@@ -43,3 +43,6 @@ What establishes task success, how reliable is the grader, and when can scores b
 ## Physical-control acceptance
 
 [[projects/forceharness]] reports contact-rich real-arm and simulation outcomes under a frozen multimodal model, with fast force regulation inside local tools. Its evidence is task-specific and author-reported; see [[techniques/embodied-and-scientific-agents]] for distinctions between physical and simulated evaluation tiers.
+
+
+[[benchmarks/vthinker-vtbench-dataset-correction]] illustrates why public dataset versions must match reported evaluation artifacts before claiming reproducibility. See [[techniques/evaluation-and-simulation]].

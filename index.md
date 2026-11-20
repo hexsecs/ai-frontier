@@ -48,3 +48,6 @@ Research priorities and selection rules live in [`automation/briefing-policy.yam
 - [November 18, 2026 briefing](wiki/briefings/2026/11/2026-11-18.md) — Delegated-reader safety, normalized coding traces, reusable programs, deployed backend acceptance and data-agent evaluation.
 
 - [November 19, 2026 briefing](wiki/briefings/2026/11/2026-11-19.md) — Stale skills, evaluation-free harness evolution, stopping policy risks, persistent values and physical robotics.
+
+
+- [November 20, 2026 briefing](wiki/briefings/2026/11/2026-11-20.md) — Authenticated triggers, durable task boards, scoped publication, cancellation and benchmark artifact integrity.
