@@ -92,3 +92,10 @@ Measurements are attributed to their authors or vendors at the point of use. The
 ## Operational boundaries — November 2026
 
 **Public artifact identity is part of the evaluation protocol.** [[benchmarks/vthinker-vtbench-dataset-correction]] records the maintainers' November 19 disclosure that a downloadable VTBench Instruction-Guided Interaction subset was a non-final export different from the one used for experiments ([project notice](https://github.com/We-Math/V-Thinker)). This is a concrete case of [[concepts/ground-truth-fallibility]]: even an executable benchmark cannot support public reproduction if its dataset revision and judge configuration are not the reported ones. It does not prove all VTBench results wrong; it means comparisons using the affected public export should be withheld until a corrected, pinned artifact is available. Record checksums, subset IDs and grader versions before scoring.
+
+
+### Reproducible evaluation requires artifact and grader identity
+
+The [[benchmarks/vthinker-vtbench-dataset-correction]] disclosure illustrates a mismatch between the public dataset export and the artifact reportedly used for experiments. This is an **artifact-identity** failure; it should not be conflated with wrong reference labels ([[concepts/ground-truth-fallibility]]) or changes in scoring convention ([[concepts/protocol-relative-scores]]). A complete benchmark result identifies: immutable dataset revision and per-subset digest, task inclusion/exclusion rules, grader source/version and configuration, model and harness versions, tool/environment snapshot, seeds and attempt budget, and aggregation script. Where artifacts cannot be pinned, label comparisons provisional.
+
+**Proposed correction-case audit:** Obtain the original and corrected public exports if both become available, hash and diff records, classify label/content/split changes, rerun a fixed baseline under the original grader and a pinned grader, and report score differences by cause. Until corrected artifacts and matching experimental configuration are available, do not infer a numerical effect from the notice alone. This audit has not been run.
