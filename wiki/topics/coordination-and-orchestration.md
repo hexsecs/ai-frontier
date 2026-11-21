@@ -20,6 +20,7 @@ How do agents divide work, preserve shared information and integrate a correct f
 
 | Concern | Reading | Distinction |
 |---|---|---|
+| Shared workspace and approvals | [[projects/openagents-workspace]] | Sharing artifacts, using an agent and approving publication are different authorities. |
 | Shared work and parallel integration | [[projects/agensh]], [[projects/agent-orchestrator]] | Worker count, authority and integration gates are separate choices. |
 | Typed handoffs and repair | [[projects/agenticds]], [[projects/dittany]] | Declared contracts do not establish successful downstream execution. |
 | Artifact-centric coordination | [[projects/geofaham]], [[projects/crossswe]] | Geospatial metadata and repository interfaces require different checks. |
