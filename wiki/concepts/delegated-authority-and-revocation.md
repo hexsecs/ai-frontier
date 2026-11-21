@@ -55,3 +55,8 @@ The two independent reports support the bounded architectural question: how does
 A defensible boundary keeps source evidence separate from worker interpretation, preserves origin and retrieval context, treats subordinate summaries as untrusted claims, and independently verifies high-impact facts before consequential writes. These are proposed controls, not a demonstrated integrated defense. [[techniques/artifact-and-claim-provenance]] describes the evidence chain and [[concepts/verified-completion-vs-apparent-success]] bounds acceptance.
 
 **Promotion decision:** Two independent sources now exist, but they do not isolate the same mechanism or demonstrate a common effective mitigation. Retain this bounded synthesis here rather than creating a broad new concept. A future concept requires a clear definition distinguishing evidence laundering from ordinary prompt injection, independently matched mechanism evidence and meaningful counterexamples.
+
+
+## Publishing authority is separate from build authority
+
+[[projects/extensiondev-mcp]] documents local browser-extension build/test tools separately from authenticated shipping operations, including a no-ship mode and owner approval. This is a concrete instance of **authority separation**, not an independent security audit. The November 20 [[projects/openhands-agent-canvas]] webhook/provider changes concern *who may initiate* work; extension publishing concerns *who may release* its result. A valid trigger must not imply permission to publish, and a completed build must not imply deployment approval. Test with a mock publication endpoint and verify that local build privileges cannot reach it through alternate tools or replay.
