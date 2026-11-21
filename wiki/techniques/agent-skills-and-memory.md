@@ -5,7 +5,7 @@ title: "Agent skills and memory"
 summary: "Agent memory spans retrieved history, reusable procedures, learned file operations and deletion controls; admission and transfer bound the evidence."
 type: technique
 created: 2026-11-02
-updated: 2026-11-19
+updated: 2026-11-21
 related: [projects/coding-agent-memory-post-training-ii, projects/skillcompiler, projects/karma, projects/filingloop, projects/context-as-infrastructure, projects/clingex, projects/security-impact-of-coding-agent-memory-files, concepts/improvement-lives-in-external-state, concepts/capability-locus, projects/just-in-time-agent-memory, projects/lifelong-materials-agent-memory]
 sources:
   - https://arxiv.org/abs/2611.14009
@@ -34,6 +34,8 @@ sources:
 ## What it is
 
 Agent skills and memory are the two forms of persistent, human-readable state that a frozen model reads at run time and that some process — the model itself, a compiler, a curator, an evolution loop — writes between runs. A *skill* is a stored procedure: instructions, a workflow, or compiled code that tells the agent how to perform an operation it will meet again. A *memory* is stored content: knowledge modules, experience records, compiled context, or an instruction file the agent loads at session start. In every system on this page the model's weights never change; whatever improves, improves in the store. That is the corpus-level claim recorded as the concept [[concepts/improvement-lives-in-external-state]]: the locus of improvement is external state, and freezing the artifact is what makes the improvement inspectable, reversible, and portable.
+
+[[projects/planning-with-files]] illustrates a low-complexity persistence pattern: Markdown planning artifacts and re-injection after context clearing restore the *availability* of prior intent, but neither guarantee freshness nor validate a final code change ([repository](https://github.com/OthmanAdi/planning-with-files)). [[projects/openagents-workspace]] instead shares messages and knowledge across agents and people ([README](https://github.com/openagents-org/openagents)); its access permissions are a separate governance question from whether shared knowledge is correct. Compare both with [[techniques/gated-admission-and-revalidation]]: storage, retrieval and evidence-backed admission are distinct operations.
 
 The technique family's real subject, though, is not storage but *admission*. The cited systems differ by what stands between a candidate artifact and the trusted store. At one end, SkillCompiler admits a synthesized program only after isolated validation against a declared contract; ClinGeX admits a clinical skill only after it passes a frozen, skill-specific test suite; KARMA retains a knowledge patch only if it improves a fixed validation set, restoring a snapshot otherwise. At the other end, a coding agent's project memory file is admitted by the filesystem: it sits in the repository root and is auto-loaded, unchecked — and the one controlled study of that channel finds its measured effect indistinguishable from chance. Between the ends sit weaker gates: FilingLoop validates the *form* of a skill update but never its performance, and Context as Infrastructure validates compiled artifacts for provenance but reports no measured capability effect for them at all.
 
