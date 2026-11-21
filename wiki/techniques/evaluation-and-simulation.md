@@ -5,7 +5,7 @@ title: "Evaluation and simulation"
 summary: "How this corpus evaluates agents — benchmark construction, trajectory scoring, adversarial testing, instrument audits — and the lenses that discount its scores."
 type: technique
 created: 2026-11-02
-updated: 2026-11-14
+updated: 2026-11-21
 related: [projects/seq-k, projects/webanything, projects/codespecweave, projects/intent-loss-in-smart-contract-synthesis, projects/angler, projects/pre-crime-for-agents, projects/vericua, projects/envos, concepts/evaluator-circularity, concepts/ground-truth-fallibility, concepts/protocol-relative-scores, concepts/comparator-construction-shapes-margins, concepts/validation-tier-gap]
 sources:
   - url: https://arxiv.org/abs/2610.37859
@@ -25,6 +25,8 @@ sources:
 ## What it is
 
 Agent evaluation tests outcomes under specified tasks, graders, budgets and environments. The cited work includes benchmark construction, trajectory grading, certification and instrument evaluation. These protocols expose [[concepts/evaluator-circularity]], [[concepts/ground-truth-fallibility]] and [[concepts/protocol-relative-scores]].
+
+**Compression needs outcome evaluation.** [[projects/sqz-context-compression]] ([maintainer README](https://github.com/ojuschugh1/sqz)) reports reduced tokens through deterministic command-aware formatting and repeat references. That measurement does not show whether omitted context changes repair decisions. A matched-trace study should report (1) raw versus delivered tokens, (2) preserved diagnostic facts, (3) reference-expansion availability and (4) independently accepted task results, with model and tasks held fixed. This is an analytical test proposal; no cross-system benchmark result is claimed. It operationalizes [[concepts/information-content-dominance]] without assuming that maximum compression is optimal.
 
 Simulation is an evaluation substrate in several studies. Using a simulated environment does not itself demonstrate a transferable simulation method or establish real-world performance.
 
