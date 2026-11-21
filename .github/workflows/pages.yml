@@ -10,6 +10,15 @@ on:
       - 'scripts/chatgpt_charts.py'
       - '.github/workflows/pages.yml'
   workflow_dispatch:
+  # Merges made by the auto-merge workflow use the workflow token, and
+  # token-made pushes do not trigger the push trigger above — a merged
+  # briefing changed no deployed page until a human pushed (2026-11-19).
+  # Republish when that workflow completes on main instead. The run is
+  # idempotent: when nothing merged, the same content is redeployed.
+  workflow_run:
+    workflows: ["Auto-merge validated daily briefings"]
+    types: [completed]
+    branches: [main]
 permissions:
   contents: read
   pages: write
@@ -19,6 +28,9 @@ concurrency:
   cancel-in-progress: true
 jobs:
   build:
+    # The conclusion guard applies only to the workflow_run trigger;
+    # push and manual dispatch runs publish as before.
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
