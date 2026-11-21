@@ -8,6 +8,8 @@ summary: "Establish success and compare evidence under explicit measurement cond
 
 What establishes task success, how reliable is the grader, and when can scores be compared?
 
+[[projects/sqz-context-compression]] offers a useful negative-control question: does compressing observed tool output preserve enough information to pass independent task acceptance? [[techniques/evaluation-and-simulation]] specifies separate token, diagnostic and outcome measurements.
+
 ## Start here
 
 [[concepts/contracts-and-compositional-correctness]] distinguishes local checks from integrated obligations. [[projects/alphaproof-code]] supplies a formal-checking example bounded by specification trust in [[concepts/scoped-assurance]].
