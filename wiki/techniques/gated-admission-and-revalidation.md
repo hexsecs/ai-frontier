@@ -50,3 +50,13 @@ Freeze a candidate stream, source tasks, base model and reusable store. Compare 
 ## Evidence status and reading path
 
 The cited primary papers were read on November 14, 2026. The lifecycle comparison is analytical; it is not an independently replicated gain from adding a gate. Continue through [[topics/memory-and-improvement]] and [[topics/verification-and-evaluation]].
+
+## Temporal validity: admission is not permanent applicability
+
+A stored skill can be well-formed and previously successful yet no longer satisfy its invocation assumptions. Distinguish **artifact identity** (which version was admitted), **evidence identity** (which tests and evaluator supported admission), and **environment identity** (API/schema, permission, dependency, session, task distribution and data freshness at reuse). A historical pass transfers only when the conditions relevant to that pass still hold. This is an engineering inference, not an independently measured universal decay rate.
+
+The November 19 briefing [[briefings/2026/11/2026-11-19]] identifies stale-skill evidence; [[projects/skillcompiler]] documents applicability checks and revalidation triggers, while [[projects/agent-browser]] illustrates that recorded browser procedures can encounter changed session and page conditions. These examples do not establish identical drift mechanisms or transfer performance. See [[concepts/scoped-assurance]] for the limit of each check.
+
+A reusable admission record should capture content/version hash, declared preconditions, dependency and tool schema versions, required authority, evaluator version, test inputs and date, and an explicit expiration or recheck trigger where appropriate. On invocation, compare current conditions to the recorded applicability envelope. Unknown compatibility should produce a revalidation request or bounded abstention, not silently inherit the old pass.
+
+**Proposed test:** Admit a working skill against a disposable API, then change one variable at a time: schema, permission, output semantics, credentials and time-sensitive data. Compare unconditional reuse, version-only invalidation and precondition-plus-behavioral revalidation. Count stale invocations, false rejection, unsafe effects, revalidation latency and recovered task acceptance. No such test has been executed for this synthesis.
