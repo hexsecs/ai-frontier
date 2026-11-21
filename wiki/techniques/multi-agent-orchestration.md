@@ -5,7 +5,7 @@ title: "Multi-agent orchestration"
 summary: "Agent coordination through evolving teams, typed contracts, independent exploration and governed handoffs; effects depend on the mechanism."
 type: technique
 created: 2026-11-02
-updated: 2026-11-17
+updated: 2026-11-21
 related: [projects/evoteam, projects/agenticds, projects/explorerepair, projects/openbot]
 sources:
   - url: https://arxiv.org/abs/2610.39813
@@ -26,6 +26,8 @@ sources:
 ## What it is
 
 Multi-agent orchestration coordinates roles, task allocation, handoffs and integration. The cited systems use different mechanisms: [[projects/evoteam]] evolves a reusable team library, [[projects/agenticds]] exchanges typed objects between fixed roles, [[projects/explorerepair]] aggregates independent exploration, and [[projects/openbot]] governs actions and human takeover through a policy gateway.
+
+[[projects/openagents-workspace]] ([maintainer README](https://github.com/openagents-org/openagents)) provides a persistent human-agent coordination surface with shared threads, files and browser views, plus described per-user sharing and approval cards. It differs from typed contract exchange in [[projects/agenticds]] and evolved team rules in [[projects/evoteam]]: a shared thread makes artifacts visible, but does not enforce their correctness or confer publication authority. Evaluate workspace access, delegated tool authority and final acceptance as separate factors; no independently measured improvement from this composition is cited.
 
 Shared coordination vocabulary does not establish a common mechanism or transferable performance. [[projects/dittany]] repairs other multi-agent applications; [[projects/github-copilot-fusion]] documents model routing with vendor-reported effects; [[projects/garden]] coordinates reinforcement-learning policies rather than multiple LLM agents. Those distinctions matter when comparing results.
 
