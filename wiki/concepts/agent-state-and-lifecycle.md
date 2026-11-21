@@ -55,3 +55,12 @@ This diagram is a proposed reasoning aid, not a protocol extracted from one impl
 The source documents concern different layers and do not establish interoperability. Test a runtime by interrupting it between an effect and its recorded result, canceling a child while its parent waits, and replaying history into a fresh client. Check session reconstruction, parent termination, retained authority and external postconditions separately. A truthful unknown outcome is different from a verified success.
 
 See [[concepts/replay-idempotency-and-effect-semantics]], [[concepts/delegated-authority-and-revocation]], [[techniques/durable-agent-execution]] and [[experiments/lifecycle-authority-and-retention]]. The comparisons are analyst interpretations; no source result was independently reproduced.
+
+
+## Control-plane decisions versus execution-plane effects
+
+An agent workboard, webhook receiver and tool runner may all describe the same job while controlling different things. The **control plane** admits and schedules work, binds a repository or principal, grants authority, records cancellation and decides whether publication is permitted. The **execution plane** performs tool calls and external mutations. Their records can diverge after interruption; a board marked complete does not prove a merged PR, and a cancellation acknowledgment does not undo a queued or already committed effect.
+
+The November 20 records give distinct illustrations: [[projects/openhands-agent-canvas]] documents provider selection and webhook-source validation before dispatch; [[projects/protoagent-project-board]] documents durable cards/worktrees and reconciliation with PR state; [[projects/openjiuwen-agent-core-020]] documents cancellation and queued-work fixes. These are maintainer descriptions, not a shared measured architecture. [[concepts/delegated-authority-and-revocation]] governs permission boundaries; [[concepts/verified-completion-vs-apparent-success]] governs independent outcome checks.
+
+**Proposed fault test:** For a disposable repository and mock webhook, inject invalid triggers, kill a worker between PR creation and board update, cancel queued work, and restart the scheduler. Compare authenticated admission, durable queue state and observed repository effects separately. Record duplicate PRs, unauthorized starts, post-cancellation effects and incorrectly declared completions.
