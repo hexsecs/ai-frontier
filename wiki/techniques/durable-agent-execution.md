@@ -4,7 +4,7 @@ title: "Durable agent execution"
 summary: "Persist execution state, classify interrupted effects and reconcile retries without assuming exactly-once external actions."
 type: technique
 created: 2026-11-14
-updated: 2026-11-16
+updated: 2026-11-21
 depth: full
 sources:
   - https://raw.githubusercontent.com/rivet-dev/agents/21c248b1d1d8c3a9d6c1cc7b85531a4a2d0e5c50/docs/content/guides/durable-ai-agents.mdx
@@ -19,7 +19,9 @@ sources:
 
 ## Mechanism
 
-Durable execution separates the record of an agent's work from the process currently running it. The practical question is which calls can be repeated after interruption, and which require observation or reconciliation first. The comparison below is an analyst interpretation of documented designs, not a measured common implementation.
+Durable execution separates the record of an agent's work from the process currently running it. The practical question is which calls can be repeated after interruption, and which require observation or reconciliation first. [[projects/openai-agents-sdk]] adds a third storage boundary: its November 8 [alpha release](https://github.com/openai/openai-agents-python/releases/tag/v0.24.0-alpha.7) documents caller-owned CustomStorage for root Sessions while explicitly warning that uncertain tool effects must be reconciled on resume. This distinguishes **storage ownership** from **remote-effect deduplication**: persistence can restore context without proving a mutation occurred once. [[projects/planning-with-files]] persists task intent in Markdown across context clearing, a different layer again; its completion gate does not establish the external state of a remote write. A crash-injection comparison should separately observe recovered instructions, reconstructed calls and remote effects.
+
+The comparison below is an analyst interpretation of documented designs, not a measured common implementation.
 
 | Design | Persisted boundary | Recovery contract |
 |---|---|---|
