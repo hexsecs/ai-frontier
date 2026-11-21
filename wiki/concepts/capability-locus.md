@@ -170,3 +170,8 @@ This is an analyst interpretation of the cited studies, not an additional experi
 ## 2026-11-07 evidence connections
 
 - [[projects/strategist]]: newly linked primary-source project; see its dated briefing and evidence limitations before treating this relationship as a universal mechanism.
+
+
+## Boundary with external-state improvement
+
+[[concepts/improvement-lives-in-external-state]] is a narrower empirical claim about systems whose *mutable optimization artifact* is external to frozen model weights. **Capability locus** instead asks how performance decomposes among weights, harness, state and interactions, including cases where the model dominates or the interaction is not separable. A frozen-model intervention identifies one possible locus of change but does not establish that external state dominates total capability. Keep these pages distinct: this page curates factorial ablations and competing explanations; the external-state page curates persistence, transfer and artifact-specific limits. Future work should cross-link matching ablations rather than count the same project twice as independent evidence.
