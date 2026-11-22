@@ -55,3 +55,7 @@ Use a disposable endpoint that records unique operation IDs and supports an opti
 ## Evidence status and reading path
 
 The primary documents above were read on November 14, 2026; their mechanisms were not executed. No independent reliability measurement is introduced. Continue through [[topics/agent-execution-and-recovery]] and [[topics/security-and-authority]] for recovery authority and enforcement boundaries.
+
+## Recovery barriers and observable lifecycle ordering
+
+[[projects/holon]] documents a November 21 recovery-before-dispatch barrier and bounded event/payload admission ([v0.60.0](https://github.com/holon-run/holon/releases/tag/v0.60.0)). [[projects/copilot-sdk]] documents a different boundary: fixing an event race where a parent session's idle notification preceded the assistant idle event after background-subagent completion ([preview.4](https://github.com/microsoft/copilot-sdk/releases/tag/v2.0.2-preview.4)). A recovery barrier constrains when *new work starts*; event ordering constrains what *observers can infer*. Neither guarantees that an earlier remote effect was applied once. For a paired fault test, inject a crash before a persisted result and independently delay child completion; score duplicate dispatch, unresolved writes, misleading idle status and final acceptance separately. Both release claims are maintainer-documented, not independently reproduced.
