@@ -4,10 +4,11 @@ title: "Browser4"
 summary: "Apache-2.0 AI-native browser engine: Rust CLI and Spring backend, zero-token X-SQL extraction, a progressive experience store; throughput unbenchmarked."
 type: project
 created: 2026-11-09
-updated: 2026-11-16
+updated: 2026-11-22
 depth: deep
 sources:
   - https://github.com/platonai/browser4
+  - https://github.com/platonai/Browser4/releases/tag/v4.16.9
   - https://raw.githubusercontent.com/platonai/Browser4/main/README.md
   - https://raw.githubusercontent.com/platonai/Browser4/main/VERSION
   - https://raw.githubusercontent.com/platonai/Browser4/main/docs/experience-memory.md
@@ -151,3 +152,7 @@ Mechanism claims — the tool loop, the context mechanisms, the experience tiers
 Compare reusable procedures by applicability conditions, execution boundaries and fallback rather than assuming universal benefits. See [[techniques/deterministic-workflow-reuse]]. Keep task conditions, feedback, cost and scoring rules attached to reported comparisons. See [[concepts/protocol-relative-scores]].
 
 [[briefings/2026/11/2026-11-06]]
+
+## Multi-turn context and browser-state validity
+
+The [4.16.9 release](https://github.com/platonai/Browser4/releases/tag/v4.16.9), dated November 21, 2026, documents context-window accounting, follow-up continuity, transcript carry and rewind for its browser agent. Maintainers report that downstream modules compile but explicitly say real-browser end-to-end testing of the new prompt shape is pending. This is a material implementation change, not a verified task-success improvement. A carried transcript can describe a page that has since changed; [[concepts/agent-state-and-lifecycle]] separates reconstructed session state from external browser effects. A useful test changes a mock site's DOM between turns and compares extraction accuracy and unintended repeated actions with carry enabled and disabled.
