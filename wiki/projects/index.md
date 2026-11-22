@@ -64,6 +64,12 @@ This is the legacy canonical file-location index. Some entries are now classifie
 - [WeaveBench](./weavebench.md) — Evaluate long-horizon GUI, CLI and coding workflows.
 - [A Case Study in Assuring AI-Written Software](./assuring-ai-written-software.md) — Production case of failed monitors and agent governance.
 
+- [[projects/openai-agents-sdk]] — Durable root sessions and strict executor policies in an alpha SDK release.
+- [[projects/planning-with-files]] — Markdown planning state across context loss.
+- [[projects/sqz-context-compression]] — Deterministic tool-output compression with recoverable references.
+- [[projects/openagents-workspace]] — Shared human-agent workspace with described approval and ownership boundaries.
+- [[projects/simulink-agentic-toolkit]] — MCP-backed Simulink model inspection, editing and checks.
+
 ## Backfilled from November 3–6 briefings
 
 - [Agensh](./agensh.md) — Canonical backfill of the dated briefing's sourced mechanism, assessment and limitations.

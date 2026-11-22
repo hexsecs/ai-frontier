@@ -4,7 +4,7 @@ title: Contracts and compositional correctness
 summary: Distinguish valid component outputs from satisfied dependencies and independently accepted whole-task outcomes.
 type: concept
 created: '2026-11-16'
-updated: '2026-11-16'
+updated: 2026-11-21
 depth: full
 sources:
 - https://arxiv.org/html/2610.39608
@@ -19,6 +19,8 @@ sources:
 A contract states the inputs, outputs, preconditions or obligations expected at a boundary. A schema can establish the shape of an artifact; an executable check can test a stated behavior. Neither alone proves that every dependency is satisfied or that the assembled workflow meets its objective.
 
 **Compositional correctness** asks what must hold between components as well as within them. The comparison below identifies a dependency problem across different settings; it does not assert that those settings share one experimentally established failure mechanism.
+
+A structured domain tool can make local obligations observable without proving the full engineering artifact correct. [[projects/simulink-agentic-toolkit]] ([MathWorks repository](https://github.com/matlab/simulink-agentic-toolkit)) exposes model reading, editing, structural checks and diagnostics through MCP, with separate model-based-design skills. A detected disconnected port is a local model defect; a passing structural check does not establish correct simulation behavior, requirements coverage or physical safety. The toolkit's documentation is implementation evidence, not an independent functional-safety validation. A controlled test should compare planted connection faults, parameter faults and system-level acceptance separately.
 
 ## Evidence-bearing examples
 

@@ -4,7 +4,7 @@ title: "Scientific and embodied systems"
 summary: "Agentic research, robotics and scientific instruments grouped as an application domain, not a single mechanism."
 type: domain
 created: 2026-11-09
-updated: 2026-11-16
+updated: 2026-11-21
 depth: brief
 sources:
   - https://arxiv.org/abs/2611.05251
@@ -13,6 +13,8 @@ sources:
 ---
 
 # Scientific and embodied systems
+
+[[projects/simulink-agentic-toolkit]] brings agent tools into model-based design through MATLAB/Simulink MCP operations and domain skills ([source](https://github.com/matlab/simulink-agentic-toolkit)). Its model checks are engineering-artifact validation, not evidence of physical actuation or certified safety. It should be compared with instrument and robotics studies only after separating simulation, model consistency and independently observed physical outcomes.
 
 This domain groups application contexts, not a validated universal agentic technique. See [[projects/auto-research]], [[projects/fa-agent]], [[projects/cheme-as-code]], [[projects/roboarchitect]] for canonical source-backed records. Compare outcomes only after matching task scope, deployment maturity, and independent verification tier. Cross-domain patterns and limitations are synthesized in [[evaluations/briefing-synthesis-2026-11-03-to-09]].
 

@@ -20,6 +20,7 @@ How do agents execute tools, survive interruptions and establish what actually h
 
 | Question | Reading | Important boundary |
 |---|---|---|
+| What survives restart? | [[projects/openai-agents-sdk]], [[projects/planning-with-files]] | Session storage and persisted task plans recover different state; neither certifies external effects. |
 | What survives restart? | [[projects/agentos]], [[projects/rivet-agents]], [[projects/openma]] | Durable session state alone does not establish exactly-once external effects. |
 | What did a failed write do? | [[projects/builderio-agent-native]] | Observed channels and explicit labels bound the verdict. |
 | Is a process waiting or finished? | [[projects/receipt]] | Process-state evidence does not establish correctness of prior effects. |

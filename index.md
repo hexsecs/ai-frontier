@@ -29,6 +29,10 @@ A curated, source-backed guide to practical agentic AI, autonomous workflows, an
 
 ## Latest briefing
 
+- [November 21, 2026](wiki/briefings/2026/11/2026-11-21.md) — Durable root sessions, persistent plans, deterministic compression, shared workspaces and Simulink tools.
+
+
+
 - [November 16: agent lifecycle, authority and recoverable artifacts](wiki/briefings/2026/11/2026-11-16.md) — five source-backed implementation findings and experiments.
 
 ## Latest synthesis
