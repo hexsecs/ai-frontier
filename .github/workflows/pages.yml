@@ -23,9 +23,6 @@ permissions:
   contents: read
   pages: write
   id-token: write
-concurrency:
-  group: pages
-  cancel-in-progress: true
 jobs:
   build:
     # The conclusion guard applies only to the workflow_run trigger;
@@ -50,6 +47,15 @@ jobs:
         with:
           path: docs
   deploy:
+    # Concurrency sits on the deploy job, not the workflow: a
+    # workflow-level group is joined before job conditions are evaluated,
+    # so a workflow_run that skips its build still cancelled an in-flight
+    # push deploy (2026-11-22, #64 never published). Here the group is
+    # requested only by a deploy that will run, and an in-progress deploy
+    # is never cancelled.
+    concurrency:
+      group: pages
+      cancel-in-progress: false
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
