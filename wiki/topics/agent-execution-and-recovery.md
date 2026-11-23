@@ -42,3 +42,6 @@ Use [[concepts/scoped-assurance]] to bound recovery claims. The crash-injection 
 ## Skill drift and recovery cost
 
 [[projects/when-agent-skills-go-stale]] tests checks replayed against changed environments before reusing a stored skill. This is a different failure boundary from process restart: an uninterrupted agent can repeatedly execute an obsolete but syntactically valid procedure. See [[techniques/agent-skills-and-memory]] for selective repair and fallback.
+
+
+[[projects/microsoft-agent-framework-python-123]] distinguishes atomic internal writes and execution-scoped completion from externally verified effects; [[projects/novelmaker-agent-tool-message-repair]] preserves historical tool messages while repairing malformed outbound requests. These mechanisms differ from replaying a remote effect; see [[techniques/durable-agent-execution]].
