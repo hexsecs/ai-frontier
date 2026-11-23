@@ -18,3 +18,6 @@ This domain groups application contexts, not a validated universal agentic techn
 
 
 [[concepts/contracts-and-compositional-correctness]] connects typed handoffs and cross-repository interfaces; [[techniques/deterministic-workflow-reuse]] compares reusable agent procedures. These are reusable mechanisms rather than a universal ranking of coding systems.
+
+
+[[projects/microsoft-agent-framework-python-123]] and [[projects/novelmaker-agent-tool-message-repair]] illustrate different software-operation consistency mechanisms: atomic internal state and request-transcript repair. [[projects/coding-agent-working-memory-evaluation]] provides author-reported evidence that memory-management cost and delivered context must be evaluated separately from task outcomes.
