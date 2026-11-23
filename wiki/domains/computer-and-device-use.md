@@ -18,3 +18,6 @@ This domain groups application contexts, not a validated universal agentic techn
 
 
 [[projects/agent-browser]] and [[projects/sopguard]] connect saved browser procedures with a distinct cross-origin information-flow question. [[concepts/replay-idempotency-and-effect-semantics]] explains why replay and verified physical or remote effects need separate evidence.
+
+
+[[projects/genfeed-content-agent]] provides a documented personal content-automation interface with publishing approval, while [[projects/sandbase-agent-harness]] describes a vendor runtime with sandbox and approval surfaces. Neither supplies an independently tested cross-interface enforcement guarantee; compare [[techniques/secure-agent-operations]].
