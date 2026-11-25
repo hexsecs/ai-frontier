@@ -3,7 +3,7 @@ import re
 import sys
 import json
 
-TRUSTED = "chatgpt-codex-connector"
+TRUSTED = "chatgpt-codex-connector[bot]"
 
 def check(pr, reviews, threads, main_sha):
     head = pr["headRefOid"]
