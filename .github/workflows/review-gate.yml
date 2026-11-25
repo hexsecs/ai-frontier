@@ -2,6 +2,8 @@ name: Review gate
 on:
   pull_request_target:
     types: [opened, synchronize, reopened, ready_for_review, edited, closed]
+  issue_comment:
+    types: [created, edited, deleted]
   workflow_run:
     workflows: [Review event relay]
     types: [completed]
@@ -75,10 +77,11 @@ jobs:
           evaluate() {
           gh pr view "$PR" --repo "$GITHUB_REPOSITORY" --json headRefOid,baseRefOid,baseRefName,mergeStateStatus,state > /tmp/pr.json
           jq -e --arg head "$HEAD" '.headRefOid == $head and .baseRefName == "main" and .state == "OPEN"' /tmp/pr.json >/dev/null
-          gh api graphql --paginate --slurp -f query='query($owner:String!,$repo:String!,$pr:Int!,$endCursor:String){repository(owner:$owner,name:$repo){pullRequest(number:$pr){reviews(first:100,after:$endCursor){nodes{author{login} state body commit{oid}} pageInfo{hasNextPage endCursor}}}}}' -f owner="${GITHUB_REPOSITORY%/*}" -f repo="${GITHUB_REPOSITORY#*/}" -F pr="$PR" > /tmp/reviews.json
+          gh api graphql --paginate --slurp -f query='query($owner:String!,$repo:String!,$pr:Int!,$endCursor:String){repository(owner:$owner,name:$repo){pullRequest(number:$pr){reviews(first:100,after:$endCursor){nodes{author{login __typename} state body commit{oid}} pageInfo{hasNextPage endCursor}}}}}' -f owner="${GITHUB_REPOSITORY%/*}" -f repo="${GITHUB_REPOSITORY#*/}" -F pr="$PR" > /tmp/reviews.json
           gh api graphql --paginate --slurp -f query='query($owner:String!,$repo:String!,$pr:Int!,$endCursor:String){repository(owner:$owner,name:$repo){pullRequest(number:$pr){reviewThreads(first:100,after:$endCursor){nodes{isResolved} pageInfo{hasNextPage endCursor}}}}}' -f owner="${GITHUB_REPOSITORY%/*}" -f repo="${GITHUB_REPOSITORY#*/}" -F pr="$PR" > /tmp/threads.json
+          gh api graphql --paginate --slurp -f query='query($owner:String!,$repo:String!,$pr:Int!,$endCursor:String){repository(owner:$owner,name:$repo){pullRequest(number:$pr){comments(first:100,after:$endCursor){nodes{author{login __typename} body} pageInfo{hasNextPage endCursor}}}}}' -f owner="${GITHUB_REPOSITORY%/*}" -f repo="${GITHUB_REPOSITORY#*/}" -F pr="$PR" > /tmp/comments.json
           MAIN=$(gh api "repos/$GITHUB_REPOSITORY/git/ref/heads/main" --jq .object.sha)
-          jq -n --slurpfile pr /tmp/pr.json --slurpfile r /tmp/reviews.json --slurpfile t /tmp/threads.json --arg main "$MAIN" '{pr:$pr[0],reviews:[$r[0][].data.repository.pullRequest.reviews.nodes[]],threads:[$t[0][].data.repository.pullRequest.reviewThreads.nodes[]],main_sha:$main}' > /tmp/gate.json
+          jq -n --slurpfile pr /tmp/pr.json --slurpfile r /tmp/reviews.json --slurpfile t /tmp/threads.json --slurpfile c /tmp/comments.json --arg main "$MAIN" '{pr:$pr[0],reviews:[$r[0][].data.repository.pullRequest.reviews.nodes[]],threads:[$t[0][].data.repository.pullRequest.reviewThreads.nodes[]],comments:[$c[0][].data.repository.pullRequest.comments.nodes[]],main_sha:$main}' > /tmp/gate.json
           test -f scripts/check_review_gate.py || { echo 'Trusted gate not installed'; exit 1; }
           python scripts/check_review_gate.py /tmp/gate.json
           }
