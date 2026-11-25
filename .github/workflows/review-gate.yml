@@ -31,11 +31,11 @@ jobs:
           set -euo pipefail
           if [[ -n "$REQUESTED" ]]; then
             [[ "$REQUESTED" =~ ^[1-9][0-9]*$ ]]
-            PRS=$(jq -cn --argjson pr "$REQUESTED" '[$pr]')
+            PRS=$(gh api "repos/$GITHUB_REPOSITORY/pulls/$REQUESTED" | jq -ce '[{pr:.number,sha:.head.sha}]')
           else
             # Relay is only a wake-up signal. Never trust its PR association,
             # artifacts, head SHA or branch. Enumerate open PRs from our API.
-            PRS=$(gh api --paginate --slurp "repos/$GITHUB_REPOSITORY/pulls?state=open&base=main&per_page=100" | jq -ce '[.[][] | .number] | unique')
+            PRS=$(gh api --paginate --slurp "repos/$GITHUB_REPOSITORY/pulls?state=open&base=main&per_page=100" | jq -ce '[.[][] | {pr:.number,sha:.head.sha}] | group_by(.sha) | map(.[0])')
           fi
           echo "prs=$PRS" >> "$GITHUB_OUTPUT"
   review-gate:
@@ -44,9 +44,9 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        pr: ${{ fromJSON(needs.discover.outputs.prs) }}
+        include: ${{ fromJSON(needs.discover.outputs.prs) }}
     concurrency:
-      group: review-policy-${{ github.repository }}-${{ matrix.pr }}
+      group: review-policy-${{ github.repository }}-${{ matrix.sha }}
       cancel-in-progress: false
     runs-on: ubuntu-latest
     steps:
@@ -59,7 +59,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           PR: ${{ matrix.pr }}
-          EVENT_HEAD: ${{ github.event.pull_request.head.sha }}
+          EVENT_HEAD: ${{ matrix.sha }}
         run: |
           set -euo pipefail
           [[ "$PR" =~ ^[0-9]+$ ]]
@@ -70,6 +70,7 @@ jobs:
           gh pr view "$PR" --repo "$GITHUB_REPOSITORY" --json headRefOid,baseRefOid,baseRefName,mergeStateStatus,state > /tmp/pr.json
           jq -e '.baseRefName == "main" and .state == "OPEN"' /tmp/pr.json >/dev/null
           HEAD=$(jq -r .headRefOid /tmp/pr.json)
+          test "$HEAD" = "$EVENT_HEAD"
           trap 'set_check "$HEAD" completed failure' EXIT
           set_check "$HEAD" in_progress
           evaluate() {
@@ -82,8 +83,17 @@ jobs:
           test -f scripts/check_review_gate.py || { echo 'Trusted gate not installed'; exit 1; }
           python scripts/check_review_gate.py /tmp/gate.json
           }
-          evaluate
-          evaluate
-          test "$(gh pr view "$PR" --repo "$GITHUB_REPOSITORY" --json headRefOid --jq .headRefOid)" = "$HEAD"
+          evaluate_shared() {
+            # Commit-scoped checks must never authorize an unreviewed sibling PR.
+            local siblings
+            siblings=$(gh api --paginate --slurp "repos/$GITHUB_REPOSITORY/pulls?state=open&base=main&per_page=100" | jq -ce --arg head "$HEAD" '[.[][] | select(.head.sha==$head) | .number] | unique')
+            jq -e 'length > 0' <<<"$siblings" >/dev/null
+            for PR in $(jq -r '.[]' <<<"$siblings"); do
+              evaluate
+            done
+            test "$siblings" = "$(gh api --paginate --slurp "repos/$GITHUB_REPOSITORY/pulls?state=open&base=main&per_page=100" | jq -ce --arg head "$HEAD" '[.[][] | select(.head.sha==$head) | .number] | unique')"
+          }
+          evaluate_shared
+          evaluate_shared
           set_check "$HEAD" completed success
           trap - EXIT
