@@ -167,6 +167,12 @@ This is the legacy canonical file-location index. Some entries are now classifie
 - [extension.dev MCP](./extensiondev-mcp.md) — Local browser-extension tools separated from owner-approved publication.
 - [openJiuwen Agent Core 0.1.20](./openjiuwen-agent-core-020.md) — Scheduled team review, cancellation fixes and restart recovery.
 
+- [[projects/microsoft-agent-framework-python-123]] — Atomic agent state and lifecycle fixes in the October Python release.
+- [[projects/coding-agent-working-memory-evaluation]] — Semantic working-memory compression and held-out evaluation.
+- [[projects/sandbase-agent-harness]] — Vendor-described managed agent runtime and approval surfaces.
+- [[projects/novelmaker-agent-tool-message-repair]] — Repair incomplete tool transcripts without overwriting stored history.
+- [[projects/genfeed-content-agent]] — Approval-first self-hosted content automation via MCP and queues.
+
 - [[projects/deja-vu]] — Coding-agent lineage recall, subagent briefs and concurrent edit radar.
 - [[projects/holon]] — Recovery-gated dispatch and bounded runtime queues.
 - [[projects/copilot-sdk]] — Preview event-order fix and compaction attribution.

@@ -4,7 +4,7 @@ title: "Durable agent execution"
 summary: "Persist execution state, classify interrupted effects and reconcile retries without assuming exactly-once external actions."
 type: technique
 created: 2026-11-14
-updated: 2026-11-21
+updated: 2026-11-23
 depth: full
 sources:
   - https://raw.githubusercontent.com/rivet-dev/agents/21c248b1d1d8c3a9d6c1cc7b85531a4a2d0e5c50/docs/content/guides/durable-ai-agents.mdx
@@ -55,6 +55,9 @@ Use a disposable endpoint that records unique operation IDs and supports an opti
 ## Evidence status and reading path
 
 The primary documents above were read on November 14, 2026; their mechanisms were not executed. No independent reliability measurement is introduced. Continue through [[topics/agent-execution-and-recovery]] and [[topics/security-and-authority]] for recovery authority and enforcement boundaries.
+
+
+**Atomic internal state is not exactly-once external effects.** [[projects/microsoft-agent-framework-python-123]] ([Python 1.23 release](https://github.com/microsoft/agent-framework/releases)) documents atomic Memory/Todo writes, completion waits bound to execution identity, and cleanup of abandoned nested streams. These changes target distinct internal race and lifecycle boundaries. [[projects/novelmaker-agent-tool-message-repair]] ([1.7.0 release](https://github.com/wg-1337/NovelMaker/releases)) addresses a different layer: preserving the on-disk history while constructing a valid outgoing tool-call transcript after interruption. Neither establishes whether an external mutation was applied. Crash tests should distinguish durable state, outbound request validity, event ordering and independently observed effects; no cross-project benchmark is reported.
 
 ## Recovery barriers and observable lifecycle ordering
 

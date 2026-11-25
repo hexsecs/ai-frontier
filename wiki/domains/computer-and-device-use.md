@@ -4,12 +4,12 @@ title: "Browser, desktop and physical interfaces"
 summary: "Agentic interaction with GUI, browser, terminal and physical-device interfaces, with distinct evidence tiers."
 type: domain
 created: 2026-11-09
-updated: 2026-11-22
+updated: 2026-11-16
 depth: brief
 sources:
-  - https://arxiv.org/abs/2611.08321
-  - https://github.com/platonai/Browser4/releases/tag/v4.16.9
   - https://github.com/devswha/ovis/releases/tag/v0.5.8
+  - https://github.com/platonai/Browser4/releases/tag/v4.16.9
+  - https://arxiv.org/abs/2611.08321
   - https://github.com/trycua/cua/pull/6405
   - https://arxiv.org/abs/2611.05827
 ---
@@ -21,5 +21,7 @@ This domain groups application contexts, not a validated universal agentic techn
 
 [[projects/agent-browser]] and [[projects/sopguard]] connect saved browser procedures with a distinct cross-origin information-flow question. [[concepts/replay-idempotency-and-effect-semantics]] explains why replay and verified physical or remote effects need separate evidence.
 
+
+[[projects/genfeed-content-agent]] provides a documented personal content-automation interface with publishing approval, while [[projects/sandbase-agent-harness]] describes a vendor runtime with sandbox and approval surfaces. Neither supplies an independently tested cross-interface enforcement guarantee; compare [[techniques/secure-agent-operations]].
 
 [[projects/browser4]]'s November 21 release describes multi-turn browser-context carry with real-browser end-to-end tests still pending ([release](https://github.com/platonai/Browser4/releases/tag/v4.16.9)). [[projects/ovis]] separately documents agent-specific browser-tool selection for desktop workflows ([release](https://github.com/devswha/ovis/releases/tag/v0.5.8)). Preserving context and authorizing browser actions are independent concerns: a correct follow-up may still be unauthorized, and an authorized action may use stale page observations. Test them separately before combining the mechanisms.

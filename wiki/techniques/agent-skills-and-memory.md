@@ -5,7 +5,7 @@ title: "Agent skills and memory"
 summary: "Agent memory spans retrieved history, reusable procedures, learned file operations and deletion controls; admission and transfer bound the evidence."
 type: technique
 created: 2026-11-02
-updated: 2026-11-21
+updated: 2026-11-23
 related: [projects/coding-agent-memory-post-training-ii, projects/skillcompiler, projects/karma, projects/filingloop, projects/context-as-infrastructure, projects/clingex, projects/security-impact-of-coding-agent-memory-files, concepts/improvement-lives-in-external-state, concepts/capability-locus, projects/just-in-time-agent-memory, projects/lifelong-materials-agent-memory]
 sources:
   - https://arxiv.org/abs/2611.14009
@@ -123,6 +123,9 @@ A stored skill can be correctly admitted and later become misleading because its
 The proposed maintenance mechanism derives checks from successful executions, replays them without model calls in the new environment, verifies whether observed differences contradict saved assumptions, repairs affected instructions and validates the result. Rebuild is a fallback when local repair cannot be established. The authors report up to 67 percentage points of recovered accuracy and 37% fewer steps in selected settings; their tax-form cost model requires roughly 21–42 subsequent uses to amortize maintenance. These are controlled, author-reported effects, not proof that every semantic change can be detected by replay.
 
 This adds an **invalidation gate** after the existing admission gate: the procedure's environment-specific assumptions, version dependencies, replay checks, and repair evidence should travel with the skill. Cache-heavy procedures may be cheaper before drift but less robust afterward; procedural discovery can help when identifiers change, but does not protect a workflow whose own discovery assumptions are stale. Compare no skill, stale skill, maintained skill and rebuild under the same changed environment; score false invalidations and independent outcomes rather than check replay alone.
+
+
+Semantic memory objects have different failure modes: instructions require authority checks, retrieved outputs require source and freshness checks, and task artifacts require integrity and acceptance checks. [[projects/coding-agent-working-memory-evaluation]] ([study](https://arxiv.org/abs/2608.31057)) analyzes 55 archived coding trajectories and compares object-aware compression and retrieval. Its reported held-out transfer limits caution against optimizing solely for compression ratio: distinguish what was stored, what actually reached the model, management overhead and independently accepted outcomes. This is author-reported evidence, not a measured gain from integrating the strategy with [[projects/planning-with-files]] or other stores. A controlled replay should hold task inputs and evaluation constant while varying semantic retention and measuring stale or omitted evidence.
 
 ## Lineage recall under concurrent editing
 

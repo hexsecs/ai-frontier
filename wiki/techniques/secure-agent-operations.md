@@ -5,7 +5,7 @@ title: "Secure agent operations"
 summary: "How this corpus runs agents under security constraint — policy gateways, structural write channels, provenance-gated detection — and what was measured."
 type: technique
 created: 2026-11-02
-updated: 2026-11-16
+updated: 2026-11-25
 related: [projects/aisoc-v21, projects/angler, projects/security-impact-of-coding-agent-memory-files, projects/openbot, projects/github-contribution-check, projects/pre-crime-for-agents, concepts/structural-constraint-over-instruction, concepts/scoped-assurance]
 sources:
   - url: https://github.com/CopilotKit/openbot
@@ -22,6 +22,7 @@ sources:
   - https://raw.githubusercontent.com/thunderbird/thunderbolt/2f81a4d9897cc92839632137fc7d38fee75ba240/CHANGELOG.md
   - https://arxiv.org/html/2606.14027
   - https://github.com/vercel-labs/agent-browser/releases/tag/v0.42.0
+  - https://github.com/sandbaseai/sandbase-harness
 ---
 
 # Secure agent operations
@@ -104,6 +105,9 @@ Measurements are attributed to their authors or vendors at the point of use. The
 ## Operational boundaries — November 2026
 
 **Publication authority is a separate capability from local testing.** [[projects/extensiondev-mcp]] exposes local extension build/test tools independently from authenticated platform submission, with `--no-ship` refusal and owner approval for real store submission ([implementation](https://github.com/extensiondev/mcp)). This is a concrete domain-specific instance of a structural gate, not independent proof of its security. [[projects/openhands-agent-canvas]]'s 1.42 release separately restores webhook-source validation and explicit Git-provider selection ([release](https://github.com/OpenHands/OpenHands/releases/tag/v1.42.0)); a correctly scoped tool can still be invoked by the wrong trigger or against the wrong repository if ingress identity is not verified. These controls address distinct stages, so neither alone establishes end-to-end authorization. Test spoofed ingress and forbidden publication independently, then together.
+
+
+**Publication gates must be tested across all tool surfaces.** [[projects/genfeed-content-agent]] ([repository](https://github.com/genfeedai/genfeed.ai)) documents an MCP/CLI/REST-driven content workflow in which the standard agent preset creates drafts and schedules work but requires human publishing approval. [[projects/sandbase-agent-harness]] ([implementation README](https://github.com/sandbaseai/sandbase-harness)) documents MCP permission and approval gates, resumable event streams, SQLite metadata and multiple sandbox backends. A local-process backend and container-backed execution should not be assumed to provide equivalent isolation; test each configured boundary. Release-specific behavior remains unverified. These are documented product designs, not evidence of non-bypassable policy. A meaningful evaluation attempts the same denied operation through every exposed tool route and checks the destination state after restarts. The two systems are not independently measured instances of one shared security mechanism.
 
 ## Agent-specific browser-tool assignment
 
