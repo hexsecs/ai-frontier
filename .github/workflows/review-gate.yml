@@ -13,7 +13,7 @@ on:
 permissions:
   contents: read
   pull-requests: read
-  statuses: write
+  checks: write
 jobs:
   discover:
     runs-on: ubuntu-latest
@@ -63,14 +63,15 @@ jobs:
         run: |
           set -euo pipefail
           [[ "$PR" =~ ^[0-9]+$ ]]
+          source scripts/review_check_run.sh
           if [[ "$EVENT_HEAD" =~ ^[0-9a-f]{40}$ ]]; then
-            gh api "repos/$GITHUB_REPOSITORY/statuses/$EVENT_HEAD" -f state=pending -f context=review-policy >/dev/null
+            set_check "$EVENT_HEAD" in_progress
           fi
           gh pr view "$PR" --repo "$GITHUB_REPOSITORY" --json headRefOid,baseRefOid,baseRefName,mergeStateStatus,state > /tmp/pr.json
           jq -e '.baseRefName == "main" and .state == "OPEN"' /tmp/pr.json >/dev/null
           HEAD=$(jq -r .headRefOid /tmp/pr.json)
-          gh api "repos/$GITHUB_REPOSITORY/statuses/$HEAD" -f state=pending -f context=review-policy >/dev/null
-          trap 'gh api "repos/$GITHUB_REPOSITORY/statuses/$HEAD" -f state=failure -f context=review-policy >/dev/null' EXIT
+          trap 'set_check "$HEAD" completed failure' EXIT
+          set_check "$HEAD" in_progress
           evaluate() {
           gh pr view "$PR" --repo "$GITHUB_REPOSITORY" --json headRefOid,baseRefOid,baseRefName,mergeStateStatus,state > /tmp/pr.json
           jq -e --arg head "$HEAD" '.headRefOid == $head and .baseRefName == "main" and .state == "OPEN"' /tmp/pr.json >/dev/null
@@ -84,5 +85,5 @@ jobs:
           evaluate
           evaluate
           test "$(gh pr view "$PR" --repo "$GITHUB_REPOSITORY" --json headRefOid --jq .headRefOid)" = "$HEAD"
-          gh api "repos/$GITHUB_REPOSITORY/statuses/$HEAD" -f state=success -f context=review-policy >/dev/null
+          set_check "$HEAD" completed success
           trap - EXIT
