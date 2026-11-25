@@ -1,0 +1,43 @@
+name: Review gate
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+  pull_request_review:
+    types: [submitted, edited, dismissed]
+  workflow_dispatch:
+    inputs:
+      pr:
+        description: Pull request number (rerun after thread resolution)
+        required: true
+permissions:
+  contents: read
+  pull-requests: read
+  statuses: write
+jobs:
+  review-gate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout trusted base policy
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: false
+      - name: Evaluate current review
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR: ${{ github.event.pull_request.number || inputs.pr }}
+        run: |
+          set -euo pipefail
+          [[ "$PR" =~ ^[0-9]+$ ]]
+          gh pr view "$PR" --repo "$GITHUB_REPOSITORY" --json headRefOid,baseRefOid,mergeStateStatus > /tmp/pr.json
+          HEAD=$(jq -r .headRefOid /tmp/pr.json)
+          gh api "repos/$GITHUB_REPOSITORY/statuses/$HEAD" -f state=pending -f context=review-policy >/dev/null
+          trap 'gh api "repos/$GITHUB_REPOSITORY/statuses/$HEAD" -f state=failure -f context=review-policy >/dev/null' EXIT
+          gh api graphql --paginate --slurp -f query='query($owner:String!,$repo:String!,$pr:Int!,$endCursor:String){repository(owner:$owner,name:$repo){pullRequest(number:$pr){reviews(first:100,after:$endCursor){nodes{author{login} state body commit{oid}} pageInfo{hasNextPage endCursor}}}}}' -f owner="${GITHUB_REPOSITORY%/*}" -f repo="${GITHUB_REPOSITORY#*/}" -F pr="$PR" > /tmp/reviews.json
+          gh api graphql --paginate --slurp -f query='query($owner:String!,$repo:String!,$pr:Int!,$endCursor:String){repository(owner:$owner,name:$repo){pullRequest(number:$pr){reviewThreads(first:100,after:$endCursor){nodes{isResolved} pageInfo{hasNextPage endCursor}}}}}' -f owner="${GITHUB_REPOSITORY%/*}" -f repo="${GITHUB_REPOSITORY#*/}" -F pr="$PR" > /tmp/threads.json
+          MAIN=$(gh api "repos/$GITHUB_REPOSITORY/git/ref/heads/main" --jq .object.sha)
+          jq -n --slurpfile pr /tmp/pr.json --slurpfile r /tmp/reviews.json --slurpfile t /tmp/threads.json --arg main "$MAIN" '{pr:$pr[0],reviews:[$r[0][].data.repository.pullRequest.reviews.nodes[]],threads:[$t[0][].data.repository.pullRequest.reviewThreads.nodes[]],main_sha:$main}' > /tmp/gate.json
+          python scripts/check_review_gate.py /tmp/gate.json
+          test "$(gh pr view "$PR" --repo "$GITHUB_REPOSITORY" --json headRefOid --jq .headRefOid)" = "$HEAD"
+          gh api "repos/$GITHUB_REPOSITORY/statuses/$HEAD" -f state=success -f context=review-policy >/dev/null
+          trap - EXIT
