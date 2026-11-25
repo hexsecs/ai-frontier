@@ -55,3 +55,7 @@ The KB is the knowledge. Write articles about systems, mechanisms, evidence, com
 For each finding, resolve its own canonical entity by source identity; a comparison link alone is insufficient. Record in the PR the general concept, specific mechanism, synthesis pages reviewed and disposition: update-existing, create-new or no-change with a specific evidence-based reason. Project-only archiving is not full wiki ingestion. Verify declared substantive synthesis changes against the diff and report unresolved source identity/access separately.
 
 Concept pages may teach sourced foundational distinctions as well as bounded cross-project phenomena. Definitions require authoritative support; empirical claims about benefit, transfer or prevalence retain the multiple-source and counterevidence requirements. Prefer substantive updates to existing syntheses over duplicate general overviews. A dated architecture diagram or frontier-signal paragraph does not replace living canonical integration.
+
+## Executable skill routing
+
+For daily briefings read `skills/daily-briefing/SKILL.md` and follow its explicit subordinate skill references under `skills/`. Use `skills/arxiv-reading/SKILL.md` for arXiv papers. These versioned instructions complement, not supersede, this policy and `automation/briefing-policy.yaml`. All repository writes remain subject to review and required validation.
