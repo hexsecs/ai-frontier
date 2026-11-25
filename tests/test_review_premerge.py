@@ -29,3 +29,14 @@ class CheckCoverageTests(unittest.TestCase):
         for bad in [runs[:1], [runs[0],dict(runs[1],conclusion="cancelled")], [runs[0],dict(runs[1],app={"id":2})], [runs[0],dict(runs[1],head_sha="b"*40)]]:
             with self.assertRaises(RuntimeError):
                 verify_checks(req,bad,h)
+
+class RulesetTests(unittest.TestCase):
+    def test_ruleset_only(self):
+        from scripts.premerge_authorize import required_contexts
+        rule={"type":"required_status_checks","parameters":{"strict_required_status_checks_policy":True,"required_status_checks":[{"context":"lint","integration_id":15368}]}}
+        self.assertEqual(required_contexts([rule]),[("lint",15368)])
+        with self.assertRaises(RuntimeError):
+            required_contexts([])
+        rule["parameters"]["strict_required_status_checks_policy"]=False
+        with self.assertRaises(RuntimeError):
+            required_contexts([rule])
