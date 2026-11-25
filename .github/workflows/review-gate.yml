@@ -1,6 +1,6 @@
 name: Review gate
 on:
-  pull_request:
+  pull_request_target:
     types: [opened, synchronize, reopened, ready_for_review]
   pull_request_review:
     types: [submitted, edited, dismissed]
@@ -37,6 +37,7 @@ jobs:
           gh api graphql --paginate --slurp -f query='query($owner:String!,$repo:String!,$pr:Int!,$endCursor:String){repository(owner:$owner,name:$repo){pullRequest(number:$pr){reviewThreads(first:100,after:$endCursor){nodes{isResolved} pageInfo{hasNextPage endCursor}}}}}' -f owner="${GITHUB_REPOSITORY%/*}" -f repo="${GITHUB_REPOSITORY#*/}" -F pr="$PR" > /tmp/threads.json
           MAIN=$(gh api "repos/$GITHUB_REPOSITORY/git/ref/heads/main" --jq .object.sha)
           jq -n --slurpfile pr /tmp/pr.json --slurpfile r /tmp/reviews.json --slurpfile t /tmp/threads.json --arg main "$MAIN" '{pr:$pr[0],reviews:[$r[0][].data.repository.pullRequest.reviews.nodes[]],threads:[$t[0][].data.repository.pullRequest.reviewThreads.nodes[]],main_sha:$main}' > /tmp/gate.json
+          test -f scripts/check_review_gate.py || { echo 'Trusted gate not installed'; exit 1; }
           python scripts/check_review_gate.py /tmp/gate.json
           test "$(gh pr view "$PR" --repo "$GITHUB_REPOSITORY" --json headRefOid --jq .headRefOid)" = "$HEAD"
           gh api "repos/$GITHUB_REPOSITORY/statuses/$HEAD" -f state=success -f context=review-policy >/dev/null
