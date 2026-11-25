@@ -20,7 +20,7 @@ ASPIRE treats skill code refinement as continual learning and parallel practice 
 
 ## Evidence limits
 
-Author-reported benchmark result; no independent replication or proof of safe physical operation. Full evaluation protocol was not inspected.
+Author-reported benchmark result; no independent replication is cited. The result does not establish safe physical operation. Full evaluation protocol was not inspected.
 
 ## Proposed experiment
 

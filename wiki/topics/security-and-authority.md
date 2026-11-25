@@ -45,3 +45,5 @@ Which actions may an agent take, where is that boundary enforced, and what happe
 [[projects/genfeed-content-agent]] documents approval before content publishing, whereas [[projects/sandbase-agent-harness]] advertises managed approvals and sandboxing without an independently inspected release-specific enforcement path. [[techniques/secure-agent-operations]] explains why alternate tool routes and observed destination effects must be tested before calling either boundary secure.
 
 [[projects/ovis]] exposes per-agent browser-tool selection, a tool-availability control whose bypass resistance remains unmeasured. [[techniques/secure-agent-operations]] distinguishes that setting from enforced resource/action scope.
+
+[[projects/browsentic]] reuses an authenticated browser through agent CLI and optional MCP routes. Session reuse does not establish authorization for each action; compare [[techniques/secure-agent-operations]].
