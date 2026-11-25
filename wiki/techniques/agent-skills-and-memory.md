@@ -5,7 +5,7 @@ title: "Agent skills and memory"
 summary: "Agent memory spans retrieved history, reusable procedures, learned file operations and deletion controls; admission and transfer bound the evidence."
 type: technique
 created: 2026-11-02
-updated: 2026-11-23
+updated: 2026-11-25
 related: [projects/coding-agent-memory-post-training-ii, projects/skillcompiler, projects/karma, projects/filingloop, projects/context-as-infrastructure, projects/clingex, projects/security-impact-of-coding-agent-memory-files, concepts/improvement-lives-in-external-state, concepts/capability-locus, projects/just-in-time-agent-memory, projects/lifelong-materials-agent-memory]
 sources:
   - https://arxiv.org/abs/2611.14009
@@ -130,3 +130,7 @@ Semantic memory objects have different failure modes: instructions require autho
 ## Lineage recall under concurrent editing
 
 [[projects/deja-vu]]'s [0.25.0 release](https://github.com/vshulcz/deja-vu/releases/tag/v0.25.0) describes compact lineage manifests, fast recall, subagent parent briefs and parallel edit radar. This is a distinct problem from stale *skill* validity: retrieved repository history may accurately describe a past edit while no longer representing the current branch. A concurrent edit detector can identify overlapping mutations without resolving their semantic compatibility. [[concepts/contracts-and-compositional-correctness]] requires integration acceptance beyond conflict detection. The vendor-reported recall latency and manifest size do not measure correctness. A controlled test should plant conflicting and nonconflicting edits, vary recall availability, and score false conflict alerts, stale conclusions and independently passing integrated patches.
+
+## Executable sensorimotor skill retention
+
+[[projects/aspire-robotics]] ([repository](https://github.com/NVlabs/ASPIRE)) refines executable sensorimotor skills rather than model weights. A stored skill is an independently inspectable improvement artifact, but benchmark success does not establish transfer or regression freedom. Compare frozen and refined skill repositories under held-out simulation tasks, tracking cost and failed previously solved tasks.

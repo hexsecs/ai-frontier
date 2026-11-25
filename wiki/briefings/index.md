@@ -44,3 +44,5 @@ Historical coverage is limited by the available original records. October 30–N
 - [[briefings/2026/11/2026-11-23]] — Five findings on atomic agent state, semantic memory, runtime authority, tool-message repair and content approval.
 
 - [[briefings/2026/11/2026-11-22|November 22, 2026]] — Browser continuity, coding memory, runtime recovery, SDK lifecycle events and desktop browser tools.
+
+- [[briefings/2026/11/2026-11-24]] — Scientific orchestration, browser integration and robot skill refinement.
