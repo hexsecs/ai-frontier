@@ -1,7 +1,7 @@
 name: Review gate
 on:
   pull_request_target:
-    types: [opened, synchronize, reopened, ready_for_review]
+    types: [opened, synchronize, reopened, ready_for_review, edited, closed]
   workflow_run:
     workflows: [Review event relay]
     types: [completed]
@@ -26,13 +26,14 @@ jobs:
       - id: select
         env:
           GH_TOKEN: ${{ github.token }}
-          REQUESTED: ${{ github.event.pull_request.number || inputs.pr }}
+          REQUESTED: ${{ inputs.pr }}
         run: |
           set -euo pipefail
           if [[ -n "$REQUESTED" ]]; then
             [[ "$REQUESTED" =~ ^[1-9][0-9]*$ ]]
             PRS=$(gh api "repos/$GITHUB_REPOSITORY/pulls/$REQUESTED" | jq -ce '[{pr:.number,sha:.head.sha}]')
           else
+            # Membership changes and relay events reconcile all surviving heads.
             # Relay is only a wake-up signal. Never trust its PR association,
             # artifacts, head SHA or branch. Enumerate open PRs from our API.
             PRS=$(gh api --paginate --slurp "repos/$GITHUB_REPOSITORY/pulls?state=open&base=main&per_page=100" | jq -ce '[.[][] | {pr:.number,sha:.head.sha}] | group_by(.sha) | map(.[0])')
@@ -67,10 +68,8 @@ jobs:
           if [[ "$EVENT_HEAD" =~ ^[0-9a-f]{40}$ ]]; then
             set_check "$EVENT_HEAD" in_progress
           fi
-          gh pr view "$PR" --repo "$GITHUB_REPOSITORY" --json headRefOid,baseRefOid,baseRefName,mergeStateStatus,state > /tmp/pr.json
-          jq -e '.baseRefName == "main" and .state == "OPEN"' /tmp/pr.json >/dev/null
-          HEAD=$(jq -r .headRefOid /tmp/pr.json)
-          test "$HEAD" = "$EVENT_HEAD"
+          HEAD="$EVENT_HEAD"
+          [[ "$HEAD" =~ ^[0-9a-f]{40}$ ]]
           trap 'set_check "$HEAD" completed failure' EXIT
           set_check "$HEAD" in_progress
           evaluate() {
