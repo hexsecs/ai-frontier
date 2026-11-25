@@ -21,7 +21,11 @@ class ReviewGateTests(unittest.TestCase):
         pr = dict(headRefOid=head, baseRefOid="base", mergeStateStatus="CLEAN")
         comment = dict(author={"login":"chatgpt-codex-connector","__typename":"Bot"}, body="<!-- codex-review-receipt:v1 -->\n**Reviewed commit:** `"+head+"`")
         self.assertIsNone(check(pr,[],[],"base",[comment]))
-        self.assertIsNotNone(check(pr,[],[],"base",[dict(comment,body=comment["body"].replace(head,head[:10]))]))
+        short = dict(comment,body=comment["body"].replace(head,head[:10]))
+        self.assertIsNotNone(check(pr,[],[],"base",[short]))
+        self.assertIsNone(check(pr,[],[],"base",[short],lambda ref: head))
+        self.assertIsNotNone(check(pr,[],[],"base",[short],lambda ref: None))
+        self.assertIsNotNone(check(pr,[],[],"base",[short],lambda ref: "b"*40))
         self.assertIsNotNone(check(pr,[],[],"base",[dict(comment,author={"login":"chatgpt-codex-connector","__typename":"User"})]))
 
 if __name__ == "__main__":
