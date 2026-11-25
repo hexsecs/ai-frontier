@@ -172,3 +172,8 @@ This is the legacy canonical file-location index. Some entries are now classifie
 - [[projects/sandbase-agent-harness]] — Vendor-described managed agent runtime and approval surfaces.
 - [[projects/novelmaker-agent-tool-message-repair]] — Repair incomplete tool transcripts without overwriting stored history.
 - [[projects/genfeed-content-agent]] — Approval-first self-hosted content automation via MCP and queues.
+
+- [[projects/deja-vu]] — Coding-agent lineage recall, subagent briefs and concurrent edit radar.
+- [[projects/holon]] — Recovery-gated dispatch and bounded runtime queues.
+- [[projects/copilot-sdk]] — Preview event-order fix and compaction attribution.
+- [[projects/ovis]] — Agent-specific browser tool assignment in remote desktop workflows.

@@ -45,3 +45,5 @@ Use [[concepts/scoped-assurance]] to bound recovery claims. The crash-injection 
 
 
 [[projects/microsoft-agent-framework-python-123]] distinguishes atomic internal writes and execution-scoped completion from externally verified effects; [[projects/novelmaker-agent-tool-message-repair]] preserves historical tool messages while repairing malformed outbound requests. These mechanisms differ from replaying a remote effect; see [[techniques/durable-agent-execution]].
+
+[[projects/holon]] and [[projects/copilot-sdk]] illustrate separate runtime concerns: recovery-before-dispatch and parent/subagent idle-event ordering. Neither release proves remote-effect reconciliation; [[techniques/durable-agent-execution]] explains the different failure windows.

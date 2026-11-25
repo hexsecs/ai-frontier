@@ -42,3 +42,5 @@ The retention section of [[techniques/agent-skills-and-memory]] distinguishes re
 
 
 [[projects/coding-agent-working-memory-evaluation]] compares object-aware compression and retrieval, finding that nominally equal token budgets do not ensure equal delivered context or task outcomes. See [[techniques/agent-skills-and-memory]] for the evidence and held-out evaluation boundary.
+
+[[projects/deja-vu]] documents lineage recall and parent briefs for coding agents. Unlike [[projects/when-agent-skills-go-stale]]'s tested skill invalidation, a remembered code change may be historically correct but stale for the current branch. See [[techniques/agent-skills-and-memory]] for a proposed conflict-and-recall evaluation.
