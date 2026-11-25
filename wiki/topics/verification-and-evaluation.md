@@ -48,3 +48,5 @@ What establishes task success, how reliable is the grader, and when can scores b
 
 
 [[benchmarks/vthinker-vtbench-dataset-correction]] illustrates why public dataset versions must match reported evaluation artifacts before claiming reproducibility. See [[techniques/evaluation-and-simulation]].
+
+[[projects/the-agentic-scientist]] coordinates staged research with rubric checks; evaluate the scientific conclusions independently of workflow compliance.
