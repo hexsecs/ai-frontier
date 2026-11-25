@@ -9,6 +9,20 @@ from scripts.check_review_gate import check, resolve_commit
 def gh(*args):
     return json.loads(subprocess.check_output(["gh", *args], text=True))
 
+def verify_checks(requirements, runs, head):
+    if not requirements or not {"lint","mining-audit"}.issubset({n for n,_ in requirements}):
+        raise RuntimeError("Required validation contexts missing")
+    for name, app in set(requirements):
+        if not isinstance(app,int) or app <= 0:
+            raise RuntimeError("Unbound required check source")
+        matching = [r for r in runs if r["name"] == name and r["app"]["id"] == app
+                    and r["head_sha"] == head]
+        if not matching:
+            raise RuntimeError("Missing required check: "+name)
+        latest = max(matching,key=lambda r:r["id"])
+        if latest["status"] != "completed" or latest["conclusion"] != "success":
+            raise RuntimeError("Nonpassing required check: "+name)
+
 def snapshot(repo, number):
     owner, name = repo.split("/")
     pr = gh("pr", "view", str(number), "--repo", repo, "--json",
@@ -31,10 +45,22 @@ def snapshot(repo, number):
     error = check(pr, reviews, threads, main, comments, resolve_commit)
     if error:
         raise RuntimeError(error)
-    # Native required checks must also be green. gh exits nonzero on pending,
-    # failed or unavailable required checks.
-    subprocess.run(["gh","pr","checks",str(number),"--repo",repo,"--required"],
-                   check=True)
+    # Require explicit source-bound branch protection, plus applicable rules.
+    protection = gh("api", f"repos/{repo}/branches/main/protection/required_status_checks")
+    rules = gh("api", f"repos/{repo}/rules/branches/main")
+    requirements = [(c["context"], c["app_id"]) for c in protection["checks"]]
+    if not protection["strict"] or set(protection["contexts"]) != {n for n,_ in requirements}:
+        raise RuntimeError("Strict source-bound protection required")
+    for rule in rules:
+        if rule["type"] == "required_status_checks":
+            if not rule["parameters"]["strict_required_status_checks_policy"]:
+                raise RuntimeError("Non-strict ruleset")
+            requirements.extend((c["context"],c.get("integration_id")) for c in
+                                rule["parameters"]["required_status_checks"])
+    pages = gh("api","--paginate","--slurp",
+               f"repos/{repo}/commits/{pr['headRefOid']}/check-runs?filter=all&per_page=100")
+    verify_checks(requirements, [c for page in pages for c in page["check_runs"]],
+                  pr["headRefOid"])
     return pr["headRefOid"], main
 
 def authorize(repo, number, expected, read=snapshot):
