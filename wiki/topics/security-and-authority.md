@@ -40,3 +40,6 @@ Which actions may an agent take, where is that boundary enforced, and what happe
 
 
 [[projects/extensiondev-mcp]] separates extension build/test tools from owner-approved store submission, while [[projects/openhands-agent-canvas]] documents webhook-source validation and Git-provider identity selection. These are different authorization boundaries; see [[techniques/secure-agent-operations]] for evidence limits and proposed tests.
+
+
+[[projects/ovis]] exposes per-agent browser-tool selection, a tool-availability control whose bypass resistance remains unmeasured. [[techniques/secure-agent-operations]] distinguishes that setting from enforced resource/action scope.

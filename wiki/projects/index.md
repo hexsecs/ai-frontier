@@ -166,3 +166,8 @@ This is the legacy canonical file-location index. Some entries are now classifie
 - [protoAgent Project Board](./protoagent-project-board.md) — Beads-backed task graph, ACP worktree delegation and PR reconciliation.
 - [extension.dev MCP](./extensiondev-mcp.md) — Local browser-extension tools separated from owner-approved publication.
 - [openJiuwen Agent Core 0.1.20](./openjiuwen-agent-core-020.md) — Scheduled team review, cancellation fixes and restart recovery.
+
+- [[projects/deja-vu]] — Coding-agent lineage recall, subagent briefs and concurrent edit radar.
+- [[projects/holon]] — Recovery-gated dispatch and bounded runtime queues.
+- [[projects/copilot-sdk]] — Preview event-order fix and compaction attribution.
+- [[projects/ovis]] — Agent-specific browser tool assignment in remote desktop workflows.

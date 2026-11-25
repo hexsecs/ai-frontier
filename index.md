@@ -56,3 +56,8 @@ Research priorities and selection rules live in [`automation/briefing-policy.yam
 
 
 - [November 20, 2026 briefing](wiki/briefings/2026/11/2026-11-20.md) — Authenticated triggers, durable task boards, scoped publication, cancellation and benchmark artifact integrity.
+
+
+## November 22 research
+
+- [[briefings/2026/11/2026-11-22]] — Five primary release findings on browser continuity, coding memory, recovery barriers, event ordering and desktop tool assignment.
