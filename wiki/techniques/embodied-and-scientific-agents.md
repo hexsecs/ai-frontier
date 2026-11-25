@@ -5,7 +5,7 @@ title: "Closed-loop instrument and simulation execution"
 summary: "Agents acting on instruments and physical systems, where feedback arrives as measurement, actions carry real cost, and evidence tiers bound every claim."
 type: technique
 created: 2026-11-02
-updated: 2026-11-19
+updated: 2026-11-25
 related: [projects/auctopus, projects/hera, projects/bioagent, projects/molrsi, projects/tinyastral, concepts/validation-tier-gap, concepts/capability-locus, concepts/improvement-lives-in-external-state]
 sources:
   - url: https://arxiv.org/abs/2610.40589
@@ -96,3 +96,6 @@ This distinguishes **controller time scale** from **planner time scale**. The mo
 
 The calibration and local force limits are part of the trusted control boundary. A self-terminating primitive can still terminate on a misinterpreted contact event, and an accurate physical summary does not establish global task safety. Compare raw telemetry, physical summaries and locally regulated primitives under identical held-out contact conditions, logging force-limit violations, uncertainty calibration, latency and task completion. No combined experiment is reported.
 
+## Research-stage verification
+
+[[projects/the-agentic-scientist]] ([paper](https://arxiv.org/abs/2610.18933)) coordinates parallel coding agents through staged research and rubric verification. A rubric checks workflow artifacts, not necessarily scientific truth; score baseline fairness, reproducibility and conclusions independently. The accepted co-authored paper is a single reported example, not a general reliability estimate.

@@ -112,3 +112,7 @@ Measurements are attributed to their authors or vendors at the point of use. The
 ## Agent-specific browser-tool assignment
 
 [[projects/ovis]]'s [November 21 desktop release](https://github.com/devswha/ovis/releases/tag/v0.5.8) describes per-agent browser-tool selection and configurable link routing. This adds a practical **tool availability** boundary, but does not establish resource-level containment: an agent might reach browser effects through another allowed tool or a previously authenticated session. Compare [[projects/extensiondev-mcp]]'s explicit publishing gate and [[concepts/delegated-authority-and-revocation]]'s grantor/action/lifetime distinctions. A proposed two-agent test should deny browser access to one agent and probe alternate routes on a disposable profile. No bypass rate or security audit is reported.
+
+## Authenticated browser reuse
+
+[[projects/browsentic]] ([repository](https://github.com/imshaikot/browsentic)) connects local agent CLIs and optional MCP to an existing signed-in browser. Reuse of session identity is distinct from authorization of each action: test direct and alternate tool routes and observe external effects in a disposable browser profile. No enforcement audit is reported.

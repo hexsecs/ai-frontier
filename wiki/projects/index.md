@@ -177,3 +177,7 @@ This is the legacy canonical file-location index. Some entries are now classifie
 - [[projects/holon]] — Recovery-gated dispatch and bounded runtime queues.
 - [[projects/copilot-sdk]] — Preview event-order fix and compaction attribution.
 - [[projects/ovis]] — Agent-specific browser tool assignment in remote desktop workflows.
+
+- [[projects/the-agentic-scientist]] — Meta-controller coordinates parallel coding agents across scientific research stages with rubric checks.
+- [[projects/browsentic]] — Local browser extension and agent CLI integration exposing a signed-in browser through optional MCP.
+- [[projects/aspire-robotics]] — Coding agents refine executable sensorimotor skills, storing improvements in a skill repository.
