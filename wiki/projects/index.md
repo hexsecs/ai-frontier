@@ -185,3 +185,4 @@ This is the legacy canonical file-location index. Some entries are now classifie
 - [[projects/engineagent|EngineAgent]] — Hardware-aware inference-engine development.
 - [[projects/dr-rtl|Dr. RTL]] — Tool-grounded hardware optimization.
 - [[projects/coding-agent-instruction-adherence|Coding-agent instruction adherence]] — Empirical measurement of context-file compliance.
+- [[projects/tiga|TIGA]] — Constrained taxonomy induction.
