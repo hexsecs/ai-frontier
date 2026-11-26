@@ -4,7 +4,7 @@ title: "EngineAgent"
 summary: "Hardware-aware inference-engine development."
 type: project
 created: 2026-11-25
-updated: 2026-11-25
+updated: 2026-11-26
 depth: brief
 sources:
   - https://arxiv.org/abs/2611.14356v1
@@ -20,7 +20,7 @@ A hierarchical index captures dependencies across inference layers. A builder an
 
 ## Limits
 
-The sample covers three models and four engine/backend combinations; transfer to unrelated embedded systems is unproven. Evidence is author-reported and abstract-level; no independent replication is cited.
+The sample covers three models and four engine/backend combinations; transfer to unrelated embedded systems is unproven. Section 5.2 caps each run at five hours, and Table 3 compares the harness with baselines using matched model APIs. Results are author-reported; no independent replication is cited.
 
 ## Proposed experiment
 

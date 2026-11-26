@@ -4,7 +4,7 @@ title: "Dr. RTL"
 summary: "Tool-grounded hardware optimization."
 type: project
 created: 2026-11-25
-updated: 2026-11-25
+updated: 2026-11-26
 depth: brief
 sources:
   - https://arxiv.org/abs/2611.13713v1
@@ -20,7 +20,7 @@ Agents analyze timing paths, rewrite RTL and evaluate implementation results whi
 
 ## Limits
 
-Timing and functional criteria do not establish side-channel or fault resistance. Evidence is author-reported and abstract-level; no independent replication is cited.
+Timing and functional criteria do not establish side-channel or fault resistance. Section 4.4 and Table 2 report a separate eight-design synthesis experiment. The authors report 10.6% lower mean area and 9.1% lower mean delay than agent-tuned Yosys+ABC in that experiment. Results are author-reported; no independent replication is cited.
 
 ## Proposed experiment
 
