@@ -1,18 +1,10 @@
 name: Briefing knowledge mining gate
 on:
   pull_request:
-    paths:
-      - 'wiki/**'
-      - 'scripts/check_briefing_mining.py'
-      - 'scripts/test_briefing_mining.py'
-      - 'AGENTS.md'
-      - 'automation/briefing-policy.yaml'
   push:
     branches: [main]
-    paths:
-      - 'wiki/**'
-      - 'scripts/check_briefing_mining.py'
-      - 'scripts/test_briefing_mining.py'
+permissions:
+  contents: read
 jobs:
   mining-audit:
     runs-on: ubuntu-latest
