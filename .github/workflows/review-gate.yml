@@ -22,6 +22,7 @@ jobs:
     permissions:
       contents: read
       pull-requests: read
+      checks: write
     outputs:
       prs: ${{ steps.select.outputs.prs }}
     steps:
@@ -29,8 +30,14 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           REQUESTED: ${{ inputs.pr }}
+          KNOWN_HEAD: ${{ github.event.pull_request.head.sha }}
         run: |
           set -euo pipefail
+          # Invalidate a known target-event head before fallible discovery.
+          # Other event types still require discovery; cached checks are advisory.
+          if [[ "$KNOWN_HEAD" =~ ^[0-9a-f]{40}$ ]]; then
+            gh api --method POST "repos/$GITHUB_REPOSITORY/check-runs" -f name=review-policy -f head_sha="$KNOWN_HEAD" -f status=in_progress >/dev/null
+          fi
           if [[ -n "$REQUESTED" ]]; then
             [[ "$REQUESTED" =~ ^[1-9][0-9]*$ ]]
             PRS=$(gh api "repos/$GITHUB_REPOSITORY/pulls/$REQUESTED" | jq -ce '[{pr:.number,sha:.head.sha}]')
@@ -67,9 +74,6 @@ jobs:
           set -euo pipefail
           [[ "$PR" =~ ^[0-9]+$ ]]
           source scripts/review_check_run.sh
-          if [[ "$EVENT_HEAD" =~ ^[0-9a-f]{40}$ ]]; then
-            set_check "$EVENT_HEAD" in_progress
-          fi
           HEAD="$EVENT_HEAD"
           [[ "$HEAD" =~ ^[0-9a-f]{40}$ ]]
           trap 'set_check "$HEAD" completed failure' EXIT
