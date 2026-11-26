@@ -73,3 +73,30 @@ class RulesetTests(unittest.TestCase):
         with patch("scripts.premerge_authorize.gh",side_effect=api), patch("scripts.premerge_authorize.check",return_value=None):
             with self.assertRaisesRegex(RuntimeError,"Missing required check: extra"):
                 snapshot("o/r",1)
+
+
+class ControlledMergeTests(unittest.TestCase):
+    def test_merge_requires_fresh_authorization(self):
+        from unittest.mock import Mock
+        from scripts.premerge_authorize import controlled_merge
+        h = "a"*40
+        request = Mock(return_value={"merged":True})
+        read = Mock(side_effect=[(h,"base"),OSError("API unavailable")])
+        with self.assertRaises(OSError):
+            controlled_merge("o/r",1,h,read=read,request=request)
+        request.assert_not_called()
+        read = Mock(side_effect=[(h,"base"),("b"*40,"base")])
+        with self.assertRaises(RuntimeError):
+            controlled_merge("o/r",1,h,read=read,request=request)
+        request.assert_not_called()
+        read = Mock(return_value=(h,"base"))
+        controlled_merge("o/r",1,h,read=read,request=request)
+        self.assertEqual(read.call_count,2)
+        request.assert_called_once_with("api","--method","PUT","repos/o/r/pulls/1/merge",
+                                        "-f","sha="+h,"-f","merge_method=squash")
+    def test_merge_rejection(self):
+        from scripts.premerge_authorize import controlled_merge
+        h = "a"*40
+        with self.assertRaises(RuntimeError):
+            controlled_merge("o/r",1,h,read=lambda *_:(h,"base"),
+                             request=lambda *_:{"merged":False})
