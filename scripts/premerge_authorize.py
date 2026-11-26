@@ -89,6 +89,19 @@ def authorize(repo, number, expected, read=snapshot):
         raise RuntimeError("Head or base changed during authorization")
     return second
 
+def controlled_merge(repo, number, expected, *, read=snapshot, request=gh):
+    """Expected-head merge primitive; caller must establish native protection.
+    
+    Not wired to any production workflow until live enforcement is verified.
+    Review changes between authorization and merge remain a native protection concern.
+    """
+    head, base = authorize(repo, number, expected, read=read)
+    result = request("api", "--method", "PUT", f"repos/{repo}/pulls/{number}/merge",
+                     "-f", "sha="+head, "-f", "merge_method=squash")
+    if result.get("merged") is not True:
+        raise RuntimeError("GitHub did not confirm merge")
+    return result
+
 if __name__ == "__main__":
     repo = os.environ["GITHUB_REPOSITORY"]
     number = int(sys.argv[1])
