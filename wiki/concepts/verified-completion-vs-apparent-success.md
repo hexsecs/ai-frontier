@@ -4,7 +4,7 @@ title: "Verified completion versus apparent success"
 summary: "Agent completion claims, user approval, tool acknowledgements and passing checks do not establish independently verified outcomes."
 type: concept
 created: 2026-11-09
-updated: 2026-11-19
+updated: 2026-11-25
 depth: full
 sources:
   - https://arxiv.org/abs/2611.13246
@@ -16,6 +16,8 @@ sources:
   - https://github.com/BuilderIO/agent-native/pull/8670
   - https://raw.githubusercontent.com/OrchestratorInc/agent-orchestrator/main/docs/architecture.md
   - https://arxiv.org/abs/2611.22901
+  - https://arxiv.org/abs/2611.14356v1
+  - https://arxiv.org/abs/2611.13709v1
 ---
 
 # Verified completion versus apparent success
@@ -31,6 +33,8 @@ A task's apparent success is not equivalent to independent acceptance. This is a
 - **ChemE-as-Code** ([[projects/cheme-as-code]], [paper](https://arxiv.org/abs/2611.07947)) versions engineering artifacts and checks dependency consistency; the illustrative ammonia design was **not independently engineer-reviewed**. Internal consistency is narrower than domain certification.
 - **Production assurance case** ([[projects/assuring-ai-written-software]], [paper](https://arxiv.org/abs/2610.08651)) reports silently missing or proxy-based checks and an automated repair that disrupted operations. The check-execution record itself must be independently observable. Single-case qualitative evidence.
 - **AgentSWE** ([[briefings/2026/11/2026-11-03]], [paper](https://arxiv.org/abs/2610.13361)) tests agents that construct other agents. Acceptance must cover the built agent's actual behavior rather than its self-description.
+
+- [[projects/engineagent|EngineAgent]] ([preprint](https://arxiv.org/abs/2611.14356v1)) requires device execution and reference-logit agreement in addition to compilation; its reported success is bounded to twelve tasks. [[projects/coding-agent-instruction-adherence|Instruction adherence research]] ([preprint](https://arxiv.org/abs/2611.13709v1)) measures compliance using executable checks, but observable instructions and measurement correctness bound the interpretation. Together these offer contrasting evidence about what acceptance checks can establish; neither proves general agent reliability.
 
 ## Competing explanations and counterweights
 

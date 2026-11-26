@@ -47,3 +47,5 @@ Which actions may an agent take, where is that boundary enforced, and what happe
 [[projects/ovis]] exposes per-agent browser-tool selection, a tool-availability control whose bypass resistance remains unmeasured. [[techniques/secure-agent-operations]] distinguishes that setting from enforced resource/action scope.
 
 [[projects/browsentic]] reuses an authenticated browser through agent CLI and optional MCP routes. Session reuse does not establish authorization for each action; compare [[techniques/secure-agent-operations]].
+
+[[projects/coding-agent-instruction-adherence]] motivates testing observable instruction compliance rather than assuming persistent policy text is enforced. Compare [[concepts/structural-constraint-over-instruction]] and the hardware acceptance limits discussed in [[projects/dr-rtl]]; neither behavioral compliance nor timing improvement establishes security enforcement.
