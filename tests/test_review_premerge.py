@@ -40,3 +40,36 @@ class RulesetTests(unittest.TestCase):
         rule["parameters"]["strict_required_status_checks_policy"]=False
         with self.assertRaises(RuntimeError):
             required_contexts([rule])
+
+    def test_snapshot_requires_checks_from_every_rules_page(self):
+        from unittest.mock import patch
+        from scripts.premerge_authorize import snapshot
+        h = "a"*40
+        base = "b"*40
+        def rule(*names):
+            return {"type":"required_status_checks","parameters":{
+                "strict_required_status_checks_policy":True,
+                "required_status_checks":[{"context":n,"integration_id":1} for n in names]}}
+        def run(n,i):
+            return dict(name=n,app={"id":1},head_sha=h,id=i,status="completed",conclusion="success")
+        def api(*args):
+            if args[0] == "pr":
+                return dict(headRefOid=h,baseRefOid=base,baseRefName="main",
+                            mergeStateStatus="CLEAN",state="OPEN",isDraft=False)
+            if "git/ref/heads/main" in args[-1]:
+                return {"object":{"sha":base}}
+            if args[1] == "graphql":
+                return [{"data":{"repository":{"pullRequest":{
+                    n:{"nodes":[]} for n in ("reviews","reviewThreads","comments")}}}}]
+            if args[-1].endswith("/branches/main"):
+                return {"protection":{"enabled":False}}
+            if "/rules/branches/main" in args[-1]:
+                self.assertIn("--paginate",args)
+                self.assertIn("--slurp",args)
+                return [[rule("lint","mining-audit")],[rule("extra")]]
+            if "/check-runs?" in args[-1]:
+                return [{"check_runs":[run("lint",1),run("mining-audit",2)]}]
+            raise AssertionError(args)
+        with patch("scripts.premerge_authorize.gh",side_effect=api), patch("scripts.premerge_authorize.check",return_value=None):
+            with self.assertRaisesRegex(RuntimeError,"Missing required check: extra"):
+                snapshot("o/r",1)
