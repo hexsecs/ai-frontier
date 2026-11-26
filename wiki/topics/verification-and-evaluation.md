@@ -50,3 +50,7 @@ What establishes task success, how reliable is the grader, and when can scores b
 [[benchmarks/vthinker-vtbench-dataset-correction]] illustrates why public dataset versions must match reported evaluation artifacts before claiming reproducibility. See [[techniques/evaluation-and-simulation]].
 
 [[projects/the-agentic-scientist]] coordinates staged research with rubric checks; evaluate the scientific conclusions independently of workflow compliance.
+
+## Engineering and structured-output acceptance
+
+[[projects/engineagent]] distinguishes device execution and reference-output agreement from successful code generation. [[projects/dr-rtl]] illustrates timing and area acceptance, which does not substitute for functional or security validation. [[projects/tiga]] motivates measuring structural and semantic taxonomy quality separately. Compare these acceptance boundaries in [[briefings/2026/11/2026-11-15]].
