@@ -65,7 +65,11 @@ def snapshot(repo, number):
     # Effective branch rules are authoritative for ruleset-only deployments.
     # Classic protection, when enabled, is additive; never ignore read errors.
     branch = gh("api", f"repos/{repo}/branches/main")
-    rules = gh("api", f"repos/{repo}/rules/branches/main")
+    rule_pages = gh("api", "--paginate", "--slurp",
+                    f"repos/{repo}/rules/branches/main?per_page=100")
+    if not isinstance(rule_pages, list) or not rule_pages or any(not isinstance(page, list) for page in rule_pages):
+        raise RuntimeError("Invalid effective branch rules response")
+    rules = [rule for page in rule_pages for rule in page]
     protection = None
     if branch["protection"]["enabled"]:
         protection = gh("api", f"repos/{repo}/branches/main/protection/required_status_checks")
