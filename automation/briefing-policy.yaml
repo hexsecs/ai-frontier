@@ -54,7 +54,9 @@ knowledge_ingestion:
   require_pr_synthesis_disposition: true
 publication:
   prefer_pull_request: true
-  enable_auto_merge_after_required_checks: true
+  enable_auto_merge_after_required_checks: false
+  authorization: fresh_pr_specific
+  unattended_merge_enabled: false
   verify_pages_deployment: true
   mandatory_checks:
     - "python scripts/check_frontmatter.py"
